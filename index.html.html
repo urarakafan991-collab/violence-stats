@@ -12,88 +12,44 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/image_2026-02-19_200001257.png">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0a0a0f;
-    color: #e8e8f0;
-    font-family: 'IBM Plex Sans', sans-serif;
-    min-height: 100vh;
-    padding: 32px 24px;
-    max-width: 740px;
-    margin: 0 auto;
-  }
-  .header {
-    border-left: 4px solid #ff4757;
-    padding-left: 20px;
-    margin-bottom: 36px;
-  }
-  .header h1 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-  .header p {
-    font-size: 0.82rem;
-    color: #8888aa;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #ff4757;
-    margin-bottom: 14px;
-    margin-top: 32px;
-  }
-  .def-card {
-    background: #13131f;
-    border: 1px solid #222235;
-    border-radius: 6px;
-    padding: 13px 16px;
-    margin-bottom: 8px;
-  }
-  .def-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.76rem;
-    font-weight: 600;
-    color: #a0a0ff;
-    margin-bottom: 4px;
-  }
+  body { background: #0a0a0f; color: #e8e8f0; font-family: 'IBM Plex Sans', sans-serif; min-height: 100vh; padding: 32px 24px; max-width: 740px; margin: 0 auto; }
+
+  .part-nav { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+  .part-nav a { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; padding: 7px 14px; border-radius: 4px; border: 1px solid #222235; background: #13131f; color: #8888aa; transition: all 0.15s; }
+  .part-nav a.p1 { border-color: #ff4757; color: #ff4757; background: #1f0f0f; }
+  .part-nav a.p2 { border-color: #2196f3; color: #2196f3; background: #0a1525; }
+
+  .credits { display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .credit-tag { background: #13131f; border: 1px solid #222235; border-radius: 6px; padding: 7px 14px; display: flex; align-items: center; gap: 7px; }
+  .credit-tag .lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: #a0a0ff; }
+
+  .part-separator { margin: 56px 0 48px; position: relative; display: flex; align-items: center; gap: 16px; }
+  .part-separator::before, .part-separator::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, #1e2a3a, transparent); }
+  .part-separator .sep-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #2196f3; background: #0a0a0f; padding: 0 4px; white-space: nowrap; }
+
+  .header-p1 { border-left: 4px solid #ff4757; padding-left: 20px; margin-bottom: 36px; }
+  .header-p1 h1 { font-family: 'IBM Plex Mono', monospace; font-size: 1.45rem; font-weight: 700; color: #ffffff; line-height: 1.3; margin-bottom: 8px; }
+  .header-p1 p { font-size: 0.82rem; color: #8888aa; font-weight: 300; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .header-p2 { border-left: 4px solid #2196f3; padding-left: 20px; margin-bottom: 36px; }
+  .header-p2 .edition-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #2196f3; margin-bottom: 10px; }
+  .header-p2 h2 { font-family: 'IBM Plex Mono', monospace; font-size: 1.3rem; font-weight: 700; color: #ffffff; line-height: 1.3; margin-bottom: 8px; }
+  .header-p2 p { font-size: 0.82rem; color: #7a8a9a; font-weight: 300; letter-spacing: 0.04em; }
+
+  .sl-red { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #ff4757; margin-bottom: 14px; margin-top: 32px; }
+  .sl-blue { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #2196f3; margin-bottom: 14px; margin-top: 32px; }
+
+  .def-card { background: #13131f; border: 1px solid #222235; border-radius: 6px; padding: 13px 16px; margin-bottom: 8px; }
+  .def-name { font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; font-weight: 600; color: #a0a0ff; margin-bottom: 4px; }
   .def-text { font-size: 0.82rem; color: #b0b0c8; line-height: 1.5; }
-  .stats-block {
-    background: #13131f;
-    border: 1px solid #222235;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  .stats-header {
-    background: #1a1a2e;
-    padding: 11px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #222235;
-  }
-  .stats-header .db-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-  .stats-header .db-period {
-    font-size: 0.72rem;
-    color: #666688;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+
+  .stats-block { background: #13131f; border: 1px solid #222235; border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+  .stats-header { background: #1a1a2e; padding: 11px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222235; }
+  .stats-header .db-name { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; font-weight: 700; color: #ffffff; }
+  .stats-header .db-period { font-size: 0.72rem; color: #666688; font-family: 'IBM Plex Mono', monospace; }
   .stats-rows { padding: 13px 18px; display: grid; gap: 9px; }
   .stat-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.83rem; }
   .stat-label { color: #9090b0; }
@@ -102,146 +58,51 @@
   .stat-value.green { color: #2ed573; }
   .stat-value.orange { color: #ffa502; }
 
-  /* SHOOTER CARDS */
-  .shooter-card {
-    background: #13131f;
-    border: 1px solid #222235;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    overflow: hidden;
-  }
-  .shooter-header {
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid #1e1e30;
-  }
-  .shooter-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 3px;
-  }
-  .shooter-meta {
-    font-size: 0.75rem;
-    color: #666688;
-  }
-  .status-badge {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 4px 9px;
-    border-radius: 4px;
-    white-space: nowrap;
-    letter-spacing: 0.05em;
-  }
+  .per-capita-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .capita-card { background: #13131f; border: 1px solid #222235; border-radius: 8px; padding: 16px; text-align: center; }
+  .capita-card .big-num { font-family: 'IBM Plex Mono', monospace; font-size: 1.5rem; font-weight: 700; color: #2ed573; line-height: 1; margin-bottom: 6px; }
+  .capita-card .big-num.red { color: #ff4757; }
+  .capita-card .cap-label { font-size: 0.73rem; color: #8888aa; line-height: 1.4; }
+  .cap-vs { display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: #555570; margin: 8px 0; gap: 8px; }
+  .cap-vs::before, .cap-vs::after { content: ''; flex: 1; height: 1px; background: #222235; }
+  .cap-vs.highlight { color: #2ed573; font-weight: 700; letter-spacing: 0.05em; }
+  .cap-vs.highlight::before, .cap-vs.highlight::after { background: #1a3a2a; }
+
+  .year-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+  .year-card { background: #0d1520; border: 1px solid #1a2a3a; border-radius: 6px; padding: 12px 14px; text-align: center; }
+  .year-card .yr { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: #4a6a8a; margin-bottom: 4px; }
+  .year-card .cnt { font-family: 'IBM Plex Mono', monospace; font-size: 1.1rem; font-weight: 700; color: #ffa502; }
+  .total-bar { background: #0d1520; border: 1px solid #1a3a5a; border-radius: 6px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .total-bar span { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: #8ab0cc; }
+  .total-bar .total-num { font-size: 1.1rem; font-weight: 700; color: #ffa502; }
+
+  .context-box { background: #0d1520; border: 1px solid #1a2a3a; border-left: 4px solid #2196f3; border-radius: 6px; padding: 16px 18px; margin-bottom: 8px; }
+  .context-box p { font-size: 0.85rem; line-height: 1.65; color: #a0b8cc; }
+  .context-box strong { color: #6ab4f5; }
+
+  .compare-callout { background: #091510; border: 1px solid #1a4a2a; border-left: 4px solid #2ed573; border-radius: 6px; padding: 14px 18px; margin-top: 10px; font-size: 0.83rem; color: #90c8a0; line-height: 1.6; }
+  .compare-callout strong { color: #2ed573; }
+
+  .shooter-card { background: #13131f; border: 1px solid #222235; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+  .shooter-header { padding: 12px 16px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #1e1e30; }
+  .shooter-name { font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem; font-weight: 700; color: #ffffff; margin-bottom: 3px; }
+  .shooter-meta { font-size: 0.75rem; color: #666688; }
+  .status-badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 700; padding: 4px 9px; border-radius: 4px; white-space: nowrap; letter-spacing: 0.05em; }
   .badge-confirmed { background: #0f2a1a; color: #2ed573; border: 1px solid #1e4a2a; }
   .badge-disputed { background: #2a1a0a; color: #ffa502; border: 1px solid #4a2e0a; }
   .badge-unconfirmed { background: #2a0a0a; color: #ff4757; border: 1px solid #4a1e1e; }
   .badge-domestic { background: #1a1a2a; color: #a0a0ff; border: 1px solid #2a2a4a; }
-
+  .badge-hoax { background: #200a0a; color: #ff6060; border: 1px solid #4a1010; }
   .shooter-body { padding: 12px 16px; display: grid; gap: 8px; }
   .shooter-row { display: grid; grid-template-columns: 110px 1fr; gap: 10px; font-size: 0.8rem; }
-  .shooter-key {
-    color: #555570;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding-top: 2px;
-  }
+  .shooter-key { color: #555570; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 2px; }
   .shooter-val { color: #c0c0d8; line-height: 1.5; }
   .shooter-val.warn { color: #ffa502; }
   .shooter-val.bad { color: #ff6b7a; }
   .shooter-val.good { color: #2ed573; }
   .shooter-val.neutral { color: #a0a0ff; }
 
-  .divider { height: 1px; background: #1e1e30; margin: 28px 0; }
-
-  .box-green {
-    background: #0f1f15;
-    border: 1px solid #1e4a2a;
-    border-left: 4px solid #2ed573;
-    border-radius: 6px;
-    padding: 16px 18px;
-    margin-top: 8px;
-  }
-  .box-green p { font-size: 0.87rem; line-height: 1.65; color: #c0e0c8; }
-  .box-green strong { color: #2ed573; }
-
-  .box-red {
-    background: #1f0f0f;
-    border: 1px solid #4a1e1e;
-    border-left: 4px solid #ff4757;
-    border-radius: 6px;
-    padding: 16px 18px;
-    margin-top: 8px;
-  }
-  .box-red p { font-size: 0.87rem; line-height: 1.65; color: #e0c0c0; }
-  .box-red strong { color: #ff6b7a; }
-
-  .per-capita-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 4px;
-  }
-  .capita-card {
-    background: #13131f;
-    border: 1px solid #222235;
-    border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-  }
-  .capita-card .big-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2ed573;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .capita-card .big-num.red { color: #ff4757; }
-  .capita-card .cap-label { font-size: 0.73rem; color: #8888aa; line-height: 1.4; }
-  .cap-vs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: #555570;
-    margin: 8px 0;
-    gap: 8px;
-  }
-  .cap-vs::before, .cap-vs::after { content: ''; flex: 1; height: 1px; background: #222235; }
-
-  .sources { margin-top: 28px; padding-top: 20px; border-top: 1px solid #222235; }
-  .sources h4 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #555570;
-    margin-bottom: 12px;
-  }
-  .source-item { margin-bottom: 8px; font-size: 0.76rem; color: #666688; line-height: 1.4; }
-  .source-item a { color: #6666cc; text-decoration: none; word-break: break-all; }
-  .source-item strong { color: #9090aa; font-weight: 600; }
-  .note { font-size: 0.73rem; color: #555570; font-style: italic; margin-top: 8px; line-height: 1.5; }
-
-  .ideo-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-family: 'IBM Plex Mono', monospace;
-    padding: 2px 7px;
-    border-radius: 3px;
-    margin-right: 4px;
-    margin-top: 3px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-  }
+  .ideo-tag { display: inline-block; font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 2px 7px; border-radius: 3px; margin-right: 4px; margin-top: 3px; font-weight: 600; letter-spacing: 0.04em; }
   .tag-nazism { background: #2a0a0a; color: #ff6b7a; border: 1px solid #5a1e1e; }
   .tag-mental { background: #1a1a0a; color: #ffd700; border: 1px solid #4a4a0a; }
   .tag-bullying { background: #0a1a2a; color: #74b9ff; border: 1px solid #0a3a5a; }
@@ -251,65 +112,79 @@
   .tag-lgbtq-victim { background: #0a1a0a; color: #55ee88; border: 1px solid #1a4a1a; }
   .tag-unconfirmed { background: #151520; color: #8888aa; border: 1px solid #2a2a3a; }
   .tag-far-right { background: #2a1500; color: #ff8c00; border: 1px solid #5a3000; }
+
+  .policy-card { background: #100d18; border: 1px solid #2a2040; border-radius: 6px; padding: 13px 16px; margin-bottom: 8px; font-size: 0.8rem; color: #9080b0; line-height: 1.6; }
+  .policy-card .who { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #8060c0; margin-bottom: 5px; letter-spacing: 0.05em; }
+  .policy-card strong { color: #c090f0; }
+
+  .box-green { background: #0f1f15; border: 1px solid #1e4a2a; border-left: 4px solid #2ed573; border-radius: 6px; padding: 16px 18px; margin-top: 8px; }
+  .box-green p { font-size: 0.87rem; line-height: 1.65; color: #c0e0c8; }
+  .box-green strong { color: #2ed573; }
+  .box-red { background: #1f0f0f; border: 1px solid #4a1e1e; border-left: 4px solid #ff4757; border-radius: 6px; padding: 16px 18px; margin-top: 8px; }
+  .box-red p { font-size: 0.87rem; line-height: 1.65; color: #e0c0c0; }
+  .box-red strong { color: #ff6b7a; }
+  .box-blue-red { background: #0a1520; border: 1px solid #1a3050; border-left: 4px solid #ff4757; border-radius: 6px; padding: 16px 18px; margin-top: 8px; }
+  .box-blue-red p { font-size: 0.87rem; line-height: 1.65; color: #c0d0e0; }
+  .box-blue-red strong { color: #ff6b7a; }
+
+  .divider { height: 1px; background: #1e1e30; margin: 28px 0; }
+
+  .sources { margin-top: 28px; padding-top: 20px; border-top: 1px solid #222235; }
+  .sources h4 { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #555570; margin-bottom: 12px; }
+  .source-item { margin-bottom: 8px; font-size: 0.76rem; color: #666688; line-height: 1.4; }
+  .source-item a { color: #6666cc; text-decoration: none; word-break: break-all; }
+  .source-item strong { color: #9090aa; font-weight: 600; }
+
+  .chart-wrap { background: #13131f; border: 1px solid #222235; border-radius: 8px; padding: 18px 18px 14px; margin-bottom: 10px; }
+  .chart-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+  .chart-sub { font-size: 0.73rem; color: #666688; margin-bottom: 16px; }
+  .chart-canvas-wrap { position: relative; height: 240px; }
+  .underrep-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .underrep-pill { background: #0f1f15; border: 1px solid #1e4a2a; border-radius: 20px; padding: 5px 13px; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: #2ed573; font-weight: 700; white-space: nowrap; }
+  .underrep-pill.orange { background: #1a130a; border-color: #4a3010; color: #ffa502; }
 </style>
 </head>
 <body>
 
-<div style="display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
-  <div style="background: #13131f; border: 1px solid #222235; border-radius: 6px; padding: 7px 14px; display: flex; align-items: center; gap: 7px;">
-    <span style="font-size: 0.85rem;">𝕏</span>
-    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: #a0a0ff;">@angelicgirliex</span>
-  </div>
-  <div style="background: #13131f; border: 1px solid #222235; border-radius: 6px; padding: 7px 14px; display: flex; align-items: center; gap: 7px;">
-    <span style="font-size: 0.85rem; color: #7289da;">⊹</span>
-    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: #a0a0ff;">catlover121_ (Discord)</span>
-  </div>
+<nav class="part-nav">
+  <a href="#part1" class="p1">Part 1 — All-Time Overview</a>
+  <a href="#part2" class="p2">Part 2 — 2020–2025 Deep Dive</a>
+</nav>
+
+<div class="credits">
+  <div class="credit-tag"><span style="font-size:0.85rem;">𝕏</span><span class="lbl">@angelicgirliex</span></div>
+  <div class="credit-tag"><span style="font-size:0.85rem;color:#7289da;">⊹</span><span class="lbl">catlover121_ (Discord)</span></div>
 </div>
 
-<div class="header">
+<!-- ====================================================== -->
+<!--  PART 1 — ALL-TIME                                      -->
+<!-- ====================================================== -->
+<div id="part1"></div>
+<div class="header-p1">
   <h1>Trans People & Mass Shootings:<br>The Full Picture</h1>
-  <p>Updated data · shooter profiles · identity verification · ideologies</p>
+  <p>All-time data · shooter profiles · identity verification · ideologies</p>
 </div>
 
-<!-- DEFINITIONS -->
-<div class="section-label">01 — The Three Main Definitions</div>
-<div class="def-card">
-  <div class="def-name">Gun Violence Archive (GVA) — Broadest</div>
-  <div class="def-text">4+ people shot (injured or killed), not including the shooter. All contexts included — gang violence, domestic, public. Used by most researchers.</div>
-</div>
-<div class="def-card">
-  <div class="def-name">FBI / Federal Law (2012 Act)</div>
-  <div class="def-text">3+ people killed in a single incident. No restriction on context or motive.</div>
-</div>
-<div class="def-card">
-  <div class="def-name">Mother Jones / Violence Prevention Project — Strictest</div>
-  <div class="def-text">Indiscriminate public shooting, 4+ killed. Explicitly excludes gang violence, domestic incidents, and robberies. This is the definition conservatives prefer when making their argument.</div>
-</div>
+<div class="sl-red">01 — The Three Main Definitions</div>
+<div class="def-card"><div class="def-name">Gun Violence Archive (GVA) — Broadest</div><div class="def-text">4+ people shot (injured or killed), not including the shooter. All contexts included — gang violence, domestic, public. Used by most researchers.</div></div>
+<div class="def-card"><div class="def-name">FBI / Federal Law (2012 Act)</div><div class="def-text">3+ people killed in a single incident. No restriction on context or motive.</div></div>
+<div class="def-card"><div class="def-name">Mother Jones / Violence Prevention Project — Strictest</div><div class="def-text">Indiscriminate public shooting, 4+ killed. Explicitly excludes gang violence, domestic incidents, and robberies. This is the definition conservatives prefer when making their argument.</div></div>
 
 <div class="divider"></div>
 
-<!-- NUMBERS -->
-<div class="section-label">02 — The Numbers Under Each Definition</div>
-
+<div class="sl-red">02 — The Numbers Under Each Definition</div>
 <div class="stats-block">
-  <div class="stats-header">
-    <span class="db-name">Gun Violence Archive</span>
-    <span class="db-period">Jan 2013 — Sep 15, 2025</span>
-  </div>
+  <div class="stats-header"><span class="db-name">Gun Violence Archive</span><span class="db-period">Jan 2013 — Feb 2026</span></div>
   <div class="stats-rows">
-    <div class="stat-row"><span class="stat-label">Total mass shootings</span><span class="stat-value orange">5,748</span></div>
+    <div class="stat-row"><span class="stat-label">Total mass shootings</span><span class="stat-value orange">~5,900</span></div>
     <div class="stat-row"><span class="stat-label">Confirmed trans shooters</span><span class="stat-value red">5</span></div>
     <div class="stat-row"><span class="stat-label">Trans share of shooters</span><span class="stat-value red">0.09%</span></div>
     <div class="stat-row"><span class="stat-label">Trans share of US population</span><span class="stat-value green">~1%</span></div>
     <div class="stat-row"><span class="stat-label">Verdict</span><span class="stat-value green">UNDERREPRESENTED ~11x</span></div>
   </div>
 </div>
-
 <div class="stats-block">
-  <div class="stats-header">
-    <span class="db-name">Violence Prevention Project</span>
-    <span class="db-period">Strict definition · through 2024</span>
-  </div>
+  <div class="stats-header"><span class="db-name">Violence Prevention Project</span><span class="db-period">Strict definition · through 2024</span></div>
   <div class="stats-rows">
     <div class="stat-row"><span class="stat-label">Total shooters tracked</span><span class="stat-value orange">~201</span></div>
     <div class="stat-row"><span class="stat-label">Confirmed trans shooters</span><span class="stat-value red">1 (Audrey Hale only)</span></div>
@@ -318,12 +193,8 @@
     <div class="stat-row"><span class="stat-label">Verdict</span><span class="stat-value green">UNDERREPRESENTED ~2x</span></div>
   </div>
 </div>
-
 <div class="stats-block">
-  <div class="stats-header">
-    <span class="db-name">Mother Jones</span>
-    <span class="db-period">Strict definition · 1982–2025</span>
-  </div>
+  <div class="stats-header"><span class="db-name">Mother Jones</span><span class="db-period">Strict definition · 1982–2025</span></div>
   <div class="stats-rows">
     <div class="stat-row"><span class="stat-label">Total incidents</span><span class="stat-value orange">~149</span></div>
     <div class="stat-row"><span class="stat-label">Confirmed trans shooters</span><span class="stat-value red">1 (Audrey Hale)</span></div>
@@ -333,293 +204,114 @@
   </div>
 </div>
 
+<div class="chart-wrap" style="margin-top:10px;">
+  <div class="chart-title">Trans Share of Shooters vs. Trans Share of Population</div>
+  <div class="chart-sub">All-time data · each bar pair shows trans % of shooters (left) vs. trans % of US population (right)</div>
+  <div class="chart-canvas-wrap"><canvas id="chart1"></canvas></div>
+  <div class="underrep-row">
+    <span class="underrep-pill">GVA (broad): ~11x underrepresented</span>
+    <span class="underrep-pill">VPP (strict): ~2x underrepresented</span>
+    <span class="underrep-pill">Mother Jones: underrepresented</span>
+  </div>
+</div>
+
 <div class="divider"></div>
 
-<!-- PER CAPITA -->
-<div class="section-label">03 — Per Capita Rate (GVA Definition)</div>
+<div class="sl-red">03 — Per Capita Rate (GVA Definition)</div>
 <p style="font-size:0.8rem;color:#8888aa;margin-bottom:12px;">Binary trans population ~1.43M vs. US total ~335M</p>
 <div class="per-capita-grid">
-  <div class="capita-card">
-    <div class="big-num">0.00035%</div>
-    <div class="cap-label">of trans people have committed a mass shooting</div>
-  </div>
-  <div class="capita-card">
-    <div class="big-num red">0.0017%</div>
-    <div class="cap-label">of the general US population have committed a mass shooting</div>
-  </div>
+  <div class="capita-card"><div class="big-num">0.00035%</div><div class="cap-label">of trans people have committed a mass shooting</div></div>
+  <div class="capita-card"><div class="big-num red">0.0017%</div><div class="cap-label">of the general US population have committed a mass shooting</div></div>
 </div>
 <div class="cap-vs">TRANS PEOPLE ARE ~5x LESS LIKELY PER CAPITA</div>
 
 <div class="divider"></div>
 
-<!-- SHOOTER PROFILES -->
-<div class="section-label">04 — The Seven Cited Shooters: Full Breakdown</div>
+<div class="sl-red">04 — The Eight Cited Shooters: Full Breakdown</div>
 
-<!-- Snochia Moseley -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Snochia Moseley</div>
-      <div class="shooter-meta">2018 · Aberdeen, Maryland · Rite Aid warehouse</div>
-    </div>
-    <span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Snochia Moseley</div><div class="shooter-meta">2018 · Aberdeen, Maryland · Rite Aid warehouse</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val">Trans man (FtM). Confirmed by close friends and family. Was undergoing hormone therapy at time of shooting.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">Workplace shooting — targeted coworkers. No political or ideological motive found. Had documented bipolar disorder and depression.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-mental">Mental illness</span>
-        <span class="ideo-tag tag-nihilism">No political motive</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Qualifies under</div>
-      <div class="shooter-val neutral">GVA (broad) — YES. Strict public mass shooting — NO (workplace, not public indiscriminate).</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans man (FtM). Confirmed by close friends and family. Was undergoing hormone therapy at time of shooting.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Workplace shooting — targeted coworkers. No political or ideological motive found. Had documented bipolar disorder and depression.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-mental">Mental illness</span><span class="ideo-tag tag-nihilism">No political motive</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Qualifies under</div><div class="shooter-val neutral">GVA (broad) — YES. Strict public mass shooting — NO (workplace, not public indiscriminate).</div></div>
   </div>
 </div>
 
-<!-- Alec McKinney -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Alec McKinney</div>
-      <div class="shooter-meta">2019 · Highlands Ranch, Colorado · STEM School</div>
-    </div>
-    <span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Alec McKinney</div><div class="shooter-meta">2019 · Highlands Ranch, Colorado · STEM School</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val">Trans boy (FtM). Legally named Maya McKinney at the time. Confirmed.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">Targeted specific students who had bullied him for being trans. One of TWO shooters — the other, Devon Erickson, was cisgender and the primary perpetrator.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-bullying">Retaliation for bullying</span>
-        <span class="ideo-tag tag-mental">Mental illness</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Qualifies under</div>
-      <div class="shooter-val neutral">GVA — YES. Strict — BORDERLINE (targeted specific individuals, not random public attack).</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans boy (FtM). Legally named Maya McKinney at the time. Confirmed.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Targeted specific students who had bullied him for being trans. One of TWO shooters — the other, Devon Erickson, was cisgender and the primary perpetrator.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-bullying">Retaliation for bullying</span><span class="ideo-tag tag-mental">Mental illness</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Qualifies under</div><div class="shooter-val neutral">GVA — YES. Strict — BORDERLINE (targeted specific individuals, not random public attack).</div></div>
   </div>
 </div>
 
-<!-- Anderson Lee Aldrich -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Anderson Lee Aldrich</div>
-      <div class="shooter-meta">2022 · Colorado Springs · Club Q LGBTQ+ nightclub</div>
-    </div>
-    <span class="status-badge badge-disputed">⚠ HIGHLY DISPUTED</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Anderson Lee Aldrich</div><div class="shooter-meta">2022 · Colorado Springs · Club Q LGBTQ+ nightclub</div></div><span class="status-badge badge-disputed">⚠ HIGHLY DISPUTED</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val warn">Claimed nonbinary through their defense lawyer — widely seen as a legal tactic. Neighbors reported consistent anti-LGBTQ behavior and slurs. Attacked an LGBTQ+ venue on the Transgender Day of Remembrance. Experts in online extremism were "immediately skeptical."</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val bad">Anti-LGBTQ hate crime. Charged and convicted on bias-motivated crimes. Targeted Club Q specifically.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-nazism">Neo-Nazi website operator</span>
-        <span class="ideo-tag tag-far-right">Far-right extremist</span>
-        <span class="ideo-tag tag-lgbtq-victim">Targeted LGBTQ people</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Key facts</div>
-      <div class="shooter-val bad">Ran a website hosting a "neo-Nazi white supremacist" shooting training video per detective testimony. Grandfather is a far-right Republican politician who praised Jan. 6. Used racial and homophobic slurs. Convicted of 5 murders and 46 attempted murders as hate crimes.</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val warn">Claimed nonbinary through their defense lawyer — widely seen as a legal tactic. Neighbors reported consistent anti-LGBTQ behavior and slurs. Attacked an LGBTQ+ venue on the Transgender Day of Remembrance. Experts in online extremism were "immediately skeptical."</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val bad">Anti-LGBTQ hate crime. Charged and convicted on bias-motivated crimes. Targeted Club Q specifically.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-nazism">Neo-Nazi website operator</span><span class="ideo-tag tag-far-right">Far-right extremist</span><span class="ideo-tag tag-lgbtq-victim">Targeted LGBTQ people</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Key facts</div><div class="shooter-val bad">Ran a website hosting a "neo-Nazi white supremacist" shooting training video per detective testimony. Grandfather is a far-right Republican politician who praised Jan. 6. Used racial and homophobic slurs. Convicted of 5 murders and 46 attempted murders as hate crimes.</div></div>
   </div>
 </div>
 
-<!-- Audrey Hale -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Audrey Hale</div>
-      <div class="shooter-meta">2023 · Nashville, Tennessee · Covenant School</div>
-    </div>
-    <span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Audrey Hale</div><div class="shooter-meta">2023 · Nashville, Tennessee · Covenant School</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val">Trans man (FtM). Confirmed by Nashville Police Department.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">Per the MNPD investigation: desire for notoriety (Columbine obsession), chose a former school he had happy memories of. No political motive confirmed by investigators despite chaotic journal entries.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-notoriety">Notoriety/infamy-seeking</span>
-        <span class="ideo-tag tag-mental">Depression/mental illness</span>
-        <span class="ideo-tag tag-nihilism">No clear political ideology</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Qualifies under</div>
-      <div class="shooter-val good">All definitions — YES. The only confirmed trans shooter who qualifies under the strict Violence Prevention Project definition.</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans man (FtM). Confirmed by Nashville Police Department.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Per the MNPD investigation: desire for notoriety (Columbine obsession), chose a former school he had happy memories of. No political motive confirmed by investigators despite chaotic journal entries.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-notoriety">Notoriety/infamy-seeking</span><span class="ideo-tag tag-mental">Depression/mental illness</span><span class="ideo-tag tag-nihilism">No clear political ideology</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Qualifies under</div><div class="shooter-val good">All definitions — YES. The only confirmed trans shooter who qualifies under the strict Violence Prevention Project definition.</div></div>
   </div>
 </div>
 
-<!-- Dylan Butler -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Dylan Butler</div>
-      <div class="shooter-meta">2024 · Perry, Iowa · Perry High School</div>
-    </div>
-    <span class="status-badge badge-unconfirmed">✗ NEVER CONFIRMED</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Dylan Butler</div><div class="shooter-meta">2024 · Perry, Iowa · Perry High School</div></div><span class="status-badge badge-unconfirmed">✗ NEVER CONFIRMED</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val bad">Gender identity was NEVER officially confirmed by law enforcement. Evidence consisted only of social media screenshots showing pride flags and "he/they" pronouns — spread primarily by Libs of TikTok. The accounts could not be verified as his.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">Reportedly bullied since elementary school. No confirmed ideological motive. Died by suicide at the scene.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-unconfirmed">Motive unconfirmed</span>
-        <span class="ideo-tag tag-bullying">Reportedly bullied</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Key facts</div>
-      <div class="shooter-val bad">Including Butler as a "trans shooter" is misinformation. Law enforcement explicitly stated his gender identity was not established.</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val bad">Gender identity was NEVER officially confirmed by law enforcement. Evidence consisted only of social media screenshots showing pride flags and "he/they" pronouns — spread primarily by Libs of TikTok. The accounts could not be verified as his.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Reportedly bullied since elementary school. No confirmed ideological motive. Died by suicide at the scene.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-unconfirmed">Motive unconfirmed</span><span class="ideo-tag tag-bullying">Reportedly bullied</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Key facts</div><div class="shooter-val bad">Including Butler as a "trans shooter" is misinformation. Law enforcement explicitly stated his gender identity was not established.</div></div>
   </div>
 </div>
 
-<!-- Robin Westman -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Robin Westman</div>
-      <div class="shooter-meta">2025 · Minneapolis, Minnesota · Annunciation Catholic Church</div>
-    </div>
-    <span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Robin Westman</div><div class="shooter-meta">2025 · Minneapolis, Minnesota · Annunciation Catholic Church</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val">Trans woman (MtF). Had a court-approved name change from Robert to Robin at age 17. Confirmed.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">Incoherent and nihilistic — FBI found "no single motive." Manifesto contained anti-Catholic hate, antisemitism, anti-Trump messages, neo-Nazi references, and also anti-fascist language. Experts described it as ideologically scrambled. Wrote "there is no message" on a firearm.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-nihilism">Nihilistic/no coherent ideology</span>
-        <span class="ideo-tag tag-nazism">Neo-Nazi references in writings</span>
-        <span class="ideo-tag tag-mental">Long-term mental illness</span>
-        <span class="ideo-tag tag-notoriety">Mass shooter obsession</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Key facts</div>
-      <div class="shooter-val warn">Westman's manifesto included both far-right symbols AND anti-Trump messages. Analysts concluded it reflects online violent radicalization rather than a clear political ideology. Expressed regret about being trans in writings.</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman (MtF). Had a court-approved name change from Robert to Robin at age 17. Confirmed.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Incoherent and nihilistic — FBI found "no single motive." Manifesto contained anti-Catholic hate, antisemitism, anti-Trump messages, neo-Nazi references, and also anti-fascist language. Experts described it as ideologically scrambled. Wrote "there is no message" on a firearm.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-nihilism">Nihilistic/no coherent ideology</span><span class="ideo-tag tag-nazism">Neo-Nazi references in writings</span><span class="ideo-tag tag-mental">Long-term mental illness</span><span class="ideo-tag tag-notoriety">Mass shooter obsession</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Key facts</div><div class="shooter-val warn">Westman's manifesto included both far-right symbols AND anti-Trump messages. Analysts concluded it reflects online violent radicalization rather than a clear political ideology. Expressed regret about being trans in writings.</div></div>
   </div>
 </div>
 
-<!-- Jesse Van Rootselaar -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Jesse Van Rootselaar</div>
-      <div class="shooter-meta">2026 · Tumbler Ridge, British Columbia · ⚠ CANADA — not a US shooting</div>
-    </div>
-    <span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Jesse Van Rootselaar</div><div class="shooter-meta">2026 · Tumbler Ridge, British Columbia · ⚠ CANADA — not a US shooting</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val">Trans woman (MtF). Confirmed by RCMP Deputy Commissioner. Had transitioned ~6 years prior. Identified publicly as female.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">No confirmed motive. Killed mother and stepbrother at home, then went to a former school. RCMP explicitly said there was no confirmed link between gender identity and the crime. Long documented history of mental illness, multiple psychiatric assessments, previous firearms seizure from the home.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-mental">Severe mental illness</span>
-        <span class="ideo-tag tag-nihilism">No confirmed political motive</span>
-        <span class="ideo-tag tag-unconfirmed">Far-right link disputed by experts</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Key facts</div>
-      <div class="shooter-val bad">This is a CANADIAN shooting — it does not appear in any US mass shooting database (GVA, Mother Jones, etc.) and is irrelevant to US statistics. The ADL flagged a possible far-right X account linked to her, but the Institute for Strategic Dialogue's senior research manager said "I don't buy it" and found "no ideological or political orientation" in her confirmed social media. BC's Human Rights Commissioner called attempts to link this to trans identity "incorrect, irresponsible and frankly dangerous."</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman (MtF). Confirmed by RCMP Deputy Commissioner. Had transitioned ~6 years prior. Identified publicly as female.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">No confirmed motive. Killed mother and stepbrother at home, then went to a former school. RCMP explicitly said there was no confirmed link between gender identity and the crime. Long documented history of mental illness, multiple psychiatric assessments, previous firearms seizure from the home.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-mental">Severe mental illness</span><span class="ideo-tag tag-nihilism">No confirmed political motive</span><span class="ideo-tag tag-unconfirmed">Far-right link disputed by experts</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Key facts</div><div class="shooter-val bad">This is a CANADIAN shooting — it does not appear in any US mass shooting database (GVA, Mother Jones, etc.) and is irrelevant to US statistics. The ADL flagged a possible far-right X account, but the Institute for Strategic Dialogue's senior research manager said "I don't buy it" and found "no ideological or political orientation" in her confirmed social media. BC's Human Rights Commissioner called attempts to link this to trans identity "incorrect, irresponsible and frankly dangerous."</div></div>
   </div>
 </div>
 
-<!-- Robert Dorgan -->
 <div class="shooter-card">
-  <div class="shooter-header">
-    <div>
-      <div class="shooter-name">Robert Dorgan (Roberta Esposito)</div>
-      <div class="shooter-meta">2026 · Pawtucket, Rhode Island · Ice rink</div>
-    </div>
-    <span class="status-badge badge-domestic">⊘ DOMESTIC SHOOTING</span>
-  </div>
+  <div class="shooter-header"><div><div class="shooter-name">Robert Dorgan (Roberta Esposito)</div><div class="shooter-meta">2026 · Pawtucket, Rhode Island · Ice rink</div></div><span class="status-badge badge-domestic">⊘ DOMESTIC SHOOTING</span></div>
   <div class="shooter-body">
-    <div class="shooter-row">
-      <div class="shooter-key">Identity</div>
-      <div class="shooter-val">Trans woman. Confirmed — went by Roberta Esposito, underwent gender reassignment surgery in 2020.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Motive</div>
-      <div class="shooter-val warn">Targeted his own family — killed ex-wife and adult son at an ice rink where his son was playing hockey. Classic domestic/family violence scenario stemming from bitter divorce proceedings.</div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Ideology</div>
-      <div class="shooter-val">
-        <span class="ideo-tag tag-domestic">Domestic/family violence</span>
-        <span class="ideo-tag tag-mental">Mental illness (documented)</span>
-      </div>
-    </div>
-    <div class="shooter-row">
-      <div class="shooter-key">Key facts</div>
-      <div class="shooter-val bad">This was a targeted domestic shooting — NOT a public mass shooting. Would be excluded under every strict definition conservatives claim to prefer. Including it in a "trans mass shooter" list is inconsistent with their own stated criteria.</div>
-    </div>
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman. Confirmed — went by Roberta Esposito, underwent gender reassignment surgery in 2020.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Targeted his own family — killed ex-wife and adult son at an ice rink where his son was playing hockey. Classic domestic/family violence scenario stemming from bitter divorce proceedings.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-domestic">Domestic/family violence</span><span class="ideo-tag tag-mental">Mental illness (documented)</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Key facts</div><div class="shooter-val bad">This was a targeted domestic shooting — NOT a public mass shooting. Would be excluded under every strict definition conservatives claim to prefer. Including it in a "trans mass shooter" list is inconsistent with their own stated criteria.</div></div>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- HONEST TALLY -->
-<div class="section-label">05 — Honest Tally</div>
+<div class="sl-red">05 — Honest Tally</div>
 <div class="stats-block">
   <div class="stats-rows">
     <div class="stat-row"><span class="stat-label">Total cited shooters</span><span class="stat-value orange">8 (7 US + 1 Canada)</span></div>
@@ -636,8 +328,7 @@
 
 <div class="divider"></div>
 
-<!-- MANIPULATION -->
-<div class="section-label">06 — Why The Conservative Argument Is Manipulative</div>
+<div class="sl-red">06 — Why The Conservative Argument Is Manipulative</div>
 <div class="box-red">
   <p>→ They cite <strong>"6-7 trans shooters"</strong> while using the strict definition — but most of those cases don't qualify under that same strict definition.<br><br>
   → <strong>Aldrich</strong>, their most dramatic case (5 killed at Club Q), ran a neo-Nazi website, attacked an LGBTQ+ venue, and their nonbinary claim came from a defense lawyer. The ADL classified the Club Q shooting as a far-right extremist attack.<br><br>
@@ -648,36 +339,356 @@
 
 <div class="divider"></div>
 
-<!-- CONCLUSION -->
-<div class="section-label">07 — Conclusion</div>
+<div class="sl-red">07 — Conclusion</div>
 <div class="box-green">
   <p>Under the <strong>broadest definition (GVA)</strong>: Trans people are ~11x underrepresented as mass shooters.<br><br>
-  Under the <strong>strictest definition</strong>: 1 confirmed trans shooter out of ~149-201 incidents. Still underrepresented.<br><br>
-  The one shooter conservatives use most to claim far-right trans violence — <strong>Aldrich</strong> — ran a neo-Nazi website, used homophobic slurs, attacked LGBTQ+ people, and was classified as a far-right extremist by the ADL. His trans identity claim is a disputed legal defense move.<br><br>
+  Under the <strong>strictest definition</strong>: 1 confirmed trans shooter out of ~149–201 incidents. Still underrepresented.<br><br>
+  The one shooter conservatives use most — <strong>Aldrich</strong> — ran a neo-Nazi website, used homophobic slurs, attacked LGBTQ+ people, and was classified as a far-right extremist by the ADL. His trans identity claim is a disputed legal defense move.<br><br>
   Trans people are statistically <strong>4x more likely to be victims</strong> of violent crime than perpetrators. (GLAAD / Human Rights Campaign)</p>
 </div>
 
-<!-- SOURCES -->
 <div class="sources">
-  <h4>Sources</h4>
+  <h4>Part 1 Sources</h4>
   <div class="source-item"><strong>Gun Violence Archive</strong><br><a href="https://www.gunviolencearchive.org/mass-shooting">https://www.gunviolencearchive.org/mass-shooting</a></div>
   <div class="source-item"><strong>FactCheck.org — "Few Mass Shooters Have Been Transgender"</strong><br><a href="https://www.factcheck.org/2025/09/few-mass-shooters-have-been-transgender/">https://www.factcheck.org/2025/09/few-mass-shooters-have-been-transgender/</a></div>
   <div class="source-item"><strong>PolitiFact — Trans people and mass shootings</strong><br><a href="https://www.politifact.com/article/2025/sep/09/trans-people-mass-shootings-gun-violence/">https://www.politifact.com/article/2025/sep/09/trans-people-mass-shootings-gun-violence/</a></div>
   <div class="source-item"><strong>Wikipedia — Misinformation about violence by transgender people</strong><br><a href="https://en.wikipedia.org/wiki/Misinformation_about_violence_by_transgender_people">https://en.wikipedia.org/wiki/Misinformation_about_violence_by_transgender_people</a></div>
   <div class="source-item"><strong>ABC News — Aldrich ran neo-Nazi website (court testimony)</strong><br><a href="https://abcnews.go.com/US/club-shooting-suspect-motivated-hate-court-begins-evidence/story?id=97382833">https://abcnews.go.com/US/club-shooting-suspect-motivated-hate-court-begins-evidence/story?id=97382833</a></div>
-  <div class="source-item"><strong>Nashville Banner — Covenant School shooting MNPD report</strong><br><a href="https://nashvillebanner.com/2025/04/02/covenant-school-shooting-report/">https://nashvillebanner.com/2025/04/02/covenant-school-shooting-report/</a></div>
+  <div class="source-item"><strong>Nashville Banner — Covenant School MNPD report</strong><br><a href="https://nashvillebanner.com/2025/04/02/covenant-school-shooting-report/">https://nashvillebanner.com/2025/04/02/covenant-school-shooting-report/</a></div>
   <div class="source-item"><strong>CNN — Robin Westman manifesto journal</strong><br><a href="https://www.cnn.com/2025/08/28/us/journal-minneapolis-shooter-robin-westman-invs">https://www.cnn.com/2025/08/28/us/journal-minneapolis-shooter-robin-westman-invs</a></div>
-  <div class="source-item"><strong>NPR — Search for ideological motives in Minneapolis shooting</strong><br><a href="https://www.npr.org/2025/08/29/nx-s1-5522038/minneapolis-shooting-motive">https://www.npr.org/2025/08/29/nx-s1-5522038/minneapolis-shooting-motive</a></div>
+  <div class="source-item"><strong>NPR — Ideological motives in Minneapolis shooting</strong><br><a href="https://www.npr.org/2025/08/29/nx-s1-5522038/minneapolis-shooting-motive">https://www.npr.org/2025/08/29/nx-s1-5522038/minneapolis-shooting-motive</a></div>
   <div class="source-item"><strong>Newsweek — Dylan Butler transgender claims unconfirmed</strong><br><a href="https://www.newsweek.com/dylan-butler-iowa-shooting-transgender-social-media-1858126">https://www.newsweek.com/dylan-butler-iowa-shooting-transgender-social-media-1858126</a></div>
   <div class="source-item"><strong>Williams Institute — Trans population data</strong><br><a href="https://williamsinstitute.law.ucla.edu/publications/trans-adults-united-states/">https://williamsinstitute.law.ucla.edu/publications/trans-adults-united-states/</a></div>
-  <div class="source-item"><strong>Wikipedia — Tumbler Ridge shooting</strong><br><a href="https://en.wikipedia.org/wiki/2026_Tumbler_Ridge_shooting">https://en.wikipedia.org/wiki/2026_Tumbler_Ridge_shooting</a></div>
-  <div class="source-item"><strong>CBC News — False claims about trans people after Tumbler Ridge</strong><br><a href="https://www.cbc.ca/news/canada/tumbler-ridge-shooting-trans-community-false-claims-9.7085078">https://www.cbc.ca/news/canada/tumbler-ridge-shooting-trans-community-false-claims-9.7085078</a></div>
+  <div class="source-item"><strong>Wikipedia — 2026 Tumbler Ridge shooting</strong><br><a href="https://en.wikipedia.org/wiki/2026_Tumbler_Ridge_shooting">https://en.wikipedia.org/wiki/2026_Tumbler_Ridge_shooting</a></div>
+  <div class="source-item"><strong>CBC News — False claims after Tumbler Ridge</strong><br><a href="https://www.cbc.ca/news/canada/tumbler-ridge-shooting-trans-community-false-claims-9.7085078">https://www.cbc.ca/news/canada/tumbler-ridge-shooting-trans-community-false-claims-9.7085078</a></div>
   <div class="source-item"><strong>National Observer — Experts dispute far-right ideology link</strong><br><a href="https://www.nationalobserver.com/2026/02/12/news/tumbler-ridge-shooter-far-right-gore">https://www.nationalobserver.com/2026/02/12/news/tumbler-ridge-shooter-far-right-gore</a></div>
   <div class="source-item"><strong>GLAAD — Debunking Trans Terrorism</strong><br><a href="https://glaad.org/debunking-trans-terrorism/">https://glaad.org/debunking-trans-terrorism/</a></div>
 </div>
 
 
+<!-- ====================================================== -->
+<!--  PART SEPARATOR                                         -->
+<!-- ====================================================== -->
+<div class="part-separator"><span class="sep-label">Part 2 — 2020–2025 Focused Analysis</span></div>
 
 
+<!-- ====================================================== -->
+<!--  PART 2 — 2020–2025                                     -->
+<!-- ====================================================== -->
+<div id="part2"></div>
+<div class="header-p2">
+  <div class="edition-tag">Focused Edition · 2020–2025</div>
+  <h2>The Five Years Conservatives Cite</h2>
+  <p>Year-by-year GVA data · 2020–2025 shooter profiles · debunked hoaxes · political response vs. reality</p>
+</div>
+
+<div class="sl-blue">08 — Why This Period Matters</div>
+<div class="context-box">
+  <p>The conservative claim about trans mass shooters is almost entirely built on events from 2020–2025. This is the window where right-wing media, the Heritage Foundation, and Republican politicians began citing trans shooters as evidence of a coordinated pattern. The FBI was reportedly preparing to classify trans offenders as a <strong>"nihilistic violent extremist"</strong> threat group — the same category as ISIS-inspired attackers. Texas Rep. Ronny Jackson called for trans people to be removed from <strong>"the streets and the internet."</strong> The Heritage Foundation petitioned the FBI to designate <strong>"Transgender Ideology-Inspired Violent Extremism"</strong> as a domestic terror threat.</p>
+  <p style="margin-top:10px;">So what do the actual numbers from this exact window show?</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">09 — GVA Totals by Year, 2020–2025</div>
+<div class="year-grid">
+  <div class="year-card"><div class="yr">2020</div><div class="cnt">610</div></div>
+  <div class="year-card"><div class="yr">2021</div><div class="cnt">690</div></div>
+  <div class="year-card"><div class="yr">2022</div><div class="cnt">644</div></div>
+  <div class="year-card"><div class="yr">2023</div><div class="cnt">660</div></div>
+  <div class="year-card"><div class="yr">2024</div><div class="cnt">504</div></div>
+  <div class="year-card"><div class="yr">2025</div><div class="cnt">408</div></div>
+</div>
+<div class="total-bar"><span>Total GVA mass shootings, 2020–2025</span><span class="total-num">3,516</span></div>
+
+<div class="stats-block">
+  <div class="stats-header"><span class="db-name">GVA — 2020–2025 Window Only</span><span class="db-period">Broadest definition · 4+ shot</span></div>
+  <div class="stats-rows">
+    <div class="stat-row"><span class="stat-label">Total mass shootings</span><span class="stat-value orange">3,516</span></div>
+    <div class="stat-row"><span class="stat-label">Confirmed trans shooters</span><span class="stat-value red">2 — Hale, Westman</span></div>
+    <div class="stat-row"><span class="stat-label">+ Disputed (Aldrich, nonbinary claim via lawyer only)</span><span class="stat-value orange">1 additional</span></div>
+    <div class="stat-row"><span class="stat-label">Trans share (confirmed only)</span><span class="stat-value red">0.057%</span></div>
+    <div class="stat-row"><span class="stat-label">Trans share of US population</span><span class="stat-value green">~1%</span></div>
+    <div class="stat-row"><span class="stat-label">Verdict (confirmed only)</span><span class="stat-value green">UNDERREPRESENTED ~17x</span></div>
+    <div class="stat-row"><span class="stat-label">Verdict (including disputed Aldrich)</span><span class="stat-value green">UNDERREPRESENTED ~11x</span></div>
+  </div>
+</div>
+
+<div class="compare-callout">
+  <strong>Stronger than the all-time average.</strong> The full 2013–2026 GVA figure already shows ~11x underrepresentation. The 2020–2025 window — the exact period used to justify policy responses — shows even greater underrepresentation at ~17x using confirmed trans shooters only.
+</div>
+
+<div class="chart-wrap" style="margin-top:14px;">
+  <div class="chart-title">2020–2025: Per Capita Mass Shooting Rate Comparison</div>
+  <div class="chart-sub">How likely each group was to commit a GVA mass shooting in this window, per 100,000 people</div>
+  <div class="chart-canvas-wrap" style="height:200px;"><canvas id="chart2"></canvas></div>
+  <div class="underrep-row">
+    <span class="underrep-pill">Trans people: ~7.5x less likely per capita</span>
+    <span class="underrep-pill">~17x underrepresented by share of total incidents</span>
+    <span class="underrep-pill orange">Policy responses triggered by 2 people out of 3,516</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">10 — Per Capita, 2020–2025</div>
+<p style="font-size:0.8rem;color:#8888aa;margin-bottom:12px;">Binary trans population ~1.43M · US total ~335M · confirmed trans shooters in this window = 2</p>
+<div class="per-capita-grid">
+  <div class="capita-card"><div class="big-num">0.00014%</div><div class="cap-label">of trans people committed a GVA mass shooting in 2020–2025</div></div>
+  <div class="capita-card"><div class="big-num red">0.00105%</div><div class="cap-label">of the general US population committed a GVA mass shooting in 2020–2025</div></div>
+</div>
+<div class="cap-vs highlight">TRANS PEOPLE ~7.5x LESS LIKELY PER CAPITA IN THIS WINDOW</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">11 — The Four Cited Shooters from This Period</div>
+<p style="font-size:0.8rem;color:#8888aa;margin-bottom:14px;">These are the only four people conservatives cite as trans mass shooters from 2020–2025. The same definitions from Part 1 apply to all of them.</p>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Anderson Lee Aldrich</div><div class="shooter-meta">2022 · Colorado Springs · Club Q LGBTQ+ nightclub</div></div><span class="status-badge badge-disputed">⚠ HIGHLY DISPUTED</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val warn">Claimed nonbinary via defense lawyer only — widely considered a legal tactic. Attacked an LGBTQ+ nightclub on Trans Day of Remembrance. Used racial and homophobic slurs. Experts were immediately skeptical.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val bad">Anti-LGBTQ hate crime. Convicted on bias-motivated murder charges. Targeted Club Q specifically. ADL classified it as a far-right extremist attack.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-nazism">Neo-Nazi website operator</span><span class="ideo-tag tag-far-right">Far-right extremist</span><span class="ideo-tag tag-lgbtq-victim">Targeted LGBTQ people</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Definitions</div><div class="shooter-val neutral">GVA — YES. VPP/Mother Jones — NOT INCLUDED (Colorado Springs not in their database). ADL classified as far-right extremist attack, not trans-motivated.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Key point</div><div class="shooter-val bad">The most-cited "trans shooter" of this period ran a neo-Nazi website, attacked LGBTQ+ people on Trans Day of Remembrance, and whose trans claim came solely from a defense attorney. The argument built on this case is built on their own enemy.</div></div>
+  </div>
+</div>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Audrey Hale</div><div class="shooter-meta">2023 · Nashville, Tennessee · Covenant School</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans man (FtM). Confirmed by MNPD.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">MNPD investigation concluded: desire for notoriety (Columbine obsession), targeted a former school he had happy memories of. No political motive confirmed by investigators despite chaotic journal entries.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-notoriety">Notoriety-seeking</span><span class="ideo-tag tag-mental">Depression/mental illness</span><span class="ideo-tag tag-nihilism">No confirmed political ideology</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Definitions</div><div class="shooter-val good">All definitions — YES. The only confirmed trans shooter in this window who qualifies under the strict VPP and Mother Jones definitions.</div></div>
+  </div>
+</div>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Dylan Butler</div><div class="shooter-meta">2024 · Perry, Iowa · Perry High School</div></div><span class="status-badge badge-unconfirmed">✗ NEVER CONFIRMED</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val bad">Gender identity NEVER officially confirmed by any law enforcement agency. Evidence = unverified social media screenshots with pride flags and he/they pronouns, spread by Libs of TikTok. Accounts could not be verified as his. Law enforcement explicitly stated identity not established.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Reportedly bullied since elementary school. Died by suicide at the scene. No confirmed ideological motive.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-unconfirmed">Motive unconfirmed</span><span class="ideo-tag tag-bullying">Reportedly bullied</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Definitions</div><div class="shooter-val neutral">GVA — YES (4+ shot). VPP/Mother Jones — NO (does not meet 4-killed threshold). Identity unconfirmed regardless.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Key point</div><div class="shooter-val bad">Including Butler as a "trans shooter" is misinformation by definition. No official source confirmed his gender identity.</div></div>
+  </div>
+</div>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Robin Westman</div><div class="shooter-meta">2025 · Minneapolis, Minnesota · Annunciation Catholic Church</div></div><span class="status-badge badge-confirmed">✓ CONFIRMED TRANS</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman (MtF). Court-approved name change from Robert to Robin at age 17. Confirmed.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">FBI: "no single motive." Manifesto was incoherent — anti-Catholic, antisemitic, anti-Trump, neo-Nazi references AND anti-fascist content simultaneously. Wrote "there is no message" on a firearm. Expressed regret about being trans in her own writings.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-nihilism">Nihilistic/no coherent ideology</span><span class="ideo-tag tag-mental">Long-term mental illness</span><span class="ideo-tag tag-notoriety">Mass shooter obsession</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Definitions</div><div class="shooter-val neutral">GVA — YES. VPP/Mother Jones — borderline (2 children killed; may not meet 4-killed threshold depending on exact count). FBI found no clear political motive.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Key point</div><div class="shooter-val warn">Experts concluded the manifesto reflects online violent radicalization, not trans ideology. Westman's own writings expressed regret about being trans — directly contradicting the "trans ideology" narrative.</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">12 — Falsely Claimed as Trans: Three Debunked Cases</div>
+<p style="font-size:0.8rem;color:#8888aa;margin-bottom:14px;">These three cases were falsely claimed as trans by right-wing media during 2020–2025. All were officially debunked.</p>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Philadelphia Shooter</div><div class="shooter-meta">2023 · Philadelphia, Pennsylvania</div></div><span class="status-badge badge-hoax">✗ CONFIRMED NOT TRANS</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">The claim</div><div class="shooter-val bad">Viral photos showed the suspect in women's clothing. Conservative media immediately claimed he was transgender.</div></div>
+    <div class="shooter-row"><div class="shooter-key">The reality</div><div class="shooter-val good">The Philadelphia district attorney's office stated the suspect "has not identified themselves as trans" and referred to him as a man. NBC News confirmed the trans claim was false.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Source</div><div class="shooter-val neutral">NBC News, Philadelphia DA's office statement</div></div>
+  </div>
+</div>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Apalachee High School Shooter</div><div class="shooter-meta">2024 · Winder, Georgia</div></div><span class="status-badge badge-hoax">✗ ACTUALLY ANTI-TRANS</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">The claim</div><div class="shooter-val bad">Social media users falsely claimed the 14-year-old shooter was transgender based on appearance and online speculation.</div></div>
+    <div class="shooter-row"><div class="shooter-key">The reality</div><div class="shooter-val good">A Discord account linked to him by law enforcement a year prior expressed frustration with the acceptance of transgender people. The shooter was not trans — he documented anti-trans views. CNN confirmed this.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-far-right">Anti-trans sentiment documented in Discord</span></div></div>
+    <div class="shooter-row"><div class="shooter-key">Source</div><div class="shooter-val neutral">CNN reporting on law enforcement Discord evidence</div></div>
+  </div>
+</div>
+
+<div class="shooter-card">
+  <div class="shooter-header"><div><div class="shooter-name">Texas ICE Facility Incident</div><div class="shooter-meta">2025 · Texas · ICE detention facility</div></div><span class="status-badge badge-hoax">✗ NOT A MASS SHOOTING</span></div>
+  <div class="shooter-body">
+    <div class="shooter-row"><div class="shooter-key">The claim</div><div class="shooter-val bad">Cited by Sebastian Gorka and Fox News as a "trans mass shooting." Included in a Fox News list alongside a Molotov cocktail thrown at Tesla vehicles — also not a shooting.</div></div>
+    <div class="shooter-row"><div class="shooter-key">The reality</div><div class="shooter-val good">One police officer was injured. No fatalities. Does not qualify under GVA (requires 4+ shot), VPP (requires 4+ killed), or any other standard definition. Including it as a mass shooting is factually wrong.</div></div>
+    <div class="shooter-row"><div class="shooter-key">Source</div><div class="shooter-val neutral">Washington Post, PolitiFact fact-check</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">13 — The Political Response vs. The Data</div>
+<p style="font-size:0.8rem;color:#8888aa;margin-bottom:14px;">What politicians and organizations claimed during 2020–2025 — and what the data actually showed.</p>
+
+<div class="policy-card"><div class="who">THE HERITAGE FOUNDATION — 2025</div>Petitioned the FBI to designate <strong>"Transgender Ideology-Inspired Violent Extremism"</strong> as a domestic terror threat. Also published a claim that <strong>"half of all non-gang-related school shootings from 2015–2025 involved transgender ideology."</strong> Wired investigated and found the claim <strong>"misleading by design, arbitrary."</strong></div>
+<div class="policy-card"><div class="who">REP. RONNY JACKSON (R-TX) — SEPTEMBER 2025</div>Said trans people <strong>"have an underlying level of aggressiveness"</strong> and called for removing them from <strong>"the streets and the internet."</strong> Suggested banning trans people from communicating with each other online based on this shooting data.</div>
+<div class="policy-card"><div class="who">FBI — REPORTED 2025</div>Reportedly preparing to classify certain transgender offenders as a <strong>"nihilistic violent extremist"</strong> threat group — placing trans people in the same federal threat category as ISIS-inspired attackers.</div>
+<div class="policy-card"><div class="who">TRUMP DOJ — 2025</div>Members of the administration suggested <strong>revoking trans people's right to possess firearms</strong> — based substantially on this shooting data.</div>
+
+<div class="box-blue-red">
+  <p>All of these policy responses were triggered by <strong>2 confirmed trans shooters out of 3,516 GVA mass shootings</strong> — a period in which trans people were ~17x underrepresented. None of the confirmed shooters had a motive linked to being trans. The political response is not proportional to the statistical reality by any measure.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">14 — 2020–2025 Honest Tally</div>
+<div class="stats-block">
+  <div class="stats-rows">
+    <div class="stat-row"><span class="stat-label">Total GVA mass shootings 2020–2025</span><span class="stat-value orange">3,516</span></div>
+    <div class="stat-row"><span class="stat-label">Confirmed trans shooters in this window</span><span class="stat-value green">2 — Hale, Westman</span></div>
+    <div class="stat-row"><span class="stat-label">Disputed trans identity</span><span class="stat-value orange">1 — Aldrich (neo-Nazi, attacked LGBTQ+ venue)</span></div>
+    <div class="stat-row"><span class="stat-label">Never confirmed</span><span class="stat-value red">1 — Butler (no law enforcement confirmation)</span></div>
+    <div class="stat-row"><span class="stat-label">Falsely claimed as trans (debunked)</span><span class="stat-value red">3 — Philadelphia, Georgia, Texas ICE</span></div>
+    <div class="stat-row"><span class="stat-label">Qualifies under strict VPP/Mother Jones definition</span><span class="stat-value orange">1 — Hale only</span></div>
+    <div class="stat-row"><span class="stat-label">Confirmed far-right/neo-Nazi ideology</span><span class="stat-value red">1 — Aldrich (disputed as trans)</span></div>
+    <div class="stat-row"><span class="stat-label">Confirmed "trans ideology" motive</span><span class="stat-value green">0</span></div>
+    <div class="stat-row"><span class="stat-label">Underrepresentation vs. population</span><span class="stat-value green">~17x (confirmed) / ~11x (incl. disputed)</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sl-blue">15 — Conclusion: 2020–2025</div>
+<div class="box-green">
+  <p>The 2020–2025 window — the exact period used to justify policy responses targeting trans people — shows <strong>greater underrepresentation than the all-time average.</strong><br><br>
+  Of the four cases conservatives cite: one is a neo-Nazi who attacked LGBTQ+ people (disputed as trans), one was never confirmed by any law enforcement agency, and only two are real confirmed cases — neither of whom had a political or ideological motive linked to being trans. One of those two explicitly expressed regret about being trans in her own manifesto.<br><br>
+  Three additional shooters were <strong>falsely claimed as trans</strong> during this period, including one whose documented views were anti-trans.<br><br>
+  The entire legislative and policy response of 2025 was constructed on <strong>2 confirmed trans people out of 3,516 mass shooting incidents.</strong> That is not a pattern. That is a political narrative built on statistical noise and deliberate misinformation.</p>
+</div>
+
+<div class="sources">
+  <h4>Part 2 Additional Sources</h4>
+  <div class="source-item"><strong>GVA Annual Totals</strong><br><a href="https://www.gunviolencearchive.org/past-tolls">https://www.gunviolencearchive.org/past-tolls</a></div>
+  <div class="source-item"><strong>Snopes — Mass shooters are not disproportionately transgender</strong><br><a href="https://www.snopes.com/fact-check/transgender-mass-shootings/">https://www.snopes.com/fact-check/transgender-mass-shootings/</a></div>
+  <div class="source-item"><strong>NBC News — Philadelphia shooter not trans, officials say</strong><br><a href="https://www.nbcnews.com/news/us-news/philadelphia-shooting-suspect-isnt-trans-officials-say-speculation-continues-rcna91935">https://www.nbcnews.com/news/us-news/philadelphia-shooting-suspect-isnt-trans-officials-say-speculation-continues-rcna91935</a></div>
+  <div class="source-item"><strong>CNN — Georgia shooter's Discord showed anti-trans views</strong><br><a href="https://www.cnn.com/2024/09/06/us/apalachee-high-school-shooting-suspect-discord">https://www.cnn.com/2024/09/06/us/apalachee-high-school-shooting-suspect-discord</a></div>
+  <div class="source-item"><strong>Washington Post — Texas ICE shooting context</strong><br><a href="https://www.washingtonpost.com/nation/2025/08/17/texas-ice-shooting-trans/">https://www.washingtonpost.com/nation/2025/08/17/texas-ice-shooting-trans/</a></div>
+  <div class="source-item"><strong>Wired — Heritage Foundation "half of school shootings" claim debunked</strong><br><a href="https://www.wired.com/story/heritage-foundation-transgender-school-shootings-false/">https://www.wired.com/story/heritage-foundation-transgender-school-shootings-false/</a></div>
+  <div class="source-item"><strong>Wikipedia — Misinformation about violence by transgender people</strong><br><a href="https://en.wikipedia.org/wiki/Misinformation_about_violence_by_transgender_people">https://en.wikipedia.org/wiki/Misinformation_about_violence_by_transgender_people</a></div>
+</div>
+
+<script>
+// Shared chart defaults
+Chart.defaults.color = '#8888aa';
+Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+Chart.defaults.font.size = 11;
+
+// ── CHART 1: Trans % of shooters vs % of population, across all 3 definitions ──
+(function() {
+  const ctx = document.getElementById('chart1').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['GVA (broad)\n2013–2026', 'Violence Prevention\nProject (strict)', 'Mother Jones\n(strict)'],
+      datasets: [
+        {
+          label: 'Trans % of shooters',
+          data: [0.09, 0.50, 0.67],
+          backgroundColor: '#ff475799',
+          borderColor: '#ff4757',
+          borderWidth: 1.5,
+          borderRadius: 4,
+        },
+        {
+          label: 'Trans % of US population',
+          data: [1.0, 1.0, 1.0],
+          backgroundColor: '#2ed57399',
+          borderColor: '#2ed573',
+          borderWidth: 1.5,
+          borderRadius: 4,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { boxWidth: 12, padding: 14, color: '#a0a0c0' }
+        },
+        tooltip: {
+          backgroundColor: '#1a1a2e',
+          borderColor: '#333355',
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#1e1e30' },
+          ticks: { color: '#8888aa', maxRotation: 0 }
+        },
+        y: {
+          grid: { color: '#1e1e30' },
+          ticks: {
+            color: '#8888aa',
+            callback: v => v.toFixed(1) + '%'
+          },
+          title: { display: true, text: 'Percentage (%)', color: '#555570' },
+          max: 1.4
+        }
+      }
+    }
+  });
+})();
+
+// ── CHART 2: Per-capita rate 2020-2025, per 100,000 people ──
+(function() {
+  const ctx = document.getElementById('chart2').getContext('2d');
+  // Trans: 2 shooters / 1,430,000 people * 100,000 = 0.14 per 100k
+  // General: 3,516 shooters / 335,000,000 people * 100,000 = 1.049 per 100k
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Trans people', 'General US population'],
+      datasets: [{
+        label: 'Mass shootings per 100,000 people (2020–2025)',
+        data: [0.14, 1.05],
+        backgroundColor: ['#2ed57380', '#ff475780'],
+        borderColor: ['#2ed573', '#ff4757'],
+        borderWidth: 1.5,
+        borderRadius: 6,
+        barThickness: 80,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e',
+          borderColor: '#333355',
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => ` ${ctx.parsed.x.toFixed(2)} per 100,000 people`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#1e1e30' },
+          ticks: { color: '#8888aa', callback: v => v.toFixed(2) },
+          title: { display: true, text: 'GVA mass shootings per 100,000 people', color: '#555570' }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: '#c0c0d8', font: { size: 12 } }
+        }
+      }
+    }
+  });
+})();
+</script>
 </body>
 </html>
