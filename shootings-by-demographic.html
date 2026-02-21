@@ -708,9 +708,9 @@ function showPanel(id, pushHash) {
     r.classList.toggle('active-row', r.dataset.tab === id);
   });
 
-  // Update URL hash without triggering scroll
+  // Update URL to /shootings-by-demographic/black etc.
   if (pushHash !== false) {
-    try { history.replaceState(null, '', '#' + id); } catch(e) {}
+    try { history.replaceState(null, '', '/shootings-by-demographic/' + id); } catch(e) {}
   }
 
   // Scroll tabs into view, accounting for sticky nav height
@@ -720,10 +720,12 @@ function showPanel(id, pushHash) {
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
-// On load: read hash or default to white
+// On load: read path segment or hash, default to white
 (function() {
+  const path = window.location.pathname.split('/').pop().toLowerCase();
   const hash = window.location.hash.replace('#','').toLowerCase();
-  showPanel(PANELS.includes(hash) ? hash : 'white', false);
+  const id = PANELS.includes(path) ? path : PANELS.includes(hash) ? hash : 'white';
+  showPanel(id, false);
 })();
 </script>
 
