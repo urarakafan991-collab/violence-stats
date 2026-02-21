@@ -3,521 +3,959 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TruthBased.org — Data Without Agenda</title>
 
-  <!-- Open Graph / Discord / Twitter embed -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.truthbased.org/">
-  <meta property="og:title" content="TruthBased.org">
-  <meta property="og:description" content="Primary sources. All definitions. All counterarguments. No agenda.">
-  <meta property="og:image" content="https://www.truthbased.org/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://www.truthbased.org/og-image.png">
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAQ/UlEQVR4nO2aeaymVX3HP2d5lve+712Hy4hTHGAGFBFZpCgIooyWKFUTFRfShLaptknTNF2SxvQPiq1tamJNTJvWoPWPYl3Gra0yLlUQU53B6uBQhhEqqwyzMMu97/JsZ+kf53mfd7l3Lv7lH/X+kpv7LOc553e+v/13XtikTdqkTdqkTdqkTdqkX04S6zyTv3AufrHk679NgkYDvADhr77+DeefOHLiTuscQkjAARIESC9wWCQSB3jcmPpIpBDgPU4IwIN3o1X8cCVZ3zrwHoEY00E5GucdUqjhyDB3fd3MW4/1gPCAGCqua8QrkMMJEd47KaWc7eg/3r9/3wG4XcIdToehfyEAXxaDOefFLusEYsQNQoh6Won1vuG5gUDUzDWcgffrWJcImw7vRu9FPRv1qhDARoj62teAi/XnrdcVNcje17OIcX5ACUlZ+i1h/EEBoMen0E5b75z1zk14hzBhLdmGSRDC42uL+rmMat1xnhGkfnxo4Hpq5LqT1t977xFiBEDNZf3OOeuQzkVm/OsJALz3AiHU2kXE1P8aFC9r/Rt7Nv6VGGfsTJKbfC6EGJOgWDPnxt+Lqe8m3gkpkFqriQUnAKi5PfNSQiCEQCkVkMZhjW2Y1FqjtEKKoCXOOqy19bQe59yZ56Z2z2ObB5AySPRMQIyDvN7z8fmDAk0owDoATAlKSoFzkCQxWiuc80RRhPeeoshptVoopWopUzvPEVlrqaqKqqomNUIK4kgjhMQaizEjxoZAT2vQ+Ca11iilqKpyQmbrASXEyLeYqXcTAERRDAi0lvWCNTMy2F9ZVkRRhDGGLMuI4xgpg6cNQcDjay89voGyLNcy5yErHNYakkhMWPe4xKWUKKWw1jYgeO8bzYrjpLkfB3HIQ6NaYf/oKZlP3PX7PZSSKKWx1uKcwTlHFEVUVYXWUZCoqXDOURQFZVkSRZo0bdULuhBVJyQyzkVgrKwM177iXCIt+c6+J4n0pOsRQBzHuNp0hiBorYiiCK11M5fHY42qhQHOOaqqRMqgJc65ej8Ws6EJxDGitPWCEq0j8rzEGItSGoRHKkksIkScUJYl1lrKskIqSRKneILGOOeoSktR5HjvkEIi5NCuBVTwvndfwZaFGR54+DjOeayxOBc2LKTAeUtVGbTWpGmKtZY41iH+OzGhKUNgIJhdFGmkDKCMABENcEOSALffHm4W221arQSlZY2mIm2lQcKtlDiK8c6R5zlSStrtGeIoqm1fBO0RAlNWDPoDsjzDebAO+lnFaq/gdDfn5ErGympOr1/SHZT0M0NeCSqnKIyncgKERihNZ65DuzODEB6tg/PFBxClFCBE7XcCIM5bhBREcYRSsnHaSZoy027TSTsA3HLLmAbcMYWJFLK24aBSQguMqSjKEoEnijTGGLyTZEVJZSzG5uS5ZZAVZFlOEmvarYgtS20W5lPaqaadalqpJk2CtLYstokiydtvughQDPKCvDBUBrr9kpVuzmq3YJBXFFUwLa0tSayx1iAlRFpNOMGQwnm8FwiGyVDIUo0xGGnXmsDtUyBMhxYhRFD1okAIQRzHxLEiz0vO27ZIEiuOn+iyfds8O7cv8sKtsywtpLTSBCVD9lhWlqKwZHlJUVYUlUVJQaQVy2d1SCJNEi+QJoo0jogjgVICj6AoDadWco4e7/PEM6s8fbjLwnxKb1Bw+FgfrUYghLRKBOUWjqqq8J7aaTpm4pkz+4A4jhFiAEjGw6j3jjiOiOI5yqKqc3DJ8pYOf/tnu9iy2OLgo8c4dqLP8ZMD/vepUzxz/yrHT2acXi3oDUpAoFREXhQYYzHOcelFW1lanOEf79qPkBIlA9hSSrSCmVQz10lZWkw5Z7nDtq1tXvuqF7E03+KlOxd57mTOn/zNt+j27SgU1/WGEFCWFUVR1vmHZ3a2s34YvKMWf6/sY62pNWDck9eq5CFJY/CglOLwkRX++8Gnuen6HXzgo/fy5OHVJnRGWqG1RClJpFX4Hynm5+YRQmJMcGjCexZmE6TSwUnWUcM5T1k5jp7IeOZYj/0Hj+GdQwjB8mLCnX99M48+/hzHT/Rpt9M1abL3jigOYT3PcwCyLMebEG127w7jJrKWU6d6FEU5kZENTcAjKApDVVYIPEVhOOfsDi+5YJm8Mtx4zfkoCctLbRbmUtqtiDiS1I4fax1FUeG9QAqFdR68D2WOD7lCnmUY4zDGUtZeWwqYSSNmZxK2zLdQUvDqV2zHOceO7cvs3L5EUdoJjQ08S6qqagTqPTjn16R+k2lbGRIPUTvBiQkRpGkSVA1Br9fn3b/+Mg48fJg99zzKS3du5apLt7HSLQBw3jd26ZxDa02n08E5S7fXJcuyEO7q99a6Jl4LAVVZjmWAQQN7g4qLzl/kspcs8529T/CDA8/wzpsvQQqP8KFgHqr7YNCjyAuEnKonpmxgAoA4hqoyoeZer3YRgiROOHk64+Ybd9LPKvbc9xhxkvLPn/8Bv/3Oq9BqshUw1CBrbZ2MOOIkRgDWGZz3DAaDGqQIHenG0Xrvkc0GJM47bn3rpXx+z0G80Ow9cJifHe1xy5suZqU7QCtJUeTkeV6n7wnWuA0LqhqAO2oAYpz19Pr9NYWL9x7vLN1+xtalmF+7bif/9K/7aCUxrUSx78fP8shjx7j1LS/j1OoApeTEt0oplFLEcUwSx6RpCylD0yOKI5x3TRrtvUdr3WR2WktWuhlvfcNFnDydsffAEWbbMe2ZhLu+fIArLn4BF25fpCgtURRRlqHuKIqiSY8bENY3gdtH0pJgjaXIikYdi7Kg2+3S7/c5dXqF973nSr74tQc5+lxGHCmc9czPtvjE7v1cffm5XLLzLAZZFapC74mTmJmZVs1IUHkECKGQStFKEzqdNkLK2uNCUZRUVYWzlv6g4LxtHa694lzu+tKDzLVTrHXgHd2+5cv/+Qi3vf0yqiLHuSBxY8ykEIeOfSMTqOVV5+olg8EgqGHt1fuZ5U03XIS1nm9+70mWFmaw3oYiQwp6g4pP//uDvPddV2GtqbM0QVJ74zFu8J46WQldnmB1gqoyCCRJkqC0Ii8KTjx3mt9468v52n0/5dRqiTGGojJYBwtzLb79/cc5fqLLTa/ZwYmTXfR0XSGGSZGA9VLhSRpVgd57ur0e1lqkVJyz3OLNu17MnZ/5IUkUNWgLPNbDwmzKt/c+zulByTtvvpRTK0NTWKex4T1urFDyUNcbISJUVUmRF5w43efNb3gxeVGy595HSGNJt9dD4DBVSVGWzM3O8PHP7WfXq3dwwYuWKCs34cSHa3tvweQbABCthcPZoE7Hn1vhtre/gvt+8BRHTmQsLrZptVKSOEUrHUBwntl2ysc+dT83XruT87YtkBUVZVnWCU4olIbaGFpqQ2DCdaQ1Ugmcs2SDgnPOmuEtr7+YOz99P1JKyqpCAEoKrHPkWYG3Fc8e6/Fv3zzIe999ZfAB0xtpfMBGGlANdWBEWgm6vYJd1+1gy0LK7rsP8ILleZTSpElMHCnanZR2J8V7X6fFA+6+5ye87z1X1dVkRb/fJ8tzBv1BnZiIun83bK/Va9f1hzWW3qDgd2+9mnu+9xg/O9Ij0mCtQalQr0ghSBJNVRnOPmuWe+9/Gikkb7zhQlb6JWosBHqoO8fPawKjnEoAlfV02jFv3nUxH77zuxSVZJBbVrslq72Cfl6F5KWu4PIypM2f+vJ+VnsDbrzmPFZ7Bc4a8iynLCvyvMBYg2DURQqMOowx5IOc092c17zyPISAT+z+IVprVlZzur2S1X6JdZ6V1YyTK336uSHLLUXp+cgnv89rr93B2UsthFKkaYKUoboVgH7eltg4OkqyuprxB7e9EmtLzt7S5qUXnoOOIsBTVJYLt8+xMBtz3ZXbSOIIj8Caim4v5/GnT3Hb2y7ngYNHqQx1TA8mUOQ5o0Mah5AKISHvD6iMoT0T81vvuJJv/dcjvO6aHcykwecIIRhkJctb2lxy4TLOe+ZmZ/B1ZrnSyzFlwW1vu4yPfHIfZ581D4jGDKe3vA4AE1UQUgpOrw74vVuv4LqrzsXXtXiIFgrnQtPir/7o+jqCCYQUWAdznZS9+5/CutE39bRNuR1a4mLYB0dphbVho5Ux/Pnv38BKN0epYYstOM6yMlx+8fJYESRqOD2zMzH/cNePUFJSVaauCEOjZbpttsYExosK5zztmYTPfuUg//KFA6SJxntHb1DQ65f0BjlZXmE9DDLDIK/oZQVZXtFKNA8eOsJffvQ+ysrVpzujZmdIuWsg69BrKosxjtnZNs55Pvj39/Ljh4/SSjVFUdHr5fT6Bb1+gTGOvDD0+jndfk53kFMZQ6wlX/jaIT6352G2LM2TJElI8OoUeZrWaIAYrwIB4T1JrPm7T+7j0OMnec9bLuH8c+fRUmKsw9WSk0IQRQoBnDyd8Zmv/A+f+OyPWO1XtNII5yYbnaascNYgRdRU8EVR4Z3DWItScPxkzh9+YA+/+Y7Luen6HWxZbOG9wNjQOgvdHoGSEuc9Tx3u8sWvP8DXv/sEkU7qRi3ESRwSI2PX7HjitpzSAGr5CAGtNOY/vvUo9+57gisvOYdfvWwbF7xokU4rRikYZCXPHu/y0CPH2bf/WR7/2SlaaUQr0XX5LJvMLCjDsFgSaKWpjMV7V/uHArwgiTVZbvnwx7/P5+5+iKsv28bLX7KVF57daUBd7eU8dXiVBw4e5aHHTtMfOGbSqJaeqOcURFqTG7smE5xsiAzFzmRXaBiq5joxlXXcu/dJ9v74CLOzLSKl8M6ystpnkIX2d5JEzM2meBdK3UEW2mZyrN7Ph620ynD02ElKU6tonSApKWm3Y6SSzHVaHDuR8/k9h/ji139CEqm6FRYccVl5hHAszLfRStHr9YBQUEWRBu8oqtoJbqQBQ+mMV8LjGZV1QdVnOzGdTgulIrI8J88LpIDZTtI0wIPKQ1lZXvuq7bzxhgvRSjYFjrGWi85fJooUH3r/rlCCI+ozYMF39j3JV7/9CEpLvBREWpBECQBumDYIQZpEtJIguaqsqHzZbCDLMoyJQuVpLFrrjc8FRhteWwv74amwEEGyzmNsSZ7lo9NiN95D9LRSTXtGcfnFWwFHP6+wZuQ3vnrPIUDQbkX1kXmYW2vBBb8yx/JSi6wIMV4qiXWjY1QaDR3OVz+Wk37dGNPUAsMiaQMA4jo/r0+B15zOEro4PgBgnW02PHwnpWCQVbzumvP5nXddRVGErm5ZGpJYNfWDB5bm0xAKnWta64igB8tLgg/+6etopRG77z7El75xKOQCw0btaMtrukFrhLfBmeQkANFkFFiPhmEsz3OEDKPdGFDeQxIrHnrkKO//0Dew1jUxPGS8ww2sLVaGOxu+s9YhJRjrQwhmpIUTG9zw9Hk0Xoi1ByNTGlA23rmRyHqL1I7RWd+IYvzcTgjBqZUC5/OpQ7GNab0teEAKRiVuw8J0E3TyVHk98s9/Ohzq9uc9l28Q9c2PHqbHKyWI5HhXaHxLYzv5ueB5Hh1v2DqDwCbY3kgDqjJ4FdYeR4dydbiIZxqf9UBbD8PhszFlel4KY4e9g+mONes+H96PaabzHoyxE4MmALBKSYSUI/UPDjFcyyZRCT8kWY/J9RBf+2z4W4KwJTE1dgR0o9b1gCEEoWQemSqNoa3VlCbdFl4KIXBy6mdB4d8dHqBsuZ+Wrnw91oxhE6611hhrGNnQ+DyG9QvL0XM9dmfWjBmfb/rsZr13Gxax68xRr2o18x25PzzbfebQ8MtE0zoj4Jb/578U3b1+WbhJm7RJm7RJm7RJm7RJm/TLRf8HOOF1U4Ri13YAAAAASUVORK5CYII=">
-  <meta name="description" content="Primary-source statistical analysis of politically contested claims. Every counterargument examined. Every assumption tested.">
+  <title>TruthBased.org — Independent Fact-Checking</title>
+  <meta name="description" content="Primary-source fact-checking across science, history, politics, and media. Every claim examined. Every counterargument answered. No agenda.">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.truthbased.org/">
+  <meta property="og:title"       content="TruthBased.org — Independent Fact-Checking">
+  <meta property="og:description" content="Primary-source fact-checking. Every counterargument steelmanned. No agenda.">
+  <meta property="og:image"       content="https://www.truthbased.org/og-image.png">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:image"      content="https://www.truthbased.org/og-image.png">
+
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* =========================================================
+       TruthBased.org — Homepage
+       Clean accordion navigation. No divisive content on index.
+       Warm off-white · Spectral headings · Sora body
+       Single accent: deep brick #b83a1e
+    ========================================================= */
 
     :root {
-      --bg: #07070f;
-      --bg2: #0d0d1a;
-      --border: #1a1a2e;
-      --text: #c8c8e0;
-      --gold: #c8a84b;
-      --gold-dim: #7a6428;
-      --white: #e8e8f0;
+      --page-ground:  #f7f5f1;
+      --card-face:    #ffffff;
+      --text-primary: #151311;
+      --text-body:    #3d3a33;
+      --text-dim:     #706d64;
+      --text-quiet:   #a09c94;
+      --brick:        #b83a1e;
+      --green-live:   #1b6b3e;
+      --green-faint:  #e8f4ed;
+      --rule:         #dedad3;
+      --rule-mid:     #c5c1ba;
     }
 
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'IBM Plex Sans', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
+      background-color: var(--page-ground);
+      color: var(--text-body);
+      font-family: 'Sora', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(200,168,75,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,168,75,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      z-index: 0;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    nav {
+
+    /* Nav --------------------------------------------------- */
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.96);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7,7,15,0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      backdrop-filter: blur(6px);
     }
 
-    .nav-logo {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      text-decoration: none;
+    .nav-wordmark {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
     }
+
+    .nav-wordmark strong { color: var(--brick); }
 
     .nav-tagline {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: 'Courier Prime', monospace;
       font-size: 0.62rem;
-      color: #303050;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      color: var(--text-quiet);
+      letter-spacing: 0.06em;
     }
 
-    .hero {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 90px 24px 70px;
-      max-width: 800px;
+
+    /* Hero -------------------------------------------------- */
+
+    .page-hero {
+      max-width: 720px;
       margin: 0 auto;
+      padding: 80px 48px 64px;
+      text-align: center;
     }
 
     .hero-eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
       font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
+      color: var(--brick);
+      margin-bottom: 22px;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.1s;
+      animation: entryAnim 0.55s ease forwards 0.1s;
     }
 
     .hero-title {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.2s;
-    }
-
-    .hero-title span { color: var(--gold); }
-
-    .hero-sub {
-      font-size: 1rem;
+      font-family: 'Spectral', serif;
       font-weight: 300;
-      color: #7070908;
-      color: #6868888;
-      line-height: 1.7;
-      max-width: 560px;
-      margin: 0 auto 40px;
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.35s;
+      animation: entryAnim 0.55s ease forwards 0.2s;
     }
 
-    .hero-pills {
+    .hero-title em { font-style: italic; color: var(--brick); }
+
+    .hero-body {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-dim);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      opacity: 0;
+      animation: entryAnim 0.55s ease forwards 0.3s;
+    }
+
+    .hero-tags {
       display: flex;
-      gap: 10px;
-      justify-content: center;
       flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.5s;
+      animation: entryAnim 0.55s ease forwards 0.45s;
     }
 
-    .hero-pill {
-      font-family: 'IBM Plex Mono', monospace;
+    .hero-tag {
+      font-family: 'Courier Prime', monospace;
       font-size: 0.63rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      background: rgba(200,168,75,0.05);
-      border-radius: 4px;
-      padding: 5px 12px;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+      border: 1px solid var(--rule-mid);
+      border-radius: 2px;
+      padding: 4px 12px;
     }
 
-    .section-divider {
-      position: relative;
-      z-index: 1;
+
+    /* Section label row ------------------------------------ */
+
+    .section-row {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 48px 18px;
       display: flex;
       align-items: center;
       gap: 16px;
-      max-width: 1100px;
-      margin: 0 auto 32px;
-      padding: 0 32px;
     }
 
-    .section-divider::before, .section-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .section-divider span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+    .section-row-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #303050;
+      color: var(--text-quiet);
       white-space: nowrap;
     }
 
-    .topics {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
+    .section-row-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+
+    /* Accordion container ---------------------------------- */
+
+    .accordion-wrap {
+      max-width: 940px;
       margin: 0 auto 80px;
-      padding: 0 32px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 16px;
+      padding: 0 48px;
     }
 
-    .topic-card {
-      position: relative;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px;
-      text-decoration: none;
-      color: inherit;
+    .acc-item {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .acc-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+
+    /* Trigger button --------------------------------------- */
+
+    .acc-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
       display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      opacity: 0;
-      animation: fadeUp 0.5s ease forwards;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 0;
+      text-align: left;
+      color: var(--text-primary);
+      transition: color 0.15s ease;
     }
 
-    a.topic-card:hover {
-      border-color: var(--gold-dim);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-    }
+    .acc-trigger:hover { color: var(--brick); }
+    .acc-trigger:hover .acc-num { color: var(--brick); }
 
-    .topic-card.locked { cursor: default; }
-    .topic-card.locked:hover { transform: none; border-color: var(--border); box-shadow: none; }
-
-    .topic-card:nth-child(1) { animation-delay: 0.10s; }
-    .topic-card:nth-child(2) { animation-delay: 0.18s; }
-    .topic-card:nth-child(3) { animation-delay: 0.26s; }
-    .topic-card:nth-child(4) { animation-delay: 0.34s; }
-    .topic-card:nth-child(5) { animation-delay: 0.42s; }
-    .topic-card:nth-child(6) { animation-delay: 0.50s; }
-
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .card-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
-
-    .card-badge {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 3px;
-      flex-shrink: 0;
-    }
-
-    .badge-live {
-      background: rgba(0,210,100,0.1);
-      color: #00d264;
-      border: 1px solid rgba(0,210,100,0.22);
-    }
-
-    .badge-soon {
-      background: rgba(200,168,75,0.07);
-      color: var(--gold-dim);
-      border: 1px solid rgba(200,168,75,0.15);
-    }
-
-    .card-category {
-      font-family: 'IBM Plex Mono', monospace;
+    .acc-num {
+      font-family: 'Courier Prime', monospace;
       font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-quiet);
+      min-width: 22px;
+      transition: color 0.15s ease;
+    }
+
+    .acc-label {
+      font-family: 'Spectral', serif;
       font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #353555;
-    }
-
-    .card-title {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.3;
-    }
-
-    .locked .card-title { color: #353555; }
-    .locked .card-category { color: #252538; }
-
-    .card-desc {
-      font-size: 0.8rem;
-      color: #555575;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
       flex: 1;
     }
 
-    .locked .card-desc { color: #252538; }
-
-    .card-stats {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    .acc-meta {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+      margin-right: 6px;
     }
 
-    .card-stat {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-    }
-
-    .stat-val { color: var(--gold); font-weight: 700; }
-    .stat-lbl { color: #404060; }
-
-    .card-arrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--gold-dim);
-      margin-top: auto;
-      padding-top: 14px;
-      border-top: 1px solid #131326;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .locked .card-arrow { color: #222235; border-top-color: #111120; }
-
-    .method-strip {
+    /* +/− icon */
+    .acc-icon {
+      width: 18px;
+      height: 18px;
       position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--bg2);
-      padding: 36px 32px;
-      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .acc-icon::before,
+    .acc-icon::after {
+      content: '';
+      position: absolute;
+      background: currentColor;
+      border-radius: 1px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .acc-icon::before {
+      width: 12px; height: 1.5px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .acc-icon::after {
+      width: 1.5px; height: 12px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .acc-item.is-open .acc-icon::after {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+
+    /* Collapsible panel ------------------------------------ */
+
+    .acc-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .acc-panel.is-open {
+      grid-template-rows: 1fr;
+    }
+
+    .acc-panel-inner { overflow: hidden; }
+
+    .acc-content { padding-bottom: 24px; }
+
+
+    /* Article list ----------------------------------------- */
+
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .article-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--card-face);
+      transition: background-color 0.12s ease;
+    }
+
+    a.article-row:hover {
+      background-color: #fefdfb;
+    }
+
+    .article-row.is-pending {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .row-status {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .row-status.live {
+      background-color: var(--green-faint);
+      color: var(--green-live);
+      border: 1px solid rgba(27, 107, 62, 0.18);
+    }
+
+    .row-status.pending {
+      background-color: transparent;
+      color: var(--text-quiet);
+      border: 1px solid var(--rule);
+    }
+
+    .row-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .row-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+
+    .row-desc {
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
+    /* Source footnotes on live articles */
+    .row-sources {
+      margin-top: 9px;
+      padding-top: 9px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .sources-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .sources-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .sources-list li {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .sources-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-quiet);
+    }
+
+    .row-arrow {
+      font-size: 0.8rem;
+      color: var(--text-quiet);
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    a.article-row:hover .row-arrow {
+      color: var(--brick);
+      transform: translateX(3px);
+    }
+
+
+    /* Methodology strip ------------------------------------ */
+
+    .method-section {
+      background-color: var(--text-primary);
+      color: var(--page-ground);
+      padding: 52px 48px;
     }
 
     .method-inner {
-      max-width: 1100px;
+      max-width: 940px;
       margin: 0 auto;
+    }
+
+    .method-title {
+      font-family: 'Spectral', serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(247, 245, 241, 0.12);
+    }
+
+    .method-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 28px;
+      gap: 26px 40px;
     }
 
-    .method-item { display: flex; flex-direction: column; gap: 6px; }
-
-    .method-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
+    .method-item-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      color: #f7f5f1;
     }
 
-    .method-text { font-size: 0.78rem; color: #505068; line-height: 1.5; }
+    .method-item-body {
+      font-size: 0.75rem;
+      line-height: 1.7;
+      color: rgba(247, 245, 241, 0.5);
+    }
 
-    footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 24px 32px;
+
+    /* Footer ----------------------------------------------- */
+
+    .page-footer {
+      border-top: 1px solid var(--rule);
+      padding: 20px 48px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      max-width: 1100px;
-      margin: 0 auto;
+      gap: 8px;
     }
 
-    .footer-text {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.62rem;
-      color: #2a2a40;
-      letter-spacing: 0.08em;
+    .footer-note {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+      letter-spacing: 0.04em;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+
+    /* Animation -------------------------------------------- */
+
+    @keyframes entryAnim {
+      from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      nav { padding: 12px 16px; }
+
+    /* Mobile ----------------------------------------------- */
+
+    @media (max-width: 640px) {
+      .site-nav,
+      .page-hero,
+      .section-row,
+      .accordion-wrap,
+      .method-section,
+      .page-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .page-hero { padding-top: 52px; padding-bottom: 44px; }
       .nav-tagline { display: none; }
-      .hero { padding: 56px 16px 44px; }
-      .topics { padding: 0 16px; grid-template-columns: 1fr; }
-      .section-divider { padding: 0 16px; }
-      .method-strip { padding: 28px 16px; }
-      footer { padding: 20px 16px; flex-direction: column; }
+      .acc-meta { display: none; }
     }
+
   </style>
 </head>
 <body>
 
-<nav role="navigation" aria-label="Site navigation">
-  <a class="nav-logo" href="/">TruthBased.org</a>
-  <span class="nav-tagline">Primary Sources · All Definitions · All Counterarguments</span>
-</nav>
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+    <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
+  </nav>
 
-<section class="hero" aria-label="Site introduction">
-  <div class="hero-eyebrow">Independent Statistical Reference</div>
-  <h1 class="hero-title">Data Without<br><span>Agenda</span></h1>
-  <p class="hero-sub">Every politically contested claim examined against primary sources. Every counterargument steelmanned. Every assumption tested. No advocacy — just the numbers, rigorously presented.</p>
-  <div class="hero-pills">
-    <span class="hero-pill">✓ Primary sources only</span>
-    <span class="hero-pill">✓ Sensitivity analysis</span>
-    <span class="hero-pill">✓ Confidence intervals</span>
-    <span class="hero-pill">✓ Opposing views included</span>
-  </div>
-</section>
 
-<div class="section-divider"><span>Research Topics</span></div>
+  <header class="page-hero">
+    <span class="hero-eyebrow">Independent Fact-Checking</span>
+    <h1 class="hero-title">The facts,<br><em>plainly stated.</em></h1>
+    <p class="hero-body">
+      Primary-source research across science, history, politics, and media.
+      Every claim backed by data. Every counterargument taken seriously.
+      No agenda — just the evidence.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Primary sources only</span>
+      <span class="hero-tag">Confidence intervals shown</span>
+      <span class="hero-tag">Both sides steelmanned</span>
+      <span class="hero-tag">Limitations disclosed</span>
+      <span class="hero-tag">No advertising</span>
+    </div>
+  </header>
 
-<main class="topics">
 
-  <a class="topic-card" href="/shootings-by-demographic.html" aria-label="Read: Shootings by Demographic">
-    <div class="card-header">
-      <span class="card-icon">🔫</span>
-      <span class="card-badge badge-live">● Live</span>
-    </div>
-    <div class="card-category">Gun Violence · Demographics</div>
-    <h2 class="card-title">Shootings by Demographic</h2>
-    <p class="card-desc">Select any group.</p>
-    <div class="card-stats">
-      <div class="card-stat"><span class="stat-val">8+</span> <span class="stat-lbl">demographics</span></div>
-      <div class="card-stat"><span class="stat-val">172</span> <span class="stat-lbl">cases analyzed</span></div>
-      <div class="card-stat"><span class="stat-val">95%</span> <span class="stat-lbl">CI on all rates</span></div>
-    </div>
-    <div class="card-arrow">
-      <span>Choose a demographic</span>
-      <span>→</span>
-    </div>
-  </a>
-
-  <div class="topic-card locked" aria-label="Coming soon: Immigration and Crime Rates">
-    <div class="card-header">
-      <span class="card-icon" style="filter:grayscale(1);opacity:0.25;">🛂</span>
-      <span class="card-badge badge-soon">Coming Soon</span>
-    </div>
-    <div class="card-category">Immigration · Crime</div>
-    <h2 class="card-title">Immigration &amp; Crime Rates</h2>
-    <p class="card-desc">Do undocumented immigrants commit more crime than native-born citizens? FBI, ICE, Cato Institute, and academic studies examined against political claims.</p>
-    <div class="card-arrow">
-      <span>In preparation</span>
-      <span>—</span>
-    </div>
+  <div class="section-row" aria-hidden="true">
+    <span class="section-row-label">Browse by category</span>
+    <div class="section-row-line"></div>
   </div>
 
-  <div class="topic-card locked" aria-label="Coming soon: Voter Fraud statistics">
-    <div class="card-header">
-      <span class="card-icon" style="filter:grayscale(1);opacity:0.25;">🗳️</span>
-      <span class="card-badge badge-soon">Coming Soon</span>
-    </div>
-    <div class="card-category">Elections · Democracy</div>
-    <h2 class="card-title">Voter Fraud: The Real Numbers</h2>
-    <p class="card-desc">How common is verified voter fraud? Every prosecuted case documented, every major claim tested against election totals and DOJ prosecution data.</p>
-    <div class="card-arrow">
-      <span>In preparation</span>
-      <span>—</span>
-    </div>
-  </div>
 
-  <div class="topic-card locked" aria-label="Coming soon: Crime by Demographic">
-    <div class="card-header">
-      <span class="card-icon" style="filter:grayscale(1);opacity:0.25;">📊</span>
-      <span class="card-badge badge-soon">Coming Soon</span>
-    </div>
-    <div class="card-category">Crime · Demographics</div>
-    <h2 class="card-title">Crime by Demographic</h2>
-    <p class="card-desc">FBI uniform crime data, arrest vs. conviction rates, poverty and policing confounders — what the statistics actually show, what they can't show, and why both matter.</p>
-    <div class="card-arrow">
-      <span>In preparation</span>
-      <span>—</span>
-    </div>
-  </div>
+  <main class="accordion-wrap">
 
-  <div class="topic-card locked" aria-label="Coming soon: Economic Claims Fact-Checked">
-    <div class="card-header">
-      <span class="card-icon" style="filter:grayscale(1);opacity:0.25;">💰</span>
-      <span class="card-badge badge-soon">Coming Soon</span>
-    </div>
-    <div class="card-category">Economy · Policy</div>
-    <h2 class="card-title">Economic Claims, Fact-Checked</h2>
-    <p class="card-desc">Inflation, wages, deficits, job creation — contested claims from both parties measured against BLS, CBO, and Federal Reserve primary data.</p>
-    <div class="card-arrow">
-      <span>In preparation</span>
-      <span>—</span>
-    </div>
-  </div>
 
-  <div class="topic-card locked" aria-label="Coming soon: US vs World Policy Outcomes">
-    <div class="card-header">
-      <span class="card-icon" style="filter:grayscale(1);opacity:0.25;">🌍</span>
-      <span class="card-badge badge-soon">Coming Soon</span>
-    </div>
-    <div class="card-category">US Policy · International</div>
-    <h2 class="card-title">US vs. World: Policy Outcomes</h2>
-    <p class="card-desc">Healthcare, gun violence, incarceration, education — how US outcomes compare internationally, and what the data does and doesn't say about policy causes.</p>
-    <div class="card-arrow">
-      <span>In preparation</span>
-      <span>—</span>
-    </div>
-  </div>
+    <!-- ── 01 Fact Checks ─────────────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">01</span>
+        <span class="acc-label">Fact Checks</span>
+        <span class="acc-meta">General claims &amp; viral misinformation</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
 
-</main>
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Headline Said X. The Paper Said Y.</span>
+                  <span class="row-desc">Viral scientific claims compared to their actual source studies — the gap between press releases and what the peer-reviewed paper concluded, documented case by case.</span>
+                </div>
+              </div>
 
-<div class="method-strip">
-  <div class="method-inner">
-    <div class="method-item">
-      <div class="method-label">Primary Sources Only</div>
-      <div class="method-text">FBI, CDC, Census Bureau, Williams Institute, peer-reviewed journals. No op-eds, no think-tank summaries without citing their primary data.</div>
-    </div>
-    <div class="method-item">
-      <div class="method-label">All Counterarguments</div>
-      <div class="method-text">Every major opposing claim is steelmanned with its own numbers before being addressed. No strawmanning, no selective quoting.</div>
-    </div>
-    <div class="method-item">
-      <div class="method-label">Sensitivity Analysis</div>
-      <div class="method-text">Every assumption is tested. Results shown under every reasonable combination of definitions, denominators, and inclusion criteria.</div>
-    </div>
-    <div class="method-item">
-      <div class="method-label">Transparent Limitations</div>
-      <div class="method-text">Wide confidence intervals shown, not hidden. Data gaps acknowledged. What the data can't establish is as important as what it can.</div>
-    </div>
-  </div>
-</div>
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Viral Statistic That Wasn't</span>
+                  <span class="row-desc">A running log of widely-shared numbers that don't hold up. Each entry traces the figure back to its actual origin and documents exactly how the distortion happened.</span>
+                </div>
+              </div>
 
-<footer>
-  <span class="footer-text">TruthBased.org · Independent statistical reference · Updated February 2026</span>
-  <span class="footer-text">No ads · No funding · No agenda</span>
-</footer>
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Out-of-Context Images — Documented Cases</span>
+                  <span class="row-desc">Photographs and video clips that circulated with false or misleading captions. Original source verified, timeline reconstructed, share-count at time of correction recorded.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Common Medical Myths, Examined</span>
+                  <span class="row-desc">Things "everyone knows" about health that peer-reviewed evidence contradicts — from nutrition to vaccines to sleep, checked against the actual studies.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 02 Political Fact Checks ───────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">02</span>
+        <span class="acc-label">Political Fact Checks</span>
+        <span class="acc-meta">Claims politicians make, measured against the record</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a class="article-row" href="/trans-shooters">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Are Trans People Overrepresented as Mass Shooters?</span>
+                  <span class="row-desc">Politicians and political organizations have used this claim to justify legislation targeting the trans community. Three databases, every definition, full sensitivity analysis — and the strongest opposing arguments steelmanned using their own data.</span>
+                  <div class="row-sources">
+                    <span class="sources-label">Primary sources</span>
+                    <ul class="sources-list">
+                      <li>Gun Violence Archive (GVA) — N=5,900+, 2013–2026</li>
+                      <li>Violence Prevention Project — strict definition, through 2024</li>
+                      <li>Mother Jones mass shootings database — 1982–2025</li>
+                      <li>Williams Institute — Trans population estimates (August 2025)</li>
+                      <li>FBI Active Shooter Incidents Report 2024</li>
+                      <li>CPRC / John Lott — opposing claim, steelmanned and examined</li>
+                      <li>FactCheck.org, PolitiFact, Snopes — independent verification</li>
+                      <li>ADL, GLAAD, Human Rights Campaign</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Voter Fraud — The Documented Record</span>
+                  <span class="row-desc">Every prosecuted case in the Heritage Foundation database. Every major political claim tested against total ballots cast and DOJ prosecution data.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The National Debt — What Both Parties Actually Did</span>
+                  <span class="row-desc">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Job Creation Claims — Presidents vs. The Data</span>
+                  <span class="row-desc">Every administration's jobs record against BLS data — with context for what presidents actually control vs. what was already in motion.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Border Crossings — What The Charts Actually Show</span>
+                  <span class="row-desc">CBP encounter numbers in full historical context — methodology changes, seasonal patterns, and what the data can and cannot tell us about unauthorized entry.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 03 History & Myth-Busting ─────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">03</span>
+        <span class="acc-label">History &amp; Myth-Busting</span>
+        <span class="acc-meta">Things everyone "knows," tested against primary documents</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Was Hitler a Socialist?</span>
+                  <span class="row-desc">What historians document about Nazi economic policy, the party's relationship with German industrialists, and how the ideology is categorized in academic literature.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Party Switch — Did the Two Parties Really Swap?</span>
+                  <span class="row-desc">Voting records, party platforms, and regional realignment data from 1948 to 1980 — what actually happened and where the historical consensus sits today.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Columbus and America — What The Record Actually Shows</span>
+                  <span class="row-desc">Pre-Columbian contact, indigenous populations, and what "discovery" meant to contemporaries — primary documents and archaeological evidence vs. the simplified story.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Moon Landing — What The Evidence Shows</span>
+                  <span class="row-desc">Every major conspiracy claim examined against independent scientific verification — retroreflectors, Soviet tracking data, photographic analysis, and engineering records.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 04 Science & Media Accuracy ───────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">04</span>
+        <span class="acc-label">Science &amp; Media Accuracy</span>
+        <span class="acc-meta">What studies actually say vs. how they get reported</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Climate Science vs. Climate Coverage</span>
+                  <span class="row-desc">What the IPCC reports actually project vs. how media coverage frames those findings — measured against the primary scientific literature.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">How Reproducible Is Nutrition Research?</span>
+                  <span class="row-desc">Why diet headlines contradict each other so often — study design, funding sources, statistical methods, and what the meta-analyses actually conclude.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">AI Risk — Separating Expert Opinion From Hype</span>
+                  <span class="row-desc">What AI researchers actually say about near-term and long-term risk in published literature vs. media narratives on both the alarmist and dismissive ends.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 05 Economics & Policy ─────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">05</span>
+        <span class="acc-label">Economics &amp; Policy</span>
+        <span class="acc-meta">Contested economic claims vs. BLS, CBO, and peer-reviewed data</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Gender Wage Gap — What Each Statistic Actually Measures</span>
+                  <span class="row-desc">The raw 77-cent figure. The occupation-controlled figure. What each one measures, what causes the residual gap, and what neither side in the debate gets right.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Does Raising Minimum Wage Kill Jobs?</span>
+                  <span class="row-desc">The economics literature is more divided than either party admits. Every major study and methodology — including the 2021 CBO report both sides cited selectively.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Trickle-Down Economics — What The Research Found</span>
+                  <span class="row-desc">Tax cut studies from Reagan, Bush, and Trump-era policy changes measured against actual GDP, wage, and inequality outcomes in peer-reviewed economic literature.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 06 Health & Medicine ───────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">06</span>
+        <span class="acc-label">Health &amp; Medicine</span>
+        <span class="acc-meta">Medical statistics and health claims vs. peer-reviewed evidence</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Vaccine Safety — What Large-Scale Studies Show</span>
+                  <span class="row-desc">Post-market surveillance data, adverse event reporting, and what the actual signal-to-noise looks like in studies involving hundreds of millions of doses.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Healthcare Costs — Why They're So High</span>
+                  <span class="row-desc">International price comparisons, administrative overhead data, and what economists across the ideological spectrum actually agree the main drivers are.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Mental Health &amp; Social Media — What The Research Shows</span>
+                  <span class="row-desc">The correlation between teen smartphone use and mental health outcomes — study quality, causation questions, and what the strongest evidence actually supports.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 07 Religion & Society ─────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">07</span>
+        <span class="acc-label">Religion &amp; Society</span>
+        <span class="acc-meta">Measurable claims about religiosity and social outcomes</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Does Religiosity Correlate With Better Social Outcomes?</span>
+                  <span class="row-desc">Crime rates, social trust, wellbeing, charitable giving. What Pew Research, Gallup, and academic studies actually find when comparing more and less religious populations.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
+                  <span class="row-desc">Claims about religiously motivated conflict measured against terrorism databases, historical data, and how researchers define and count religious motivation.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <!-- Methodology -->
+  <section class="method-section" aria-label="Our methodology">
+    <div class="method-inner">
+      <h2 class="method-title">How this site works</h2>
+      <div class="method-grid">
+        <div>
+          <p class="method-item-title">Primary sources only</p>
+          <p class="method-item-body">FBI, CDC, Census Bureau, peer-reviewed journals. No aggregators, no op-eds — only the underlying data, cited directly on every page.</p>
+        </div>
+        <div>
+          <p class="method-item-title">Steelmanning both sides</p>
+          <p class="method-item-body">Every opposing argument is presented with its strongest supporting evidence before being addressed. No strawmanning, no selective quotation.</p>
+        </div>
+        <div>
+          <p class="method-item-title">Sensitivity analysis</p>
+          <p class="method-item-body">Every assumption is tested. Results shown under multiple definitions, time windows, and denominators — so you can see how robust each conclusion actually is.</p>
+        </div>
+        <div>
+          <p class="method-item-title">Honest about limits</p>
+          <p class="method-item-body">Wide confidence intervals are shown, not hidden. Data gaps are named. What the evidence can't establish matters as much as what it can.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="page-footer">
+    <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
+    <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
+  </footer>
+
+
+  <script>
+    document.querySelectorAll('[data-acc]').forEach(function(item) {
+      var trigger = item.querySelector('.acc-trigger');
+      var panel   = item.querySelector('.acc-panel');
+
+      trigger.addEventListener('click', function() {
+        var isOpen = item.classList.contains('is-open');
+
+        // Close all open panels first
+        document.querySelectorAll('[data-acc].is-open').forEach(function(open) {
+          open.classList.remove('is-open');
+          open.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
+          open.querySelector('.acc-panel').classList.remove('is-open');
+        });
+
+        // Open the clicked one if it was closed
+        if (!isOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
