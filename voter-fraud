@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Fraud — The Documented Record | TruthBased.org</title>
+  <meta name="description" content="Every prosecuted case in the Heritage Foundation database measured against 2.5 billion ballots. DOJ data, academic research, the 2020 lawsuits, and 2026 developments — every claim tested.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/voter-fraud">
+  <meta property="og:title"   content="Voter Fraud — The Documented Record | TruthBased.org">
+  <meta property="og:description" content="1,620 proven cases against 2.5 billion ballots. Every fraud type. Every 2020 lawsuit. The 2026 Fulton County raid. Every counterargument examined.">
+  <meta property="og:image"   content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/1-b8d45ab2.png">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:image"  content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/1-b8d45ab2.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+
+    /* =========================================================
+       TruthBased.org — Voter Fraud: The Documented Record
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --border:       #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #8a8278;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background-color: rgba(247, 245, 241, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 24px; height: 52px;
+      gap: 20px;
+    }
+    .nav-wordmark {
+      font-family: var(--font-sans); font-size: 1rem; font-weight: 600;
+      color: var(--text-head); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: var(--font-sans); font-size: 0.8rem;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 3px 10px; transition: color .15s, border-color .15s;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* JUMP NAV */
+    .jump-nav {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* PER-CAPITA BOX */
+    .capita-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px; margin: 16px 0; text-align: center;
+    }
+    .capita-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); margin-bottom: 6px;
+    }
+    .capita-big {
+      font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--green); line-height: 1.1;
+    }
+    .capita-sub { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+    .capita-verdict {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--green); margin-top: 10px;
+    }
+
+    /* CASE CARDS (equivalent of shooter cards) */
+    .case-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      margin: 16px 0; overflow: hidden;
+    }
+    .case-card-head {
+      background: var(--surface); padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .case-name {
+      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .case-meta-line {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-dim); margin-top: 2px;
+    }
+    .case-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    }
+    .badge-confirmed { background: var(--brick-light); color: var(--brick); }
+    .badge-admin     { background: var(--amber-light); color: var(--amber); }
+    .badge-acquitted { background: var(--green-light); color: var(--green); }
+    .case-card-body { padding: 0; }
+    .case-row {
+      display: flex; padding: 8px 16px;
+      border-bottom: 1px solid var(--border); font-size: 0.86rem; gap: 12px;
+    }
+    .case-row:last-child { border-bottom: none; }
+    .case-key {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      color: var(--text-quiet); min-width: 100px; padding-top: 1px;
+    }
+    .case-val { color: var(--text-body); line-height: 1.5; }
+    .case-val.warn   { color: var(--amber); }
+    .case-val.alert  { color: var(--brick); }
+
+    /* TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-dismissed { color: var(--brick); font-weight: 600; }
+    .td-merits    { color: var(--amber); font-weight: 600; }
+    .td-both      { color: var(--text-dim); font-size: 0.78rem; }
+
+    /* CHART CANVAS */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #1a1714; color: rgba(247,245,241,0.9);
+      border-radius: 6px; padding: 18px 22px; margin: 16px 0;
+      font-family: var(--font-mono); font-size: 0.88rem; line-height: 2;
+    }
+    .math-box .math-label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(247,245,241,0.45); display: block; margin-bottom: 6px;
+    }
+    .math-box .math-result {
+      color: #7ec99a; font-size: 1.1rem; font-weight: 700;
+    }
+    .math-box .math-dim { color: rgba(247,245,241,0.55); }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .article-wrap { padding: 24px 16px 60px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+    <a href="/" class="nav-back">&#8592; Home</a>
+  </nav>
+
+  <!-- JUMP NAV -->
+  <div class="jump-nav">
+    <a href="#part1" class="jump-btn">Part 1 — The Denominator</a>
+    <a href="#part2" class="jump-btn">Part 2 — Fraud by Category</a>
+    <a href="#part3" class="jump-btn">Part 3 — Real Cases</a>
+    <a href="#part4" class="jump-btn">Part 4 — The 2020 Lawsuits</a>
+    <a href="#part5" class="jump-btn">Part 5 — 2026 Developments</a>
+    <a href="#part6" class="jump-btn">Part 6 — Limitations &amp; Steelman</a>
+  </div>
+
+  <div class="article-wrap">
+
+    <!-- ARTICLE HEADER -->
+    <header class="article-header">
+      <span class="article-category">Political Fact Check</span>
+      <h1 class="article-title">Voter Fraud — The Documented Record</h1>
+      <p class="article-deck">Every prosecuted case in the Heritage Foundation database measured against 2.5 billion ballots. Every fraud type. Every major 2020 lawsuit outcome. The 2026 Fulton County FBI raid. The only confirmed election law violation by a major political operation in Georgia's 2024 cycle — and who committed it.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#9679; Live</span>
+        <span class="meta-pill">Updated February 2026</span>
+        <span class="meta-pill">Data through Feb 22, 2026</span>
+        <span class="meta-pill">4 independent research sources</span>
+      </div>
+    </header>
+
+    <!-- WHY THIS IS A POLITICAL FACT CHECK -->
+    <div class="box box-amber">
+      <span class="box-label">Why this is filed under Political Fact Checks</span>
+      <p>Claims of widespread voter fraud have been used to justify major federal legislation (the SAVE Act, passed the House 218–213), to redirect FBI and DOJ resources, to overturn election results, and to restrict voting access across 16+ states. These are claims made by political actors to produce political outcomes. When those claims are tested against the documented evidentiary record, fact-checking is not optional — it is the minimum standard for an informed electorate.</p>
+    </div>
+
+    <!-- SOURCE PILLS -->
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary sources &amp; references used throughout</span>
+      <div class="source-pills">
+        <a class="source-pill" href="https://electionfraud.heritage.org/" target="_blank" rel="noopener noreferrer">Heritage Foundation</a>
+        <a class="source-pill" href="https://www.brennancenter.org/issues/ensure-every-american-can-vote/election-myths/voter-fraud" target="_blank" rel="noopener noreferrer">Brennan Center</a>
+        <a class="source-pill" href="https://www.justice.gov/criminal/criminal-pin" target="_blank" rel="noopener noreferrer">DOJ / Public Integrity</a>
+        <a class="source-pill" href="https://www.cisa.gov/news-events/news/joint-statement-elections-infrastructure-government-coordinating-council" target="_blank" rel="noopener noreferrer">CISA (Nov 2020)</a>
+        <a class="source-pill" href="https://www.gao.gov/" target="_blank" rel="noopener noreferrer">GAO</a>
+        <a class="source-pill" href="https://www.brookings.edu/" target="_blank" rel="noopener noreferrer">Brookings Institution</a>
+        <a class="source-pill" href="https://electionlab.mit.edu/" target="_blank" rel="noopener noreferrer">MIT Election Lab</a>
+        <a class="source-pill" href="https://on.theverge.com/tech/882838/georgia-elon-musk-america-pac-voter-fraud" target="_blank" rel="noopener noreferrer">The Verge</a>
+        <a class="source-pill" href="https://www.washingtonpost.com/" target="_blank" rel="noopener noreferrer">Washington Post</a>
+        <a class="source-pill" href="https://www.detroitnews.com/story/news/politics/2026/02/20/doj-struggles-as-white-house-presses-on-voter-fraud/88775563007/" target="_blank" rel="noopener noreferrer">Detroit News</a>
+        <a class="source-pill" href="https://news.bgov.com/us-law-week/bondi-hands-st-louis-prosecutor-nationwide-election-fraud-remit" target="_blank" rel="noopener noreferrer">Bloomberg Government</a>
+        <a class="source-pill" href="https://www.americanimmigrationcouncil.org/" target="_blank" rel="noopener noreferrer">American Immigration Council</a>
+        <a class="source-pill" href="https://www.cato.org/" target="_blank" rel="noopener noreferrer">Cato Institute</a>
+        <a class="source-pill" href="https://www.reuters.com/" target="_blank" rel="noopener noreferrer">Reuters</a>
+        <a class="source-pill" href="https://www.ncleg.gov/" target="_blank" rel="noopener noreferrer">NC State Board of Elections</a>
+        <a class="source-pill" href="https://sos.ga.gov/" target="_blank" rel="noopener noreferrer">Georgia Sec. of State</a>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 1 — THE DENOMINATOR
+    ======================================================= -->
+    <div id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">The Scale of American Elections</h2>
+      </div>
+
+      <span class="section-label">01 — Why the Denominator Is the Entire Argument</span>
+
+      <p>When a politician says "there are 1,620 proven cases of voter fraud," that number sounds significant. Whether it is significant depends entirely on the denominator — the total number of votes against which those cases are measured. Every fraud rate in this article is calculated per relevant ballots cast, not as a raw count. The raw count without the denominator is meaningless.</p>
+
+      <p>The United States has conducted federal elections continuously since 1788. Between 1982 and 2025 — the primary span of the Heritage Foundation's database — an estimated <strong>2.5 billion ballots</strong> were cast in federal elections (presidential + congressional combined). Presidential elections alone from 2000 through 2024 account for over 938 million ballots.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Presidential election turnout 2000–2024 — the denominator in each cycle</div>
+        <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart showing total ballots cast in US presidential elections from 2000 to 2024, ranging from 105 million in 2000 to 158 million in 2020."></canvas></div>
+      </div>
+
+      <span class="section-label">02 — The Heritage Foundation Database — What It Is and What It Is Not</span>
+
+      <p>The Heritage Foundation's Election Fraud Database (<a class="inline-link" href="https://electionfraud.heritage.org/" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org</a>) is the most comprehensive conservative-curated collection of documented fraud cases in the United States. As of December 12, 2025, it contains <strong>1,620 proven instances</strong> of election fraud — criminal convictions, civil penalties, judicial findings, and overturned elections — spanning primarily 1982 through 2025.</p>
+
+      <p>Heritage explicitly states on its own about page: <em>"This database is not an exhaustive or comprehensive list of all election fraud in the states. It does not capture all cases and certainly does not capture reported instances or allegations of fraud, some of which may be meritorious, some not, that are not investigated or prosecuted."</em> Heritage describes this as a <em>"sampling"</em> intended to illustrate vulnerabilities, not measure total incidence.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Heritage Foundation Election Fraud Database</span>
+          <span class="stat-block-period">1982 — Dec 2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Proven instances (total)</span><span class="stat-val neutral">1,620</span></div>
+          <div class="stat-row"><span class="stat-key">Estimated federal ballots over same period</span><span class="stat-val neutral">~2,500,000,000</span></div>
+          <div class="stat-row"><span class="stat-key">Rate per ballot cast</span><span class="stat-val positive">0.000065%</span></div>
+          <div class="stat-row"><span class="stat-key">Rate per 10 million ballots</span><span class="stat-val positive">6.5 cases</span></div>
+          <div class="stat-row"><span class="stat-key">Database self-described as</span><span class="stat-val neutral">"sampling" — not exhaustive</span></div>
+          <div class="stat-row"><span class="stat-key">Inclusion requirement</span><span class="stat-val neutral">Criminal conviction or official finding only</span></div>
+        </div>
+      </div>
+
+      <div class="capita-box">
+        <div class="capita-label">Heritage fraud rate vs. total ballots cast</div>
+        <div class="capita-big">0.000065%</div>
+        <div class="capita-sub">6.5 documented cases per 10 million ballots — across 43 years</div>
+        <div class="capita-verdict">FLOOR ESTIMATE — HERITAGE ITSELF SAYS IT IS NOT EXHAUSTIVE</div>
+      </div>
+
+      <span class="section-label">03 — What Outcome-Determinative Fraud Would Actually Require</span>
+
+      <p>The political claim is not just that fraud exists — it is that fraud has <em>altered or could alter</em> election outcomes. To evaluate that claim, it's necessary to calculate what outcome-determinative fraud would require in a presidential election.</p>
+
+      <p>In 2020, Joe Biden won the four closest swing states — Georgia, Arizona, Wisconsin, and Pennsylvania — by the following margins:</p>
+
+      <div class="math-box">
+        <span class="math-label">What it would take to flip the 2020 election</span>
+        Georgia: <span class="math-dim">Biden +</span> 11,779 votes<br>
+        Arizona: <span class="math-dim">Biden +</span> 10,457 votes<br>
+        Wisconsin: <span class="math-dim">Biden +</span> 20,682 votes<br>
+        Pennsylvania: <span class="math-dim">Biden +</span> 80,555 votes<br>
+        ─────────────────────────────────────<br>
+        Coordinated fraudulent votes needed: <span class="math-result">123,473</span><br>
+        <span class="math-dim">All documented Heritage cases, 1982–2025:</span> <span class="math-result">1,620</span><br>
+        <span class="math-dim">That is</span> <span class="math-result">76×</span> <span class="math-dim">more than all proven fraud in 40 years of records</span>
+      </div>
+
+      <p>This math does not prove no fraud occurred. It establishes the scale at which fraud would need to operate to change the outcome — and compares it to the entirety of what has ever been documented and proven in the United States.</p>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Part 1 Sources</span>
+        <div class="source-item"><strong>Heritage Foundation Election Fraud Database (Dec 12, 2025)</strong> — <a href="https://electionfraud.heritage.org/" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org</a></div>
+        <div class="source-item"><strong>Heritage Foundation "About" page — database methodology statement</strong> — <a href="https://electionfraud.heritage.org/about" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org/about</a></div>
+        <div class="source-item"><strong>FEC historical election results / Census turnout compilations</strong> — basis for 2.5 billion ballot estimate</div>
+        <div class="source-item"><strong>Georgia 2020 certified results</strong> — Biden +11,779; Arizona — Biden +10,457; Wisconsin — Biden +20,682; Pennsylvania — Biden +80,555</div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 2 — FRAUD BY CATEGORY
+    ======================================================= -->
+    <div id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">Fraud by Category — Six Types, Six Numbers</h2>
+      </div>
+
+      <span class="section-label">04 — Taxonomy: Not All Election Fraud Is the Same</span>
+
+      <p>Different forms of election fraud are not equally common, are not equally detectable, and are not addressed by the same policy responses. Voter ID laws target in-person impersonation — the rarest type. Mail ballot restrictions address absentee fraud — somewhat more common, still vanishingly rare. Understanding which type you're measuring is necessary before any policy argument can be made.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Documented fraud rate by type — cases per 10 million ballots</div>
+        <div class="chart-canvas-wrap" style="height:220px;"><canvas id="chart2" role="img" aria-label="Horizontal bar chart showing documented fraud rates by type per 10 million ballots. In-person impersonation and noncitizen voting are near zero."></canvas></div>
+      </div>
+
+      <span class="section-label">05 — In-Person Voter Impersonation (The Rarest Type)</span>
+
+      <p>In-person voter impersonation — where someone shows up at a polling place and votes in another person's name — is the form of fraud most commonly cited as justification for voter ID laws. It is also the form with the lowest documented incidence by a significant margin.</p>
+
+      <p>The Brennan Center for Justice's comprehensive analysis of the period 2000–2014, covering over one billion ballots cast, identified <strong>31 credible cases</strong> of in-person impersonation fraud. The Brennan Center calculated an incident rate of 0.0003% to 0.0025% at most. A George W. Bush administration DOJ unit specifically tasked with finding election fraud examined the 2002 and 2004 elections and was unable to identify a single case of in-person voter impersonation fraud over a five-year period. The unit proved fraud in just <strong>0.00000013%</strong> of ballots — a figure Heritage itself does not dispute.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">In-Person Voter Impersonation</span>
+          <span class="stat-block-period">Brennan Center, 2000–2014</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Credible documented cases</span><span class="stat-val negative">31</span></div>
+          <div class="stat-row"><span class="stat-key">Ballots examined</span><span class="stat-val neutral">&gt;1,000,000,000</span></div>
+          <div class="stat-row"><span class="stat-key">Rate per 10 million ballots</span><span class="stat-val positive">0.31 cases</span></div>
+          <div class="stat-row"><span class="stat-key">Rate as percentage</span><span class="stat-val positive">&lt;0.000003%</span></div>
+          <div class="stat-row"><span class="stat-key">Policy most commonly cited to address this</span><span class="stat-val neutral">Voter ID laws</span></div>
+          <div class="stat-row"><span class="stat-key">Bush DOJ 5-year targeted investigation found</span><span class="stat-val positive">0 cases</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">06 — Absentee / Mail Ballot Fraud (Most Common, Still Rare)</span>
+
+      <p>Mail ballot fraud — forgeries, illegal collection, or submission of ballots without the voter's knowledge — represents the largest category in the Heritage database. A Brookings Institution analysis of Heritage's data found approximately 0.00006% of mail ballots cast over 20 years were fraudulent. This makes it roughly 20 times more common than in-person impersonation, but still statistically negligible at the level where it could affect statewide or national outcomes.</p>
+
+      <p>The highest-profile real case of absentee fraud in recent history is the 2018 North Carolina 9th Congressional District scheme — documented in full in Part 3.</p>
+
+      <span class="section-label">07 — Noncitizen Voting (Most Claimed, Least Proven)</span>
+
+      <p>Claims of mass noncitizen voting — that millions of undocumented immigrants or foreign nationals are voting in federal elections — are among the most frequently made and least evidentially supported in election fraud discourse.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Source / Audit</th>
+            <th>Period</th>
+            <th>Cases Found</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Heritage Foundation database</td>
+            <td>1982–2025</td>
+            <td class="td-num">68</td>
+            <td class="td-rate">&lt;0.000003% of ballots</td>
+          </tr>
+          <tr>
+            <td>Cato Institute independent review</td>
+            <td>2002–2024</td>
+            <td class="td-num">85 irregularities</td>
+            <td class="td-rate">Not outcome-determinative</td>
+          </tr>
+          <tr>
+            <td>Reuters analysis</td>
+            <td>2003–2023</td>
+            <td class="td-num">24 prosecuted</td>
+            <td class="td-rate">Exceedingly rare</td>
+          </tr>
+          <tr>
+            <td>Georgia SoS audit (8.2M registered)</td>
+            <td>2024</td>
+            <td class="td-num">20 noncitizens</td>
+            <td class="td-rate">0.00024% of roll; 11 never voted</td>
+          </tr>
+          <tr>
+            <td>Michigan 2024 voter roll audit</td>
+            <td>2024</td>
+            <td class="td-num">15 noncitizens</td>
+            <td class="td-rate">Apparently cast a ballot</td>
+          </tr>
+          <tr>
+            <td>Utah audit (2.1M registered)</td>
+            <td>2024</td>
+            <td class="td-num">1 noncitizen</td>
+            <td class="td-rate">Never cast a ballot</td>
+          </tr>
+          <tr>
+            <td>Nevada DOJ investigation (2020 election)</td>
+            <td>2026 closure</td>
+            <td class="td-num">&lt;40 potential</td>
+            <td class="td-note">Closed 2026; statute of limitations expired</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <span class="section-label">08 — Registration Fraud ≠ Vote Fraud (A Critical Distinction)</span>
+
+      <p>Fraudulent voter registrations — submitting forms with fake names or ineligible individuals — are frequently conflated with fraudulent votes. They are not the same. A fraudulent registration does not produce a fraudulent vote unless someone shows up and votes using that registration, which requires passing through an additional layer of scrutiny at the polls.</p>
+
+      <p>The ACORN controversy of 2008 is the canonical example. ACORN voter registration workers submitted an estimated 400,000 potentially fraudulent or duplicate registration forms. The subsequent federal and state investigations produced zero prosecutions for fraudulent votes cast from those registrations. The fraud was in the forms — not in the ballot box. Heritage's own database confirms this distinction: its "False Registration" category lists hundreds of cases, most of which did not result in a single fraudulent vote being cast.</p>
+
+      <span class="section-label">09 — DOJ Prosecution Data, Independent of Heritage</span>
+
+      <p>The Department of Justice's Public Integrity Section (PIN), established in 1976 with an Election Crimes Branch added in 1980, handles federal election offense prosecutions. PIN does not publish consolidated annual voter fraud statistics. The available independent data:</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">DOJ Public Integrity Section — Election-Related Data</span>
+          <span class="stat-block-period">Various periods</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">GAO review: election fraud cases filed by PIN, 2001–2017</span><span class="stat-val negative">19 cases</span></div>
+          <div class="stat-row"><span class="stat-key">Out of total PIN public corruption matters</span><span class="stat-val neutral">695 total matters</span></div>
+          <div class="stat-row"><span class="stat-key">DOJ 2023 PIN total defendants charged (all public corruption)</span><span class="stat-val neutral">543</span></div>
+          <div class="stat-row"><span class="stat-key">DOJ 2023 PIN total convictions</span><span class="stat-val neutral">550</span></div>
+          <div class="stat-row"><span class="stat-key">Bush DOJ targeted fraud unit — 5-year result</span><span class="stat-val positive">0 in-person impersonation cases</span></div>
+          <div class="stat-row"><span class="stat-key">AG Barr statement, Dec 1 2020</span><span class="stat-val neutral">"No fraud on a scale that could affect the outcome"</span></div>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Part 2 Sources</span>
+        <div class="source-item"><strong>Brennan Center for Justice — Voter Fraud Research (multiple studies, 2017–2024)</strong> — brennancenter.org/issues</div>
+        <div class="source-item"><strong>Brookings Institution mail voting analysis (November 6, 2025)</strong> — brookings.edu</div>
+        <div class="source-item"><strong>American Immigration Council — Heritage noncitizen voting review</strong> — americanimmigrationcouncil.org</div>
+        <div class="source-item"><strong>Cato Institute — noncitizen voting review (2002–2024)</strong> — cato.org</div>
+        <div class="source-item"><strong>Reuters — "24 instances of noncitizens voting, 2003–2023"</strong> — reuters.com</div>
+        <div class="source-item"><strong>Georgia Secretary of State voter roll audit (2024)</strong> — sos.ga.gov</div>
+        <div class="source-item"><strong>GAO review of DOJ PIN, 2001–2017</strong> — gao.gov</div>
+        <div class="source-item"><strong>DOJ Public Integrity Section 2023 Report to Congress</strong> — justice.gov/criminal-pin</div>
+        <div class="source-item"><strong>AG Bill Barr statement (December 1, 2020)</strong> — DOJ press release</div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 3 — REAL CASES
+    ======================================================= -->
+    <div id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">Real Cases — The Documented Record</h2>
+      </div>
+
+      <span class="section-label">10 — The Kobach Test: What Happens When You Actually Look</span>
+
+      <p>Kris Kobach ran for Kansas Attorney General in 2022 specifically on a platform of prosecuting voter fraud. He won. He was granted unprecedented state authority to investigate and prosecute election crimes — authority that Kansas AGs had not previously held. His office actively pursued fraud cases.</p>
+
+      <p>Result: <strong>6 prosecutions. 1 conviction. That conviction was later overturned.</strong></p>
+
+      <p>This is the most useful real-world data point in the voter fraud debate: a politician who genuinely believed fraud was widespread, who had the legal authority and political mandate to find it, who actively looked — and found effectively nothing that held up in court. The Kobach test does not prove fraud is absent; it measures what aggressive investigation actually produces.</p>
+
+      <span class="section-label">11 — Confirmed High-Profile Cases (Bipartisan)</span>
+
+      <!-- Case 1: NC Dowless -->
+      <div class="case-card">
+        <div class="case-card-head">
+          <div>
+            <div class="case-name">McCrae Dowless / North Carolina 9th District</div>
+            <div class="case-meta-line">2018 · Bladen County, NC · Absentee ballot harvesting scheme</div>
+          </div>
+          <span class="case-badge badge-confirmed">&#10003; CONFIRMED — ELECTION OVERTURNED</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-row"><div class="case-key">What happened</div><div class="case-val">Republican operative McCrae Dowless organized workers to illegally collect unsealed absentee ballots from voters, forge signatures, and submit ballots without voter knowledge. Operated in Bladen and Robeson counties on behalf of Republican candidate Mark Harris.</div></div>
+          <div class="case-row"><div class="case-key">Scale</div><div class="case-val warn">~1,000+ illegal absentee ballots affected. Harris won the original election by ~900 votes. The State Board of Elections refused to certify the result.</div></div>
+          <div class="case-row"><div class="case-key">Outcome</div><div class="case-val">9 convictions/guilty pleas. New election ordered. Harris chose not to run in the redo. Dowless died in 2022 before final resolution of his charges.</div></div>
+          <div class="case-row"><div class="case-key">Significance</div><div class="case-val alert">The only case in recent history where confirmed fraud directly led to a federal election being overturned. Perpetrated by a Republican operative on behalf of a Republican candidate.</div></div>
+          <div class="case-row"><div class="case-key">Party</div><div class="case-val">Republican operative</div></div>
+        </div>
+      </div>
+
+      <!-- Case 2: Chicago alderman -->
+      <div class="case-card">
+        <div class="case-card-head">
+          <div>
+            <div class="case-name">Chicago Alderman / Special Congressional Election</div>
+            <div class="case-meta-line">2010 · Illinois · Vote count inflation scheme</div>
+          </div>
+          <span class="case-badge badge-confirmed">&#10003; CONFIRMED — CONVICTED</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-row"><div class="case-key">What happened</div><div class="case-val">A Chicago alderman and election judge were indicted for rigging a special congressional election by arranging for vote totals to be inflated through the addition of fraudulent ballots.</div></div>
+          <div class="case-row"><div class="case-key">Outcome</div><div class="case-val">Conviction. Required insider collusion across multiple officials to execute. Demonstrates precinct-level manipulation is possible but requires a chain of corruptible participants — a structural deterrent.</div></div>
+          <div class="case-row"><div class="case-key">Party</div><div class="case-val">Democratic official</div></div>
+        </div>
+      </div>
+
+      <!-- Case 3: Wisconsin Zapata -->
+      <div class="case-card">
+        <div class="case-card-head">
+          <div>
+            <div class="case-name">Kimberly Zapata — Milwaukee Election Commission</div>
+            <div class="case-meta-line">2022 · Wisconsin · Military ballot fraud by election official</div>
+          </div>
+          <span class="case-badge badge-confirmed">&#10003; CONFIRMED — CHARGED</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-row"><div class="case-key">What happened</div><div class="case-val">Zapata, deputy director of the Milwaukee Election Commission, requested military absentee ballots under false names and had them sent to a Wisconsin state legislator's home, apparently intending to expose absentee ballot vulnerabilities.</div></div>
+          <div class="case-row"><div class="case-key">Charges</div><div class="case-val warn">Felony misconduct in public office; misdemeanor absentee ballot fraud. No ballots were cast from the fraudulently obtained applications.</div></div>
+          <div class="case-row"><div class="case-key">Significance</div><div class="case-val">A case of election official misconduct — the insider threat category that researchers note is harder to detect without whistleblowers or audits.</div></div>
+        </div>
+      </div>
+
+      <!-- Case 4: America PAC -->
+      <div class="case-card">
+        <div class="case-card-head">
+          <div>
+            <div class="case-name">America PAC — Georgia Election Law Violation</div>
+            <div class="case-meta-line">2024–2026 · Georgia · Pre-filled absentee application forms</div>
+          </div>
+          <span class="case-badge badge-admin">&#9888; ADMINISTRATIVE REPRIMAND — NOT CRIMINAL FRAUD</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-row"><div class="case-key">What happened</div><div class="case-val">America PAC — the political action committee associated with Elon Musk — sent partially pre-filled absentee ballot <em>application</em> forms (not ballots) to voters in five Georgia counties: Chattooga, Cherokee, Coweta, Floyd, and Whitfield. Georgia law prohibits third parties from sending pre-filled applications unless they are the voter's authorized relative. The mailers also lacked legally required disclaimers stating they were not official government documents.</div></div>
+          <div class="case-row"><div class="case-key">Board action</div><div class="case-val warn">Georgia State Election Board unanimously issued a formal letter of reprimand to America PAC on February 18, 2026. America PAC sent no representative to the hearing and submitted no defense statement.</div></div>
+          <div class="case-row"><div class="case-key">What this is NOT</div><div class="case-val alert">No votes were cast or counted from these forms. No criminal charges were filed. This is an administrative violation of application solicitation rules — not voter fraud in the traditional sense.</div></div>
+          <div class="case-row"><div class="case-key">Significance</div><div class="case-val">The only confirmed election law violation by a major political operation connected to the 2024 Trump campaign apparatus in Georgia was committed by Trump ally Elon Musk's PAC. No criminal charges; no fraudulent vote cast.</div></div>
+          <div class="case-row"><div class="case-key">Party</div><div class="case-val">Pro-Trump political operation</div></div>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Part 3 Sources</span>
+        <div class="source-item"><strong>NC State Board of Elections — 2018 9th District findings and hearing record (2019)</strong> — ncsbe.gov</div>
+        <div class="source-item"><strong>Georgia State Election Board — America PAC reprimand (February 18, 2026)</strong> — <a href="https://on.theverge.com/tech/882838/georgia-elon-musk-america-pac-voter-fraud" target="_blank" rel="noopener noreferrer">The Verge reporting</a></div>
+        <div class="source-item"><strong>Wisconsin election records — Zapata charges (2022)</strong> — DOJ press releases</div>
+        <div class="source-item"><strong>Heritage Foundation database entries — Illinois 2010, NC 2018</strong> — electionfraud.heritage.org</div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 4 — THE 2020 LAWSUITS
+    ======================================================= -->
+    <div id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">The 2020 Litigation Record — 60+ Lawsuits, No Widespread Fraud</h2>
+      </div>
+
+      <span class="section-label">12 — What the Courts Found</span>
+
+      <p>Following the 2020 presidential election, supporters of Donald Trump filed approximately 60–65 lawsuits across 12 battleground states alleging a range of misconduct — from illegal ballot counting procedures to manipulated voting machines. A critical distinction often obscured in political discussion: many cases were dismissed on procedural grounds (lack of standing, mootness, timeliness), but a significant number were also reviewed on the evidentiary merits — and rejected.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Jurisdiction / Case</th>
+            <th>Primary Allegation</th>
+            <th>How Decided</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Arizona — Ward v. Jackson</strong></td>
+            <td>Widespread ballot duplication irregularities</td>
+            <td class="td-merits">MERITS: Duplication 99.45% accurate; errors were human, not systemic fraud. Affirmed by AZ Supreme Court.</td>
+          </tr>
+          <tr>
+            <td><strong>Nevada — Law v. Whitmer</strong></td>
+            <td>Voting device malfunctions, illegal votes</td>
+            <td class="td-merits">MERITS: Plaintiffs completely failed evidentiary standard — no malfunction or illegal votes shown. Affirmed by NV Supreme Court.</td>
+          </tr>
+          <tr>
+            <td><strong>Michigan — Costantino v. Detroit</strong></td>
+            <td>Fraud, poll worker hostility, ballot manipulation</td>
+            <td class="td-merits">MERITS: Claims "entirely speculative," lacked names, dates, locations. Affirmed by MI Supreme Court.</td>
+          </tr>
+          <tr>
+            <td><strong>Wisconsin — Trump v. Biden</strong></td>
+            <td>Fraudulent use of "indefinitely confined" voter status</td>
+            <td class="td-both">LACHES (3 claims) + MERITS (1 claim): The merits claim rejected for challenging an entire class of voters without individual evidence of fraud.</td>
+          </tr>
+          <tr>
+            <td><strong>Pennsylvania — Trump v. Boockvar</strong></td>
+            <td>Equal Protection violation via varying county procedures</td>
+            <td class="td-both">STANDING + MERITS: Standing rejected; court still evaluated and rejected the Equal Protection claim on its merits. Affirmed by 3rd Circuit.</td>
+          </tr>
+          <tr>
+            <td><strong>Georgia — Wood v. Raffensperger</strong></td>
+            <td>Unconstitutional audit process parameters</td>
+            <td class="td-both">STANDING/LACHES + MERITS: All claims rejected. Affirmed by 11th Circuit.</td>
+          </tr>
+          <tr>
+            <td><strong>U.S. Supreme Court — Texas v. Pennsylvania (et al.)</strong></td>
+            <td>Seeks to invalidate electoral votes in 4 states</td>
+            <td class="td-dismissed">DISMISSED Dec 11, 2020: No standing. No other federal challenge to the 2020 election succeeded.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Of approximately 60+ lawsuits filed, 47 were dismissed by federal judges — at least 8 of whom were Trump appointees. Zero succeeded in overturning or invalidating a single electoral vote.</p>
+
+      <span class="section-label">13 — What Republican Officials Said</span>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Official Statements on 2020 Election Security</span>
+          <span class="stat-block-period">November–December 2020</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">AG Bill Barr (Trump appointee) — Dec 1, 2020</span><span class="stat-val positive">"No fraud on a scale that could have effected a different outcome"</span></div>
+          <div class="stat-row"><span class="stat-key">CISA Director Chris Krebs (Trump appointee) — Nov 12, 2020</span><span class="stat-val positive">"Most secure election in American history"</span></div>
+          <div class="stat-row"><span class="stat-key">GA Sec. of State Brad Raffensperger (R)</span><span class="stat-val positive">Certified results; conducted multiple audits; no fraud large enough to change result</span></div>
+          <div class="stat-row"><span class="stat-key">AZ, PA, MI, WI Republican election officials</span><span class="stat-val positive">Certified results; debunked specific allegations in each state</span></div>
+          <div class="stat-row"><span class="stat-key">NYT survey of 29 Republican secretaries of state</span><span class="stat-val positive">None reported evidence of fraud or irregularities affecting the outcome</span></div>
+          <div class="stat-row"><span class="stat-key">FBI Director Christopher Wray</span><span class="stat-val positive">"No evidence of a coordinated national voter fraud effort" in any U.S. election</span></div>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Part 4 Sources</span>
+        <div class="source-item"><strong>Ward v. Jackson (AZ Superior Court, 2020)</strong>; <strong>Law v. Whitmer (NV District Court, 2020)</strong>; <strong>Costantino v. City of Detroit (Wayne County Circuit Court, 2020)</strong>; <strong>Trump v. Biden (Wis. Sup. Ct., 2020)</strong>; <strong>Trump v. Boockvar (M.D. Pa., 2020)</strong>; <strong>Wood v. Raffensperger (N.D. Ga., 2020)</strong></div>
+        <div class="source-item"><strong>Texas v. Pennsylvania (U.S. Supreme Court, Dec 11, 2020)</strong> — No. 22O155</div>
+        <div class="source-item"><strong>AG Bill Barr statement (December 1, 2020)</strong> — DOJ press release</div>
+        <div class="source-item"><strong>CISA joint statement (November 12, 2020)</strong> — <a href="https://www.cisa.gov/news-events/news/joint-statement-elections-infrastructure-government-coordinating-council" target="_blank" rel="noopener noreferrer">cisa.gov</a></div>
+        <div class="source-item"><strong>New York Times survey of Republican secretaries of state (November 2020)</strong></div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 5 — 2026 DEVELOPMENTS
+    ======================================================= -->
+    <div id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">2026 — New Investigations, Same Evidence</h2>
+      </div>
+
+      <span class="section-label">14 — The Fulton County FBI Raid (January 2026)</span>
+
+      <p>On January 28, 2026, FBI agents executed a search warrant on the Fulton County Election Hub in Union City, Georgia, seizing approximately 700 boxes of physical materials from the 2020 election cycle — including original ballots, tabulator tapes, electronic ballot images, and state voter registration rolls.</p>
+
+      <p>The affidavit used to obtain the warrant was authored by Kurt Olsen — an attorney who had been a legal advisor to Trump on strategies to contest the 2020 election results and who was sanctioned in federal court for statements made while challenging the 2022 Arizona gubernatorial election loss of Kris Lake. The affidavit's claims had been examined and rejected in previous investigations and lawsuits. Fulton County officials challenged the warrant in court, describing the affidavit as relying on "unsubstantiated hypotheticals" rather than verified evidence. The raid did not produce new evidence of fraud.</p>
+
+      <p>The investigation was led by Thomas Albus, a St. Louis-based U.S. Attorney given a special nationwide election fraud appointment by AG Pam Bondi under 28 U.S.C. § 515. Director of National Intelligence Tulsi Gabbard was physically present during the raid, conducting a parallel intelligence review of voting machines — prompting formal inquiries from U.S. Senators Mark Warner and Alex Padilla.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">What the evidence currently shows (Fulton County)</span>
+        <p>Fulton County was hand-counted three times in 2020 — including a full hand audit — all confirming Biden's margin. No prior investigation found evidence of widespread fraud in the county's election administration. As of February 2026, the FBI seizure has not produced new evidence that contradicts those findings.</p>
+      </div>
+
+      <span class="section-label">15 — DOJ Investigations and the Nevada Closure</span>
+
+      <p>The Justice Department, responding to White House pressure to pursue noncitizen voter fraud cases, has faced a consistent challenge: the cases are not materializing at the scale claimed. In Nevada, law enforcement officials closed their investigation into potential noncitizen voting in the 2020 election in early 2026, having identified fewer than 40 potential instances — and the statute of limitations for any prosecution from that election had expired.</p>
+
+      <p>AG Bondi appointed Thomas Albus as a special prosecutor with nationwide jurisdiction for election integrity cases. The DOJ also established a "Weaponization Working Group" and directed resources toward investigating local election administrators based in part on allegations generated in online forums, rather than traditional law enforcement referrals.</p>
+
+      <span class="section-label">16 — The Electoral Count Reform Act (What Bipartisan Election Integrity Looks Like)</span>
+
+      <p>In contrast to the contested fraud narratives, Congress did pass one significant piece of bipartisan election security legislation: the <strong>Electoral Count Reform Act (ECRA) of 2022</strong>. The ECRA addressed real vulnerabilities in the certification process that the 2020 post-election period exposed — specifically the ambiguity about the Vice President's role in certification and the threshold for congressional objections to state electoral slates. It clarified that the VP's role is strictly ceremonial and raised the bar for objections. This is what documented electoral vulnerability remediation looks like when it is based on actual documented problems rather than unproven fraud claims.</p>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Part 5 Sources</span>
+        <div class="source-item"><strong>Detroit News / Washington Post — "DOJ struggles as White House presses on voter fraud" (Feb 20, 2026)</strong> — <a href="https://www.detroitnews.com/story/news/politics/2026/02/20/doj-struggles-as-white-house-presses-on-voter-fraud/88775563007/" target="_blank" rel="noopener noreferrer">detroitnews.com</a></div>
+        <div class="source-item"><strong>Bloomberg Government — Bondi/Albus special appointment</strong> — <a href="https://news.bgov.com/us-law-week/bondi-hands-st-louis-prosecutor-nationwide-election-fraud-remit" target="_blank" rel="noopener noreferrer">news.bgov.com</a></div>
+        <div class="source-item"><strong>IBTimes — Fulton County raid and legal challenge (Feb 2026)</strong> — ibttimes.com</div>
+        <div class="source-item"><strong>Electoral Count Reform Act of 2022 (Pub.L. 117–328)</strong> — congress.gov</div>
+        <div class="source-item"><strong>NAACP / Lawyers' Committee — emergency motion re: seized voter data (2026)</strong> — lawyerscommittee.org</div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 6 — LIMITATIONS & STEELMAN
+    ======================================================= -->
+    <div id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">Limitations &amp; The Strongest Counterarguments</h2>
+      </div>
+
+      <span class="section-label">17 — What This Data Cannot Tell Us</span>
+
+      <p>The absence of documented fraud does not prove the absolute absence of all fraud. Undocumented cases may exist. Specifically:</p>
+
+      <p><strong>Detection gaps are real.</strong> Fraud that is never investigated never enters the record. Jurisdictions with less rigorous auditing may have more undetected fraud. This is acknowledged by Heritage, Brennan Center, and virtually every researcher in this field.</p>
+
+      <p><strong>The small-sample problem.</strong> When 40 years of national data produces 1,620 documented cases, the confidence intervals on any single type are wide. A few additional undetected cases in any category would shift rates slightly but would not change the qualitative conclusion.</p>
+
+      <p><strong>What researchers say.</strong> The academic consensus — including from Heritage-adjacent researchers — is that undetected fraud almost certainly exists at some level. The question is whether it exists at the scale required to alter outcomes. Studies consistently conclude that large-scale undetected fraud would produce detectable statistical anomalies in audits, recounts, and turnout patterns. No such anomalies have been found in the elections most scrutinized.</p>
+
+      <span class="section-label">18 — The Strongest Counterargument: Heritage Foundation's Own Position</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key">The Claim</div>
+          <div class="steelman-val">Heritage argues its database is a floor, not a ceiling — that documented cases prove fraud is possible and that election administrators' inconsistent pursuit of cases means true incidence is higher than the database reflects. Election systems have genuine vulnerabilities that bad actors could exploit at larger scales than currently documented.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">What's valid</div>
+          <div class="steelman-val">This is correct. The Heritage database is explicitly a sampling of prosecuted cases. Unprosecuted fraud is not counted. Heritage's point about systemic vulnerabilities — particularly in states with weak absentee ballot oversight — is technically sound. No election system is perfectly fraud-proof.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Issue 1</div>
+          <div class="steelman-val rebuttal">Heritage's own database is the most thorough conservative-curated collection of fraud cases in existence. If documented cases span 40+ years and total 1,620 across 2.5 billion ballots, the burden of proof for claiming scale significantly higher than this requires affirmative evidence — not inference from the possibility of undetected fraud. Possibility ≠ probability at scale.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Issue 2</div>
+          <div class="steelman-val rebuttal">The Kris Kobach test (see Part 3) provides the most direct evidence: a politician with the mandate, authority, and motivation to find voter fraud actively looked and produced 6 prosecutions and 0 standing convictions. If fraud were significantly more common than documented, aggressive investigation should find it. The documented result of aggressive investigation is consistent with the Heritage database rates.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Issue 3</div>
+          <div class="steelman-val rebuttal">The outcome-determinative threshold matters independently of detection gaps. Even doubling, tripling, or quadrupling the Heritage count would not approach the 123,473 coordinated fraudulent votes that would have been needed to flip the 2020 election. Vulnerability arguments must clear this threshold to be relevant to claims about specific elections.</div>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Part 6 Sources</span>
+        <div class="source-item"><strong>Heritage Foundation "About" page — acknowledged limitations</strong> — electionfraud.heritage.org/about</div>
+        <div class="source-item"><strong>MIT Election Lab — academic consensus on detection and scale</strong> — electionlab.mit.edu</div>
+        <div class="source-item"><strong>Kris Kobach Kansas AG prosecutions — documented outcomes (2022–2024)</strong> — Kansas AG records</div>
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         CONCLUSION
+    ======================================================= -->
+    <hr>
+    <span class="section-label">Conclusion — What the Documented Record Shows</span>
+
+    <div class="conclusion-stats">
+
+      <div class="cs-row">
+        <div class="cs-num positive">1,620 / 2,500,000,000</div>
+        <div class="cs-text"><strong>Proven instances of election fraud in the Heritage database against estimated ballots cast, 1982–2025.</strong> A rate of 0.000065% — 6.5 documented cases per 10 million ballots. Heritage itself describes this as a "sampling," not a comprehensive count.</div>
+      </div>
+
+      <div class="cs-row">
+        <div class="cs-num positive">0</div>
+        <div class="cs-text"><strong>In-person voter impersonation cases found by the Bush DOJ's dedicated voter fraud unit over five years of targeted investigation.</strong> 31 credible cases identified across more than one billion ballots by the Brennan Center (2000–2014). In-person impersonation is the primary form of fraud targeted by voter ID laws.</div>
+      </div>
+
+      <div class="cs-row">
+        <div class="cs-num neutral">76×</div>
+        <div class="cs-text"><strong>How many times larger the coordinated fraud needed to flip the 2020 election (123,473 votes across 4 states) is compared to the entire Heritage database (1,620 documented cases over 40 years).</strong> This is the scale argument. Political fraud claims must clear this threshold to be relevant to claims about specific presidential elections.</div>
+      </div>
+
+      <div class="cs-row">
+        <div class="cs-num positive">0</div>
+        <div class="cs-text"><strong>Of 60+ lawsuits filed contesting the 2020 election, the number that succeeded in overturning or invalidating a single electoral vote.</strong> Courts reviewing claims on the merits — not just on procedural grounds — found the evidence speculative, lacking factual basis, or insufficient as a matter of law. Rulings came from judges appointed by both parties.</div>
+      </div>
+
+      <div class="cs-row">
+        <div class="cs-num negative">1</div>
+        <div class="cs-text"><strong>Confirmed election law violation by a major political operation in Georgia during the 2024 cycle.</strong> It was committed by America PAC — associated with Elon Musk — for sending pre-filled absentee ballot applications. Georgia State Election Board issued a formal reprimand February 18, 2026. No criminal charges; no fraudulent vote was cast.</div>
+      </div>
+
+    </div>
+
+    <div class="box box-green">
+      <span class="box-label">The documented baseline</span>
+      <p>Documented prosecuted voter fraud is real, rare, and has never been shown to approach the scale necessary to alter a presidential election outcome. The data — from Heritage (conservative), Brennan Center (progressive), DOJ (federal), and Republican state election officials — is consistent across methodologies and political perspectives. Where the sources disagree is on policy implications. Where they agree is on the empirical rate.</p>
+    </div>
+
+  </div><!-- /article-wrap -->
+
+
+  <script>
+    // ── Chart 1: Presidential turnout 2000-2024 ────────────────
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['2000','2004','2008','2012','2016','2020','2024'],
+        datasets: [{
+          label: 'Total ballots cast (millions)',
+          data: [105.4, 122.3, 131.4, 129.1, 136.7, 158.4, 155.2],
+          backgroundColor: 'rgba(27,107,62,0.25)',
+          borderColor: 'rgba(27,107,62,0.8)',
+          borderWidth: 1.5,
+          borderRadius: 3,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.parsed.y.toFixed(1) + 'M ballots'
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: false, min: 80,
+            ticks: {
+              font: { family: "'Courier Prime', monospace", size: 11 },
+              color: '#8a8278',
+              callback: v => v + 'M'
+            },
+            grid: { color: 'rgba(0,0,0,0.06)' }
+          },
+          x: {
+            ticks: { font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c' },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+
+    // ── Chart 2: Fraud rate by type (per 10M ballots) ──────────
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: [
+          'All Heritage cases',
+          'Absentee/mail (est.)',
+          'Double voting (est.)',
+          'Noncitizen voting',
+          'In-person impersonation'
+        ],
+        datasets: [{
+          label: 'Cases per 10 million ballots',
+          data: [6.5, 1.6, 0.4, 0.27, 0.31],
+          backgroundColor: [
+            'rgba(184,58,30,0.25)',
+            'rgba(122,79,0,0.25)',
+            'rgba(122,79,0,0.18)',
+            'rgba(27,107,62,0.25)',
+            'rgba(27,107,62,0.35)',
+          ],
+          borderColor: [
+            'rgba(184,58,30,0.7)',
+            'rgba(122,79,0,0.6)',
+            'rgba(122,79,0,0.5)',
+            'rgba(27,107,62,0.7)',
+            'rgba(27,107,62,0.8)',
+          ],
+          borderWidth: 1.5,
+          borderRadius: 3,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.parsed.x.toFixed(2) + ' per 10M ballots'
+            }
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              font: { family: "'Courier Prime', monospace", size: 10 },
+              color: '#8a8278',
+              callback: v => v.toFixed(1)
+            },
+            grid: { color: 'rgba(0,0,0,0.06)' }
+          },
+          y: {
+            ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
