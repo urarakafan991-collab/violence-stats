@@ -514,9 +514,40 @@
       .acc-meta { display: none; }
     }
 
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--brick);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.7rem;
+      z-index: 200;
+      transition: top 0.15s ease;
+    }
+    .skip-link:focus { top: 0; }
+
+    :focus-visible {
+      outline: 2px solid var(--brick);
+      outline-offset: 2px;
+    }
+
+    /* Print */
+    @media print {
+      .site-nav, .page-footer { display: none; }
+      .acc-panel { display: block !important; grid-template-rows: 1fr !important; }
+      .acc-panel-inner { overflow: visible !important; }
+      .article-row.is-pending { opacity: 0.6; }
+    }
+
   </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="site-nav" aria-label="Site navigation">
     <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
@@ -548,7 +579,7 @@
   </div>
 
 
-  <main class="accordion-wrap">
+  <main class="accordion-wrap" id="content">
 
 
     <!-- ── 01 Fact Checks ─────────────────────────────────── -->
@@ -887,6 +918,51 @@
                 <div class="row-body">
                   <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
                   <span class="row-desc">Claims about religiously motivated conflict measured against terrorism databases, historical data, and how researchers define and count religious motivation.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- ── 08 International Comparisons ──────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">08</span>
+        <span class="acc-label">International Comparisons</span>
+        <span class="acc-meta">U.S. outcomes measured against the rest of the world</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
+                  <span class="row-desc">Firearm death rates, mass shooting frequency, and gun ownership data compared across OECD countries. What the data shows, what it can't prove, and where the methodological traps are.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Healthcare Outcomes — How The U.S. Actually Compares</span>
+                  <span class="row-desc">Life expectancy, infant mortality, cost per capita, and outcomes by condition — measured against WHO and OECD data. What the U.S. leads on, where it trails, and why the averages lie.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Incarceration Rates — The Global Picture</span>
+                  <span class="row-desc">The U.S. incarcerates more people per capita than any other nation. What the numbers actually are, how they compare historically, and what the research says about outcomes.</span>
                 </div>
               </div>
 
