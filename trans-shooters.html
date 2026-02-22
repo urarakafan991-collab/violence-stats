@@ -123,6 +123,9 @@
       overflow-x: auto;
       -ms-overflow-style: none;
       scrollbar-width: none;
+      position: sticky;
+      top: 49px;
+      z-index: 90;
     }
 
     .jump-nav-wrap::-webkit-scrollbar { display: none; }
@@ -1035,11 +1038,52 @@
       .capita-grid, .denom-grid, .limitation-grid { grid-template-columns: 1fr; }
       .shooter-row, .steelman-row { grid-template-columns: 80px 1fr; }
       .nav-category { display: none; }
+      .jump-nav-wrap { top: 43px; }
+    }
+
+    /* Scroll offset for sticky headers */
+    [id^="part"] { scroll-margin-top: 110px; }
+
+    /* Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--brick);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.7rem;
+      z-index: 200;
+      transition: top 0.15s ease;
+    }
+    .skip-link:focus { top: 0; }
+
+    :focus-visible {
+      outline: 2px solid var(--brick);
+      outline-offset: 2px;
+    }
+
+    /* Active jump button */
+    .jump-btn.is-active {
+      color: var(--brick);
+      border-color: var(--brick);
+      background-color: var(--brick-faint);
+    }
+
+    /* Print */
+    @media print {
+      .site-nav, .jump-nav-wrap, .site-footer { display: none; }
+      .article-wrap { padding: 0; max-width: 100%; }
+      .box, .stat-block, .shooter-card, .steelman-card, .chart-wrap { break-inside: avoid; }
     }
 
   </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#part1">Skip to content</a>
 
   <!-- Site nav -->
   <nav class="site-nav" aria-label="Site navigation">
@@ -1862,6 +1906,26 @@
           }
         }
       });
+    })();
+
+    // Scroll spy — highlight active section in jump nav
+    (function() {
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = ['part1','part2','part3','part4','part5'];
+
+      function update() {
+        var current = '';
+        for (var i = ids.length - 1; i >= 0; i--) {
+          var el = document.getElementById(ids[i]);
+          if (el && el.getBoundingClientRect().top <= 130) { current = ids[i]; break; }
+        }
+        btns.forEach(function(b) {
+          b.classList.toggle('is-active', b.getAttribute('href') === '#' + current);
+        });
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
     })();
   </script>
 
