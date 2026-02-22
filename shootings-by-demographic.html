@@ -2,468 +2,301 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mass Shootings by Demographic — TruthBased.org</title>
-  <meta name="description" content="Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender — using Violence Project data under strict definitions.">
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAHTklEQVR42uVXa2xU1xH+5px79+G1HTu8gglKIHIb4aZVeVaBPNzECaZAE1Hf/qha9SGF9kdCVYU4qFLvbn8UnKQ8pEgtKMqPpGqlXUUQEwwEml0ekh3FxkXFKHVaFCJhHouxje193HvPTH8sxosBVahUatXz7849M985M/PNzAH+xxcJQPi/Xe3tbkV7+86Kf8uFd6ogItTTs8tatHfA9K6o+LVvuHZpZ+HFnjV1etGiFwIikrtyOxEhEZCIq9Jp1xJJ6ql7Tn7U9nr3gc1/vEk3mdQlHVeVbAjdNQ90t++criquzvQ8U62IW7XSUd9IXGk9FtF29pGnNly6Ey/c9gAdHe9W68sXzIyZ9DU7hBUB81cI9iwosdkYPzAmb2ssYMBmWCcUcUyTDouASeEygD7f8NHhIdNb9EWt/t6moVvhqPIP13UVABx5b+vsOvv86Zl1lCabXhLhsID+VDDBT4fOjqxa2LTx2aUrX31Oaf0eB5Je0vTyukVPv7Kyf/Dqs34gP/RZ3oLAt5ReP3O6fWjuLNXXvX/r7HKM23mABEAm7epaE/3M9+XnS5o3vX9TGLpfsM+cGeKHpy97wwSm9rPh7p/Mn/+0Wrx4vT91b+e+LU3RML3dfyX3kOMkvGuYcksPiOsSBODByjmGZZYhmkcA+vt3hEsJJQSARkdni+OkDIsgML52nJQZHR0QoJRwIq4q6YBYqB6kZzxYVTOv9N+l24Yg1dBARJBYhfX8WJ52C1sPf7R7W019/QaPKCHXkksm3SdGaTLldyAiIUpwff0GL5N5MwahhcUiJQM26wBIKnX61gcQEXIcx/T8+c0HQFQRq4ztIWWditpoJoJIMqluymBipbX2b0VDIkjYKzZBqb+GItZBIk3H92/7suOkTDktJ42mUgoAvHzx28b3D9kWKiym/UxmwamkG0JLC08FYmYYY6ybUrulhdNp17JEfd0A+5mlNjCFDzQHq8uxbjgAOQ4f39NWJQgeWL524yeKMWNatPqcVvhHvrrqCSKSZHJKMVIWAiORclEy2aKJSML56uVK5Isxss8GfjDjsTWbTjJkTu/ubTXkODxBAFVSSmoAoi3VRLB6S8YZ+YqxWHG0uI9ZnixdrO/GAsNqahqhpWWBAICl1FMFbXfUqCAW8ATFqKsYQTMwGVIFAH19fQIBAVhWYDkAAMaA2QvFHnd+mWXSha6OHQuIEnwDjxWjvOqJCBEluHPv9npjjKx45sUBCxKzLA4AIBQ2Bwm8MJ12rYmQKhFXJRIJPtb+22Ug62Lj2pcvl6zp0PDoiC0iZMPep7VaCQDxhgaaBCTRSnlT88gOY5XWOCgiFA7bYiktALC46dURIZyN5iofL4W0RatUqmTQCkmTUd6+UvMAKcUI2ZaACHu7Lv8lMN60Yx9sriXHMVX9dVRyqRCzKACo6j9P5Dim+9CWewwHcz6/+vHHIELIVszMmLDrj3kdfoBvXnei4zim6/3X54G0t6K59W9EAiKIb8B5E/YJkEQiwfmif1QMvgUA1XML18LAAJhKsgYFAMWCbvY8dcxxUoYAKdI9AUj5RBAiwWPf2XQGmsaO7nvjS46TKlEo0PxgTcS81HNw8zpFbSFSbR4wPqdKyQ9OfLjFJ0JQWxOLXMyOHwHwBzt6hUo0hCVSyqMJWciWhdNrrFW9h7b8igAL+QFtEU/rPdz2XcJrCvJaEImo+4aueicB9FviuiqTzXX6kejY/fdVLsleGUM4pOH7Aq11HbMgZGtAAIL+MQD4+SsCACxCfC2Rx2eASx6QpIA3VlVo+IGBUgqGAUurOt83mH5vDOezY19kTf6I67pKIQ40/ihRyOX1usGRwrnKijCKxQCBYXi+gW1rCBSyg7mfLV218RMRV52L3msAwLJUQCVcZLNgEVeteK61+9Ll/HoRBdu24PkBgoDh+QEqY2EMDhcujeTo+bVrE7mGhtOkJqi1fM3GU3+/MPboyLi8LbAuCLRHSo8UfWQuDnorlzS3/l6SSZ3JQAGw0mnXUlpDQSGddi0AViYDJcmk/sbqTbuyw15TwcNhIj0C0h5Inx8dN+98PpB/9Im1rSdc11WOkzLlnfA6vzve3VH96ZFd8zoPb59VXuGmVtyeD9t+031w8++myssrZufh7bM+7do17/iet6om6TuJRVMHknhDA5HjmPLiksnEdWNjIujq2FEdDge/0IQ5vi8i8J/RihQzHbBtRYAeGswFWxtXv3IhnXatJzNgSiS4vEnF+/okUSa7oZEkEglOXAONx+MUj8eFiOC6LgOAH/hfjUVVY8CSB0kBQl0sSjN4ru+bIByx6iIUekRELgJkqBEiIoR4nFCyZe50KCURoGfXTkvNH30nHNIPjee8YYDBzAxAK6VIExmAAGIJWbrGC2T44qWIs+r7G66KgIhw2yHV+lfTOREgMmCO7422MiywUhpQ13sQA+BCAYhEACgUhgpcABC9P5crzQwQ/DcvupOHyh0ZvlsvpP/0+ieeE9CtQvqlZAAAAABJRU5ErkJggg==">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shootings by Demographic — TruthBased.org</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --page-ground:  #f7f5f1;
-      --card-face:    #ffffff;
-      --card-tinted:  #fdfcfa;
-      --text-primary: #151311;
-      --text-body:    #3d3a33;
-      --text-dim:     #706d64;
-      --text-quiet:   #a09c94;
-      --brick:        #b83a1e;
-      --brick-faint:  #f9ecea;
-      --green-live:   #1b6b3e;
-      --green-faint:  #e8f4ed;
-      --amber:        #8a5c00;
-      --amber-faint:  #fdf6e7;
-      --blue:         #2a5a9a;
-      --blue-faint:   #edf2fa;
-      --rule:         #dedad3;
-      --rule-mid:     #c5c1ba;
-      --shadow-card:  0 1px 4px rgba(0,0,0,0.06);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#07070f;--bg2:#0d0d1a;--bg3:#111122;
+      --border:#1a1a2e;--border2:#222240;
+      --text:#c8c8e0;--text-dim:#6060a0;
+      --gold:#c8a84b;--gold-dim:#7a6428;--white:#e8e8f0;
+      --green:#4baa6e;--red:#c84b4b;--blue:#4b7ac8;--yellow:#c8b84b;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
-    body {
-      background-color: var(--page-ground);
-      color: var(--text-body);
-      font-family: 'Sora', sans-serif;
-      font-weight: 300;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    a.inline-link { color: var(--brick); text-decoration: underline; text-underline-offset: 3px; }
-
-    .site-nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 48px; border-bottom: 1px solid var(--rule);
-      background-color: rgba(247,245,241,0.97);
-      position: sticky; top: 0; z-index: 100;
-      backdrop-filter: blur(6px);
-    }
-    .nav-left { display: flex; align-items: center; gap: 20px; }
-    .nav-wordmark { font-family: 'Spectral', serif; font-weight: 600; font-size: 1rem; color: var(--text-primary); }
-    .nav-wordmark strong { color: var(--brick); }
-    .nav-back {
-      font-family: 'Courier Prime', monospace; font-size: 0.62rem;
-      letter-spacing: 0.08em; color: var(--text-quiet);
-      display: flex; align-items: center; gap: 5px;
-      padding: 4px 10px; border: 1px solid var(--rule); border-radius: 2px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
-    .nav-category {
-      font-family: 'Courier Prime', monospace; font-size: 0.58rem;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-quiet);
-    }
-
-    .page-hero {
-      max-width: 860px; margin: 0 auto; padding: 56px 48px 36px; text-align: center;
-    }
-    .hero-eyebrow {
-      font-family: 'Courier Prime', monospace; font-size: 0.62rem;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--brick);
-      display: block; margin-bottom: 16px;
-      opacity: 0; animation: entryAnim 0.55s ease forwards 0.1s;
-    }
-    .hero-title {
-      font-family: 'Spectral', serif; font-weight: 600;
-      font-size: clamp(1.5rem, 4vw, 2.4rem); color: var(--text-primary);
-      line-height: 1.15; margin-bottom: 16px;
-      opacity: 0; animation: entryAnim 0.55s ease forwards 0.2s;
-    }
-    .hero-desc {
-      font-size: 0.86rem; color: var(--text-dim); line-height: 1.75;
-      max-width: 660px; margin: 0 auto;
-      opacity: 0; animation: entryAnim 0.55s ease forwards 0.3s;
-    }
-
-    .overview-section {
-      max-width: 860px; margin: 0 auto 20px; padding: 0 48px;
-      opacity: 0; animation: entryAnim 0.55s ease forwards 0.4s;
-    }
-    .overview-box {
-      background: var(--card-face); border: 1px solid var(--rule);
-      border-radius: 4px; padding: 22px 24px; box-shadow: var(--shadow-card);
-    }
-    .overview-header {
-      font-family: 'Courier Prime', monospace; font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-quiet);
-      margin-bottom: 16px;
-    }
-    .compare-row {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
-      cursor: pointer; border-radius: 3px; padding: 5px 6px;
-      transition: background-color 0.12s;
-    }
-    .compare-row:hover { background-color: var(--brick-faint); }
-    .compare-row.active-row { background-color: var(--brick-faint); outline: 1px solid rgba(184,58,30,0.2); }
-    .compare-name {
-      font-family: 'Courier Prime', monospace; font-size: 0.68rem;
-      color: var(--text-dim); width: 140px; flex-shrink: 0; transition: color 0.12s;
-    }
-    .compare-row:hover .compare-name { color: var(--text-primary); }
-    .compare-track {
-      flex: 1; height: 22px; background: var(--card-tinted);
-      border: 1px solid var(--rule); border-radius: 3px;
-      position: relative; overflow: hidden;
-    }
-    .c-pop {
-      position: absolute; top: 0; left: 0; height: 100%;
-      border-right: 2px solid rgba(184,58,30,0.35);
-      background: rgba(184,58,30,0.06);
-    }
-    .c-rate { position: absolute; top: 3px; left: 0; height: 16px; border-radius: 2px; }
-    .compare-val {
-      font-family: 'Courier Prime', monospace; font-size: 0.65rem;
-      color: var(--text-dim); width: 85px; flex-shrink: 0; text-align: right;
-    }
-    .overview-legend { display: flex; gap: 18px; margin-top: 14px; flex-wrap: wrap; }
-    .leg-item {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.62rem; color: var(--text-quiet);
-      font-family: 'Courier Prime', monospace;
-    }
-    .leg-swatch { width: 16px; height: 7px; border-radius: 1px; }
-
-    .caveat-section { max-width: 860px; margin: 0 auto 16px; padding: 0 48px; }
-    .caveat-box {
-      background: var(--amber-faint); border: 1px solid rgba(138,92,0,0.18);
-      border-left: 3px solid var(--amber); border-radius: 4px;
-      padding: 14px 18px; font-size: 0.76rem; color: #4a3200; line-height: 1.65;
-    }
-    .caveat-box strong {
-      font-family: 'Courier Prime', monospace; font-size: 0.58rem;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber);
-      display: block; margin-bottom: 6px;
-    }
-
-    .tabs-section { max-width: 860px; margin: 0 auto; padding: 0 48px; scroll-margin-top: 60px; }
-    .tab-row {
-      display: flex; gap: 3px; overflow-x: auto;
-      -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: none;
-    }
-    .tab-row::-webkit-scrollbar { display: none; }
-    .tab-btn {
-      font-family: 'Courier Prime', monospace; font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 8px 14px; border-radius: 4px 4px 0 0;
-      border: 1px solid var(--rule); border-bottom: none;
-      background: var(--card-tinted); color: var(--text-quiet);
-      cursor: pointer; transition: all 0.12s; white-space: nowrap;
-    }
-    .tab-btn:hover { color: var(--text-body); border-color: var(--rule-mid); }
-    .tab-btn.active {
-      background: var(--card-face); color: var(--brick);
-      border-color: var(--brick); position: relative; z-index: 2;
-    }
-    .tab-dot {
-      display: inline-block; width: 5px; height: 5px;
-      border-radius: 50%; margin-right: 5px; vertical-align: middle;
-    }
-
-    .panels-section { max-width: 860px; margin: 0 auto 60px; padding: 0 48px; }
-    .panel {
-      background: var(--card-face); border: 1px solid var(--brick);
-      border-top: 2px solid var(--brick); border-radius: 0 4px 4px 4px;
-      padding: 28px; display: none; opacity: 0; transition: opacity 0.2s;
-      box-shadow: var(--shadow-card);
-    }
-    .panel.active { display: block; }
-    .panel.visible { opacity: 1; }
-
-    .panel-head {
-      display: flex; align-items: flex-start; gap: 20px;
-      margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--rule);
-    }
-    .panel-head-text { flex: 1; }
-    .panel-name {
-      font-family: 'Spectral', serif; font-weight: 600;
-      font-size: 1.25rem; color: var(--text-primary); margin-bottom: 6px;
-    }
-    .panel-tagline { font-size: 0.84rem; color: var(--text-dim); line-height: 1.65; }
-    .verdict-badge {
-      flex-shrink: 0; padding: 9px 14px; border-radius: 4px;
-      font-family: 'Courier Prime', monospace; font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      text-align: center; min-width: 110px; line-height: 1.5;
-    }
-    .v-prop  { background: var(--green-faint); border: 1px solid rgba(27,107,62,0.25); color: var(--green-live); }
-    .v-over  { background: var(--brick-faint); border: 1px solid rgba(184,58,30,0.25); color: var(--brick); }
-    .v-under { background: var(--blue-faint); border: 1px solid rgba(42,90,154,0.25); color: var(--blue); }
-    .v-insuf { background: var(--amber-faint); border: 1px solid rgba(138,92,0,0.25); color: var(--amber); }
-
-    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 20px; }
-    .stat-item { background: var(--card-tinted); border: 1px solid var(--rule); border-radius: 4px; padding: 14px; }
-    .si-label {
-      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 6px;
-    }
-    .si-value { font-family: 'Courier Prime', monospace; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 3px; }
-    .si-sub { font-size: 0.68rem; color: var(--text-dim); }
-    .si-ci { font-family: 'Courier Prime', monospace; font-size: 0.58rem; color: var(--amber); margin-top: 5px; }
-
-    .bar-group { margin-bottom: 20px; }
-    .bar-group-header {
-      font-family: 'Courier Prime', monospace; font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 12px;
-    }
-    .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
-    .bar-label { font-family: 'Courier Prime', monospace; font-size: 0.62rem; color: var(--text-dim); width: 100px; flex-shrink: 0; }
-    .bar-track { flex: 1; height: 8px; background: var(--card-tinted); border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 2px; transition: width 0.6s; }
-    .fill-pop  { background: rgba(184,58,30,0.15); }
-    .fill-perp { background: var(--brick); }
-    .fill-rate { background: var(--blue); }
-    .bar-value { font-family: 'Courier Prime', monospace; font-size: 0.6rem; color: var(--text-dim); width: 55px; flex-shrink: 0; text-align: right; }
-
-    .content-block { margin-bottom: 18px; }
-    .content-block-title {
-      font-family: 'Courier Prime', monospace; font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--brick);
-      margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid var(--rule);
-    }
-    .content-block-body { font-size: 0.84rem; line-height: 1.75; color: var(--text-body); }
-    .content-block-body p { margin-bottom: 8px; }
-    .content-block-body p:last-child { margin-bottom: 0; }
-
-    .conf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
-    .conf-item { background: var(--card-tinted); border: 1px solid var(--rule); border-radius: 4px; padding: 11px; }
-    .conf-label {
-      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 4px;
-    }
-    .conf-value { font-family: 'Courier Prime', monospace; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
-    .conf-note { font-size: 0.64rem; color: var(--text-dim); }
-
-    .callout { border-radius: 4px; padding: 14px 16px; margin-bottom: 10px; }
-    .callout-debunk { background: var(--brick-faint); border: 1px solid rgba(184,58,30,0.18); border-left: 3px solid var(--brick); }
-    .callout-steel { background: var(--blue-faint); border: 1px solid rgba(42,90,154,0.18); border-left: 3px solid var(--blue); }
-    .callout-limit { background: var(--amber-faint); border: 1px solid rgba(138,92,0,0.18); border-left: 3px solid var(--amber); }
-    .callout-tag {
-      font-family: 'Courier Prime', monospace; font-size: 0.55rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 6px;
-    }
-    .tag-debunk { color: var(--brick); }
-    .tag-steel  { color: var(--blue); }
-    .tag-limit  { color: var(--amber); }
-    .callout-claim { font-family: 'Spectral', serif; font-style: italic; font-size: 0.82rem; color: var(--text-primary); margin-bottom: 6px; }
-    .callout-body { font-size: 0.8rem; line-height: 1.7; color: var(--text-body); }
-
-    .source-list { list-style: none; }
-    .source-list li {
-      font-family: 'Courier Prime', monospace; font-size: 0.62rem; color: var(--text-dim);
-      padding: 4px 0; border-bottom: 1px solid var(--rule); line-height: 1.55;
-    }
-    .source-list li:last-child { border-bottom: none; }
-    .source-list a { color: var(--brick); }
-    .source-list a:hover { text-decoration: underline; }
-
-    .site-footer {
-      border-top: 1px solid var(--rule); padding: 20px 48px;
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-    }
-    .footer-note { font-family: 'Courier Prime', monospace; font-size: 0.6rem; color: var(--text-quiet); }
-
-    @keyframes entryAnim {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .skip-link {
-      position: absolute; top: -100%; left: 16px;
-      background: var(--brick); color: #fff;
-      padding: 8px 16px; border-radius: 0 0 4px 4px;
-      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
-      z-index: 200; transition: top 0.15s;
-    }
-    .skip-link:focus { top: 0; }
-    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
-
-    @media (max-width: 640px) {
-      .site-nav, .overview-section, .caveat-section, .tabs-section, .panels-section, .site-footer {
-        padding-left: 20px; padding-right: 20px;
-      }
-      .page-hero { padding: 36px 20px 24px; }
-      .panel { padding: 18px 14px; }
-      .panel-head { flex-direction: column; gap: 10px; }
-      .stat-grid { grid-template-columns: 1fr 1fr; }
-      .nav-category { display: none; }
-      .compare-name { width: 80px; font-size: 0.58rem; }
-      .bar-label { width: 70px; font-size: 0.56rem; }
-      .site-footer { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
-      .conf-grid { grid-template-columns: 1fr 1fr; }
-      .hero-desc { font-size: 0.78rem; }
-      .site-nav { padding: 10px 16px; }
-    }
-    @media (max-width: 900px) and (min-width: 641px) {
-      .site-nav, .overview-section, .caveat-section, .tabs-section, .panels-section, .site-footer {
-        padding-left: 32px; padding-right: 32px;
-      }
-      .page-hero { padding: 44px 32px 32px; }
-    }
-    @media print {
-      .site-nav, .site-footer { display: none; }
-      .panel { display: block !important; opacity: 1 !important; border: 1px solid #ccc; margin-bottom: 24px; }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(200,168,75,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+    nav{position:sticky;top:0;z-index:100;background:rgba(7,7,15,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;gap:14px}
+    .nav-home{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-scales{font-size:1.3rem}
+    .nav-logo{font-family:'IBM Plex Mono',monospace;font-size:.75rem;font-weight:700;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
+    .nav-sep{width:1px;height:18px;background:var(--border2)}
+    .nav-page{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase}
+    .hero{position:relative;z-index:1;text-align:center;padding:60px 24px 40px;max-width:860px;margin:0 auto}
+    .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;animation:fadeUp .6s ease both .1s}
+    h1{font-family:'IBM Plex Mono',monospace;font-size:clamp(1.5rem,4vw,2.4rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:16px;animation:fadeUp .6s ease both .2s}
+    h1 span{color:var(--gold)}
+    .hero-desc{font-size:.9rem;color:var(--text);line-height:1.75;max-width:660px;margin:0 auto 28px;animation:fadeUp .6s ease both .3s}
+    /* OVERVIEW BAR CHART */
+    .overview{position:relative;z-index:1;max-width:860px;margin:0 auto 30px;padding:0 24px;animation:fadeUp .6s ease both .4s}
+    .overview-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:24px}
+    .section-hdr{font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:18px}
+    .compare-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;cursor:pointer;border-radius:4px;padding:4px;transition:background .15s}
+    .compare-row:hover{background:rgba(200,168,75,.05)}
+    .compare-row.active-row{background:rgba(200,168,75,.08);outline:1px solid rgba(200,168,75,.2)}
+    .compare-row:hover .compare-name{color:var(--text)}
+    .compare-name{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text-dim);width:150px;flex-shrink:0;transition:color .2s}
+    .compare-track{flex:1;height:24px;background:var(--bg3);border-radius:3px;position:relative;overflow:hidden}
+    .c-pop{position:absolute;top:0;left:0;height:100%;border-right:2px solid rgba(200,168,75,.5);background:rgba(200,168,75,.1)}
+    .c-rate{position:absolute;top:4px;left:0;height:16px;border-radius:2px}
+    .compare-val{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--text-dim);width:80px;flex-shrink:0;text-align:right}
+    .legend{display:flex;gap:20px;margin-top:14px}
+    .leg-item{display:flex;align-items:center;gap:7px;font-size:.68rem;color:var(--text-dim)}
+    .leg-sw{width:18px;height:8px;border-radius:2px}
+    /* CAVEAT */
+    .caveat{position:relative;z-index:1;max-width:860px;margin:0 auto 16px;padding:0 24px}
+    .caveat-box{background:rgba(200,184,75,.05);border:1px solid rgba(200,184,75,.2);border-radius:4px;padding:12px 16px;font-size:.72rem;color:var(--text-dim);line-height:1.6}
+    .caveat-box strong{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow)}
+    /* TABS */
+    .tabs-wrap{position:relative;z-index:1;max-width:860px;margin:0 auto 0;padding:0 24px;scroll-margin-top:60px}
+    .tabs{display:flex;gap:3px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+    .tabs::-webkit-scrollbar{display:none}
+    .tab{font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:600;padding:7px 14px;border-radius:4px 4px 0 0;border:1px solid var(--border);border-bottom:none;background:var(--bg2);color:var(--text-dim);cursor:pointer;transition:all .2s;letter-spacing:.05em;text-transform:uppercase}
+    .tab:hover{color:var(--text);border-color:var(--border2)}
+    .tab.active{background:var(--bg3);color:var(--white);border-color:var(--gold);border-bottom:1px solid var(--bg3);z-index:2;position:relative}
+    .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:middle}
+    /* PANELS */
+    .panels{position:relative;z-index:1;max-width:860px;margin:0 auto 60px;padding:0 24px}
+    .panel{background:var(--bg3);border:1px solid var(--gold);border-radius:0 6px 6px 6px;padding:28px;display:none;opacity:0;transition:opacity .2s ease}
+    .panel.active{display:block}
+    .panel.visible{opacity:1}
+    .panel.active{display:block}
+    .p-header{display:flex;align-items:flex-start;gap:20px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border2)}
+    .p-header-text{flex:1}
+    .p-name{font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:6px}
+    .p-tagline{font-size:.84rem;color:var(--text-dim);line-height:1.6}
+    .verdict{flex-shrink:0;padding:9px 16px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:center;min-width:120px}
+    .v-prop{background:rgba(75,170,110,.12);border:1px solid var(--green);color:var(--green)}
+    .v-over{background:rgba(200,75,75,.12);border:1px solid var(--red);color:var(--red)}
+    .v-under{background:rgba(75,122,200,.12);border:1px solid var(--blue);color:var(--blue)}
+    .v-insuf{background:rgba(200,184,75,.08);border:1px solid var(--yellow);color:var(--yellow)}
+    /* STATS GRID */
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin-bottom:22px}
+    .stat{background:var(--bg2);border:1px solid var(--border2);border-radius:4px;padding:14px}
+    .stat-lbl{font-family:'IBM Plex Mono',monospace;font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
+    .stat-val{font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:3px}
+    .stat-sub{font-size:.68rem;color:var(--text-dim)}
+    .stat-ci{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--gold-dim);margin-top:5px}
+    /* BARS */
+    .bars{margin-bottom:22px}
+    .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .bar-lbl{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--text-dim);width:110px;flex-shrink:0}
+    .bar-track{flex:1;height:9px;background:var(--bg2);border-radius:2px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:2px;transition:width .8s ease}
+    .b-pop{background:rgba(200,168,75,.25)}
+    .b-perp{background:var(--gold)}
+    .b-rate{background:var(--blue)}
+    .bar-val{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text-dim);width:55px;flex-shrink:0;text-align:right}
+    /* CONTENT SECTIONS */
+    .sec{margin-bottom:20px}
+    .sec-title{font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+    .sec-body{font-size:.85rem;line-height:1.75;color:var(--text)}
+    .sec-body p{margin-bottom:9px}
+    .sec-body p:last-child{margin-bottom:0}
+    /* CONFOUNDERS */
+    .conf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px}
+    .conf-item{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:11px}
+    .conf-metric{font-family:'IBM Plex Mono',monospace;font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px}
+    .conf-val{font-family:'IBM Plex Mono',monospace;font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:2px}
+    .conf-note{font-size:.65rem;color:var(--text-dim)}
+    /* CALLOUTS */
+    .callout{border-radius:4px;padding:14px 16px;margin-bottom:10px}
+    .c-debunk{background:rgba(200,75,75,.06);border:1px solid rgba(200,75,75,.22)}
+    .c-steel{background:rgba(75,122,200,.06);border:1px solid rgba(75,122,200,.22)}
+    .c-limit{background:rgba(200,184,75,.05);border:1px solid rgba(200,184,75,.18)}
+    .c-tag{font-family:'IBM Plex Mono',monospace;font-size:.56rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+    .t-debunk{color:var(--red)}.t-steel{color:var(--blue)}.t-limit{color:var(--yellow)}
+    .c-claim{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--white);margin-bottom:6px;font-style:italic}
+    .c-body{font-size:.8rem;line-height:1.7;color:var(--text)}
+    /* SOURCES */
+    .src-list{list-style:none}
+    .src-list li{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text-dim);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.5}
+    .src-list li:last-child{border-bottom:none}
+    .src-list a{color:var(--gold-dim);text-decoration:none}
+    .src-list a:hover{color:var(--gold)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:600px){
+      nav{padding:12px 16px}
+      .hero,.overview,.caveat,.tabs-wrap,.panels{padding:0 14px}
+      .panel{padding:18px 14px}
+      .p-header{flex-direction:column;gap:10px}
+      .stats{grid-template-columns:1fr 1fr}
     }
   </style>
 </head>
 <body>
 
-<a class="skip-link" href="#panels">Skip to content</a>
-
-<nav class="site-nav" aria-label="Site navigation">
-  <div class="nav-left">
-    <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-    <a href="/" class="nav-back">&#8592; Home</a>
-  </div>
-  <span class="nav-category">Demographic Analysis</span>
+<nav>
+  <a href="/" class="nav-home">
+    <span class="nav-scales">⚖️</span>
+    <span class="nav-logo">TruthBased.org</span>
+  </a>
+  <div class="nav-sep"></div>
+  <span class="nav-page">Mass Shootings by Demographic</span>
 </nav>
 
-<header class="page-hero">
-  <span class="hero-eyebrow">Statistical Analysis &middot; Primary Sources</span>
-  <h1 class="hero-title">Mass Shootings by Demographic</h1>
-  <p class="hero-desc">Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender &mdash; using Violence Project data (N=172, 1966&ndash;2024) under strict FBI-adjacent definitions.</p>
-</header>
+<div class="hero">
+  <div class="eyebrow">Statistical Analysis · Primary Sources</div>
+  <h1>Mass Shootings by <span>Demographic</span></h1>
+  <p class="hero-desc">Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender — using Violence Project data (N=172, 1966–2024) under strict FBI-adjacent definitions.</p>
+</div>
 
-<div class="overview-section">
+<!-- OVERVIEW COMPARISON -->
+<div class="overview">
   <div class="overview-box">
-    <div class="overview-header">Per-Capita Rate Comparison &mdash; All Groups (shooters per 100k, strict definition)</div>
+    <div class="section-hdr">Per-Capita Rate Comparison — All Groups (shooters per 100k, strict definition)</div>
     <div class="compare-row" data-tab="white" onclick="showPanel('white')">
       <div class="compare-name">White (non-Hisp.)</div>
-      <div class="compare-track"><div class="c-pop" style="width:57.8%"></div><div class="c-rate" style="width:46%;background:rgba(184,58,30,0.55)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:57.8%"></div>
+        <div class="c-rate" style="width:46%;background:rgba(200,168,75,.7)"></div>
+      </div>
       <div class="compare-val">0.046/100k</div>
     </div>
     <div class="compare-row" data-tab="black" onclick="showPanel('black')">
       <div class="compare-name">Black (non-Hisp.)</div>
-      <div class="compare-track"><div class="c-pop" style="width:13.7%"></div><div class="c-rate" style="width:77%;background:rgba(184,58,30,0.75)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:13.7%"></div>
+        <div class="c-rate" style="width:77%;background:rgba(200,75,75,.75)"></div>
+      </div>
       <div class="compare-val">0.077/100k</div>
     </div>
     <div class="compare-row" data-tab="hispanic" onclick="showPanel('hispanic')">
       <div class="compare-name">Hispanic/Latino</div>
-      <div class="compare-track"><div class="c-pop" style="width:19.5%"></div><div class="c-rate" style="width:21%;background:rgba(42,90,154,0.6)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:19.5%"></div>
+        <div class="c-rate" style="width:21%;background:rgba(75,122,200,.7)"></div>
+      </div>
       <div class="compare-val">0.021/100k</div>
     </div>
     <div class="compare-row" data-tab="asian" onclick="showPanel('asian')">
       <div class="compare-name">Asian (non-Hisp.)</div>
-      <div class="compare-track"><div class="c-pop" style="width:6.2%"></div><div class="c-rate" style="width:48%;background:rgba(184,58,30,0.45)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:6.2%"></div>
+        <div class="c-rate" style="width:48%;background:rgba(200,168,75,.5)"></div>
+      </div>
       <div class="compare-val">0.048/100k</div>
     </div>
     <div class="compare-row" data-tab="native" onclick="showPanel('native')">
       <div class="compare-name">Native American</div>
-      <div class="compare-track"><div class="c-pop" style="width:1.3%"></div><div class="c-rate" style="width:63%;background:rgba(138,92,0,0.5)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:1.3%"></div>
+        <div class="c-rate" style="width:63%;background:rgba(200,184,75,.5)"></div>
+      </div>
       <div class="compare-val">0.063/100k*</div>
     </div>
     <div class="compare-row" data-tab="immigrant" onclick="showPanel('immigrant')">
       <div class="compare-name">Foreign-Born</div>
-      <div class="compare-track"><div class="c-pop" style="width:13.9%"></div><div class="c-rate" style="width:14.4%;background:rgba(27,107,62,0.6)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:13.9%"></div>
+        <div class="c-rate" style="width:14.4%;background:rgba(75,170,110,.7)"></div>
+      </div>
       <div class="compare-val">~proportional</div>
     </div>
     <div class="compare-row" data-tab="gender" onclick="showPanel('gender')">
       <div class="compare-name">Male</div>
-      <div class="compare-track"><div class="c-pop" style="width:49.5%"></div><div class="c-rate" style="width:97.7%;background:rgba(184,58,30,0.5)"></div></div>
+      <div class="compare-track">
+        <div class="c-pop" style="width:49.5%"></div>
+        <div class="c-rate" style="width:97.7%;background:rgba(200,75,75,.5)"></div>
+      </div>
       <div class="compare-val">0.101/100k</div>
     </div>
-    <div class="overview-legend">
-      <div class="leg-item"><div class="leg-swatch" style="background:rgba(184,58,30,0.1);border-right:2px solid rgba(184,58,30,0.35)"></div>% of U.S. population</div>
-      <div class="leg-item"><div class="leg-swatch" style="background:rgba(184,58,30,0.55)"></div>Per-capita rate (scaled)</div>
-      <div class="leg-item" style="font-size:.58rem">* N=3, wide CI &mdash; click for details</div>
+    <div class="legend">
+      <div class="leg-item"><div class="leg-sw" style="background:rgba(200,168,75,.2);border-right:2px solid rgba(200,168,75,.5)"></div>% of U.S. population</div>
+      <div class="leg-item"><div class="leg-sw" style="background:rgba(200,168,75,.7)"></div>Per-capita rate (scaled)</div>
+      <div class="leg-item" style="color:var(--text-dim);font-size:.62rem">* N=3, wide CI — click for details</div>
     </div>
   </div>
 </div>
 
-<div class="caveat-section">
+<div class="caveat">
   <div class="caveat-box">
-    <strong>Data quality notice</strong>
-    Primary source: Violence Project database (N=172 incidents, 1966&ndash;2024, strict definition: 4+ killed, public location, no gang/domestic). Of 172 total shooters, only 154 have confirmed racial categorization &mdash; 18 remain unknown. Native American n=3 produces unreliable estimates. Immigrant data drawn from separate dataset (N=298). Click any group for full methodology.
+    <strong>Data quality notice</strong> — Primary source: Violence Project database (N=172 incidents, 1966–2024, strict definition: 4+ killed, public location, no gang/domestic). Of 172 total shooters, only 154 have confirmed racial categorization — 18 remain unknown. Native American n=3 produces unreliable estimates. Immigrant data drawn from separate dataset (N=298). Click any group for full methodology.
   </div>
 </div>
 
-<div class="tabs-section">
-  <div class="tab-row">
-    <button class="tab-btn active" data-tab="white" onclick="showPanel('white')"><span class="tab-dot" style="background:var(--brick)"></span>White</button>
-    <button class="tab-btn" data-tab="black" onclick="showPanel('black')"><span class="tab-dot" style="background:var(--brick)"></span>Black</button>
-    <button class="tab-btn" data-tab="hispanic" onclick="showPanel('hispanic')"><span class="tab-dot" style="background:var(--blue)"></span>Hispanic</button>
-    <button class="tab-btn" data-tab="asian" onclick="showPanel('asian')"><span class="tab-dot" style="background:var(--green-live)"></span>Asian</button>
-    <button class="tab-btn" data-tab="native" onclick="showPanel('native')"><span class="tab-dot" style="background:var(--amber)"></span>Native</button>
-    <button class="tab-btn" data-tab="immigrant" onclick="showPanel('immigrant')"><span class="tab-dot" style="background:var(--green-live)"></span>Immigrant</button>
-    <button class="tab-btn" data-tab="gender" onclick="showPanel('gender')"><span class="tab-dot" style="background:var(--brick)"></span>Gender</button>
-    <button class="tab-btn" data-tab="trans" onclick="showPanel('trans')"><span class="tab-dot" style="background:var(--amber)"></span>Trans</button>
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" data-tab="white" onclick="showPanel('white')"><span class="dot" style="background:#c8a84b"></span>White</button>
+    <button class="tab" data-tab="black" onclick="showPanel('black')"><span class="dot" style="background:#c84b4b"></span>Black</button>
+    <button class="tab" data-tab="hispanic" onclick="showPanel('hispanic')"><span class="dot" style="background:#4b7ac8"></span>Hispanic</button>
+    <button class="tab" data-tab="asian" onclick="showPanel('asian')"><span class="dot" style="background:#4baa6e"></span>Asian</button>
+    <button class="tab" data-tab="native" onclick="showPanel('native')"><span class="dot" style="background:#c8b84b"></span>Native</button>
+    <button class="tab" data-tab="immigrant" onclick="showPanel('immigrant')"><span class="dot" style="background:#6080c0"></span>Immigrant</button>
+    <button class="tab" data-tab="gender" onclick="showPanel('gender')"><span class="dot" style="background:#c84b4b"></span>Gender</button>
+    <button class="tab" data-tab="trans" onclick="showPanel('trans')"><span class="dot" style="background:#c84b8a"></span>Trans</button>
   </div>
 </div>
 
-<div class="panels-section" id="panels">
+<!-- PANELS -->
+<div class="panels">
 
   <!-- WHITE -->
   <div class="panel active" id="panel-white">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">White (Non-Hispanic)</div>
-        <div class="panel-tagline">Largest group in both population and raw shooter count. Per-capita rate is essentially proportional to population share.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">White (Non-Hispanic)</div>
+        <div class="p-tagline">Largest group in both population and raw shooter count. Per-capita rate is essentially proportional to population share.</div>
       </div>
-      <div class="verdict-badge v-prop">Proportional<br><small style="font-size:.58rem;font-weight:400">~1.0× expected</small></div>
+      <div class="verdict v-prop">PROPORTIONAL<br><small style="font-size:.58rem;font-weight:400">~1.0× expected</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Shooter Count</div><div class="si-value">90</div><div class="si-sub">of 154 categorized (58.4%)</div></div>
-      <div class="stat-item"><div class="si-label">Pop. Share</div><div class="si-value">57.8%</div><div class="si-sub">2020 Census</div></div>
-      <div class="stat-item"><div class="si-label">Per Capita</div><div class="si-value">0.046</div><div class="si-sub">per 100,000</div><div class="si-ci">95% CI: 0.037–0.057</div></div>
-      <div class="stat-item"><div class="si-label">Rate Ratio</div><div class="si-value">~1.0×</div><div class="si-sub">vs. national avg</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Shooter Count</div><div class="stat-val">90</div><div class="stat-sub">of 154 categorized (58.4%)</div></div>
+      <div class="stat"><div class="stat-lbl">Pop. Share</div><div class="stat-val">57.8%</div><div class="stat-sub">2020 Census</div></div>
+      <div class="stat"><div class="stat-lbl">Per Capita</div><div class="stat-val">0.046</div><div class="stat-sub">per 100,000</div><div class="stat-ci">95% CI: 0.037–0.057</div></div>
+      <div class="stat"><div class="stat-lbl">Rate Ratio</div><div class="stat-val">~1.0×</div><div class="stat-sub">vs. national avg</div></div>
     </div>
-    <div class="bar-group">
-      <div class="bar-group-header">White vs. National Context</div>
-      <div class="bar-row"><div class="bar-label">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:57.8%"></div></div><div class="bar-value">57.8%</div></div>
-      <div class="bar-row"><div class="bar-label">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:58.4%"></div></div><div class="bar-value">58.4%</div></div>
-      <div class="bar-row"><div class="bar-label">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:46%"></div></div><div class="bar-value">0.046</div></div>
+    <div class="bars">
+      <div class="section-hdr">White vs. National Context</div>
+      <div class="bar-row"><div class="bar-lbl">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:57.8%"></div></div><div class="bar-val">57.8%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:58.4%"></div></div><div class="bar-val">58.4%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:46%"></div></div><div class="bar-val">0.046</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Key Findings</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Key Findings</div>
+      <div class="sec-body">
         <p>White non-Hispanic Americans commit mass shootings in almost exact proportion to their population share. The 58.4% shooter share vs. 57.8% population share difference is statistically negligible.</p>
         <p>The 95% confidence interval (0.037–0.057) overlaps substantially with Asian Americans (0.024–0.086), meaning the difference between White and Asian rates is not statistically significant.</p>
         <p>Raw count dominance (90 shooters) reflects population size, not elevated individual risk. This is a critical distinction often lost in media coverage.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Socioeconomic Context</div>
+    <div class="sec">
+      <div class="sec-title">Socioeconomic Context</div>
       <div class="conf-grid">
-        <div class="conf-item"><div class="conf-label">Poverty Rate</div><div class="conf-value">9.1%</div><div class="conf-note">Below national avg</div></div>
-        <div class="conf-item"><div class="conf-label">Unemployment</div><div class="conf-value">3.6%</div><div class="conf-note">Near national avg</div></div>
-        <div class="conf-item"><div class="conf-label">Median HH Income</div><div class="conf-value">$74k</div><div class="conf-note">2022 Census est.</div></div>
-        <div class="conf-item"><div class="conf-label">Incarceration</div><div class="conf-value">188/100k</div><div class="conf-note">BJS 2021</div></div>
+        <div class="conf-item"><div class="conf-metric">Poverty Rate</div><div class="conf-val">9.1%</div><div class="conf-note">Below national avg</div></div>
+        <div class="conf-item"><div class="conf-metric">Unemployment</div><div class="conf-val">3.6%</div><div class="conf-note">Near national avg</div></div>
+        <div class="conf-item"><div class="conf-metric">Median HH Income</div><div class="conf-val">$74k</div><div class="conf-note">2022 Census est.</div></div>
+        <div class="conf-item"><div class="conf-metric">Incarceration</div><div class="conf-val">188/100k</div><div class="conf-note">BJS 2021</div></div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Debunked Claims</div>
+    <div class="sec">
+      <div class="sec-title">Debunked Claims</div>
       <div class="callout c-debunk">
-        <div class="callout-tag t-debunk">Debunked</div>
-        <div class="callout-claim">"97% of mass shooters are White"</div>
-        <div class="callout-body">This figure originated from cherry-picked pre-2010 data and non-standard definitions. Under the Violence Project's strict methodology covering 1966–2024, White shooters account for ~52–58% — proportional to their population share.</div>
+        <div class="c-tag t-debunk">⚠ Debunked</div>
+        <div class="c-claim">"97% of mass shooters are White"</div>
+        <div class="c-body">This figure originated from cherry-picked pre-2010 data and non-standard definitions. Under the Violence Project's strict methodology covering 1966–2024, White shooters account for ~52–58% — proportional to their population share.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Steelman Arguments</div>
+    <div class="sec">
+      <div class="sec-title">Steelman Arguments</div>
       <div class="callout c-steel">
-        <div class="callout-tag t-steel">Pro-Systemic</div>
-        <div class="callout-body">White men's overrepresentation in specific subtypes (school, workplace, ideologically-motivated) may reflect cultural factors around entitlement, status threat, and access to firearms in rural/suburban contexts.</div>
+        <div class="c-tag t-steel">Pro-Systemic</div>
+        <div class="c-body">White men's overrepresentation in specific subtypes (school, workplace, ideologically-motivated) may reflect cultural factors around entitlement, status threat, and access to firearms in rural/suburban contexts.</div>
       </div>
       <div class="callout c-steel">
-        <div class="callout-tag t-steel">Pro-Individual</div>
-        <div class="callout-body">The proportionality finding suggests no systemic racial predisposition — individual mental health, grievance, and access to firearms are the primary drivers regardless of race.</div>
+        <div class="c-tag t-steel">Pro-Individual</div>
+        <div class="c-body">The proportionality finding suggests no systemic racial predisposition — individual mental health, grievance, and access to firearms are the primary drivers regardless of race.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Peterson, J. & Densley, J. — The Violence Project Database (2024)</li>
         <li>U.S. Census Bureau — 2020 Decennial Census racial/ethnic data</li>
         <li>Mother Jones — Mass Shootings Database (1982–2024)</li>
@@ -473,65 +306,65 @@
 
   <!-- BLACK -->
   <div class="panel" id="panel-black">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Black (Non-Hispanic)</div>
-        <div class="panel-tagline">Statistically elevated per-capita rate under strict definition, but confidence intervals overlap with White and Asian groups. Socioeconomic confounders are substantial.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Black (Non-Hispanic)</div>
+        <div class="p-tagline">Statistically elevated per-capita rate under strict definition, but confidence intervals overlap with White and Asian groups. Socioeconomic confounders are substantial.</div>
       </div>
-      <div class="verdict-badge v-over">Elevated<br><small style="font-size:.58rem;font-weight:400">~1.7× expected rate</small></div>
+      <div class="verdict v-over">ELEVATED<br><small style="font-size:.58rem;font-weight:400">~1.7× expected rate</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Shooter Count</div><div class="si-value">36</div><div class="si-sub">of 154 categorized (23.4%)</div></div>
-      <div class="stat-item"><div class="si-label">Pop. Share</div><div class="si-value">13.7%</div><div class="si-sub">2020 Census</div></div>
-      <div class="stat-item"><div class="si-label">Per Capita</div><div class="si-value">0.077</div><div class="si-sub">per 100,000</div><div class="si-ci">95% CI: 0.054–0.107</div></div>
-      <div class="stat-item"><div class="si-label">Rate Ratio</div><div class="si-value">~1.7×</div><div class="si-sub">vs. White rate</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Shooter Count</div><div class="stat-val">36</div><div class="stat-sub">of 154 categorized (23.4%)</div></div>
+      <div class="stat"><div class="stat-lbl">Pop. Share</div><div class="stat-val">13.7%</div><div class="stat-sub">2020 Census</div></div>
+      <div class="stat"><div class="stat-lbl">Per Capita</div><div class="stat-val">0.077</div><div class="stat-sub">per 100,000</div><div class="stat-ci">95% CI: 0.054–0.107</div></div>
+      <div class="stat"><div class="stat-lbl">Rate Ratio</div><div class="stat-val">~1.7×</div><div class="stat-sub">vs. White rate</div></div>
     </div>
-    <div class="bar-group">
-      <div class="bar-group-header">Black vs. National Context</div>
-      <div class="bar-row"><div class="bar-label">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:13.7%"></div></div><div class="bar-value">13.7%</div></div>
-      <div class="bar-row"><div class="bar-label">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:23.4%"></div></div><div class="bar-value">23.4%</div></div>
-      <div class="bar-row"><div class="bar-label">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:77%"></div></div><div class="bar-value">0.077</div></div>
+    <div class="bars">
+      <div class="section-hdr">Black vs. National Context</div>
+      <div class="bar-row"><div class="bar-lbl">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:13.7%"></div></div><div class="bar-val">13.7%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:23.4%"></div></div><div class="bar-val">23.4%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:77%"></div></div><div class="bar-val">0.077</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Key Findings</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Key Findings</div>
+      <div class="sec-body">
         <p>Under the strict Violence Project definition, Black Americans account for 23.4% of shooters vs. 13.7% of population — a per-capita rate approximately 1.7× the White rate.</p>
         <p>However, the 95% confidence intervals for Black (0.054–0.107) and White (0.037–0.057) rates do overlap, meaning the difference may not reach conventional statistical significance thresholds.</p>
         <p>Definition sensitivity is critical here: under the broad Gun Violence Archive definition (4+ shot, including gang violence), Black representation rises dramatically — reflecting different social dynamics than public mass shootings.</p>
         <p>The elevated rate cannot be interpreted as a racial cause without controlling for poverty, incarceration history, neighborhood disadvantage, and historical structural factors.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Socioeconomic Context</div>
+    <div class="sec">
+      <div class="sec-title">Socioeconomic Context</div>
       <div class="conf-grid">
-        <div class="conf-item"><div class="conf-label">Poverty Rate</div><div class="conf-value">17.2%</div><div class="conf-note">Nearly 2× White rate</div></div>
-        <div class="conf-item"><div class="conf-label">Unemployment</div><div class="conf-value">6.1%</div><div class="conf-note">2× White rate</div></div>
-        <div class="conf-item"><div class="conf-label">Median HH Income</div><div class="conf-value">$48k</div><div class="conf-note">vs. $74k White</div></div>
-        <div class="conf-item"><div class="conf-label">Incarceration</div><div class="conf-value">911/100k</div><div class="conf-note">4.8× White rate</div></div>
+        <div class="conf-item"><div class="conf-metric">Poverty Rate</div><div class="conf-val">17.2%</div><div class="conf-note">Nearly 2× White rate</div></div>
+        <div class="conf-item"><div class="conf-metric">Unemployment</div><div class="conf-val">6.1%</div><div class="conf-note">2× White rate</div></div>
+        <div class="conf-item"><div class="conf-metric">Median HH Income</div><div class="conf-val">$48k</div><div class="conf-note">vs. $74k White</div></div>
+        <div class="conf-item"><div class="conf-metric">Incarceration</div><div class="conf-val">911/100k</div><div class="conf-note">4.8× White rate</div></div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Debunked Claims</div>
+    <div class="sec">
+      <div class="sec-title">Debunked Claims</div>
       <div class="callout c-debunk">
-        <div class="callout-tag t-debunk">Debunked</div>
-        <div class="callout-claim">"Black people commit most mass shootings"</div>
-        <div class="callout-body">False under strict definitions. This claim relies on the broad GVA definition which includes gang shootings, drive-bys, and domestic incidents — fundamentally different events from public mass shootings. Under Violence Project strict criteria, White Americans have the highest raw count.</div>
+        <div class="c-tag t-debunk">⚠ Debunked</div>
+        <div class="c-claim">"Black people commit most mass shootings"</div>
+        <div class="c-body">False under strict definitions. This claim relies on the broad GVA definition which includes gang shootings, drive-bys, and domestic incidents — fundamentally different events from public mass shootings. Under Violence Project strict criteria, White Americans have the highest raw count.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Steelman Arguments</div>
+    <div class="sec">
+      <div class="sec-title">Steelman Arguments</div>
       <div class="callout c-steel">
-        <div class="callout-tag t-steel">Pro-Systemic</div>
-        <div class="callout-body">Structural racism, concentrated poverty, over-policing, mass incarceration, and historical disinvestment in Black communities create risk conditions. Studies controlling for poverty and neighborhood disadvantage significantly reduce or eliminate racial disparities in violence.</div>
+        <div class="c-tag t-steel">Pro-Systemic</div>
+        <div class="c-body">Structural racism, concentrated poverty, over-policing, mass incarceration, and historical disinvestment in Black communities create risk conditions. Studies controlling for poverty and neighborhood disadvantage significantly reduce or eliminate racial disparities in violence.</div>
       </div>
       <div class="callout c-steel">
-        <div class="callout-tag t-steel">Pro-Individual</div>
-        <div class="callout-body">Culture, community norms, and individual choices also play a role. Not all communities with high poverty rates have elevated violence — suggesting socioeconomic factors alone are insufficient explanations.</div>
+        <div class="c-tag t-steel">Pro-Individual</div>
+        <div class="c-body">Culture, community norms, and individual choices also play a role. Not all communities with high poverty rates have elevated violence — suggesting socioeconomic factors alone are insufficient explanations.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Violence Project Database (Peterson &amp; Densley, 2024) — primary dataset</li>
         <li>Bureau of Justice Statistics — Incarceration data 2021</li>
         <li>U.S. Census Bureau ACS 2022 — income and poverty data</li>
@@ -542,52 +375,52 @@
 
   <!-- HISPANIC -->
   <div class="panel" id="panel-hispanic">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Hispanic / Latino</div>
-        <div class="panel-tagline">Strongly underrepresented relative to population share. The "Hispanic poverty paradox" — high poverty yet lowest mass shooting rate — challenges purely economic explanations.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Hispanic / Latino</div>
+        <div class="p-tagline">Strongly underrepresented relative to population share. The "Hispanic poverty paradox" — high poverty yet lowest mass shooting rate — challenges purely economic explanations.</div>
       </div>
-      <div class="verdict-badge v-under">Underrepresented<br><small style="font-size:.58rem;font-weight:400">~0.45× expected rate</small></div>
+      <div class="verdict v-under">UNDERREPRESENTED<br><small style="font-size:.58rem;font-weight:400">~0.45× expected rate</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Shooter Count</div><div class="si-value">14</div><div class="si-sub">of 154 categorized (9.1%)</div></div>
-      <div class="stat-item"><div class="si-label">Pop. Share</div><div class="si-value">19.3%</div><div class="si-sub">2020 Census (all Hisp.)</div></div>
-      <div class="stat-item"><div class="si-label">Per Capita</div><div class="si-value">0.021</div><div class="si-sub">per 100,000</div><div class="si-ci">95% CI: 0.011–0.035</div></div>
-      <div class="stat-item"><div class="si-label">Rate Ratio</div><div class="si-value">~0.45×</div><div class="si-sub">vs. White rate</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Shooter Count</div><div class="stat-val">14</div><div class="stat-sub">of 154 categorized (9.1%)</div></div>
+      <div class="stat"><div class="stat-lbl">Pop. Share</div><div class="stat-val">19.3%</div><div class="stat-sub">2020 Census (all Hisp.)</div></div>
+      <div class="stat"><div class="stat-lbl">Per Capita</div><div class="stat-val">0.021</div><div class="stat-sub">per 100,000</div><div class="stat-ci">95% CI: 0.011–0.035</div></div>
+      <div class="stat"><div class="stat-lbl">Rate Ratio</div><div class="stat-val">~0.45×</div><div class="stat-sub">vs. White rate</div></div>
     </div>
-    <div class="bar-group">
-      <div class="bar-group-header">Hispanic vs. National Context</div>
-      <div class="bar-row"><div class="bar-label">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:19.3%"></div></div><div class="bar-value">19.3%</div></div>
-      <div class="bar-row"><div class="bar-label">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:9.1%"></div></div><div class="bar-value">9.1%</div></div>
-      <div class="bar-row"><div class="bar-label">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:21%"></div></div><div class="bar-value">0.021</div></div>
+    <div class="bars">
+      <div class="section-hdr">Hispanic vs. National Context</div>
+      <div class="bar-row"><div class="bar-lbl">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:19.3%"></div></div><div class="bar-val">19.3%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:9.1%"></div></div><div class="bar-val">9.1%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:21%"></div></div><div class="bar-val">0.021</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">The Hispanic Poverty Paradox</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">The Hispanic Poverty Paradox</div>
+      <div class="sec-body">
         <p>Hispanic Americans have a poverty rate (19.3%) that exceeds the Black poverty rate (17.2%), yet they have the lowest per-capita mass shooting rate of any major racial group at 0.021/100k — less than half the White rate.</p>
         <p>This "paradox" directly challenges the hypothesis that poverty is the primary driver of mass shootings. If economic deprivation were the main cause, Hispanic rates would be expected to be among the highest, not the lowest.</p>
         <p>Proposed explanations include strong family cohesion ("familismo"), community ties, cultural attitudes toward violence, and high religiosity. These findings suggest cultural and social factors may be more predictive than economic status alone.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Socioeconomic Context</div>
+    <div class="sec">
+      <div class="sec-title">Socioeconomic Context</div>
       <div class="conf-grid">
-        <div class="conf-item"><div class="conf-label">Poverty Rate</div><div class="conf-value">19.3%</div><div class="conf-note">Highest of major groups</div></div>
-        <div class="conf-item"><div class="conf-label">Unemployment</div><div class="conf-value">5.1%</div><div class="conf-note">Above White rate</div></div>
-        <div class="conf-item"><div class="conf-label">Median HH Income</div><div class="conf-value">$55k</div><div class="conf-note">vs. $74k White</div></div>
-        <div class="conf-item"><div class="conf-label">Incarceration</div><div class="conf-value">426/100k</div><div class="conf-note">2.3× White rate</div></div>
+        <div class="conf-item"><div class="conf-metric">Poverty Rate</div><div class="conf-val">19.3%</div><div class="conf-note">Highest of major groups</div></div>
+        <div class="conf-item"><div class="conf-metric">Unemployment</div><div class="conf-val">5.1%</div><div class="conf-note">Above White rate</div></div>
+        <div class="conf-item"><div class="conf-metric">Median HH Income</div><div class="conf-val">$55k</div><div class="conf-note">vs. $74k White</div></div>
+        <div class="conf-item"><div class="conf-metric">Incarceration</div><div class="conf-val">426/100k</div><div class="conf-note">2.3× White rate</div></div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Classification Note</div>
+    <div class="sec">
+      <div class="sec-title">Classification Note</div>
       <div class="callout c-limit">
-        <div class="callout-tag t-limit">Methodology</div>
-        <div class="callout-body">Hispanic/Latino is an ethnicity, not a race, and can overlap with White, Black, or other racial categories. Some databases categorize Hispanic shooters under their racial group (White-Hispanic, Black-Hispanic), potentially undercounting or overcounting depending on methodology. The Violence Project separates Hispanic as a distinct category.</div>
+        <div class="c-tag t-limit">⚠ Methodology</div>
+        <div class="c-body">Hispanic/Latino is an ethnicity, not a race, and can overlap with White, Black, or other racial categories. Some databases categorize Hispanic shooters under their racial group (White-Hispanic, Black-Hispanic), potentially undercounting or overcounting depending on methodology. The Violence Project separates Hispanic as a distinct category.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Violence Project Database — N=14 Hispanic/Latino shooters, 1966–2024</li>
         <li>Markides K.S. &amp; Coreil J. — "Hispanic Health Paradox" — Public Health Reports (1986)</li>
         <li>U.S. Census Bureau ACS 2022</li>
@@ -597,45 +430,45 @@
 
   <!-- ASIAN -->
   <div class="panel" id="panel-asian">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Asian (Non-Hispanic)</div>
-        <div class="panel-tagline">Roughly proportional to population share. Per-capita rate similar to White Americans. Wide confidence intervals mean differences between groups are not statistically significant.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Asian (Non-Hispanic)</div>
+        <div class="p-tagline">Roughly proportional to population share. Per-capita rate similar to White Americans. Wide confidence intervals mean differences between groups are not statistically significant.</div>
       </div>
-      <div class="verdict-badge v-prop">Proportional<br><small style="font-size:.58rem;font-weight:400">~1.05× expected</small></div>
+      <div class="verdict v-prop">PROPORTIONAL<br><small style="font-size:.58rem;font-weight:400">~1.05× expected</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Shooter Count</div><div class="si-value">11</div><div class="si-sub">of 154 categorized (7.1%)</div></div>
-      <div class="stat-item"><div class="si-label">Pop. Share</div><div class="si-value">6.2%</div><div class="si-sub">2020 Census</div></div>
-      <div class="stat-item"><div class="si-label">Per Capita</div><div class="si-value">0.048</div><div class="si-sub">per 100,000</div><div class="si-ci">95% CI: 0.024–0.086</div></div>
-      <div class="stat-item"><div class="si-label">Rate Ratio</div><div class="si-value">~1.05×</div><div class="si-sub">vs. White rate</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Shooter Count</div><div class="stat-val">11</div><div class="stat-sub">of 154 categorized (7.1%)</div></div>
+      <div class="stat"><div class="stat-lbl">Pop. Share</div><div class="stat-val">6.2%</div><div class="stat-sub">2020 Census</div></div>
+      <div class="stat"><div class="stat-lbl">Per Capita</div><div class="stat-val">0.048</div><div class="stat-sub">per 100,000</div><div class="stat-ci">95% CI: 0.024–0.086</div></div>
+      <div class="stat"><div class="stat-lbl">Rate Ratio</div><div class="stat-val">~1.05×</div><div class="stat-sub">vs. White rate</div></div>
     </div>
-    <div class="bar-group">
-      <div class="bar-group-header">Asian vs. National Context</div>
-      <div class="bar-row"><div class="bar-label">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:6.2%"></div></div><div class="bar-value">6.2%</div></div>
-      <div class="bar-row"><div class="bar-label">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:7.1%"></div></div><div class="bar-value">7.1%</div></div>
-      <div class="bar-row"><div class="bar-label">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:48%"></div></div><div class="bar-value">0.048</div></div>
+    <div class="bars">
+      <div class="section-hdr">Asian vs. National Context</div>
+      <div class="bar-row"><div class="bar-lbl">Pop. share</div><div class="bar-track"><div class="bar-fill b-pop" style="width:6.2%"></div></div><div class="bar-val">6.2%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Shooter share</div><div class="bar-track"><div class="bar-fill b-perp" style="width:7.1%"></div></div><div class="bar-val">7.1%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Per capita (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:48%"></div></div><div class="bar-val">0.048</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Key Findings</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Key Findings</div>
+      <div class="sec-body">
         <p>Asian Americans are represented in mass shootings at roughly their population rate. The per-capita rate of 0.048 is nearly identical to White Americans (0.046), and the confidence intervals overlap substantially.</p>
         <p>The wide CI (0.024–0.086) due to small N means any apparent difference between Asian and other groups should be interpreted cautiously. Statistical significance cannot be established for pairwise comparisons.</p>
         <p>Notable high-profile cases (Virginia Tech 2007, Monterey Park 2023, Half Moon Bay 2023) have elevated public attention but should not distort interpretation of base rates.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Socioeconomic Context</div>
+    <div class="sec">
+      <div class="sec-title">Socioeconomic Context</div>
       <div class="conf-grid">
-        <div class="conf-item"><div class="conf-label">Poverty Rate</div><div class="conf-value">11.6%</div><div class="conf-note">Above White, below Black</div></div>
-        <div class="conf-item"><div class="conf-label">Unemployment</div><div class="conf-value">3.5%</div><div class="conf-note">Similar to White</div></div>
-        <div class="conf-item"><div class="conf-label">Median HH Income</div><div class="conf-value">$100k+</div><div class="conf-note">Highest of any group</div></div>
-        <div class="conf-item"><div class="conf-label">Incarceration</div><div class="conf-value">71/100k</div><div class="conf-note">Lowest of any group</div></div>
+        <div class="conf-item"><div class="conf-metric">Poverty Rate</div><div class="conf-val">11.6%</div><div class="conf-note">Above White, below Black</div></div>
+        <div class="conf-item"><div class="conf-metric">Unemployment</div><div class="conf-val">3.5%</div><div class="conf-note">Similar to White</div></div>
+        <div class="conf-item"><div class="conf-metric">Median HH Income</div><div class="conf-val">$100k+</div><div class="conf-note">Highest of any group</div></div>
+        <div class="conf-item"><div class="conf-metric">Incarceration</div><div class="conf-val">71/100k</div><div class="conf-note">Lowest of any group</div></div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Violence Project Database — N=11 Asian shooters, 1966–2024</li>
         <li>U.S. Census Bureau ACS 2022</li>
         <li>Pew Research Center — "The Rise of Asian Americans" (2021)</li>
@@ -645,93 +478,93 @@
 
   <!-- NATIVE -->
   <div class="panel" id="panel-native">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Native American / Alaska Native</div>
-        <div class="panel-tagline">N=3 in the Violence Project dataset. Any per-capita estimate carries an extremely wide confidence interval. No statistically valid conclusions can be drawn.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Native American / Alaska Native</div>
+        <div class="p-tagline">N=3 in the Violence Project dataset. Any per-capita estimate carries an extremely wide confidence interval. No statistically valid conclusions can be drawn.</div>
       </div>
-      <div class="verdict-badge v-insuf">Insufficient Data<br><small style="font-size:.58rem;font-weight:400">N=3, CI too wide</small></div>
+      <div class="verdict v-insuf">INSUFFICIENT DATA<br><small style="font-size:.58rem;font-weight:400">N=3, CI too wide</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Shooter Count</div><div class="si-value">3</div><div class="si-sub">of 154 categorized (1.9%)</div></div>
-      <div class="stat-item"><div class="si-label">Pop. Share</div><div class="si-value">1.3%</div><div class="si-sub">2020 Census</div></div>
-      <div class="stat-item"><div class="si-label">Per Capita (est.)</div><div class="si-value">0.063</div><div class="si-sub">per 100,000 — UNRELIABLE</div><div class="si-ci">95% CI: 0.013–0.184</div></div>
-      <div class="stat-item"><div class="si-label">CI Width</div><div class="si-value">14×</div><div class="si-sub">lower to upper bound</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Shooter Count</div><div class="stat-val">3</div><div class="stat-sub">of 154 categorized (1.9%)</div></div>
+      <div class="stat"><div class="stat-lbl">Pop. Share</div><div class="stat-val">1.3%</div><div class="stat-sub">2020 Census</div></div>
+      <div class="stat"><div class="stat-lbl">Per Capita (est.)</div><div class="stat-val">0.063</div><div class="stat-sub">per 100,000 — UNRELIABLE</div><div class="stat-ci">95% CI: 0.013–0.184</div></div>
+      <div class="stat"><div class="stat-lbl">CI Width</div><div class="stat-val">14×</div><div class="stat-sub">lower to upper bound</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Why No Conclusions Are Possible</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Why No Conclusions Are Possible</div>
+      <div class="sec-body">
         <p>With only 3 cases over 58 years, the 95% confidence interval spans from 0.013 to 0.184 — a 14-fold range. The true rate could be among the lowest of any group, or among the highest, and the data cannot distinguish between these possibilities.</p>
         <p>A single additional case would substantially change the estimate. This is not a data quality problem but a fundamental statistical limitation when base populations are small.</p>
         <p>Any media report, political argument, or research paper drawing conclusions about Native American mass shooting rates from this data should be treated with extreme skepticism.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Socioeconomic Context (Documented)</div>
+    <div class="sec">
+      <div class="sec-title">Socioeconomic Context (Documented)</div>
       <div class="conf-grid">
-        <div class="conf-item"><div class="conf-label">Poverty Rate</div><div class="conf-value">23.2%</div><div class="conf-note">Highest of any group</div></div>
-        <div class="conf-item"><div class="conf-label">Unemployment</div><div class="conf-value">5–10%</div><div class="conf-note">Varies significantly</div></div>
-        <div class="conf-item"><div class="conf-label">Incarceration</div><div class="conf-value">801/100k</div><div class="conf-note">Among highest rates</div></div>
-        <div class="conf-item"><div class="conf-label">Missing/Murdered</div><div class="conf-value">High</div><div class="conf-note">Serious underreporting</div></div>
+        <div class="conf-item"><div class="conf-metric">Poverty Rate</div><div class="conf-val">23.2%</div><div class="conf-note">Highest of any group</div></div>
+        <div class="conf-item"><div class="conf-metric">Unemployment</div><div class="conf-val">5–10%</div><div class="conf-note">Varies significantly</div></div>
+        <div class="conf-item"><div class="conf-metric">Incarceration</div><div class="conf-val">801/100k</div><div class="conf-note">Among highest rates</div></div>
+        <div class="conf-item"><div class="conf-metric">Missing/Murdered</div><div class="conf-val">High</div><div class="conf-note">Serious underreporting</div></div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Data Limitation Notice</div>
+    <div class="sec">
+      <div class="sec-title">Data Limitation Notice</div>
       <div class="callout c-limit">
-        <div class="callout-tag t-limit">Critical Limitation</div>
-        <div class="callout-body">The 95% CI of 0.013–0.184 means the true per-capita rate is 14× uncertain. Any claim that Native Americans are "overrepresented" or "underrepresented" in mass shootings is not supported by available data. This section is included for completeness and to demonstrate the importance of acknowledging statistical uncertainty.</div>
+        <div class="c-tag t-limit">⚠ Critical Limitation</div>
+        <div class="c-body">The 95% CI of 0.013–0.184 means the true per-capita rate is 14× uncertain. Any claim that Native Americans are "overrepresented" or "underrepresented" in mass shootings is not supported by available data. This section is included for completeness and to demonstrate the importance of acknowledging statistical uncertainty.</div>
       </div>
     </div>
   </div>
 
   <!-- IMMIGRANT -->
   <div class="panel" id="panel-immigrant">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Immigrants / Foreign-Born</div>
-        <div class="panel-tagline">Foreign-born Americans are represented in mass shootings in direct proportion to their population share. Native-born Americans have a dramatically higher per-capita risk.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Immigrants / Foreign-Born</div>
+        <div class="p-tagline">Foreign-born Americans are represented in mass shootings in direct proportion to their population share. Native-born Americans have a dramatically higher per-capita risk.</div>
       </div>
-      <div class="verdict-badge v-prop">Proportional<br><small style="font-size:.58rem;font-weight:400">Exactly at pop. share</small></div>
+      <div class="verdict v-prop">PROPORTIONAL<br><small style="font-size:.58rem;font-weight:400">Exactly at pop. share</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Foreign-Born Shooters</div><div class="si-value">43</div><div class="si-sub">of 298 cases (14.4%)</div></div>
-      <div class="stat-item"><div class="si-label">Foreign-Born Pop.</div><div class="si-value">13.9%</div><div class="si-sub">ACS 2022</div></div>
-      <div class="stat-item"><div class="si-label">Native-Born Rate</div><div class="si-value">6.5×</div><div class="si-sub">higher per-capita</div></div>
-      <div class="stat-item"><div class="si-label">Undocumented Data</div><div class="si-value">N/A</div><div class="si-sub">No reliable dataset exists</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Foreign-Born Shooters</div><div class="stat-val">43</div><div class="stat-sub">of 298 cases (14.4%)</div></div>
+      <div class="stat"><div class="stat-lbl">Foreign-Born Pop.</div><div class="stat-val">13.9%</div><div class="stat-sub">ACS 2022</div></div>
+      <div class="stat"><div class="stat-lbl">Native-Born Rate</div><div class="stat-val">6.5×</div><div class="stat-sub">higher per-capita</div></div>
+      <div class="stat"><div class="stat-lbl">Undocumented Data</div><div class="stat-val">N/A</div><div class="stat-sub">No reliable dataset exists</div></div>
     </div>
-    <div class="bar-group">
-      <div class="bar-group-header">Immigrant vs. Native-Born</div>
-      <div class="bar-row"><div class="bar-label">Pop. share (FB)</div><div class="bar-track"><div class="bar-fill b-pop" style="width:13.9%"></div></div><div class="bar-value">13.9%</div></div>
-      <div class="bar-row"><div class="bar-label">Shooter share (FB)</div><div class="bar-track"><div class="bar-fill b-perp" style="width:14.4%"></div></div><div class="bar-value">14.4%</div></div>
-      <div class="bar-row"><div class="bar-label">Relative risk (NB)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:65%"></div></div><div class="bar-value">6.5× higher</div></div>
+    <div class="bars">
+      <div class="section-hdr">Immigrant vs. Native-Born</div>
+      <div class="bar-row"><div class="bar-lbl">Pop. share (FB)</div><div class="bar-track"><div class="bar-fill b-pop" style="width:13.9%"></div></div><div class="bar-val">13.9%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Shooter share (FB)</div><div class="bar-track"><div class="bar-fill b-perp" style="width:14.4%"></div></div><div class="bar-val">14.4%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Relative risk (NB)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:65%"></div></div><div class="bar-val">6.5× higher</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Key Findings</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Key Findings</div>
+      <div class="sec-body">
         <p>Foreign-born Americans account for 14.4% of mass shooters vs. 13.9% of the population — an essentially perfect match. The 0.5 percentage point difference is not statistically meaningful.</p>
         <p>Expressed differently: 1 in 68.4 million foreign-born Americans has committed a mass shooting; among native-born Americans, the rate is 1 in 10.5 million — approximately 6.5× higher.</p>
         <p>This finding is robust across multiple datasets and is consistent with broader criminological research showing that immigrants have lower crime rates than native-born populations.</p>
         <p>No reliable dataset on undocumented immigrants specifically exists. Claims about undocumented immigrant mass shooters cannot be verified or refuted with available data.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Note on Dataset Difference</div>
+    <div class="sec">
+      <div class="sec-title">Note on Dataset Difference</div>
       <div class="callout c-limit">
-        <div class="callout-tag t-limit">Methodology</div>
-        <div class="callout-body">The immigrant data comes from a different dataset (N=298) than the racial breakdown data (N=172/154). This is because nativity data is available for more cases than racial categorization. The two datasets use slightly different time periods and criteria. Direct rate comparisons between immigrant status and racial group data should be made cautiously.</div>
+        <div class="c-tag t-limit">⚠ Methodology</div>
+        <div class="c-body">The immigrant data comes from a different dataset (N=298) than the racial breakdown data (N=172/154). This is because nativity data is available for more cases than racial categorization. The two datasets use slightly different time periods and criteria. Direct rate comparisons between immigrant status and racial group data should be made cautiously.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Debunked Claims</div>
+    <div class="sec">
+      <div class="sec-title">Debunked Claims</div>
       <div class="callout c-debunk">
-        <div class="callout-tag t-debunk">Debunked</div>
-        <div class="callout-claim">"Undocumented immigrants drive mass shootings"</div>
-        <div class="callout-body">No credible data supports this. Even among all foreign-born individuals, mass shooting rates exactly match their population share. The claim conflates general crime statistics (contested) with mass shooting data (clear). There is zero evidence that undocumented status specifically elevates mass shooting risk.</div>
+        <div class="c-tag t-debunk">⚠ Debunked</div>
+        <div class="c-claim">"Undocumented immigrants drive mass shootings"</div>
+        <div class="c-body">No credible data supports this. Even among all foreign-born individuals, mass shooting rates exactly match their population share. The claim conflates general crime statistics (contested) with mass shooting data (clear). There is zero evidence that undocumented status specifically elevates mass shooting risk.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Violence Project / extended database — N=298, nativity coding</li>
         <li>Cato Institute — "Illegal Immigrants and Crime" (2020)</li>
         <li>U.S. Census Bureau ACS 2022 — Foreign-born population data</li>
@@ -742,44 +575,44 @@
 
   <!-- GENDER -->
   <div class="panel" id="panel-gender">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Gender</div>
-        <div class="panel-tagline">The most extreme demographic disparity in mass shootings. Males are ~44× more likely per-capita than females. This dwarfs all racial/ethnic disparities.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Gender</div>
+        <div class="p-tagline">The most extreme demographic disparity in mass shootings. Males are ~44× more likely per-capita than females. This dwarfs all racial/ethnic disparities.</div>
       </div>
-      <div class="verdict-badge v-over">Extreme Disparity<br><small style="font-size:.58rem;font-weight:400">Males ~44× female rate</small></div>
+      <div class="verdict v-over">EXTREME DISPARITY<br><small style="font-size:.58rem;font-weight:400">Males ~44× female rate</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Male Shooters</div><div class="si-value">168</div><div class="si-sub">of 172 total (97.7%)</div></div>
-      <div class="stat-item"><div class="si-label">Female Shooters</div><div class="si-value">4</div><div class="si-sub">of 172 total (2.3%)</div></div>
-      <div class="stat-item"><div class="si-label">Male Per Capita</div><div class="si-value">0.101</div><div class="si-sub">per 100,000 males</div></div>
-      <div class="stat-item"><div class="si-label">Disparity Ratio</div><div class="si-value">~44×</div><div class="si-sub">Male vs. female rate</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Male Shooters</div><div class="stat-val">168</div><div class="stat-sub">of 172 total (97.7%)</div></div>
+      <div class="stat"><div class="stat-lbl">Female Shooters</div><div class="stat-val">4</div><div class="stat-sub">of 172 total (2.3%)</div></div>
+      <div class="stat"><div class="stat-lbl">Male Per Capita</div><div class="stat-val">0.101</div><div class="stat-sub">per 100,000 males</div></div>
+      <div class="stat"><div class="stat-lbl">Disparity Ratio</div><div class="stat-val">~44×</div><div class="stat-sub">Male vs. female rate</div></div>
     </div>
-    <div class="bar-group">
-      <div class="bar-group-header">Gender Breakdown</div>
-      <div class="bar-row"><div class="bar-label">Pop. share (male)</div><div class="bar-track"><div class="bar-fill b-pop" style="width:49.5%"></div></div><div class="bar-value">49.5%</div></div>
-      <div class="bar-row"><div class="bar-label">Shooter share (male)</div><div class="bar-track"><div class="bar-fill b-perp" style="width:97.7%"></div></div><div class="bar-value">97.7%</div></div>
-      <div class="bar-row"><div class="bar-label">Rate ratio (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:100%"></div></div><div class="bar-value">44× female</div></div>
+    <div class="bars">
+      <div class="section-hdr">Gender Breakdown</div>
+      <div class="bar-row"><div class="bar-lbl">Pop. share (male)</div><div class="bar-track"><div class="bar-fill b-pop" style="width:49.5%"></div></div><div class="bar-val">49.5%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Shooter share (male)</div><div class="bar-track"><div class="bar-fill b-perp" style="width:97.7%"></div></div><div class="bar-val">97.7%</div></div>
+      <div class="bar-row"><div class="bar-lbl">Rate ratio (rel.)</div><div class="bar-track"><div class="bar-fill b-rate" style="width:100%"></div></div><div class="bar-val">44× female</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Key Findings</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Key Findings</div>
+      <div class="sec-body">
         <p>The gender disparity in mass shootings (44×) is far larger than any racial disparity (maximum ~1.7×). If race were the primary variable of interest, researchers would need to explain why they are more focused on a 1.7× disparity than a 44× disparity.</p>
         <p>168 of 172 mass shooters identified in the Violence Project were male. This finding is consistent across all datasets, time periods, and definitions — it is one of the most robust findings in the literature.</p>
         <p>The female per-capita rate is approximately 0.0023/100k — vanishingly small. Female mass shooting perpetration is so rare it is difficult to draw statistical conclusions about patterns.</p>
         <p>This finding persists across all racial groups — Black, White, Hispanic, and Asian male rates all far exceed their respective female rates.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Proposed Explanations</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Proposed Explanations</div>
+      <div class="sec-body">
         <p>Research points to multiple interacting factors: testosterone and aggression biology; socialization into masculine norms of dominance, status, and entitlement; grievance cultures among males; access to and familiarity with firearms; and the role of status threat and perceived humiliation in male perpetrators' reported motivations.</p>
         <p>No single explanation is sufficient, and researchers debate the relative contribution of biological vs. social factors.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Violence Project Database — 168M/4F of 172 total (1966–2024)</li>
         <li>Kimmel M. — "Angry White Men" (2013) — masculinity and mass violence</li>
         <li>Lankford A. — "Public Mass Shooters and Firearms" (2016)</li>
@@ -789,57 +622,57 @@
 
   <!-- TRANS -->
   <div class="panel" id="panel-trans">
-    <div class="panel-head">
-      <div class="panel-head-text">
-        <div class="panel-name">Transgender Perpetrators</div>
-        <div class="panel-tagline">Extremely rare in absolute terms. Documented cases: 3–6 depending on definition. Per-capita rate cannot be reliably calculated due to uncertain population denominator.</div>
+    <div class="p-header">
+      <div class="p-header-text">
+        <div class="p-name">Transgender Perpetrators</div>
+        <div class="p-tagline">Extremely rare in absolute terms. Documented cases: 3–6 depending on definition. Per-capita rate cannot be reliably calculated due to uncertain population denominator.</div>
       </div>
-      <div class="verdict-badge v-insuf">Insufficient Data<br><small style="font-size:.58rem;font-weight:400">N=3–6, no valid denom.</small></div>
+      <div class="verdict v-insuf">INSUFFICIENT DATA<br><small style="font-size:.58rem;font-weight:400">N=3–6, no valid denom.</small></div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-item"><div class="si-label">Documented Cases</div><div class="si-value">3–6</div><div class="si-sub">Depending on definition/source</div></div>
-      <div class="stat-item"><div class="si-label">Trans Pop. Estimate</div><div class="si-value">~1.6M</div><div class="si-sub">Williams Institute 2022</div></div>
-      <div class="stat-item"><div class="si-label">% of All Shooters</div><div class="si-value">&lt;2%</div><div class="si-sub">Upper bound estimate</div></div>
-      <div class="stat-item"><div class="si-label">Reliable CI</div><div class="si-value">N/A</div><div class="si-sub">Too few cases</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">Documented Cases</div><div class="stat-val">3–6</div><div class="stat-sub">Depending on definition/source</div></div>
+      <div class="stat"><div class="stat-lbl">Trans Pop. Estimate</div><div class="stat-val">~1.6M</div><div class="stat-sub">Williams Institute 2022</div></div>
+      <div class="stat"><div class="stat-lbl">% of All Shooters</div><div class="stat-val">&lt;2%</div><div class="stat-sub">Upper bound estimate</div></div>
+      <div class="stat"><div class="stat-lbl">Reliable CI</div><div class="stat-val">N/A</div><div class="stat-sub">Too few cases</div></div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Documented Cases</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Documented Cases</div>
+      <div class="sec-body">
         <p>Confirmed trans-identified mass shooters since 2018 (strict definition: 4+ killed): Audrey Hale — Nashville Covenant School (2023, 6 killed); Anderson Lee Aldrich — Club Q, Colorado Springs (2022, 5 killed; identified as non-binary after arrest). Additional cases exist under broader definitions.</p>
         <p>The absolute rarity of these events makes per-capita rate comparison nearly impossible. The transgender population is estimated at 0.5–1.6% of adults, but survey methodology varies significantly, creating denominator uncertainty that produces CI ranges spanning orders of magnitude.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">What The Data Cannot Support</div>
+    <div class="sec">
+      <div class="sec-title">What The Data Cannot Support</div>
       <div class="callout c-limit">
-        <div class="callout-tag t-limit">Statistical Limitation</div>
-        <div class="callout-body">With N=3–6 and a highly uncertain population denominator (estimates range from 700k to 2.5M), no reliable per-capita rate can be calculated. Claims that transgender people are "overrepresented" or "underrepresented" are not statistically supportable. Media narratives in both directions exceed what the data permits.</div>
+        <div class="c-tag t-limit">⚠ Statistical Limitation</div>
+        <div class="c-body">With N=3–6 and a highly uncertain population denominator (estimates range from 700k to 2.5M), no reliable per-capita rate can be calculated. Claims that transgender people are "overrepresented" or "underrepresented" are not statistically supportable. Media narratives in both directions exceed what the data permits.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Context: Trans People as Victims</div>
-      <div class="content-block-body">
+    <div class="sec">
+      <div class="sec-title">Context: Trans People as Victims</div>
+      <div class="sec-body">
         <p>While trans perpetration is rare, trans people are significantly more likely to be victims of violence. The HRC Transgender Violence Tracking Project documented 32 homicides of trans/gender-nonconforming people in 2022 alone. The victimization rate substantially exceeds the perpetration rate.</p>
         <p>Any discussion of trans people and violence that focuses only on perpetration without acknowledging victimization presents an incomplete picture.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Debunked Claims</div>
+    <div class="sec">
+      <div class="sec-title">Debunked Claims</div>
       <div class="callout c-debunk">
-        <div class="callout-tag t-debunk">Debunked</div>
-        <div class="callout-claim">"Trans people are responsible for a wave of mass shootings"</div>
-        <div class="callout-body">False. The absolute number of trans mass shooters is 3–6 out of 172+ total. This represents less than 2% of cases — not a "wave." Such framing exploits public attention on rare high-profile cases to misrepresent statistical reality.</div>
+        <div class="c-tag t-debunk">⚠ Debunked</div>
+        <div class="c-claim">"Trans people are responsible for a wave of mass shootings"</div>
+        <div class="c-body">False. The absolute number of trans mass shooters is 3–6 out of 172+ total. This represents less than 2% of cases — not a "wave." Such framing exploits public attention on rare high-profile cases to misrepresent statistical reality.</div>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Extended Analysis</div>
-      <div class="content-block-body">
-        <p>For a more detailed analysis of transgender perpetrators, methodology, and the full statistical breakdown, see our dedicated <a href="/trans-shooters" class="inline-link">Trans Shooters deep-dive page</a>.</p>
+    <div class="sec">
+      <div class="sec-title">Extended Analysis</div>
+      <div class="sec-body">
+        <p>For a more detailed analysis of transgender perpetrators, methodology, and the full statistical breakdown, see our dedicated <a href="/trans-shooters.html" style="color:var(--gold)">Trans Shooters deep-dive page</a>.</p>
       </div>
     </div>
-    <div class="content-block">
-      <div class="content-block-title">Sources</div>
-      <ul class="source-list">
+    <div class="sec">
+      <div class="sec-title">Sources</div>
+      <ul class="src-list">
         <li>Williams Institute UCLA — "LGBT People in the US" (2022)</li>
         <li>HRC Foundation — Transgender Violence Tracking Project (2022)</li>
         <li>Violence Project Database — case-level review for trans identification</li>
@@ -848,34 +681,52 @@
     </div>
   </div>
 
-</div>
-
-<footer class="site-footer">
-  <span class="footer-note">TruthBased.org &mdash; Last updated February 2026</span>
-  <span class="footer-note">Sources: Violence Project, Census Bureau, BJS, ACS 2022</span>
-</footer>
+</div><!-- /panels -->
 
 <script>
-var PANELS = ['white','black','hispanic','asian','native','immigrant','gender','trans'];
+const PANELS = ['white','black','hispanic','asian','native','immigrant','gender','trans'];
+
 function showPanel(id, pushHash) {
   if (!PANELS.includes(id)) id = 'white';
-  document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active','visible'); });
-  var panel = document.getElementById('panel-' + id);
+
+  // Panels: hide all, show selected with fade
+  document.querySelectorAll('.panel').forEach(p => {
+    p.classList.remove('active','visible');
+  });
+  const panel = document.getElementById('panel-' + id);
   if (panel) {
     panel.classList.add('active');
-    requestAnimationFrame(function() { requestAnimationFrame(function() { panel.classList.add('visible'); }); });
+    requestAnimationFrame(() => requestAnimationFrame(() => panel.classList.add('visible')));
   }
-  document.querySelectorAll('.tab-btn').forEach(function(t) { t.classList.toggle('active', t.dataset.tab === id); });
-  document.querySelectorAll('.compare-row').forEach(function(r) { r.classList.toggle('active-row', r.dataset.tab === id); });
-  if (pushHash !== false) { try { history.replaceState(null, '', '#' + id); } catch(e) {} }
-  var tabsWrap = document.querySelector('.tabs-section');
-  var navH = document.querySelector('.site-nav') ? document.querySelector('.site-nav').offsetHeight : 50;
-  var top = tabsWrap.getBoundingClientRect().top + window.scrollY - navH - 8;
-  window.scrollTo({ top: top, behavior: 'smooth' });
+
+  // Tabs: use data-tab attribute for clean matching
+  document.querySelectorAll('.tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.tab === id);
+  });
+
+  // Overview rows: highlight active
+  document.querySelectorAll('.compare-row').forEach(r => {
+    r.classList.toggle('active-row', r.dataset.tab === id);
+  });
+
+  // Update URL to /shootings-by-demographic/black etc.
+  if (pushHash !== false) {
+    try { history.replaceState(null, '', '/shootings-by-demographic/' + id); } catch(e) {}
+  }
+
+  // Scroll tabs into view, accounting for sticky nav height
+  const tabsWrap = document.querySelector('.tabs-wrap');
+  const navH = document.querySelector('nav') ? document.querySelector('nav').offsetHeight : 50;
+  const top = tabsWrap.getBoundingClientRect().top + window.scrollY - navH - 8;
+  window.scrollTo({ top, behavior: 'smooth' });
 }
+
+// On load: read path segment or hash, default to white
 (function() {
-  var hash = window.location.hash.replace('#','').toLowerCase();
-  showPanel(PANELS.includes(hash) ? hash : 'white', false);
+  const path = window.location.pathname.split('/').pop().toLowerCase();
+  const hash = window.location.hash.replace('#','').toLowerCase();
+  const id = PANELS.includes(path) ? path : PANELS.includes(hash) ? hash : 'white';
+  showPanel(id, false);
 })();
 </script>
 
