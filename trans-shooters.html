@@ -10,9 +10,11 @@
   <meta property="og:url"     content="https://www.truthbased.org/trans-shooters">
   <meta property="og:title"   content="Trans People & Mass Shootings — TruthBased.org">
   <meta property="og:description" content="Three databases. Every definition. Full sensitivity analysis. Every counterargument steelmanned with primary sources.">
-  <meta property="og:image"   content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/1-b8d45ab2.png">
+  <meta property="og:image"   content="https://www.truthbased.org/og-trans-shooters.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"   content="summary_large_image">
-  <meta name="twitter:image"  content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/1-b8d45ab2.png">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-trans-shooters.png">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -1037,11 +1039,157 @@
       .capita-grid, .denom-grid, .limitation-grid { grid-template-columns: 1fr; }
       .shooter-row, .steelman-row { grid-template-columns: 80px 1fr; }
       .nav-category { display: none; }
+      .jump-nav-wrap { padding: 8px 16px; }
+      .jump-btn { font-size: 0.52rem; padding: 5px 8px; }
+      .chart-wrap { padding: 16px 12px; }
+      .site-nav { padding: 10px 16px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+
+    }
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-faint, #f9ecea); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 110px; }
+    @media (max-width: 640px) { [id^="part"] { scroll-margin-top: 100px; } }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 12px; }
+    .table-scroll .compare-table, .table-scroll .sens-table { margin-bottom: 0; min-width: 520px; }
+
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .article-wrap { padding: 48px 32px 56px; }
+      .site-nav { padding: 14px 24px; }
+      .jump-nav-wrap { padding: 10px 24px; }
+      .capita-grid, .denom-grid { grid-template-columns: 1fr 1fr; }
+      .limitation-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --page-ground:  #1a1918;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --text-primary: #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-faint:  #2d1f1a;
+      --green-live:   #4cbb6a;
+      --green-faint:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-faint:  #2d2518;
+      --blue:         #5a8ad4;
+      --blue-faint:   #1a2030;
+      --rule:         #3a3632;
+      --rule-mid:     #4a4640;
+      --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    [data-theme="dark"] .jump-nav-wrap { background-color: rgba(26,25,24,0.97); }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule, var(--border, #ddd9d0));
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule, var(--border, #dedad3));
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #a09c94); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule, var(--border));
+      line-height: 1.55;
     }
 
   </style>
+
+  <script>
+    /* ── Dark mode ── */
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
 </head>
 <body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
 
   <!-- Site nav -->
   <nav class="site-nav" aria-label="Site navigation">
@@ -1050,6 +1198,7 @@
       <a href="/" class="nav-back">&#8592; Home</a>
     </div>
     <span class="nav-category">Political Fact Check</span>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
   <!-- Part jump nav -->
@@ -1076,6 +1225,7 @@
         <span class="meta-pill">Updated February 2026</span>
         <span class="meta-pill">Data through Feb 20, 2026</span>
         <span class="meta-pill">23 primary sources</span>
+        <span class="meta-pill">~31 min read</span>
       </div>
     </header>
 
@@ -1536,7 +1686,7 @@
 
     <span class="section-label">12 — Side by Side: How the Numbers Change</span>
 
-    <table class="compare-table">
+    <div class="table-scroll"><table class="compare-table">
       <thead>
         <tr>
           <th>Metric</th><th>Binary only (1.43M)</th><th>Full trans pop (2.1M)</th><th>Verdict</th>
@@ -1548,7 +1698,7 @@
         <tr><td>2020–2025 GVA rate per 100k</td><td class="td-neutral">0.14 per 100k</td><td class="td-positive">0.094 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
         <tr><td>2020–2025 underrepresentation</td><td class="td-neutral">~7.5× less likely</td><td class="td-positive">~11× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="chart-wrap">
       <div class="chart-title">Underrepresentation Factor: Binary-Only vs. Full Trans Population</div>
@@ -1611,7 +1761,7 @@
     <div class="divider"></div>
     <span class="section-label">15 — Full Sensitivity Analysis: Every Assumption Combination</span>
 
-    <table class="sens-table">
+    <div class="table-scroll"><table class="sens-table">
       <thead>
         <tr><th>Shooter count assumption</th><th>Population used</th><th>Trans rate/100k</th><th>vs. General pop</th><th>Result</th></tr>
       </thead>
@@ -1627,7 +1777,7 @@
         <tr><td class="sc-assump">Lott max ~10 + old pop (0.5%)</td><td class="sc-pop">Old est. 700k</td><td class="sc-rate">1.43</td><td class="sc-rate">1.2× lower</td><td class="sc-under">UNDER (marginal)</td></tr>
         <tr class="row-problem"><td class="sc-assump">Share-of-incidents only, Lott max + old pop — <em>not per-capita</em></td><td class="sc-pop">0.3–0.5% share</td><td class="sc-rate">~5% of VPP</td><td class="sc-rate">vs. 0.3–0.5% pop</td><td class="sc-over">OVER* (method flaw)</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p style="font-size:0.72rem;color:var(--text-quiet);line-height:1.55;margin-bottom:16px;">* The only scenario producing overrepresentation requires three simultaneous choices: maximum unverified shooter count, an outdated low population estimate, AND share-of-incidents rather than per-capita rate. Every per-capita calculation across all assumption combinations produces underrepresentation.</p>
 
@@ -1698,6 +1848,19 @@
       <span class="cf-label">Bottom line</span>
       <p class="cf-statement">Every database. Every time window.<br>Every population figure. Every assumption.<br>The result is the same: underrepresentation.</p>
       <p class="cf-sub">The claim that transgender people are disproportionately responsible for mass shootings does not survive contact with the data under any methodologically consistent calculation. Trans people are statistically less likely — not more likely — to commit mass shootings than the general population. Political actions taken against the trans community on the basis of this claim are not supported by the evidence.</p>
+    </div>
+
+  
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. "Trans People &amp; Mass Shootings: The Full Picture." Updated February 2026. https://www.truthbased.org/trans-shooters</span>
+    </div>
+
+    <div style="margin-top:32px; padding:16px 18px; background:var(--card-tinted,var(--surface,#fdfcfa)); border:1px solid var(--rule,var(--border,#dedad3)); border-radius:4px;">
+      <span style="font-family:'Courier Prime',monospace; font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet,#a09c94); display:block; margin-bottom:8px;">Related Research</span>
+      <a href="/shootings-by-demographic" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Mass Shootings by Demographic</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim,#706d64); margin-top:4px;">Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender.</span>
     </div>
 
   </div><!-- end .article-wrap -->
@@ -1864,6 +2027,60 @@
           }
         }
       });
+    })();
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
     })();
   </script>
 
