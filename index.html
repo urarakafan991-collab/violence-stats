@@ -24,6 +24,28 @@
 
   <style>
 
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.96);
+      backdrop-filter: blur(6px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-tagline {
+      font-family: 'Courier Prime', monospace; font-size: 0.6rem;
+      color: var(--text-quiet); letter-spacing: 0.06em;
+      padding-left: 16px; border-left: 1px solid var(--rule);
+    }
+
+
     /* =========================================================
        TruthBased.org — Homepage
        Clean accordion navigation. No divisive content on index.
@@ -61,36 +83,6 @@
 
 
     /* Nav --------------------------------------------------- */
-
-    .site-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 48px;
-      border-bottom: 1px solid var(--rule);
-      background-color: rgba(247, 245, 241, 0.96);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(6px);
-    }
-
-    .nav-wordmark {
-      font-family: 'Spectral', serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .nav-wordmark strong { color: var(--brick); }
-
-    .nav-tagline {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.62rem;
-      color: var(--text-quiet);
-      letter-spacing: 0.06em;
-    }
 
 
     /* Hero -------------------------------------------------- */
@@ -513,6 +505,11 @@
       .page-hero { padding-top: 52px; padding-bottom: 44px; }
       .nav-tagline { display: none; }
       .acc-meta { display: none; }
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .nav-tagline { display: none; }
+      .nav-back { font-size: 0.65rem; padding: 3px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
       .acc-trigger { padding: 14px 16px; gap: 10px; }
       .acc-num { font-size: 0.58rem; min-width: 22px; }
       .acc-label { font-size: 0.82rem; }
@@ -552,7 +549,6 @@
       --rule-mid:     #4a4640;
       --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
     }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
     [data-theme="dark"] .method-section { background-color: #242220; }
     [data-theme="dark"] .method-item-title { color: #e8e5e0; }
     [data-theme="dark"] .method-item-body { color: rgba(232,229,224,0.5); }
@@ -634,8 +630,10 @@
 
 
   <nav class="site-nav" aria-label="Site navigation">
-    <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-    <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
+    </div>
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
@@ -1166,4 +1164,5 @@
   </script>
 
 </body>
+</html>
 </html>
