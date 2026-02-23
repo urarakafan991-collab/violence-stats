@@ -41,18 +41,27 @@
       --white:var(--text-primary); --green:var(--green-live); --red:var(--brick);
       --yellow:var(--amber);
     }
+    .site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:52px;border-bottom:1px solid var(--rule);background-color:rgba(247,245,241,0.97);backdrop-filter:blur(6px);position:sticky;top:0;z-index:100}
+    [data-theme="dark"] .site-nav{background-color:rgba(26,25,24,0.97)}
+    .nav-left{display:flex;align-items:center;gap:16px}
+    .nav-wordmark{font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:600;color:var(--text-primary);letter-spacing:-0.02em;white-space:nowrap}
+    .nav-wordmark strong{color:var(--brick)}
+    .nav-back{font-family:'Sora',sans-serif;font-size:0.72rem;color:var(--text-quiet);border:1px solid var(--rule);border-radius:3px;padding:4px 10px;transition:color .15s,border-color .15s;white-space:nowrap}
+    .nav-back:hover{color:var(--brick);border-color:var(--brick)}
+    .nav-category{font-family:'Courier Prime',monospace;font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-quiet);padding-left:16px;border-left:1px solid var(--rule);white-space:nowrap}
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{font-size:16px;scroll-behavior:smooth}
     body{background:var(--page-ground);color:var(--text-body);font-family:'Sora',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;transition:background-color .3s,color .3s}
     a{color:inherit;text-decoration:none}
     a.inline-link{color:var(--brick);text-decoration:underline;text-underline-offset:3px}
 
-    .site-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 48px;border-bottom:1px solid var(--rule);background-color:rgba(247,245,241,0.97);position:sticky;top:0;z-index:100;backdrop-filter:blur(6px)}
-    .nav-left{display:flex;align-items:center;gap:20px}
-    .nav-logo{font-family:'Sora',sans-serif;font-weight:600;font-size:1rem;color:var(--text-primary);letter-spacing:-0.02em}
-    .nav-logo strong{color:var(--brick)}
-    .nav-back{font-family:'Sora',sans-serif;font-size:0.75rem;color:var(--text-quiet);border:1px solid var(--rule);border-radius:3px;padding:3px 10px;transition:color .15s,border-color .15s}
-    .nav-back:hover{color:var(--brick);border-color:var(--brick)}
+    
+    
+    
+    
+    
+    
 
     .eyebrow{font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--brick);margin-bottom:18px;opacity:0;animation:entryAnim .55s ease forwards .1s}
     h1{font-family:'Spectral',serif;font-weight:600;font-size:clamp(1.5rem,4vw,2.4rem);color:var(--text-primary);line-height:1.2;margin-bottom:16px;opacity:0;animation:entryAnim .55s ease forwards .2s}
@@ -143,7 +152,7 @@
       .compare-name{width:80px;font-size:.58rem}
       .bar-lbl{width:70px;font-size:.56rem}
       .conf-grid{grid-template-columns:1fr 1fr}
-      .nav-page{display:none}
+      
       .site-footer{flex-direction:column;align-items:center;text-align:center}
       .theme-toggle{width:30px;height:30px;font-size:.85rem}
     }
@@ -241,8 +250,9 @@
 
   <nav class="site-nav" aria-label="Site navigation">
     <div class="nav-left">
-      <a href="/" class="nav-logo">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
       <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Supplementary Data</span>
     </div>
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
