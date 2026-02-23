@@ -24,6 +24,39 @@
 
   <style>
 
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule, var(--border, #dedad3));
+      background-color: rgba(247, 245, 241, 0.97);
+      backdrop-filter: blur(6px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule, var(--border, #dedad3)); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #a09c94);
+      padding-left: 16px; border-left: 1px solid var(--rule, var(--border, #dedad3));
+      white-space: nowrap;
+    }
+
+
     /* =========================================================
        TruthBased.org — Voter Fraud: The Documented Record
        Matches homepage design system exactly.
@@ -61,32 +94,12 @@
     }
 
     /* NAV */
-    .site-nav {
-      position: sticky; top: 0; z-index: 100;
-      background-color: rgba(247, 245, 241, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center;
-      padding: 0 24px; height: 52px;
-      gap: 20px;
-    }
-    .nav-wordmark {
-      font-family: var(--font-sans); font-size: 1rem; font-weight: 600;
-      color: var(--text-head); text-decoration: none; letter-spacing: -0.02em;
-    }
-    .nav-wordmark strong { color: var(--brick); }
-    .nav-back {
-      font-family: var(--font-sans); font-size: 0.8rem;
-      color: var(--text-dim); text-decoration: none;
-      border: 1px solid var(--border); border-radius: 4px;
-      padding: 3px 10px; transition: color .15s, border-color .15s;
-    }
     .nav-back:hover { color: var(--brick); border-color: var(--brick); }
-
     /* JUMP NAV */
     .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
       background: var(--surface); border-bottom: 1px solid var(--border);
-      padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 8px;
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
     }
     .jump-btn {
       font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
@@ -379,6 +392,7 @@
     /* RESPONSIVE */
     @media (max-width: 640px) {
       .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
       .article-wrap { padding: 24px 16px 60px; }
       .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
       .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
@@ -413,9 +427,7 @@
     }
 
 
-    .jump-nav {
-      position: sticky; top: 52px; z-index: 90;
-    }
+
     .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
 
     [id^="part"] { scroll-margin-top: 120px; }
@@ -439,7 +451,6 @@
       --amber:        #d4a030;
       --amber-light:  #2d2518;
     }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
     [data-theme="dark"] .jump-nav { background: #242220; }
     [data-theme="dark"] .math-box { background: #0f0e0d; }
     [data-theme="dark"] .chart-wrap { background: #2a2826; }
@@ -546,9 +557,12 @@
 
 
   <!-- NAV -->
-  <nav class="site-nav">
-    <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-    <a href="/" class="nav-back">&#8592; Home</a>
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
