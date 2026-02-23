@@ -26,6 +26,39 @@
 
   <style>
 
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule, var(--border, #dedad3));
+      background-color: rgba(247, 245, 241, 0.97);
+      backdrop-filter: blur(6px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule, var(--border, #dedad3)); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #a09c94);
+      padding-left: 16px; border-left: 1px solid var(--rule, var(--border, #dedad3));
+      white-space: nowrap;
+    }
+
+
     /* =========================================================
        TruthBased.org — Trans People & Mass Shootings
        Matches homepage design system exactly.
@@ -69,53 +102,7 @@
 
     /* ----- Nav -------------------------------------------- */
 
-    .site-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 48px;
-      border-bottom: 1px solid var(--rule);
-      background-color: rgba(247, 245, 241, 0.97);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(6px);
-    }
-
-    .nav-left { display: flex; align-items: center; gap: 20px; }
-
-    .nav-wordmark {
-      font-family: 'Spectral', serif;
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--text-primary);
-    }
-
-    .nav-wordmark strong { color: var(--brick); }
-
-    .nav-back {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.08em;
-      color: var(--text-quiet);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 10px;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      transition: color 0.15s ease, border-color 0.15s ease;
-    }
-
     .nav-back:hover { color: var(--brick); border-color: var(--brick); }
-
-    .nav-category {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-quiet);
-    }
 
 
     /* ----- Part jump nav ---------------------------------- */
@@ -1086,7 +1073,6 @@
       --rule-mid:     #4a4640;
       --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
     }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
     [data-theme="dark"] .jump-nav-wrap { background-color: rgba(26,25,24,0.97); }
     [data-theme="dark"] .math-box { background: #0f0e0d; }
     [data-theme="dark"] .chart-wrap { background: #2a2826; }
@@ -1196,8 +1182,8 @@
     <div class="nav-left">
       <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
       <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
     </div>
-    <span class="nav-category">Political Fact Check</span>
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
