@@ -10,9 +10,9 @@
   <meta property="og:url"     content="https://www.truthbased.org/voter-fraud">
   <meta property="og:title"   content="Voter Fraud — The Documented Record | TruthBased.org">
   <meta property="og:description" content="1,620 proven cases against 2.5 billion ballots. Every fraud type. Every 2020 lawsuit. The 2026 Fulton County raid. Every counterargument examined.">
-  <meta property="og:image"   content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/1-b8d45ab2.png">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
   <meta name="twitter:card"   content="summary_large_image">
-  <meta name="twitter:image"  content="https://raw.githubusercontent.com/urarakafan991-collab/violence-stats/main/1-b8d45ab2.png">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -377,8 +377,32 @@
     hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 
     /* RESPONSIVE */
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
       .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .math-box { padding: 14px 16px; font-size: 0.8rem; }
+      .capita-big { font-size: 1.8rem; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
       .case-card-head { flex-direction: column; gap: 8px; }
       .case-row { flex-direction: column; gap: 2px; }
       .case-key { min-width: unset; }
@@ -388,14 +412,144 @@
       .data-table th, .data-table td { padding: 6px 8px; }
     }
 
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+    }
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --border:       #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule, var(--border, #ddd9d0));
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule, var(--border, #dedad3));
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #a09c94); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule, var(--border));
+      line-height: 1.55;
+    }
+
   </style>
+
+  <script>
+    /* ── Dark mode ── */
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
 </head>
 <body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
 
   <!-- NAV -->
   <nav class="site-nav">
     <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
     <a href="/" class="nav-back">&#8592; Home</a>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
   <!-- JUMP NAV -->
@@ -420,6 +574,7 @@
         <span class="meta-pill">Updated February 2026</span>
         <span class="meta-pill">Data through Feb 22, 2026</span>
         <span class="meta-pill">4 independent research sources</span>
+        <span class="meta-pill">~32 min read</span>
       </div>
     </header>
 
@@ -580,7 +735,7 @@
 
       <p>Claims of mass noncitizen voting — that millions of undocumented immigrants or foreign nationals are voting in federal elections — are among the most frequently made and least evidentially supported in election fraud discourse.</p>
 
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead>
           <tr>
             <th>Source / Audit</th>
@@ -633,7 +788,7 @@
             <td class="td-note">Closed 2026; statute of limitations expired</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
 
       <span class="section-label">08 — Registration Fraud ≠ Vote Fraud (A Critical Distinction)</span>
 
@@ -785,7 +940,7 @@
 
       <p>Following the 2020 presidential election, supporters of Donald Trump filed approximately 60–65 lawsuits across 12 battleground states alleging a range of misconduct — from illegal ballot counting procedures to manipulated voting machines. A critical distinction often obscured in political discussion: many cases were dismissed on procedural grounds (lack of standing, mootness, timeliness), but a significant number were also reviewed on the evidentiary merits — and rejected.</p>
 
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead>
           <tr>
             <th>Jurisdiction / Case</th>
@@ -830,7 +985,7 @@
             <td class="td-dismissed">DISMISSED Dec 11, 2020: No standing. No other federal challenge to the 2020 election succeeded.</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
 
       <p>Of approximately 60+ lawsuits filed, 47 were dismissed by federal judges — at least 8 of whom were Trump appointees. Zero succeeded in overturning or invalidating a single electoral vote.</p>
 
@@ -998,7 +1153,24 @@
       <p>Documented prosecuted voter fraud is real, rare, and has never been shown to approach the scale necessary to alter a presidential election outcome. The data — from Heritage (conservative), Brennan Center (progressive), DOJ (federal), and Republican state election officials — is consistent across methodologies and political perspectives. Where the sources disagree is on policy implications. Where they agree is on the empirical rate.</p>
     </div>
 
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. "Voter Fraud — The Documented Record." Updated February 2026. https://www.truthbased.org/voter-fraud</span>
+    </div>
+
+    <div style="margin-top:32px; padding:16px 18px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+      <span style="font-family:var(--font-sans); font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet); display:block; margin-bottom:8px;">Related Research</span>
+      <a href="/trans-shooters" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Trans People &amp; Mass Shootings — The Full Picture</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Three databases. Every definition. Full sensitivity analysis across all assumption combinations.</span>
+    </div>
+
   </div><!-- /article-wrap -->
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Heritage Foundation, Brennan Center, DOJ, CISA, GAO, MIT Election Lab</span>
+  </footer>
 
 
   <script>
@@ -1106,6 +1278,60 @@
         }
       }
     });
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
   </script>
 
 </body>
