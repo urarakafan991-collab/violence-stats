@@ -513,15 +513,130 @@
       .page-hero { padding-top: 52px; padding-bottom: 44px; }
       .nav-tagline { display: none; }
       .acc-meta { display: none; }
+      .acc-trigger { padding: 14px 16px; gap: 10px; }
+      .acc-num { font-size: 0.58rem; min-width: 22px; }
+      .acc-label { font-size: 0.82rem; }
+      .article-row { padding: 14px 16px; gap: 10px; }
+      .row-title { font-size: 0.86rem; }
+      .row-desc { font-size: 0.72rem; }
+      .page-footer { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+
+    }
+
+
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav, .page-hero, .accordion-wrap, .method-section, .page-footer {
+        padding-left: 32px; padding-right: 32px;
+      }
+      .method-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --page-ground:  #1a1918;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --text-primary: #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-faint:  #2d1f1a;
+      --green-live:   #4cbb6a;
+      --green-faint:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-faint:  #2d2518;
+      --rule:         #3a3632;
+      --rule-mid:     #4a4640;
+      --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    [data-theme="dark"] .method-section { background-color: #242220; }
+    [data-theme="dark"] .method-item-title { color: #e8e5e0; }
+    [data-theme="dark"] .method-item-body { color: rgba(232,229,224,0.5); }
+    [data-theme="dark"] a.article-row:hover { background-color: #2a2826; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule, var(--border, #ddd9d0));
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
     }
 
   </style>
+
+  <script>
+    /* ── Dark mode ── */
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
 </head>
 <body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
+
 
   <nav class="site-nav" aria-label="Site navigation">
     <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
     <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
 
@@ -549,7 +664,7 @@
   </div>
 
 
-  <main class="accordion-wrap">
+  <main class="accordion-wrap" id="content">
 
 
     <!-- ── 01 Fact Checks ─────────────────────────────────── -->
@@ -911,6 +1026,46 @@
     </div>
 
 
+
+    <!-- ── 08 International Comparisons ─────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-num">08</span>
+        <span class="acc-label">International Comparisons</span>
+        <span class="acc-meta">How U.S. outcomes compare globally</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel">
+        <div class="acc-panel-inner">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
+                  <span class="row-desc">Per-capita firearm death rates, mass shooting frequency, and gun ownership correlations across OECD nations — using WHO, UNODC, and national registry data.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Healthcare Outcomes — What the U.S. Actually Gets</span>
+                  <span class="row-desc">International price comparisons, administrative overhead data, and what economists across the ideological spectrum actually agree the main drivers are.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Incarceration Rates — The International Context</span>
+                  <span class="row-desc">International incarceration rates, demographic breakdowns, recidivism data, and what policy changes have and haven't worked — measured against BJS and Sentencing Commission data.</span>
+                </div>
+              </div>
+
+        </div>
+      </div>
+    </div>
+
   </main>
 
 
@@ -942,6 +1097,7 @@
 
   <footer class="page-footer">
     <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
+    <a href="/shootings-by-demographic" class="footer-note" style="text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--brick)'" onmouseout="this.style.color=''">Supplementary Data &rarr;</a>
     <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
   </footer>
 
@@ -969,6 +1125,44 @@
         }
       });
     });
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
   </script>
 
 </body>
