@@ -16,6 +16,10 @@
   <meta name="twitter:card"   content="summary_large_image">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-trans-shooters.png">
 
+    <link rel="canonical" href="https://www.truthbased.org/trans-shooters">
+
+    <meta name="theme-color" content="#b83a1e">
+
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -29,9 +33,10 @@
     .site-nav {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px; height: 52px;
-      border-bottom: 1px solid var(--rule, var(--border, #dedad3));
+      border-bottom: 1px solid var(--rule);
       background-color: rgba(247, 245, 241, 0.97);
-      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
       position: sticky; top: 0; z-index: 100;
     }
     [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
@@ -45,7 +50,7 @@
     .nav-back {
       font-family: 'Sora', sans-serif; font-size: 0.72rem;
       color: var(--text-dim, #706d64); text-decoration: none;
-      border: 1px solid var(--rule, var(--border, #dedad3)); border-radius: 3px;
+      border: 1px solid var(--rule); border-radius: 3px;
       padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
       white-space: nowrap;
     }
@@ -53,8 +58,8 @@
     .nav-category {
       font-family: 'Courier Prime', monospace; font-size: 0.56rem;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet, #a09c94);
-      padding-left: 16px; border-left: 1px solid var(--rule, var(--border, #dedad3));
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
       white-space: nowrap;
     }
 
@@ -71,7 +76,7 @@
       --text-primary: #151311;
       --text-body:    #3d3a33;
       --text-dim:     #706d64;
-      --text-quiet:   #a09c94;
+      --text-quiet:   #736e66;
       --brick:        #b83a1e;
       --brick-faint:  #f9ecea;
       --green-live:   #1b6b3e;
@@ -1107,7 +1112,7 @@
     .theme-toggle {
       margin-left: auto;
       width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule, var(--border, #ddd9d0));
+      border: 1px solid var(--rule);
       background: transparent; cursor: pointer;
       font-size: 1rem; line-height: 1;
       display: flex; align-items: center; justify-content: center;
@@ -1140,13 +1145,13 @@
     .cite-this {
       margin-top: 28px; padding: 14px 18px;
       background: var(--card-tinted, var(--surface, #fdfcfa));
-      border: 1px solid var(--rule, var(--border, #dedad3));
+      border: 1px solid var(--rule);
       border-radius: 4px;
     }
     .cite-this-label {
       font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet, #a09c94); display: block; margin-bottom: 8px;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
     }
     .cite-this-text {
       font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
@@ -1155,11 +1160,21 @@
     .info-note {
       font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
       font-style: italic; margin-top: -6px; margin-bottom: 12px;
-      padding-left: 14px; border-left: 2px solid var(--rule, var(--border));
+      padding-left: 14px; border-left: 2px solid var(--rule);
       line-height: 1.55;
     }
 
-  </style>
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0.7;
+    }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    </style>
 
   <script>
     /* ── Dark mode ── */
@@ -1199,7 +1214,8 @@
   </div>
 
 
-  <div class="article-wrap">
+  <main id="content">
+  <article class="article-wrap">
 
     <!-- Article header -->
     <header class="article-header">
@@ -1844,12 +1860,16 @@
     </div>
 
     <div style="margin-top:32px; padding:16px 18px; background:var(--card-tinted,var(--surface,#fdfcfa)); border:1px solid var(--rule,var(--border,#dedad3)); border-radius:4px;">
-      <span style="font-family:'Courier Prime',monospace; font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet,#a09c94); display:block; margin-bottom:8px;">Related Research</span>
+      <span style="font-family:'Courier Prime',monospace; font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet,#736e66); display:block; margin-bottom:8px;">Related Research</span>
       <a href="/shootings-by-demographic" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Mass Shootings by Demographic</a>
       <span style="display:block; font-size:0.76rem; color:var(--text-dim,#706d64); margin-top:4px;">Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender.</span>
+    
+      <a href="/youth-gender-medicine" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px; display:block; margin-top:10px;">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Every major study. The Cass Review and its counter-critiques. Both sides steelmanned.</span>
     </div>
 
-  </div><!-- end .article-wrap -->
+  </article><!-- end .article-wrap -->
+  </main>
 
 
   <footer class="site-footer">
@@ -1905,11 +1925,11 @@
             }
           },
           scales: {
-            x: { grid: { color: '#ede9e0' }, ticks: { color: '#a09c94', maxRotation: 0 } },
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 0 } },
             y: {
               grid: { color: '#ede9e0' },
-              ticks: { color: '#a09c94', callback: v => v.toFixed(1) + '%' },
-              title: { display: true, text: 'Percentage (%)', color: '#a09c94' },
+              ticks: { color: '#736e66', callback: v => v.toFixed(1) + '%' },
+              title: { display: true, text: 'Percentage (%)', color: '#736e66' },
               max: 1.1
             }
           }
@@ -1952,8 +1972,8 @@
           scales: {
             x: {
               grid: { color: '#ede9e0' },
-              ticks: { color: '#a09c94', callback: v => v.toFixed(2) },
-              title: { display: true, text: 'GVA mass shootings per 100,000 people', color: '#a09c94' }
+              ticks: { color: '#736e66', callback: v => v.toFixed(2) },
+              title: { display: true, text: 'GVA mass shootings per 100,000 people', color: '#736e66' }
             },
             y: { grid: { display: false }, ticks: { color: '#3d3a33', font: { size: 12 } } }
           }
@@ -2003,11 +2023,11 @@
             }
           },
           scales: {
-            x: { grid: { color: '#ede9e0' }, ticks: { color: '#a09c94', maxRotation: 0 } },
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 0 } },
             y: {
               grid: { color: '#ede9e0' },
-              ticks: { color: '#a09c94', callback: v => '~' + v + '×' },
-              title: { display: true, text: 'Times less likely than general population', color: '#a09c94' },
+              ticks: { color: '#736e66', callback: v => '~' + v + '×' },
+              title: { display: true, text: 'Times less likely than general population', color: '#736e66' },
               min: 0, max: 14
             }
           }
@@ -2067,6 +2087,15 @@
       }
       window.addEventListener('scroll', update, {passive:true});
       update();
+    })();
+  
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
     })();
   </script>
 
