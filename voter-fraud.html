@@ -14,22 +14,27 @@
   <meta name="twitter:card"   content="summary_large_image">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
 
+    <link rel="canonical" href="https://www.truthbased.org/voter-fraud">
+
+    <meta name="theme-color" content="#b83a1e">
+
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 
   <style>
 
     .site-nav {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px; height: 52px;
-      border-bottom: 1px solid var(--rule, var(--border, #dedad3));
+      border-bottom: 1px solid var(--rule);
       background-color: rgba(247, 245, 241, 0.97);
-      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
       position: sticky; top: 0; z-index: 100;
     }
     [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
@@ -43,7 +48,7 @@
     .nav-back {
       font-family: 'Sora', sans-serif; font-size: 0.72rem;
       color: var(--text-dim, #706d64); text-decoration: none;
-      border: 1px solid var(--rule, var(--border, #dedad3)); border-radius: 3px;
+      border: 1px solid var(--rule); border-radius: 3px;
       padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
       white-space: nowrap;
     }
@@ -51,8 +56,8 @@
     .nav-category {
       font-family: 'Courier Prime', monospace; font-size: 0.56rem;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet, #a09c94);
-      padding-left: 16px; border-left: 1px solid var(--rule, var(--border, #dedad3));
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
       white-space: nowrap;
     }
 
@@ -69,7 +74,7 @@
       --text-head:    #1a1714;
       --text-body:    #2d2926;
       --text-dim:     #5a544c;
-      --text-quiet:   #8a8278;
+      --text-quiet:   #736e66;
       --brick:        #b83a1e;
       --brick-light:  #f5e8e4;
       --green:        #1b6b3e;
@@ -397,6 +402,7 @@
       .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
       .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
       [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
       .case-card-head { flex-direction: column; gap: 8px; }
       .case-row { flex-direction: column; gap: 2px; }
       .case-key { min-width: unset; }
@@ -415,15 +421,6 @@
     @media (max-width: 900px) and (min-width: 641px) {
       .site-nav { padding: 0 24px; }
       .article-wrap { padding: 32px 24px 60px; }
-    }
-
-      .case-card-head { flex-direction: column; gap: 8px; }
-      .case-row { flex-direction: column; gap: 2px; }
-      .case-key { min-width: unset; }
-      .steelman-row { flex-direction: column; }
-      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
-      .data-table { font-size: 0.76rem; }
-      .data-table th, .data-table td { padding: 6px 8px; }
     }
 
 
@@ -486,7 +483,7 @@
     .theme-toggle {
       margin-left: auto;
       width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule, var(--border, #ddd9d0));
+      border: 1px solid var(--rule);
       background: transparent; cursor: pointer;
       font-size: 1rem; line-height: 1;
       display: flex; align-items: center; justify-content: center;
@@ -519,13 +516,13 @@
     .cite-this {
       margin-top: 28px; padding: 14px 18px;
       background: var(--card-tinted, var(--surface, #fdfcfa));
-      border: 1px solid var(--rule, var(--border, #dedad3));
+      border: 1px solid var(--rule);
       border-radius: 4px;
     }
     .cite-this-label {
       font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet, #a09c94); display: block; margin-bottom: 8px;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
     }
     .cite-this-text {
       font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
@@ -534,11 +531,21 @@
     .info-note {
       font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
       font-style: italic; margin-top: -6px; margin-bottom: 12px;
-      padding-left: 14px; border-left: 2px solid var(--rule, var(--border));
+      padding-left: 14px; border-left: 2px solid var(--rule);
       line-height: 1.55;
     }
 
-  </style>
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0.7;
+    }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    </style>
 
   <script>
     /* ── Dark mode ── */
@@ -576,7 +583,8 @@
     <a href="#part6" class="jump-btn">Part 6 — Limitations &amp; Steelman</a>
   </div>
 
-  <div class="article-wrap">
+  <main id="content">
+  <article class="article-wrap">
 
     <!-- ARTICLE HEADER -->
     <header class="article-header">
@@ -1179,7 +1187,8 @@
       <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Three databases. Every definition. Full sensitivity analysis across all assumption combinations.</span>
     </div>
 
-  </div><!-- /article-wrap -->
+  </article><!-- /article-wrap -->
+  </main>
 
   <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
@@ -1345,6 +1354,15 @@
       }
       window.addEventListener('scroll', update, {passive:true});
       update();
+    })();
+  
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
     })();
   </script>
 
