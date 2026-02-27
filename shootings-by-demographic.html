@@ -11,6 +11,10 @@
   <meta property="og:description" content="Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender.">
   <meta property="og:image" content="https://www.truthbased.org/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.truthbased.org/shootings-by-demographic">
+
+    <meta name="theme-color" content="#b83a1e">
+
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +31,7 @@
   <style>
     :root {
       --page-ground:#f7f5f1; --card-face:#ffffff; --card-tinted:#fdfcfa;
-      --text-primary:#151311; --text-body:#3d3a33; --text-dim:#706d64; --text-quiet:#a09c94;
+      --text-primary:#151311; --text-body:#3d3a33; --text-dim:#706d64; --text-quiet:#736e66;
       --brick:#b83a1e; --brick-faint:#f9ecea;
       --green-live:#1b6b3e; --green-faint:#e8f4ed;
       --amber:#8a5c00; --amber-faint:#fdf6e7;
@@ -41,7 +45,8 @@
       --white:var(--text-primary); --green:var(--green-live); --red:var(--brick);
       --yellow:var(--amber);
     }
-    .site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:52px;border-bottom:1px solid var(--rule);background-color:rgba(247,245,241,0.97);backdrop-filter:blur(6px);position:sticky;top:0;z-index:100}
+    .site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:52px;border-bottom:1px solid var(--rule);background-color:rgba(247,245,241,0.97);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition: box-shadow 0.2s ease;
+      position:sticky;top:0;z-index:100}
     [data-theme="dark"] .site-nav{background-color:rgba(26,25,24,0.97)}
     .nav-left{display:flex;align-items:center;gap:16px}
     .nav-wordmark{font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:600;color:var(--text-primary);letter-spacing:-0.02em;white-space:nowrap}
@@ -212,7 +217,7 @@
     .theme-toggle {
       margin-left: auto;
       width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule, var(--border, #ddd9d0));
+      border: 1px solid var(--rule);
       background: transparent; cursor: pointer;
       font-size: 1rem; line-height: 1;
       display: flex; align-items: center; justify-content: center;
@@ -257,6 +262,7 @@
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
+<main id="content">
 
 <div class="hero">
   <div class="eyebrow">Statistical Analysis · Primary Sources</div>
@@ -340,15 +346,15 @@
 
 <!-- TABS -->
 <div class="tabs-wrap">
-  <div class="tabs">
-    <button class="tab active" data-tab="white" onclick="showPanel('white')"><span class="dot" style="background:var(--brick)"></span>White</button>
-    <button class="tab" data-tab="black" onclick="showPanel('black')"><span class="dot" style="background:var(--brick)"></span>Black</button>
-    <button class="tab" data-tab="hispanic" onclick="showPanel('hispanic')"><span class="dot" style="background:var(--blue)"></span>Hispanic</button>
-    <button class="tab" data-tab="asian" onclick="showPanel('asian')"><span class="dot" style="background:var(--green-live)"></span>Asian</button>
-    <button class="tab" data-tab="native" onclick="showPanel('native')"><span class="dot" style="background:var(--amber)"></span>Native</button>
-    <button class="tab" data-tab="immigrant" onclick="showPanel('immigrant')"><span class="dot" style="background:#5a7ab0"></span>Immigrant</button>
-    <button class="tab" data-tab="gender" onclick="showPanel('gender')"><span class="dot" style="background:var(--brick)"></span>Gender</button>
-    <button class="tab" data-tab="trans" onclick="showPanel('trans')"><span class="dot" style="background:#a04878"></span>Trans</button>
+  <div class="tabs" role="tablist">
+    <button role="tab" class="tab active" data-tab="white" onclick="showPanel('white')"><span class="dot" style="background:var(--brick)"></span>White</button>
+    <button role="tab" class="tab" data-tab="black" onclick="showPanel('black')"><span class="dot" style="background:var(--brick)"></span>Black</button>
+    <button role="tab" class="tab" data-tab="hispanic" onclick="showPanel('hispanic')"><span class="dot" style="background:var(--blue)"></span>Hispanic</button>
+    <button role="tab" class="tab" data-tab="asian" onclick="showPanel('asian')"><span class="dot" style="background:var(--green-live)"></span>Asian</button>
+    <button role="tab" class="tab" data-tab="native" onclick="showPanel('native')"><span class="dot" style="background:var(--amber)"></span>Native</button>
+    <button role="tab" class="tab" data-tab="immigrant" onclick="showPanel('immigrant')"><span class="dot" style="background:#5a7ab0"></span>Immigrant</button>
+    <button role="tab" class="tab" data-tab="gender" onclick="showPanel('gender')"><span class="dot" style="background:var(--brick)"></span>Gender</button>
+    <button role="tab" class="tab" data-tab="trans" onclick="showPanel('trans')"><span class="dot" style="background:#a04878"></span>Trans</button>
   </div>
 </div>
 
@@ -356,7 +362,7 @@
 <div class="panels">
 
   <!-- WHITE -->
-  <div class="panel active" id="panel-white">
+  <div class="panel active" role="tabpanel" id="panel-white">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">White (Non-Hispanic)</div>
@@ -423,7 +429,7 @@
   </div>
 
   <!-- BLACK -->
-  <div class="panel" id="panel-black">
+  <div class="panel" role="tabpanel" id="panel-black">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Black (Non-Hispanic)</div>
@@ -492,7 +498,7 @@
   </div>
 
   <!-- HISPANIC -->
-  <div class="panel" id="panel-hispanic">
+  <div class="panel" role="tabpanel" id="panel-hispanic">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Hispanic / Latino</div>
@@ -547,7 +553,7 @@
   </div>
 
   <!-- ASIAN -->
-  <div class="panel" id="panel-asian">
+  <div class="panel" role="tabpanel" id="panel-asian">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Asian (Non-Hispanic)</div>
@@ -595,7 +601,7 @@
   </div>
 
   <!-- NATIVE -->
-  <div class="panel" id="panel-native">
+  <div class="panel" role="tabpanel" id="panel-native">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Native American / Alaska Native</div>
@@ -636,7 +642,7 @@
   </div>
 
   <!-- IMMIGRANT -->
-  <div class="panel" id="panel-immigrant">
+  <div class="panel" role="tabpanel" id="panel-immigrant">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Immigrants / Foreign-Born</div>
@@ -692,7 +698,7 @@
   </div>
 
   <!-- GENDER -->
-  <div class="panel" id="panel-gender">
+  <div class="panel" role="tabpanel" id="panel-gender">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Gender</div>
@@ -739,7 +745,7 @@
   </div>
 
   <!-- TRANS -->
-  <div class="panel" id="panel-trans">
+  <div class="panel" role="tabpanel" id="panel-trans">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Transgender Perpetrators</div>
@@ -801,6 +807,7 @@
 
 </div><!-- /panels -->
 
+</main>
 
   <footer class="site-footer">
     <span class="footer-note">TruthBased.org &mdash; Last updated February 2026</span>
@@ -895,6 +902,31 @@ function showPanel(id, pushHash) {
         });
       });
     })();
-</script>
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      var ticking = false;
+      window.addEventListener('scroll', function(){
+        if(!ticking){ requestAnimationFrame(function(){
+          nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+          ticking = false;
+        }); ticking = true; }
+      }, {passive:true});
+    })();
+  
+    /* Listen for OS theme changes */
+    (function(){
+      if(!window.matchMedia) return;
+      window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', function(e){
+        if(!localStorage.getItem('tb-theme')){
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+          var btn = document.querySelector('.theme-toggle');
+          if(btn) btn.textContent = e.matches ? '\u2600' : '\u263E';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
