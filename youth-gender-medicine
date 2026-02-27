@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gender-Affirming Care for Minors — What the Evidence Shows | TruthBased.org</title>
+  <meta name="description" content="Puberty blockers, hormones, and surgeries — every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows about outcomes. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/youth-gender-medicine">
+  <meta property="og:title"   content="Gender-Affirming Care for Minors — What the Evidence Shows | TruthBased.org">
+  <meta property="og:description" content="Every major study. The Cass Review. Counter-critiques. International policy splits. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+  <link rel="canonical" href="https://www.truthbased.org/youth-gender-medicine">
+  <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
+
+  <style>
+.site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TruthBased.org — Voter Fraud: The Documented Record
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --border:       #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* PER-CAPITA BOX */
+    .capita-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px; margin: 16px 0; text-align: center;
+    }
+    .capita-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); margin-bottom: 6px;
+    }
+    .capita-big {
+      font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--green); line-height: 1.1;
+    }
+    .capita-sub { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+    .capita-verdict {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--green); margin-top: 10px;
+    }
+
+    /* CASE CARDS (equivalent of shooter cards) */
+    .case-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      margin: 16px 0; overflow: hidden;
+    }
+    .case-card-head {
+      background: var(--surface); padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .case-name {
+      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .case-meta-line {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-dim); margin-top: 2px;
+    }
+    .case-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    }
+    .badge-confirmed { background: var(--brick-light); color: var(--brick); }
+    .badge-admin     { background: var(--amber-light); color: var(--amber); }
+    .badge-acquitted { background: var(--green-light); color: var(--green); }
+    .case-card-body { padding: 0; }
+    .case-row {
+      display: flex; padding: 8px 16px;
+      border-bottom: 1px solid var(--border); font-size: 0.86rem; gap: 12px;
+    }
+    .case-row:last-child { border-bottom: none; }
+    .case-key {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      color: var(--text-quiet); min-width: 100px; padding-top: 1px;
+    }
+    .case-val { color: var(--text-body); line-height: 1.5; }
+    .case-val.warn   { color: var(--amber); }
+    .case-val.alert  { color: var(--brick); }
+
+    /* TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-dismissed { color: var(--brick); font-weight: 600; }
+    .td-merits    { color: var(--amber); font-weight: 600; }
+    .td-both      { color: var(--text-dim); font-size: 0.78rem; }
+
+    /* CHART CANVAS */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #1a1714; color: rgba(247,245,241,0.9);
+      border-radius: 6px; padding: 18px 22px; margin: 16px 0;
+      font-family: var(--font-mono); font-size: 0.88rem; line-height: 2;
+    }
+    .math-box .math-label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(247,245,241,0.45); display: block; margin-bottom: 6px;
+    }
+    .math-box .math-result {
+      color: #7ec99a; font-size: 1.1rem; font-weight: 700;
+    }
+    .math-box .math-dim { color: rgba(247,245,241,0.55); }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .math-box { padding: 14px 16px; font-size: 0.8rem; }
+      .capita-big { font-size: 1.8rem; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+    }
+
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --border:       #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+</style>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Health &amp; Science Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <div class="jump-nav">
+    <a href="#part1" class="jump-btn">Part 1 — The Treatments</a>
+    <a href="#part2" class="jump-btn">Part 2 — The Evidence</a>
+    <a href="#part3" class="jump-btn">Part 3 — Counter-Evidence</a>
+    <a href="#part4" class="jump-btn">Part 4 — The Debate Over the Debate</a>
+    <a href="#part5" class="jump-btn">Part 5 — Nuances</a>
+    <a href="#part6" class="jump-btn">Part 6 — The Global Split</a>
+    <a href="#part7" class="jump-btn">Part 7 — Limitations &amp; Steelman</a>
+  </div>
+
+  <main id="content">
+  <div class="article-wrap">
+
+    <header class="article-header">
+      <span class="article-category">Health &amp; Science Fact Check</span>
+      <h1 class="article-title">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</h1>
+      <p class="article-deck">Puberty blockers, hormones, and surgeries &mdash; every major study, every systematic review, the Cass Report and its counter-critiques, international policy splits, and the strongest arguments on both sides. Every claim tested against the peer-reviewed record.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#9679; Live</span>
+        <span class="meta-pill">Updated February 2026</span>
+        <span class="meta-pill">Data through Feb 2026</span>
+        <span class="meta-pill">14+ primary sources</span>
+        <span class="meta-pill">~35 min read</span>
+      </div>
+    </header>
+
+    <div class="box box-amber">
+      <span class="box-label">Why this is filed under Health &amp; Science</span>
+      <p>Claims about gender-affirming care for minors are used to justify legislation in 25+ U.S. states, to restructure NHS services in the UK, and to redirect healthcare policy across Europe. These claims &mdash; from both proponents and opponents &mdash; invoke clinical evidence, often selectively. When those claims are tested against the full peer-reviewed record, fact-checking is not optional. This article presents both sides at their strongest and lets the data speak.</p>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary sources &amp; references used throughout</span>
+      <div class="source-pills">
+        <a class="source-pill" href="https://www.wpath.org/soc8" target="_blank" rel="noopener noreferrer">WPATH SOC8 (2022)</a>
+        <a class="source-pill" href="https://academic.oup.com/jcem/article/102/11/3869/4157558" target="_blank" rel="noopener noreferrer">Endocrine Society (2017)</a>
+        <a class="source-pill" href="https://publications.aap.org/pediatrics/article/142/4/e20182162/37381" target="_blank" rel="noopener noreferrer">AAP (2018)</a>
+        <a class="source-pill" href="https://cass.independent-review.uk/home/publications/final-report/" target="_blank" rel="noopener noreferrer">Cass Review (2024)</a>
+        <a class="source-pill" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2789423" target="_blank" rel="noopener noreferrer">Tordoff 2022</a>
+        <a class="source-pill" href="https://publications.aap.org/pediatrics/article/145/2/e20191725/68259" target="_blank" rel="noopener noreferrer">Turban 2020</a>
+        <a class="source-pill" href="https://publications.aap.org/pediatrics/article/134/4/696/32932" target="_blank" rel="noopener noreferrer">de Vries 2014</a>
+        <a class="source-pill" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">McMaster Review (2025)</a>
+        <a class="source-pill" href="https://palveluvalikoima.fi/en/" target="_blank" rel="noopener noreferrer">Finland COHERE</a>
+        <a class="source-pill" href="https://law.yale.edu/" target="_blank" rel="noopener noreferrer">Yale Law Integrity Project</a>
+        <a class="source-pill" href="https://www.thetrevorproject.org/" target="_blank" rel="noopener noreferrer">Trevor Project</a>
+        <a class="source-pill" href="https://www.mja.com.au/" target="_blank" rel="noopener noreferrer">MJA (2025)</a>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 1 — WHAT THE TREATMENTS ACTUALLY ARE
+    ======================================================= -->
+    <div id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">What the Treatments Actually Are</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Why Terminology Matters</span>
+
+      <p>&ldquo;Gender-affirming care&rdquo; is an umbrella term for a staged series of interventions &mdash; social, psychological, and medical &mdash; designed to align a young person&rsquo;s external presentation or physical development with their gender identity. The term is used by the American Academy of Pediatrics, the Endocrine Society, and the World Professional Association for Transgender Health (WPATH). Political rhetoric frequently describes these interventions as &ldquo;mutilation,&rdquo; &ldquo;chemical castration,&rdquo; or &ldquo;experimental poison.&rdquo; Clinical fact-checking requires distinguishing between those claims and the documented medical record.</p>
+
+      <p>All major clinical guidelines &mdash; WPATH SOC8 (2022), the Endocrine Society (2017), and the AAP (2018, reaffirmed 2023) &mdash; recommend a conservative, staged approach. No guideline recommends hormones or surgery for prepubertal children. The staged model is as follows:</p>
+
+      <span class="section-label">02 &mdash; Social Transition (Fully Reversible)</span>
+
+      <p>Social transition involves using a child&rsquo;s chosen name, pronouns, clothing, and hairstyle consistent with their gender identity. It is non-medical, fully reversible, and can be adjusted at any time. The AAP describes it as &ldquo;a supportive involvement&rdquo; associated with &ldquo;better mental and physical health outcomes.&rdquo; Durwood et al. (2017) found that socially transitioned children ages 9&ndash;14 reported depression and self-worth levels indistinguishable from cisgender peers.</p>
+
+      <div class="box box-green">
+        <span class="box-label">Clinical status</span>
+        <p>Supported by AAP, WPATH, and Endocrine Society. No medical intervention. Fully reversible. No known adverse effects. The Cass Review (2024) described social transition for pre-pubertal children as an &ldquo;active intervention&rdquo; with uncertain long-term effects &mdash; a characterization disputed by the AAP and WPATH.</p>
+      </div>
+
+      <span class="section-label">03 &mdash; Puberty Blockers (GnRH Analogues)</span>
+
+      <p>GnRH analogues (e.g. leuprolide, histrelin) work by binding to pituitary receptors, initially causing a hormone &ldquo;flare,&rdquo; then downregulating those receptors to halt production of luteinizing hormone (LH) and follicle-stimulating hormone (FSH). This stops the gonads from producing estrogen or testosterone, effectively pausing puberty. These medications have been used for decades to treat central precocious puberty in cisgender children &mdash; a context in which their safety profile is well-established.</p>
+
+      <p>Guidelines recommend blockers starting at Tanner Stage 2&ndash;3 (the first physical signs of puberty, typically age 10&ndash;13). Their purpose is to prevent irreversible secondary sex characteristics &mdash; voice deepening, facial hair, breast development &mdash; that cause severe dysphoria and may require surgical correction in adulthood.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">GnRH Analogues &mdash; Clinical Profile</span>
+          <span class="stat-block-period">Endocrine Society 2017 / Cass 2024</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Mechanism</span><span class="stat-val neutral">Pituitary desensitization via GnRH receptor downregulation</span></div>
+          <div class="stat-row"><span class="stat-key">Reversibility</span><span class="stat-val positive">Generally reversible &mdash; puberty resumes on discontinuation</span></div>
+          <div class="stat-row"><span class="stat-key">Known risk</span><span class="stat-val warn">Reduced bone mineral density during use (monitored)</span></div>
+          <div class="stat-row"><span class="stat-key">Known risk</span><span class="stat-val warn">Possible mood fluctuations, headaches, fatigue</span></div>
+          <div class="stat-row"><span class="stat-key">Progression rate</span><span class="stat-val negative">~98% proceed to cross-sex hormones (Cass 2024)</span></div>
+          <div class="stat-row"><span class="stat-key">Interpretation dispute</span><span class="stat-val neutral">Affirmative: confirms identity. Precautionary: not a &ldquo;neutral pause.&rdquo;</span></div>
+        </div>
+      </div>
+
+      <p>A critical safety concern identified by both the Endocrine Society and the Cass Review is the impact on bone mineral density (BMD). During puberty, sex steroids drive bone mineralization. Prolonged blocker use without hormone introduction can result in reduced bone mass accrual. Long-term Dutch cohort data suggests some recovery occurs after starting hormones, though trans-feminine individuals may remain at higher risk for lower lumbar spine BMD.</p>
+
+      <span class="section-label">04 &mdash; Gender-Affirming Hormones (GAHT)</span>
+
+      <p>Cross-sex hormones &mdash; testosterone for transmasculine youth, estrogen for transfeminine youth &mdash; are introduced in mid-adolescence, typically around age 16, though newer interpretations of guidelines allow earlier initiation with sufficient maturity assessment.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">GAHT &mdash; Effects and Reversibility</span>
+          <span class="stat-block-period">Endocrine Society 2017</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Testosterone effects</span><span class="stat-val neutral">Voice deepening, facial/body hair, muscle mass, clitoral enlargement</span></div>
+          <div class="stat-row"><span class="stat-key">Estrogen effects</span><span class="stat-val neutral">Breast development, skin softening, fat redistribution</span></div>
+          <div class="stat-row"><span class="stat-key">Reversibility</span><span class="stat-val warn">Partially &mdash; voice deepening and breast tissue are permanent</span></div>
+          <div class="stat-row"><span class="stat-key">Fertility impact</span><span class="stat-val warn">Uncertain &mdash; may impair gamete production; preservation counseling required</span></div>
+          <div class="stat-row"><span class="stat-key">Safety (short-medium term)</span><span class="stat-val positive">Generally safe with monitoring (blood counts, lipids, liver)</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">05 &mdash; Surgeries for Minors</span>
+
+      <p>Surgical interventions for minors are extremely rare. When they do occur, they are almost exclusively chest masculinization (&ldquo;top surgery&rdquo;) for transmasculine adolescents aged 16&ndash;17 with parental consent, typically after at least one year on hormones and thorough psychological assessment. Genital surgeries (&ldquo;bottom surgery&rdquo;) are reserved for adults 18+ across all major guidelines. The Rady Children&rsquo;s Hospital longitudinal study (2025) found significant reductions in depressive symptoms and chest dysphoria following top surgery in 110 transmasculine youth, with high satisfaction rates.</p>
+
+      <div class="box box-red">
+        <span class="box-label">On the term &ldquo;mutilation&rdquo;</span>
+        <p>The American Medical Association (AMA), American Academy of Child and Adolescent Psychiatry (AACAP), and all major medical bodies reject the term &ldquo;mutilation&rdquo; for gender-affirming procedures. Clinical mutilation involves deliberate tissue destruction without medical purpose. These procedures are medically indicated interventions performed to relieve diagnosed gender dysphoria, with documented regret rates of &lt;2&ndash;3% under multidisciplinary protocols. The 2025 Executive Order title &ldquo;Protecting Children From Chemical and Surgical Mutilation&rdquo; uses a political framing that does not align with the clinical record.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 2 — THE EVIDENCE
+    ======================================================= -->
+    <div id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">The Evidence &mdash; Mental Health Outcomes</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; The Core Finding Across Studies</span>
+
+      <p>Multiple peer-reviewed studies from 2014 through 2025 report a consistent pattern: transgender youth who receive gender-affirming care show significant reductions in depression, suicidality, and gender dysphoria, with improvements in quality of life and psychosocial functioning. The magnitude of these effects is large by psychiatric standards. Below are the key studies, presented with their specific findings, sample sizes, and methodological notes.</p>
+
+      <span class="section-label">02 &mdash; Tordoff et al. (2022) &mdash; JAMA Network Open</span>
+
+      <p>A prospective cohort study of 104 transgender and nonbinary youth (ages 12&ndash;20) at Seattle Children&rsquo;s Gender Clinic, with 12 months of follow-up.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Tordoff et al. &mdash; 12-Month Outcomes</span>
+          <span class="stat-block-period">JAMA Network Open, Jan 2022</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Depression (moderate-severe)</span><span class="stat-val positive">60% lower odds (aOR 0.40, 95% CI 0.17&ndash;0.95)</span></div>
+          <div class="stat-row"><span class="stat-key">Suicidality / self-harm</span><span class="stat-val positive">73% lower odds (aOR 0.27, 95% CI 0.11&ndash;0.65)</span></div>
+          <div class="stat-row"><span class="stat-key">Anxiety</span><span class="stat-val neutral">No significant change (aOR 1.01)</span></div>
+          <div class="stat-row"><span class="stat-key">Sample</span><span class="stat-val neutral">n = 104 youth; prospective design</span></div>
+          <div class="stat-row"><span class="stat-key">Notable finding</span><span class="stat-val negative">Youth who sought but did not receive care saw 2&ndash;3&times; increase in depression</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">03 &mdash; Turban et al. (2020) &mdash; Pediatrics</span>
+
+      <p>Cross-sectional analysis of 20,619 transgender and nonbinary adults from the 2015 U.S. Transgender Survey, examining whether receipt of puberty blockers during adolescence was associated with adult mental health outcomes.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Turban et al. &mdash; Puberty Suppression &amp; Suicidality</span>
+          <span class="stat-block-period">Pediatrics, Feb 2020</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Lifetime suicidal ideation</span><span class="stat-val positive">~70% lower odds (adjusted OR &asymp; 0.3) vs. those who desired but did not receive blockers</span></div>
+          <div class="stat-row"><span class="stat-key">Psychological distress</span><span class="stat-val positive">Significantly lower in those who accessed blockers</span></div>
+          <div class="stat-row"><span class="stat-key">Sample</span><span class="stat-val neutral">n = 20,619 trans/nonbinary adults (retrospective)</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">04 &mdash; de Vries et al. (2014) &mdash; The Dutch Protocol</span>
+
+      <p>The landmark longitudinal study that became the foundation of global youth gender care. Followed 55 Dutch transgender adults who received puberty suppression in early teens, followed by hormones and surgery under strict criteria (childhood-onset dysphoria, no significant comorbidities).</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">de Vries et al. &mdash; Dutch Protocol Outcomes</span>
+          <span class="stat-block-period">Pediatrics, Oct 2014</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Gender dysphoria</span><span class="stat-val positive">&ldquo;Alleviated&rdquo; &mdash; resolved by young adulthood</span></div>
+          <div class="stat-row"><span class="stat-key">Psychological functioning</span><span class="stat-val positive">&ldquo;Steadily improved&rdquo; into young adulthood</span></div>
+          <div class="stat-row"><span class="stat-key">Well-being at age ~21</span><span class="stat-val positive">Comparable to or better than age-matched cis peers</span></div>
+          <div class="stat-row"><span class="stat-key">Sample</span><span class="stat-val neutral">n = 55; strictly screened; childhood-onset only</span></div>
+          <div class="stat-row"><span class="stat-key">Key limitation</span><span class="stat-val warn">Generalizability to modern, more complex patient populations debated</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">05 &mdash; Additional Supporting Studies (2017&ndash;2025)</span>
+
+      <p><strong>Durwood et al. (2017, JAACAP)</strong> &mdash; Socially transitioned transgender children (average age ~11) reported depression and self-worth levels indistinguishable from cisgender controls. Anxiety was slightly elevated but not statistically significant.</p>
+
+      <p><strong>Australian National Survey (2025, ScienceDirect)</strong> &mdash; Analyzing data from 1,697 trans youth (ages 14&ndash;21), found that those supported to affirm their gender (medically, legally, or socially) reported significantly less psychological distress, anxiety, self-harm, and suicidal ideation, along with greater happiness.</p>
+
+      <p><strong>Journal of Adolescent Health (2025)</strong> &mdash; In 315 youth (ages 12&ndash;20), after six months of hormone therapy, average scores for friendship quality and life satisfaction &mdash; which were clinically concerning beforehand &mdash; reached healthy levels.</p>
+
+      <p><strong>Rady Children&rsquo;s Hospital (2025, PMC)</strong> &mdash; Longitudinal study of 110 transmasculine and nonbinary youth found significant reductions in depressive symptoms, gender dysphoria, and chest dysphoria following top surgery, with high surgical satisfaction.</p>
+
+      <p><strong>Trevor Project surveys (2021&ndash;2025)</strong> &mdash; Repeated large-scale surveys find that trans youth with access to affirming care report far lower rates of suicide attempts. Youth whose pronouns are consistently respected were 31% less likely to attempt suicide.</p>
+
+      <div class="box box-green">
+        <span class="box-label">Summary of evidence pattern</span>
+        <p>Across multiple study designs, countries, and time periods, the evidence consistently shows short-term mental health improvements of 40&ndash;70% reduction in depression and suicidality measures within 1&ndash;2 years of starting care. Quality of life, self-esteem, and psychosocial functioning improve. These are large effect sizes rarely seen in psychiatric interventions. Long-term data (3+ years) from the Dutch and Australian cohorts continue to show sustained benefit.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 3 — THE COUNTER-EVIDENCE
+    ======================================================= -->
+    <div id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">The Counter-Evidence &mdash; Cass Review &amp; Critiques</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; The Cass Review (2024)</span>
+
+      <p>The most influential document in the 2020s shift toward caution. Commissioned by NHS England and led by Dr. Hilary Cass, former President of the Royal College of Paediatrics and Child Health, it oversaw eight systematic reviews of the evidence base for youth gender care. Its final report (April 2024) concluded that the evidence for both puberty blockers and hormones is of &ldquo;very low&rdquo; or &ldquo;low&rdquo; quality.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Cass Review &mdash; Key Findings</span>
+          <span class="stat-block-period">Final Report, April 2024</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Evidence quality</span><span class="stat-val negative">&ldquo;Remarkably weak&rdquo; &mdash; no RCTs; mostly low-quality observational studies</span></div>
+          <div class="stat-row"><span class="stat-key">Progression rates</span><span class="stat-val negative">~98% who start blockers proceed to cross-sex hormones</span></div>
+          <div class="stat-row"><span class="stat-key">Suicide risk</span><span class="stat-val warn">No reliable evidence that medical transition reduces overall suicide risk</span></div>
+          <div class="stat-row"><span class="stat-key">Comorbidities</span><span class="stat-val warn">High rates of autism, trauma, and mental health conditions in referrals</span></div>
+          <div class="stat-row"><span class="stat-key">Referral pattern shift</span><span class="stat-val neutral">Sharp increase in adolescent natal females (reversal from historical pattern)</span></div>
+          <div class="stat-row"><span class="stat-key">Recommendation</span><span class="stat-val negative">Blockers only within clinical trials; hormones with &ldquo;extreme caution&rdquo;</span></div>
+        </div>
+      </div>
+
+      <p>The Review made 32 recommendations. Most significantly: puberty blockers should only be available through formal clinical research protocols, gender-affirming hormones should be prescribed with &ldquo;extreme caution&rdquo; for under-18s, and psychosocial support should be the first-line treatment. NHS England implemented these recommendations, effectively ending routine puberty blocker prescriptions for minors outside of trials.</p>
+
+      <span class="section-label">02 &mdash; McMaster University Systematic Review (2025)</span>
+
+      <p>A high-quality systematic review and meta-analysis corroborated the Cass findings, concluding that the evidence for GAHT in under-26s is &ldquo;very uncertain&rdquo; and that the possibility of both benefits and harms cannot be excluded. Notably, this review emphasized that the issue is not just the absence of RCTs but the lack of reliable data from all study designs.</p>
+
+      <span class="section-label">03 &mdash; Finnish and Swedish Data</span>
+
+      <p><strong>Ruuska et al. (2024, Finland)</strong> &mdash; A Finnish register study of 23,000 adolescents referred to gender clinics found that while the suicide rate (0.51 per 1,000 person-years) was higher than in peers, this excess vanished after adjusting for psychiatric history. The study found that gender dysphoria itself did not significantly predict suicide once mental illness was accounted for, and that medical transition had no detectable effect on lowering suicide risk.</p>
+
+      <p><strong>Finland COHERE (2020) and Sweden</strong> &mdash; Both countries moved toward restrictive protocols, mandating psychosocial support as first-line treatment and limiting medical interventions to &ldquo;exceptional cases&rdquo; of severe, persistent distress. Their rationale: the evidence base does not support routine medical intervention for the broader, more complex patient population now presenting to clinics.</p>
+
+      <span class="section-label">04 &mdash; Methodological Critiques of Key Studies</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key">Dutch Protocol</div>
+          <div class="steelman-val">Critics argue the study used &ldquo;best-case&rdquo; participants: those who developed medical problems or dropped out were excluded from final results, potentially masking negative outcomes. The strict screening criteria (childhood-onset dysphoria, no comorbidities) make it inapplicable to the modern, broader patient population.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Tordoff (2022)</div>
+          <div class="steelman-val">Treatment access was not randomized but determined by clinical readiness and parental support. The treatment group may have been more stable at baseline. The Society for Evidence-Based Gender Medicine (SEGM) argues the findings may reflect selection effects rather than treatment effects.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Turban (2022)</div>
+          <div class="steelman-val">While those who received hormones had lower past-year suicidal ideation, they were actually more likely to report a lifetime suicide attempt requiring hospitalization &mdash; a finding that complicates the simple &ldquo;hormones reduce suicide&rdquo; narrative.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">General</div>
+          <div class="steelman-val">No randomized controlled trials exist. Sample sizes are often small and clinic-based. Follow-up periods are usually 1&ndash;3 years. Self-reported outcomes are subject to expectancy and placebo effects. Publication bias may favor positive results.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 4 — THE DEBATE OVER THE DEBATE
+    ======================================================= -->
+    <div id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">The Debate Over the Debate</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Critiques of the Cass Review</span>
+
+      <p>The Cass Review has itself faced significant, peer-reviewed criticism. A major critique published in October 2025 in <em>The Medical Journal of Australia</em>, signed by experts from 15 institutions, argued that the Review &ldquo;does not guide care for trans young people&rdquo; and contains &ldquo;implicit stigma and misinformation,&rdquo; methodological problems, and conceptual errors.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key">Yale Law</div>
+          <div class="steelman-val">The Yale Law School Integrity Project argued that the Cass Review &ldquo;repeatedly misuses data and violates its own evidentiary standards,&rdquo; relying on speculation and ignoring studies showing worsened mental health in youth denied care.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">WPATH</div>
+          <div class="steelman-val">WPATH and USPATH responded that the report &ldquo;does not contain any new research that would contradict&rdquo; existing evidence-based guidelines (WPATH 2022, AAP, Endocrine Society).</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Evidence bar</div>
+          <div class="steelman-val rebuttal">Critics argue Cass applied an inappropriately high evidence standard (designed for drug trials) to complex psychosocial interventions. This standard &mdash; requiring RCTs &mdash; is not applied to other pediatric mental health treatments (e.g. therapy for depression, ADHD medication, or even appendectomy).</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Internal contradictions</div>
+          <div class="steelman-val rebuttal">The Review recommends expanding psychological treatments despite finding no evidence they work for gender dysphoria. It restricts medical care to prevent rare regret while acknowledging regret is uncommon. It calls social transition an &ldquo;active intervention&rdquo; while also recommending psychosocial support as first-line care.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">RCT feasibility</div>
+          <div class="steelman-val">All critics agree: a placebo-controlled RCT for GAHT in suicidal youth is widely considered unfeasible and unethical. Withholding treatment from a control group when existing evidence shows benefit is incompatible with medical ethics. The Cass framework effectively demands evidence that cannot be ethically obtained.</div>
+        </div>
+      </div>
+
+      <span class="section-label">02 &mdash; The UK Pathways Trial (2025&ndash;2026)</span>
+
+      <p>The King&rsquo;s College London &ldquo;Pathways&rdquo; trial, launched in 2025 to study puberty blockers within an NHS research framework, was paused by the Medicines and Healthcare products Regulatory Agency (MHRA) in February 2026. The MHRA raised concerns about including participants as young as 10 and cited &ldquo;unquantified risk of long-term biological harms.&rdquo; This pause reflects the ongoing tension between the need for research and the ethical imperative to &ldquo;do no harm&rdquo; when long-term data is missing.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">The fundamental impasse</span>
+        <p>Proponents say: &ldquo;We have consistent observational evidence of dramatic benefit. Demanding RCTs before treating suicidal youth is itself unethical.&rdquo; Opponents say: &ldquo;Observational evidence is insufficient for permanent interventions on minors. The 98% progression rate means blockers are not a neutral pause.&rdquo; Both positions invoke medical ethics. Neither can be resolved without the long-term data that does not yet exist.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 5 — NUANCES & EDGE CASES
+    ======================================================= -->
+    <div id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Nuances &amp; Edge Cases</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Early-Onset vs. Later-Onset Dysphoria</span>
+
+      <p>Youth with early-onset gender dysphoria (consistent from age 5&ndash;7) who persist into puberty almost universally continue to identify as transgender into adulthood. The Dutch protocol was designed for this specific cohort, and the evidence base is strongest for them. The modern landscape is different: the majority of referrals now come from adolescents &mdash; particularly natal females &mdash; presenting in their teens without a childhood history of gender distress. This shift is the source of much of the current debate.</p>
+
+      <p>The Cass Review and European health boards acknowledge this phenomenon. Whether it represents improved social acceptance allowing identification, social influence, or distress manifesting as gender-related (analogous to eating disorders or depression), remains genuinely unresolved. Major medical organizations, including the AAP, reject the &ldquo;social contagion&rdquo; framing, describing it as unsupported by evidence.</p>
+
+      <span class="section-label">02 &mdash; The Autism-Gender Link</span>
+
+      <p>Transgender youth have 3&ndash;6 times the odds of being autistic compared to the general population. This co-occurrence is well-documented and raises genuine clinical questions.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Autism &amp; Gender Dysphoria Co-Occurrence</span>
+          <span class="stat-block-period">Multiple sources</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Odds ratio</span><span class="stat-val neutral">3&ndash;6&times; higher autism prevalence in gender-referred youth</span></div>
+          <div class="stat-row"><span class="stat-key">Depression (with autism)</span><span class="stat-val negative">58% vs. 35% without autism</span></div>
+          <div class="stat-row"><span class="stat-key">Anxiety (with autism)</span><span class="stat-val negative">49% vs. 27% without autism</span></div>
+          <div class="stat-row"><span class="stat-key">Concern (precautionary)</span><span class="stat-val warn">Diagnostic overshadowing &mdash; gender may mask autism or vice versa</span></div>
+          <div class="stat-row"><span class="stat-key">Concern (affirmative)</span><span class="stat-val warn">Delaying care while assessing other conditions causes additional distress</span></div>
+        </div>
+      </div>
+
+      <p>Autistic individuals who have learned to &ldquo;mask&rdquo; their neurodivergence may struggle with identity formation, potentially increasing gender questioning. Clinicians may focus on gender dysphoria and miss autism, or vice versa. Critics argue neurodivergent youth may have greater difficulty understanding long-term consequences of medical transition. In practice, guidelines recommend concurrent assessment and treatment of all conditions.</p>
+
+      <span class="section-label">03 &mdash; Placebo and Hope Effects</span>
+
+      <p>A nuanced critique involves the role of expectancy effects. Psychiatrist Alison Clayton and others argue that the mental health improvements seen in the first 12 months of GAC may partly result from a &ldquo;perfect storm for the placebo effect.&rdquo;</p>
+
+      <p>If a teenager is told by doctors, media, and peers that a treatment is life-saving, receiving it generates psychological relief regardless of biochemical effect (expectation). Clinical attention and sympathy from professionals can improve symptoms independently (Hawthorne effect). Conversely, youth told that delaying treatment leads to suicide may experience worsened symptoms (nocebo effect). Current research cannot fully distinguish these effects from the specific hormonal effect &mdash; though the 60&ndash;70% reductions in suicidality are large and hard to attribute entirely to placebo.</p>
+
+      <span class="section-label">04 &mdash; The 16&ndash;17 Year-Old Edge Case</span>
+
+      <p>Older adolescents straddle pediatrics and adulthood. They possess greater cognitive maturity but remain dependent on adult systems. For a 16-year-old who has lived in their affirmed gender for years and undergone thorough assessment, GAHT is often clinically and ethically appropriate. Delaying until 18 is not a neutral option &mdash; it means two more years of unwanted pubertal changes.</p>
+
+      <p>In the UK, &ldquo;Gillick competence&rdquo; allows some 16-year-olds to consent to their own treatment, but recent restrictions have overridden this specifically for gender care, creating legal and ethical limbo. Many 16&ndash;17-year-olds referred at 15 face 2&ndash;3 year waitlists, aging out of children&rsquo;s services before being seen, only to join longer adult waitlists.</p>
+
+      <span class="section-label">05 &mdash; Environment as Modifier</span>
+
+      <p>The benefits of medical care are profoundly mediated by social context. A trans teen in a supportive family and school may flourish once care begins; one facing hostility may continue to struggle despite hormones. Social affirmation (correct pronouns, acceptance at home and school) is a powerful independent variable. Trevor Project data shows that youth whose pronouns are respected by all people they live with were 31% less likely to attempt suicide. Benefits of medical care are often inseparable from the psychosocial environment.</p>
+    </div>
+
+    <!-- ======================================================
+         PART 6 — THE GLOBAL SPLIT
+    ======================================================= -->
+    <div id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">The Global Split &mdash; Policy Comparison</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Two Models, Same Evidence</span>
+
+      <p>The global divergence in youth gender care policy is driven by differing interpretations of the same body of low-quality evidence. The United States, Canada, and Australia follow a primarily affirmative model. The UK, Finland, and Sweden have moved toward a precautionary, research-first model. Both invoke medical ethics and patient welfare.</p>
+
+      <div class="data-table" style="width:100%; border-collapse:collapse; font-size:0.82rem; margin:16px 0; border:1px solid var(--border); overflow:hidden;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Country / Region</th>
+              <th>Model</th>
+              <th>Blockers (under 18)</th>
+              <th>Hormones (under 18)</th>
+              <th>First-line treatment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>United States</strong></td>
+              <td>Affirmative (AAP/WPATH)</td>
+              <td class="td-rate">Available from ~Tanner 2</td>
+              <td class="td-rate">Available from ~16 (varies)</td>
+              <td>Individualized; medical + psychosocial</td>
+            </tr>
+            <tr>
+              <td><strong>UK (England)</strong></td>
+              <td>Precautionary (post-Cass)</td>
+              <td class="td-dismissed">Clinical trials only</td>
+              <td class="td-merits">With &ldquo;extreme caution&rdquo; from 16</td>
+              <td>Psychosocial support first</td>
+            </tr>
+            <tr>
+              <td><strong>Finland</strong></td>
+              <td>Precautionary</td>
+              <td class="td-merits">Exceptional cases only</td>
+              <td class="td-merits">Exceptional cases only</td>
+              <td>Psychosocial mandatory first-line</td>
+            </tr>
+            <tr>
+              <td><strong>Sweden</strong></td>
+              <td>Precautionary</td>
+              <td class="td-merits">Exceptional cases only</td>
+              <td class="td-merits">Exceptional cases only</td>
+              <td>Psychosocial mandatory first-line</td>
+            </tr>
+            <tr>
+              <td><strong>Australia</strong></td>
+              <td>Affirmative (under review)</td>
+              <td class="td-rate">Available under protocols</td>
+              <td class="td-rate">Available from ~16</td>
+              <td>Individualized; recent data strongly positive</td>
+            </tr>
+            <tr>
+              <td><strong>25+ U.S. states</strong></td>
+              <td>Legislative bans</td>
+              <td class="td-dismissed">Banned for minors</td>
+              <td class="td-dismissed">Banned for minors</td>
+              <td>N/A &mdash; care prohibited regardless of clinical need</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">02 &mdash; Harms of Denial vs. Risks of Intervention</span>
+
+      <p><strong>Harms of denial or delay:</strong> Untreated dysphoria typically intensifies through puberty. Blocking puberty late, when unwanted features have already developed, is less effective. Pediatric endocrinologists warn that postponed treatment can lead to underground hormone sources and DIY self-medication, which carry serious safety risks. Self-harm and suicide attempts among trans youth increase in environments with high stigma or restricted care access. Early reports from post-Cass UK suggest rising anxiety among trans youth under the new restrictions.</p>
+
+      <p><strong>Risks of intervention:</strong> Bone density accrual can be slower on blockers; some reduction in BMD z-scores is documented, though this usually normalizes once sex hormones resume. Fertility is a significant concern: blockers alone do not impair fertility, but if hormones are started without gamete preservation, future fertility may be lost. In practice, clinics offer counseling and sperm/egg banking for older adolescents. Cardiovascular monitoring is required with estrogen. These physical risks must be weighed against the documented risk of suicide without treatment.</p>
+
+      <span class="section-label">03 &mdash; The Referral Surge</span>
+
+      <p>UK general practice data shows a five-fold rise in recorded transgender identity between 2000 and 2018, with the highest prevalence (1 in 600) in the 16&ndash;17 age group. An Australian 2021 study reported that 7% of adolescents aged 14&ndash;18 identified as trans or gender-diverse, up from 2% in 2018. Whether this reflects genuine prevalence increase, improved social acceptance, or social influence factors remains actively debated. The sharp rise drives much of the precautionary argument: clinics designed for a small, well-defined population are now receiving far more complex cases.</p>
+    </div>
+
+    <!-- ======================================================
+         PART 7 — LIMITATIONS & STEELMAN
+    ======================================================= -->
+    <div id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Limitations &amp; Steelman</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Steelmanned Arguments</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--green-light); color:var(--green);">FOR care</div>
+          <div class="steelman-val">For many teens, gender dysphoria is an acute crisis &mdash; analogous to intolerable body-image distress with a documented ~40% suicide attempt rate in non-affirming settings. Endogenous puberty is itself a permanent, irreversible intervention for a trans youth: it produces voice changes, skeletal changes, and tissue growth that will require far more invasive surgical correction in adulthood. The consistent observational evidence of 60&ndash;70% reductions in depression and suicidality, seen across multiple countries and study designs, represents the strongest available evidence short of an RCT that cannot ethically be conducted. Every major medical organization (AAP, AMA, Endocrine Society, WPATH) has reviewed this evidence and concluded that the benefits outweigh the risks when care is delivered under multidisciplinary protocols. Withholding treatment from suicidal youth while demanding impossible evidence standards is not caution &mdash; it is cruelty by omission.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--brick-light); color:var(--brick);">Against care</div>
+          <div class="steelman-val">Medical ethics requires high-certainty evidence for permanent, life-altering interventions on minors. The evidence base is observational, unblinded, and often from small, self-selected samples. The 98% progression rate from blockers to hormones means this is not a &ldquo;pause&rdquo; but a pathway. We have no data showing these treatments reduce suicide in the modern, broader referral population with high rates of autism, trauma, and other mental health conditions. The sharp rise in adolescent-onset presentations represents a genuinely new clinical phenomenon that the Dutch protocol was never designed for. For these youth, distress may be a manifestation of untreated comorbidities rather than core gender identity. Affirming without thorough exploration risks creating lifelong medical patients with compromised bone health, fertility, and sexual function &mdash; harms that cannot be undone if the underlying issue was something else entirely.</div>
+        </div>
+      </div>
+
+      <span class="section-label">02 &mdash; What We Do Not Know</span>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Key Evidence Gaps</span>
+          <span class="stat-block-period">As of February 2026</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Long-term outcomes (10+ years)</span><span class="stat-val warn">No large-scale data on cardiovascular health, cancer risk, or cognitive effects</span></div>
+          <div class="stat-row"><span class="stat-key">Fertility after GAHT</span><span class="stat-val warn">Unknown how many hormone-treated youth can later conceive</span></div>
+          <div class="stat-row"><span class="stat-key">Brain development</span><span class="stat-val warn">Impact of GnRH analogues on adolescent neurodevelopment unstudied</span></div>
+          <div class="stat-row"><span class="stat-key">Detransition rates</span><span class="stat-val warn">Hard to estimate; many drop out of follow-up</span></div>
+          <div class="stat-row"><span class="stat-key">Diversity</span><span class="stat-val warn">Populations overwhelmingly White and transmasculine; outcomes for trans women, BIPOC youth, and nonbinary youth underresearched</span></div>
+          <div class="stat-row"><span class="stat-key">Comparative data</span><span class="stat-val warn">No studies comparing &ldquo;immediate affirmation&rdquo; vs. &ldquo;exploratory therapy first&rdquo;</span></div>
+          <div class="stat-row"><span class="stat-key">RCTs</span><span class="stat-val warn">None exist; widely considered unfeasible and unethical</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">03 &mdash; Research Priorities (2026&ndash;2030)</span>
+
+      <p>The following research would directly address the uncertainties at the center of this debate:</p>
+
+      <p><strong>1. Longitudinal registries</strong> &mdash; Multi-national tracking of youth who initiated transition between 2015 and 2025, following outcomes (mental health, employment, physical health, regret) through their 30s, across both early-onset and adolescent-onset profiles.</p>
+
+      <p><strong>2. Comparative psychotherapy trials</strong> &mdash; Large-scale studies comparing &ldquo;immediate affirmation&rdquo; against &ldquo;standardized exploratory psychotherapy&rdquo; (as practiced in Finland and Sweden) to determine which yields better outcomes at age 25.</p>
+
+      <p><strong>3. Brain and cognitive development</strong> &mdash; Longitudinal neuroimaging to study the impact of GnRH analogues on adolescent brain maturation, addressing concerns raised by the Cass Review about &ldquo;unquantified biological harms.&rdquo;</p>
+
+      <p><strong>4. Fertility outcomes</strong> &mdash; Research on actual utilization and success rates of fertility preservation among 14&ndash;17-year-olds, and the degree to which adolescents can grasp the lifelong implications of potential infertility during a dysphoric crisis.</p>
+
+      <p><strong>5. Policy impact studies</strong> &mdash; Comparative research on mental health outcomes in jurisdictions that restrict care (post-Cass UK, US state bans) versus those that maintain affirmative access, controlling for confounders.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">Bottom line</span>
+        <p>Current data show clear short-term mental health gains from gender-affirming care &mdash; gains often described by youth as life-saving. However, strong evidence gaps remain on long-term consequences. Most expert bodies hold that properly delivered gender-affirming care improves depressed and dysphoric youths&rsquo; lives dramatically, while continued study is essential. The evidence is not &ldquo;settled&rdquo; in either direction &mdash; and anyone who tells you it is, on either side, is not being honest about what we know and what we don&rsquo;t.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="sources-section">
+      <span class="sources-section-label">Full Sources &amp; References</span>
+      <div class="source-item"><strong>WPATH SOC8 (2022)</strong> &mdash; Standards of Care, Version 8. <a href="https://www.wpath.org/soc8" target="_blank">wpath.org/soc8</a></div>
+      <div class="source-item"><strong>Endocrine Society (2017)</strong> &mdash; Clinical Practice Guideline. <a href="https://academic.oup.com/jcem/article/102/11/3869/4157558" target="_blank">doi:10.1210/jc.2017-01658</a></div>
+      <div class="source-item"><strong>AAP (2018)</strong> &mdash; Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents. <a href="https://publications.aap.org/pediatrics/article/142/4/e20182162/37381" target="_blank">Pediatrics 142(4)</a></div>
+      <div class="source-item"><strong>Tordoff et al. (2022)</strong> &mdash; Mental Health Outcomes in Transgender and Nonbinary Youths Receiving Gender-Affirming Care. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2789423" target="_blank">JAMA Netw Open 5(2)</a></div>
+      <div class="source-item"><strong>Turban et al. (2020)</strong> &mdash; Pubertal Suppression for Transgender Youth and Risk of Suicidal Ideation. <a href="https://publications.aap.org/pediatrics/article/145/2/e20191725/68259" target="_blank">Pediatrics 145(2)</a></div>
+      <div class="source-item"><strong>de Vries et al. (2014)</strong> &mdash; Young Adult Psychological Outcome After Puberty Suppression and Gender Reassignment. <a href="https://publications.aap.org/pediatrics/article/134/4/696/32932" target="_blank">Pediatrics 134(4)</a></div>
+      <div class="source-item"><strong>Durwood et al. (2017)</strong> &mdash; Mental Health and Self-Worth in Socially Transitioned Transgender Youth. <a href="https://doi.org/10.1016/j.jaac.2016.10.016" target="_blank">JAACAP 56(2)</a></div>
+      <div class="source-item"><strong>Cass Review (2024)</strong> &mdash; Independent Review of Gender Identity Services for Children and Young People: Final Report. <a href="https://cass.independent-review.uk/home/publications/final-report/" target="_blank">cass.independent-review.uk</a></div>
+      <div class="source-item"><strong>Ruuska et al. (2024)</strong> &mdash; All-Cause and Suicide Mortalities Among Adolescents and Young Adults Who Contacted Specialised Gender Identity Services in Finland. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">BMJ Mental Health 2024</a></div>
+      <div class="source-item"><strong>Yale Law School Integrity Project (2024)</strong> &mdash; Analysis of the Cass Review. <a href="https://law.yale.edu/" target="_blank">law.yale.edu</a></div>
+      <div class="source-item"><strong>MJA Critique (2025)</strong> &mdash; The Cass Review Does Not Guide Care for Trans Young People. <a href="https://www.mja.com.au/" target="_blank">Medical Journal of Australia</a></div>
+      <div class="source-item"><strong>McMaster University (2025)</strong> &mdash; Systematic Review of Gender-Affirming Hormones. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">pubmed.ncbi.nlm.nih.gov</a></div>
+      <div class="source-item"><strong>Trevor Project (2021&ndash;2025)</strong> &mdash; National Survey on LGBTQ Youth Mental Health. <a href="https://www.thetrevorproject.org/survey-2024/" target="_blank">thetrevorproject.org</a></div>
+      <div class="source-item"><strong>Rady Children&rsquo;s Hospital (2025)</strong> &mdash; Longitudinal Study of Gender-Affirming Top Surgery Outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PMC</a></div>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Gender-Affirming Care for Minors &mdash; What the Evidence Shows.&rdquo; Updated February 2026. https://www.truthbased.org/youth-gender-medicine</span>
+    </div>
+
+    <div style="margin-top:32px; padding:16px 18px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+      <span style="font-family:var(--font-sans); font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet); display:block; margin-bottom:8px;">Related Research</span>
+      <a href="/trans-shooters" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Trans People &amp; Mass Shootings &mdash; The Full Picture</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Three databases. Every definition. Full sensitivity analysis across all assumption combinations.</span>
+    </div>
+
+  </div><!-- /article-wrap -->
+  </main>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">14+ peer-reviewed sources cited</span>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* Theme toggle */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function update(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      update();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        update();
+      });
+    })();
+
+    /* Reading progress bar */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      var ticking = false;
+      window.addEventListener('scroll', function(){
+        if(!ticking){ requestAnimationFrame(function(){
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+          ticking = false;
+        }); ticking = true; }
+      }, {passive:true});
+    })();
+
+    /* Back to top */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* Scroll spy */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  </script>
+</body>
+</html>
