@@ -15,7 +15,6 @@
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
 
     <link rel="canonical" href="https://www.truthbased.org/voter-fraud">
-
     <meta name="theme-color" content="#b83a1e">
 
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -503,10 +502,72 @@
     .skip-link:focus { top: 0; }
     :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
 
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Falsifiability threshold ── */
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
     @media print {
       .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
       .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
-      body { background: #fff !important; color: #000 !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .steelman-wrap, .evidence-table, .capita-box, .tldr-box, .scale-vis { break-inside: avoid; }
+      .part-header { break-after: avoid; }
     }
     @media (max-width: 640px) {
       .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
@@ -545,6 +606,21 @@
     [data-theme="dark"] .table-scroll::after {
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
     }
+    /* --- TL;DR, Scope, Scale additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scale-vis { margin: 20px 0; padding: 16px; background: var(--card-face); border: 1px solid var(--rule); border-radius: 4px; }
+    .scale-vis .scale-label { font-family: var(--font-mono); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 12px; display: block; }
+    .scale-bar-wrap { position: relative; height: 28px; background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .scale-bar-fill { height: 100%; background: var(--brick); border-radius: 2px 0 0 2px; min-width: 2px; }
+    .scale-bar-nums { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-quiet); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 18px 0 24px; }
+    .evidence-table th { background: var(--card-face); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-quiet); padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--rule); }
+    .evidence-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.4; }
+    .evidence-table tr:last-child td { border-bottom: none; }
+    .evidence-table .total-row td { font-weight: 700; border-top: 2px solid var(--text-head); }
+    @media (max-width: 640px) { .evidence-table { font-size: 0.65rem; } .evidence-table th, .evidence-table td { padding: 6px 6px; } }
     </style>
 
   <script>
@@ -555,6 +631,20 @@
       if (stored) html.setAttribute('data-theme', stored);
       else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
     })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Voter Fraud: The Documented Record",
+    "description": "1,620 proven cases against 2.5 billion ballots. Every fraud type. Every 2020 lawsuit. Every counterargument examined.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/voter-fraud",
+    "keywords": ["voter fraud", "election integrity", "2020 election", "fact-check", "statistics"]
+  }
   </script>
 </head>
 <body>
@@ -629,6 +719,43 @@
       </div>
     </div>
 
+    <div class="tldr-box">
+      <span class="tldr-label">TL;DR &mdash; The headline numbers and caveats</span>
+      <p>The Heritage Foundation&rsquo;s own database documents <strong>1,620 proven fraud cases</strong> against an estimated <strong>2.5 billion federal ballots</strong> cast (1982&ndash;2025) &mdash; a rate of <strong>0.000065%</strong>. Most cases are individual actors (double-voting, felon registration), not coordinated schemes. All 60+ post-2020 lawsuits failed to demonstrate systematic fraud. The strongest counterargument: the database is a &ldquo;sampling,&rdquo; and not all fraud is detected. But no audit, recount, or investigation has ever produced evidence of undetected fraud at scale.</p>
+    </div>
+
+    <div class="scale-vis">
+      <span class="scale-label">1,620 proven cases vs. 2,500,000,000 ballots cast</span>
+      <div class="scale-bar-wrap">
+        <div class="scale-bar-fill" style="width: 0.065%;"></div>
+      </div>
+      <div class="scale-bar-nums">
+        <span style="color:var(--brick); font-weight:700;">1,620 fraud cases &larr; (invisible at this scale)</span>
+        <span>2.5 billion ballots &rarr;</span>
+      </div>
+      <p style="font-size:0.7rem; color:var(--text-quiet); margin:10px 0 0; line-height:1.4;">If every pixel of the bar above represented 100,000 ballots, the fraud cases would occupy less than a single pixel. The bar is not broken &mdash; the red sliver is there, it is just too small to see.</p>
+    </div>
+
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"There are 1,620 proven cases of voter fraud"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>True &mdash; but against 2.5 billion ballots, that&rsquo;s a rate of 0.000065%. Heritage itself calls its database a &ldquo;sampling,&rdquo; not a comprehensive count.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"Voter ID laws prevent fraud"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>In-person impersonation (what ID prevents) is the rarest type: 31 credible cases per billion+ ballots. A Bush DOJ unit found zero cases over 5 years.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"The 2020 election was stolen"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>60+ lawsuits filed, 47 dismissed (including by 8 Trump-appointed judges), zero electoral votes overturned. Trump&rsquo;s own AG, CISA director, and FBI director confirmed no outcome-altering fraud.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"Millions of noncitizens are voting"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Multiple investigations (Kobach in Kansas, Texas AG unit, Nevada 2026 investigation) found individual cases consistent with baseline rates, not systematic noncitizen voting.</div>
+      </div>
+    </div>
 
     <!-- ======================================================
          PART 1 — THE DENOMINATOR
@@ -678,6 +805,35 @@
         <div class="capita-verdict">FLOOR ESTIMATE — HERITAGE ITSELF SAYS IT IS NOT EXHAUSTIVE</div>
       </div>
 
+      <span class="section-label">The Math &mdash; How 2.5 Billion Ballots Is Calculated</span>
+
+      <p>The denominator is not a guess. Federal election turnout is documented by the Election Assistance Commission and the U.S. Census Bureau. Presidential and midterm elections combined from 2000 through 2024 alone account for over 1.5 billion ballots. Extending back to 1982 (the Heritage database start) reaches approximately 2.5 billion.</p>
+
+      <div class="table-scroll"><table class="evidence-table">
+        <thead>
+          <tr><th>Election year</th><th>Type</th><th>Approx. ballots cast</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2024</td><td>Presidential</td><td>~155 million</td></tr>
+          <tr><td>2022</td><td>Midterm</td><td>~113 million</td></tr>
+          <tr><td>2020</td><td>Presidential</td><td>~158 million</td></tr>
+          <tr><td>2018</td><td>Midterm</td><td>~113 million</td></tr>
+          <tr><td>2016</td><td>Presidential</td><td>~137 million</td></tr>
+          <tr><td>2014</td><td>Midterm</td><td>~83 million</td></tr>
+          <tr><td>2012</td><td>Presidential</td><td>~129 million</td></tr>
+          <tr><td>2010</td><td>Midterm</td><td>~90 million</td></tr>
+          <tr><td>2008</td><td>Presidential</td><td>~131 million</td></tr>
+          <tr><td>2006</td><td>Midterm</td><td>~82 million</td></tr>
+          <tr><td>2004</td><td>Presidential</td><td>~122 million</td></tr>
+          <tr><td>2002</td><td>Midterm</td><td>~79 million</td></tr>
+          <tr><td>2000</td><td>Presidential</td><td>~105 million</td></tr>
+          <tr><td>1982&ndash;1998</td><td>8 federal cycles</td><td>~600&ndash;700 million (est.)</td></tr>
+          <tr class="total-row"><td colspan="2"><strong>Total (1982&ndash;2024)</strong></td><td><strong>~2.5 billion</strong></td></tr>
+        </tbody>
+      </table></div>
+
+      <p>This table includes only federal elections. When state and local elections are added, the total ballots cast in the Heritage database window likely exceed 4 billion. The 2.5 billion figure is conservative.</p>
+
       <span class="section-label">03 — What Outcome-Determinative Fraud Would Actually Require</span>
 
       <p>The political claim is not just that fraud exists — it is that fraud has <em>altered or could alter</em> election outcomes. To evaluate that claim, it's necessary to calculate what outcome-determinative fraud would require in a presidential election.</p>
@@ -711,6 +867,8 @@
     <!-- ======================================================
          PART 2 — FRAUD BY CATEGORY
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>The Heritage Foundation documents 1,620 proven fraud cases against approximately 2.5 billion federal ballots cast (1982–2025) — a rate of 0.000065%. Heritage itself describes its database as a "sampling," not a comprehensive count. The raw number sounds alarming; the rate, measured against the denominator, does not.</div>
+
     <div id="part2">
       <div class="part-header">
         <span class="part-label">Part 2 of 6</span>
@@ -855,6 +1013,8 @@
     <!-- ======================================================
          PART 3 — REAL CASES
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>In-person voter impersonation — the type voter ID laws are designed to prevent — is the rarest form: 31 credible cases out of 1+ billion ballots. A Bush-era DOJ unit found zero cases over five years. Mail ballot fraud is more common but still negligible at 0.00006%. Noncitizen voting, despite political claims, has produced no evidence of systematic occurrence.</div>
+
     <div id="part3">
       <div class="part-header">
         <span class="part-label">Part 3 of 6</span>
@@ -952,6 +1112,8 @@
     <!-- ======================================================
          PART 4 — THE 2020 LAWSUITS
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>When officials with authority, funding, and political motivation to find fraud actively look for it — Kris Kobach in Kansas, the Iowa AG, the Heritage Foundation itself — they find individual cases consistent with the baseline rate, not the systemic schemes alleged in political rhetoric.</div>
+
     <div id="part4">
       <div class="part-header">
         <span class="part-label">Part 4 of 6</span>
@@ -1042,6 +1204,8 @@
     <!-- ======================================================
          PART 5 — 2026 DEVELOPMENTS
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>Of 60+ post-2020 lawsuits, 47 were dismissed — including by 8 Trump-appointed judges. Zero succeeded in overturning a single electoral vote. Trump's own AG, CISA director, and FBI director all confirmed no outcome-altering fraud. Republican secretaries of state in every contested state certified the results.</div>
+
     <div id="part5">
       <div class="part-header">
         <span class="part-label">Part 5 of 6</span>
@@ -1085,6 +1249,8 @@
     <!-- ======================================================
          PART 6 — LIMITATIONS & STEELMAN
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 5 takeaway</strong>The 2026 FBI raid on Fulton County seized 700 boxes of election materials based on an affidavit from a previously sanctioned Trump legal advisor. As of February 2026, no new evidence of fraud has been produced. Fulton County was already hand-counted three times in 2020, all confirming the original result.</div>
+
     <div id="part6">
       <div class="part-header">
         <span class="part-label">Part 6 of 6</span>
@@ -1125,6 +1291,25 @@
           <div class="steelman-val rebuttal">The outcome-determinative threshold matters independently of detection gaps. Even doubling, tripling, or quadrupling the Heritage count would not approach the 123,473 coordinated fraudulent votes that would have been needed to flip the 2020 election. Vulnerability arguments must clear this threshold to be relevant to claims about specific elections.</div>
         </div>
       </div>
+
+      <span class="section-label">19 &mdash; The Cost of Looking</span>
+
+      <p>Multiple states have conducted post-2020 audits and investigations specifically designed to find widespread fraud. The results are consistent with the Heritage database rates:</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Post-2020 Audit Costs vs. Fraud Found</span>
+          <span class="stat-block-period">2021&ndash;2023</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Arizona &ldquo;Cyber Ninjas&rdquo; (Maricopa County)</span><span class="stat-val neutral">~$9 million spent. Biden&rsquo;s margin increased by 360 votes. No widespread fraud found.</span></div>
+          <div class="stat-row"><span class="stat-key">Wisconsin (Office of Special Counsel)</span><span class="stat-val neutral">~$1.1 million spent. Procedural issues found. No outcome-altering fraud. Investigation closed.</span></div>
+          <div class="stat-row"><span class="stat-key">Georgia (three recounts + SOS investigation)</span><span class="stat-val neutral">Multiple recounts confirmed original result. Isolated individual cases only.</span></div>
+          <div class="stat-row"><span class="stat-key">Texas AG election fraud unit (2021&ndash;2023)</span><span class="stat-val neutral">16 convictions statewide across millions of ballots. Rate consistent with Heritage baseline.</span></div>
+        </div>
+      </div>
+
+      <p>When politicians with the authority, funding, and political motivation to find widespread fraud actively look for it, the result is consistent with the baseline rate: individual cases exist, coordinated schemes at scale do not.</p>
 
       <div class="sources-section">
         <span class="sources-section-label">Part 6 Sources</span>
@@ -1176,6 +1361,15 @@
     </div>
 
 
+    <div class="falsify-box">
+      <span class="falsify-label">Falsifiability threshold &mdash; what would change this conclusion</span>
+      <p>This article&rsquo;s central conclusion is that documented voter fraud has never been shown to approach the scale necessary to alter a presidential election outcome. That conclusion would change if:</p>
+      <p><strong>1.</strong> A post-election investigation produced verified evidence of coordinated fraud affecting 100,000+ votes in a single state &mdash; the approximate margin needed to flip a modern presidential election.</p>
+      <p><strong>2.</strong> An audit, recount, or forensic investigation revealed systematic manipulation of voting machines or tabulation systems with documented chain-of-custody evidence.</p>
+      <p><strong>3.</strong> A law enforcement investigation produced criminal convictions demonstrating an organized fraud scheme involving more than isolated individual actors.</p>
+      <p>To date, no investigation, audit, recount, or lawsuit has produced evidence meeting any of these thresholds. If such evidence is produced, this article will be updated.</p>
+    </div>
+
     <div class="cite-this">
       <span class="cite-this-label">Cite this article</span>
       <span class="cite-this-text">TruthBased.org. "Voter Fraud — The Documented Record." Updated February 2026. https://www.truthbased.org/voter-fraud</span>
@@ -1193,6 +1387,7 @@
   <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Heritage Foundation, Brennan Center, DOJ, CISA, GAO, MIT Election Lab</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
   </footer>
 
 
@@ -1356,6 +1551,19 @@
       update();
     })();
   
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
     /* Nav shadow on scroll */
     (function(){
       var nav = document.querySelector('.site-nav');
