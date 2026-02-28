@@ -14,19 +14,6 @@
   <meta name="twitter:card"   content="summary_large_image">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
   <link rel="canonical" href="https://www.truthbased.org/youth-gender-medicine">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Gender-Affirming Care for Minors — What the Evidence Shows",
-    "description": "Every major study, the Cass Review, counter-critiques, international policy splits, and both sides steelmanned.",
-    "author": {"@type": "Organization", "name": "TruthBased.org"},
-    "publisher": {"@type": "Organization", "name": "TruthBased.org", "logo": {"@type": "ImageObject", "url": "https://www.truthbased.org/og-image.png"}},
-    "datePublished": "2026-02-27",
-    "dateModified": "2026-02-27",
-    "mainEntityOfPage": "https://www.truthbased.org/youth-gender-medicine"
-  }
-  </script>
   <meta name="theme-color" content="#b83a1e">
 
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -531,6 +518,63 @@
     .skip-link:focus { top: 0; }
     :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
 
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Falsifiability threshold ── */
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
     @media print {
       .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
       .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
@@ -585,6 +629,20 @@
       .evidence-table th, .evidence-table td { padding: 6px 6px; }
     }
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gender-Affirming Care for Minors: What the Evidence Shows",
+    "description": "Every major study. The Cass Review. Counter-critiques. International policy splits. Both sides steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/youth-gender-medicine",
+    "keywords": ["gender-affirming care", "puberty blockers", "transgender youth", "Cass Review", "fact-check"]
+  }
+  </script>
 </head>
 <body>
 
@@ -623,7 +681,7 @@
         <span class="meta-pill">Updated February 2026</span>
         <span class="meta-pill">Data through Feb 2026</span>
         <span class="meta-pill">20+ primary sources</span>
-        <span class="meta-pill">~35 min read</span>
+        <span class="meta-pill">~41 min read</span>
       </div>
     </header>
 
@@ -662,6 +720,26 @@
       <strong>What this article covers &mdash; and does not cover.</strong> This article examines the clinical evidence for medical interventions (puberty blockers, hormones, and surgeries) in gender-dysphoric minors. It does not cover adult transition outcomes, non-binary-specific care pathways, sports eligibility, bathroom access policies, or social debates unrelated to clinical evidence. The scope is medical fact-checking, not policy advocacy.
     </div>
 
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;They&rsquo;re mutilating children&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Surgery on minors is rare and almost exclusively limited to chest masculinization for older teens. No guideline recommends genital surgery under 18. Prepubertal children receive only social support.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The science is settled &mdash; it saves lives&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Short-term studies show 40&ndash;70% reductions in depression/suicidality. But the Cass Review and McMaster review both rate this evidence as &ldquo;very low&rdquo; quality. No long-term data (&gt;10 years) exists.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Puberty blockers are just a pause button&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>~98% of youth on blockers proceed to hormones (Cass 2024). While medically reversible, the progression rate raises questions about whether blockers function as a neutral &ldquo;pause.&rdquo;</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Most kids grow out of it&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Older &ldquo;desistance&rdquo; studies (60&ndash;80%) included children who never met modern diagnostic criteria. Youth with persistent dysphoria into puberty overwhelmingly continue to identify as trans into adulthood.</div>
+      </div>
+    </div>
+
     <!-- ======================================================
          PART 1 — WHAT THE TREATMENTS ACTUALLY ARE
     ======================================================= -->
@@ -677,7 +755,7 @@
 
       <p>All major clinical guidelines &mdash; WPATH SOC8 (2022), the Endocrine Society (2017), and the AAP (2018, reaffirmed 2023) &mdash; recommend a conservative, staged approach. No guideline recommends hormones or surgery for prepubertal children. The staged model is as follows:</p>
 
-      <table class="evidence-table">
+      <div class="table-scroll"><table class="evidence-table">
         <thead>
           <tr><th>Intervention</th><th>Typical age</th><th>Goal</th><th>Reversibility</th><th>Key risk</th></tr>
         </thead>
@@ -688,7 +766,7 @@
           <tr><td>Top surgery</td><td>16&ndash;17 (with consent)</td><td>Chest masculinization</td><td>Not reversible</td><td>Surgical risks, scarring</td></tr>
           <tr><td>Bottom surgery</td><td>18+ only (all guidelines)</td><td>Genital alignment</td><td>Not reversible</td><td>Complex; reserved for adults</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <span class="section-label">02 &mdash; Social Transition (Fully Reversible)</span>
 
@@ -748,11 +826,30 @@
         <span class="box-label">On the term &ldquo;mutilation&rdquo;</span>
         <p>The American Medical Association (AMA), American Academy of Child and Adolescent Psychiatry (AACAP), and all major medical bodies reject the term &ldquo;mutilation&rdquo; for gender-affirming procedures. Clinical mutilation involves deliberate tissue destruction without medical purpose. These procedures are medically indicated interventions performed to relieve diagnosed gender dysphoria, with documented regret rates of &lt;2&ndash;3% under multidisciplinary protocols. The 2025 Executive Order title &ldquo;Protecting Children From Chemical and Surgical Mutilation&rdquo; uses a political framing that does not align with the clinical record.</p>
       </div>
+
+      <span class="section-label">06 &mdash; Treatment Comparison at a Glance</span>
+
+      <div class="table-scroll"><table class="evidence-table">
+        <thead>
+          <tr><th>Intervention</th><th>Goal</th><th>Typical age</th><th>Reversibility</th><th>Key risk</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Social transition</td><td>Align name, pronouns, presentation with identity</td><td>Any age</td><td>Fully reversible</td><td>Social and emotional adjustment if reversed</td></tr>
+          <tr><td>Puberty blockers (GnRH)</td><td>Pause puberty to allow more time for assessment</td><td>Tanner stage 2+ (~10&ndash;13)</td><td>Largely reversible</td><td>Possible bone density impact with prolonged use; limited long-term data</td></tr>
+          <tr><td>Hormones (E or T)</td><td>Induce physical changes consistent with gender identity</td><td>~14&ndash;16 (varies by guideline)</td><td>Partially reversible</td><td>Some permanent changes (voice, breast tissue, facial hair); fertility impact</td></tr>
+          <tr><td>Top surgery (chest)</td><td>Relieve chest dysphoria</td><td>16&ndash;17 with parental consent</td><td>Not reversible</td><td>Surgical risks; permanent tissue removal</td></tr>
+          <tr><td>Bottom surgery (genital)</td><td>Align genital anatomy with identity</td><td>18+ only (all guidelines)</td><td>Not reversible</td><td>Major surgery; fertility permanently lost</td></tr>
+        </tbody>
+      </table></div>
+
+      <p>This staged approach is sometimes misrepresented in media coverage as a single decision. In practice, each step requires separate clinical assessment, informed consent, and &mdash; for minors &mdash; parental involvement. The vast majority of minors who receive any medical intervention receive only blockers or hormones; surgery for those under 18 is rare and limited almost exclusively to chest masculinization.</p>
     </div>
 
     <!-- ======================================================
          PART 2 — THE EVIDENCE
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Gender-affirming care is a staged process: social transition first, then puberty blockers at Tanner Stage 2–3, then hormones in mid-adolescence, with surgery rare and almost never performed on minors. No guideline recommends hormones or surgery for prepubertal children. Each stage requires separate clinical assessment.</div>
+
     <div id="part2">
       <div class="part-header">
         <span class="part-label">Part 2 of 8</span>
@@ -763,7 +860,7 @@
 
       <p>Multiple peer-reviewed studies from 2014 through 2025 report a consistent pattern: transgender youth who receive gender-affirming care show significant reductions in depression, suicidality, and gender dysphoria, with improvements in quality of life and psychosocial functioning. The magnitude of these effects is large by psychiatric standards. Below are the key studies, presented with their specific findings, sample sizes, and methodological notes.</p>
 
-      <table class="evidence-table">
+      <div class="table-scroll"><table class="evidence-table">
         <thead>
           <tr><th>Study</th><th>Design</th><th>N</th><th>Follow-up</th><th>Key finding</th><th>Key limitation</th></tr>
         </thead>
@@ -776,7 +873,7 @@
           <tr><td>Cass Review 2024</td><td>Systematic reviews (8)</td><td>&mdash;</td><td>&mdash;</td><td>Evidence is &ldquo;remarkably weak&rdquo;</td><td>Did not conduct new research; critiqued for inconsistent standards</td></tr>
           <tr><td>McMaster 2025</td><td>Systematic review + meta</td><td>&mdash;</td><td>&mdash;</td><td>Evidence &ldquo;very uncertain&rdquo;</td><td>Corroborated Cass; also no new primary data</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <span class="section-label">02 &mdash; Tordoff et al. (2022) &mdash; JAMA Network Open</span>
 
@@ -851,6 +948,8 @@
     <!-- ======================================================
          PART 3 — THE COUNTER-EVIDENCE
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>Multiple peer-reviewed studies (2014–2025) report 40–70% reductions in depression and suicidality among trans youth receiving gender-affirming care. Effect sizes are large by psychiatric standards. However, most studies are observational with no control group, and follow-up periods rarely exceed 2 years.</div>
+
     <div id="part3">
       <div class="part-header">
         <span class="part-label">Part 3 of 8</span>
@@ -913,6 +1012,8 @@
     <!-- ======================================================
          PART 4 — THE DEBATE OVER THE DEBATE
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>The Cass Review (2024) rated the evidence as "very low" to "low" quality and recommended restricting puberty blockers to clinical trials. The McMaster systematic review corroborated these findings. Finland and Sweden independently reached similar conclusions and restricted routine medical intervention for minors.</div>
+
     <div id="part4">
       <div class="part-header">
         <span class="part-label">Part 4 of 8</span>
@@ -959,6 +1060,8 @@
     <!-- ======================================================
          PART 5 — NUANCES & EDGE CASES
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>The Cass Review itself has faced peer-reviewed criticism for methodological problems, implicit stigma, and selective evidence grading. The King's College Pathways trial was paused in 2026 over safety concerns for young participants. The central tension — treat suicidal youth now vs. wait for better evidence — cannot be resolved without data that does not yet exist.</div>
+
     <div id="part5">
       <div class="part-header">
         <span class="part-label">Part 5 of 8</span>
@@ -1011,6 +1114,8 @@
     <!-- ======================================================
          PART 6 — THE GLOBAL SPLIT
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 5 takeaway</strong>The modern patient population differs significantly from the Dutch cohort that founded the evidence base. A surge in adolescent-onset referrals (particularly natal females), high rates of autism co-occurrence (3–6× the general population), and potential expectancy effects all complicate straightforward interpretation of treatment outcomes.</div>
+
     <div id="part6">
       <div class="part-header">
         <span class="part-label">Part 6 of 8</span>
@@ -1021,8 +1126,8 @@
 
       <p>The global divergence in youth gender care policy is driven by differing interpretations of the same body of low-quality evidence. The United States, Canada, and Australia follow a primarily affirmative model. The UK, Finland, and Sweden have moved toward a precautionary, research-first model. Both invoke medical ethics and patient welfare.</p>
 
-      <div class="data-table" style="width:100%; border-collapse:collapse; font-size:0.82rem; margin:16px 0; border:1px solid var(--border); overflow:hidden;">
-        <table class="data-table">
+      <div class="table-scroll">
+        <table class="data-table" style="font-size:0.82rem; border:1px solid var(--border);">
           <thead>
             <tr>
               <th>Country / Region</th>
@@ -1093,6 +1198,8 @@
     <!-- ======================================================
          PART 7 — DETRANSITION & REGRET
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 6 takeaway</strong>The US, Canada, and Australia follow an affirmative model. The UK, Finland, and Sweden follow a precautionary, research-first model. Both approaches invoke medical ethics and patient welfare. Referral rates have risen 5-fold (UK) to 7% of adolescents (Australia), driving much of the precautionary argument.</div>
+
     <div id="part7">
       <div class="part-header">
         <span class="part-label">Part 7 of 8</span>
@@ -1107,7 +1214,7 @@
 
       <p>Research in this area is plagued by inconsistent terminology. Five distinct concepts are routinely conflated in media coverage, and separating them is essential for interpreting any statistic.</p>
 
-      <table class="evidence-table">
+      <div class="table-scroll"><table class="evidence-table">
         <thead>
           <tr><th>Term</th><th>Meaning</th><th>Involves medical reversal?</th></tr>
         </thead>
@@ -1118,7 +1225,7 @@
           <tr><td><strong>Retransition</strong></td><td>Resuming transition after a period of detransition &mdash; returning to social, medical, or legal aspects of transition</td><td>Often yes</td></tr>
           <tr><td><strong>Regret</strong></td><td>An emotional response &mdash; can occur with or without detransition</td><td>Not necessarily</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <p>A person can detransition without regret (viewing it as part of their journey). A person can regret transition without detransitioning. A person can stop hormones for financial or health reasons while still identifying as transgender. And a person can detransition temporarily &mdash; then retransition months or years later when circumstances change. The 2015 USTS found that most detransitions were temporary, with the majority later resuming a transgender identity. Studies that fail to distinguish these categories produce misleading headline numbers.</p>
 
@@ -1170,7 +1277,7 @@
 
       <p><strong>Physical reversibility.</strong> What can and cannot be reversed depends entirely on what interventions were received.</p>
 
-      <table class="evidence-table">
+      <div class="table-scroll"><table class="evidence-table">
         <thead>
           <tr><th>Intervention</th><th>Reversibility</th><th>Notes</th></tr>
         </thead>
@@ -1183,7 +1290,7 @@
           <tr><td>Gonadectomy (removal of testes or ovaries)</td><td>Not reversible</td><td>Lifelong hormone replacement required; fertility permanently lost unless previously preserved</td></tr>
           <tr><td>Genital surgery (vaginoplasty, phalloplasty)</td><td>Not reversible</td><td>Reversal attempts carry high complication risk and cannot restore original anatomy</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <p>Fertility is a major concern. Cross-sex hormones can impair or eliminate natural fertility, and surgical removal of gonads makes it permanent. If eggs or sperm were not preserved before treatment, detransitioners may face irreversible infertility. Uptake of fertility preservation among trans youth remains low, in part because many adolescents do not fully anticipate wanting biological children later in life.</p>
 
@@ -1229,6 +1336,8 @@
     <!-- ======================================================
          PART 8 — LIMITATIONS & STEELMAN
     ======================================================= -->
+    <div class="part-takeaway"><strong>Part 7 takeaway</strong>Detransition rates range from 1% (surgical regret) to 13.1% (broader definitions) depending on measurement. The majority of detransitions are driven by external pressure (family, safety, finances), not changed identity — and most are temporary. However, a significant minority reflect genuine internal shifts, and the healthcare system currently lacks guidelines, training, or clear clinical pathways for supporting them.</div>
+
     <div id="part8">
       <div class="part-header">
         <span class="part-label">Part 8 of 8</span>
@@ -1286,6 +1395,15 @@
       </div>
     </div>
 
+    <div class="falsify-box">
+      <span class="falsify-label">Falsifiability threshold &mdash; what would change this conclusion</span>
+      <p>This article&rsquo;s central finding is that short-term evidence supports mental health benefits from gender-affirming care, while long-term evidence is insufficient to draw definitive conclusions. This conclusion would change if:</p>
+      <p><strong>1.</strong> A large (N &gt; 500), prospective, controlled study with 10+ year follow-up demonstrated either that benefits persist robustly into adulthood <em>or</em> that they do not &mdash; in either direction, the conclusion would shift from &ldquo;uncertain&rdquo; to &ldquo;supported&rdquo; or &ldquo;unsupported.&rdquo;</p>
+      <p><strong>2.</strong> Detransition rates in post-2015 cohorts were shown to substantially exceed current estimates (e.g., &gt;15% true regret rate after accounting for loss to follow-up), which would challenge the current risk-benefit framework.</p>
+      <p><strong>3.</strong> Randomized or well-controlled comparative studies demonstrated that a specific psychotherapy-first approach produced equivalent or better outcomes than medical intervention, which would change the treatment-sequencing debate.</p>
+      <p>None of these studies currently exist. When they do, this article will be updated accordingly.</p>
+    </div>
+
     <hr>
 
     <div class="sources-section">
@@ -1328,6 +1446,7 @@
   <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">14+ peer-reviewed sources cited</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
@@ -1390,6 +1509,19 @@
       }
       window.addEventListener('scroll', update, {passive:true});
       update();
+    })();
+
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
     })();
 
     /* Nav shadow on scroll */
