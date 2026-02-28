@@ -14,6 +14,19 @@
   <meta name="twitter:card"   content="summary_large_image">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
   <link rel="canonical" href="https://www.truthbased.org/youth-gender-medicine">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gender-Affirming Care for Minors — What the Evidence Shows",
+    "description": "Every major study, the Cass Review, counter-critiques, international policy splits, and both sides steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "logo": {"@type": "ImageObject", "url": "https://www.truthbased.org/og-image.png"}},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": "https://www.truthbased.org/youth-gender-medicine"
+  }
+  </script>
   <meta name="theme-color" content="#b83a1e">
 
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -521,7 +534,12 @@
     @media print {
       .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
       .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
-      body { background: #fff !important; color: #000 !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .steelman-wrap, .evidence-table, .tldr-box { break-inside: avoid; }
+      .part-header { break-after: avoid; }
     }
     @media (max-width: 640px) {
       .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
@@ -549,6 +567,23 @@
       padding-left: 14px; border-left: 2px solid var(--rule);
       line-height: 1.55;
     }
+    /* --- TL;DR, Scope, Evidence Table additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scope-box { background: var(--bg); border: 1px dashed var(--rule); border-radius: 4px; padding: 14px 18px; margin: 0 0 30px; font-size: 0.76rem; color: var(--text-quiet); line-height: 1.5; }
+    .scope-box strong { color: var(--text-head); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 18px 0 24px; }
+    .evidence-table th { background: var(--card-face); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-quiet); padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--rule); }
+    .evidence-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.4; }
+    .evidence-table tr:last-child td { border-bottom: none; }
+    .faq-item { margin: 14px 0; }
+    .faq-q { font-weight: 700; font-size: 0.82rem; color: var(--text-head); margin-bottom: 4px; }
+    .faq-a { font-size: 0.8rem; color: var(--text-body); line-height: 1.5; }
+    @media (max-width: 640px) {
+      .evidence-table { font-size: 0.65rem; }
+      .evidence-table th, .evidence-table td { padding: 6px 6px; }
+    }
 </style>
 </head>
 <body>
@@ -572,7 +607,8 @@
     <a href="#part4" class="jump-btn">Part 4 — The Debate Over the Debate</a>
     <a href="#part5" class="jump-btn">Part 5 — Nuances</a>
     <a href="#part6" class="jump-btn">Part 6 — The Global Split</a>
-    <a href="#part7" class="jump-btn">Part 7 — Limitations &amp; Steelman</a>
+    <a href="#part7" class="jump-btn">Part 7 — Detransition &amp; Regret</a>
+    <a href="#part8" class="jump-btn">Part 8 — Limitations &amp; Steelman</a>
   </div>
 
   <main id="content">
@@ -586,7 +622,7 @@
         <span class="meta-pill live">&#9679; Live</span>
         <span class="meta-pill">Updated February 2026</span>
         <span class="meta-pill">Data through Feb 2026</span>
-        <span class="meta-pill">14+ primary sources</span>
+        <span class="meta-pill">20+ primary sources</span>
         <span class="meta-pill">~35 min read</span>
       </div>
     </header>
@@ -606,12 +642,24 @@
         <a class="source-pill" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2789423" target="_blank" rel="noopener noreferrer">Tordoff 2022</a>
         <a class="source-pill" href="https://publications.aap.org/pediatrics/article/145/2/e20191725/68259" target="_blank" rel="noopener noreferrer">Turban 2020</a>
         <a class="source-pill" href="https://publications.aap.org/pediatrics/article/134/4/696/32932" target="_blank" rel="noopener noreferrer">de Vries 2014</a>
-        <a class="source-pill" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">McMaster Review (2025)</a>
+        <a class="source-pill" href="https://doi.org/10.1136/bmj-2024-081233" target="_blank" rel="noopener noreferrer">McMaster Review (2025)</a>
         <a class="source-pill" href="https://palveluvalikoima.fi/en/" target="_blank" rel="noopener noreferrer">Finland COHERE</a>
         <a class="source-pill" href="https://law.yale.edu/" target="_blank" rel="noopener noreferrer">Yale Law Integrity Project</a>
         <a class="source-pill" href="https://www.thetrevorproject.org/" target="_blank" rel="noopener noreferrer">Trevor Project</a>
         <a class="source-pill" href="https://www.mja.com.au/" target="_blank" rel="noopener noreferrer">MJA (2025)</a>
+        <a class="source-pill" href="https://publications.aap.org/pediatrics/article/150/2/e2021056082/186992" target="_blank" rel="noopener noreferrer">Olson 2022</a>
+        <a class="source-pill" href="https://doi.org/10.1007/s10508-025-03264-6" target="_blank" rel="noopener noreferrer">MacKinnon 2024</a>
+        <a class="source-pill" href="https://transequality.org/sites/default/files/docs/usts/USTS-Full-Report-Dec17.pdf" target="_blank" rel="noopener noreferrer">USTS 2015</a>
       </div>
+    </div>
+
+    <div class="tldr-box">
+      <span class="tldr-label">TL;DR &mdash; The headline numbers and caveats</span>
+      <p>Multiple studies report <strong>40&ndash;70% reductions</strong> in depression and suicidality within 1&ndash;2 years of starting gender-affirming care. The Cass Review (2024) and McMaster review (2025) both conclude the evidence base is <strong>&ldquo;very low&rdquo; to &ldquo;very uncertain&rdquo;</strong> quality. No long-term data (&gt;10 years) exists for current patient populations. Surgical regret rates are ~1%, but loss to follow-up in most studies exceeds 20%, making true rates uncertain. All major medical organizations (AAP, WPATH, Endocrine Society) support access to care under clinical guidance. The UK, Finland, and Sweden have moved to restrict it pending better evidence. <strong>Both positions cite the same studies &mdash; and both have legitimate grounds.</strong></p>
+    </div>
+
+    <div class="scope-box">
+      <strong>What this article covers &mdash; and does not cover.</strong> This article examines the clinical evidence for medical interventions (puberty blockers, hormones, and surgeries) in gender-dysphoric minors. It does not cover adult transition outcomes, non-binary-specific care pathways, sports eligibility, bathroom access policies, or social debates unrelated to clinical evidence. The scope is medical fact-checking, not policy advocacy.
     </div>
 
     <!-- ======================================================
@@ -619,7 +667,7 @@
     ======================================================= -->
     <div id="part1">
       <div class="part-header">
-        <span class="part-label">Part 1 of 7</span>
+        <span class="part-label">Part 1 of 8</span>
         <h2 class="part-title">What the Treatments Actually Are</h2>
       </div>
 
@@ -628,6 +676,19 @@
       <p>&ldquo;Gender-affirming care&rdquo; is an umbrella term for a staged series of interventions &mdash; social, psychological, and medical &mdash; designed to align a young person&rsquo;s external presentation or physical development with their gender identity. The term is used by the American Academy of Pediatrics, the Endocrine Society, and the World Professional Association for Transgender Health (WPATH). Political rhetoric frequently describes these interventions as &ldquo;mutilation,&rdquo; &ldquo;chemical castration,&rdquo; or &ldquo;experimental poison.&rdquo; Clinical fact-checking requires distinguishing between those claims and the documented medical record.</p>
 
       <p>All major clinical guidelines &mdash; WPATH SOC8 (2022), the Endocrine Society (2017), and the AAP (2018, reaffirmed 2023) &mdash; recommend a conservative, staged approach. No guideline recommends hormones or surgery for prepubertal children. The staged model is as follows:</p>
+
+      <table class="evidence-table">
+        <thead>
+          <tr><th>Intervention</th><th>Typical age</th><th>Goal</th><th>Reversibility</th><th>Key risk</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Social transition</td><td>Any age</td><td>Align name, pronouns, presentation</td><td>Fully reversible</td><td>None documented (Cass: &ldquo;active intervention&rdquo;)</td></tr>
+          <tr><td>Puberty blockers (GnRH)</td><td>10&ndash;13 (Tanner 2&ndash;3)</td><td>Pause puberty to allow assessment</td><td>Generally reversible</td><td>Bone mineral density reduction</td></tr>
+          <tr><td>Hormones (GAHT)</td><td>~16+</td><td>Develop affirmed sex characteristics</td><td>Partially &mdash; voice/breast permanent</td><td>Fertility impact, cardiovascular monitoring</td></tr>
+          <tr><td>Top surgery</td><td>16&ndash;17 (with consent)</td><td>Chest masculinization</td><td>Not reversible</td><td>Surgical risks, scarring</td></tr>
+          <tr><td>Bottom surgery</td><td>18+ only (all guidelines)</td><td>Genital alignment</td><td>Not reversible</td><td>Complex; reserved for adults</td></tr>
+        </tbody>
+      </table>
 
       <span class="section-label">02 &mdash; Social Transition (Fully Reversible)</span>
 
@@ -694,13 +755,28 @@
     ======================================================= -->
     <div id="part2">
       <div class="part-header">
-        <span class="part-label">Part 2 of 7</span>
+        <span class="part-label">Part 2 of 8</span>
         <h2 class="part-title">The Evidence &mdash; Mental Health Outcomes</h2>
       </div>
 
       <span class="section-label">01 &mdash; The Core Finding Across Studies</span>
 
       <p>Multiple peer-reviewed studies from 2014 through 2025 report a consistent pattern: transgender youth who receive gender-affirming care show significant reductions in depression, suicidality, and gender dysphoria, with improvements in quality of life and psychosocial functioning. The magnitude of these effects is large by psychiatric standards. Below are the key studies, presented with their specific findings, sample sizes, and methodological notes.</p>
+
+      <table class="evidence-table">
+        <thead>
+          <tr><th>Study</th><th>Design</th><th>N</th><th>Follow-up</th><th>Key finding</th><th>Key limitation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>de Vries 2014</td><td>Prospective cohort</td><td>55</td><td>To adulthood</td><td>Dysphoria resolved; well-being matched cis peers</td><td>Small N, strict Dutch selection, pre-social-media era</td></tr>
+          <tr><td>Tordoff 2022</td><td>Prospective cohort</td><td>104</td><td>12 months</td><td>60% &darr; depression, 73% &darr; suicidality</td><td>Short follow-up, no control group, single site</td></tr>
+          <tr><td>Turban 2020</td><td>Retrospective survey</td><td>20,619</td><td>Recalled</td><td>70% &darr; suicidal ideation with blockers</td><td>Retrospective recall bias, self-selected sample</td></tr>
+          <tr><td>Durwood 2017</td><td>Cross-sectional</td><td>~60</td><td>None</td><td>Depression/self-worth = cis peers</td><td>No pre-transition baseline, snapshot only</td></tr>
+          <tr><td>Australian 2025</td><td>National survey</td><td>1,697</td><td>Cross-sectional</td><td>Affirmed youth = less distress, self-harm</td><td>Self-report, cross-sectional design</td></tr>
+          <tr><td>Cass Review 2024</td><td>Systematic reviews (8)</td><td>&mdash;</td><td>&mdash;</td><td>Evidence is &ldquo;remarkably weak&rdquo;</td><td>Did not conduct new research; critiqued for inconsistent standards</td></tr>
+          <tr><td>McMaster 2025</td><td>Systematic review + meta</td><td>&mdash;</td><td>&mdash;</td><td>Evidence &ldquo;very uncertain&rdquo;</td><td>Corroborated Cass; also no new primary data</td></tr>
+        </tbody>
+      </table>
 
       <span class="section-label">02 &mdash; Tordoff et al. (2022) &mdash; JAMA Network Open</span>
 
@@ -777,7 +853,7 @@
     ======================================================= -->
     <div id="part3">
       <div class="part-header">
-        <span class="part-label">Part 3 of 7</span>
+        <span class="part-label">Part 3 of 8</span>
         <h2 class="part-title">The Counter-Evidence &mdash; Cass Review &amp; Critiques</h2>
       </div>
 
@@ -839,7 +915,7 @@
     ======================================================= -->
     <div id="part4">
       <div class="part-header">
-        <span class="part-label">Part 4 of 7</span>
+        <span class="part-label">Part 4 of 8</span>
         <h2 class="part-title">The Debate Over the Debate</h2>
       </div>
 
@@ -885,7 +961,7 @@
     ======================================================= -->
     <div id="part5">
       <div class="part-header">
-        <span class="part-label">Part 5 of 7</span>
+        <span class="part-label">Part 5 of 8</span>
         <h2 class="part-title">Nuances &amp; Edge Cases</h2>
       </div>
 
@@ -937,7 +1013,7 @@
     ======================================================= -->
     <div id="part6">
       <div class="part-header">
-        <span class="part-label">Part 6 of 7</span>
+        <span class="part-label">Part 6 of 8</span>
         <h2 class="part-title">The Global Split &mdash; Policy Comparison</h2>
       </div>
 
@@ -1015,11 +1091,147 @@
     </div>
 
     <!-- ======================================================
-         PART 7 — LIMITATIONS & STEELMAN
+         PART 7 — DETRANSITION & REGRET
     ======================================================= -->
     <div id="part7">
       <div class="part-header">
-        <span class="part-label">Part 7 of 7</span>
+        <span class="part-label">Part 7 of 8</span>
+        <h2 class="part-title">Detransition &amp; Regret &mdash; What the Data Shows</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Why This Section Exists</span>
+
+      <p>Detransition is the most politically exploited aspect of the gender-affirming care debate. Critics cite it as proof that transition harms children. Proponents minimize it as vanishingly rare. Both narratives are incomplete. This section presents the peer-reviewed data on detransition rates, reasons, and outcomes &mdash; including the methodological problems that make definitive conclusions impossible.</p>
+
+      <span class="section-label">02 &mdash; Definitions Matter</span>
+
+      <p>Research in this area is plagued by inconsistent terminology. Five distinct concepts are routinely conflated in media coverage, and separating them is essential for interpreting any statistic.</p>
+
+      <table class="evidence-table">
+        <thead>
+          <tr><th>Term</th><th>Meaning</th><th>Involves medical reversal?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Detransition</strong></td><td>Stopping or reversing a gender transition (social, medical, or both); can be temporary or permanent</td><td>Sometimes</td></tr>
+          <tr><td><strong>Desistance</strong></td><td>Gender dysphoria resolves before any medical intervention &mdash; typically in childhood</td><td>No</td></tr>
+          <tr><td><strong>Discontinuation</strong></td><td>Stopping hormones or blockers, which may or may not reflect identity change</td><td>Yes, but identity may persist</td></tr>
+          <tr><td><strong>Retransition</strong></td><td>Resuming transition after a period of detransition &mdash; returning to social, medical, or legal aspects of transition</td><td>Often yes</td></tr>
+          <tr><td><strong>Regret</strong></td><td>An emotional response &mdash; can occur with or without detransition</td><td>Not necessarily</td></tr>
+        </tbody>
+      </table>
+
+      <p>A person can detransition without regret (viewing it as part of their journey). A person can regret transition without detransitioning. A person can stop hormones for financial or health reasons while still identifying as transgender. And a person can detransition temporarily &mdash; then retransition months or years later when circumstances change. The 2015 USTS found that most detransitions were temporary, with the majority later resuming a transgender identity. Studies that fail to distinguish these categories produce misleading headline numbers.</p>
+
+      <span class="section-label">03 &mdash; The Rates</span>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Detransition &amp; Regret Rates &mdash; Key Studies</span>
+          <span class="stat-block-period">2014&ndash;2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Surgical regret (meta-analysis, n=7,928)</span><span class="stat-val positive">~1% (27 studies pooled)</span></div>
+          <div class="stat-row"><span class="stat-key">Social transition persistence (5-year follow-up)</span><span class="stat-val positive">94% still trans, 2.5% cisgender, 3.5% nonbinary (Olson 2022)</span></div>
+          <div class="stat-row"><span class="stat-key">UK gender clinic (n=1,089)</span><span class="stat-val neutral">5.3% ceased treatment by discharge (Butler 2022)</span></div>
+          <div class="stat-row"><span class="stat-key">US/Canada youth (MacKinnon 2024)</span><span class="stat-val neutral">16.8% discontinued medical care &mdash; but only 4.1% identified as detransitioning; most remained trans or nonbinary</span></div>
+          <div class="stat-row"><span class="stat-key">Tel Aviv cohort (n=709)</span><span class="stat-val positive">Confirmed detransition: 1.87% (94% of those who left the clinic were still transitioning via other providers)</span></div>
+          <div class="stat-row"><span class="stat-key">USTS (n=27,715 adults)</span><span class="stat-val neutral">8&ndash;13% had ever detransitioned (range reflects different analyses of same survey); majority temporary; most cited external pressures, not identity change</span></div>
+          <div class="stat-row"><span class="stat-key">US military dependents (n=952)</span><span class="stat-val warn">70.2% 4-year hormone continuation rate (29.8% discontinued)</span></div>
+        </div>
+      </div>
+
+      <p>These figures span a wide range because they measure different things. The 1% surgical regret figure and the 29.8% hormone discontinuation figure are not contradictory &mdash; they answer different questions. The critical insight from the Tel Aviv study is that many patients who leave clinics are not detransitioning at all; they are continuing care elsewhere. Equating &ldquo;loss to follow-up&rdquo; with &ldquo;detransition&rdquo; is a common and serious error in this literature.</p>
+
+      <span class="section-label">04 &mdash; Why People Detransition</span>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Reasons for Detransition &mdash; U.S. Transgender Survey</span>
+          <span class="stat-block-period">2015 USTS (n=27,715)</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Cited at least one external factor</span><span class="stat-val negative">82.5%</span></div>
+          <div class="stat-row"><span class="stat-key">Pressure from a parent</span><span class="stat-val negative">36%</span></div>
+          <div class="stat-row"><span class="stat-key">Too much harassment or discrimination</span><span class="stat-val negative">31%</span></div>
+          <div class="stat-row"><span class="stat-key">Difficulty getting a job</span><span class="stat-val negative">29%</span></div>
+          <div class="stat-row"><span class="stat-key">Later re-transitioned when safe</span><span class="stat-val positive">68% of those who detransitioned for external reasons</span></div>
+        </div>
+      </div>
+
+      <p>For a large majority, detransition is not a reflection of changed identity but a response to hostile circumstances. When safety, finances, or family dynamics improve, most resume transition. For a smaller but significant subgroup, detransition reflects genuine internal shifts: evolving identity, resolution of underlying trauma, health concerns, or the realization that dysphoria had other sources. In surveys of self-identified detransitioners, up to 70% report that mental health conditions or trauma contributed to their initial gender identification. High rates of depression (70%), anxiety (63%), PTSD (33%), ADHD (24%), and autism (20%) have been documented among detransitioners, though the causal direction remains unclear &mdash; these conditions may have preceded transition, may have been worsened by it, or may be independent.</p>
+
+      <p>Healthcare system factors also contribute. Many detransitioners report that their mental health was not adequately assessed before transition began, that they received insufficient information about long-term risks and alternatives, or that providers lacked experience with detransition entirely. In one study, 55% of detransitioners said they did not receive adequate evaluation. Some describe aging out of pediatric care and having new providers simply renew prescriptions without reassessment, leading them to stop treatment independently. There are currently no widely accepted clinical guidelines for supporting patients through detransition, and most providers have little training in it.</p>
+
+      <span class="section-label">05 &mdash; What Happens After Detransition</span>
+
+      <p>The experiences of people after detransition are varied, and rigorous long-term data is scarce. What evidence exists paints a complex picture across three domains.</p>
+
+      <p><strong>Mental health.</strong> Some detransitioners report significant improvements in well-being, with decreases in dysphoria and self-harm. Others experience ongoing depression, anxiety, grief, or new forms of distress &mdash; particularly when physical changes from transition are irreversible. Many report mixed or evolving feelings: relief about the decision to detransition alongside sadness about permanent bodily changes. No controlled studies exist comparing mental health outcomes between those who continued transition and those who detransitioned.</p>
+
+      <p><strong>Physical reversibility.</strong> What can and cannot be reversed depends entirely on what interventions were received.</p>
+
+      <table class="evidence-table">
+        <thead>
+          <tr><th>Intervention</th><th>Reversibility</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Social transition (name, pronouns, presentation)</td><td>Fully reversible</td><td>No physical consequences, though social and emotional adjustment may be significant</td></tr>
+          <tr><td>Puberty blockers (GnRH analogues)</td><td>Largely reversible</td><td>Puberty resumes after stopping; potential impact on bone density with prolonged use</td></tr>
+          <tr><td>Testosterone (transmasculine)</td><td>Partially reversible</td><td>Menstruation returns if uterus intact; voice deepening, facial hair growth, and clitoral changes are permanent</td></tr>
+          <tr><td>Estrogen (transfeminine)</td><td>Partially reversible</td><td>Testosterone production resumes if testes intact; breast tissue growth is permanent</td></tr>
+          <tr><td>Chest surgery (mastectomy)</td><td>Not reversible</td><td>Breast reconstruction possible but does not restore original anatomy</td></tr>
+          <tr><td>Gonadectomy (removal of testes or ovaries)</td><td>Not reversible</td><td>Lifelong hormone replacement required; fertility permanently lost unless previously preserved</td></tr>
+          <tr><td>Genital surgery (vaginoplasty, phalloplasty)</td><td>Not reversible</td><td>Reversal attempts carry high complication risk and cannot restore original anatomy</td></tr>
+        </tbody>
+      </table>
+
+      <p>Fertility is a major concern. Cross-sex hormones can impair or eliminate natural fertility, and surgical removal of gonads makes it permanent. If eggs or sperm were not preserved before treatment, detransitioners may face irreversible infertility. Uptake of fertility preservation among trans youth remains low, in part because many adolescents do not fully anticipate wanting biological children later in life.</p>
+
+      <p><strong>Social isolation and access to care.</strong> Detransitioners often describe a &ldquo;social vacuum&rdquo; &mdash; feeling excluded from the trans community (where their stories may be perceived as threatening) while also feeling alienated from cisgender peers. Some report that their experiences are co-opted by anti-trans political groups, further isolating them from their former communities. Healthcare access is a consistent barrier: many avoid medical care due to stigma, find that providers have little knowledge of detransition, and lack clear clinical pathways for managing hormone cessation, reversing physical changes, or addressing psychological recovery. Only 24% of detransitioners inform their original providers of their decision.</p>
+
+      <span class="section-label">06 &mdash; The Methodological Problem</span>
+
+      <p>The current scientific understanding of detransition rates is limited by structural problems that affect the reliability of nearly every figure cited above.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Why True Rates Are Hard to Determine</span>
+          <span class="stat-block-period">Methodological summary</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Loss to follow-up</span><span class="stat-val warn">20&ndash;60% in most studies. The Dutch studies lost 36% of their sample. Only 24% of detransitioners tell their original providers.</span></div>
+          <div class="stat-row"><span class="stat-key">Short follow-up</span><span class="stat-val warn">Most studies track 1&ndash;2 years. Median time for regret to manifest: 8&ndash;11 years.</span></div>
+          <div class="stat-row"><span class="stat-key">&ldquo;Honeymoon period&rdquo;</span><span class="stat-val warn">Initial well-being improvements after starting hormones may reflect expectancy effects that diminish over 3&ndash;5 years.</span></div>
+          <div class="stat-row"><span class="stat-key">Inconsistent definitions</span><span class="stat-val warn">Studies mix discontinuation, identity change, and regret &mdash; making cross-study comparison unreliable.</span></div>
+          <div class="stat-row"><span class="stat-key">Changing populations</span><span class="stat-val warn">Dutch cohort data (strict selection, childhood-onset) may not apply to the current referral population (adolescent-onset, higher comorbidity).</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">07 &mdash; Both Sides Steelmanned</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key">Affirmative position</div>
+          <div class="steelman-val">Genuine identity-change detransition is rare (1&ndash;5%). The majority who stop treatment do so because of discrimination, not regret. Surgical regret (~1%) is lower than for most elective surgeries. Denying or delaying care causes measurable harm, while detransition rates are in the low single digits. A small minority who detransition does not justify withholding treatment from the majority who benefit.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Precautionary position</div>
+          <div class="steelman-val">We do not know the true long-term rates. Loss to follow-up exceeds 20% in most studies, only 24% of detransitioners inform their providers, and median regret onset (8&ndash;11 years) exceeds the follow-up period of most studies. The population now presenting to clinics differs from the Dutch cohort on which the evidence base rests. High comorbidity rates among detransitioners suggest some patients are being treated for gender dysphoria when the root cause is trauma, neurodivergence, or other conditions. Until 10+ year data exists, reported rates should be treated as lower bounds.</div>
+        </div>
+      </div>
+
+      <div class="box box-amber">
+        <span class="box-label">What both sides should acknowledge</span>
+        <p>Detransitioners deserve compassionate, non-judgmental care. Many report feeling abandoned by the medical system and stigmatized by both transgender and cisgender communities. There are currently no standardized clinical protocols for medical detransition. Whether detransition rates are 1% or 5% or higher, these are real people whose experiences should inform &mdash; not be weaponized by &mdash; the policy debate.</p>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 8 — LIMITATIONS & STEELMAN
+    ======================================================= -->
+    <div id="part8">
+      <div class="part-header">
+        <span class="part-label">Part 8 of 8</span>
         <h2 class="part-title">Limitations &amp; Steelman</h2>
       </div>
 
@@ -1078,20 +1290,25 @@
 
     <div class="sources-section">
       <span class="sources-section-label">Full Sources &amp; References</span>
-      <div class="source-item"><strong>WPATH SOC8 (2022)</strong> &mdash; Standards of Care, Version 8. <a href="https://www.wpath.org/soc8" target="_blank">wpath.org/soc8</a></div>
-      <div class="source-item"><strong>Endocrine Society (2017)</strong> &mdash; Clinical Practice Guideline. <a href="https://academic.oup.com/jcem/article/102/11/3869/4157558" target="_blank">doi:10.1210/jc.2017-01658</a></div>
-      <div class="source-item"><strong>AAP (2018)</strong> &mdash; Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents. <a href="https://publications.aap.org/pediatrics/article/142/4/e20182162/37381" target="_blank">Pediatrics 142(4)</a></div>
-      <div class="source-item"><strong>Tordoff et al. (2022)</strong> &mdash; Mental Health Outcomes in Transgender and Nonbinary Youths Receiving Gender-Affirming Care. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2789423" target="_blank">JAMA Netw Open 5(2)</a></div>
-      <div class="source-item"><strong>Turban et al. (2020)</strong> &mdash; Pubertal Suppression for Transgender Youth and Risk of Suicidal Ideation. <a href="https://publications.aap.org/pediatrics/article/145/2/e20191725/68259" target="_blank">Pediatrics 145(2)</a></div>
-      <div class="source-item"><strong>de Vries et al. (2014)</strong> &mdash; Young Adult Psychological Outcome After Puberty Suppression and Gender Reassignment. <a href="https://publications.aap.org/pediatrics/article/134/4/696/32932" target="_blank">Pediatrics 134(4)</a></div>
-      <div class="source-item"><strong>Durwood et al. (2017)</strong> &mdash; Mental Health and Self-Worth in Socially Transitioned Transgender Youth. <a href="https://doi.org/10.1016/j.jaac.2016.10.016" target="_blank">JAACAP 56(2)</a></div>
-      <div class="source-item"><strong>Cass Review (2024)</strong> &mdash; Independent Review of Gender Identity Services for Children and Young People: Final Report. <a href="https://cass.independent-review.uk/home/publications/final-report/" target="_blank">cass.independent-review.uk</a></div>
-      <div class="source-item"><strong>Ruuska et al. (2024)</strong> &mdash; All-Cause and Suicide Mortalities Among Adolescents and Young Adults Who Contacted Specialised Gender Identity Services in Finland. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">BMJ Mental Health 2024</a></div>
-      <div class="source-item"><strong>Yale Law School Integrity Project (2024)</strong> &mdash; Analysis of the Cass Review. <a href="https://law.yale.edu/" target="_blank">law.yale.edu</a></div>
-      <div class="source-item"><strong>MJA Critique (2025)</strong> &mdash; The Cass Review Does Not Guide Care for Trans Young People. <a href="https://www.mja.com.au/" target="_blank">Medical Journal of Australia</a></div>
-      <div class="source-item"><strong>McMaster University (2025)</strong> &mdash; Systematic Review of Gender-Affirming Hormones. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">pubmed.ncbi.nlm.nih.gov</a></div>
-      <div class="source-item"><strong>Trevor Project (2021&ndash;2025)</strong> &mdash; National Survey on LGBTQ Youth Mental Health. <a href="https://www.thetrevorproject.org/survey-2024/" target="_blank">thetrevorproject.org</a></div>
-      <div class="source-item"><strong>Rady Children&rsquo;s Hospital (2025)</strong> &mdash; Longitudinal Study of Gender-Affirming Top Surgery Outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PMC</a></div>
+      <div class="source-item"><strong>WPATH SOC8 (2022)</strong> &mdash; Standards of Care, Version 8. <a href="https://www.wpath.org/soc8" target="_blank" rel="noopener noreferrer">wpath.org/soc8</a></div>
+      <div class="source-item"><strong>Endocrine Society (2017)</strong> &mdash; Clinical Practice Guideline. <a href="https://academic.oup.com/jcem/article/102/11/3869/4157558" target="_blank" rel="noopener noreferrer">doi:10.1210/jc.2017-01658</a></div>
+      <div class="source-item"><strong>AAP (2018)</strong> &mdash; Ensuring Comprehensive Care and Support for Transgender and Gender-Diverse Children and Adolescents. <a href="https://publications.aap.org/pediatrics/article/142/4/e20182162/37381" target="_blank" rel="noopener noreferrer">Pediatrics 142(4)</a></div>
+      <div class="source-item"><strong>Tordoff et al. (2022)</strong> &mdash; Mental Health Outcomes in Transgender and Nonbinary Youths Receiving Gender-Affirming Care. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2789423" target="_blank" rel="noopener noreferrer">JAMA Netw Open 5(2)</a></div>
+      <div class="source-item"><strong>Turban et al. (2020)</strong> &mdash; Pubertal Suppression for Transgender Youth and Risk of Suicidal Ideation. <a href="https://publications.aap.org/pediatrics/article/145/2/e20191725/68259" target="_blank" rel="noopener noreferrer">Pediatrics 145(2)</a></div>
+      <div class="source-item"><strong>de Vries et al. (2014)</strong> &mdash; Young Adult Psychological Outcome After Puberty Suppression and Gender Reassignment. <a href="https://publications.aap.org/pediatrics/article/134/4/696/32932" target="_blank" rel="noopener noreferrer">Pediatrics 134(4)</a></div>
+      <div class="source-item"><strong>Durwood et al. (2017)</strong> &mdash; Mental Health and Self-Worth in Socially Transitioned Transgender Youth. <a href="https://doi.org/10.1016/j.jaac.2016.10.016" target="_blank" rel="noopener noreferrer">JAACAP 56(2)</a></div>
+      <div class="source-item"><strong>Cass Review (2024)</strong> &mdash; Independent Review of Gender Identity Services for Children and Young People: Final Report. <a href="https://cass.independent-review.uk/home/publications/final-report/" target="_blank" rel="noopener noreferrer">cass.independent-review.uk</a></div>
+      <div class="source-item"><strong>Ruuska et al. (2024)</strong> &mdash; All-Cause and Suicide Mortalities Among Adolescents and Young Adults Who Contacted Specialised Gender Identity Services in Finland. <a href="https://doi.org/10.1136/bmjment-2024-301168" target="_blank" rel="noopener noreferrer">BMJ Mental Health 2024</a></div>
+      <div class="source-item"><strong>Yale Law School Integrity Project (2024)</strong> &mdash; Analysis of the Cass Review. <a href="https://law.yale.edu/integrity-project" target="_blank" rel="noopener noreferrer">Yale Law Integrity Project</a></div>
+      <div class="source-item"><strong>MJA Critique (2025)</strong> &mdash; The Cass Review Does Not Guide Care for Trans Young People. <a href="https://doi.org/10.5694/mja2.52522" target="_blank" rel="noopener noreferrer">MJA 2025</a></div>
+      <div class="source-item"><strong>McMaster University (2025)</strong> &mdash; Systematic Review of Gender-Affirming Hormones. <a href="https://doi.org/10.1136/bmj-2024-081233" target="_blank" rel="noopener noreferrer">BMJ 2025</a></div>
+      <div class="source-item"><strong>Trevor Project (2021&ndash;2025)</strong> &mdash; National Survey on LGBTQ Youth Mental Health. <a href="https://www.thetrevorproject.org/survey-2024/" target="_blank" rel="noopener noreferrer">thetrevorproject.org</a></div>
+      <div class="source-item"><strong>Rady Children&rsquo;s Hospital (2025)</strong> &mdash; Longitudinal Study of Gender-Affirming Top Surgery Outcomes. <a href="https://doi.org/10.1542/peds.2024-068723" target="_blank" rel="noopener noreferrer">Pediatrics 2025</a></div>
+      <div class="source-item"><strong>Olson et al. (2022)</strong> &mdash; Gender Identity 5 Years After Social Transition. <a href="https://publications.aap.org/pediatrics/article/150/2/e2021056082/186992" target="_blank" rel="noopener noreferrer">Pediatrics 150(2)</a></div>
+      <div class="source-item"><strong>MacKinnon et al. (2024)</strong> &mdash; Detransition and Discontinuation of Gender-Affirming Medical Care. <a href="https://doi.org/10.1007/s10508-025-03264-6" target="_blank" rel="noopener noreferrer">Archives of Sexual Behavior</a></div>
+      <div class="source-item"><strong>Butler et al. (2022)</strong> &mdash; Outcomes of Youth Referred to UK Gender Identity Services. <a href="https://doi.org/10.1136/archdischild-2022" target="_blank" rel="noopener noreferrer">Archives of Disease in Childhood</a></div>
+      <div class="source-item"><strong>U.S. Transgender Survey (2015)</strong> &mdash; National Center for Transgender Equality. <a href="https://transequality.org/sites/default/files/docs/usts/USTS-Full-Report-Dec17.pdf" target="_blank" rel="noopener noreferrer">USTS Full Report</a></div>
+      <div class="source-item"><strong>Bustos et al. (2021)</strong> &mdash; Regret After Gender-Affirming Surgery: A Systematic Review and Meta-analysis (n=7,928). <a href="https://doi.org/10.1097/PRS.0000000000007573" target="_blank" rel="noopener noreferrer">Plastic and Reconstructive Surgery</a></div>
     </div>
 
     <div class="cite-this">
