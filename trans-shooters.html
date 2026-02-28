@@ -1132,7 +1132,7 @@
 
     /* ── Claims vs. Evidence quick-reference ── */
     .claims-box {
-      background: var(--surface); border: 1px solid var(--border);
+      background: var(--surface, var(--card-tinted, #f0ede8)); border: 1px solid var(--border, var(--rule, #ddd9d0));
       border-radius: 6px; padding: 20px 22px; margin: 24px 0;
     }
     .claims-box-label {
@@ -1142,7 +1142,7 @@
     }
     .claim-row {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; border-bottom: 1px solid var(--border);
+      gap: 0; border-bottom: 1px solid var(--border, var(--rule, #ddd9d0));
       font-size: 0.82rem; line-height: 1.5;
     }
     .claim-row:last-child { border-bottom: none; }
@@ -1156,15 +1156,15 @@
     }
     .claim-said { color: var(--brick); }
     .claim-data { color: var(--green); }
-    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    .claim-cell:first-child { border-right: 1px solid var(--border, var(--rule, #ddd9d0)); }
     @media (max-width: 600px) {
       .claim-row { grid-template-columns: 1fr; }
-      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border, var(--rule, #ddd9d0)); }
     }
 
     /* ── Part takeaway boxes ── */
     .part-takeaway {
-      background: var(--surface); border-left: 3px solid var(--brick);
+      background: var(--surface, var(--card-tinted, #f0ede8)); border-left: 3px solid var(--brick);
       padding: 14px 20px; margin: 32px 0 8px;
       border-radius: 0 4px 4px 0; font-size: 0.9rem;
       line-height: 1.65;
@@ -1284,8 +1284,8 @@
     .faq-item { margin: 14px 0; }
     .faq-q { font-weight: 700; font-size: 0.82rem; color: var(--text-head); margin-bottom: 4px; }
     .faq-a { font-size: 0.8rem; color: var(--text-body); line-height: 1.5; }
-    .falsify-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
-    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--green, var(--green-live, #1b6b3e)); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green, var(--green-live, #1b6b3e)); display: block; margin-bottom: 8px; }
     .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
     </style>
 
