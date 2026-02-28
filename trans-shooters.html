@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trans People & Mass Shootings — TruthBased.org</title>
+  <meta name="description" content="Primary-source analysis of transgender people and mass shooting statistics. Every database, every definition, every counterargument examined.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/trans-shooters">
+  <meta property="og:title"   content="Trans People & Mass Shootings — TruthBased.org">
+  <meta property="og:description" content="Three databases. Every definition. Full sensitivity analysis. Every counterargument steelmanned with primary sources.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-trans-shooters.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-trans-shooters.png">
+
+    <link rel="canonical" href="https://www.truthbased.org/trans-shooters">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this saying transgender people don't commit crimes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This analysis concerns a narrow class of mass shooting events and does not generalize to other crimes or contexts. It addresses only the specific political claim about mass shooting overrepresentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Could cases be hidden or misclassified?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is modeled explicitly in the sensitivity analysis. Even under the most aggressive inclusion assumptions — counting all disputed, misidentified, and ambiguous cases — nine of ten assumption combinations still produce underrepresentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this prove causation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. These counts are descriptive, not causal. This article does not claim that being transgender prevents mass shootings. It establishes that the political claim of overrepresentation is not supported by the data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does this article exist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because the claim is being used to justify legislation — including proposals to revoke firearms rights and designate trans people as domestic terror threats. Claims used to restrict civil rights must meet a high evidentiary bar. This one does not."
+        }
+      }
+    ]
+  }
+  </script>
+
+    <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TruthBased.org — Trans People & Mass Shootings
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --page-ground:  #f7f5f1;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --text-primary: #151311;
+      --text-body:    #3d3a33;
+      --text-dim:     #706d64;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-faint:  #f9ecea;
+      --green-live:   #1b6b3e;
+      --green-faint:  #e8f4ed;
+      --amber:        #8a5c00;
+      --amber-faint:  #fdf6e7;
+      --rule:         #dedad3;
+      --rule-mid:     #c5c1ba;
+      --shadow-card:  0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--page-ground);
+      color: var(--text-body);
+      font-family: 'Sora', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a.inline-link { color: var(--brick); text-decoration: underline; text-underline-offset: 3px; }
+    a.inline-link:hover { opacity: 0.75; }
+
+
+    /* ----- Nav -------------------------------------------- */
+
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+
+
+    /* ----- Part jump nav ---------------------------------- */
+
+    .jump-nav-wrap {
+      background-color: var(--card-face);
+      border-bottom: 1px solid var(--rule);
+      padding: 10px 48px;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .jump-nav-wrap::-webkit-scrollbar { display: none; }
+
+    .jump-nav {
+      display: flex;
+      gap: 6px;
+      min-width: max-content;
+    }
+
+    .jump-btn {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 5px 12px;
+      background: none;
+      cursor: pointer;
+      transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background-color: var(--brick-faint); }
+
+
+    /* ----- Article layout --------------------------------- */
+
+    .article-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 48px 80px;
+    }
+
+    .article-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid var(--text-primary);
+    }
+
+    .article-category {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brick);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .article-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .article-deck {
+      font-family: 'Spectral', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .meta-pill {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 3px 9px;
+    }
+
+    .meta-pill.live {
+      background-color: var(--green-faint);
+      color: var(--green-live);
+      border-color: rgba(27, 107, 62, 0.2);
+    }
+
+
+    /* ----- Sources header bar ----------------------------- */
+
+    .sources-bar {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 48px;
+    }
+
+    .sources-bar-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .source-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .source-pill {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      color: var(--text-dim);
+      border: 1px solid var(--rule-mid);
+      border-radius: 2px;
+      padding: 4px 10px;
+      transition: color 0.12s ease, border-color 0.12s ease;
+      text-decoration: none;
+    }
+
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+
+    /* ----- Section headings ------------------------------- */
+
+    .part-heading {
+      margin: 56px 0 28px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule-mid);
+    }
+
+    .part-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brick);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .part-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      display: block;
+      margin: 32px 0 14px;
+    }
+
+
+    /* ----- Stat blocks ------------------------------------ */
+
+    .stat-block {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .stat-block-header {
+      background-color: var(--card-tinted);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .stat-block-name {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+    }
+
+    .stat-block-period {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+    }
+
+    .stat-rows { padding: 12px 16px; display: flex; flex-direction: column; gap: 9px; }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .stat-key { color: var(--text-dim); }
+
+    .stat-val {
+      font-family: 'Courier Prime', monospace;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+
+    .stat-val.positive { color: var(--green-live); }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.neutral  { color: var(--amber); }
+
+
+    /* ----- Per capita grid -------------------------------- */
+
+    .capita-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .capita-card {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 18px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .capita-big {
+      font-family: 'Courier Prime', monospace;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--green-live);
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .capita-big.negative { color: var(--brick); }
+
+    .capita-label {
+      font-size: 0.74rem;
+      color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    .capita-verdict {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--green-live);
+      text-align: center;
+      padding: 8px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 12px;
+    }
+
+
+    /* ----- Call-out boxes --------------------------------- */
+
+    .box {
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      font-size: 0.86rem;
+      line-height: 1.7;
+    }
+
+    .box p + p { margin-top: 10px; }
+    .box strong { font-weight: 600; }
+
+    .box-green {
+      background-color: var(--green-faint);
+      border: 1px solid rgba(27, 107, 62, 0.18);
+      border-left: 3px solid var(--green-live);
+      color: #1a3d28;
+    }
+
+    .box-green strong { color: var(--green-live); }
+
+    .box-amber {
+      background-color: var(--amber-faint);
+      border: 1px solid rgba(138, 92, 0, 0.18);
+      border-left: 3px solid var(--amber);
+      color: #4a3200;
+    }
+
+    .box-amber strong { color: var(--amber); }
+
+    .box-brick {
+      background-color: var(--brick-faint);
+      border: 1px solid rgba(184, 58, 30, 0.18);
+      border-left: 3px solid var(--brick);
+      color: #4a1a0e;
+    }
+
+    .box-brick strong { color: var(--brick); }
+
+    .box-neutral {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--rule-mid);
+      color: var(--text-body);
+    }
+
+    .box-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+      opacity: 0.65;
+    }
+
+
+    /* ----- Shooter cards ---------------------------------- */
+
+    .shooter-card {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .shooter-card-head {
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--rule);
+      background-color: var(--card-tinted);
+    }
+
+    .shooter-name {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .shooter-meta-line {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+    }
+
+    .identity-badge {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.56rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 9px;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .badge-confirmed { background: var(--green-faint); color: var(--green-live); border: 1px solid rgba(27,107,62,0.2); }
+    .badge-disputed  { background: var(--amber-faint); color: var(--amber); border: 1px solid rgba(138,92,0,0.2); }
+    .badge-unconfirmed { background: var(--brick-faint); color: var(--brick); border: 1px solid rgba(184,58,30,0.2); }
+    .badge-domestic  { background: #f0f0fa; color: #4a4a8a; border: 1px solid #d0d0ea; }
+    .badge-canada    { background: #f5f0f0; color: #6a3030; border: 1px solid #e0c8c8; }
+
+    .shooter-card-body {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .shooter-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px;
+      font-size: 0.81rem;
+    }
+
+    .shooter-key {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-quiet);
+      padding-top: 2px;
+    }
+
+    .shooter-val { color: var(--text-body); line-height: 1.55; }
+    .shooter-val.warn { color: var(--amber); }
+    .shooter-val.alert { color: var(--brick); }
+    .shooter-val.ok { color: var(--green-live); }
+
+    .ideo-tag {
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.04em;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin: 2px 3px 2px 0;
+      border: 1px solid;
+    }
+
+    .tag-mental      { background: #fefae8; color: #6b5000; border-color: #e8d890; }
+    .tag-bullying    { background: #eef5ff; color: #2a4a8a; border-color: #b8d0f0; }
+    .tag-domestic    { background: #f0f0fa; color: #4a4a8a; border-color: #c8c8ea; }
+    .tag-notoriety   { background: #fdf0e8; color: #7a3a00; border-color: #e8c8a0; }
+    .tag-nihilism    { background: #f5f5f5; color: #5a5a5a; border-color: #d0d0d0; }
+    .tag-far-right   { background: #fff0e8; color: #8a3000; border-color: #f0c8a0; }
+    .tag-neo-nazi    { background: #fff5f3; color: #8a2020; border-color: #f0c8c0; }
+    .tag-lgbtq-victim{ background: #edfaf3; color: #1a5a30; border-color: #a8e0c0; }
+    .tag-unconfirmed { background: #f5f5f5; color: #707070; border-color: #d8d8d8; }
+
+
+    /* ----- Policy cards ----------------------------------- */
+
+    .policy-card {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .policy-who {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brick);
+      margin-bottom: 6px;
+    }
+
+
+    /* ----- Definition cards ------------------------------- */
+
+    .def-card {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+    }
+
+    .def-name {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .def-text {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+
+
+    /* ----- Year grid -------------------------------------- */
+
+    .year-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .year-card {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .year-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+      margin-bottom: 4px;
+    }
+
+    .year-count {
+      font-family: 'Courier Prime', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--amber);
+    }
+
+    .total-bar {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+    }
+
+    .total-bar-key { color: var(--text-dim); }
+    .total-bar-val { font-family: 'Courier Prime', monospace; font-weight: 700; color: var(--amber); font-size: 1.05rem; }
+
+
+    /* ----- Compare table ---------------------------------- */
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .compare-table th {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      background-color: var(--card-tinted);
+      padding: 9px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .compare-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--text-body);
+    }
+
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background-color: var(--card-tinted); }
+
+    .td-positive { color: var(--green-live); font-family: 'Courier Prime', monospace; font-weight: 700; }
+    .td-negative { color: var(--brick); font-family: 'Courier Prime', monospace; font-weight: 700; }
+    .td-neutral  { color: var(--text-dim); font-family: 'Courier Prime', monospace; }
+    .td-verdict  { color: var(--green-live); font-family: 'Courier Prime', monospace; font-weight: 700; font-size: 0.72rem; }
+
+
+    /* ----- Sensitivity table ------------------------------ */
+
+    .sens-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .sens-table th {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      background: var(--card-tinted);
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sens-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+    .sens-table tr:last-child td { border-bottom: none; }
+    .sens-table tr.row-highlight { background-color: var(--green-faint); }
+    .sens-table tr.row-problem   { background-color: #fff8f6; }
+
+    .sc-assump { color: var(--text-body); }
+    .sc-pop    { color: var(--text-dim); font-family: 'Courier Prime', monospace; font-size: 0.72rem; }
+    .sc-rate   { color: var(--text-dim); font-family: 'Courier Prime', monospace; }
+    .sc-under  { color: var(--green-live); font-family: 'Courier Prime', monospace; font-weight: 700; font-size: 0.72rem; }
+    .sc-over   { color: var(--brick); font-family: 'Courier Prime', monospace; font-weight: 700; font-size: 0.72rem; }
+
+
+    /* ----- Steelman cards --------------------------------- */
+
+    .steelman-card {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .steelman-head {
+      padding: 12px 16px;
+      background-color: var(--amber-faint);
+      border-bottom: 1px solid rgba(138, 92, 0, 0.18);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .steelman-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--amber);
+      margin-bottom: 3px;
+    }
+
+    .steelman-sub { font-size: 0.74rem; color: var(--text-dim); }
+
+    .badge-opposing  { background: var(--amber-faint); color: var(--amber); border: 1px solid rgba(138,92,0,0.2); font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.07em; padding: 4px 9px; border-radius: 2px; white-space: nowrap; }
+    .badge-rebuttal  { background: var(--green-faint); color: var(--green-live); border: 1px solid rgba(27,107,62,0.2); font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.07em; padding: 4px 9px; border-radius: 2px; white-space: nowrap; }
+
+    .steelman-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 9px; }
+
+    .steelman-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      font-size: 0.81rem;
+    }
+
+    .steelman-key {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-quiet);
+      padding-top: 2px;
+    }
+
+    .steelman-val { color: var(--text-body); line-height: 1.55; }
+    .steelman-val.rebuttal { color: var(--green-live); }
+    .steelman-divider { height: 1px; background: var(--rule); }
+
+
+    /* ----- Limitation grid -------------------------------- */
+
+    .limitation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .limitation-item {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 13px 15px;
+    }
+
+    .limitation-title {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 7px;
+    }
+
+    .limitation-text { font-size: 0.78rem; color: var(--text-dim); line-height: 1.55; }
+
+
+    /* ----- Denominator grid ------------------------------- */
+
+    .denom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .denom-card {
+      border-radius: 4px;
+      padding: 16px;
+    }
+
+    .denom-card.conservative {
+      background: var(--card-face);
+      border: 1px solid var(--rule);
+    }
+
+    .denom-card.full {
+      background: var(--green-faint);
+      border: 2px solid rgba(27, 107, 62, 0.35);
+    }
+
+    .denom-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .denom-card.conservative .denom-label { color: var(--text-quiet); }
+    .denom-card.full .denom-label { color: var(--green-live); }
+
+    .denom-num {
+      font-family: 'Courier Prime', monospace;
+      font-weight: 700;
+      font-size: 1.3rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .denom-card.conservative .denom-num { color: var(--text-primary); }
+    .denom-card.full .denom-num { color: var(--green-live); }
+
+    .denom-sub { font-size: 0.74rem; color: var(--text-dim); line-height: 1.45; }
+
+
+    /* ----- Breakdown rows --------------------------------- */
+
+    .breakdown-wrap {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+
+    .breakdown-row {
+      display: grid;
+      grid-template-columns: 1fr 90px;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.81rem;
+    }
+
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-row.total-row { border-top: 2px solid var(--rule-mid); padding-top: 10px; }
+    .breakdown-key { color: var(--text-dim); }
+    .breakdown-val { font-family: 'Courier Prime', monospace; font-weight: 700; color: var(--green-live); text-align: right; }
+    .breakdown-row.total-row .breakdown-key { font-weight: 600; color: var(--text-primary); }
+    .breakdown-row.total-row .breakdown-val { color: var(--green-live); font-size: 1.05rem; }
+
+
+    /* ----- Conclusion stats ------------------------------- */
+
+    .conclusion-stats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+
+    .conclusion-stat {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 18px 20px;
+    }
+
+    .cs-num {
+      font-family: 'Courier Prime', monospace;
+      font-weight: 700;
+      font-size: 1.7rem;
+      line-height: 1;
+      min-width: 64px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .cs-num.positive { color: var(--green-live); }
+    .cs-num.neutral  { color: var(--amber); }
+    .cs-num.accent   { color: var(--brick); }
+
+    .cs-text { font-size: 0.84rem; color: var(--text-body); line-height: 1.65; }
+    .cs-text strong { color: var(--text-primary); font-weight: 600; }
+
+
+    /* ----- Final conclusion box --------------------------- */
+
+    .conclusion-final {
+      background-color: var(--text-primary);
+      color: var(--page-ground);
+      border-radius: 4px;
+      padding: 36px 32px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .cf-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(247, 245, 241, 0.45);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .cf-statement {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: #f7f5f1;
+      margin-bottom: 16px;
+    }
+
+    .cf-sub {
+      font-size: 0.82rem;
+      color: rgba(247, 245, 241, 0.55);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+
+    /* ----- Chart wrap ------------------------------------- */
+
+    .chart-wrap {
+      background-color: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 18px;
+      margin-bottom: 12px;
+    }
+
+    .chart-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .chart-sub { font-size: 0.74rem; color: var(--text-quiet); margin-bottom: 16px; }
+    .chart-canvas-wrap { position: relative; height: 240px; }
+
+
+    /* ----- Sources section -------------------------------- */
+
+    .sources-section {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .sources-section-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .source-item { margin-bottom: 8px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    .divider { height: 1px; background: var(--rule); margin: 24px 0; }
+
+
+    /* ----- Footer ----------------------------------------- */
+
+    .site-footer {
+      border-top: 1px solid var(--rule);
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-note {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+    }
+
+
+    /* ----- Responsive ------------------------------------- */
+
+    @media (max-width: 640px) {
+      .site-nav, .jump-nav-wrap, .article-wrap, .site-footer { padding-left: 20px; padding-right: 20px; }
+      .article-wrap { padding-top: 36px; padding-bottom: 48px; }
+      .capita-grid, .denom-grid, .limitation-grid { grid-template-columns: 1fr; }
+      .shooter-row, .steelman-row { grid-template-columns: 80px 1fr; }
+      .nav-category { display: none; }
+      .jump-nav-wrap { padding: 8px 16px; }
+      .jump-btn { font-size: 0.52rem; padding: 5px 8px; }
+      .chart-wrap { padding: 16px 12px; }
+      .site-nav { padding: 10px 16px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+
+    }
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-faint, #f9ecea); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 110px; }
+    @media (max-width: 640px) { [id^="part"] { scroll-margin-top: 100px; } }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 12px; }
+    .table-scroll .compare-table, .table-scroll .sens-table { margin-bottom: 0; min-width: 520px; }
+
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .article-wrap { padding: 48px 32px 56px; }
+      .site-nav { padding: 14px 24px; }
+      .jump-nav-wrap { padding: 10px 24px; }
+      .capita-grid, .denom-grid { grid-template-columns: 1fr 1fr; }
+      .limitation-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --page-ground:  #1a1918;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --text-primary: #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-faint:  #2d1f1a;
+      --green-live:   #4cbb6a;
+      --green-faint:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-faint:  #2d2518;
+      --blue:         #5a8ad4;
+      --blue-faint:   #1a2030;
+      --rule:         #3a3632;
+      --rule-mid:     #4a4640;
+      --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
+    }
+    [data-theme="dark"] .jump-nav-wrap { background-color: rgba(26,25,24,0.97); }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .conclusion-final { background-color: #2a2826; }
+    [data-theme="dark"] .cf-statement { color: #e8e5e0; }
+    [data-theme="dark"] .cf-sub { color: rgba(197,192,184,0.75); }
+    [data-theme="dark"] .cf-label { color: rgba(197,192,184,0.45); }
+
+
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface, var(--card-tinted, #f0ede8)); border: 1px solid var(--border, var(--rule, #ddd9d0));
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border, var(--rule, #ddd9d0));
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border, var(--rule, #ddd9d0)); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border, var(--rule, #ddd9d0)); }
+    }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface, var(--card-tinted, #f0ede8)); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .shooter-card, .conclusion-stat, .tldr-box, .falsify-box { break-inside: avoid; }
+      .part-heading { break-after: avoid; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0.7;
+    }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    /* --- TL;DR, Scope, FAQ additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scope-box { background: var(--bg); border: 1px dashed var(--rule); border-radius: 4px; padding: 14px 18px; margin: 0 0 30px; font-size: 0.76rem; color: var(--text-quiet); line-height: 1.5; }
+    .scope-box strong { color: var(--text-head); }
+    .faq-item { margin: 14px 0; }
+    .faq-q { font-weight: 700; font-size: 0.82rem; color: var(--text-head); margin-bottom: 4px; }
+    .faq-a { font-size: 0.8rem; color: var(--text-body); line-height: 1.5; }
+    .falsify-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--green, var(--green-live, #1b6b3e)); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green, var(--green-live, #1b6b3e)); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+    </style>
+
+  <script>
+    /* ── Dark mode ── */
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Trans People & Mass Shootings: The Full Picture",
+    "description": "Three databases. Every definition. Full sensitivity analysis. Every counterargument steelmanned with primary sources.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/trans-shooters",
+    "keywords": ["mass shootings", "transgender", "gun violence", "fact-check", "statistics"]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+
+  <!-- Site nav -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <!-- Part jump nav -->
+  <div class="jump-nav-wrap">
+    <nav class="jump-nav" aria-label="Jump to section">
+      <a href="#part1" class="jump-btn">Part 1 — All-Time Overview</a>
+      <a href="#part2" class="jump-btn">Part 2 — 2020–2025 Deep Dive</a>
+      <a href="#part3" class="jump-btn">Part 3 — The Denominator Problem</a>
+      <a href="#part4" class="jump-btn">Part 4 — Limitations &amp; Counterarguments</a>
+      <a href="#part5" class="jump-btn">Part 5 — Conclusion</a>
+    </nav>
+  </div>
+
+
+  <main id="content">
+  <article class="article-wrap">
+
+    <!-- Article header -->
+    <header class="article-header">
+      <span class="article-category">Political Fact Check</span>
+      <h1 class="article-title">Trans People &amp; Mass Shootings</h1>
+      <p class="article-deck">Three databases. Every definition. Full sensitivity analysis. Every counterargument steelmanned with their own data — including CPRC/Lott. Five parts, every angle.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#9679; Live</span>
+        <span class="meta-pill">Updated February 2026</span>
+        <span class="meta-pill">Data through Feb 20, 2026</span>
+        <span class="meta-pill">23 primary sources</span>
+        <span class="meta-pill">~31 min read</span>
+      </div>
+    </header>
+
+    <!-- Why this is a political fact check -->
+    <div class="box box-amber">
+      <span class="box-label">Why this is filed under Political Fact Checks</span>
+      <p>This claim — that trans people are overrepresented as mass shooters — has been actively used by elected officials and political organizations to justify legislation targeting the trans community. Rep. Ronny Jackson called for removing trans people from "the streets and the internet." The Heritage Foundation petitioned the FBI to designate "Transgender Ideology-Inspired Violent Extremism" as a domestic terror threat. The Trump DOJ suggested revoking trans people's right to possess firearms. These are political claims, driven by political actors, aimed at a specific community. The data is examined here as a political fact check, not a demographic study.</p>
+    </div>
+
+    <!-- Sources bar -->
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary sources &amp; references used throughout</span>
+      <div class="source-pills">
+        <a class="source-pill" href="https://www.factcheck.org/2025/09/few-mass-shooters-have-been-transgender/" target="_blank" rel="noopener noreferrer">FactCheck.org</a>
+        <a class="source-pill" href="https://www.politifact.com/article/2025/sep/09/trans-people-mass-shootings-gun-violence/" target="_blank" rel="noopener noreferrer">PolitiFact</a>
+        <a class="source-pill" href="https://www.snopes.com/fact-check/transgender-mass-shootings/" target="_blank" rel="noopener noreferrer">Snopes</a>
+        <a class="source-pill" href="https://www.gunviolencearchive.org/mass-shooting" target="_blank" rel="noopener noreferrer">Gun Violence Archive</a>
+        <a class="source-pill" href="https://williamsinstitute.law.ucla.edu/publications/trans-adults-united-states/" target="_blank" rel="noopener noreferrer">Williams Institute</a>
+        <a class="source-pill" href="https://www.fbi.gov/file-repository/active-shooter-incidents-2024.pdf" target="_blank" rel="noopener noreferrer">FBI Active Shooter Report</a>
+        <a class="source-pill" href="https://glaad.org/debunking-trans-terrorism/" target="_blank" rel="noopener noreferrer">GLAAD</a>
+        <a class="source-pill" href="https://www.adl.org/resources/report/murder-and-extremism-united-states-2022" target="_blank" rel="noopener noreferrer">ADL</a>
+        <a class="source-pill" href="https://www.wired.com/story/heritage-foundation-transgender-school-shootings-false/" target="_blank" rel="noopener noreferrer">Wired</a>
+        <a class="source-pill" href="https://nashvillebanner.com/2025/04/02/covenant-school-shooting-report/" target="_blank" rel="noopener noreferrer">Nashville Banner</a>
+        <a class="source-pill" href="https://www.nbcnews.com/news/us-news/philadelphia-shooting-suspect-isnt-trans-officials-say-speculation-continues-rcna91935" target="_blank" rel="noopener noreferrer">NBC News</a>
+        <a class="source-pill" href="https://www.cnn.com/2025/08/28/us/journal-minneapolis-shooter-robin-westman-invs" target="_blank" rel="noopener noreferrer">CNN</a>
+        <a class="source-pill" href="https://www.npr.org/2025/08/29/nx-s1-5522038/minneapolis-shooting-motive" target="_blank" rel="noopener noreferrer">NPR</a>
+        <a class="source-pill" href="https://www.washingtonpost.com/nation/2025/08/17/texas-ice-shooting-trans/" target="_blank" rel="noopener noreferrer">Washington Post</a>
+        <a class="source-pill" href="https://www.cbc.ca/news/canada/tumbler-ridge-shooting-trans-community-false-claims-9.7085078" target="_blank" rel="noopener noreferrer">CBC</a>
+        <a class="source-pill" href="https://www.nationalobserver.com/2026/02/12/news/tumbler-ridge-shooter-far-right-gore" target="_blank" rel="noopener noreferrer">National Observer</a>
+        <a class="source-pill" href="https://en.wikipedia.org/wiki/Misinformation_about_violence_by_transgender_people" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+        <a class="source-pill" href="https://crimeresearch.org/2023/04/mass-public-shootings-by-transgender-people/" target="_blank" rel="noopener noreferrer">CPRC / Lott</a>
+      </div>
+    </div>
+
+    <div class="tldr-box">
+      <span class="tldr-label">TL;DR &mdash; The headline numbers</span>
+      <p><strong>Zero of three major databases</strong> show trans people overrepresented as mass shooters. Under the broadest definition (GVA): ~5&times; underrepresentation per capita. Under the strictest (Mother Jones/VPP): <strong>1 confirmed trans shooter out of 149&ndash;201 incidents</strong>. In 2020&ndash;2025 specifically: 2 out of 3,516 incidents. The claim does not survive contact with the data under any consistent methodology. <strong>Nine of ten sensitivity analysis combinations produce underrepresentation.</strong></p>
+    </div>
+
+    <div class="scope-box">
+      <strong>Ethical note.</strong> Categorizing mass shooters by any identity group &mdash; race, gender, religion, or transgender status &mdash; carries inherent risks of stigmatization. We perform this analysis solely because the claim is being used to justify legislation targeting a specific community. We rely only on public law enforcement records and court filings for identity classification. Where sources conflict, cases are labeled &ldquo;disputed&rdquo; and excluded from confirmed counts.
+    </div>
+
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"Trans people are disproportionately mass shooters"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Trans people are 5&ndash;14&times; <em>under</em>represented across all three major databases, under every definition.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"There have been many trans mass shooters recently"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>2 confirmed trans shooters out of 3,516 mass shootings in 2020&ndash;2025. Of 8 names cited online, 2 are disputed or unconfirmed.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"Trans identity was the motive"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Zero confirmed trans shooters had a motive attributed to trans identity by law enforcement. Motives: notoriety, mental illness, domestic violence, bullying.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"This justifies restricting trans people's rights"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Policy proposals (terror designations, firearms bans) are based on 2 data points out of 3,516 incidents. The statistical basis does not exist.</div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 1 — ALL-TIME OVERVIEW
+    ====================================================== -->
+    <div id="part1"></div>
+    <div class="part-heading">
+      <span class="part-label">Part 1</span>
+      <h2 class="part-title">All-Time Overview — Every Database, Every Definition</h2>
+    </div>
+
+    <span class="section-label">01 — The Three Main Definitions</span>
+
+    <div class="def-card">
+      <div class="def-name">Gun Violence Archive (GVA) — Broadest</div>
+      <div class="def-text">4+ people shot (injured or killed), not including the shooter. All contexts included. Used by most researchers and cited most frequently by media.</div>
+    </div>
+    <div class="def-card">
+      <div class="def-name">FBI / Federal Law</div>
+      <div class="def-text">3+ people killed in a single incident. No restriction on context or motive.</div>
+    </div>
+    <div class="def-card">
+      <div class="def-name">Mother Jones / Violence Prevention Project — Strictest</div>
+      <div class="def-text">Indiscriminate public shooting, 4+ killed. Explicitly excludes gang violence, domestic incidents, and robberies. This is the most commonly cited definition in political debates about trans identity and mass shootings.</div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">02 — The Numbers Under Each Definition</span>
+
+    <div class="stat-block">
+      <div class="stat-block-header"><span class="stat-block-name">Gun Violence Archive</span><span class="stat-block-period">Jan 2013 — Feb 2026</span></div>
+      <div class="stat-rows">
+        <div class="stat-row"><span class="stat-key">Total mass shootings</span><span class="stat-val neutral">~5,900</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">5</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of shooters</span><span class="stat-val negative">0.09%</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val positive">UNDERREPRESENTED ~9× (share of incidents)</span></div>
+      </div>
+    </div>
+
+    <div class="stat-block">
+      <div class="stat-block-header"><span class="stat-block-name">Violence Prevention Project</span><span class="stat-block-period">Strict definition · through 2025</span></div>
+      <div class="stat-rows">
+        <div class="stat-row"><span class="stat-key">Total shooters tracked</span><span class="stat-val neutral">~201</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">1 — Audrey Hale only</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of shooters</span><span class="stat-val negative">0.5%</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val positive">UNDERREPRESENTED ~2×</span></div>
+      </div>
+    </div>
+
+    <div class="stat-block">
+      <div class="stat-block-header"><span class="stat-block-name">Mother Jones</span><span class="stat-block-period">Strict definition · 1982–2025</span></div>
+      <div class="stat-rows">
+        <div class="stat-row"><span class="stat-key">Total incidents</span><span class="stat-val neutral">~149</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">1 — Audrey Hale</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of shooters</span><span class="stat-val negative">~0.67%</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val positive">UNDERREPRESENTED</span></div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Trans Share of Shooters vs. Trans Share of Population</div>
+      <div class="chart-sub">All-time data · each bar pair shows trans % of shooters vs. trans % of US population across three databases</div>
+      <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart: trans share of shooters (0.09%–0.67%) vs. trans share of US adults (~0.8%). Trans people are underrepresented in every database."></canvas></div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">03 — Per Capita Rate (GVA Definition)</span>
+    <p style="font-size:0.8rem;color:var(--text-quiet);margin-bottom:12px;">Binary trans population ~1.43M vs. US total ~335M</p>
+
+    <div class="capita-grid">
+      <div class="capita-card">
+        <div class="capita-big">0.00035%</div>
+        <div class="capita-label">of trans people have committed a mass shooting (GVA, all-time)</div>
+      </div>
+      <div class="capita-card">
+        <div class="capita-big negative">0.0017%</div>
+        <div class="capita-label">of the general US population have committed a mass shooting (GVA, all-time)</div>
+      </div>
+    </div>
+    <div class="capita-verdict">TRANS PEOPLE ARE ~5× LESS LIKELY PER CAPITA</div>
+
+    <div class="divider"></div>
+    <span class="section-label">04 — The Eight Cited Shooters: Full Breakdown</span>
+
+    <!-- Shooter 1: Moseley -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Snochia Moseley</div>
+          <div class="shooter-meta-line">2018 · Aberdeen, Maryland · Rite Aid warehouse</div>
+        </div>
+        <span class="identity-badge badge-confirmed">&#10003; CONFIRMED TRANS</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans man (FtM). Confirmed by close friends and family. Was undergoing hormone therapy at time of shooting.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Workplace shooting — targeted coworkers. No political or ideological motive. Documented bipolar disorder and depression.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-mental">Mental illness</span><span class="ideo-tag tag-nihilism">No political motive</span></div></div>
+        <div class="shooter-row"><div class="shooter-key">Qualifies under</div><div class="shooter-val">GVA (broad) — YES. Strict public mass shooting — NO (workplace, not public indiscriminate).</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 2: McKinney -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Alec McKinney</div>
+          <div class="shooter-meta-line">2019 · Highlands Ranch, Colorado · STEM School</div>
+        </div>
+        <span class="identity-badge badge-confirmed">&#10003; CONFIRMED TRANS</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans boy (FtM). Legally named Maya McKinney at the time. Confirmed.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Targeted specific students who bullied him for being trans. One of TWO shooters — the other, Devon Erickson, was cisgender and the primary perpetrator.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-bullying">Retaliation for bullying</span><span class="ideo-tag tag-mental">Mental illness</span></div></div>
+        <div class="shooter-row"><div class="shooter-key">Qualifies under</div><div class="shooter-val">GVA — YES. Strict — BORDERLINE (targeted specific individuals, not a random public attack).</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 3: Aldrich -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Anderson Lee Aldrich</div>
+          <div class="shooter-meta-line">2022 · Colorado Springs · Club Q LGBTQ+ nightclub</div>
+        </div>
+        <span class="identity-badge badge-disputed">&#8252; HIGHLY DISPUTED</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val warn">Claimed nonbinary through defense lawyer after arrest — widely seen as a legal tactic. Attacked an LGBTQ+ venue on Trans Day of Remembrance. Used homophobic and racial slurs. Experts were "immediately skeptical."</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val alert">Anti-LGBTQ hate crime. Convicted on bias-motivated murder charges. ADL classified as a far-right extremist attack.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-neo-nazi">Neo-Nazi website operator</span><span class="ideo-tag tag-far-right">Far-right extremist</span><span class="ideo-tag tag-lgbtq-victim">Targeted LGBTQ people</span></div></div>
+        <div class="shooter-row"><div class="shooter-key">Key fact</div><div class="shooter-val alert">The nonbinary identity claim came exclusively from a defense attorney after arrest — not from any prior self-identification. The ADL classified the Club Q attack as a far-right extremist hate crime, not a trans-motivated attack.</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 4: Hale -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Audrey Hale</div>
+          <div class="shooter-meta-line">2023 · Nashville, Tennessee · Covenant School</div>
+        </div>
+        <span class="identity-badge badge-confirmed">&#10003; CONFIRMED TRANS</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans man (FtM). Confirmed by Nashville Police Department.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">MNPD closed final investigation April 2025: motive was desire for notoriety. Chose the school because it was a soft target and a place he had happy childhood memories — wanted to die there. No political motive. Trans identity not cited by investigators as a factor.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-notoriety">Notoriety-seeking</span><span class="ideo-tag tag-mental">Depression / mental illness</span><span class="ideo-tag tag-nihilism">No confirmed political ideology</span></div></div>
+        <div class="shooter-row"><div class="shooter-key">Qualifies under</div><div class="shooter-val ok">All definitions — YES. The only confirmed trans shooter who qualifies under the strict Violence Prevention Project definition.</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 5: Butler -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Dylan Butler</div>
+          <div class="shooter-meta-line">2024 · Perry, Iowa · Perry High School</div>
+        </div>
+        <span class="identity-badge badge-unconfirmed">&#10005; NEVER CONFIRMED</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val alert">Gender identity was NEVER officially confirmed by any law enforcement agency. Evidence consisted only of unverified social media screenshots with pride flags and he/they pronouns, spread primarily by Libs of TikTok. Law enforcement explicitly stated identity was not established.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Reportedly bullied since elementary school. Died by suicide at the scene. No confirmed ideological motive.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Verdict</div><div class="shooter-val alert">Including Butler as a confirmed trans shooter is not supported by the official record. No agency verified his gender identity.</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 6: Westman -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Robin Westman</div>
+          <div class="shooter-meta-line">2025 · Minneapolis, Minnesota · Annunciation Catholic Church</div>
+        </div>
+        <span class="identity-badge badge-confirmed">&#10003; CONFIRMED TRANS</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman (MtF). Court-approved name change from Robert to Robin at age 17. Confirmed.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">FBI: "no single motive." Manifesto was incoherent — anti-Catholic, antisemitic, anti-Trump, neo-Nazi references AND anti-fascist language simultaneously. Wrote "there is no message" on a firearm. Expressed regret about being trans in her own writings.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Ideology</div><div class="shooter-val"><span class="ideo-tag tag-nihilism">Nihilistic / no coherent ideology</span><span class="ideo-tag tag-mental">Long-term mental illness</span><span class="ideo-tag tag-notoriety">Mass shooter obsession</span></div></div>
+        <div class="shooter-row"><div class="shooter-key">Key fact</div><div class="shooter-val warn">Westman's own writings expressed regret about being trans — directly contradicting the "trans ideology" narrative. Experts concluded the manifesto reflects online violent radicalization, not trans identity as motive.</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 7: Van Rootselaar -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Jesse Van Rootselaar</div>
+          <div class="shooter-meta-line">2026 · Tumbler Ridge, British Columbia — CANADA (not a US shooting)</div>
+        </div>
+        <span class="identity-badge badge-canada">CANADA — NOT US DATA</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman (MtF). Confirmed by RCMP. Had transitioned ~6 years prior.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">No confirmed motive. RCMP explicitly stated no confirmed link between gender identity and the crime. Long history of severe mental illness and multiple psychiatric assessments. Previous firearms seizure from the home.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Key fact</div><div class="shooter-val alert">This is a CANADIAN shooting — it appears in no US database (GVA, Mother Jones, etc.) and is irrelevant to US statistics. BC's Human Rights Commissioner called attempts to link this to trans identity "incorrect, irresponsible and frankly dangerous."</div></div>
+      </div>
+    </div>
+
+    <!-- Shooter 8: Dorgan -->
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div>
+          <div class="shooter-name">Robert Dorgan (Roberta Esposito)</div>
+          <div class="shooter-meta-line">2026 · Pawtucket, Rhode Island · Ice rink</div>
+        </div>
+        <span class="identity-badge badge-domestic">&#8856; DOMESTIC SHOOTING</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">Identity</div><div class="shooter-val">Trans woman. Confirmed — underwent gender reassignment surgery in 2020.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Motive</div><div class="shooter-val warn">Targeted his own family — killed ex-wife and adult son at an ice rink. Classic domestic/family violence stemming from bitter divorce proceedings.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Key fact</div><div class="shooter-val alert">This was a targeted domestic shooting — NOT a public mass shooting. Excluded under every strict definition the same sources claim to prefer. Including it in a "trans mass shooter" list is inconsistent with their own stated criteria.</div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">05 — Honest Tally</span>
+
+    <div class="stat-block">
+      <div class="stat-rows">
+        <div class="stat-row"><span class="stat-key">Total cited shooters</span><span class="stat-val neutral">8 (7 US + 1 Canada)</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed trans identity</span><span class="stat-val neutral">6 of 8</span></div>
+        <div class="stat-row"><span class="stat-key">Disputed / likely strategic legal claim</span><span class="stat-val negative">1 — Aldrich (neo-Nazi who attacked LGBTQ+ venue)</span></div>
+        <div class="stat-row"><span class="stat-key">Never confirmed by law enforcement</span><span class="stat-val negative">1 — Butler</span></div>
+        <div class="stat-row"><span class="stat-key">Not a US shooting</span><span class="stat-val neutral">1 — Van Rootselaar (Canada)</span></div>
+        <div class="stat-row"><span class="stat-key">Qualifies under strict definition</span><span class="stat-val neutral">1 — Audrey Hale only</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed far-right / neo-Nazi ideology</span><span class="stat-val negative">1 — Aldrich (who is disputed as trans)</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed trans ideology as motive</span><span class="stat-val positive">0</span></div>
+      </div>
+    </div>
+
+    <div class="box box-green">
+      <p>Under the <strong>broadest definition (GVA)</strong>: Trans people are ~9× underrepresented as mass shooters by share of incidents, and ~5× less likely per capita. Under the <strong>strictest definition</strong>: 1 confirmed trans shooter out of ~149–201 incidents. Trans people are statistically <strong>~4× more likely to be victims</strong> of violent crime than perpetrators. (GLAAD / Human Rights Campaign)</p>
+    </div>
+
+    <div class="sources-section">
+      <span class="sources-section-label">Part 1 Sources</span>
+      <div class="source-item"><strong>Gun Violence Archive</strong> — <a href="https://www.gunviolencearchive.org/mass-shooting" target="_blank" rel="noopener noreferrer">gunviolencearchive.org/mass-shooting</a></div>
+      <div class="source-item"><strong>FactCheck.org — "Few Mass Shooters Have Been Transgender"</strong> — <a href="https://www.factcheck.org/2025/09/few-mass-shooters-have-been-transgender/" target="_blank" rel="noopener noreferrer">factcheck.org</a></div>
+      <div class="source-item"><strong>Nashville Banner — Covenant School MNPD report</strong> — <a href="https://nashvillebanner.com/2025/04/02/covenant-school-shooting-report/" target="_blank" rel="noopener noreferrer">nashvillebanner.com</a></div>
+      <div class="source-item"><strong>ABC News — Aldrich ran neo-Nazi website (court testimony)</strong> — <a href="https://abcnews.go.com/US/club-shooting-suspect-motivated-hate-court-begins-evidence/story?id=97382833" target="_blank" rel="noopener noreferrer">abcnews.go.com</a></div>
+      <div class="source-item"><strong>CNN — Robin Westman manifesto journal</strong> — <a href="https://www.cnn.com/2025/08/28/us/journal-minneapolis-shooter-robin-westman-invs" target="_blank" rel="noopener noreferrer">cnn.com</a></div>
+      <div class="source-item"><strong>Newsweek — Dylan Butler trans claims unconfirmed</strong> — <a href="https://www.newsweek.com/dylan-butler-iowa-shooting-transgender-social-media-1858126" target="_blank" rel="noopener noreferrer">newsweek.com</a></div>
+      <div class="source-item"><strong>Williams Institute — Trans population data</strong> — <a href="https://williamsinstitute.law.ucla.edu/publications/trans-adults-united-states/" target="_blank" rel="noopener noreferrer">williamsinstitute.law.ucla.edu</a></div>
+      <div class="source-item"><strong>CBC — False claims after Tumbler Ridge</strong> — <a href="https://www.cbc.ca/news/canada/tumbler-ridge-shooting-trans-community-false-claims-9.7085078" target="_blank" rel="noopener noreferrer">cbc.ca</a></div>
+      <div class="source-item"><strong>GLAAD — Debunking Trans Terrorism</strong> — <a href="https://glaad.org/debunking-trans-terrorism/" target="_blank" rel="noopener noreferrer">glaad.org</a></div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 2 — 2020–2025
+    ====================================================== -->
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Across all three major databases (GVA, Violence Prevention Project, Mother Jones), transgender people are underrepresented among mass shooters relative to their share of the population. The broadest definition shows ~9× underrepresentation; the strictest shows 1 confirmed trans shooter out of 149–201 incidents. Of 8 names commonly cited online, 2 are disputed or unconfirmed.</div>
+
+    <div id="part2"></div>
+    <div class="part-heading">
+      <span class="part-label">Part 2</span>
+      <h2 class="part-title">2020–2025 — The Most-Cited Five Years</h2>
+    </div>
+
+    <span class="section-label">06 — Why This Period Has Been The Focus</span>
+
+    <div class="box box-neutral">
+      <p>The 2020–2025 window is the period most commonly referenced in political debates about transgender people and mass shootings. During this time, Rep. Ronny Jackson (R-TX) called for trans people to be removed from "the streets and the internet." The Heritage Foundation petitioned the FBI to designate "Transgender Ideology-Inspired Violent Extremism" as a domestic terror threat. The FBI was reportedly preparing to classify certain trans offenders as a "nihilistic violent extremist" threat group. The Trump DOJ discussed revoking trans people's right to possess firearms. This section examines what the data from this exact window actually shows.</p>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">07 — GVA Totals by Year, 2020–2025</span>
+
+    <div class="year-grid">
+      <div class="year-card"><div class="year-label">2020</div><div class="year-count">610</div></div>
+      <div class="year-card"><div class="year-label">2021</div><div class="year-count">690</div></div>
+      <div class="year-card"><div class="year-label">2022</div><div class="year-count">644</div></div>
+      <div class="year-card"><div class="year-label">2023</div><div class="year-count">660</div></div>
+      <div class="year-card"><div class="year-label">2024</div><div class="year-count">504</div></div>
+      <div class="year-card"><div class="year-label">2025</div><div class="year-count">408</div></div>
+    </div>
+
+    <div class="total-bar"><span class="total-bar-key">Total GVA mass shootings, 2020–2025</span><span class="total-bar-val">3,516</span></div>
+
+    <div class="stat-block">
+      <div class="stat-block-header"><span class="stat-block-name">GVA — 2020–2025 Window Only</span><span class="stat-block-period">Broadest definition · 4+ shot</span></div>
+      <div class="stat-rows">
+        <div class="stat-row"><span class="stat-key">Total mass shootings</span><span class="stat-val neutral">3,516</span></div>
+        <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">2 — Hale, Westman</span></div>
+        <div class="stat-row"><span class="stat-key">+ Disputed (Aldrich — nonbinary claim via lawyer only)</span><span class="stat-val neutral">1 additional if counted</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share (confirmed only)</span><span class="stat-val negative">0.057%</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict (confirmed only)</span><span class="stat-val positive">UNDERREPRESENTED ~14× (share of incidents)</span></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">08 — Per Capita, 2020–2025</span>
+
+    <div class="capita-grid">
+      <div class="capita-card">
+        <div class="capita-big">0.00014%</div>
+        <div class="capita-label">of trans people committed a GVA mass shooting in 2020–2025</div>
+      </div>
+      <div class="capita-card">
+        <div class="capita-big negative">0.00105%</div>
+        <div class="capita-label">of the general US population committed a GVA mass shooting in 2020–2025</div>
+      </div>
+    </div>
+    <div class="capita-verdict">TRANS PEOPLE ~7.5× LESS LIKELY PER CAPITA IN THIS EXACT WINDOW</div>
+
+    <div class="chart-wrap" style="margin-top:12px;">
+      <div class="chart-title">2020–2025: Per Capita Mass Shooting Rate Comparison</div>
+      <div class="chart-sub">GVA mass shootings per 100,000 people in the exact window most cited in political debates</div>
+      <div class="chart-canvas-wrap" style="height:200px;"><canvas id="chart2" role="img" aria-label="Horizontal bar chart: trans people 0.14 per 100k vs. general US population 1.05 per 100k in 2020–2025. Trans people are ~7.5x less likely."></canvas></div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">09 — Three Cases Where Trans Identity Was Claimed But Officially Refuted</span>
+
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div><div class="shooter-name">Philadelphia Shooter, 2023</div><div class="shooter-meta-line">Philadelphia, Pennsylvania</div></div>
+        <span class="identity-badge badge-unconfirmed">&#10005; CONFIRMED NOT TRANS</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">The claim</div><div class="shooter-val alert">Viral photos showed the suspect in women's clothing. Multiple media outlets and social media posts identified him as transgender.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Official record</div><div class="shooter-val ok">Philadelphia DA's office stated the suspect "has not identified themselves as trans" and referred to him as a man. NBC News confirmed the trans identification was inaccurate.</div></div>
+      </div>
+    </div>
+
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div><div class="shooter-name">Apalachee High School Shooter, 2024</div><div class="shooter-meta-line">Winder, Georgia</div></div>
+        <span class="identity-badge badge-unconfirmed">&#10005; ACTUALLY ANTI-TRANS</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">The claim</div><div class="shooter-val alert">Social media users falsely identified the 14-year-old shooter as transgender based on appearance and speculation.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Official record</div><div class="shooter-val ok">A Discord account linked to him by law enforcement expressed frustration with the acceptance of transgender people. The shooter was not trans — he documented anti-trans views. (CNN)</div></div>
+      </div>
+    </div>
+
+    <div class="shooter-card">
+      <div class="shooter-card-head">
+        <div><div class="shooter-name">Texas ICE Facility Incident, 2025</div><div class="shooter-meta-line">Texas</div></div>
+        <span class="identity-badge badge-disputed">NOT A MASS SHOOTING</span>
+      </div>
+      <div class="shooter-card-body">
+        <div class="shooter-row"><div class="shooter-key">The claim</div><div class="shooter-val alert">Cited in published lists of "trans mass shootings." Also included in some lists: a Molotov cocktail thrown at Tesla vehicles — not a shooting.</div></div>
+        <div class="shooter-row"><div class="shooter-key">Official record</div><div class="shooter-val ok">One police officer was injured. No fatalities. Does not qualify under GVA (requires 4+ shot) or any other standard definition. Including it as a mass shooting is factually wrong. (Washington Post, PolitiFact)</div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">10 — Political Responses During This Period</span>
+
+    <div class="policy-card">
+      <div class="policy-who">The Heritage Foundation — 2025</div>
+      Petitioned the FBI to designate <strong>"Transgender Ideology-Inspired Violent Extremism"</strong> as a domestic terror threat. Also published a claim that <strong>"half of all non-gang-related school shootings from 2015–2025 involved transgender ideology."</strong> Wired investigated and found the methodology <strong>"misleading by design, arbitrary."</strong>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-who">Rep. Ronny Jackson (R-TX) — September 2025</div>
+      Said trans people <strong>"have an underlying level of aggressiveness"</strong> and called for removing them from <strong>"the streets and the internet"</strong> — suggesting banning trans people from communicating with each other online.
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-who">FBI — Reported 2025</div>
+      Reportedly preparing to classify certain transgender offenders as a <strong>"nihilistic violent extremist"</strong> threat group — placing trans people in the same federal threat category as ISIS-inspired attackers.
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-who">Trump DOJ — 2025</div>
+      Members suggested <strong>revoking trans people's right to possess firearms</strong> — based substantially on this shooting data.
+    </div>
+
+    <div class="box box-brick">
+      <p>Every response above was prompted by <strong>2 confirmed trans shooters out of 3,516 GVA mass shootings</strong> in this window — a period in which trans people were ~14× underrepresented by share of incidents, and ~7.5× less likely per capita. Neither confirmed shooter had a motive linked to their trans identity. The statistical data does not support the pattern being cited as justification for these policy actions.</p>
+    </div>
+
+    <div class="sources-section">
+      <span class="sources-section-label">Part 2 Additional Sources</span>
+      <div class="source-item"><strong>GVA Annual Totals</strong> — <a href="https://www.gunviolencearchive.org/past-tolls" target="_blank" rel="noopener noreferrer">gunviolencearchive.org/past-tolls</a></div>
+      <div class="source-item"><strong>NBC News — Philadelphia shooter not trans</strong> — <a href="https://www.nbcnews.com/news/us-news/philadelphia-shooting-suspect-isnt-trans-officials-say-speculation-continues-rcna91935" target="_blank" rel="noopener noreferrer">nbcnews.com</a></div>
+      <div class="source-item"><strong>CNN — Georgia shooter's Discord showed anti-trans views</strong> — <a href="https://www.cnn.com/2024/09/06/us/apalachee-high-school-shooting-suspect-discord" target="_blank" rel="noopener noreferrer">cnn.com</a></div>
+      <div class="source-item"><strong>Wired — Heritage Foundation methodology debunked</strong> — <a href="https://www.wired.com/story/heritage-foundation-transgender-school-shootings-false/" target="_blank" rel="noopener noreferrer">wired.com</a></div>
+      <div class="source-item"><strong>Washington Post — Texas ICE shooting context</strong> — <a href="https://www.washingtonpost.com/nation/2025/08/17/texas-ice-shooting-trans/" target="_blank" rel="noopener noreferrer">washingtonpost.com</a></div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 3 — DENOMINATOR PROBLEM
+    ====================================================== -->
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>In the 2020–2025 window most cited in policy debates, 2 confirmed trans shooters committed mass shootings out of 3,516 total GVA incidents — a ~14× underrepresentation by share of incidents. Neither had a motive linked to their trans identity. The policy actions these shootings prompted (calls for disarming trans people, proposed domestic terror designations) were based on 2 data points out of 3,516.</div>
+
+    <div id="part3"></div>
+    <div class="part-heading">
+      <span class="part-label">Part 3</span>
+      <h2 class="part-title">The Denominator Problem</h2>
+    </div>
+
+    <div class="box box-neutral">
+      <span class="box-label">An intentional methodological choice — explained</span>
+      <p>Parts 1 and 2 used <strong>1.43 million</strong> as the trans population denominator — binary trans adults only, deliberately excluding nonbinary people. This was a conscious choice to use the most conservative possible figure. Even with that undercount, trans people remain underrepresented in every database. The August 2025 Williams Institute report places the full trans adult population at <strong>2.1 million</strong>. When that figure is used, underrepresentation increases substantially.</p>
+    </div>
+
+    <span class="section-label">11 — The Real Trans Population (Williams Institute, August 2025)</span>
+
+    <div class="breakdown-wrap">
+      <div class="breakdown-row"><span class="breakdown-key">Trans women (MtF)</span><span class="breakdown-val">698,500</span></div>
+      <div class="breakdown-row"><span class="breakdown-key">Trans men (FtM)</span><span class="breakdown-val">730,500</span></div>
+      <div class="breakdown-row"><span class="breakdown-key">Nonbinary trans adults</span><span class="breakdown-val">707,100</span></div>
+      <div class="breakdown-row total-row"><span class="breakdown-key">Total trans adults (US)</span><span class="breakdown-val">2,136,100</span></div>
+    </div>
+
+    <div class="denom-grid">
+      <div class="denom-card conservative">
+        <div class="denom-label">Used in Parts 1 &amp; 2</div>
+        <div class="denom-num">1,429,000</div>
+        <div class="denom-sub">Binary trans only. Intentionally conservative — excludes nonbinary trans people entirely.</div>
+      </div>
+      <div class="denom-card full">
+        <div class="denom-label">Correct full figure</div>
+        <div class="denom-num">2,136,100</div>
+        <div class="denom-sub">All trans adults (Williams Institute 2025), including the 707,100 nonbinary trans people who are implicitly counted as shooters when Aldrich is cited.</div>
+      </div>
+    </div>
+
+    <span class="section-label">12 — Side by Side: How the Numbers Change</span>
+
+    <div class="table-scroll"><table class="compare-table">
+      <thead>
+        <tr>
+          <th>Metric</th><th>Binary only (1.43M)</th><th>Full trans pop (2.1M)</th><th>Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>All-time GVA rate per 100k</td><td class="td-neutral">0.35 per 100k</td><td class="td-positive">0.23 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
+        <tr><td>All-time underrepresentation</td><td class="td-neutral">~5× less likely</td><td class="td-positive">~7.4× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
+        <tr><td>2020–2025 GVA rate per 100k</td><td class="td-neutral">0.14 per 100k</td><td class="td-positive">0.094 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
+        <tr><td>2020–2025 underrepresentation</td><td class="td-neutral">~7.5× less likely</td><td class="td-positive">~11× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Underrepresentation Factor: Binary-Only vs. Full Trans Population</div>
+      <div class="chart-sub">How many times less likely trans people are to commit a mass shooting vs. the general population — two denominators</div>
+      <div class="chart-canvas-wrap" style="height:220px;"><canvas id="chart3" role="img" aria-label="Grouped bar chart: all-time GVA 5x or 7.4x underrepresented. 2020–2025: 7.5x or 11x. Both denominators show underrepresentation."></canvas></div>
+    </div>
+
+    <div class="box box-neutral">
+      <span class="box-label">The consistency problem</span>
+      <p>The most frequently cited shooter is Aldrich, who claimed a <strong>nonbinary</strong> identity — meaning a nonbinary person is being counted in the numerator. But population figures most commonly used exclude nonbinary people from the denominator. This is a methodological inconsistency. Both approaches applied consistently produce the same conclusion: <strong>underrepresentation.</strong></p>
+    </div>
+
+    <div class="sources-section">
+      <span class="sources-section-label">Part 3 Sources</span>
+      <div class="source-item"><strong>Williams Institute — How Many Adults Identify as Transgender (August 2025)</strong> — <a href="https://williamsinstitute.law.ucla.edu/publications/trans-adults-united-states/" target="_blank" rel="noopener noreferrer">williamsinstitute.law.ucla.edu</a></div>
+      <div class="source-item"><strong>The Hill — 2.8M in US now identify as transgender (August 2025)</strong> — <a href="https://thehill.com/homenews/lgbtq/5462128-transgender-americans-population-williams-institute/" target="_blank" rel="noopener noreferrer">thehill.com</a></div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 4 — LIMITATIONS & COUNTERARGUMENTS
+    ====================================================== -->
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>The population denominator used throughout this article (1.43 million) deliberately excludes nonbinary people to produce the most conservative possible figure. Using the full Williams Institute estimate of 2.1 million trans adults makes the underrepresentation even larger. If Aldrich (nonbinary) is counted in the numerator, the denominator must include nonbinary people — and the conclusion remains the same.</div>
+
+    <div id="part4"></div>
+    <div class="part-heading">
+      <span class="part-label">Part 4</span>
+      <h2 class="part-title">Limitations, Counterarguments &amp; Sensitivity Analysis</h2>
+    </div>
+
+    <span class="section-label">13 — The Small-Sample Problem</span>
+
+    <div class="box box-amber">
+      <span class="box-label">Critical statistical limitation</span>
+      <p>Every per-capita figure in this analysis is calculated from <strong>1 to 5 confirmed events</strong> spread across a population of 1.4–2.1 million people and thousands of total mass shootings. The 95% confidence interval on the underlying all-time GVA rate is roughly <strong>0.03% to 0.20%</strong>. The direction (underrepresentation) is clear across every calculation; the exact magnitude has wide error bars and should not be treated as a precise figure. A single newly verified case would shift the all-time rate from 0.09% to 0.10% — the qualitative conclusion would not change, but the magnitude would.</p>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">14 — The Strongest Counterargument: Crime Prevention Research Center / Lott</span>
+
+    <div class="steelman-card">
+      <div class="steelman-head">
+        <div>
+          <div class="steelman-title">Crime Prevention Research Center (CPRC) / John Lott</div>
+          <div class="steelman-sub">Primary source of the overrepresentation claim · actively cited in policy debates</div>
+        </div>
+        <span class="badge-opposing">OPPOSING CLAIM</span>
+      </div>
+      <div class="steelman-body">
+        <div class="steelman-row"><div class="steelman-key">The Claim</div><div class="steelman-val">Lott and CPRC argue that transgender individuals are overrepresented among mass shooters by 4–7× when examining public indiscriminate mass shootings between approximately 2016–2023. Their published list includes 8–10 individuals identified as trans or nonbinary.</div></div>
+        <div class="steelman-row"><div class="steelman-key">Their Method</div><div class="steelman-val">Uses a strict "public indiscriminate" definition, counts 8–10 trans/nonbinary perpetrators, and divides by a trans population share of approximately 0.3–0.5% — an older estimate from earlier CDC surveys.</div></div>
+        <div class="steelman-divider"></div>
+        <div class="steelman-row"><div class="steelman-key">Issue 1</div><div class="steelman-val rebuttal">The population estimate of 0.3–0.5% is outdated. The Williams Institute's August 2025 report places the adult trans population at 0.8% (1.43M binary, 2.1M including nonbinary). Using the current figure cuts or eliminates the apparent overrepresentation.</div></div>
+        <div class="steelman-row"><div class="steelman-key">Issue 2</div><div class="steelman-val rebuttal">Lott's list includes Butler (never confirmed by law enforcement), Aldrich (post-arrest legal claim only), and Van Rootselaar (Canadian, not in any US database). Removing unverified cases brings his count to 4–5.</div></div>
+        <div class="steelman-row"><div class="steelman-key">Issue 3</div><div class="steelman-val rebuttal">Even accepting his full list of 8–10 and his population estimate of 0.5%: 8 shooters / 700,000 trans adults × 100,000 = 1.14 per 100k. The GVA general population rate = 1.76 per 100k. This still shows underrepresentation. The comparison uses the GVA baseline deliberately: if we are asking whether trans people are more dangerous to the general public than anyone else, the appropriate baseline is the rate at which anyone commits a mass shooting — which is the GVA rate. You cannot apply a strict counting filter only to trans shooters and not to the general population; that produces a biased numerator against an unfiltered denominator.</div></div>
+        <div class="steelman-row"><div class="steelman-key">Issue 4</div><div class="steelman-val rebuttal">Overrepresentation in Lott's framing only appears when using share-of-incidents (not per-capita) combined with an outdated, lower population estimate. These are not equivalent measures.</div></div>
+        <div class="steelman-row"><div class="steelman-key">What Remains</div><div class="steelman-val">Lott's strongest legitimate point: <em>if</em> you use share-of-incidents rather than per-capita, <em>and</em> use an outdated low population estimate, <em>and</em> count all disputed/unconfirmed cases, a surface-level overrepresentation can be constructed. All three methodological choices must be applied simultaneously — and all three favor the overrepresentation conclusion in ways that are not individually defensible.</div></div>
+        <div class="steelman-row"><div class="steelman-key">2026 Update</div><div class="steelman-val rebuttal">Lott's 2026 posts add Dorgan (Pawtucket) to his list. Dorgan was a targeted domestic shooting — excluded under every strict definition Lott claims to prefer. Including domestic incidents while citing a "public indiscriminate" definition is internally inconsistent.</div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <span class="section-label">15 — Full Sensitivity Analysis: Every Assumption Combination</span>
+
+    <div class="table-scroll"><table class="sens-table">
+      <thead>
+        <tr><th>Shooter count assumption</th><th>Population used</th><th>Trans rate/100k</th><th>vs. General pop</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr class="row-highlight"><td class="sc-assump">Confirmed only (5)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.35</td><td class="sc-rate">5.0× lower</td><td class="sc-under">UNDER ~5×</td></tr>
+        <tr class="row-highlight"><td class="sc-assump">Confirmed only (5)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.23</td><td class="sc-rate">7.4× lower</td><td class="sc-under">UNDER ~7×</td></tr>
+        <tr><td class="sc-assump">+ Aldrich as trans (6)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.42</td><td class="sc-rate">4.2× lower</td><td class="sc-under">UNDER ~4×</td></tr>
+        <tr><td class="sc-assump">+ Aldrich as trans (6)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.28</td><td class="sc-rate">6.3× lower</td><td class="sc-under">UNDER ~6×</td></tr>
+        <tr><td class="sc-assump">+ Butler unverified (7)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.49</td><td class="sc-rate">3.6× lower</td><td class="sc-under">UNDER ~4×</td></tr>
+        <tr><td class="sc-assump">+ Butler unverified (7)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.33</td><td class="sc-rate">5.3× lower</td><td class="sc-under">UNDER ~5×</td></tr>
+        <tr><td class="sc-assump">All 8 incl. Canadian (8)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.56</td><td class="sc-rate">3.1× lower</td><td class="sc-under">UNDER ~3×</td></tr>
+        <tr><td class="sc-assump">All 8 incl. Canadian (8)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.37</td><td class="sc-rate">4.8× lower</td><td class="sc-under">UNDER ~5×</td></tr>
+        <tr><td class="sc-assump">Lott max ~10 + old pop (0.5%)</td><td class="sc-pop">Old est. 700k</td><td class="sc-rate">1.43</td><td class="sc-rate">1.2× lower</td><td class="sc-under">UNDER (marginal)</td></tr>
+        <tr class="row-problem"><td class="sc-assump">Share-of-incidents only, Lott max + old pop — <em>not per-capita</em></td><td class="sc-pop">0.3–0.5% share</td><td class="sc-rate">~5% of VPP</td><td class="sc-rate">vs. 0.3–0.5% pop</td><td class="sc-over">OVER* (method flaw)</td></tr>
+      </tbody>
+    </table></div>
+
+    <p style="font-size:0.72rem;color:var(--text-quiet);line-height:1.55;margin-bottom:16px;">* The only scenario producing overrepresentation requires three simultaneous choices: maximum unverified shooter count, an outdated low population estimate, AND share-of-incidents rather than per-capita rate. Every per-capita calculation across all assumption combinations produces underrepresentation.</p>
+
+    <div class="divider"></div>
+    <span class="section-label">16 — What This Data Cannot Establish</span>
+
+    <div class="limitation-grid">
+      <div class="limitation-item">
+        <div class="limitation-title">Age &amp; Sex Confounders</div>
+        <div class="limitation-text">Mass shooters are overwhelmingly young males (~97–98% natal male). The trans population skews younger. Age-standardized and sex-stratified rates would be more precise but require data not currently available in public databases.</div>
+      </div>
+      <div class="limitation-item">
+        <div class="limitation-title">Mental Health Overlap</div>
+        <div class="limitation-text">Trans adults have higher rates of depression and anxiety, partly attributed to minority stress. Mass shooters also have high rates of documented mental illness. This overlap would need to be controlled for in a rigorous analysis. This site does not make causal claims about trans identity and violence.</div>
+      </div>
+      <div class="limitation-item">
+        <div class="limitation-title">Classification Replicability</div>
+        <div class="limitation-text">The identity verdicts here are based on sourced reporting. Readers are encouraged to check the primary sources linked for each shooter profile to independently verify.</div>
+      </div>
+      <div class="limitation-item">
+        <div class="limitation-title">Causation vs. Correlation</div>
+        <div class="limitation-text">Even if rates were higher, this data would not establish trans identity as a causal factor. Individual-level factors — mental illness, social isolation, notoriety-seeking, access to weapons — are documented in each confirmed case. Trans identity is not cited as a motive by investigators in any case on this site.</div>
+      </div>
+    </div>
+
+    <div class="sources-section">
+      <span class="sources-section-label">Part 4 Sources</span>
+      <div class="source-item"><strong>CPRC / Lott — Mass Public Shootings database</strong> — <a href="https://crimeresearch.org/2023/04/mass-public-shootings-by-transgender-people/" target="_blank" rel="noopener noreferrer">crimeresearch.org</a></div>
+      <div class="source-item"><strong>FactCheck.org — CPRC methodology analysis</strong> — <a href="https://www.factcheck.org/2025/09/few-mass-shooters-have-been-transgender/" target="_blank" rel="noopener noreferrer">factcheck.org</a></div>
+      <div class="source-item"><strong>FBI — Active Shooter Incidents 2024 Report</strong> — <a href="https://www.fbi.gov/file-repository/active-shooter-incidents-2024.pdf" target="_blank" rel="noopener noreferrer">fbi.gov</a></div>
+      <div class="source-item"><strong>GLAAD — Trans people as victims vs. perpetrators</strong> — <a href="https://glaad.org/debunking-trans-terrorism/" target="_blank" rel="noopener noreferrer">glaad.org</a></div>
+    </div>
+
+
+    <!-- ======================================================
+         PART 5 — CONCLUSION
+    ====================================================== -->
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>All per-capita rates are based on 1–5 events among millions of people and thousands of total shootings. The direction (underrepresentation) is robust; the exact magnitude has wide confidence intervals. Nine of ten assumption combinations in the sensitivity analysis produce underrepresentation. The one exception requires three individually indefensible methodological choices applied simultaneously.</div>
+
+    <div id="part5"></div>
+    <div class="part-heading">
+      <span class="part-label">Part 5</span>
+      <h2 class="part-title">Conclusion — What The Evidence Shows</h2>
+    </div>
+
+    <div class="conclusion-stats">
+      <div class="conclusion-stat">
+        <div class="cs-num positive">0 of 3</div>
+        <div class="cs-text"><strong>Zero of the three major databases</strong> show trans people overrepresented as perpetrators. The broadest definition (GVA) shows ~9× underrepresentation by share of incidents (~5× per capita). The strictest (VPP/Mother Jones) produces exactly one confirmed trans shooter out of 149–201 incidents.</div>
+      </div>
+      <div class="conclusion-stat">
+        <div class="cs-num neutral">2/3,516</div>
+        <div class="cs-text"><strong>In the exact five-year window most cited in policy debates</strong> (2020–2025), two confirmed trans people committed GVA mass shootings out of 3,516 total incidents. Trans people were ~14× underrepresented by share of incidents, and ~7.5× less likely per capita than the general population.</div>
+      </div>
+      <div class="conclusion-stat">
+        <div class="cs-num positive">0</div>
+        <div class="cs-text"><strong>Zero confirmed trans shooters</strong> on this site had a motive attributed to their transgender identity by law enforcement. Confirmed motives: notoriety-seeking, mental illness, domestic violence, retaliation for bullying — none caused by or unique to being trans.</div>
+      </div>
+      <div class="conclusion-stat">
+        <div class="cs-num neutral">9/10</div>
+        <div class="cs-text"><strong>Nine out of ten assumption combinations</strong> in the sensitivity analysis produce underrepresentation. The single combination producing overrepresentation requires three simultaneous methodological choices, none of which are individually defensible.</div>
+      </div>
+      <div class="conclusion-stat">
+        <div class="cs-num accent">4×</div>
+        <div class="cs-text"><strong>Trans people are approximately four times more likely to be victims</strong> of violent crime than perpetrators of it. The evidence more accurately reflects the opposite of the political narrative being advanced. <span style="color:var(--text-quiet);font-size:0.76rem;">Source: <a class="inline-link" href="https://glaad.org/debunking-trans-terrorism/" target="_blank" rel="noopener noreferrer">GLAAD / Human Rights Campaign 2025</a></span></div>
+      </div>
+    </div>
+
+    <div class="conclusion-final">
+      <span class="cf-label">Bottom line</span>
+      <p class="cf-statement">Every database. Every time window.<br>Every population figure. Every assumption.<br>The result is the same: underrepresentation.</p>
+      <p class="cf-sub">The claim that transgender people are disproportionately responsible for mass shootings does not survive contact with the data under any methodologically consistent calculation. Trans people are statistically less likely — not more likely — to commit mass shootings than the general population. Political actions taken against the trans community on the basis of this claim are not supported by the evidence.</p>
+    </div>
+
+    <div class="falsify-box">
+      <span class="falsify-label">Falsifiability threshold</span>
+      <p>This conclusion would change if independent researchers produced verified documentation of additional confirmed transgender mass shooters sufficient to bring the per-capita rate above the baseline population rate. Under the strictest definition (4+ killed, public): approximately 3&ndash;5 additional confirmed cases in the 2013&ndash;2026 window would move the rate to proportional representation. If such documentation is produced, this article will be updated. The dataset and classification criteria are transparent and reproducible.</p>
+    </div>
+
+    <div class="scope-box">
+      <strong>Mental health context.</strong> Research shows many mass shooters had documented suicidality or grievance narratives, but population-level psychiatric diagnoses are poor predictors of mass violence. We record only explicit, documented indicators from court records and medical examiner statements &mdash; not speculative diagnoses. Being transgender is not a mental illness, and this analysis does not treat it as one.
+    </div>
+
+    <div class="scope-box">
+      <strong>Context: Trans people as victims of violence.</strong> While this article examines the claim that trans people are overrepresented as perpetrators, the data on victimization runs in the opposite direction. FBI hate crime statistics show anti-transgender bias incidents have risen every year since tracking began in 2013, reaching a record high in 2022 (the most recent complete year). The Human Rights Campaign documented at least 320+ violent deaths of transgender and gender non-conforming people in the U.S. between 2013 and 2025, disproportionately Black trans women. Trans people are approximately four times more likely to be victims of violent crime than perpetrators of it. The political narrative frames trans people as threats; the data frames them as targets.
+    </div>
+
+    <div style="margin: 28px 0;">
+      <span style="font-family:var(--font-mono); font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet); display:block; margin-bottom:12px;">Frequently Asked Questions</span>
+      <div class="faq-item">
+        <div class="faq-q">Q: Is this saying transgender people don&rsquo;t commit crimes?</div>
+        <div class="faq-a">No. This analysis concerns a narrow class of mass shooting events and does not generalize to other crimes or contexts. It addresses only the specific political claim about mass shooting overrepresentation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: Could cases be hidden or misclassified?</div>
+        <div class="faq-a">We model this explicitly in the sensitivity analysis (Part 4). Even under the most aggressive inclusion assumptions &mdash; counting all disputed, misidentified, and ambiguous cases &mdash; nine of ten assumption combinations still produce underrepresentation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: Does this prove causation?</div>
+        <div class="faq-a">No. These counts are descriptive, not causal. This article does not claim that being transgender prevents mass shootings. It establishes that the political claim of overrepresentation is not supported by the data.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: Why does this article exist at all?</div>
+        <div class="faq-a">Because the claim is being used to justify legislation &mdash; including proposals to revoke firearms rights and designate trans people as domestic terror threats. Claims used to restrict civil rights must meet a high evidentiary bar. This one does not.</div>
+      </div>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. "Trans People &amp; Mass Shootings: The Full Picture." Updated February 2026. https://www.truthbased.org/trans-shooters</span>
+    </div>
+
+    <div style="margin-top:32px; padding:16px 18px; background:var(--card-tinted,var(--surface,#fdfcfa)); border:1px solid var(--rule,var(--border,#dedad3)); border-radius:4px;">
+      <span style="font-family:'Courier Prime',monospace; font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet,#736e66); display:block; margin-bottom:8px;">Related Research</span>
+      <a href="/shootings-by-demographic" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Mass Shootings by Demographic</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim,#706d64); margin-top:4px;">Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender.</span>
+    
+      <a href="/youth-gender-medicine" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px; display:block; margin-top:10px;">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Every major study. The Cass Review and its counter-critiques. Both sides steelmanned.</span>
+    </div>
+
+  </article><!-- end .article-wrap -->
+  </main>
+
+
+  <footer class="site-footer">
+    <span class="footer-note">TruthBased.org &mdash; Last updated February 2026 &middot; Data through Feb 20, 2026</span>
+    <span class="footer-note">Sources: GVA, Violence Prevention Project, Mother Jones, Williams Institute, FBI</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    Chart.defaults.color = '#706d64';
+    Chart.defaults.font.family = "'Courier Prime', monospace";
+    Chart.defaults.font.size = 11;
+
+    // Chart 1 — Trans % of shooters vs % of population across 3 databases
+    (function() {
+      const ctx = document.getElementById('chart1').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['GVA (broad)\n2013–2026', 'Violence Prevention\nProject (strict)', 'Mother Jones\n(strict)'],
+          datasets: [
+            {
+              label: 'Trans % of shooters',
+              data: [0.09, 0.50, 0.67],
+              backgroundColor: 'rgba(184,58,30,0.55)',
+              borderColor: '#b83a1e',
+              borderWidth: 1.5,
+              borderRadius: 3,
+            },
+            {
+              label: 'Trans % of US adults (Williams Institute 2025)',
+              data: [0.8, 0.8, 0.8],
+              backgroundColor: 'rgba(27,107,62,0.5)',
+              borderColor: '#1b6b3e',
+              borderWidth: 1.5,
+              borderRadius: 3,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top', labels: { boxWidth: 11, padding: 14, color: '#706d64' } },
+            tooltip: {
+              backgroundColor: '#ffffff',
+              borderColor: '#dedad3',
+              borderWidth: 1,
+              titleColor: '#151311',
+              bodyColor: '#3d3a33',
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%` }
+            }
+          },
+          scales: {
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 0 } },
+            y: {
+              grid: { color: '#ede9e0' },
+              ticks: { color: '#736e66', callback: v => v.toFixed(1) + '%' },
+              title: { display: true, text: 'Percentage (%)', color: '#736e66' },
+              max: 1.1
+            }
+          }
+        }
+      });
+    })();
+
+    // Chart 2 — Per-capita rate 2020–2025
+    (function() {
+      const ctx = document.getElementById('chart2').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Trans people', 'General US population'],
+          datasets: [{
+            label: 'Mass shootings per 100,000 people (2020–2025)',
+            data: [0.14, 1.05],
+            backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.5)'],
+            borderColor: ['#1b6b3e', '#b83a1e'],
+            borderWidth: 1.5,
+            borderRadius: 4,
+            barThickness: 70,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#ffffff',
+              borderColor: '#dedad3',
+              borderWidth: 1,
+              titleColor: '#151311',
+              bodyColor: '#3d3a33',
+              callbacks: { label: ctx => ` ${ctx.parsed.x.toFixed(2)} per 100,000 people` }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#ede9e0' },
+              ticks: { color: '#736e66', callback: v => v.toFixed(2) },
+              title: { display: true, text: 'GVA mass shootings per 100,000 people', color: '#736e66' }
+            },
+            y: { grid: { display: false }, ticks: { color: '#3d3a33', font: { size: 12 } } }
+          }
+        }
+      });
+    })();
+
+    // Chart 3 — Underrepresentation factor by denominator
+    (function() {
+      const ctx = document.getElementById('chart3').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['All-time GVA\n(5 confirmed / ~5,900 total)', '2020–2025 GVA\n(2 confirmed / 3,516 total)'],
+          datasets: [
+            {
+              label: 'Binary-only denominator (1.43M)',
+              data: [5.0, 7.5],
+              backgroundColor: 'rgba(27,107,62,0.35)',
+              borderColor: '#1b6b3e',
+              borderWidth: 1.5,
+              borderRadius: 3,
+            },
+            {
+              label: 'Full trans pop denominator (2.1M)',
+              data: [7.4, 11.0],
+              backgroundColor: 'rgba(27,107,62,0.6)',
+              borderColor: '#1b6b3e',
+              borderWidth: 1.5,
+              borderRadius: 3,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top', labels: { boxWidth: 11, padding: 14, color: '#706d64' } },
+            tooltip: {
+              backgroundColor: '#ffffff',
+              borderColor: '#dedad3',
+              borderWidth: 1,
+              titleColor: '#151311',
+              bodyColor: '#3d3a33',
+              callbacks: { label: ctx => ` ${ctx.dataset.label}: ~${ctx.parsed.y}× less likely` }
+            }
+          },
+          scales: {
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 0 } },
+            y: {
+              grid: { color: '#ede9e0' },
+              ticks: { color: '#736e66', callback: v => '~' + v + '×' },
+              title: { display: true, text: 'Times less likely than general population', color: '#736e66' },
+              min: 0, max: 14
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  </script>
+
+</body>
+</html>
