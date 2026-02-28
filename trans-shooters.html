@@ -17,6 +17,46 @@
   <meta name="twitter:image"  content="https://www.truthbased.org/og-trans-shooters.png">
 
     <link rel="canonical" href="https://www.truthbased.org/trans-shooters">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this saying transgender people don't commit crimes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This analysis concerns a narrow class of mass shooting events and does not generalize to other crimes or contexts. It addresses only the specific political claim about mass shooting overrepresentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Could cases be hidden or misclassified?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is modeled explicitly in the sensitivity analysis. Even under the most aggressive inclusion assumptions — counting all disputed, misidentified, and ambiguous cases — nine of ten assumption combinations still produce underrepresentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this prove causation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. These counts are descriptive, not causal. This article does not claim that being transgender prevents mass shootings. It establishes that the political claim of overrepresentation is not supported by the data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does this article exist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because the claim is being used to justify legislation — including proposals to revoke firearms rights and designate trans people as domestic terror threats. Claims used to restrict civil rights must meet a high evidentiary bar. This one does not."
+        }
+      }
+    ]
+  }
+  </script>
 
     <meta name="theme-color" content="#b83a1e">
 
@@ -1082,8 +1122,64 @@
     [data-theme="dark"] .math-box { background: #0f0e0d; }
     [data-theme="dark"] .chart-wrap { background: #2a2826; }
     [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .conclusion-final { background-color: #2a2826; }
+    [data-theme="dark"] .cf-statement { color: #e8e5e0; }
+    [data-theme="dark"] .cf-sub { color: rgba(197,192,184,0.75); }
+    [data-theme="dark"] .cf-label { color: rgba(197,192,184,0.45); }
 
 
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
     /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
     html { transition: background-color 0.3s ease, color 0.3s ease; }
     body { transition: background-color 0.3s ease, color 0.3s ease; }
@@ -1135,7 +1231,12 @@
     @media print {
       .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
       .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
-      body { background: #fff !important; color: #000 !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .shooter-card, .conclusion-stat, .tldr-box, .falsify-box { break-inside: avoid; }
+      .part-heading { break-after: avoid; }
     }
     @media (max-width: 640px) {
       .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
@@ -1174,6 +1275,18 @@
     [data-theme="dark"] .table-scroll::after {
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
     }
+    /* --- TL;DR, Scope, FAQ additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scope-box { background: var(--bg); border: 1px dashed var(--rule); border-radius: 4px; padding: 14px 18px; margin: 0 0 30px; font-size: 0.76rem; color: var(--text-quiet); line-height: 1.5; }
+    .scope-box strong { color: var(--text-head); }
+    .faq-item { margin: 14px 0; }
+    .faq-q { font-weight: 700; font-size: 0.82rem; color: var(--text-head); margin-bottom: 4px; }
+    .faq-a { font-size: 0.8rem; color: var(--text-body); line-height: 1.5; }
+    .falsify-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
     </style>
 
   <script>
@@ -1184,6 +1297,20 @@
       if (stored) html.setAttribute('data-theme', stored);
       else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
     })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Trans People & Mass Shootings: The Full Picture",
+    "description": "Three databases. Every definition. Full sensitivity analysis. Every counterargument steelmanned with primary sources.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/trans-shooters",
+    "keywords": ["mass shootings", "transgender", "gun violence", "fact-check", "statistics"]
+  }
   </script>
 </head>
 <body>
@@ -1262,6 +1389,35 @@
       </div>
     </div>
 
+    <div class="tldr-box">
+      <span class="tldr-label">TL;DR &mdash; The headline numbers</span>
+      <p><strong>Zero of three major databases</strong> show trans people overrepresented as mass shooters. Under the broadest definition (GVA): ~5&times; underrepresentation per capita. Under the strictest (Mother Jones/VPP): <strong>1 confirmed trans shooter out of 149&ndash;201 incidents</strong>. In 2020&ndash;2025 specifically: 2 out of 3,516 incidents. The claim does not survive contact with the data under any consistent methodology. <strong>Nine of ten sensitivity analysis combinations produce underrepresentation.</strong></p>
+    </div>
+
+    <div class="scope-box">
+      <strong>Ethical note.</strong> Categorizing mass shooters by any identity group &mdash; race, gender, religion, or transgender status &mdash; carries inherent risks of stigmatization. We perform this analysis solely because the claim is being used to justify legislation targeting a specific community. We rely only on public law enforcement records and court filings for identity classification. Where sources conflict, cases are labeled &ldquo;disputed&rdquo; and excluded from confirmed counts.
+    </div>
+
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"Trans people are disproportionately mass shooters"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Trans people are 5&ndash;14&times; <em>under</em>represented across all three major databases, under every definition.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"There have been many trans mass shooters recently"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>2 confirmed trans shooters out of 3,516 mass shootings in 2020&ndash;2025. Of 8 names cited online, 2 are disputed or unconfirmed.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"Trans identity was the motive"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Zero confirmed trans shooters had a motive attributed to trans identity by law enforcement. Motives: notoriety, mental illness, domestic violence, bullying.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>"This justifies restricting trans people's rights"</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Policy proposals (terror designations, firearms bans) are based on 2 data points out of 3,516 incidents. The statistical basis does not exist.</div>
+      </div>
+    </div>
 
     <!-- ======================================================
          PART 1 — ALL-TIME OVERVIEW
@@ -1302,7 +1458,7 @@
     </div>
 
     <div class="stat-block">
-      <div class="stat-block-header"><span class="stat-block-name">Violence Prevention Project</span><span class="stat-block-period">Strict definition · through 2024</span></div>
+      <div class="stat-block-header"><span class="stat-block-name">Violence Prevention Project</span><span class="stat-block-period">Strict definition · through 2025</span></div>
       <div class="stat-rows">
         <div class="stat-row"><span class="stat-key">Total shooters tracked</span><span class="stat-val neutral">~201</span></div>
         <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">1 — Audrey Hale only</span></div>
@@ -1518,6 +1674,8 @@
     <!-- ======================================================
          PART 2 — 2020–2025
     ====================================================== -->
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Across all three major databases (GVA, Violence Prevention Project, Mother Jones), transgender people are underrepresented among mass shooters relative to their share of the population. The broadest definition shows ~9× underrepresentation; the strictest shows 1 confirmed trans shooter out of 149–201 incidents. Of 8 names commonly cited online, 2 are disputed or unconfirmed.</div>
+
     <div id="part2"></div>
     <div class="part-heading">
       <span class="part-label">Part 2</span>
@@ -1653,6 +1811,8 @@
     <!-- ======================================================
          PART 3 — DENOMINATOR PROBLEM
     ====================================================== -->
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>In the 2020–2025 window most cited in policy debates, 2 confirmed trans shooters committed mass shootings out of 3,516 total GVA incidents — a ~14× underrepresentation by share of incidents. Neither had a motive linked to their trans identity. The policy actions these shootings prompted (calls for disarming trans people, proposed domestic terror designations) were based on 2 data points out of 3,516.</div>
+
     <div id="part3"></div>
     <div class="part-heading">
       <span class="part-label">Part 3</span>
@@ -1723,6 +1883,8 @@
     <!-- ======================================================
          PART 4 — LIMITATIONS & COUNTERARGUMENTS
     ====================================================== -->
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>The population denominator used throughout this article (1.43 million) deliberately excludes nonbinary people to produce the most conservative possible figure. Using the full Williams Institute estimate of 2.1 million trans adults makes the underrepresentation even larger. If Aldrich (nonbinary) is counted in the numerator, the denominator must include nonbinary people — and the conclusion remains the same.</div>
+
     <div id="part4"></div>
     <div class="part-heading">
       <span class="part-label">Part 4</span>
@@ -1817,6 +1979,8 @@
     <!-- ======================================================
          PART 5 — CONCLUSION
     ====================================================== -->
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>All per-capita rates are based on 1–5 events among millions of people and thousands of total shootings. The direction (underrepresentation) is robust; the exact magnitude has wide confidence intervals. Nine of ten assumption combinations in the sensitivity analysis produce underrepresentation. The one exception requires three individually indefensible methodological choices applied simultaneously.</div>
+
     <div id="part5"></div>
     <div class="part-heading">
       <span class="part-label">Part 5</span>
@@ -1852,7 +2016,38 @@
       <p class="cf-sub">The claim that transgender people are disproportionately responsible for mass shootings does not survive contact with the data under any methodologically consistent calculation. Trans people are statistically less likely — not more likely — to commit mass shootings than the general population. Political actions taken against the trans community on the basis of this claim are not supported by the evidence.</p>
     </div>
 
-  
+    <div class="falsify-box">
+      <span class="falsify-label">Falsifiability threshold</span>
+      <p>This conclusion would change if independent researchers produced verified documentation of additional confirmed transgender mass shooters sufficient to bring the per-capita rate above the baseline population rate. Under the strictest definition (4+ killed, public): approximately 3&ndash;5 additional confirmed cases in the 2013&ndash;2026 window would move the rate to proportional representation. If such documentation is produced, this article will be updated. The dataset and classification criteria are transparent and reproducible.</p>
+    </div>
+
+    <div class="scope-box">
+      <strong>Mental health context.</strong> Research shows many mass shooters had documented suicidality or grievance narratives, but population-level psychiatric diagnoses are poor predictors of mass violence. We record only explicit, documented indicators from court records and medical examiner statements &mdash; not speculative diagnoses. Being transgender is not a mental illness, and this analysis does not treat it as one.
+    </div>
+
+    <div class="scope-box">
+      <strong>Context: Trans people as victims of violence.</strong> While this article examines the claim that trans people are overrepresented as perpetrators, the data on victimization runs in the opposite direction. FBI hate crime statistics show anti-transgender bias incidents have risen every year since tracking began in 2013, reaching a record high in 2022 (the most recent complete year). The Human Rights Campaign documented at least 320+ violent deaths of transgender and gender non-conforming people in the U.S. between 2013 and 2025, disproportionately Black trans women. Trans people are approximately four times more likely to be victims of violent crime than perpetrators of it. The political narrative frames trans people as threats; the data frames them as targets.
+    </div>
+
+    <div style="margin: 28px 0;">
+      <span style="font-family:var(--font-mono); font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet); display:block; margin-bottom:12px;">Frequently Asked Questions</span>
+      <div class="faq-item">
+        <div class="faq-q">Q: Is this saying transgender people don&rsquo;t commit crimes?</div>
+        <div class="faq-a">No. This analysis concerns a narrow class of mass shooting events and does not generalize to other crimes or contexts. It addresses only the specific political claim about mass shooting overrepresentation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: Could cases be hidden or misclassified?</div>
+        <div class="faq-a">We model this explicitly in the sensitivity analysis (Part 4). Even under the most aggressive inclusion assumptions &mdash; counting all disputed, misidentified, and ambiguous cases &mdash; nine of ten assumption combinations still produce underrepresentation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: Does this prove causation?</div>
+        <div class="faq-a">No. These counts are descriptive, not causal. This article does not claim that being transgender prevents mass shootings. It establishes that the political claim of overrepresentation is not supported by the data.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q: Why does this article exist at all?</div>
+        <div class="faq-a">Because the claim is being used to justify legislation &mdash; including proposals to revoke firearms rights and designate trans people as domestic terror threats. Claims used to restrict civil rights must meet a high evidentiary bar. This one does not.</div>
+      </div>
+    </div>
 
     <div class="cite-this">
       <span class="cite-this-label">Cite this article</span>
@@ -1875,6 +2070,7 @@
   <footer class="site-footer">
     <span class="footer-note">TruthBased.org &mdash; Last updated February 2026 &middot; Data through Feb 20, 2026</span>
     <span class="footer-note">Sources: GVA, Violence Prevention Project, Mother Jones, Williams Institute, FBI</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
   </footer>
 
 
@@ -2089,6 +2285,19 @@
       update();
     })();
   
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
     /* Nav shadow on scroll */
     (function(){
       var nav = document.querySelector('.site-nav');
