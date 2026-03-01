@@ -12,7 +12,11 @@
   <meta property="og:title"       content="TruthBased.org — Independent Fact-Checking">
   <meta property="og:description" content="Primary-source fact-checking. Every counterargument steelmanned. No agenda.">
   <meta property="og:image"       content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title" content="TruthBased.org — Independent Fact-Checking">
+  <meta name="twitter:description" content="Primary sources. Steelmanned arguments. No agenda. Every claim tested against the data.">
   <meta name="twitter:image"      content="https://www.truthbased.org/og-image.png">
 
     <link rel="canonical" href="https://www.truthbased.org/">
@@ -639,7 +643,14 @@
     .feat-card:hover { border-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .footer-link { transition: color 0.15s; }
     .footer-link:hover { color: var(--brick) !important; }
-    </style>
+      @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 
   <script>
     /* ── Dark mode ── */
@@ -654,8 +665,29 @@
     <style>
       .acc-panel { grid-template-rows: 1fr !important; }
       .acc-panel-inner { visibility: visible !important; }
-    </style>
+      @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
   </noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.truthbased.org/",
+    "name": "TruthBased.org",
+    "description": "Independent fact-checking using primary sources, steelmanned arguments, and transparent methodology.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TruthBased.org",
+      "url": "https://www.truthbased.org"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -1235,7 +1267,12 @@
     (function(){
       var html = document.documentElement;
       var btn = document.querySelector('.theme-toggle');
-      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
