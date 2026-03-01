@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/shootings-by-demographic/:slug", "destination": "/shootings-by-demographic.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
