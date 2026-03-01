@@ -28,6 +28,20 @@
 
   <style>
 
+    :root {
+      --page-ground:  #f7f5f1;
+      --card-face:    #ffffff;
+      --text-primary: #151311;
+      --text-body:    #3d3a33;
+      --text-dim:     #706d64;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --green-live:   #1b6b3e;
+      --green-faint:  #e8f4ed;
+      --rule:         #dedad3;
+      --rule-mid:     #c5c1ba;
+    }
+
     .site-nav {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px; height: 52px;
@@ -57,20 +71,6 @@
        Warm off-white · Spectral headings · Sora body
        Single accent: deep brick #b83a1e
     ========================================================= */
-
-    :root {
-      --page-ground:  #f7f5f1;
-      --card-face:    #ffffff;
-      --text-primary: #151311;
-      --text-body:    #3d3a33;
-      --text-dim:     #706d64;
-      --text-quiet:   #736e66;
-      --brick:        #b83a1e;
-      --green-live:   #1b6b3e;
-      --green-faint:  #e8f4ed;
-      --rule:         #dedad3;
-      --rule-mid:     #c5c1ba;
-    }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
@@ -394,6 +394,18 @@
       gap: 1px;
     }
 
+    .source-pill {
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+      background: var(--rule);
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin: 2px 3px 2px 0;
+    }
+
     .sources-list li {
       font-family: 'Courier Prime', monospace;
       font-size: 0.62rem;
@@ -512,7 +524,6 @@
       .acc-meta { display: none; }
       .site-nav { padding: 0 16px; height: 46px; }
       .nav-category { display: none; }
-      .nav-tagline { display: none; }
       .nav-back { font-size: 0.65rem; padding: 3px 8px; }
       .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
       .acc-trigger { padding: 14px 16px; gap: 10px; }
@@ -522,7 +533,6 @@
       .row-title { font-size: 0.86rem; }
       .row-desc { font-size: 0.72rem; }
       .page-footer { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
-      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
 
     }
 
@@ -617,6 +627,15 @@
     }
 
   
+    .feat-card {
+      background: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
     .feat-card:hover { border-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .footer-link { transition: color 0.15s; }
     .footer-link:hover { color: var(--brick) !important; }
@@ -631,6 +650,12 @@
       else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
     })();
   </script>
+  <noscript>
+    <style>
+      .acc-panel { grid-template-rows: 1fr !important; }
+      .acc-panel-inner { visibility: visible !important; }
+    </style>
+  </noscript>
 </head>
 <body>
 
@@ -666,20 +691,30 @@
 
     <section class="featured-cards" style="max-width:940px; margin:0 auto 36px; padding:0 24px;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
-        <a href="/voter-fraud" class="feat-card" style="background:var(--card-face); border:1px solid var(--rule); border-radius:6px; padding:14px 16px; text-decoration:none; color:inherit; transition:box-shadow 0.15s, border-color 0.15s;">
+        <a href="/voter-fraud" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Voter Fraud: 0.000065%</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">2.5B ballots. Every prosecution. Every 2020 lawsuit.</span>
         </a>
-        <a href="/trans-shooters" class="feat-card" style="background:var(--card-face); border:1px solid var(--rule); border-radius:6px; padding:14px 16px; text-decoration:none; color:inherit; transition:box-shadow 0.15s, border-color 0.15s;">
+        <a href="/trans-shooters" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Trans People &amp; Mass Shootings</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Three databases. Every definition. Full sensitivity analysis.</span>
         </a>
-        <a href="/youth-gender-medicine" class="feat-card" style="background:var(--card-face); border:1px solid var(--rule); border-radius:6px; padding:14px 16px; text-decoration:none; color:inherit; transition:box-shadow 0.15s, border-color 0.15s;">
+        <a href="/youth-gender-medicine" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Gender-Affirming Care for Minors</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Cass Review. Counter-critiques. Both sides steelmanned.</span>
+        </a>
+        <a href="/border-crossings" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Border Crossings: The Real Data</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">25 years of CBP data. Title 42 explained. Every claim tested.</span>
+        </a>
+        <a href="/gun-violence" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Gun Violence vs. Peer Nations</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">OECD rates. CDC data. RAND policy evidence. Both sides.</span>
         </a>
       </div>
     </section>
@@ -696,13 +731,13 @@
 
     <!-- ── 01 Fact Checks ─────────────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-01" id="trigger-01">
         <span class="acc-num">01</span>
         <span class="acc-label">Fact Checks</span>
         <span class="acc-meta">General claims &amp; viral misinformation</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-01" aria-labelledby="trigger-01">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -748,13 +783,13 @@
 
     <!-- ── 02 Political Fact Checks ───────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-02" id="trigger-02">
         <span class="acc-num">02</span>
         <span class="acc-label">Political Fact Checks</span>
         <span class="acc-meta">Claims politicians make, measured against the record</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-02" aria-labelledby="trigger-02">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -802,6 +837,22 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
+              <a href="/border-crossings" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Border Crossings — What The Charts Actually Show</span>
+                  <span class="row-desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested — and both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">CBP Encounter Data</span>
+                    <span class="source-pill">Pew Research</span>
+                    <span class="source-pill">CBO 2024</span>
+                    <span class="source-pill">MPI</span>
+                    <span class="source-pill">TRAC Syracuse</span>
+                    <span class="source-pill">Cato Institute</span>
+                  </div>
+                </div>
+              </a>
+
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
@@ -818,14 +869,6 @@
                 </div>
               </div>
 
-              <div class="article-row is-pending">
-                <span class="row-status pending">Coming soon</span>
-                <div class="row-body">
-                  <span class="row-title">Border Crossings — What The Charts Actually Show</span>
-                  <span class="row-desc">CBP encounter numbers in full historical context — methodology changes, seasonal patterns, and what the data can and cannot tell us about unauthorized entry.</span>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -835,13 +878,13 @@
 
     <!-- ── 03 History & Myth-Busting ─────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-03" id="trigger-03">
         <span class="acc-num">03</span>
         <span class="acc-label">History &amp; Myth-Busting</span>
         <span class="acc-meta">Things everyone "knows," tested against primary documents</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-03" aria-labelledby="trigger-03">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -887,13 +930,13 @@
 
     <!-- ── 04 Science & Media Accuracy ───────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-04" id="trigger-04">
         <span class="acc-num">04</span>
         <span class="acc-label">Science &amp; Media Accuracy</span>
         <span class="acc-meta">What studies actually say vs. how they get reported</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-04" aria-labelledby="trigger-04">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -931,13 +974,13 @@
 
     <!-- ── 05 Economics & Policy ─────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-05" id="trigger-05">
         <span class="acc-num">05</span>
         <span class="acc-label">Economics &amp; Policy</span>
         <span class="acc-meta">Contested economic claims vs. BLS, CBO, and peer-reviewed data</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-05" aria-labelledby="trigger-05">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -975,13 +1018,13 @@
 
     <!-- ── 06 Health & Medicine ───────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-06" id="trigger-06">
         <span class="acc-num">06</span>
         <span class="acc-label">Health &amp; Medicine</span>
         <span class="acc-meta">Medical statistics and health claims vs. peer-reviewed evidence</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-06" aria-labelledby="trigger-06">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1037,13 +1080,13 @@
 
     <!-- ── 07 Religion & Society ─────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
         <span class="acc-num">07</span>
         <span class="acc-label">Religion &amp; Society</span>
         <span class="acc-meta">Measurable claims about religiosity and social outcomes</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region">
+      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1074,22 +1117,32 @@
 
     <!-- ── 08 International Comparisons ─────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-08" id="trigger-08">
         <span class="acc-num">08</span>
         <span class="acc-label">International Comparisons</span>
         <span class="acc-meta">How U.S. outcomes compare globally</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel">
+      <div class="acc-panel" role="region" id="panel-08" aria-labelledby="trigger-08">
         <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
 
-              <div class="article-row is-pending">
-                <span class="row-status pending">Coming soon</span>
+              <a href="/gun-violence" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
-                  <span class="row-desc">Per-capita firearm death rates, mass shooting frequency, and gun ownership correlations across OECD nations — using WHO, UNODC, and national registry data.</span>
+                  <span class="row-desc">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states. Both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">CDC WONDER</span>
+                    <span class="source-pill">WHO</span>
+                    <span class="source-pill">UNODC</span>
+                    <span class="source-pill">Small Arms Survey</span>
+                    <span class="source-pill">RAND 2023</span>
+                    <span class="source-pill">FBI UCR</span>
+                  </div>
                 </div>
-              </div>
+              </a>
 
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
@@ -1107,6 +1160,8 @@
                 </div>
               </div>
 
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1142,7 +1197,7 @@
 
   <footer class="page-footer">
     <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
-    <a href="/shootings-by-demographic" class="footer-note" style="text-decoration:none;transition:color 0.15s;" class="footer-link">Supplementary Data &rarr;</a>
+    <a href="/shootings-by-demographic" class="footer-note footer-link" style="text-decoration:none;transition:color 0.15s;">Supplementary Data &rarr;</a>
     <a href="/methodology" class="footer-note" style="text-decoration:none;transition:color 0.15s;">Our Methodology &rarr;</a>
     <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
   </footer>
