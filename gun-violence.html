@@ -11,6 +11,8 @@
   <meta property="og:title"   content="U.S. Gun Violence vs. Peer Nations | TruthBased.org">
   <meta property="og:description" content="Firearm death rates across OECD. CDC, WHO, UNODC data. Both sides steelmanned.">
   <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"   content="summary_large_image">
   <meta name="twitter:title"  content="U.S. Gun Violence vs. Peer Nations | TruthBased.org">
   <meta name="twitter:description" content="Firearm death rates across OECD. CDC, WHO, UNODC data. Both sides steelmanned.">
@@ -396,6 +398,12 @@
     /* DIVIDER */
     hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 640px) {
       .site-nav { padding: 0 16px; height: 46px; }
@@ -607,8 +615,9 @@
     .table-scroll::after {
       content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
-      pointer-events: none; opacity: 0.7;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
     }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
     [data-theme="dark"] .table-scroll::after {
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
     }
@@ -636,6 +645,13 @@
       text-align: left;
       caption-side: top;
       padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 
@@ -675,7 +691,7 @@
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
-  <div class="jump-nav">
+  <nav class="jump-nav" aria-label="Jump to section">
     <a href="#part1" class="jump-btn">Part 1 &mdash; The Gap</a>
     <a href="#part2" class="jump-btn">Part 2 &mdash; Homicide</a>
     <a href="#part3" class="jump-btn">Part 3 &mdash; Suicide</a>
@@ -683,7 +699,7 @@
     <a href="#part5" class="jump-btn">Part 5 &mdash; What Drives It</a>
     <a href="#part6" class="jump-btn">Part 6 &mdash; Policy Evidence</a>
     <a href="#part7" class="jump-btn">Part 7 &mdash; Steelman</a>
-  </div>
+  </nav>
 
   <main id="content">
   <article class="article-wrap">
@@ -730,12 +746,12 @@
       <p>The United States has a firearm death rate dramatically higher than any comparable developed nation. This is not a close comparison. The gap is an order of magnitude.</p>
 
       <div class="chart-wrap" style="height:380px; margin:28px 0;">
-        <canvas id="chart1"></canvas>
+        <canvas id="chart1" role="img" aria-label="Horizontal bar chart comparing total firearm death rates per 100,000 across 16 OECD nations. The United States leads at 12.8, followed by Finland at 3.6. Japan is lowest at 0.03."></canvas>
       </div>
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Firearm death rates per 100,000 population across OECD nations</caption>
+          <caption>Firearm death rates per 100,000 population across OECD nations</caption>
           <thead><tr><th>Country</th><th>Total Firearm Deaths/100k</th><th>Homicide</th><th>Suicide</th><th>Year</th></tr></thead>
           <tbody>
             <tr style="font-weight:600;"><td>United States</td><td>12.8</td><td>4.2</td><td>7.5</td><td>2021</td></tr>
@@ -787,7 +803,7 @@
       <span class="section-label">04 &mdash; The Trend: 1990 to Present</span>
 
       <div class="chart-wrap" style="height:300px; margin:28px 0;">
-        <canvas id="chart2"></canvas>
+        <canvas id="chart2" role="img" aria-label="Line chart showing U.S. firearm homicide rate per 100,000 from 1993 to 2023. Rate fell from 7.0 in 1993 to 3.6 in 2010, spiked to 6.7 in 2021, then declined to 3.9 in 2023."></canvas>
       </div>
 
       <p>The 2020&ndash;2021 spike (approximately +35% single-year increase, the largest in decades) was likely driven by COVID-era social disruption, reduced policing, and court shutdowns. It has since substantially reversed: by 2023, the rate had fallen to approximately 3.9/100k, and 2024 provisional data shows a further 14% decline in gun homicides.</p>
@@ -856,7 +872,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >International mass shooting events and policy responses</caption>
+          <caption>International mass shooting events and policy responses</caption>
           <thead><tr><th>Country</th><th>Event</th><th>Year</th><th>Killed</th><th>Policy Response</th><th>Outcome</th></tr></thead>
           <tbody>
             <tr><td>Australia</td><td>Port Arthur</td><td>1996</td><td>35</td><td>National buyback; semi-auto ban</td><td>Zero mass shootings for 22 years</td></tr>
@@ -930,7 +946,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >U.S. gun policy evidence ratings (RAND Corporation, 2023)</caption>
+          <caption>U.S. gun policy evidence ratings (RAND Corporation, 2023)</caption>
           <thead><tr><th>Policy</th><th>RAND Evidence Rating</th><th>Key Finding</th></tr></thead>
           <tbody>
             <tr><td>Child access prevention laws</td><td>Supportive</td><td>Reduce youth suicides and accidental deaths</td></tr>
@@ -1088,7 +1104,12 @@
     (function(){
       var html = document.documentElement;
       var btn = document.querySelector('.theme-toggle');
-      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
