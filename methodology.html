@@ -11,7 +11,11 @@
   <meta property="og:title"   content="Our Methodology | TruthBased.org">
   <meta property="og:description" content="How we research, verify, and present claims. Source hierarchy, steelmanning, confidence levels, and correction policy.">
   <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title" content="Methodology — TruthBased.org">
+  <meta name="twitter:description" content="How we select topics, evaluate sources, and maintain transparency. Our source hierarchy, correction policy, and falsifiability framework.">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
 
   <link rel="canonical" href="https://www.truthbased.org/methodology">
@@ -310,6 +314,13 @@
       padding: 0 0 6px 0;
     }
       :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -357,7 +368,7 @@
 
     <div class="table-scroll">
       <table class="method-table" role="table">
-          <caption >Source hierarchy tiers used in TruthBased.org analysis</caption>
+          <caption>Source hierarchy tiers used in TruthBased.org analysis</caption>
         <thead>
           <tr><th scope="col">Tier</th><th scope="col">Source type</th><th scope="col">Examples</th></tr>
         </thead>
@@ -437,7 +448,7 @@
     <span class="footer-note">TruthBased.org &mdash; Methodology</span>
     <div class="footer-links">
       <a href="/">Home</a>
-      <a href="/methodology">Methodology</a>
+      <a href="/trans-shooters">Latest Article</a>
     </div>
   </footer>
 
@@ -448,7 +459,12 @@
     (function(){
       var html = document.documentElement;
       var btn = document.querySelector('.theme-toggle');
-      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
