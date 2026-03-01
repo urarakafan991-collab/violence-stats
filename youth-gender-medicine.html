@@ -11,7 +11,11 @@
   <meta property="og:title"   content="Gender-Affirming Care for Minors — What the Evidence Shows | TruthBased.org">
   <meta property="og:description" content="Every major study. The Cass Review. Counter-critiques. International policy splits. Both sides steelmanned.">
   <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title" content="Youth Gender Medicine — TruthBased.org">
+  <meta name="twitter:description" content="Puberty blockers, hormones, and surgery: what the evidence shows, what it doesn't, and what both sides get right.">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
   <link rel="canonical" href="https://www.truthbased.org/youth-gender-medicine">
   <meta name="theme-color" content="#b83a1e">
@@ -432,16 +436,6 @@
       .article-wrap { padding: 32px 24px 60px; }
     }
 
-      .case-card-head { flex-direction: column; gap: 8px; }
-      .case-row { flex-direction: column; gap: 2px; }
-      .case-key { min-width: unset; }
-      .steelman-row { flex-direction: column; }
-      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
-      .data-table { font-size: 0.76rem; }
-      .data-table th, .data-table td { padding: 6px 8px; }
-    }
-
-
 
     .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
 
@@ -644,6 +638,13 @@
       caption-side: top;
       padding: 0 0 6px 0;
     }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -674,7 +675,7 @@
     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
-  <div class="jump-nav">
+  <nav class="jump-nav" aria-label="Jump to section">
     <a href="#part1" class="jump-btn">Part 1 — The Treatments</a>
     <a href="#part2" class="jump-btn">Part 2 — The Evidence</a>
     <a href="#part3" class="jump-btn">Part 3 — Counter-Evidence</a>
@@ -683,7 +684,7 @@
     <a href="#part6" class="jump-btn">Part 6 — The Global Split</a>
     <a href="#part7" class="jump-btn">Part 7 — Detransition &amp; Regret</a>
     <a href="#part8" class="jump-btn">Part 8 — Limitations &amp; Steelman</a>
-  </div>
+  </nav>
 
   <main id="content">
   <div class="article-wrap">
@@ -773,7 +774,7 @@
       <p>All major clinical guidelines &mdash; WPATH SOC8 (2022), the Endocrine Society (2017), and the AAP (2018, reaffirmed 2023) &mdash; recommend a conservative, staged approach. No guideline recommends hormones or surgery for prepubertal children. The staged model is as follows:</p>
 
       <div class="table-scroll"><table class="evidence-table">
-          <caption >Gender-affirming medical interventions overview</caption>
+          <caption>Gender-affirming medical interventions overview</caption>
         <thead>
           <tr><th>Intervention</th><th>Typical age</th><th>Goal</th><th>Reversibility</th><th>Key risk</th></tr>
         </thead>
@@ -848,7 +849,7 @@
       <span class="section-label">06 &mdash; Treatment Comparison at a Glance</span>
 
       <div class="table-scroll"><table class="evidence-table">
-          <caption >Treatment comparison at a glance</caption>
+          <caption>Treatment comparison at a glance</caption>
         <thead>
           <tr><th>Intervention</th><th>Goal</th><th>Typical age</th><th>Reversibility</th><th>Key risk</th></tr>
         </thead>
@@ -880,7 +881,7 @@
       <p>Multiple peer-reviewed studies from 2014 through 2025 report a consistent pattern: transgender youth who receive gender-affirming care show significant reductions in depression, suicidality, and gender dysphoria, with improvements in quality of life and psychosocial functioning. The magnitude of these effects is large by psychiatric standards. Below are the key studies, presented with their specific findings, sample sizes, and methodological notes.</p>
 
       <div class="table-scroll"><table class="evidence-table">
-          <caption >Key studies on gender-affirming care outcomes</caption>
+          <caption>Key studies on gender-affirming care outcomes</caption>
         <thead>
           <tr><th>Study</th><th>Design</th><th>N</th><th>Follow-up</th><th>Key finding</th><th>Key limitation</th></tr>
         </thead>
@@ -1148,7 +1149,7 @@
 
       <div class="table-scroll">
         <table class="data-table" style="font-size:0.82rem; border:1px solid var(--border);">
-          <caption >International policy comparison by country</caption>
+          <caption>International policy comparison by country</caption>
           <thead>
             <tr>
               <th>Country / Region</th>
@@ -1236,7 +1237,7 @@
       <p>Research in this area is plagued by inconsistent terminology. Five distinct concepts are routinely conflated in media coverage, and separating them is essential for interpreting any statistic.</p>
 
       <div class="table-scroll"><table class="evidence-table">
-          <caption >Detransition terminology definitions</caption>
+          <caption>Detransition terminology definitions</caption>
         <thead>
           <tr><th>Term</th><th>Meaning</th><th>Involves medical reversal?</th></tr>
         </thead>
@@ -1300,7 +1301,7 @@
       <p><strong>Physical reversibility.</strong> What can and cannot be reversed depends entirely on what interventions were received.</p>
 
       <div class="table-scroll"><table class="evidence-table">
-          <caption >Intervention reversibility comparison</caption>
+          <caption>Intervention reversibility comparison</caption>
         <thead>
           <tr><th>Intervention</th><th>Reversibility</th><th>Notes</th></tr>
         </thead>
@@ -1386,7 +1387,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Treated vs. untreated outcomes: key studies</caption>
+          <caption>Treated vs. untreated outcomes: key studies</caption>
           <thead><tr><th>Study</th><th>Design</th><th>Key Finding</th><th>Limitations</th></tr></thead>
           <tbody>
             <tr>
