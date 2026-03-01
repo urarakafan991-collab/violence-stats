@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found | TruthBased.org</title>
   <meta name="robots" content="noindex">
+  <meta property="og:title" content="Page Not Found — TruthBased.org">
+  <meta property="og:description" content="The page you're looking for doesn't exist. Browse our fact-checking articles instead.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
 
   <script>
     (function(){
@@ -90,6 +94,13 @@
       .page-footer { padding: 16px; }
     }
       :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -122,7 +133,12 @@
     (function(){
       var html = document.documentElement;
       var btn = document.querySelector('.theme-toggle');
-      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
