@@ -69,7 +69,10 @@
     :root {
       --bg:           #f7f5f1;
       --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
       --border:       #ddd9d0;
+      --rule:         #ddd9d0;
       --text-head:    #1a1714;
       --text-body:    #2d2926;
       --text-dim:     #5a544c;
@@ -435,7 +438,10 @@
     [data-theme="dark"] {
       --bg:           #1a1918;
       --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
       --border:       #3a3632;
+      --rule:         #3a3632;
       --text-head:    #e8e5e0;
       --text-body:    #c5c0b8;
       --text-dim:     #8a857d;
@@ -621,7 +627,17 @@
     .evidence-table tr:last-child td { border-bottom: none; }
     .evidence-table .total-row td { font-weight: 700; border-top: 2px solid var(--text-head); }
     @media (max-width: 640px) { .evidence-table { font-size: 0.65rem; } .evidence-table th, .evidence-table td { padding: 6px 6px; } }
-    </style>
+    
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+  </style>
 
   <script>
     /* ── Dark mode ── */
@@ -687,6 +703,7 @@
         <span class="meta-pill">Data through Feb 22, 2026</span>
         <span class="meta-pill">4 independent research sources</span>
         <span class="meta-pill">~32 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
       </div>
     </header>
 
@@ -810,6 +827,7 @@
       <p>The denominator is not a guess. Federal election turnout is documented by the Election Assistance Commission and the U.S. Census Bureau. Presidential and midterm elections combined from 2000 through 2024 alone account for over 1.5 billion ballots. Extending back to 1982 (the Heritage database start) reaches approximately 2.5 billion.</p>
 
       <div class="table-scroll"><table class="evidence-table">
+          <caption >U.S. presidential election turnout (2000–2024)</caption>
         <thead>
           <tr><th>Election year</th><th>Type</th><th>Approx. ballots cast</th></tr>
         </thead>
@@ -916,6 +934,7 @@
       <p>Claims of mass noncitizen voting — that millions of undocumented immigrants or foreign nationals are voting in federal elections — are among the most frequently made and least evidentially supported in election fraud discourse.</p>
 
       <div class="table-scroll"><table class="data-table">
+          <caption >Post-2020 election audit results by jurisdiction</caption>
         <thead>
           <tr>
             <th>Source / Audit</th>
@@ -1125,6 +1144,7 @@
       <p>Following the 2020 presidential election, supporters of Donald Trump filed approximately 60–65 lawsuits across 12 battleground states alleging a range of misconduct — from illegal ballot counting procedures to manipulated voting machines. A critical distinction often obscured in political discussion: many cases were dismissed on procedural grounds (lack of standing, mootness, timeliness), but a significant number were also reviewed on the evidentiary merits — and rejected.</p>
 
       <div class="table-scroll"><table class="data-table">
+          <caption >Notable voter fraud cases and outcomes</caption>
         <thead>
           <tr>
             <th>Jurisdiction / Case</th>
