@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Crossings — What The Charts Actually Show | TruthBased.org</title>
+  <meta name="description" content="CBP encounter data FY2000–FY2025, Title 42 recidivism inflation, methodology changes, got-away estimates, and every political claim tested against the actual numbers.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/border-crossings">
+  <meta property="og:title"   content="Border Crossings — What The Charts Actually Show | TruthBased.org">
+  <meta property="og:description" content="25 years of CBP data. Title 42 recidivism explained. Every political claim tested. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Border Crossings — What The Charts Actually Show | TruthBased.org">
+  <meta name="twitter:description" content="25 years of CBP data. Title 42 recidivism explained. Every political claim tested. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/border-crossings">
+  <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TruthBased.org — Border Crossings: What The Charts Actually Show
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* PER-CAPITA BOX */
+    .capita-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px; margin: 16px 0; text-align: center;
+    }
+    .capita-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); margin-bottom: 6px;
+    }
+    .capita-big {
+      font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--green); line-height: 1.1;
+    }
+    .capita-sub { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+    .capita-verdict {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--green); margin-top: 10px;
+    }
+
+    /* CASE CARDS (equivalent of shooter cards) */
+    .case-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      margin: 16px 0; overflow: hidden;
+    }
+    .case-card-head {
+      background: var(--surface); padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .case-name {
+      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .case-meta-line {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-dim); margin-top: 2px;
+    }
+    .case-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    }
+    .badge-confirmed { background: var(--brick-light); color: var(--brick); }
+    .badge-admin     { background: var(--amber-light); color: var(--amber); }
+    .badge-acquitted { background: var(--green-light); color: var(--green); }
+    .case-card-body { padding: 0; }
+    .case-row {
+      display: flex; padding: 8px 16px;
+      border-bottom: 1px solid var(--border); font-size: 0.86rem; gap: 12px;
+    }
+    .case-row:last-child { border-bottom: none; }
+    .case-key {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      color: var(--text-quiet); min-width: 100px; padding-top: 1px;
+    }
+    .case-val { color: var(--text-body); line-height: 1.5; }
+    .case-val.warn   { color: var(--amber); }
+    .case-val.alert  { color: var(--brick); }
+
+    /* TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-dismissed { color: var(--brick); font-weight: 600; }
+    .td-merits    { color: var(--amber); font-weight: 600; }
+    .td-both      { color: var(--text-dim); font-size: 0.78rem; }
+
+    /* CHART CANVAS */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #1a1714; color: rgba(247,245,241,0.9);
+      border-radius: 6px; padding: 18px 22px; margin: 16px 0;
+      font-family: var(--font-mono); font-size: 0.88rem; line-height: 2;
+    }
+    .math-box .math-label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(247,245,241,0.45); display: block; margin-bottom: 6px;
+    }
+    .math-box .math-result {
+      color: #7ec99a; font-size: 1.1rem; font-weight: 700;
+    }
+    .math-box .math-dim { color: rgba(247,245,241,0.55); }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .math-box { padding: 14px 16px; font-size: 0.8rem; }
+      .capita-big { font-size: 1.8rem; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Falsifiability threshold ── */
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .steelman-wrap, .evidence-table, .capita-box, .tldr-box, .scale-vis { break-inside: avoid; }
+      .part-header { break-after: avoid; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0.7;
+    }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    /* --- TL;DR, Scope, Scale additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scale-vis { margin: 20px 0; padding: 16px; background: var(--card-face); border: 1px solid var(--rule); border-radius: 4px; }
+    .scale-vis .scale-label { font-family: var(--font-mono); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 12px; display: block; }
+    .scale-bar-wrap { position: relative; height: 28px; background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .scale-bar-fill { height: 100%; background: var(--brick); border-radius: 2px 0 0 2px; min-width: 2px; }
+    .scale-bar-nums { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-quiet); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 18px 0 24px; }
+    .evidence-table th { background: var(--card-face); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-quiet); padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--rule); }
+    .evidence-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.4; }
+    .evidence-table tr:last-child td { border-bottom: none; }
+    .evidence-table .total-row td { font-weight: 700; border-top: 2px solid var(--text-head); }
+    @media (max-width: 640px) { .evidence-table { font-size: 0.65rem; } .evidence-table th, .evidence-table td { padding: 6px 6px; } }
+    
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+  </style>
+
+  <script>
+    /* ── Dark mode ── */
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Border Crossings — What The Charts Actually Show",
+    "description": "25 years of CBP encounter data, Title 42 recidivism inflation, methodology changes, and every political claim tested against the numbers.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-28",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/border-crossings",
+    "keywords": ["border crossings", "immigration", "CBP data", "Title 42", "border security", "fact-check"]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <!-- JUMP NAV -->
+  <div class="jump-nav">
+    <a href="#part1" class="jump-btn">Part 1 &mdash; The Numbers</a>
+    <a href="#part2" class="jump-btn">Part 2 &mdash; Why They Mislead</a>
+    <a href="#part3" class="jump-btn">Part 3 &mdash; Historical Context</a>
+    <a href="#part4" class="jump-btn">Part 4 &mdash; Unknown Unknowns</a>
+    <a href="#part5" class="jump-btn">Part 5 &mdash; Claims vs. Evidence</a>
+    <a href="#part6" class="jump-btn">Part 6 &mdash; Steelman &amp; Economics</a>
+  </div>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Political Fact Check</span>
+      <h1>Border Crossings &mdash; What The Charts Actually Show</h1>
+      <p class="article-deck">25 years of CBP data. Title&nbsp;42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested against the actual numbers &mdash; and both sides steelmanned.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated February 2026</span>
+        <span class="meta-pill">7 primary sources</span>
+        <span class="meta-pill">~15 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Biden had open borders&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Biden&rsquo;s DHS removed or expelled 5.1&nbsp;million people across FY2021&ndash;24 &mdash; the most in any 4-year period. &ldquo;Open borders&rdquo; is false by every enforcement metric. What is accurate: record numbers crossed <em>and</em> record numbers were released pending hearings.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Encounters hit record highs&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>True by raw totals &mdash; but misleading. Title&nbsp;42 inflated FY2021&ndash;23 numbers by 26&ndash;38% through recidivism (same person counted multiple times). Adjusting for unique individuals, FY2023 totals are comparable to FY2000.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Trump solved the border crisis&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>FY2025 SW border apprehensions (237,538) are the lowest since 1970. But Trump&rsquo;s first-term FY2019 saw ~977k &mdash; a near-record at the time. The current decline began in late 2024 under Biden&rsquo;s executive actions, then accelerated sharply under Trump&rsquo;s 2025 policies.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The border is secure&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Depends entirely on definition. Apprehension rates are up (~78%). Got-aways are down. Encounters are at 50-year lows. But the immigration court backlog is 3.7M+ cases, and prior years saw hundreds of thousands released pending hearings that may take 4&ndash;5 years.</div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 1 — THE NUMBERS
+    ======================================================= -->
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">What CBP Actually Reports</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Annual Totals: 25 Years of Southwest Border Encounters</span>
+
+      <p>U.S. Customs and Border Protection publishes encounter data at <a href="https://www.cbp.gov/newsroom/stats/nationwide-encounters" target="_blank" rel="noopener noreferrer">cbp.gov</a>. These are the official numbers &mdash; the same ones cited by both parties. The question is never <em>what</em> the numbers say; it&rsquo;s what they <em>mean</em>.</p>
+
+      <p>Before we show the chart, a critical warning: <strong>these numbers are not comparable across the full timeline</strong>. Pre-2020 figures count &ldquo;apprehensions&rdquo; (one category). Post-2020 figures count &ldquo;encounters&rdquo; (multiple categories including Title&nbsp;42 expulsions). The methodology changes &mdash; covered in Part&nbsp;2 &mdash; inflate the post-2020 numbers by an estimated 26&ndash;38%. The chart below shows the raw official numbers. The real story requires the adjustments that follow.</p>
+
+      <div class="chart-wrap" style="height:340px; margin:28px 0;">
+        <canvas id="chart1"></canvas>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Southwest border encounters by fiscal year (FY2000–FY2025)</caption>
+          <thead><tr><th>Fiscal Year</th><th>SW Border Encounters</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>FY 2000</td><td>1,643,679</td><td>Pre-2020 record; 98% Mexican nationals</td></tr>
+            <tr><td>FY 2006</td><td>1,089,093</td><td>Post-9/11 enforcement era</td></tr>
+            <tr><td>FY 2012</td><td>364,768</td><td>Near-historic low; Obama-era enforcement peak</td></tr>
+            <tr><td>FY 2014</td><td>479,371</td><td>Central American family/UAC surge begins</td></tr>
+            <tr><td>FY 2017</td><td>303,916</td><td>45-year low</td></tr>
+            <tr><td>FY 2019</td><td>~977,509</td><td>Trump-era spike; &ldquo;crisis&rdquo; framing begins</td></tr>
+            <tr><td>FY 2020</td><td>~458,088</td><td>COVID + Title 42 begins Mar 2020</td></tr>
+            <tr><td>FY 2021</td><td>1,734,686</td><td>Title 42 active; 27% recidivism rate</td></tr>
+            <tr><td>FY 2022</td><td>2,378,944</td><td>Highest raw annual count on record</td></tr>
+            <tr><td>FY 2023</td><td>2,475,669</td><td>Title 42 ends May 2023 mid-year</td></tr>
+            <tr><td>FY 2024</td><td>~2,048,338</td><td>Decline begins; Biden executive actions</td></tr>
+            <tr><td>FY 2025</td><td>237,538</td><td><strong>Lowest since 1970.</strong> Trump exec orders</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Source: CBP Nationwide Encounters, cbp.gov; Pew Research Center (Feb 2, 2026)</p>
+
+      <span class="section-label">02 &mdash; Monthly Trends: The Shape of the Decline</span>
+
+      <p>Monthly data tells a more granular story than annual totals. The peak month was <strong>December 2023</strong>, with approximately 302,000 Southwest border encounters. By February 2025, that figure had fallen to roughly 9,100 &mdash; and by January 2026, to approximately 6,100. That is a <strong>98% decline</strong> from peak to present.</p>
+
+      <p>This decline did not begin on January 20, 2025. Encounters started dropping in mid-2024 following Biden administration executive actions in June 2024 restricting asylum claims when encounters exceeded a threshold. The trend then accelerated dramatically after the Trump administration took office and issued a series of executive orders.</p>
+
+      <div class="chart-wrap" style="height:300px; margin:28px 0;">
+        <canvas id="chart2"></canvas>
+      </div>
+
+      <span class="section-label">03 &mdash; Who Is Crossing: Demographic Breakdown</span>
+
+      <p>CBP tracks three demographic categories: single adults, family units (one or more children under 18 with a parent), and unaccompanied children (minors without a parent). The composition has shifted significantly:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Encounter demographics by category (FY2023–FY2025)</caption>
+          <thead><tr><th>Category</th><th>FY 2023</th><th>FY 2024</th><th>FY 2025</th></tr></thead>
+          <tbody>
+            <tr><td>Single adults</td><td>~1,541,000 (62%)</td><td>~1,177,000 (57%)</td><td>~59%</td></tr>
+            <tr><td>Family units</td><td>~743,000 (30%)</td><td>~652,000 (32%)</td><td>~35%</td></tr>
+            <tr><td>Unaccompanied children</td><td>~137,000 (6%)</td><td>~99,000 (5%)</td><td>~6,840 est.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Source: CBP Encounter Data, disaggregated tables. FY2025 UAC figure: ~5,700 apprehended in 10 months through Nov 2025.</p>
+
+      <p>The FY2025 unaccompanied children figure &mdash; on track for roughly 6,840 for the year &mdash; represents a 93% decline from FY2023&rsquo;s 137,000. Family unit crossings have also fallen sharply in absolute terms, though they now represent a larger <em>share</em> of a much smaller total.</p>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway:</strong> Raw CBP numbers confirm both the record highs of FY2022&ndash;23 and the historic lows of FY2025. But the raw numbers are not comparable across this timeline. Title&nbsp;42 inflated FY2021&ndash;23 totals through recidivism; terminology changes added new categories; and the FY2025 collapse reflects multiple simultaneous factors. Part&nbsp;2 explains why these comparisons break.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 2 — WHY THE NUMBERS MISLEAD
+    ======================================================= -->
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">Why the Numbers Mislead &mdash; Methodology Changes</h2>
+      </div>
+
+      <span class="section-label">04 &mdash; Title 42 and the Recidivism Problem</span>
+
+      <p>Title&nbsp;42 (42 U.S.C. &sect;&nbsp;265) was invoked on March 20, 2020 under the Trump administration as a public health order and remained in effect until May 11, 2023. It allowed CBP to rapidly expel migrants &mdash; often within hours &mdash; without any immigration hearing or formal removal order.</p>
+
+      <p>The critical problem for data analysis: <strong>Title&nbsp;42 expulsions carried no legal penalty for re-entry.</strong> A person expelled on Monday could attempt to cross again on Tuesday with zero additional legal consequences. Each attempt was counted as a separate &ldquo;encounter.&rdquo;</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Title 42 expulsions vs. Title 8 removals: key differences</caption>
+          <thead><tr><th></th><th>Title 42 Expulsion</th><th>Title 8 Removal</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Legal basis</strong></td><td>Public health authority</td><td>Immigration law</td></tr>
+            <tr><td><strong>Processing time</strong></td><td>Hours (often same-day)</td><td>Days to months</td></tr>
+            <tr><td><strong>Asylum eligibility</strong></td><td>Bypassed</td><td>Preserved</td></tr>
+            <tr><td><strong>Re-entry bar</strong></td><td>None</td><td>5&ndash;10 years + criminal penalties</td></tr>
+            <tr><td><strong>Effect on recidivism</strong></td><td>High &mdash; no deterrent to repeats</td><td>Low &mdash; criminal consequences deter</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The result: during Title&nbsp;42, <strong>recidivism surged to 26&ndash;38% of total encounters</strong> in peak months, compared to approximately 7&ndash;9% pre-2020. In FY2021, CBP&rsquo;s own data showed a 27% overall recidivism rate &mdash; meaning roughly one in four &ldquo;encounters&rdquo; was someone being counted again. For Mexican and Northern Triangle nationals specifically, recidivism reached 49% by mid-2022.</p>
+
+      <p><strong>What this means:</strong> FY2021&rsquo;s 1.73 million encounters likely represented approximately 1.2 million unique individuals &mdash; not 1.73 million. FY2023&rsquo;s 2.48 million raw encounters, adjusted for the roughly 26% recidivism rate during the first half of the year, drops to an estimated 1.8&ndash;2.0 million unique individuals. This makes it comparable to &mdash; not dramatically higher than &mdash; FY2000&rsquo;s 1.64 million apprehensions.</p>
+
+      <p class="source-note">Sources: CBP recidivism data in monthly operational updates; Migration Policy Institute, &ldquo;Title 42 Postmortem,&rdquo; April 2024; DHS Southwest Border Enforcement Report FY2021</p>
+
+      <span class="section-label">05 &mdash; &ldquo;Apprehensions&rdquo; vs. &ldquo;Encounters&rdquo; &mdash; The Definitional Shift</span>
+
+      <p>Before March 2020, CBP reported &ldquo;apprehensions&rdquo; &mdash; people physically detained between ports of entry. People presenting at ports of entry requesting asylum were counted separately as &ldquo;inadmissibles.&rdquo;</p>
+
+      <p>Beginning in FY2020, CBP switched to reporting &ldquo;encounters,&rdquo; which combines:</p>
+
+      <ol style="margin:12px 0 12px 28px; font-size:0.88rem;">
+        <li><strong>Title 8 apprehensions</strong> (between ports of entry)</li>
+        <li><strong>OFO inadmissibles</strong> (people presenting at legal ports of entry)</li>
+        <li><strong>Title 42 expulsions</strong> (rapid public-health returns)</li>
+      </ol>
+
+      <p>This definitional change means <strong>FY2020+ totals are not directly comparable to pre-FY2020 figures</strong> without adjustment. In FY2023, approximately 15&ndash;20% of encounters were at ports of entry &mdash; people presenting legally for inspection. They were absent from pre-2020 &ldquo;apprehension&rdquo; counts.</p>
+
+      <span class="section-label">06 &mdash; The CBP One App</span>
+
+      <p>CBP One was a mobile application launched in January 2023 that allowed asylum seekers to schedule appointments at ports of entry. At peak operation, it processed roughly 1,000&ndash;1,450 appointments per day at eight Southwest border ports &mdash; approximately 30,000&ndash;43,000 individuals per month.</p>
+
+      <p>By October 2024, over 850,000 appointments had been scheduled. These were counted as OFO encounters, adding to the total &ldquo;encounter&rdquo; number. CBP One was terminated on January 20, 2025 by executive order.</p>
+
+      <p><strong>Why this matters for data:</strong> Someone who would have crossed illegally between ports and been counted as one type of encounter instead scheduled a legal appointment and was counted as a different type. The total encounter number might not change, but the composition &mdash; and what it implies about enforcement &mdash; is fundamentally different.</p>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway:</strong> Three methodology changes break every simple year-over-year comparison: (1) Title&nbsp;42 recidivism inflated FY2021&ndash;23 totals by 26&ndash;38%; (2) the switch from &ldquo;apprehensions&rdquo; to &ldquo;encounters&rdquo; added categories absent from pre-2020 data; (3) CBP One shifted crossings from between-ports to at-ports without changing the total. Anyone citing raw numbers across this timeline without these adjustments is misleading you &mdash; intentionally or not.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 3 — HISTORICAL CONTEXT
+    ======================================================= -->
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">Historical Context &mdash; This Isn&rsquo;t New</h2>
+      </div>
+
+      <span class="section-label">07 &mdash; The 1980s&ndash;2000s: Bigger Numbers Than You Think</span>
+
+      <p>High border-crossing volumes are not a recent phenomenon. FY1986 saw approximately 1.6 million apprehensions. FY2000 hit 1.64 million &mdash; the pre-2020 record. These occurred with no Title&nbsp;42 recidivism inflation and no &ldquo;encounters&rdquo; terminology adding port-of-entry processing.</p>
+
+      <p>The difference is who was crossing and what happened next. In FY2000, roughly 98% of apprehensions were Mexican nationals &mdash; mostly single adult males who could be returned to Mexico within hours. The legal and logistical simplicity of processing made high volumes manageable in ways that today&rsquo;s diverse flows are not.</p>
+
+      <span class="section-label">08 &mdash; The Demographic Transformation</span>
+
+      <p>This is arguably the most important change in border dynamics &mdash; and the most overlooked in political debate.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Nationality breakdown of border encounters (FY2004–FY2023)</caption>
+          <thead><tr><th></th><th>FY 2004</th><th>FY 2019</th><th>FY 2023</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mexican nationals</strong></td><td>~93%</td><td>~75%</td><td>~30%</td></tr>
+            <tr><td><strong>Northern Triangle</strong></td><td>~5%</td><td>~20%</td><td>~25%</td></tr>
+            <tr><td><strong>Venezuela, Cuba, Nicaragua, Haiti</strong></td><td>&lt;1%</td><td>~3%</td><td>~30%+</td></tr>
+            <tr><td><strong>Other (150+ countries)</strong></td><td>&lt;1%</td><td>~2%</td><td>~15%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Sources: CBP nationality breakdown tables; Pew Research Center, 2024; Migration Policy Institute</p>
+
+      <p><strong>Why this matters for enforcement:</strong> Mexican nationals can be returned to Mexico relatively quickly. Venezuelan, Cuban, and Nicaraguan nationals generally <em>cannot</em> be easily deported because their home governments often refuse to accept deportation flights. This creates a structural enforcement asymmetry entirely absent from pre-2010 data. When politicians compare FY2023 encounter volumes to FY2000 as evidence of a &ldquo;worse&rdquo; crisis, they are comparing two fundamentally different situations.</p>
+
+      <span class="section-label">09 &mdash; Ports of Entry vs. Between Ports</span>
+
+      <p>Historically, the vast majority of unauthorized crossings occurred between official ports of entry. This has shifted. In FY2023, approximately 430,000 unauthorized arrivals were processed at legal ports of entry &mdash; more than double FY2022&rsquo;s 173,000. By FY2024, with CBP One at peak operation, nearly 50% of <em>nationwide</em> encounters occurred at ports of entry, compared to roughly 15% in FY2021.</p>
+
+      <p>A substantial portion of port encounters represent people seeking asylum through a legal process. Categorizing them alongside illegal crossings between ports &mdash; as the total &ldquo;encounter&rdquo; number does &mdash; conflates legal and illegal entry in a way that inflates the perception of unauthorized crossing.</p>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway:</strong> High border volumes have occurred repeatedly since the 1980s. What has changed fundamentally is <em>who</em> is crossing (diverse nationalities that cannot be easily returned), <em>how</em> they present (increasingly at legal ports), and <em>what legal framework</em> applies (asylum claims requiring formal processing rather than same-day returns). Raw number comparisons across decades obscure these structural changes.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 4 — WHAT THE DATA CANNOT TELL US
+    ======================================================= -->
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">What the Data Cannot Tell Us</h2>
+      </div>
+
+      <span class="section-label">10 &mdash; &ldquo;Got-Aways&rdquo;: The Known Unknown</span>
+
+      <p>&ldquo;Got-aways&rdquo; are CBP&rsquo;s term for individuals detected by sensors, cameras, or other means who evaded apprehension. These are <em>not</em> guesses &mdash; they are based on sensor detections minus apprehensions in the same area &mdash; but they are still estimates with significant uncertainty.</p>
+
+      <p>Official estimates: approximately 600,000 got-aways in FY2022, roughly 670,000 in FY2023, and a cumulative total of approximately 1.4&ndash;2 million since FY2021. These figures come primarily from Congressional testimony and media briefings &mdash; <strong>no single published government report with clear methodology exists</strong>. This is a genuine data gap.</p>
+
+      <p>Got-aways declined substantially after Title&nbsp;42 ended &mdash; the Cato Institute documented a roughly 70% drop in successful evasions &mdash; because Title&nbsp;8 consequences made evading apprehension more attractive than being caught and formally removed with a multi-year re-entry bar.</p>
+
+      <p><strong>What got-away data cannot tell us:</strong> who these individuals are. By definition, their characteristics are unknown. Extrapolating criminal intent or national security threats onto an unknown population is speculation, not analysis. What <em>is</em> legitimate: the sheer number represents a meaningful gap in border security that concerns analysts across the political spectrum.</p>
+
+      <span class="section-label">11 &mdash; What Happens After Encounter</span>
+
+      <p>Raw encounter numbers reveal nothing about outcomes. This requires tracking data from ICE, the immigration courts (EOIR), and the asylum system:</p>
+
+      <ul style="margin:12px 0 12px 28px; font-size:0.88rem; line-height:1.7;">
+        <li><strong>Title 42 expulsions (FY2020&ndash;23):</strong> Returned immediately; no hearing, no formal record</li>
+        <li><strong>Title 8 expedited removal:</strong> Removed within days if no credible fear claim established</li>
+        <li><strong>Credible fear &rarr; immigration court:</strong> Released on parole or bond; wait times of 3&ndash;5+ years for hearing</li>
+        <li><strong>In absentia removal orders:</strong> TRAC data suggests 20&ndash;30% of released migrants fail to appear</li>
+        <li><strong>Asylum grant rate:</strong> Approximately 30&ndash;45% for those who complete proceedings</li>
+      </ul>
+
+      <p>The immigration court backlog stands at <strong>3.7 million+ pending cases</strong> as of 2024 (EOIR data). This backlog means that even robust enforcement at the border is followed by a system that cannot adjudicate claims for years &mdash; creating a de facto release for most encountered individuals, regardless of which administration is in power.</p>
+
+      <p class="source-note">Sources: EOIR Statistical Yearbooks; TRAC Immigration (trac.syr.edu); DHS FY2023 Enforcement Lifecycle Report</p>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway:</strong> The data has three critical blind spots: (1) got-away estimates are based on sensor data with no published methodology and significant uncertainty; (2) encounter totals count events, not people, and Title&nbsp;42 recidivism inflated this gap substantially; (3) post-encounter outcomes depend on a court system with a 3.7M-case backlog, meaning &ldquo;encounter&rdquo; does not equal &ldquo;removed.&rdquo; Anyone who cites encounter numbers as a complete picture of immigration is omitting what happens next.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 5 — POLITICAL CLAIMS VS. EVIDENCE
+    ======================================================= -->
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">Political Claims vs. Evidence</h2>
+      </div>
+
+      <span class="section-label">12 &mdash; &ldquo;Biden Had Open Borders&rdquo;</span>
+
+      <p>Enforcement data contradicts this claim directly. Biden&rsquo;s DHS removed or expelled approximately <strong>5.1 million individuals</strong> across FY2021&ndash;FY2024 &mdash; the most in any four-year presidential period, though many were rapid Title&nbsp;42 expulsions rather than formal removals.</p>
+
+      <p>For formal Title&nbsp;8 processing: after Title&nbsp;42 ended in May 2023, the Biden administration carried out approximately 660,000 removals and returns in the following 12 months &mdash; the highest since FY2011. Biden&rsquo;s June 2024 executive action restricting asylum claims drove a significant decline in encounters before he left office.</p>
+
+      <p><strong>What is accurate:</strong> Record numbers of people crossed. Record numbers were released into the interior pending hearings. The immigration court backlog grew. Encounter numbers hit all-time raw highs. The claim conflates high-volume crossing with absence of enforcement &mdash; both can be true simultaneously.</p>
+
+      <span class="section-label">13 &mdash; &ldquo;Trump Solved the Border Crisis&rdquo;</span>
+
+      <p>In Trump&rsquo;s first term, encounters rose sharply in FY2019 to approximately 977,000 &mdash; a near-record that prompted Trump himself to declare a national emergency. The subsequent decline was driven primarily by COVID-19 and Title&nbsp;42, not solely by policy. By October 2020 (the end of FY2020), encounters were rising again to ~71,000/month.</p>
+
+      <p>In Trump&rsquo;s second term, the data is dramatic: FY2025 Southwest border apprehensions totaled <strong>237,538 &mdash; the lowest since 1970</strong>. Monthly encounters fell to single-digit thousands. For five consecutive months, CBP reported zero migrants released into communities.</p>
+
+      <p><strong>Important context:</strong> The decline began in late 2024, before Trump took office, driven partly by Biden&rsquo;s executive actions and partly by anticipation of the incoming administration&rsquo;s policies. Disentangling policy effects from anticipation effects from seasonal patterns is not possible with the data available. What is clear: the combined effect is a historic decline by any measure.</p>
+
+      <span class="section-label">14 &mdash; &ldquo;Encounters at Record Highs&rdquo;</span>
+
+      <p><strong>Technically true</strong> for FY2022&ndash;23 by raw totals. <strong>Misleading</strong> for three reasons:</p>
+      <ol style="margin:12px 0 12px 28px; font-size:0.88rem; line-height:1.7;">
+        <li>Title&nbsp;42 recidivism inflated totals by 26&ndash;38% &mdash; the same individuals counted multiple times</li>
+        <li>The switch from &ldquo;apprehensions&rdquo; to &ldquo;encounters&rdquo; added port-of-entry processing absent from pre-2020 data</li>
+        <li>FY2000&rsquo;s 1.64 million apprehensions involved almost entirely single adults returned the same day; FY2023&rsquo;s encounters include complex asylum cases requiring prolonged processing</li>
+      </ol>
+      <p>Adjusted for recidivism alone, FY2023&rsquo;s roughly 2.48 million encounters represents an estimated 1.8&ndash;2.0 million unique individuals &mdash; comparable to the FY2000 peak, not dramatically above it.</p>
+
+      <span class="section-label">15 &mdash; 2025&ndash;2026 Policy Changes and Measured Effects</span>
+
+      <p>The Trump administration&rsquo;s January 2025 executive orders included: emergency proclamation closing the SW border to most asylum claims, reinstatement of Remain in Mexico, termination of CBP One, expanded expedited removal nationwide, and military deployment to the border.</p>
+
+      <p>Measured results through early 2026:</p>
+      <ul style="margin:12px 0 12px 28px; font-size:0.88rem; line-height:1.7;">
+        <li>SW border encounters down <strong>93&ndash;96%</strong> from prior-year comparisons</li>
+        <li>FY2025 full-year: 237,538 &mdash; lowest since 1970</li>
+        <li>Monthly lows: Oct 2025 (7,988), Nov (7,349), Dec (6,472), Jan 2026 (6,070)</li>
+        <li>UAC apprehensions on track for ~6,840 &mdash; down 93% from FY2023</li>
+        <li>Zero releases for 5+ consecutive months</li>
+        <li>Interior deportations multiplied significantly</li>
+      </ul>
+
+      <p><strong>Caveat:</strong> These statistics come from CBP/DHS press releases framed in explicitly political language. The raw numbers are verifiable government data, but readers should consult the <a href="https://www.cbp.gov/newsroom/stats/nationwide-encounters" target="_blank" rel="noopener noreferrer">primary CBP stats portal</a> rather than press releases for neutral presentation.</p>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway:</strong> &ldquo;Open borders&rdquo; is false by enforcement data &mdash; 5.1 million removed/expelled in four years. &ldquo;Solved the border crisis&rdquo; overstates causation &mdash; the decline began before Jan 2025 and involves multiple factors. &ldquo;Record highs&rdquo; is technically true but misleading without Title&nbsp;42 adjustments. &ldquo;Border is secure&rdquo; depends entirely on which metrics you choose. The data doesn&rsquo;t fit any four-word slogan &mdash; and that&rsquo;s the point.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 6 — STEELMAN & ECONOMICS
+    ======================================================= -->
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">Steelmanning Both Sides &amp; the Economic Data</h2>
+      </div>
+
+      <span class="section-label">16 &mdash; The Strongest Conservative / Restrictionist Case</span>
+
+      <p>Even adjusting for recidivism, the number of unique individuals who crossed or attempted to cross during FY2021&ndash;2024 exceeded any prior period. The adjusted figures are still historically high.</p>
+
+      <p>Got-aways represent a genuine security gap: an estimated 600,000&ndash;670,000 per year at peak means hundreds of thousands of unknown, unvetted individuals entered the country. The risk distribution within this population is unknowable by definition &mdash; and that unknown <em>itself</em> is a security concern.</p>
+
+      <p>The immigration court backlog (3.7M+ cases, 4&ndash;5 year average wait) means &ldquo;catch and process&rdquo; amounted to de facto release for most encountered individuals. Enforcement without adjudication is not functional enforcement.</p>
+
+      <p>Cartel operational control of most crossing routes generates billions in revenue ($5,000&ndash;$15,000+ per person). The humanitarian and national security consequences of this cartel business model are real. Fentanyl trafficking &mdash; responsible for approximately 75,000 U.S. deaths in 2023 (CDC) &mdash; occurs primarily through legal ports of entry, but weakened border environments complicate interdiction.</p>
+
+      <p>Cities like New York spent $4.3 billion on migrant services from July 2022 to March 2024. State and local costs are not captured in federal analyses like the CBO report.</p>
+
+      <span class="section-label">17 &mdash; The Strongest Progressive / Pro-Immigration Case</span>
+
+      <p>Adjusted for recidivism and methodology changes, the &ldquo;record&rdquo; numbers are less exceptional than headlines suggest. FY2021&rsquo;s 1.73 million encounters represented roughly 1.2 million unique individuals &mdash; lower than FY2000&rsquo;s 1.64 million in an era with no Title&nbsp;42 inflation.</p>
+
+      <p>Enforcement was historically robust: 5.1 million removed/expelled, 660,000 formal Title&nbsp;8 actions in the 12 months after Title&nbsp;42 ended. The &ldquo;open borders&rdquo; claim is unsupported by any enforcement metric.</p>
+
+      <p>Push factors &mdash; climate disruption, gang violence, political instability in Venezuela, Haiti, Cuba, Nicaragua &mdash; drive migration volumes more than U.S. policy. The asylum system exists precisely for these situations. Framing legal asylum presentation at ports of entry as a &ldquo;crisis&rdquo; mischaracterizes what the law permits.</p>
+
+      <p>The economic case is strong: the CBO&rsquo;s February 2024 report projects the immigration surge will increase GDP by approximately $7&ndash;8.9 trillion over the 2024&ndash;2034 window and reduce the federal deficit by roughly $0.9 trillion.</p>
+
+      <span class="section-label">18 &mdash; Nonpartisan Research Consensus</span>
+
+      <p><strong>Migration Policy Institute (MPI):</strong> Enforcement-only approaches without expanded legal pathways are generally less effective than combined approaches. Title&nbsp;42 did not deter crossings &mdash; it incentivized rapid re-attempts. The post-Title&nbsp;42 shift to Title&nbsp;8 actually <em>improved</em> deterrence through formal consequences.</p>
+
+      <p><strong>Cato Institute:</strong> Immigration is net economically positive. Legal channels are too restricted, pushing people to illegal entry. The &ldquo;crisis&rdquo; framing often overstates the actual security risk relative to economic benefit.</p>
+
+      <p><strong>Congressional Budget Office (2024):</strong> The immigration surge increases federal revenues, reduces deficits long-term, expands the labor force, and puts modest downward pressure on wages only for workers without a high school diploma. However, the CBO analysis excludes state and local costs, which can be substantial in receiving cities.</p>
+
+      <span class="section-label">19 &mdash; The Economic Data</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Economic impact of immigration — key metrics</caption>
+          <thead><tr><th>Metric</th><th>Finding</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>GDP impact (2024&ndash;2034)</td><td>+$7&ndash;8.9 trillion</td><td>CBO, Feb 2024</td></tr>
+            <tr><td>Federal deficit impact (same period)</td><td>&minus;$0.9 trillion (reduces deficit)</td><td>CBO, Feb 2024</td></tr>
+            <tr><td>Wage effect on low-education workers</td><td>Modest short-term downward pressure</td><td>CBO; Nat&rsquo;l Academies 2016</td></tr>
+            <tr><td>Long-term fiscal impact per immigrant</td><td>Net positive over lifetime</td><td>Nat&rsquo;l Academies 2016</td></tr>
+            <tr><td>CBP budget FY2024</td><td>~$20.8 billion</td><td>DHS budget documents</td></tr>
+            <tr><td>NYC migrant services cost</td><td>$4.3 billion (Jul 2022&ndash;Mar 2024)</td><td>NYC Comptroller</td></tr>
+            <tr><td>Immigrant tax contributions (FY2022)</td><td>~$383 billion</td><td>Am. Immigration Council</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Note: CBO analysis covers federal impacts only. State/local costs &mdash; education, healthcare, shelter &mdash; are excluded and can be substantial in receiving communities.</p>
+
+    <div class="part-takeaway"><strong>Part 6 takeaway:</strong> Both sides have legitimate arguments grounded in real data. The conservative case rests on genuine security gaps (got-aways), system overload (court backlog), and real local costs ($4.3B in NYC alone). The progressive case rests on robust enforcement data (5.1M removed), methodology inflation, and strong economic projections (CBO: +$7T GDP). Nonpartisan consensus: the system is structurally broken regardless of which party holds office, and neither slogans nor enforcement alone address the underlying dynamics.</div>
+    </section>
+
+    <div class="falsify-box">
+      <span class="falsify-label">&#9650; What would change this article&rsquo;s conclusions</span>
+      <p><strong>This article concludes that:</strong> (1) raw encounter numbers from FY2021&ndash;23 are inflated by Title&nbsp;42 recidivism and methodology changes; (2) no administration in the dataset had &ldquo;open borders&rdquo; by enforcement metrics; (3) FY2025 represents a genuine historic low; (4) the economic impact of immigration is net positive federally but can impose significant local costs.</p>
+      <p><strong>These conclusions would be falsified by:</strong></p>
+      <p>&bull; CBP publishing data showing Title&nbsp;42 recidivism was below 10% (contradicting the 26&ndash;38% estimates used here)</p>
+      <p>&bull; Evidence that FY2021&ndash;24 enforcement actions (removals, expulsions) were significantly lower than reported</p>
+      <p>&bull; CBO revising its immigration fiscal projections to show net negative federal impact</p>
+      <p>&bull; FY2025&rsquo;s low encounter numbers being revealed as an artifact of changed counting methodology rather than actual decline in crossings</p>
+      <p>If any of these occur, this article will be updated.</p>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Border Crossings &mdash; What The Charts Actually Show.&rdquo; Updated February 2026. https://www.truthbased.org/border-crossings</span>
+    </div>
+
+    <div style="margin-top:32px; padding:16px 18px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+      <span style="font-family:var(--font-sans); font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet); display:block; margin-bottom:8px;">Related Research</span>
+      <a href="/voter-fraud" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Voter Fraud &mdash; The Documented Record</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">1,620 proven cases against 2.5 billion ballots. Every counterargument examined.</span>
+      <a href="/gun-violence" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px; display:block; margin-top:12px;">U.S. Gun Violence vs. Peer Nations</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Per-capita firearm death rates across OECD nations. WHO, CDC, and UNODC data.</span>
+    </div>
+
+  </article>
+  </main>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: CBP, DHS, CBO, MPI, TRAC, Pew Research, Cato Institute</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    // ── Chart 1: SW Border Encounters by Fiscal Year ────────────────
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['00','06','12','14','17','19','20','21','22','23','24','25'],
+        datasets: [{
+          label: 'SW Border Encounters (thousands)',
+          data: [1644, 1089, 365, 479, 304, 978, 458, 1735, 2379, 2476, 2048, 238],
+          backgroundColor: function(ctx) {
+            return ctx.dataIndex >= 7 && ctx.dataIndex <= 9 ? 'rgba(184,58,30,0.35)' : 'rgba(27,107,62,0.25)';
+          },
+          borderColor: function(ctx) {
+            return ctx.dataIndex >= 7 && ctx.dataIndex <= 9 ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)';
+          },
+          borderWidth: 1.5,
+          borderRadius: 3,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'SW Border Encounters by Fiscal Year (thousands)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => (ctx.parsed.y >= 1000 ? (ctx.parsed.y/1000).toFixed(2) + 'M' : ctx.parsed.y + 'k') + ' encounters' } }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278', callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'M' : v + 'k' },
+            grid: { color: 'rgba(0,0,0,0.06)' }
+          },
+          x: {
+            ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', callback: function(v,i) { return 'FY' + this.getLabelForValue(v); } },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+
+    // ── Chart 2: Monthly Trend FY2023–FY2026 ────────────────
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Oct 22','Jan 23','Apr 23','Jul 23','Oct 23','Dec 23','Mar 24','Jun 24','Sep 24','Dec 24','Mar 25','Jun 25','Sep 25','Jan 26'],
+        datasets: [{
+          label: 'Monthly SW encounters (thousands)',
+          data: [189, 156, 175, 130, 218, 302, 189, 130, 54, 9, 8, 8, 7, 6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: 'rgba(184,58,30,0.7)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Monthly SW Border Encounters (thousands) — FY2023 through Jan 2026', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y + 'k encounters' } }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278', callback: v => v + 'k' },
+            grid: { color: 'rgba(0,0,0,0.06)' }
+          },
+          x: {
+            ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c', maxRotation: 45 },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  </script>
+
+</body>
+</html>
