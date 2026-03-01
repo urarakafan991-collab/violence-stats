@@ -11,7 +11,11 @@
   <meta property="og:title"   content="Voter Fraud — The Documented Record | TruthBased.org">
   <meta property="og:description" content="1,620 proven cases against 2.5 billion ballots. Every fraud type. Every 2020 lawsuit. The 2026 Fulton County raid. Every counterargument examined.">
   <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title" content="Voter Fraud — The Documented Record | TruthBased.org">
+  <meta name="twitter:description" content="1,620 proven cases against 2.5 billion ballots. Every fraud type. Every 2020 lawsuit. Every counterargument examined.">
   <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
 
     <link rel="canonical" href="https://www.truthbased.org/voter-fraud">
@@ -607,8 +611,9 @@
     .table-scroll::after {
       content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
-      pointer-events: none; opacity: 0.7;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
     }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
     [data-theme="dark"] .table-scroll::after {
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
     }
@@ -636,6 +641,13 @@
       text-align: left;
       caption-side: top;
       padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 
@@ -680,14 +692,14 @@
   </nav>
 
   <!-- JUMP NAV -->
-  <div class="jump-nav">
+  <nav class="jump-nav" aria-label="Jump to section">
     <a href="#part1" class="jump-btn">Part 1 — The Denominator</a>
     <a href="#part2" class="jump-btn">Part 2 — Fraud by Category</a>
     <a href="#part3" class="jump-btn">Part 3 — Real Cases</a>
     <a href="#part4" class="jump-btn">Part 4 — The 2020 Lawsuits</a>
     <a href="#part5" class="jump-btn">Part 5 — 2026 Developments</a>
     <a href="#part6" class="jump-btn">Part 6 — Limitations &amp; Steelman</a>
-  </div>
+  </nav>
 
   <main id="content">
   <article class="article-wrap">
@@ -827,7 +839,7 @@
       <p>The denominator is not a guess. Federal election turnout is documented by the Election Assistance Commission and the U.S. Census Bureau. Presidential and midterm elections combined from 2000 through 2024 alone account for over 1.5 billion ballots. Extending back to 1982 (the Heritage database start) reaches approximately 2.5 billion.</p>
 
       <div class="table-scroll"><table class="evidence-table">
-          <caption >U.S. presidential election turnout (2000–2024)</caption>
+          <caption>U.S. presidential election turnout (2000–2024)</caption>
         <thead>
           <tr><th>Election year</th><th>Type</th><th>Approx. ballots cast</th></tr>
         </thead>
@@ -934,7 +946,7 @@
       <p>Claims of mass noncitizen voting — that millions of undocumented immigrants or foreign nationals are voting in federal elections — are among the most frequently made and least evidentially supported in election fraud discourse.</p>
 
       <div class="table-scroll"><table class="data-table">
-          <caption >Post-2020 election audit results by jurisdiction</caption>
+          <caption>Post-2020 election audit results by jurisdiction</caption>
         <thead>
           <tr>
             <th>Source / Audit</th>
@@ -1144,7 +1156,7 @@
       <p>Following the 2020 presidential election, supporters of Donald Trump filed approximately 60–65 lawsuits across 12 battleground states alleging a range of misconduct — from illegal ballot counting procedures to manipulated voting machines. A critical distinction often obscured in political discussion: many cases were dismissed on procedural grounds (lack of standing, mootness, timeliness), but a significant number were also reviewed on the evidentiary merits — and rejected.</p>
 
       <div class="table-scroll"><table class="data-table">
-          <caption >Notable voter fraud cases and outcomes</caption>
+          <caption>Notable voter fraud cases and outcomes</caption>
         <thead>
           <tr>
             <th>Jurisdiction / Case</th>
@@ -1525,7 +1537,12 @@
     (function(){
       var html = document.documentElement;
       var btn = document.querySelector('.theme-toggle');
-      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
