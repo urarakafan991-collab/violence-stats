@@ -76,7 +76,10 @@
     :root {
       --bg:           #f7f5f1;
       --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
       --border:       #ddd9d0;
+      --rule:         #ddd9d0;
       --text-head:    #1a1714;
       --text-body:    #2d2926;
       --text-dim:     #5a544c;
@@ -451,7 +454,10 @@
     [data-theme="dark"] {
       --bg:           #1a1918;
       --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
       --border:       #3a3632;
+      --rule:         #3a3632;
       --text-head:    #e8e5e0;
       --text-body:    #c5c0b8;
       --text-dim:     #8a857d;
@@ -628,7 +634,17 @@
       .evidence-table { font-size: 0.65rem; }
       .evidence-table th, .evidence-table td { padding: 6px 6px; }
     }
-</style>
+
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -682,6 +698,7 @@
         <span class="meta-pill">Data through Feb 2026</span>
         <span class="meta-pill">20+ primary sources</span>
         <span class="meta-pill">~41 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
       </div>
     </header>
 
@@ -756,6 +773,7 @@
       <p>All major clinical guidelines &mdash; WPATH SOC8 (2022), the Endocrine Society (2017), and the AAP (2018, reaffirmed 2023) &mdash; recommend a conservative, staged approach. No guideline recommends hormones or surgery for prepubertal children. The staged model is as follows:</p>
 
       <div class="table-scroll"><table class="evidence-table">
+          <caption >Gender-affirming medical interventions overview</caption>
         <thead>
           <tr><th>Intervention</th><th>Typical age</th><th>Goal</th><th>Reversibility</th><th>Key risk</th></tr>
         </thead>
@@ -830,6 +848,7 @@
       <span class="section-label">06 &mdash; Treatment Comparison at a Glance</span>
 
       <div class="table-scroll"><table class="evidence-table">
+          <caption >Treatment comparison at a glance</caption>
         <thead>
           <tr><th>Intervention</th><th>Goal</th><th>Typical age</th><th>Reversibility</th><th>Key risk</th></tr>
         </thead>
@@ -861,6 +880,7 @@
       <p>Multiple peer-reviewed studies from 2014 through 2025 report a consistent pattern: transgender youth who receive gender-affirming care show significant reductions in depression, suicidality, and gender dysphoria, with improvements in quality of life and psychosocial functioning. The magnitude of these effects is large by psychiatric standards. Below are the key studies, presented with their specific findings, sample sizes, and methodological notes.</p>
 
       <div class="table-scroll"><table class="evidence-table">
+          <caption >Key studies on gender-affirming care outcomes</caption>
         <thead>
           <tr><th>Study</th><th>Design</th><th>N</th><th>Follow-up</th><th>Key finding</th><th>Key limitation</th></tr>
         </thead>
@@ -1128,6 +1148,7 @@
 
       <div class="table-scroll">
         <table class="data-table" style="font-size:0.82rem; border:1px solid var(--border);">
+          <caption >International policy comparison by country</caption>
           <thead>
             <tr>
               <th>Country / Region</th>
@@ -1215,6 +1236,7 @@
       <p>Research in this area is plagued by inconsistent terminology. Five distinct concepts are routinely conflated in media coverage, and separating them is essential for interpreting any statistic.</p>
 
       <div class="table-scroll"><table class="evidence-table">
+          <caption >Detransition terminology definitions</caption>
         <thead>
           <tr><th>Term</th><th>Meaning</th><th>Involves medical reversal?</th></tr>
         </thead>
@@ -1278,6 +1300,7 @@
       <p><strong>Physical reversibility.</strong> What can and cannot be reversed depends entirely on what interventions were received.</p>
 
       <div class="table-scroll"><table class="evidence-table">
+          <caption >Intervention reversibility comparison</caption>
         <thead>
           <tr><th>Intervention</th><th>Reversibility</th><th>Notes</th></tr>
         </thead>
@@ -1357,7 +1380,59 @@
         </div>
       </div>
 
-      <span class="section-label">02 &mdash; What We Do Not Know</span>
+      <span class="section-label">02 &mdash; Treated vs. Untreated Outcomes: What Studies Show</span>
+
+      <p>One of the most important questions in this debate is direct: <strong>do trans youth who receive gender-affirming care have better outcomes than those who don&rsquo;t?</strong> The answer is &ldquo;probably yes for mental health in the short term, but the evidence has significant limitations.&rdquo;</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Treated vs. untreated outcomes: key studies</caption>
+          <thead><tr><th>Study</th><th>Design</th><th>Key Finding</th><th>Limitations</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Tordoff et al. 2022</strong><br>(JAMA Network Open)</td>
+              <td>Prospective cohort; N=104 youth; 1-year follow-up</td>
+              <td>Youth receiving PBs/hormones had <strong>60% lower depression odds</strong> and <strong>73% lower suicidal ideation</strong> vs. waitlisted youth at 12 months</td>
+              <td>Small sample; no randomization; 1-year follow-up only; waitlist comparison (not active alternative treatment)</td>
+            </tr>
+            <tr>
+              <td><strong>Trevor Project 2024</strong><br>(National Survey)</td>
+              <td>Cross-sectional survey; N=18,000+ LGBTQ+ youth</td>
+              <td>Suicide attempt rates <strong>72% higher</strong> among trans youth in states with GAC bans vs. states without bans</td>
+              <td>Non-random convenience sample; cross-sectional (no causation); ban states may differ on other anti-LGBTQ policies; self-report</td>
+            </tr>
+            <tr>
+              <td><strong>Turban et al. 2020</strong><br>(Pediatrics)</td>
+              <td>Retrospective survey; N=20,619 adults; recalled adolescent access to PBs</td>
+              <td>Adults who accessed puberty blockers as adolescents reported significantly <strong>lower odds of lifetime suicidal ideation</strong></td>
+              <td>Retrospective recall; no control for confounders like family support; cross-sectional design</td>
+            </tr>
+            <tr>
+              <td><strong>Hong Kong 2024</strong><br>(Single-clinic study)</td>
+              <td>Retrospective; adult trans patients; controlled for coping strategies and social support</td>
+              <td>Surgery and hormones <strong>did not reduce depression or anxiety</strong> after controlling for coping and social support variables</td>
+              <td>Adult population (not youth); single clinic; small sample; different healthcare context than US/Europe</td>
+            </tr>
+            <tr>
+              <td><strong>Cass Review 2024</strong><br>(UK Independent Review)</td>
+              <td>Systematic review of all available evidence</td>
+              <td>Found &ldquo;remarkably weak&rdquo; evidence for medical interventions; no RCTs; Dutch protocol not generalizable to current broader referral populations</td>
+              <td>Review, not primary research; Yale/MJA critiques argue Cass applied inconsistent evidence standards</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>The critical gap:</strong> No peer-reviewed study has yet examined outcomes for trans youth in U.S. states that enacted GAC bans versus states that maintained access, controlling for confounders. No study compares outcomes under Finland&rsquo;s or Sweden&rsquo;s restrictive protocols versus the U.S./Canadian affirmative model. And no head-to-head trial of psychotherapy-only versus medical intervention exists.</p>
+
+      <p>The Trevor Project&rsquo;s 72% figure is widely cited by advocates but has significant methodological limitations: it is a non-random, self-selected online survey that cannot establish causation. The Tordoff findings are stronger methodologically but limited by small sample size and short follow-up. The Hong Kong study complicates the picture by suggesting social support may matter more than medical intervention &mdash; but in an adult population that may not generalize to youth.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">Evidence summary</span>
+        <p>Short-term mental health improvements from gender-affirming care are consistently observed across multiple study designs. But the evidence quality is limited by small samples, short follow-up, lack of randomization, and absence of comparative data from restrictive jurisdictions. The honest assessment: the available evidence favors treatment over withholding it, but not with the certainty that either side of the debate claims.</p>
+      </div>
+
+      <span class="section-label">03 &mdash; What We Do Not Know</span>
 
       <div class="stat-block">
         <div class="stat-block-header">
@@ -1375,7 +1450,7 @@
         </div>
       </div>
 
-      <span class="section-label">03 &mdash; Research Priorities (2026&ndash;2030)</span>
+      <span class="section-label">04 &mdash; Research Priorities (2026&ndash;2030)</span>
 
       <p>The following research would directly address the uncertainties at the center of this debate:</p>
 
@@ -1427,6 +1502,8 @@
       <div class="source-item"><strong>Butler et al. (2022)</strong> &mdash; Outcomes of Youth Referred to UK Gender Identity Services. <a href="https://doi.org/10.1136/archdischild-2022" target="_blank" rel="noopener noreferrer">Archives of Disease in Childhood</a></div>
       <div class="source-item"><strong>U.S. Transgender Survey (2015)</strong> &mdash; National Center for Transgender Equality. <a href="https://transequality.org/sites/default/files/docs/usts/USTS-Full-Report-Dec17.pdf" target="_blank" rel="noopener noreferrer">USTS Full Report</a></div>
       <div class="source-item"><strong>Bustos et al. (2021)</strong> &mdash; Regret After Gender-Affirming Surgery: A Systematic Review and Meta-analysis (n=7,928). <a href="https://doi.org/10.1097/PRS.0000000000007573" target="_blank" rel="noopener noreferrer">Plastic and Reconstructive Surgery</a></div>
+      <div class="source-item"><strong>Hong Kong Gender Clinic Study (2024)</strong> &mdash; Surgery/hormones and mental health outcomes controlling for coping and social support. Single-clinic retrospective analysis of adult patients.</div>
+      <div class="source-item"><strong>Trevor Project (2024)</strong> &mdash; Impact of Anti-Transgender Legislation on LGBTQ+ Youth Mental Health. <a href="https://www.thetrevorproject.org/research-briefs/impact-of-anti-lgbtq-politics-2024/" target="_blank" rel="noopener noreferrer">thetrevorproject.org</a></div>
     </div>
 
     <div class="cite-this">
