@@ -299,7 +299,31 @@
     }
     .skip-link:focus { top: 8px; }
 
+  
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+      :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Methodology — TruthBased.org",
+    "description": "How we select topics, evaluate sources, handle uncertainty, and what would change our conclusions.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/methodology"
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -333,6 +357,7 @@
 
     <div class="table-scroll">
       <table class="method-table" role="table">
+          <caption >Source hierarchy tiers used in TruthBased.org analysis</caption>
         <thead>
           <tr><th scope="col">Tier</th><th scope="col">Source type</th><th scope="col">Examples</th></tr>
         </thead>
