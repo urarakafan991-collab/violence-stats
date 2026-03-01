@@ -10,6 +10,8 @@
   <meta property="og:title" content="Mass Shootings by Demographic — TruthBased.org">
   <meta property="og:description" content="Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender.">
   <meta property="og:image" content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mass Shootings by Demographic — Full Breakdown | TruthBased.org">
   <meta name="twitter:description" content="Perpetrator demographics across three databases. Every group. Full context for each.">
@@ -263,6 +265,13 @@
       .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -885,7 +894,12 @@ function showPanel(id, pushHash) {
     (function(){
       var html=document.documentElement;
       var btn=document.querySelector('.theme-toggle');
-      function icon(){if(btn)btn.textContent=html.getAttribute('data-theme')==='dark'?'\u2600':'\u263E';}
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn)btn.addEventListener('click',function(){
         var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
