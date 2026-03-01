@@ -1279,7 +1279,7 @@
     .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
     .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
     .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
-    .scope-box { background: var(--bg); border: 1px dashed var(--rule); border-radius: 4px; padding: 14px 18px; margin: 0 0 30px; font-size: 0.76rem; color: var(--text-quiet); line-height: 1.5; }
+    .scope-box { background: var(--page-ground); border: 1px dashed var(--rule); border-radius: 4px; padding: 14px 18px; margin: 0 0 30px; font-size: 0.76rem; color: var(--text-quiet); line-height: 1.5; }
     .scope-box strong { color: var(--text-head); }
     .faq-item { margin: 14px 0; }
     .faq-q { font-weight: 700; font-size: 0.82rem; color: var(--text-head); margin-bottom: 4px; }
@@ -1287,7 +1287,17 @@
     .falsify-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--green, var(--green-live, #1b6b3e)); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
     .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green, var(--green-live, #1b6b3e)); display: block; margin-bottom: 8px; }
     .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
-    </style>
+    
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+  </style>
 
   <script>
     /* ── Dark mode ── */
@@ -1355,6 +1365,7 @@
         <span class="meta-pill">Data through Feb 20, 2026</span>
         <span class="meta-pill">23 primary sources</span>
         <span class="meta-pill">~31 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
       </div>
     </header>
 
@@ -1849,6 +1860,7 @@
     <span class="section-label">12 — Side by Side: How the Numbers Change</span>
 
     <div class="table-scroll"><table class="compare-table">
+          <caption >Mass shooting rates: trans population vs. general population</caption>
       <thead>
         <tr>
           <th>Metric</th><th>Binary only (1.43M)</th><th>Full trans pop (2.1M)</th><th>Verdict</th>
@@ -1926,6 +1938,7 @@
     <span class="section-label">15 — Full Sensitivity Analysis: Every Assumption Combination</span>
 
     <div class="table-scroll"><table class="sens-table">
+          <caption >Full sensitivity analysis across all assumption combinations</caption>
       <thead>
         <tr><th>Shooter count assumption</th><th>Population used</th><th>Trans rate/100k</th><th>vs. General pop</th><th>Result</th></tr>
       </thead>
