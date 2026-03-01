@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U.S. Gun Violence vs. Peer Nations | TruthBased.org</title>
+  <meta name="description" content="Per-capita firearm death rates across OECD nations. Homicide, suicide, and mass shooting data from WHO, CDC WONDER, UNODC, and the Small Arms Survey. Every argument steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/gun-violence">
+  <meta property="og:title"   content="U.S. Gun Violence vs. Peer Nations | TruthBased.org">
+  <meta property="og:description" content="Firearm death rates across OECD. CDC, WHO, UNODC data. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="U.S. Gun Violence vs. Peer Nations | TruthBased.org">
+  <meta name="twitter:description" content="Firearm death rates across OECD. CDC, WHO, UNODC data. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/gun-violence">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TruthBased.org — U.S. Gun Violence vs. Peer Nations
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* PER-CAPITA BOX */
+    .capita-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px; margin: 16px 0; text-align: center;
+    }
+    .capita-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); margin-bottom: 6px;
+    }
+    .capita-big {
+      font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--green); line-height: 1.1;
+    }
+    .capita-sub { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+    .capita-verdict {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--green); margin-top: 10px;
+    }
+
+    /* CASE CARDS (equivalent of shooter cards) */
+    .case-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      margin: 16px 0; overflow: hidden;
+    }
+    .case-card-head {
+      background: var(--surface); padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .case-name {
+      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .case-meta-line {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-dim); margin-top: 2px;
+    }
+    .case-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    }
+    .badge-confirmed { background: var(--brick-light); color: var(--brick); }
+    .badge-admin     { background: var(--amber-light); color: var(--amber); }
+    .badge-acquitted { background: var(--green-light); color: var(--green); }
+    .case-card-body { padding: 0; }
+    .case-row {
+      display: flex; padding: 8px 16px;
+      border-bottom: 1px solid var(--border); font-size: 0.86rem; gap: 12px;
+    }
+    .case-row:last-child { border-bottom: none; }
+    .case-key {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      color: var(--text-quiet); min-width: 100px; padding-top: 1px;
+    }
+    .case-val { color: var(--text-body); line-height: 1.5; }
+    .case-val.warn   { color: var(--amber); }
+    .case-val.alert  { color: var(--brick); }
+
+    /* TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-dismissed { color: var(--brick); font-weight: 600; }
+    .td-merits    { color: var(--amber); font-weight: 600; }
+    .td-both      { color: var(--text-dim); font-size: 0.78rem; }
+
+    /* CHART CANVAS */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #1a1714; color: rgba(247,245,241,0.9);
+      border-radius: 6px; padding: 18px 22px; margin: 16px 0;
+      font-family: var(--font-mono); font-size: 0.88rem; line-height: 2;
+    }
+    .math-box .math-label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(247,245,241,0.45); display: block; margin-bottom: 6px;
+    }
+    .math-box .math-result {
+      color: #7ec99a; font-size: 1.1rem; font-weight: 700;
+    }
+    .math-box .math-dim { color: rgba(247,245,241,0.55); }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .math-box { padding: 14px 16px; font-size: 0.8rem; }
+      .capita-big { font-size: 1.8rem; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Falsifiability threshold ── */
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .steelman-wrap, .evidence-table, .capita-box, .tldr-box, .scale-vis { break-inside: avoid; }
+      .part-header { break-after: avoid; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0.7;
+    }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    /* --- TL;DR, Scope, Scale additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scale-vis { margin: 20px 0; padding: 16px; background: var(--card-face); border: 1px solid var(--rule); border-radius: 4px; }
+    .scale-vis .scale-label { font-family: var(--font-mono); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 12px; display: block; }
+    .scale-bar-wrap { position: relative; height: 28px; background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .scale-bar-fill { height: 100%; background: var(--brick); border-radius: 2px 0 0 2px; min-width: 2px; }
+    .scale-bar-nums { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-quiet); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 18px 0 24px; }
+    .evidence-table th { background: var(--card-face); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-quiet); padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--rule); }
+    .evidence-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.4; }
+    .evidence-table tr:last-child td { border-bottom: none; }
+    .evidence-table .total-row td { font-weight: 700; border-top: 2px solid var(--text-head); }
+    @media (max-width: 640px) { .evidence-table { font-size: 0.65rem; } .evidence-table th, .evidence-table td { padding: 6px 6px; } }
+    
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "U.S. Gun Violence vs. Peer Nations",
+    "description": "Per-capita firearm death rates across OECD nations. CDC, WHO, UNODC data. Both sides steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-02-28",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": "https://www.truthbased.org/gun-violence",
+    "keywords": ["gun violence", "firearm deaths", "OECD comparison", "gun control", "Second Amendment", "fact-check"]
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">International Comparison</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <div class="jump-nav">
+    <a href="#part1" class="jump-btn">Part 1 &mdash; The Gap</a>
+    <a href="#part2" class="jump-btn">Part 2 &mdash; Homicide</a>
+    <a href="#part3" class="jump-btn">Part 3 &mdash; Suicide</a>
+    <a href="#part4" class="jump-btn">Part 4 &mdash; Mass Shootings</a>
+    <a href="#part5" class="jump-btn">Part 5 &mdash; What Drives It</a>
+    <a href="#part6" class="jump-btn">Part 6 &mdash; Policy Evidence</a>
+    <a href="#part7" class="jump-btn">Part 7 &mdash; Steelman</a>
+  </div>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">International Comparison</span>
+      <h1>U.S. Gun Violence vs. Peer Nations</h1>
+      <p class="article-deck">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency compared internationally. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states. Both sides steelmanned with the strongest available evidence.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated February 2026</span>
+        <span class="meta-pill">6 primary sources</span>
+        <span class="meta-pill">~13 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The U.S. has a uniquely deadly gun violence problem&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>True. U.S. firearm death rate (~13.7/100k) is 6&ndash;8x the OECD average. The firearm homicide rate is 20&ndash;100x higher than Western European peers. This gap exists in no other category of violence.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Gun control doesn&rsquo;t work &mdash; criminals don&rsquo;t follow laws&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partially true for some policies (the 1994 AWB had little effect on overall homicide). But RAND finds &ldquo;supportive&rdquo; evidence for background checks, ERPO laws, and child access prevention. Australia&rsquo;s buyback ended mass shootings and reduced firearm suicide with no substitution.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;It&rsquo;s a mental health problem, not a gun problem&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>The U.S. has comparable mental illness rates to peers but dramatically higher gun death rates. What differs is access to lethal means. The non-firearm U.S. homicide rate is 2&ndash;3x peers; the firearm homicide rate is 20&ndash;100x. The multiplier is guns.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Defensive gun use saves millions of lives&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Estimates range from 60,000/year (NCVS/government survey) to 2.5 million (Kleck survey). The gap is methodological, not political. Truth is likely between the extremes. DGU is real but its magnitude is genuinely uncertain.</div>
+      </div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">The International Gap</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Firearm Death Rates: U.S. vs. OECD</span>
+
+      <p>The United States has a firearm death rate dramatically higher than any comparable developed nation. This is not a close comparison. The gap is an order of magnitude.</p>
+
+      <div class="chart-wrap" style="height:380px; margin:28px 0;">
+        <canvas id="chart1"></canvas>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >Firearm death rates per 100,000 population across OECD nations</caption>
+          <thead><tr><th>Country</th><th>Total Firearm Deaths/100k</th><th>Homicide</th><th>Suicide</th><th>Year</th></tr></thead>
+          <tbody>
+            <tr style="font-weight:600;"><td>United States</td><td>12.8</td><td>4.2</td><td>7.5</td><td>2021</td></tr>
+            <tr><td>Finland</td><td>3.6</td><td>0.2</td><td>3.0</td><td>2020</td></tr>
+            <tr><td>Switzerland</td><td>2.8</td><td>0.2</td><td>2.5</td><td>2020</td></tr>
+            <tr><td>France</td><td>2.7</td><td>0.2</td><td>2.1</td><td>2019</td></tr>
+            <tr><td>Canada</td><td>2.1</td><td>0.5</td><td>1.5</td><td>2021</td></tr>
+            <tr><td>Austria</td><td>2.0</td><td>0.1</td><td>1.8</td><td>2020</td></tr>
+            <tr><td>Sweden</td><td>1.9</td><td>0.9</td><td>0.7</td><td>2021</td></tr>
+            <tr><td>Belgium</td><td>1.7</td><td>0.3</td><td>1.3</td><td>2020</td></tr>
+            <tr><td>Italy</td><td>1.3</td><td>0.3</td><td>0.9</td><td>2020</td></tr>
+            <tr><td>New Zealand</td><td>1.2</td><td>0.1</td><td>0.9</td><td>2021</td></tr>
+            <tr><td>Australia</td><td>1.0</td><td>0.2</td><td>0.8</td><td>2021</td></tr>
+            <tr><td>Germany</td><td>1.01</td><td>0.09</td><td>0.87</td><td>2020</td></tr>
+            <tr><td>Spain</td><td>0.6</td><td>0.05</td><td>0.4</td><td>2020</td></tr>
+            <tr><td>Netherlands</td><td>0.5</td><td>0.2</td><td>0.3</td><td>2020</td></tr>
+            <tr><td>United Kingdom</td><td>0.23</td><td>0.04</td><td>0.12</td><td>2021</td></tr>
+            <tr><td>Japan</td><td>0.03</td><td>0.00</td><td>0.02</td><td>2020</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Sources: CDC WONDER (U.S.); WHO Global Health Observatory; IHME Global Burden of Disease; national statistical agencies. Data years vary by country.</p>
+
+      <p>The U.S. rate is approximately <strong>6&ndash;8 times the OECD average</strong>, roughly 13 times the UK rate, and over 400 times Japan&rsquo;s rate. Among G7 nations, no country comes close.</p>
+
+      <span class="section-label">02 &mdash; The Composition: Suicide Dominates</span>
+
+      <p>A crucial and frequently omitted fact: the majority of U.S. firearm deaths are <strong>suicides, not homicides</strong>.</p>
+
+      <p>In 2023, of approximately 46,728 total U.S. gun deaths: suicides accounted for ~27,300 (58%), homicides for ~17,900 (38%), and unintentional/law enforcement for the remainder (~4%). In 2024 (provisional CDC data), total gun deaths fell to approximately 44,000 &mdash; driven by a <strong>14% decline in homicides</strong>. But gun suicides reached a record high, and firearms were used in more than half of all suicides for the first time in at least 25 years.</p>
+
+      <p><strong>Why this matters for policy:</strong> The interventions that reduce gun suicide (safe storage laws, waiting periods, means restriction) are substantially different from those that reduce gun homicide (background checks, anti-trafficking enforcement, focused deterrence). Treating &ldquo;gun violence&rdquo; as monolithic obscures this.</p>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway:</strong> The U.S. firearm death rate is 6&ndash;8x the OECD average. This gap is not close. But 58% of U.S. gun deaths are suicides &mdash; a fact that changes the policy calculus. Homicide is declining (down 14% in 2024); suicide is rising. Any analysis that treats &ldquo;gun violence&rdquo; as one problem is misdiagnosing two distinct crises.</div>
+    </section>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">Firearm Homicide</h2>
+      </div>
+
+      <span class="section-label">03 &mdash; The U.S. vs. Peers: Homicide Specifically</span>
+
+      <p>The U.S. firearm homicide rate (~5.4/100k in 2022) is where the international gap is most stark. This is roughly 23 times Germany&rsquo;s rate, 100 times the UK&rsquo;s, and over 200 times Japan&rsquo;s. No other developed nation is in the same category.</p>
+
+      <p>Critically, the U.S. non-firearm homicide rate (~2.5/100k) is <em>also</em> 2&ndash;3 times higher than most Western European peers. America is more violent generally, not <em>only</em> more violent with guns. But the firearms gap (20&ndash;100x) dwarfs the non-firearm gap (2&ndash;3x). This pattern is consistent with firearms amplifying the lethality of altercations that would otherwise result in non-fatal violence.</p>
+
+      <span class="section-label">04 &mdash; The Trend: 1990 to Present</span>
+
+      <div class="chart-wrap" style="height:300px; margin:28px 0;">
+        <canvas id="chart2"></canvas>
+      </div>
+
+      <p>The 2020&ndash;2021 spike (approximately +35% single-year increase, the largest in decades) was likely driven by COVID-era social disruption, reduced policing, and court shutdowns. It has since substantially reversed: by 2023, the rate had fallen to approximately 3.9/100k, and 2024 provisional data shows a further 14% decline in gun homicides.</p>
+
+      <p>Firearms are the leading cause of death for Americans aged 1&ndash;19, surpassing motor vehicles in 2020 and remaining so for four consecutive years. In 2024, gun deaths among those under 18 fell nearly 14%.</p>
+
+      <span class="section-label">05 &mdash; Demographic Concentration</span>
+
+      <p>U.S. gun homicide is not evenly distributed. It is concentrated by race, age, sex, and geography:</p>
+
+      <ul style="margin:12px 0 12px 28px; font-size:0.88rem; line-height:1.7;">
+        <li><strong>Race:</strong> Black Americans experience firearm homicide at approximately 26/100k (2021) &mdash; roughly 13 times the rate for white Americans (~2/100k)</li>
+        <li><strong>Age and sex:</strong> Men account for ~86% of firearm homicide victims; peak victimization age is 20&ndash;34</li>
+        <li><strong>Geography:</strong> Approximately 50% of all U.S. gun homicides occur in roughly 127 counties (4% of counties). Within cities, violence concentrates in small networks and neighborhoods</li>
+      </ul>
+
+      <p>This concentration has direct implications: rural and suburban areas of the U.S. have gun homicide rates comparable to many peer nations. The national average is driven overwhelmingly by concentrated urban violence linked to poverty, inequality, and gang dynamics.</p>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway:</strong> The U.S. firearm homicide rate is 20&ndash;100x higher than Western European peers &mdash; a gap that exists in no other violence category. But this violence is intensely concentrated: 50% of gun homicides occur in 4% of counties. The 2020&ndash;21 spike has substantially reversed. Any policy that ignores this geographic and demographic concentration will miss the actual problem.</div>
+    </section>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">Firearm Suicide</h2>
+      </div>
+
+      <span class="section-label">06 &mdash; The Hidden Majority of Gun Deaths</span>
+
+      <p>U.S. firearm suicide rate: approximately 7.5/100k &mdash; roughly 10 times the European average. In the U.S., about 54&ndash;56% of all suicides are by firearm, compared to &lt;1% in the UK and Japan, ~5% in Germany, and ~16% in Canada. Firearms have a case fatality rate of approximately 90%, compared to ~5% for the most common alternative methods.</p>
+
+      <p>Gun suicides reached a record high in 2023 (27,300 deaths) and continued rising in 2024, constituting the highest <em>share</em> of gun deaths in at least 25 years. While homicides declined, suicides did not.</p>
+
+      <span class="section-label">07 &mdash; Means Substitution: Do People Just Switch Methods?</span>
+
+      <p>This is the central question for gun suicide policy: if firearms are less available, do suicidal individuals switch to other lethal methods, or does overall suicide decline?</p>
+
+      <p><strong>The evidence strongly favors means restriction over substitution:</strong></p>
+
+      <p><strong>Israeli military study (Lubin et al., 2010):</strong> When the IDF restricted soldiers from taking guns home on weekends, weekend suicide rates dropped 57% with no compensatory increase in non-firearm suicides. Overall military suicide fell 40%.</p>
+
+      <p><strong>Australian buyback (Chapman et al., 2006):</strong> After the 1996 National Firearms Agreement, firearm suicide rates declined significantly. Non-firearm suicide rates showed no significant compensatory increase &mdash; people did not simply switch methods at equivalent rates.</p>
+
+      <p><strong>Multiple meta-analyses</strong> (Harvard Injury Control Research Center) consistently find that firearm availability is associated with higher <em>total</em> suicide rates, not merely higher firearm suicide rates. Reducing availability reduces overall suicide, not just the firearm component.</p>
+
+      <p>The mechanism is the &ldquo;crisis window&rdquo;: suicidal crises are often brief (minutes to hours). If the most immediately lethal means is unavailable during that window, many individuals survive the crisis and do not later die by suicide. Firearms collapse the time between impulse and death to near-zero, eliminating the possibility of intervention or reconsideration.</p>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway:</strong> Firearm suicide is 58% of all U.S. gun deaths and is rising even as homicide falls. The means substitution evidence is strong: restricting firearm access during crises reduces <em>total</em> suicide, not just firearm suicide. Israel and Australia provide near-ideal natural experiments. This is the area where the policy evidence is most consistent and least politically contested &mdash; yet it receives the least political attention.</div>
+    </section>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">Mass Shootings &mdash; International Comparison</h2>
+      </div>
+
+      <span class="section-label">08 &mdash; U.S. Frequency vs. Peers</span>
+
+      <p>Using a consistent definition (4+ killed, excluding shooter, in a public place, not gang/domestic/terrorism), the U.S. is a dramatic outlier. A study of 36 high-income countries (2000&ndash;2022) found the U.S. had 109 public mass shootings &mdash; <strong>76% of the total among all these countries combined</strong>. The U.S. accounts for roughly 5% of world population.</p>
+
+      <p>Per capita, Americans are roughly 4 times more likely to experience a mass shooting than Canadians, 11 times more than Britons, and 20 times more than Australians.</p>
+
+      <p><strong>Definitional caveat:</strong> mass shooting definitions vary widely. The Gun Violence Archive (4+ shot, any context) records ~600 per year. The FBI (4+ killed, public place) records far fewer. International comparisons require consistent definitions to be meaningful. All figures above use the stricter definition.</p>
+
+      <span class="section-label">09 &mdash; International Policy Responses</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >International mass shooting events and policy responses</caption>
+          <thead><tr><th>Country</th><th>Event</th><th>Year</th><th>Killed</th><th>Policy Response</th><th>Outcome</th></tr></thead>
+          <tbody>
+            <tr><td>Australia</td><td>Port Arthur</td><td>1996</td><td>35</td><td>National buyback; semi-auto ban</td><td>Zero mass shootings for 22 years</td></tr>
+            <tr><td>UK</td><td>Dunblane</td><td>1996</td><td>16</td><td>Near-total handgun ban</td><td>Firearm homicide already low; stayed low</td></tr>
+            <tr><td>New Zealand</td><td>Christchurch</td><td>2019</td><td>51</td><td>Semi-auto/military style ban</td><td>Too recent for long-term data</td></tr>
+            <tr><td>Norway</td><td>Ut&oslash;ya</td><td>2011</td><td>69</td><td>Already strict; minimal change</td><td>Isolated incident; Norway already low</td></tr>
+            <tr><td>Canada</td><td>Nova Scotia</td><td>2020</td><td>22</td><td>Assault weapon ban</td><td>Too recent for data</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Australia&rsquo;s response is the most studied: firearm homicide rates declined approximately 42&ndash;72% faster than pre-existing trends, and mass shootings effectively stopped for over two decades. Critical caveat: homicide was already declining pre-1996, and researchers debate how much of the accelerated decline is attributable to the NFA versus continuation of pre-existing trends.</p>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway:</strong> The U.S. accounts for 76% of public mass shootings among 36 high-income nations. Other countries that experienced mass shootings enacted strict gun laws afterward and saw dramatic reductions. Whether those reductions would have occurred anyway is debated. The U.S. is the only high-income nation with recurring mass shootings that has not enacted significant national-level restrictions in response.</div>
+    </section>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">What Drives the U.S. Difference</h2>
+      </div>
+
+      <span class="section-label">10 &mdash; Gun Ownership: More Guns Than People</span>
+
+      <p>The United States has <strong>120.5 civilian firearms per 100 residents</strong> &mdash; more guns than people, and by far the highest rate in the world. Yemen (a war zone) is second at 52.8. The total civilian gun stock: approximately 393 million as of 2017 (Small Arms Survey), likely 400&ndash;450 million by 2025 given pandemic-era sales surges.</p>
+
+      <p>Household ownership: approximately 42&ndash;45% of U.S. households report having a gun (Gallup/Pew, 2023&ndash;2025). This rate has been relatively stable for a decade, even as total gun numbers have risen &mdash; suggesting existing owners are acquiring more guns rather than new households joining.</p>
+
+      <p>Cross-nationally, gun ownership rates correlate strongly with firearm death rates (r &asymp; 0.7&ndash;0.8 for homicide among developed nations). Within U.S. states, the correlation is similarly strong (r &asymp; 0.62). This is correlation, not proven causation, and confounders (poverty, inequality) matter &mdash; but the consistency across studies and methodologies is notable.</p>
+
+      <span class="section-label">11 &mdash; Handguns, Not Rifles, Drive Homicide</span>
+
+      <p>In U.S. homicides where weapon type is known: handguns account for approximately 53&ndash;64%, rifles (including &ldquo;assault-style&rdquo;) for approximately 3&ndash;4%, shotguns for 2&ndash;3%, and the remainder is unspecified.</p>
+
+      <p><strong>Policy implication:</strong> Banning &ldquo;assault weapons&rdquo; targets roughly 3&ndash;4% of firearm homicides. These weapons account for a disproportionate share of <em>mass shooting</em> fatalities, but not everyday gun violence. If the goal is reducing overall firearm homicide, the data points to handguns as the numerically dominant issue.</p>
+
+      <span class="section-label">12 &mdash; Domestic Violence and Firearms</span>
+
+      <p>The presence of a firearm in a domestic violence situation increases the risk of homicide for the victim by approximately <strong>500%</strong>. Approximately 55% of women killed by intimate partners are killed with firearms. Women in the U.S. are 21 times more likely to be killed by firearms than women in other high-income countries.</p>
+
+      <p class="source-note">Sources: Saltzman et al., CDC; Campbell JC, intimate partner homicide studies; Everytown for Gun Safety (advocacy organization, but citing CDC/FBI data)</p>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway:</strong> The U.S. has more civilian guns than civilians &mdash; 120.5 per 100 people, 2.3x the next country. Handguns, not rifles, drive the vast majority of homicides. Domestic violence intersects with gun access to produce a 500% increase in fatality risk. The ownership&ndash;death-rate correlation is strong and consistent, though not proof of causation. What is clear: no other developed nation combines this level of gun saturation with this level of violence.</div>
+    </section>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Policy Evidence</h2>
+      </div>
+
+      <span class="section-label">13 &mdash; Australia 1996 &mdash; The Most Studied Case</span>
+
+      <p>After Port Arthur, Australia banned semi-automatic rifles and shotguns and conducted a mandatory buyback of approximately 660,000 firearms (~20% of the civilian stock). Results:</p>
+      <ul style="margin:12px 0 12px 28px; font-size:0.88rem; line-height:1.7;">
+        <li>Firearm homicide rate declined approximately 42&ndash;72% over the following decade</li>
+        <li>Firearm suicide rate declined approximately 57&ndash;65%</li>
+        <li>Zero public mass shootings for 22 years (1996&ndash;2018)</li>
+        <li>Non-firearm suicide showed no significant compensatory increase</li>
+      </ul>
+      <p><strong>Critical caveat:</strong> Firearm homicide and suicide were already declining before 1996. Chapman et al. (2006) found the decline was significantly steeper post-NFA than the pre-existing trend predicted. Leigh &amp; Neill (2010) found the evidence stronger for suicide and mass shootings than for homicide specifically.</p>
+
+      <span class="section-label">14 &mdash; The 1994 Federal Assault Weapons Ban</span>
+
+      <p>The AWB (1994&ndash;2004) banned manufacture of semi-automatic firearms with certain features and capped magazine capacity at 10 rounds. Findings:</p>
+      <p>RAND Corporation and multiple studies found the AWB had <strong>little to no measurable effect on overall firearm homicide</strong>. This is largely because the banned weapons were used in a small fraction of crimes (~3&ndash;4% of homicides) and were easily substituted. However, DiMaggio et al. (2019) found mass shooting <em>fatalities</em> were lower during the ban period and increased roughly 183% after its expiration.</p>
+
+      <span class="section-label">15 &mdash; U.S. State-Level Evidence</span>
+
+      <p>The most rigorous systematic review of U.S. gun policy is the <strong>RAND Corporation&rsquo;s &ldquo;Science of Gun Policy&rdquo;</strong> (3rd edition, 2023). Their evidence ratings:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption >U.S. gun policy evidence ratings (RAND Corporation, 2023)</caption>
+          <thead><tr><th>Policy</th><th>RAND Evidence Rating</th><th>Key Finding</th></tr></thead>
+          <tbody>
+            <tr><td>Child access prevention laws</td><td>Supportive</td><td>Reduce youth suicides and accidental deaths</td></tr>
+            <tr><td>Red flag / ERPO laws</td><td>Supportive</td><td>Reduce suicides; 1 prevented per ~10&ndash;22 orders issued</td></tr>
+            <tr><td>Waiting periods</td><td>Supportive</td><td>Reduce suicides 5&ndash;10%</td></tr>
+            <tr><td>Universal background checks</td><td>Supportive</td><td>Associated with lower firearm homicide rates</td></tr>
+            <tr><td>Stand your ground laws</td><td>Supportive (for harm)</td><td>Associated with <em>increased</em> homicide rates</td></tr>
+            <tr><td>Shall-issue concealed carry</td><td>Inconclusive</td><td>No clear crime reduction evidence</td></tr>
+            <tr><td>Assault weapons bans</td><td>Inconclusive</td><td>Possible effect on mass shooting fatalities; no clear overall homicide effect</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Source: RAND Corporation, &ldquo;The Science of Gun Policy,&rdquo; 3rd edition, 2023 (rand.org/research/gun-policy)</p>
+
+      <p>RAND&rsquo;s is the most methodologically rigorous systematic review available. Their &ldquo;supportive&rdquo; rating means multiple well-designed studies pointing in the same direction. Their &ldquo;inconclusive&rdquo; rating means the evidence is mixed, not that the policy doesn&rsquo;t work &mdash; it means we don&rsquo;t know.</p>
+
+    <div class="part-takeaway"><strong>Part 6 takeaway:</strong> Australia&rsquo;s buyback ended mass shootings and reduced firearm suicide with no means substitution. The U.S. AWB had little effect on overall homicide but may have reduced mass shooting fatalities. RAND finds &ldquo;supportive&rdquo; evidence for background checks, waiting periods, ERPO laws, and child access prevention. Stand-your-ground laws are associated with more homicide, not less. No policy has &ldquo;strong&rdquo; evidence in RAND&rsquo;s schema &mdash; partly because randomized trials are impossible.</div>
+    </section>
+
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Steelmanning Both Sides</h2>
+      </div>
+
+      <span class="section-label">16 &mdash; The Strongest Pro-Gun-Control Case</span>
+
+      <p>The international comparison is stark: the U.S. firearm homicide rate is 20&ndash;100x higher than comparable wealthy nations. This magnitude of difference is unlikely to be explained entirely by confounders.</p>
+
+      <p>Means restriction works for suicide &mdash; the Israeli military study and Australian buyback provide strong natural-experiment evidence. The domestic violence nexus (500% increased fatality risk from a gun in the home) represents a specific, addressable intersection. RAND&rsquo;s systematic review finds supportive evidence for multiple specific policies. The 2020&ndash;21 spike following record gun sales is consistent with (though not definitive proof of) a causal relationship.</p>
+
+      <span class="section-label">17 &mdash; The Strongest Pro-Gun-Rights Case</span>
+
+      <p><strong>Defensive gun use is real and potentially large.</strong> The NCVS (government survey) finds approximately 60,000&ndash;80,000 DGUs per year. Kleck&rsquo;s survey found 2.5 million. Harvard researchers estimate the truth may be 300,000&ndash;1 million. The wide range is methodological, not political &mdash; both sides cherry-pick the estimate that suits them, but the evidence that DGU occurs at meaningful scale is consistent.</p>
+
+      <p><strong>Most gun owners will never use their weapon violently.</strong> Approximately 100 million gun owners commit extremely few crimes with their firearms. Policy should weigh the burden on the law-abiding majority against the actions of a small minority.</p>
+
+      <p><strong>Enforcement of existing laws is incomplete.</strong> Many convicted violent felons obtained firearms illegally, not through background-checkable channels. The &ldquo;gun show loophole&rdquo; is already a crime at the federal level for straw purchases; the question is enforcement.</p>
+
+      <p><strong>Urban violence is concentrated and addressable without broader restrictions.</strong> Focused deterrence programs (Operation Ceasefire, violence interrupter models) target the specific networks responsible for most gun homicide and show effectiveness. These require no new gun laws.</p>
+
+      <p><strong>International comparisons are confounded.</strong> The U.S. non-firearm homicide rate is also elevated versus peers (2&ndash;3x). This suggests inequality, poverty, drug policy, and incarceration drive violence independent of gun access. Switzerland has high gun ownership and low homicide. The correlation is moderated by other variables.</p>
+
+      <p><strong>Constitutional framework:</strong> <em>Heller</em> (2008) and <em>Bruen</em> (2022) established an individual right to firearm possession. Policy must operate within these constraints, and <em>Bruen</em> significantly narrowed permissible regulations.</p>
+
+      <span class="section-label">18 &mdash; Where Both Sides Agree</span>
+
+      <p>Genuine bipartisan research support exists for: child access prevention / safe storage laws, crisis intervention / red flag laws, background check enforcement and expansion, waiting periods, and focused deterrence programs in high-violence neighborhoods. These policies have &ldquo;supportive&rdquo; evidence in RAND&rsquo;s schema and are supported by majorities across party lines in polling.</p>
+
+    <div class="part-takeaway"><strong>Part 7 takeaway:</strong> The pro-control case rests on international comparisons, means-substitution evidence, and RAND-supported policies. The pro-rights case rests on defensive gun use, concentrated violence addressable through targeted programs, confounders that international comparisons ignore, and constitutional constraints. Both have legitimate grounding in evidence. The agreed-upon policies (safe storage, ERPO, background checks, focused deterrence) represent actionable common ground with supportive evidence &mdash; and are the most likely to actually pass constitutional scrutiny post-<em>Bruen</em>.</div>
+    </section>
+
+    <div class="falsify-box">
+      <span class="falsify-label">&#9650; What would change this article&rsquo;s conclusions</span>
+      <p><strong>This article concludes that:</strong> (1) the U.S. firearm death rate is 6&ndash;8x the OECD average; (2) the gap is driven by both homicide and suicide; (3) means restriction reduces total suicide, not just firearm suicide; (4) several specific policies have supportive evidence for reducing deaths; (5) defensive gun use occurs at meaningful but uncertain scale.</p>
+      <p><strong>These conclusions would be falsified by:</strong></p>
+      <p>&bull; Peer-reviewed evidence that U.S. firearm death rates are comparable to OECD peers when properly adjusted for demographics</p>
+      <p>&bull; Prospective studies showing complete means substitution (total suicide unchanged after firearm restriction)</p>
+      <p>&bull; RAND upgrading concealed carry to &ldquo;supportive&rdquo; evidence for crime reduction, or downgrading background checks</p>
+      <p>&bull; Rigorous measurement of DGU finding fewer than 50,000 annual instances, or confirming more than 1 million</p>
+      <p>If any of these occur, this article will be updated.</p>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;U.S. Gun Violence vs. Peer Nations.&rdquo; Updated February 2026. https://www.truthbased.org/gun-violence</span>
+    </div>
+
+    <div style="margin-top:32px; padding:16px 18px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+      <span style="font-family:var(--font-sans); font-size:0.56rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-quiet); display:block; margin-bottom:8px;">Related Research</span>
+      <a href="/trans-shooters" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px;">Trans People &amp; Mass Shootings &mdash; The Full Picture</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">Three databases. Every definition. Full sensitivity analysis.</span>
+      <a href="/border-crossings" style="color:var(--brick); font-size:0.84rem; text-decoration:underline; text-underline-offset:3px; display:block; margin-top:12px;">Border Crossings &mdash; What The Charts Actually Show</a>
+      <span style="display:block; font-size:0.76rem; color:var(--text-dim); margin-top:4px;">25 years of CBP data. Title 42 recidivism. Every claim tested.</span>
+    </div>
+
+  </article>
+  </main>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated February 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: CDC WONDER, WHO, UNODC, RAND, Small Arms Survey, FBI UCR</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    // ── Chart 1: International Firearm Death Rates ────────────────
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['U.S.','Finland','Switzerland','France','Canada','Austria','Sweden','Belgium','Italy','New Zealand','Australia','Germany','Spain','Netherlands','UK','Japan'],
+        datasets: [{
+          label: 'Total firearm deaths per 100,000',
+          data: [12.8, 3.6, 2.8, 2.7, 2.1, 2.0, 1.9, 1.7, 1.3, 1.2, 1.0, 1.01, 0.6, 0.5, 0.23, 0.03],
+          backgroundColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.45)' : 'rgba(27,107,62,0.25)'; },
+          borderColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)'; },
+          borderWidth: 1.5,
+          borderRadius: 3,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Total Firearm Deaths per 100,000 Population (OECD Nations)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(1) + ' per 100k' } }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // ── Chart 2: U.S. Firearm Homicide Rate 1993–2023 ────────────────
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['1993','1996','2000','2004','2008','2010','2014','2016','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'U.S. Firearm Homicide Rate per 100k',
+          data: [7.0, 5.5, 4.0, 3.9, 3.8, 3.6, 3.7, 4.0, 4.0, 5.9, 6.7, 4.5, 3.9],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: 'rgba(184,58,30,0.7)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (1993–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
+        },
+        scales: {
+          y: { beginAtZero: true, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  </script>
+
+</body>
+</html>
