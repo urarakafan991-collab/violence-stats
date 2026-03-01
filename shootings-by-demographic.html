@@ -11,6 +11,9 @@
   <meta property="og:description" content="Per-capita rates, socioeconomic confounders, and confidence intervals for every racial/ethnic group and gender.">
   <meta property="og:image" content="https://www.truthbased.org/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mass Shootings by Demographic — Full Breakdown | TruthBased.org">
+  <meta name="twitter:description" content="Perpetrator demographics across three databases. Every group. Full context for each.">
+  <meta name="twitter:image" content="https://www.truthbased.org/og-image.png">
     <link rel="canonical" href="https://www.truthbased.org/shootings-by-demographic">
     <script type="application/ld+json">
     {
@@ -51,6 +54,7 @@
       --blue:#2a5a9a; --blue-faint:#edf2fa;
       --rule:#dedad3; --rule-mid:#c5c1ba;
       --shadow-card:0 1px 4px rgba(0,0,0,0.06);
+      --font-mono:'Courier Prime', monospace;
       /* Aliases for old var names still in HTML */
       --bg:var(--page-ground); --bg2:var(--card-face); --bg3:var(--card-tinted);
       --border:var(--rule); --border2:var(--rule-mid);
@@ -264,7 +268,7 @@
 <body>
 
   <div class="reading-progress" aria-hidden="true"></div>
-  <a class="skip-link" href="#panels">Skip to content</a>
+  <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="site-nav" aria-label="Site navigation">
     <div class="nav-left">
@@ -360,14 +364,14 @@
 <!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
-    <button role="tab" class="tab active" data-tab="white" onclick="showPanel('white')"><span class="dot" style="background:var(--brick)"></span>White</button>
-    <button role="tab" class="tab" data-tab="black" onclick="showPanel('black')"><span class="dot" style="background:var(--brick)"></span>Black</button>
-    <button role="tab" class="tab" data-tab="hispanic" onclick="showPanel('hispanic')"><span class="dot" style="background:var(--blue)"></span>Hispanic</button>
-    <button role="tab" class="tab" data-tab="asian" onclick="showPanel('asian')"><span class="dot" style="background:var(--green-live)"></span>Asian</button>
-    <button role="tab" class="tab" data-tab="native" onclick="showPanel('native')"><span class="dot" style="background:var(--amber)"></span>Native</button>
-    <button role="tab" class="tab" data-tab="immigrant" onclick="showPanel('immigrant')"><span class="dot" style="background:#5a7ab0"></span>Immigrant</button>
-    <button role="tab" class="tab" data-tab="gender" onclick="showPanel('gender')"><span class="dot" style="background:var(--brick)"></span>Gender</button>
-    <button role="tab" class="tab" data-tab="trans" onclick="showPanel('trans')"><span class="dot" style="background:#a04878"></span>Trans</button>
+    <button role="tab" class="tab active" data-tab="white" id="tab-white" aria-selected="true" aria-controls="panel-white" onclick="showPanel('white')"><span class="dot" style="background:var(--brick)"></span>White</button>
+    <button role="tab" class="tab" data-tab="black" id="tab-black" aria-selected="false" aria-controls="panel-black" onclick="showPanel('black')"><span class="dot" style="background:var(--brick)"></span>Black</button>
+    <button role="tab" class="tab" data-tab="hispanic" id="tab-hispanic" aria-selected="false" aria-controls="panel-hispanic" onclick="showPanel('hispanic')"><span class="dot" style="background:var(--blue)"></span>Hispanic</button>
+    <button role="tab" class="tab" data-tab="asian" id="tab-asian" aria-selected="false" aria-controls="panel-asian" onclick="showPanel('asian')"><span class="dot" style="background:var(--green-live)"></span>Asian</button>
+    <button role="tab" class="tab" data-tab="native" id="tab-native" aria-selected="false" aria-controls="panel-native" onclick="showPanel('native')"><span class="dot" style="background:var(--amber)"></span>Native</button>
+    <button role="tab" class="tab" data-tab="immigrant" id="tab-immigrant" aria-selected="false" aria-controls="panel-immigrant" onclick="showPanel('immigrant')"><span class="dot" style="background:#5a7ab0"></span>Immigrant</button>
+    <button role="tab" class="tab" data-tab="gender" id="tab-gender" aria-selected="false" aria-controls="panel-gender" onclick="showPanel('gender')"><span class="dot" style="background:var(--brick)"></span>Gender</button>
+    <button role="tab" class="tab" data-tab="trans" id="tab-trans" aria-selected="false" aria-controls="panel-trans" onclick="showPanel('trans')"><span class="dot" style="background:#a04878"></span>Trans</button>
   </div>
 </div>
 
@@ -375,7 +379,7 @@
 <div class="panels">
 
   <!-- WHITE -->
-  <div class="panel active" role="tabpanel" id="panel-white">
+  <div class="panel active" role="tabpanel" id="panel-white" aria-labelledby="tab-white">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">White (Non-Hispanic)</div>
@@ -442,7 +446,7 @@
   </div>
 
   <!-- BLACK -->
-  <div class="panel" role="tabpanel" id="panel-black">
+  <div class="panel" role="tabpanel" id="panel-black" aria-labelledby="tab-black">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Black (Non-Hispanic)</div>
@@ -511,7 +515,7 @@
   </div>
 
   <!-- HISPANIC -->
-  <div class="panel" role="tabpanel" id="panel-hispanic">
+  <div class="panel" role="tabpanel" id="panel-hispanic" aria-labelledby="tab-hispanic">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Hispanic / Latino</div>
@@ -566,7 +570,7 @@
   </div>
 
   <!-- ASIAN -->
-  <div class="panel" role="tabpanel" id="panel-asian">
+  <div class="panel" role="tabpanel" id="panel-asian" aria-labelledby="tab-asian">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Asian (Non-Hispanic)</div>
@@ -614,7 +618,7 @@
   </div>
 
   <!-- NATIVE -->
-  <div class="panel" role="tabpanel" id="panel-native">
+  <div class="panel" role="tabpanel" id="panel-native" aria-labelledby="tab-native">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Native American / Alaska Native</div>
@@ -655,7 +659,7 @@
   </div>
 
   <!-- IMMIGRANT -->
-  <div class="panel" role="tabpanel" id="panel-immigrant">
+  <div class="panel" role="tabpanel" id="panel-immigrant" aria-labelledby="tab-immigrant">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Immigrants / Foreign-Born</div>
@@ -711,7 +715,7 @@
   </div>
 
   <!-- GENDER -->
-  <div class="panel" role="tabpanel" id="panel-gender">
+  <div class="panel" role="tabpanel" id="panel-gender" aria-labelledby="tab-gender">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Gender</div>
@@ -758,7 +762,7 @@
   </div>
 
   <!-- TRANS -->
-  <div class="panel" role="tabpanel" id="panel-trans">
+  <div class="panel" role="tabpanel" id="panel-trans" aria-labelledby="tab-trans">
     <div class="p-header">
       <div class="p-header-text">
         <div class="p-name">Transgender Perpetrators</div>
@@ -846,7 +850,9 @@ function showPanel(id, pushHash) {
 
   // Tabs: use data-tab attribute for clean matching
   document.querySelectorAll('.tab').forEach(t => {
-    t.classList.toggle('active', t.dataset.tab === id);
+    var isActive = t.dataset.tab === id;
+    t.classList.toggle('active', isActive);
+    t.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
 
   // Overview rows: highlight active
