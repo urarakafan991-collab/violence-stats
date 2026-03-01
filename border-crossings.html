@@ -11,6 +11,8 @@
   <meta property="og:title"   content="Border Crossings — What The Charts Actually Show | TruthBased.org">
   <meta property="og:description" content="25 years of CBP data. Title 42 recidivism explained. Every political claim tested. Both sides steelmanned.">
   <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"   content="summary_large_image">
   <meta name="twitter:title"  content="Border Crossings — What The Charts Actually Show | TruthBased.org">
   <meta name="twitter:description" content="25 years of CBP data. Title 42 recidivism explained. Every political claim tested. Both sides steelmanned.">
@@ -398,6 +400,12 @@
     /* DIVIDER */
     hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 640px) {
       .site-nav { padding: 0 16px; height: 46px; }
@@ -609,8 +617,9 @@
     .table-scroll::after {
       content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
-      pointer-events: none; opacity: 0.7;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
     }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
     [data-theme="dark"] .table-scroll::after {
       background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
     }
@@ -638,6 +647,13 @@
       text-align: left;
       caption-side: top;
       padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 
@@ -681,14 +697,14 @@
   </nav>
 
   <!-- JUMP NAV -->
-  <div class="jump-nav">
+  <nav class="jump-nav" aria-label="Jump to section">
     <a href="#part1" class="jump-btn">Part 1 &mdash; The Numbers</a>
     <a href="#part2" class="jump-btn">Part 2 &mdash; Why They Mislead</a>
     <a href="#part3" class="jump-btn">Part 3 &mdash; Historical Context</a>
     <a href="#part4" class="jump-btn">Part 4 &mdash; Unknown Unknowns</a>
     <a href="#part5" class="jump-btn">Part 5 &mdash; Claims vs. Evidence</a>
     <a href="#part6" class="jump-btn">Part 6 &mdash; Steelman &amp; Economics</a>
-  </div>
+  </nav>
 
   <main id="content">
   <article class="article-wrap">
@@ -740,12 +756,12 @@
       <p>Before we show the chart, a critical warning: <strong>these numbers are not comparable across the full timeline</strong>. Pre-2020 figures count &ldquo;apprehensions&rdquo; (one category). Post-2020 figures count &ldquo;encounters&rdquo; (multiple categories including Title&nbsp;42 expulsions). The methodology changes &mdash; covered in Part&nbsp;2 &mdash; inflate the post-2020 numbers by an estimated 26&ndash;38%. The chart below shows the raw official numbers. The real story requires the adjustments that follow.</p>
 
       <div class="chart-wrap" style="height:340px; margin:28px 0;">
-        <canvas id="chart1"></canvas>
+        <canvas id="chart1" role="img" aria-label="Bar chart showing southwest border encounters by fiscal year from FY2000 to FY2025, with FY2022 peaking at 2.38 million and FY2025 dropping to 238 thousand."></canvas>
       </div>
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Southwest border encounters by fiscal year (FY2000–FY2025)</caption>
+          <caption>Southwest border encounters by fiscal year (FY2000–FY2025)</caption>
           <thead><tr><th>Fiscal Year</th><th>SW Border Encounters</th><th>Notes</th></tr></thead>
           <tbody>
             <tr><td>FY 2000</td><td>1,643,679</td><td>Pre-2020 record; 98% Mexican nationals</td></tr>
@@ -772,7 +788,7 @@
       <p>This decline did not begin on January 20, 2025. Encounters started dropping in mid-2024 following Biden administration executive actions in June 2024 restricting asylum claims when encounters exceeded a threshold. The trend then accelerated dramatically after the Trump administration took office and issued a series of executive orders.</p>
 
       <div class="chart-wrap" style="height:300px; margin:28px 0;">
-        <canvas id="chart2"></canvas>
+        <canvas id="chart2" role="img" aria-label="Line chart showing monthly southwest border encounters from January 2023 to January 2026, peaking at 302 thousand in December 2023 and declining 98 percent to approximately 6 thousand by January 2026."></canvas>
       </div>
 
       <span class="section-label">03 &mdash; Who Is Crossing: Demographic Breakdown</span>
@@ -781,7 +797,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Encounter demographics by category (FY2023–FY2025)</caption>
+          <caption>Encounter demographics by category (FY2023–FY2025)</caption>
           <thead><tr><th>Category</th><th>FY 2023</th><th>FY 2024</th><th>FY 2025</th></tr></thead>
           <tbody>
             <tr><td>Single adults</td><td>~1,541,000 (62%)</td><td>~1,177,000 (57%)</td><td>~59%</td></tr>
@@ -814,7 +830,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Title 42 expulsions vs. Title 8 removals: key differences</caption>
+          <caption>Title 42 expulsions vs. Title 8 removals: key differences</caption>
           <thead><tr><th></th><th>Title 42 Expulsion</th><th>Title 8 Removal</th></tr></thead>
           <tbody>
             <tr><td><strong>Legal basis</strong></td><td>Public health authority</td><td>Immigration law</td></tr>
@@ -878,7 +894,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Nationality breakdown of border encounters (FY2004–FY2023)</caption>
+          <caption>Nationality breakdown of border encounters (FY2004–FY2023)</caption>
           <thead><tr><th></th><th>FY 2004</th><th>FY 2019</th><th>FY 2023</th></tr></thead>
           <tbody>
             <tr><td><strong>Mexican nationals</strong></td><td>~93%</td><td>~75%</td><td>~30%</td></tr>
@@ -1036,7 +1052,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
-          <caption >Economic impact of immigration — key metrics</caption>
+          <caption>Economic impact of immigration — key metrics</caption>
           <thead><tr><th>Metric</th><th>Finding</th><th>Source</th></tr></thead>
           <tbody>
             <tr><td>GDP impact (2024&ndash;2034)</td><td>+$7&ndash;8.9 trillion</td><td>CBO, Feb 2024</td></tr>
@@ -1177,7 +1193,12 @@
     (function(){
       var html = document.documentElement;
       var btn = document.querySelector('.theme-toggle');
-      function icon(){ if(btn) btn.textContent = html.getAttribute('data-theme')==='dark' ? '\u2600' : '\u263E'; }
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
