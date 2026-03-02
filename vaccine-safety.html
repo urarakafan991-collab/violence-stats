@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccine Safety &amp; Efficacy: What the Data Actually Shows | TruthBased.org</title>
+  <meta name="description" content="Comprehensive data-driven analysis of vaccine safety. MMR-autism studies (2M+ children), VAERS vs V-safe, myocarditis rates, COVID vaccine trials, childhood schedule. Every argument steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/vaccine-safety">
+  <meta property="og:title"   content="Vaccine Safety &amp; Efficacy | TruthBased.org">
+  <meta property="og:description" content="What do the largest studies actually show? MMR-autism, COVID vaccines, VAERS data, childhood schedule. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Vaccine Safety &amp; Efficacy | TruthBased.org">
+  <meta name="twitter:description" content="What do the largest studies actually show? Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/vaccine-safety">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #f0ede8;
+      --text-body:    #c8c4bc;
+      --text-dim:     #8a8278;
+      --text-quiet:   #6a655d;
+      --brick-light:  #3a2020;
+      --green-light:  #1a2e22;
+      --amber-light:  #2e2618;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text-body);
+      font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.7;
+    }
+
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover, .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box { border-radius: 6px; padding: 16px 20px; margin: 20px 0; border-left: 3px solid; }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface); transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header { margin: 48px 0 20px; padding-top: 32px; border-top: 2px solid var(--text-head); }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--brick); margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.45rem; font-weight: 600;
+      line-height: 1.25; color: var(--text-head);
+    }
+
+    h3 {
+      font-family: var(--font-sans); font-size: 1rem; font-weight: 600;
+      color: var(--text-head); margin: 32px 0 12px;
+    }
+    h4 {
+      font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600;
+      color: var(--text-dim); margin: 24px 0 8px; text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    p { margin-bottom: 14px; }
+    strong { font-weight: 600; }
+
+    /* CHART */
+    .chart-wrap {
+      background: var(--card-face); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px; margin: 24px 0;
+    }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    .chart-container { position: relative; width: 100%; }
+
+    /* TABLE */
+    .table-scroll { overflow-x: auto; margin: 20px 0; -webkit-overflow-scrolling: touch; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .data-table th {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      background: var(--surface); color: var(--text-dim);
+      padding: 8px 12px; text-align: left; border-bottom: 2px solid var(--border);
+      position: sticky; top: 0; white-space: nowrap;
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      font-family: var(--font-serif); color: var(--text-body); vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: var(--card-tinted); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #0a0a0a; color: #e0ddd8; border-radius: 6px;
+      padding: 16px 20px; margin: 20px 0;
+      font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7;
+      overflow-x: auto;
+    }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    .math-box .math-label {
+      color: #7a7568; font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.1em; display: block; margin-bottom: 8px;
+    }
+    .math-box .math-result { color: #6dbf8b; font-weight: 700; }
+    .math-box .math-dim { color: #7a7568; }
+
+    /* READING PROGRESS */
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: var(--brick); z-index: 200; transition: width 0.1s linear;
+    }
+
+    /* THEME TOGGLE */
+    .theme-toggle {
+      background: none; border: 1px solid var(--border); border-radius: 50%;
+      width: 32px; height: 32px; cursor: pointer; font-size: 0.9rem;
+      color: var(--text-dim); display: flex; align-items: center; justify-content: center;
+      transition: color 0.15s, border-color 0.15s; flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px;
+      border-radius: 50%; border: 1px solid var(--border); background: var(--card-face);
+      color: var(--text-dim); font-size: 1.1rem; cursor: pointer;
+      opacity: 0; transform: translateY(10px); transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; z-index: 50;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { border-color: var(--brick); color: var(--brick); }
+
+    /* CITE */
+    .cite-this { margin-top: 40px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .cite-this-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--text-quiet); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); line-height: 1.5; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+    @media(max-width:640px){
+      .site-nav { padding: 0 16px; }
+      .nav-category { display: none; }
+      .jump-nav { padding: 10px 16px; flex-direction: column; gap: 0; }
+      .jump-toggle { display: flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; padding-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .chart-wrap { padding: 14px 10px; }
+      .data-table { font-size: 0.75rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+    }
+    @media print {
+      .reading-progress, .theme-toggle, .site-footer, .page-footer,
+      .back-to-top, .jump-nav, .site-nav { display: none !important; }
+      body { background: #fff; color: #000; font-size: 10pt; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* QR expand */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Vaccine Safety & Efficacy: What the Data Actually Shows",
+    "description": "Comprehensive data-driven analysis of vaccine safety. MMR-autism studies (23M+ children), VAERS vs V-safe, myocarditis rates, COVID vaccine trials, childhood schedule. Every argument steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-01",
+    "mainEntityOfPage": "https://www.truthbased.org/vaccine-safety",
+    "keywords": ["vaccine safety", "vaccine efficacy", "autism", "MMR", "VAERS", "myocarditis", "COVID vaccine", "fact-check"]
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong></a>
+      <a href="/" class="nav-back">&larr; All Articles</a>
+      <span class="nav-category">Public Health &bull; Vaccines</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span class="jtog-label">Sections</span>
+    </button>
+    <div class="jump-links">
+      <a href="#bottom-line" class="jump-btn">Bottom Line</a>
+      <a href="#autism" class="jump-btn">Autism Claim</a>
+      <a href="#safety-systems" class="jump-btn">VAERS &amp; V-safe</a>
+      <a href="#schedule" class="jump-btn">Schedule Debate</a>
+      <a href="#covid" class="jump-btn">COVID Vaccines</a>
+      <a href="#both-sides" class="jump-btn">Both Sides</a>
+      <a href="#falsifiability" class="jump-btn">What Would Change?</a>
+    </div>
+  </nav>
+
+  <main>
+  <article class="article-wrap">
+    <header class="article-header">
+      <span class="article-category">Data-Driven Analysis</span>
+      <h1 class="article-title">Vaccine Safety &amp; Efficacy:<br>What the Data Actually Shows</h1>
+      <p class="article-deck">Over 23 million children studied across 138 studies. No link to autism. Real but rare adverse events exist. Here is every major claim, tested against primary sources.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">Updated March 2026</span>
+        <span class="meta-pill">23M+ children studied</span>
+        <span class="meta-pill">138+ studies reviewed</span>
+        <span class="meta-pill">Both sides steelmanned</span>
+      </div>
+    </header>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <a class="source-pill" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed / NEJM / JAMA</a>
+        <a class="source-pill" href="https://www.cochranelibrary.com/" target="_blank">Cochrane Reviews</a>
+        <a class="source-pill" href="https://www.cdc.gov/vaccinesafety/" target="_blank">CDC VSD / VAERS</a>
+        <a class="source-pill" href="https://vaers.hhs.gov/" target="_blank">VAERS Database</a>
+        <a class="source-pill" href="https://brightoncollaboration.us/" target="_blank">Brighton Collaboration</a>
+        <a class="source-pill" href="https://www.who.int/groups/global-advisory-committee-on-vaccine-safety" target="_blank">WHO GACVS</a>
+        <a class="source-pill" href="https://nap.nationalacademies.org/" target="_blank">IOM / Nat&rsquo;l Academies</a>
+      </div>
+    </div>
+
+    <!-- ═══════ PART 1: BOTTOM LINE ═══════ -->
+    <section id="bottom-line">
+      <div class="part-header">
+        <div class="part-label">Part I</div>
+        <h2 class="part-title">The Bottom Line</h2>
+      </div>
+
+      <div class="box box-green">
+        <span class="box-label">Key Finding</span>
+        <p>The largest studies in medical history&mdash;covering over 23 million children across 138 studies (Cochrane 2021)&mdash;have found <strong>no link between vaccines and autism</strong>. Serious adverse events from vaccines are real but extremely rare: typically 1&ndash;5 cases per million doses. The benefits of vaccination vastly outweigh the risks by every major analysis.</p>
+      </div>
+
+      <p>Vaccine safety is one of the most studied topics in all of medicine. This article examines every major claim from both sides using primary data: clinical trials, large cohort studies, government surveillance systems, and systematic reviews. No opinion pieces. No secondary summaries. Just data.</p>
+
+      <p>We steelman both the pro-vaccine and vaccine-skeptical positions, using only evidence-based arguments. If the data changes, our conclusions will change with it.</p>
+    </section>
+
+    <!-- ═══════ PART 2: THE AUTISM CLAIM ═══════ -->
+    <section id="autism">
+      <div class="part-header">
+        <div class="part-label">Part II</div>
+        <h2 class="part-title">The Autism Claim</h2>
+      </div>
+
+      <h3>The Wakefield Study (1998)</h3>
+      <p>In February 1998, Andrew Wakefield published a case series in <em>The Lancet</em> describing 12 children with developmental regression after MMR vaccination. The paper had <strong>no control group</strong>, relied on parental recall, and used non-standard methods.</p>
+
+      <p>Subsequent investigations revealed fraud: at least 5 of the 12 children had documented developmental concerns <em>before</em> MMR; onset of symptoms was misreported; children were selectively referred through lawyers preparing vaccine lawsuits. Wakefield had also filed a patent for an alternative measles vaccine and had undisclosed financial conflicts.</p>
+
+      <div class="box box-red">
+        <span class="box-label">Outcome</span>
+        <p>Ten of 12 co-authors retracted the interpretation in 2004. In January 2010, the UK General Medical Council found Wakefield guilty of &ldquo;serious professional misconduct&rdquo; and &ldquo;callous disregard&rdquo; for the children. <em>The Lancet</em> fully retracted the paper in February 2010. In May 2010, his medical license was revoked.</p>
+      </div>
+
+      <h3>What the Largest Studies Found</h3>
+      <p>Every major follow-up study&mdash;totaling well over 2 million children&mdash;has found <strong>no association between vaccines and autism</strong>:</p>
+
+      <div class="chart-wrap">
+        <div class="chart-container" style="height:320px;">
+          <canvas id="chart1"></canvas>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr><th>Study</th><th>Year</th><th>Sample Size</th><th>Finding</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Madsen et al. (NEJM)</td><td>2002</td><td>537,303 children</td><td>Adjusted RR 0.92 (95% CI 0.68&ndash;1.24). <strong>No increased autism risk.</strong></td></tr>
+            <tr><td>Taylor et al. (Vaccine) meta-analysis</td><td>2014</td><td>1,256,407 children</td><td>Pooled OR &asymp;1.0. <strong>No link between MMR, thimerosal, or mercury and autism.</strong></td></tr>
+            <tr><td>Jain et al. (JAMA)</td><td>2015</td><td>95,727 children</td><td>Adjusted RR 0.76&ndash;0.91. <strong>No link even in high-risk families with autistic siblings.</strong></td></tr>
+            <tr><td>Hviid et al. (Ann Intern Med)</td><td>2019</td><td>657,461 children</td><td>Adjusted HR 0.93 (95% CI 0.85&ndash;1.02). <strong>No link in any subgroup.</strong></td></tr>
+            <tr><td>Cochrane Review (138 studies)</td><td>2021</td><td>23,000,000+ children</td><td><strong>No evidence of increased autism, encephalitis, or other serious conditions.</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box-amber">
+        <span class="box-label">What This Means</span>
+        <p>If MMR caused autism, you would expect vaccinated children to have higher autism rates than unvaccinated children. Instead, every large study finds rates that are <em>identical or slightly lower</em> in the vaccinated group. The hazard ratios (0.92&ndash;0.93) are consistent with no effect&mdash;the small variation below 1.0 is within normal statistical fluctuation.</p>
+      </div>
+
+      <h3>Autism Prevalence: Why Diagnoses Rose</h3>
+      <p>Autism diagnoses rose sharply from the 1990s onward, but this tracks with changes in <strong>diagnostic criteria and awareness</strong>, not vaccines:</p>
+
+      <div class="chart-wrap">
+        <div class="chart-container" style="height:300px;">
+          <canvas id="chart2"></canvas>
+        </div>
+      </div>
+
+      <p>CDC&rsquo;s ADDM Network reports: prevalence went from about 1 in 150 (2000 surveillance) to 1 in 36 (2020) to 1 in 31 (2022). This &sim;500% rise parallels DSM-IV (1994) broadening criteria to include Asperger&rsquo;s and PDD-NOS, DSM-5 (2013) consolidating everything under &ldquo;ASD,&rdquo; universal screening recommendations (2007 AAP), and increased clinician/parent awareness. Research from California estimates that changes in diagnostic practices account for roughly 25&ndash;30% of the observed rise alone.</p>
+
+      <h3>The Thimerosal Natural Experiment</h3>
+      <p>Thimerosal (an ethylmercury-based preservative) was removed from most U.S. childhood vaccines by 2001. If thimerosal caused autism, rates should have dropped. Instead:</p>
+
+      <div class="math-box">
+        <span class="math-label">Thimerosal Removal vs. Autism Rates</span>
+        <span class="math-dim">Pre-removal (1995):</span> 0.6 per 1,000 live births<br>
+        <span class="math-dim">Post-removal (2007):</span> <span class="math-result">4.1 per 1,000 live births</span><br>
+        <span class="math-dim">Trend direction:</span> <span class="math-result">Continued rising &mdash; opposite of expected</span><br>
+        <span class="math-dim">Denmark/Sweden:</span> Removed thimerosal in 1992; autism kept rising there too
+      </div>
+
+      <p>The IOM&rsquo;s 2004 review evaluated over 200 studies and concluded the evidence &ldquo;favors rejection&rdquo; of a causal relationship between thimerosal and autism.</p>
+    </section>
+
+    <!-- ═══════ PART 3: SAFETY SYSTEMS ═══════ -->
+    <section id="safety-systems">
+      <div class="part-header">
+        <div class="part-label">Part III</div>
+        <h2 class="part-title">VAERS, V-safe &amp; Safety Surveillance</h2>
+      </div>
+
+      <h3>VAERS: What It Actually Is</h3>
+      <p>The Vaccine Adverse Event Reporting System (VAERS) is a <strong>passive surveillance system</strong> co-managed by CDC and FDA since 1990. It is an early-warning system designed to detect potential safety signals&mdash;not to prove causation. Key facts:</p>
+
+      <p><strong>Anyone can submit a report</strong>&mdash;patients, parents, doctors, or manufacturers. Reports require no verification before entry. CDC explicitly states reports &ldquo;do not mean the vaccine caused the event.&rdquo;</p>
+
+      <p><strong>Raw VAERS counts are not death or injury counts.</strong> They are unverified reports of events that happened <em>after</em> vaccination. A temporal relationship (A happened after B) is not evidence of causation. To illustrate: one VAERS report documented a girl falling into a well 49 days after an HPV vaccine&mdash;that was recorded as an HPV vaccine adverse event.</p>
+
+      <p><strong>VAERS has no denominator.</strong> Without knowing how many people were vaccinated and the background rate of the event, raw numbers are meaningless. Knowingly filing a false VAERS report is a federal crime under 18 U.S. Code &sect;1001.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">How VAERS Is Actually Used</span>
+        <p>CDC/FDA analysts look for unusual patterns (safety signals)&mdash;e.g., clusters of a rare syndrome after a new vaccine. When a signal is detected, they investigate with more rigorous systems like the Vaccine Safety Datalink (VSD). This is how signals like TTS after J&amp;J and myocarditis after mRNA vaccines were detected and quantified.</p>
+      </div>
+
+      <h3>V-safe: Active Surveillance</h3>
+      <p>V-safe is CDC&rsquo;s smartphone-based <strong>active surveillance</strong> system launched for COVID-19 vaccines. Unlike VAERS (passive), V-safe proactively contacts participants daily, then weekly for 6 weeks post-vaccination. Over 10 million people enrolled.</p>
+
+      <p>V-safe provides what VAERS cannot: <strong>denominator-based rates</strong>. Example from RSV vaccine surveillance: among 16,220 V-safe participants, 39.0% reported at least one symptom, but only 0.4% reported seeking medical care. VAERS received 3,200 reports for the same population, 91.2% non-serious. V-safe consistently shows &gt;95% of reactions are mild/transient.</p>
+
+      <h3>The Brighton Collaboration</h3>
+      <p>The Brighton Collaboration (founded 2000) is a global network of vaccine-safety experts that develops <strong>standardized case definitions</strong> for adverse events. They have created over 60 definitions (anaphylaxis, GBS, myocarditis, TTS, etc.) with levels of diagnostic certainty:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Level</th><th>Description</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Level 1</strong></td><td>Highest diagnostic certainty</td><td>Most specific; gold standard</td></tr>
+            <tr><td><strong>Level 2</strong></td><td>Probable</td><td>Intermediate specificity</td></tr>
+            <tr><td><strong>Level 3</strong></td><td>Possible</td><td>Most sensitive (catches more)</td></tr>
+            <tr><td><strong>Level 4</strong></td><td>Insufficient data</td><td>Cannot classify</td></tr>
+            <tr><td><strong>Level 5</strong></td><td>Not a case</td><td>Ruled out</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Brighton definitions ensure consistent case identification across countries and systems, making global safety comparisons possible. They were central to COVID-19 safety monitoring.</p>
+    </section>
+
+    <!-- ═══════ PART 4: SCHEDULE DEBATE ═══════ -->
+    <section id="schedule">
+      <div class="part-header">
+        <div class="part-label">Part IV</div>
+        <h2 class="part-title">The Childhood Vaccine Schedule</h2>
+      </div>
+
+      <h3>More Vaccines, Fewer Antigens</h3>
+      <p>The number of recommended vaccines has grown since the 1980s. But the total antigenic load has <strong>dropped by 95%</strong>:</p>
+
+      <div class="chart-wrap">
+        <div class="chart-container" style="height:280px;">
+          <canvas id="chart3"></canvas>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Era</th><th>Diseases</th><th>Doses (by age 6)</th><th>Total Antigens</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mid-1980s</strong></td><td>7 (DTP, polio, MMR)</td><td>~10&ndash;11</td><td><strong>~3,200</strong> (whole-cell DTP alone: ~3,000)</td></tr>
+            <tr><td><strong>2000</strong></td><td>11 (+Hib, HepB, varicella, etc.)</td><td>~20</td><td>~900</td></tr>
+            <tr><td><strong>2024&ndash;25</strong></td><td>16&ndash;18</td><td>~28 (by age 2); ~50&ndash;54 (by 18)</td><td><strong>~160&ndash;180</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Modern acellular, recombinant, and conjugate vaccines are far more targeted. A child&rsquo;s entire 2024 schedule has about 165 distinct antigens&mdash;versus ~3,200 from a single 1980s DTP shot. The &ldquo;immune system overload&rdquo; concern is not supported by the data.</p>
+
+      <h3>Does the Schedule Cause Harm?</h3>
+      <p>The Institute of Medicine (now National Academy of Medicine) conducted a comprehensive 2013 review and concluded it <strong>&ldquo;uncovered no evidence of major safety concerns associated with adherence to the childhood immunization schedule.&rdquo;</strong> No links to autoimmune diseases, developmental disorders, seizures, asthma, or hypersensitivity.</p>
+
+      <p>A VSD nested case-control study (193 cases, 751 controls) found that cumulative antigen exposure through 23 months showed <strong>no association</strong> with non-vaccine-targeted infections (matched OR 0.94 per 30-antigen increase; 95% CI 0.84&ndash;1.07).</p>
+
+      <h3>Alternative/Delayed Schedules</h3>
+      <p>No randomized trials have shown benefits of alternative schedules (the IOM deemed such trials unethical&mdash;they would expose children to preventable diseases). Observational data shows delayed children have <strong>lower completion rates</strong> (~35% up-to-date at 19 months vs. 60% on-time) and <strong>higher vulnerability</strong> to vaccine-preventable diseases, with no decrease in adverse outcomes.</p>
+
+      <h3>International Comparisons</h3>
+      <p>Claims that some countries give &ldquo;far fewer vaccines&rdquo; are misleading. Japan, Scandinavia, and other developed nations vaccinate against similar diseases with similar coverage. Japan&rsquo;s DTaP and measles coverage exceeds 90%. Countries with high vaccine uptake universally have the lowest rates of vaccine-preventable diseases. No country on a &ldquo;minimal&rdquo; schedule has demonstrably better health outcomes.</p>
+    </section>
+
+    <!-- ═══════ PART 5: COVID VACCINES ═══════ -->
+    <section id="covid">
+      <div class="part-header">
+        <div class="part-label">Part V</div>
+        <h2 class="part-title">COVID-19 Vaccines</h2>
+      </div>
+
+      <h3>Original Trial Efficacy</h3>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Vaccine</th><th>Trial Size</th><th>Efficacy</th><th>Cases: Vaccine vs. Placebo</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Pfizer-BioNTech</strong></td><td>43,548</td><td>95.0% (CI 90.3&ndash;97.6)</td><td>8 vs. 162</td></tr>
+            <tr><td><strong>Moderna</strong></td><td>30,420</td><td>94.1% (CI 89.3&ndash;96.8)</td><td>11 vs. 185</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Extended 6-month follow-up of Pfizer (46,307 participants) showed 91.3% efficacy (CI 89.0&ndash;93.2) against symptomatic COVID, with 850 cases in placebo vs. 77 in vaccine. 100% efficacy against severe disease by CDC definition.</p>
+
+      <h3>Variants and Waning</h3>
+      <p>Efficacy dropped as the virus evolved. During Omicron, 2-dose effectiveness against infection fell below 50% without a booster. Protection against <strong>severe disease and hospitalization</strong> remained substantially higher&mdash;70&ndash;90% with boosters&mdash;even against later variants.</p>
+
+      <h3>Real-World Effectiveness</h3>
+      <p>Israel&rsquo;s nationwide study matched ~596,000 vaccinees to unvaccinated controls: 94% effective against symptomatic COVID, 87% against hospitalization, 92% against severe disease. Similar results confirmed across the US, UK, Qatar, and Europe.</p>
+
+      <h3>Myocarditis: Vaccine vs. Infection</h3>
+
+      <div class="chart-wrap">
+        <div class="chart-container" style="height:320px;">
+          <canvas id="chart4"></canvas>
+        </div>
+      </div>
+
+      <div class="box box-green">
+        <span class="box-label">Key Data Point</span>
+        <p>A 2022 meta-analysis (22 studies, 55.5 million vaccinees, 2.5 million infected) found myocarditis relative risk was <strong>2.0 after vaccination vs. 15.0 after COVID infection</strong>&mdash;over 7x higher risk with infection. Among myocarditis cases, 76&ndash;90% resolve without long-term issues. Risk is concentrated in males under 40 after dose 2.</p>
+      </div>
+
+      <p>Israeli data (5.44M Pfizer recipients): excess risk in males 16&ndash;19 was 13.73 per 100,000 (~1 in 7,300) after dose 2, with ~95% classified as mild and one death. By comparison, infection-associated myocarditis in the same age group runs 50&ndash;65 per 100,000.</p>
+
+      <h3>Blood Clots (J&amp;J / AstraZeneca)</h3>
+      <p>Thrombosis with thrombocytopenia syndrome (TTS) was detected after adenovirus-vector vaccines:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Exposure</th><th>Clot Risk</th><th>Context</th></tr></thead>
+          <tbody>
+            <tr><td><strong>J&amp;J vaccine</strong></td><td>~3 per million overall; ~10/million in women 30&ndash;49</td><td>60 confirmed cases in 18M+ doses</td></tr>
+            <tr><td><strong>AstraZeneca</strong></td><td>~1 per 100,000&ndash;250,000</td><td>Led to age restrictions in several countries</td></tr>
+            <tr><td><strong>Oral contraceptives</strong></td><td>5&ndash;12 per 10,000 women/year</td><td>500&ndash;1,200 per million &mdash; far higher than TTS</td></tr>
+            <tr><td><strong>COVID-19 infection</strong></td><td>~31% of ICU patients had thromboses</td><td>Infection clot risk exceeds vaccine risk by orders of magnitude</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Long-Term Safety (3+ Years)</h3>
+      <p>Over 3+ years and billions of doses, no unexpected long-term harms have emerged. The VSD, VAERS, and V-safe systems continue monitoring. A French cohort (22.7M vaccinated vs. 5.9M unvaccinated, ages 18&ndash;59) found <strong>no excess all-cause mortality</strong> and a 74% reduction in COVID death among the vaccinated over 4 years. No confirmed links to cancer, fertility issues, or excess non-COVID deaths have been found.</p>
+    </section>
+
+    <!-- ═══════ PART 6: BOTH SIDES ═══════ -->
+    <section id="both-sides">
+      <div class="part-header">
+        <div class="part-label">Part VI</div>
+        <h2 class="part-title">Steelmanning Both Sides</h2>
+      </div>
+
+      <div class="box box-green">
+        <span class="box-label">The Evidence-Based Case FOR Vaccines</span>
+        <p><strong>Disease prevention:</strong> CDC estimates the U.S. childhood schedule has prevented about 1.1 million deaths and 32 million hospitalizations in 30 years. Measles vaccination alone has saved an estimated 94 million lives since 1974.</p>
+        <p><strong>Antigen reduction:</strong> 95% fewer antigens despite 2&ndash;3x more diseases prevented. IOM 2013 + VSD cohorts: no causal links to chronic conditions.</p>
+        <p><strong>Autism studies:</strong> Over 2 million children studied. Zero signal. The Danish 657K and U.S. 95K studies show no link even in the highest-risk families.</p>
+        <p><strong>Net benefit math:</strong> Myocarditis from mRNA vaccination is 7x less common than from COVID infection. GBS from flu vaccine: ~1&ndash;3 per million doses vs. ~17 GBS admissions per million flu infections.</p>
+        <p><strong>Self-correcting system:</strong> When problems arise, they&rsquo;re detected. RotaShield was withdrawn for intussusception risk. Pandemrix was pulled for narcolepsy. J&amp;J was deprioritized for TTS. The system works.</p>
+      </div>
+
+      <div class="box box-red">
+        <span class="box-label">The Evidence-Based Case FOR Skepticism (Non-Conspiracy)</span>
+        <p><strong>Real adverse events exist.</strong> Influenza vaccines: GBS ~1&ndash;3 extra cases per million doses. Pandemrix (2009 H1N1): narcolepsy in ~1 in 18,000 children in Finland/Sweden (HLA-linked, led to withdrawal). mRNA vaccines: myocarditis in young males (~13&ndash;70 per million in some datasets). J&amp;J: TTS at ~3&ndash;10 per million. These are rare but real.</p>
+        <p><strong>Surveillance limitations.</strong> VAERS is passive and subject to both under-reporting and media-driven over-reporting. Active systems like VSD cover millions but not everyone.</p>
+        <p><strong>Regulatory structure questions.</strong> FDA receives ~45&ndash;65% of funding from industry user fees (post-1992). While independent bodies like IOM provide review, the structural concern is legitimate.</p>
+        <p><strong>Communication missteps.</strong> Early COVID messaging sometimes framed vaccines as &ldquo;risk-free&rdquo; or implied sterilizing immunity. Walking these back eroded trust. Honest communication about rare risks builds more trust than minimizing them.</p>
+        <p><strong>Individual risk varies.</strong> For specific subgroups (e.g., young males with prior myocarditis), risk-benefit may differ. ACIP already makes subgroup-specific recommendations.</p>
+      </div>
+
+      <h3>Legitimate Scientific Debates (Not Fringe)</h3>
+      <p>Reputable scientists disagree on: optimal dosing intervals for mRNA vaccines (longer intervals may reduce myocarditis risk); booster frequency for low-risk young adults; aluminum adjuvant cumulative exposure in preterm infants; how to best distinguish true signals from background noise in passive systems; and whether certain vaccines have beneficial or harmful non-specific effects beyond their target diseases.</p>
+
+      <p>Importantly, none of these debates dispute the overall conclusion that vaccines&rsquo; benefits vastly outweigh risks. The disagreements are on fine points of scheduling, specific subgroups, and program priorities.</p>
+    </section>
+
+    <!-- ═══════ PART 7: FALSIFIABILITY ═══════ -->
+    <section id="falsifiability">
+      <div class="part-header">
+        <div class="part-label">Part VII</div>
+        <h2 class="part-title">What Would Change the Conclusion?</h2>
+      </div>
+
+      <p>Science must be falsifiable. Here is exactly what evidence would prove vaccines do more harm than good:</p>
+
+      <h3>Evidence That Would Overturn the Consensus</h3>
+      <p><strong>All-cause mortality excess.</strong> Large, well-controlled studies showing vaccinated groups have <em>higher</em> all-cause mortality or serious morbidity than comparable unvaccinated groups, not explained by confounders. Current data shows the opposite.</p>
+
+      <p><strong>Consistent adverse-event excess.</strong> Replicated findings across multiple independent surveillance systems that serious adverse events exceed severe outcomes prevented by the vaccine.</p>
+
+      <p><strong>Biological mechanism.</strong> A plausible, experimentally verified pathway by which vaccines cause the alleged harm&mdash;not just temporal association.</p>
+
+      <p><strong>Risk calculation reversal.</strong> If the number needed to harm becomes lower than the number needed to prevent one case of disease.</p>
+
+      <h3>What Readers Should Watch</h3>
+      <p><strong>VAERS with context:</strong> When you see VAERS numbers, ask: what&rsquo;s the denominator? What&rsquo;s the background rate? Have the reports been verified?</p>
+      <p><strong>Active vs. passive data:</strong> V-safe and VSD data provide rates. VAERS provides signals. Treat them differently.</p>
+      <p><strong>Brighton levels:</strong> Level 1 (definite) cases are more meaningful than unclassified reports.</p>
+      <p><strong>Cochrane reviews and meta-analyses:</strong> These synthesize multiple studies and provide the most reliable estimates.</p>
+      <p><strong>Ongoing surveillance:</strong> Watch VSD rapid-cycle analyses for new formulations; global excess-mortality trends; long-term (5&ndash;10 year) mRNA cohort follow-up; and any reversal in autism/VPD trends tied to schedule changes.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">Our Commitment</span>
+        <p>If new large-scale evidence emerges showing net harm from any vaccine, we will update this article immediately. That is what data-driven means. Until such evidence appears, the extensive body of epidemiological and clinical data supports vaccines as one of the safest, most beneficial public health tools ever developed.</p>
+      </div>
+    </section>
+
+    <!-- CITE THIS -->
+    <div class="cite-this">
+      <span class="cite-this-label">Cite This Article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Vaccine Safety &amp; Efficacy: What the Data Actually Shows.&rdquo; Updated March 2026. https://www.truthbased.org/vaccine-safety</span>
+    </div>
+  </article>
+  </main>
+
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Cochrane, NEJM, JAMA, CDC VSD, VAERS, WHO GACVS, IOM</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+  <script>
+    // ── Chart 1: MMR-Autism Studies (Sample Sizes) ──
+    var ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Cochrane 2021\n(138 studies)', 'Taylor 2014\nMeta-analysis', 'Hviid 2019\nDenmark', 'Madsen 2002\nDenmark', 'Jain 2015\nUS Siblings'],
+        datasets: [{
+          label: 'Children studied',
+          data: [23000000, 1256407, 657461, 537303, 95727],
+          backgroundColor: ['rgba(27,107,62,0.35)', 'rgba(27,107,62,0.3)', 'rgba(27,107,62,0.25)', 'rgba(27,107,62,0.2)', 'rgba(27,107,62,0.15)'],
+          borderColor: 'rgba(27,107,62,0.8)',
+          borderWidth: 1.5, borderRadius: 3,
+        }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Major Studies Finding No MMR-Autism Link (by sample size)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: function(ctx) { return ctx.parsed.x.toLocaleString() + ' children'; } } }
+        },
+        scales: {
+          x: { type: 'logarithmic', ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278', callback: function(v) { if(v>=1000000) return (v/1000000)+'M'; if(v>=1000) return (v/1000)+'K'; return v; } }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          y: { ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // ── Chart 2: Autism Prevalence Timeline ──
+    var ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['2000','2002','2004','2006','2008','2010','2012','2014','2016','2018','2020','2022'],
+        datasets: [{
+          label: 'ASD per 1,000 (CDC ADDM)',
+          data: [6.7, 6.6, 8.0, 9.0, 11.3, 14.7, 14.6, 16.8, 18.5, 23.0, 27.6, 32.2],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2, pointRadius: 4,
+          pointBackgroundColor: 'rgba(184,58,30,0.7)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Autism Prevalence per 1,000 Children (CDC ADDM Network)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          annotation: {}
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // ── Chart 3: Antigen Exposure ──
+    var ctx3 = document.getElementById('chart3').getContext('2d');
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: ['Mid-1980s (7 diseases)', '2000 (11 diseases)', '2024 (16-18 diseases)'],
+        datasets: [{
+          label: 'Total antigens',
+          data: [3200, 900, 165],
+          backgroundColor: ['rgba(184,58,30,0.35)', 'rgba(122,79,0,0.3)', 'rgba(27,107,62,0.35)'],
+          borderColor: ['rgba(184,58,30,0.8)', 'rgba(122,79,0,0.8)', 'rgba(27,107,62,0.8)'],
+          borderWidth: 1.5, borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Total Antigen Exposure in Childhood Vaccine Schedule', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: function(ctx) { return ctx.parsed.y.toLocaleString() + ' antigens'; } } }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // ── Chart 4: Myocarditis Rates ──
+    var ctx4 = document.getElementById('chart4').getContext('2d');
+    new Chart(ctx4, {
+      type: 'bar',
+      data: {
+        labels: ['Males 12-17', 'Males 18-29', 'Males 30-39', 'Females (all ages)'],
+        datasets: [
+          {
+            label: 'After mRNA dose 2 (per 100k)',
+            data: [36, 15, 5, 1],
+            backgroundColor: 'rgba(122,79,0,0.4)',
+            borderColor: 'rgba(122,79,0,0.8)',
+            borderWidth: 1.5, borderRadius: 3
+          },
+          {
+            label: 'After COVID infection (per 100k)',
+            data: [57, 77, 35, 8],
+            backgroundColor: 'rgba(184,58,30,0.4)',
+            borderColor: 'rgba(184,58,30,0.8)',
+            borderWidth: 1.5, borderRadius: 3
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' } },
+          title: { display: true, text: 'Myocarditis Incidence: mRNA Vaccine (dose 2) vs. COVID Infection (per 100k)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y + ' per 100k'; } } }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var saved = localStorage.getItem('tb-theme');
+      if(saved) html.setAttribute('data-theme', saved);
+      else if(window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere to close</span>
+  </div>
+  <script>
+  function expandQR(el){
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+  }
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
