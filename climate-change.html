@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Climate Change Real? Science vs. Media Coverage | TruthBased.org</title>
+  <meta name="description" content="Seven primary datasets examined: temperature records, CO₂ measurements, ocean heat content, sea level, Arctic ice, glaciers, and attribution studies. Every major claim tested.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/climate-change">
+  <meta property="og:title"   content="Is Climate Change Real? Science vs. Media Coverage | TruthBased.org">
+  <meta property="og:description" content="NASA GISTEMP, Mauna Loa, IPCC AR6, ocean heat records, sea level satellites — the primary data, not the punditry. Every major claim tested against the actual measurements.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Is Climate Change Real? Science vs. Media Coverage | TruthBased.org">
+  <meta name="twitter:description" content="Seven datasets, every major claim tested. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/climate-change">
+  <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* COLORBLIND ACCESSIBILITY SYMBOLS */
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+
+    /* DATA TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    /* CHART */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CLAIMS BOX */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+
+    /* FALSIFY BOX */
+    .falsify-box {
+      background: var(--card-face, var(--surface));
+      border: 1px solid var(--rule, var(--border));
+      border-left: 3px solid var(--green);
+      border-radius: 4px; padding: 16px 18px; margin: 24px 0;
+    }
+    .falsify-box .falsify-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green); display: block; margin-bottom: 8px;
+    }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* PART TAKEAWAY */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* TLDR BOX */
+    .tldr-box {
+      background: var(--card-face); border: 1px solid var(--rule);
+      border-left: 3px solid var(--brick); border-radius: 4px;
+      padding: 18px 20px; margin: 24px 0;
+    }
+    .tldr-box .tldr-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    /* TABLE SCROLL */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; position: relative; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    /* CITE THIS */
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    /* READING PROGRESS, BACK-TO-TOP, THEME */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    /* QR EXPAND */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    /* RESPONSIVE */
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top,
+      .reading-progress, .theme-toggle, footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var stored = localStorage.getItem('tb-theme');
+      if (stored) html.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is Climate Change Real? Science vs. Media Coverage",
+    "description": "Seven primary datasets examined: global temperature records, CO₂ measurements, ocean heat content, sea level, Arctic sea ice, glaciers, and attribution studies. Every major claim tested against the measurements.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-04",
+    "dateModified": "2026-03-04",
+    "mainEntityOfPage": "https://www.truthbased.org/climate-change",
+    "keywords": ["climate change", "global warming", "CO2", "IPCC", "temperature records", "sea level rise", "fact-check", "science"]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Science &amp; Media Accuracy</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <!-- JUMP NAV -->
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – Temperature</a>
+      <a href="#part2" class="jump-btn">Part 2 – CO₂</a>
+      <a href="#part3" class="jump-btn">Part 3 – Ocean &amp; Sea Level</a>
+      <a href="#part4" class="jump-btn">Part 4 – Cryosphere</a>
+      <a href="#part5" class="jump-btn">Part 5 – Attribution</a>
+      <a href="#part6" class="jump-btn">Part 6 – Media vs. Science</a>
+      <a href="#part7" class="jump-btn">Part 7 – Claims &amp; Steelman</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header>
+      <span class="article-category">Science &amp; Media Accuracy</span>
+      <h1 class="article-title">Is Climate Change Real?<br>Science vs. Media Coverage</h1>
+      <p class="article-deck">Seven independent datasets — thermometers, satellites, ocean buoys, tide gauges, ice cores, glacier surveys, and atmospheric CO₂ — examined against the claims made by politicians, journalists, and skeptics on all sides.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">11 primary sources</span>
+        <span class="meta-pill">~18 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box" role="region" aria-label="Key claims vs. evidence">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Climate change is a hoax / not real&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Every major independent temperature dataset — NASA GISTEMP, NOAA GlobalTemp, Berkeley Earth, HadCRUT5 — shows the same warming signal. The 2001–2020 average was approximately 1.09&nbsp;&deg;C above pre-industrial levels. Datasets were assembled by independent teams using different methodologies and station networks. All four agree within 0.1&nbsp;&deg;C.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;It's just natural cycles&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>IPCC AR6 (2021) attribution analysis: greenhouse gases contributed approximately +1.0&nbsp;&deg;C of warming from 1850–2019; natural forcings (solar, volcanic) contributed only ±0.1&nbsp;&deg;C. The physical fingerprint — tropospheric warming combined with stratospheric cooling — matches greenhouse gas forcing, not solar or volcanic drivers.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;CO₂ has always fluctuated — nothing unusual&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>CO₂ has fluctuated naturally, but ice-core records show pre-industrial levels were stable near 280&nbsp;ppm for ~10,000 years. Mauna Loa measurements recorded 390.1&nbsp;ppm in 2010 and 427.4&nbsp;ppm in 2025 — a ~9.5% increase in 15 years. Current levels are likely the highest in at least 800,000 years of ice-core records.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The media exaggerates — it's not that bad&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partly supported in both directions. Some media coverage overstates near-term certainty and conflates projections with current measurements. At the same time, economic and impact studies show actual damages have outpaced IPCC's mid-range projections in several categories. The science itself is not exaggerated; the framing of timelines often is.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Scientists keep revising their models — they don't know anything&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Model updates are a feature of science, not a bug. The core warming prediction — CO₂ doubling produces ~3&nbsp;&deg;C of equilibrium warming — has remained stable since Charney (1979). What has changed is confidence bounds (narrowed), ice sheet dynamics (worse), and short-term extreme weather attribution (stronger). Revision toward precision ≠ unreliability.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary sources used</span>
+      <div class="source-pills">
+        <a href="https://data.giss.nasa.gov/gistemp/" class="source-pill" target="_blank" rel="noopener noreferrer">NASA GISTEMP</a>
+        <a href="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-monthly" class="source-pill" target="_blank" rel="noopener noreferrer">NOAA GlobalTemp</a>
+        <a href="https://berkeleyearth.org/" class="source-pill" target="_blank" rel="noopener noreferrer">Berkeley Earth</a>
+        <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/" class="source-pill" target="_blank" rel="noopener noreferrer">HadCRUT5</a>
+        <a href="https://gml.noaa.gov/ccgg/trends/" class="source-pill" target="_blank" rel="noopener noreferrer">Mauna Loa CO₂</a>
+        <a href="https://www.ncei.noaa.gov/access/global-ocean-heat-content/" class="source-pill" target="_blank" rel="noopener noreferrer">NOAA OHC</a>
+        <a href="https://sealevel.nasa.gov/" class="source-pill" target="_blank" rel="noopener noreferrer">NASA Sea Level</a>
+        <a href="https://nsidc.org/arcticseaicenews/" class="source-pill" target="_blank" rel="noopener noreferrer">NSIDC Arctic Ice</a>
+        <a href="https://wgms.ch/" class="source-pill" target="_blank" rel="noopener noreferrer">WGMS Glaciers</a>
+        <a href="https://www.ipcc.ch/report/ar6/wg1/" class="source-pill" target="_blank" rel="noopener noreferrer">IPCC AR6 WG1</a>
+        <a href="https://www.ipcc.ch/report/ar6/wg2/" class="source-pill" target="_blank" rel="noopener noreferrer">IPCC AR6 WG2</a>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PART 1 – SURFACE TEMPERATURE
+    ======================================================= -->
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">Surface Temperature – What The Thermometers Show</h2>
+      </div>
+
+      <span class="section-label">01 – Four independent datasets, one signal</span>
+
+      <p>Climate skeptics often argue that temperature records are unreliable, manipulated by urban heat islands, or limited to a small number of politically motivated institutions. This is testable. Four independent teams — at NASA (U.S.), NOAA (U.S.), the Met Office/CRU (UK), and Berkeley Earth (independent nonprofit) — assembled global temperature records using different station networks, methodologies, and quality-control procedures.</p>
+
+      <p>The result: all four datasets show essentially the same warming signal, agreeing within approximately 0.1&nbsp;&deg;C at any given year. Independent replication across different methodologies is the strongest possible evidence of a real signal.</p>
+
+      <div class="stat-block" aria-label="Temperature anomaly data by dataset">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Global Mean Surface Temperature — 2001–2020 Average Anomaly vs. 1850–1900 Baseline</span>
+          <span class="stat-block-period">4 datasets</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">NASA GISTEMP v4</span>
+            <span class="stat-val positive">+1.09 &deg;C</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">NOAA GlobalTemp v5</span>
+            <span class="stat-val positive">+1.07 &deg;C</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">HadCRUT5 (Met Office / CRU)</span>
+            <span class="stat-val positive">+1.09 &deg;C</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Berkeley Earth BEST</span>
+            <span class="stat-val positive">+1.12 &deg;C</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">IPCC AR6 best estimate (same period)</span>
+            <span class="stat-val positive">+1.09 &deg;C (±0.1 &deg;C likely range)</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="source-note">Source: IPCC AR6 WGI, Table SPM.1. Berkeley Earth uses ~40,000 station records vs. ~7,000 in earlier NOAA analysis. The agreement across sample sizes and methodologies rules out systematic station-bias explanations.</p>
+
+      <span class="section-label">02 – Recent years in context</span>
+
+      <p>2024 became the first calendar year to exceed 1.5&nbsp;&deg;C above pre-industrial levels (the Paris Agreement threshold), according to Berkeley Earth, NOAA, and Copernicus Climate Change Service data. 2025 ranked as the 3rd-warmest year on record. All ten of the hottest years in the instrumental record have occurred since 2010.</p>
+
+      <div class="chart-wrap" role="img" aria-label="Global temperature anomaly chart 1980 to 2025">
+        <div class="chart-title">Global Surface Temperature Anomaly vs. 1850–1900 Baseline (&deg;C)</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartTemp" aria-label="Annual temperature anomaly from 1980 to 2025 showing steady warming trend"></canvas>
+        </div>
+      </div>
+
+      <span class="section-label">03 – The urban heat island objection</span>
+
+      <p>One of the most persistent skeptic arguments is that warming is an artefact of cities growing around weather stations. Berkeley Earth specifically tested this: their analysis of rural-only stations shows the same warming trend as urban stations. Satellite datasets (RSS and UAH lower troposphere) — which have no surface station bias whatsoever — also show warming, though with somewhat different short-term variability. The urban heat island effect is real and scientifically documented, but it affects local temperature in cities, not the global average trend.</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>Evidence of systematic, coordinated data falsification across all four independent datasets (NASA, NOAA, UK Met Office, Berkeley Earth) operating under different governments and funding sources, with no whistleblowers across thousands of scientists over decades. Alternatively: satellite data (RSS/UAH) showing flat or declining trends contradicting surface records. Neither has occurred.</p>
+      </div>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Four independent global temperature datasets using different methodologies, station networks, and national institutions all show the same warming signal: approximately 1.09&nbsp;&deg;C above pre-industrial levels for 2001–2020. Satellite records broadly corroborate surface records. Urban heat island effects have been controlled for and do not explain the trend.</div>
+
+    </section>
+
+    <!-- ======================================================
+         PART 2 – CO₂
+    ======================================================= -->
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">CO₂ and the Greenhouse Signal</h2>
+      </div>
+
+      <span class="section-label">01 – The Mauna Loa record</span>
+
+      <p>The longest continuous direct atmospheric CO₂ measurement is the Keeling Curve, maintained at NOAA's Mauna Loa Observatory in Hawaii since 1958. The site was chosen specifically for its remoteness from industrial sources. The measurement has been independently replicated at dozens of stations globally.</p>
+
+      <div class="stat-block" aria-label="CO2 concentration milestones">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Atmospheric CO₂ Concentration — Key Milestones</span>
+          <span class="stat-block-period">Mauna Loa / NOAA GML</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Pre-industrial average (ice cores, ~1750)</span>
+            <span class="stat-val neutral">~280 ppm</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">1958 (first Mauna Loa measurement)</span>
+            <span class="stat-val neutral">315.7 ppm</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2010 annual mean</span>
+            <span class="stat-val warn">390.1 ppm</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2020 annual mean</span>
+            <span class="stat-val warn">412.5 ppm</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2025 annual mean</span>
+            <span class="stat-val negative">427.4 ppm</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Change 2010–2025</span>
+            <span class="stat-val negative">+37.3 ppm (+9.5%)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Current level vs. 800,000-yr ice-core record</span>
+            <span class="stat-val negative">Likely highest in 800,000 years</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-wrap" role="img" aria-label="Mauna Loa CO2 concentration chart 2010 to 2025">
+        <div class="chart-title">Atmospheric CO₂ at Mauna Loa Observatory (ppm), 2010–2025</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartCO2" aria-label="CO2 concentration rising from 390 ppm in 2010 to 427 ppm in 2025"></canvas>
+        </div>
+      </div>
+
+      <span class="section-label">02 – The greenhouse mechanism</span>
+
+      <p>The physics of the greenhouse effect has been understood since the 19th century (Fourier 1824, Tyndall 1859, Arrhenius 1896). CO₂ absorbs outgoing infrared radiation and re-emits it in all directions, trapping heat in the lower atmosphere. This is not a hypothesis — it is measured directly in laboratory spectroscopy and confirmed by satellite observations of outgoing longwave radiation.</p>
+
+      <p>The expected physical fingerprint of greenhouse-gas-driven warming includes: (1) greater warming at night than during the day — confirmed; (2) greater warming at the poles than the tropics — confirmed; (3) warming of the troposphere coupled with cooling of the stratosphere — confirmed; (4) increased downward longwave radiation at the surface — directly measured. Natural solar forcing would produce a different fingerprint: uniform tropospheric warming without stratospheric cooling.</p>
+
+      <span class="section-label">03 – The CO₂ "natural fluctuation" argument</span>
+
+      <p>Critics correctly note that CO₂ has varied naturally over Earth's history — between roughly 180 ppm (ice ages) and 280 ppm (interglacials) over the past 800,000 years based on Antarctic ice cores. What makes the current increase anomalous is its speed: those natural cycles operated over 10,000–100,000 years. The current 150-ppm increase above the pre-industrial baseline has occurred in approximately 200 years — orders of magnitude faster than natural glacial-interglacial transitions.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">&#9888; Isotopic confirmation of human origin</span>
+        <p>The additional CO₂ in the atmosphere is not of natural origin. Fossil fuel combustion produces CO₂ depleted in carbon-13 and carbon-14 (&#8220;dead carbon&#8221; from ancient organisms). Atmospheric CO₂ shows a consistent isotopic decline matching fossil fuel signatures — a direct chemical fingerprint of the source. This has been measured and published in peer-reviewed literature since the 1970s.</p>
+      </div>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>CO₂ has risen from 280 ppm (pre-industrial) to 427.4 ppm (2025) — a level not seen in at least 800,000 years of ice-core records. The increase is confirmed by independent stations globally and bears an isotopic signature of fossil fuel combustion. The greenhouse mechanism is established 19th-century physics confirmed by direct measurement.</div>
+
+    </section>
+
+    <!-- ======================================================
+         PART 3 – OCEAN HEAT & SEA LEVEL
+    ======================================================= -->
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">Ocean Heat Content and Sea Level Rise</h2>
+      </div>
+
+      <span class="section-label">01 – Why ocean heat is the definitive measure</span>
+
+      <p>Surface air temperature records cover only the atmosphere, which holds a small fraction of Earth's total heat. The ocean absorbs over 90% of the excess heat trapped by greenhouse gases. Ocean heat content (OHC) is therefore a more reliable measure of planetary energy imbalance than surface temperatures alone — it is less affected by short-term atmospheric variability like El Ni&ntilde;o events.</p>
+
+      <div class="stat-block" aria-label="Ocean heat content data">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Upper Ocean Heat Content (0–700 m) — NOAA NCEI</span>
+          <span class="stat-block-period">2021–2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">2021</span>
+            <span class="stat-val positive">Record high (at time)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2022</span>
+            <span class="stat-val positive">Record high (at time)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2023</span>
+            <span class="stat-val positive">Record high (at time)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2024</span>
+            <span class="stat-val positive">Record high (at time)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Consecutive record highs</span>
+            <span class="stat-val negative">4 straight years (2021–2024)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Deep ocean (0–2000 m) trend</span>
+            <span class="stat-val negative">Also rising — consistent with surface signal</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="source-note">Source: NOAA National Centers for Environmental Information (NCEI), Ocean Heat Content dataset. Independent analyses from Cheng et al. (2023) using Argo float network data broadly concur.</p>
+
+      <span class="section-label">02 – Sea level rise</span>
+
+      <p>Global mean sea level is measured by satellite altimetry (TOPEX/Poseidon from 1993, followed by Jason-1/2/3, and Sentinel-6) and by a global network of tide gauges dating back to the 19th century. The two measurement systems are independent and agree closely on trends.</p>
+
+      <div class="stat-block" aria-label="Sea level rise measurements">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Global Mean Sea Level — Satellite Altimetry (NASA/CNES)</span>
+          <span class="stat-block-period">1993–2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Average rate since 1993</span>
+            <span class="stat-val negative">~3–4 mm/year</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Rate in early 1990s</span>
+            <span class="stat-val warn">~2.2 mm/year</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Rate in recent years (2020s)</span>
+            <span class="stat-val negative">~4–5 mm/year</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Rate change since 1993</span>
+            <span class="stat-val negative">~Doubled (accelerating)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Total rise since 1993</span>
+            <span class="stat-val negative">~105 mm (~4.1 inches)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Primary drivers</span>
+            <span class="stat-val warn">Thermal expansion + ice melt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-wrap" role="img" aria-label="Sea level rise chart 1993 to 2024">
+        <div class="chart-title">Global Mean Sea Level Anomaly (mm) Relative to 1993 Baseline</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartSea" aria-label="Sea level rising approximately 105mm since 1993 with accelerating rate"></canvas>
+        </div>
+      </div>
+
+      <p>The acceleration of sea level rise matters as much as the absolute amount. A constant rate would suggest a manageable linear future. Acceleration means the rate itself is increasing — consistent with ice sheet dynamics adding to thermal expansion, and inconsistent with a stable or natural cycle explanation.</p>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>Upper ocean heat content reached record highs in each of 2021, 2022, 2023, and 2024 — four consecutive years. Global mean sea level has risen ~105 mm since 1993 and the rate has roughly doubled, from ~2.2 mm/yr in the early 1990s to ~4–5 mm/yr in the 2020s. Both measurements are confirmed by independent instrument systems.</div>
+
+    </section>
+
+    <!-- ======================================================
+         PART 4 – CRYOSPHERE
+    ======================================================= -->
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">Ice, Glaciers, and the Cryosphere</h2>
+      </div>
+
+      <span class="section-label">01 – Arctic sea ice extent</span>
+
+      <p>The National Snow and Ice Data Center (NSIDC) has tracked Arctic sea ice extent using satellite passive microwave data continuously since 1979. This is a 46-year dataset with no surface station issues — the data comes from orbiting satellites measuring microwave emissions from ice and open ocean.</p>
+
+      <div class="stat-block" aria-label="Arctic sea ice data">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Arctic Sea Ice — NSIDC Satellite Record</span>
+          <span class="stat-block-period">1979–2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Long-term trend (September minimum)</span>
+            <span class="stat-val negative">&minus;12% per decade since 1979</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Total area lost (September min.)</span>
+            <span class="stat-val negative">~40% reduction since 1979</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Multi-year ice (thick, old ice)</span>
+            <span class="stat-val negative">Declining faster than total extent</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Arctic amplification</span>
+            <span class="stat-val negative">Warming 3–4× faster than global average</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Measurement method</span>
+            <span class="stat-val neutral">Satellite passive microwave (no station bias)</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="section-label">02 – Global glaciers</span>
+
+      <p>The World Glacier Monitoring Service (WGMS) maintains records from over 150 reference glaciers worldwide, with some measurements dating to the 1880s. Mass balance (the difference between snow accumulation and melt) has been negative globally since the 1980s and accelerating since the 2000s.</p>
+
+      <div class="table-scroll" role="region" aria-label="Glacier mass balance data table">
+        <table class="data-table">
+          <caption>Global Glacier Mass Balance — World Glacier Monitoring Service (WGMS)</caption>
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Avg. Annual Mass Balance</th>
+              <th>Trend</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1970s–1980s</td>
+              <td class="td-warn">&minus;~0.2 m w.e./yr</td>
+              <td class="td-warn">Negative</td>
+              <td class="td-note">Mass loss beginning across most regions</td>
+            </tr>
+            <tr>
+              <td>1990s</td>
+              <td class="td-warn">&minus;~0.3 m w.e./yr</td>
+              <td class="td-alert">Accelerating</td>
+              <td class="td-note">Alpine, Andean, and Himalayan glaciers all losing</td>
+            </tr>
+            <tr>
+              <td>2000s</td>
+              <td class="td-alert">&minus;~0.5 m w.e./yr</td>
+              <td class="td-alert">Accelerating</td>
+              <td class="td-note">GRACE satellite gravity confirmed ice mass loss</td>
+            </tr>
+            <tr>
+              <td>2010s</td>
+              <td class="td-alert">&minus;~0.8 m w.e./yr</td>
+              <td class="td-alert">Accelerating</td>
+              <td class="td-note">~95% of WGMS reference glaciers retreating</td>
+            </tr>
+            <tr>
+              <td>2020s (to 2024)</td>
+              <td class="td-alert">&minus;~1.0 m w.e./yr</td>
+              <td class="td-alert">Accelerating</td>
+              <td class="td-note">2022–2023 worst mass loss years on record</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">Note: m w.e. = metres water equivalent. Independent confirmation from NASA GRACE and GRACE-FO satellite gravimetry (which measures changes in Earth's gravitational field caused by mass redistribution) matches WGMS direct measurements.</p>
+
+      <span class="section-label">03 – The Greenland and Antarctic ice sheets</span>
+
+      <p>Ice sheets are a different category from mountain glaciers — they are continental-scale bodies of ice that store most of the world's freshwater. Both Greenland and Antarctica are losing mass, confirmed by three independent methods: GRACE satellite gravimetry (mass change), altimetry (surface height change), and input-output mass balance (measuring snowfall in vs. ice flow out). All three agree that both ice sheets are losing mass at accelerating rates.</p>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>Arctic sea ice has declined ~12% per decade since 1979 (satellite passive microwave — no surface station bias). Glacier mass balance globally has been negative since the 1980s and is accelerating: ~95% of monitored reference glaciers are retreating. Greenland and Antarctic ice sheets are losing mass confirmed by three independent methods. The cryosphere changes are consistent with greenhouse-driven warming, not natural variability.</div>
+
+    </section>
+
+    <!-- ======================================================
+         PART 5 – ATTRIBUTION
+    ======================================================= -->
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Attribution – What Is Actually Causing the Warming?</h2>
+      </div>
+
+      <span class="section-label">01 – The IPCC attribution analysis</span>
+
+      <p>Attribution science answers the question: of the observed warming, how much is caused by which forcing? IPCC AR6 (2021) produced the most comprehensive attribution analysis to date, drawing on thousands of peer-reviewed papers.</p>
+
+      <div class="stat-block" aria-label="Climate attribution data from IPCC AR6">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Attribution of 1850–2020 Warming — IPCC AR6, SPM Figure 2</span>
+          <span class="stat-block-period">Best estimates with likely ranges</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Well-mixed greenhouse gases (CO₂, CH₄, N₂O, F-gases)</span>
+            <span class="stat-val negative">+1.0 &deg;C to +2.0 &deg;C (best: +1.5 &deg;C)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Short-lived climate forcers (tropospheric ozone, etc.)</span>
+            <span class="stat-val warn">+0.1 &deg;C to +0.3 &deg;C</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Aerosols (cooling effect — sulfate particles)</span>
+            <span class="stat-val positive">&minus;0.5 &deg;C to &minus;0.0 &deg;C (masking warming)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">All human influences combined</span>
+            <span class="stat-val negative">+0.8 &deg;C to +1.3 &deg;C (best: +1.07 &deg;C)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Natural forcings (solar + volcanic)</span>
+            <span class="stat-val neutral">&minus;0.1 &deg;C to +0.1 &deg;C (best: &minus;0.1 &deg;C)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Internal variability (El Ni&ntilde;o, ocean cycles)</span>
+            <span class="stat-val neutral">Cannot explain multi-decadal trend</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Observed warming (1850–2020)</span>
+            <span class="stat-val negative">~+1.1 &deg;C</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="section-label">02 – Physical fingerprinting</span>
+
+      <p>Multiple independent physical fingerprints distinguish greenhouse warming from natural forcing:</p>
+
+      <div class="steelman-wrap" aria-label="Climate fingerprints comparison table">
+        <div class="steelman-row">
+          <div class="steelman-key">Fingerprint</div>
+          <div class="steelman-val"><strong>GHG prediction</strong></div>
+          <div class="steelman-val"><strong>Solar prediction</strong></div>
+          <div class="steelman-val"><strong>Observed</strong></div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Stratosphere</div>
+          <div class="steelman-val">Cooling (heat trapped below)</div>
+          <div class="steelman-val">Warming (more solar input)</div>
+          <div class="steelman-val">Cooling ✓ GHG</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Troposphere</div>
+          <div class="steelman-val">Warming</div>
+          <div class="steelman-val">Warming</div>
+          <div class="steelman-val">Warming (both consistent)</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Night vs. Day</div>
+          <div class="steelman-val">Nights warming faster</div>
+          <div class="steelman-val">Days warming faster</div>
+          <div class="steelman-val">Nights warming faster ✓ GHG</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Polar amplification</div>
+          <div class="steelman-val">Poles warm 3–4× faster</div>
+          <div class="steelman-val">Uniform warming</div>
+          <div class="steelman-val">Arctic +3–4× global ✓ GHG</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Outgoing IR radiation</div>
+          <div class="steelman-val">Decreasing in CO₂ bands</div>
+          <div class="steelman-val">Increasing (more solar reflected)</div>
+          <div class="steelman-val">Decreasing in CO₂ bands ✓ GHG</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Downward IR at surface</div>
+          <div class="steelman-val">Increasing</div>
+          <div class="steelman-val">Not applicable</div>
+          <div class="steelman-val">Directly measured increasing ✓ GHG</div>
+        </div>
+      </div>
+
+      <span class="section-label">03 – Solar variation</span>
+
+      <p>Solar output has been directly measured by satellite since 1978 (ACRIM and later SORCE datasets). Since 1980, solar irradiance has shown no statistically significant upward trend — in fact, the period from approximately 2000–2020 had slightly lower solar output. Observed warming has continued and accelerated during this period of flat or declining solar forcing. The correlation between solar output and global temperature that existed in the early 20th century broke down after 1980, precisely when CO₂ forcing overtook solar as the dominant driver.</p>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway</strong>IPCC AR6 attributes +1.07&nbsp;&deg;C of the observed ~1.1&nbsp;&deg;C warming to human activities (primarily greenhouse gases), with natural forcing contributing only ±0.1&nbsp;&deg;C. Multiple independent physical fingerprints — stratospheric cooling, greater night warming, polar amplification, declining outgoing infrared in CO₂ absorption bands — match greenhouse gas forcing and rule out solar or volcanic explanations. Solar output has shown no significant upward trend since 1980.</div>
+
+    </section>
+
+    <!-- ======================================================
+         PART 6 – MEDIA vs SCIENCE
+    ======================================================= -->
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Media Coverage vs. What the Science Says</h2>
+      </div>
+
+      <span class="section-label">01 – Where coverage tracks science accurately</span>
+
+      <p>Core scientific conclusions — that warming is occurring, that it is human-caused, and that it will continue — are well-represented in mainstream media. The consensus itself is not overstated: multiple surveys of climate scientists (e.g., Cook et al. 2013, Lynas et al. 2021) find 97%+ agreement on human-caused warming among actively publishing researchers. This figure appears frequently in coverage and is defensible.</p>
+
+      <span class="section-label">02 – Where media coverage diverges from the IPCC</span>
+
+      <div class="table-scroll" role="region" aria-label="Media vs science comparison table">
+        <table class="data-table">
+          <caption>Common Media Framings vs. IPCC AR6 Position</caption>
+          <thead>
+            <tr>
+              <th>Media Framing</th>
+              <th>IPCC / Scientific Position</th>
+              <th>Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&ldquo;Climate change causes [specific extreme weather event]&rdquo;</td>
+              <td>Attribution science shows climate change alters probability and intensity — rarely causes single events. Framing varies by event type.</td>
+              <td class="td-warn">Oversimplified</td>
+            </tr>
+            <tr>
+              <td>&ldquo;We have X years to act or it's too late&rdquo;</td>
+              <td>IPCC uses probability-based timelines for specific warming thresholds, not binary deadlines. Every fraction of a degree matters.</td>
+              <td class="td-warn">Misleading framing</td>
+            </tr>
+            <tr>
+              <td>&ldquo;Sea levels will rise [specific feet] by 2100&rdquo;</td>
+              <td>AR6 gives scenario-dependent ranges (0.3–1.0 m likely for SSP1-2.6 to SSP5-8.5). High-end tail risks up to ~2 m possible but less likely.</td>
+              <td class="td-warn">Often conflates scenarios</td>
+            </tr>
+            <tr>
+              <td>&ldquo;1.5&deg;C target&rdquo; treated as safe threshold</td>
+              <td>1.5&deg;C limits (not eliminates) severe impacts. Damage functions are continuous, not step-function at 1.5&deg;C.</td>
+              <td class="td-warn">Framing oversimplifies</td>
+            </tr>
+            <tr>
+              <td>Reporting on damages, displacement, food security</td>
+              <td>AR6 WG2: observed impacts are outpacing mid-range projections in several regions and sectors.</td>
+              <td class="td-rate">Often understated</td>
+            </tr>
+            <tr>
+              <td>Skeptic claims of &ldquo;no warming since X&rdquo;</td>
+              <td>Cherry-picking start years to exploit short-term variability. Statistical trend analysis over full record is unambiguous.</td>
+              <td class="td-alert">Statistically invalid</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">03 – The false balance problem</span>
+
+      <p>A documented pattern in media coverage — particularly in earlier decades — was &ldquo;false balance&rdquo;: giving equal airtime or column space to scientists representing 97% consensus and contrarian researchers representing 3%. A 2004 analysis by Boykoff and Boykoff (Global Environmental Change) found 53% of US newspaper articles gave roughly equal weight to both sides. This created a public perception of scientific controversy that did not reflect the actual distribution of expert opinion. Subsequent media guidelines have reduced but not eliminated this pattern.</p>
+
+      <span class="section-label">04 – Contrarian funding and influence</span>
+
+      <p>Multiple peer-reviewed studies (Oreskes and Conway, Brulle 2014, Supran and Oreskes 2017) have documented concerted and funded efforts to manufacture doubt about climate science, drawing parallels to tobacco industry tactics. ExxonMobil's internal research from the 1970s and 1980s accurately modeled future warming that the company's public communications then disputed. This is documented from internal corporate records and has been reported in peer-reviewed journals (Supran et al., Science 2023).</p>
+
+    <div class="part-takeaway"><strong>Part 6 takeaway</strong>Core scientific conclusions about warming and its cause are accurately represented in mainstream media. Specific framings — binary deadlines, single-event causation, conflation of scenarios — frequently diverge from IPCC language. False balance in earlier decades created exaggerated public perception of scientific controversy. Corporate-funded doubt campaigns are documented in the peer-reviewed literature. Economic impact coverage has tended to understate rather than overstate observed harms.</div>
+
+    </section>
+
+    <!-- ======================================================
+         PART 7 – CLAIMS vs EVIDENCE & STEELMAN
+    ======================================================= -->
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Claims vs. Evidence — and Both Sides Steelmanned</h2>
+      </div>
+
+      <span class="section-label">01 – Claim scorecard</span>
+
+      <div class="table-scroll" role="region" aria-label="Claim evaluations table">
+        <table class="data-table">
+          <caption>Major Claims Evaluated Against Primary Source Data</caption>
+          <thead>
+            <tr>
+              <th>Claim</th>
+              <th>Verdict</th>
+              <th>Key Evidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The planet has warmed since 2010</td>
+              <td class="td-rate">&#10003; High confidence</td>
+              <td class="td-note">All 4 temperature datasets, 2025 = 3rd-warmest year on record</td>
+            </tr>
+            <tr>
+              <td>CO₂ has increased substantially</td>
+              <td class="td-rate">&#10003; High confidence</td>
+              <td class="td-note">390.1 (2010) → 427.4 ppm (2025) at Mauna Loa and 80+ other stations</td>
+            </tr>
+            <tr>
+              <td>The Earth is accumulating heat</td>
+              <td class="td-rate">&#10003; High confidence</td>
+              <td class="td-note">Ocean heat content record highs 4 consecutive years (2021–2024)</td>
+            </tr>
+            <tr>
+              <td>Sea level is rising and accelerating</td>
+              <td class="td-rate">&#10003; High confidence</td>
+              <td class="td-note">~105 mm total rise since 1993; rate roughly doubled</td>
+            </tr>
+            <tr>
+              <td>Cryosphere shows warming changes</td>
+              <td class="td-rate">&#10003; High confidence</td>
+              <td class="td-note">Arctic ice &minus;12%/decade; ~95% of glaciers retreating</td>
+            </tr>
+            <tr>
+              <td>Natural factors explain the warming</td>
+              <td class="td-alert">&#10005; Not supported</td>
+              <td class="td-note">Solar forcing: flat/declining since 1980. Natural forcing: ±0.1&deg;C (IPCC AR6)</td>
+            </tr>
+            <tr>
+              <td>Human GHGs explain most of the warming</td>
+              <td class="td-rate">&#10003; Strong</td>
+              <td class="td-note">Attribution: +1.07&deg;C human-caused vs. +1.1&deg;C observed. 6 physical fingerprints confirmed.</td>
+            </tr>
+            <tr>
+              <td>Climate models are unreliable</td>
+              <td class="td-warn">&#9651; Partly false</td>
+              <td class="td-note">1970s–1990s model projections for global mean temperature match observations closely; regional projections less precise. Core warming prediction stable since 1979.</td>
+            </tr>
+            <tr>
+              <td>Warming stopped after [specific year]</td>
+              <td class="td-alert">&#10005; Statistically false</td>
+              <td class="td-note">Based on cherry-picked start years. Full-record trend unambiguous. 10 hottest years all since 2010.</td>
+            </tr>
+            <tr>
+              <td>Current warming is within natural historical range</td>
+              <td class="td-alert">&#10005; Not supported</td>
+              <td class="td-note">Speed of change is orders of magnitude faster than natural glacial cycles. CO₂ levels likely unprecedented in 800k years.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">02 – Steelmanning the skeptic position</span>
+
+      <div class="steelman-wrap" aria-label="Strongest skeptic arguments and scientific rebuttals">
+        <div class="steelman-row">
+          <div class="steelman-key">Argument</div>
+          <div class="steelman-val"><strong>Strongest version</strong></div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Climate sensitivity uncertainty</div>
+          <div class="steelman-val">The equilibrium climate sensitivity (ECS) — how much warming results from CO₂ doubling — has a wide IPCC range of 2.5–4.0&deg;C (AR6). The low end of this range (~2.5&deg;C) implies significantly less near-term harm than the high end (~4.0&deg;C). Near-term warming trajectories could track closer to lower-bound projections, and some published studies argue ECS may be toward the lower end. Policy prescriptions often assume the middle or upper range.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Regional complexity</div>
+          <div class="steelman-val">Global averages mask significant regional heterogeneity. Some regions may benefit from warming in certain respects (longer growing seasons in high latitudes, ice-free navigation routes). The aggregate damage function is negative but distribution matters enormously, and not all impacts are harms.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Model limitations</div>
+          <div class="steelman-val">Climate models perform better at global averages than regional projections. Cloud feedbacks remain the largest source of uncertainty in ECS estimates. Some tipping points (West Antarctic Ice Sheet, Amazon dieback) involve deep uncertainty that models handle poorly. Model uncertainty cuts both ways — toward worse outcomes as often as better — but the uncertainty is real.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Adaptation vs. mitigation</div>
+          <div class="steelman-val">Some economists (e.g., Nordhaus, Lomborg at varying points) argue discount rates and adaptation options make aggressive near-term mitigation less cost-effective than widely assumed. This is a legitimate economic debate about the right policy response — not a denial of the physical science. The question of how much to spend now vs. later is genuinely contested among serious researchers.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Rebuttal to steelman</div>
+          <div class="steelman-val rebuttal">The strongest skeptic arguments are about the magnitude of projected impacts, model uncertainty, and policy economics — not about whether warming is occurring or is human-caused. The physical science foundation (observed warming, GHG forcing, attribution) is robustly established. Legitimate scientific debate exists at the frontier; it does not extend to the core measured findings reviewed in this article.</div>
+        </div>
+      </div>
+
+      <span class="section-label">03 – Steelmanning the alarm side</span>
+
+      <div class="steelman-wrap" aria-label="Strongest alarm arguments and rebuttals">
+        <div class="steelman-row">
+          <div class="steelman-key">Argument</div>
+          <div class="steelman-val"><strong>Strongest version</strong></div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Tipping points</div>
+          <div class="steelman-val">Climate systems may contain non-linear tipping points — the West Antarctic Ice Sheet, permafrost carbon release, Amazon dieback, Atlantic meridional overturning circulation weakening — that could produce step-change catastrophic outcomes well before central projections suggest. The IPCC itself noted increasing concern about tipping cascades in AR6. The fat tail of risk is genuinely alarming and is not well-captured in headline projections.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Damage undercounting</div>
+          <div class="steelman-val">Standard economic damage functions may systematically undercount non-market harms: ecosystem services, biodiversity loss, subsistence agriculture, psychological impacts of displacement, and conflict-amplification effects. IPCC AR6 WG2 found observed damage in multiple sectors exceeds mid-range projections.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key">Rebuttal to alarm steelman</div>
+          <div class="steelman-val rebuttal">Tipping point and fat-tail arguments are scientifically legitimate but remain areas of active research with high uncertainty. The IPCC does not currently project high-probability near-term catastrophe at 1.5–2.0&deg;C above pre-industrial levels, though it assigns non-negligible probability to worse outcomes at higher warming. Serious vs. catastrophic outcomes depend heavily on the mitigation trajectory over the next 20–30 years.</div>
+        </div>
+      </div>
+
+      <span class="section-label">04 – Key numbers</span>
+
+      <div class="conclusion-stats">
+        <div class="cs-row">
+          <div class="cs-num negative">1.09 &deg;C</div>
+          <div class="cs-text">Global warming above pre-industrial levels (2001–2020 average) across four independent temperature datasets, all agreeing within 0.1&nbsp;&deg;C.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num negative">427.4 ppm</div>
+          <div class="cs-text">Atmospheric CO₂ in 2025, up from 390.1 ppm in 2010. Likely the highest in 800,000 years of ice-core records. Isotopically confirmed as human in origin.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num negative">~105 mm</div>
+          <div class="cs-text">Total sea level rise since 1993, with the rate roughly doubling from ~2.2 mm/yr to ~4–5 mm/yr. Confirmed by satellite altimetry and independent tide gauge networks.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num negative">&minus;12% / decade</div>
+          <div class="cs-text">Arctic sea ice decline since 1979 (September minimum extent). Satellite passive microwave measurement — no surface station bias possible.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num negative">4 years</div>
+          <div class="cs-text">Consecutive years of record upper ocean heat content (0–700 m): 2021, 2022, 2023, 2024. The ocean absorbs &gt;90% of excess planetary heat.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num positive">±0.1 &deg;C</div>
+          <div class="cs-text">Total contribution of natural climate forcings (solar + volcanic) to observed warming per IPCC AR6. Human greenhouse gases explain virtually all of the observed ~1.1&nbsp;&deg;C.</div>
+        </div>
+      </div>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p><strong>The warming:</strong> If all four independent temperature datasets (NASA, NOAA, UK Met Office, Berkeley Earth) were shown to share a common systematic error explaining ~1.1&nbsp;&deg;C of apparent warming, and satellite records showed a divergent flat trend — this has not occurred.</p>
+        <p><strong>The attribution:</strong> If solar irradiance were shown to have increased substantially since 1980 (satellite measurements show it has not), or if a natural forcing mechanism were identified producing the specific greenhouse fingerprints (stratospheric cooling, greater night warming, polar amplification) — this has not been identified.</p>
+        <p><strong>The CO₂ record:</strong> If isotopic analysis of atmospheric CO₂ did not match fossil fuel combustion signatures, and if independent stations globally showed diverging measurements — this has not occurred.</p>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Primary sources cited</span>
+        <div class="source-item"><strong>NASA GISTEMP v4</strong> — <a href="https://data.giss.nasa.gov/gistemp/" target="_blank" rel="noopener noreferrer">data.giss.nasa.gov/gistemp</a></div>
+        <div class="source-item"><strong>NOAA GlobalTemp v5 / NCEI</strong> — <a href="https://www.ncei.noaa.gov/" target="_blank" rel="noopener noreferrer">ncei.noaa.gov</a></div>
+        <div class="source-item"><strong>Berkeley Earth BEST</strong> — <a href="https://berkeleyearth.org/data/" target="_blank" rel="noopener noreferrer">berkeleyearth.org/data</a></div>
+        <div class="source-item"><strong>HadCRUT5</strong> — Met Office / Climatic Research Unit — <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/" target="_blank" rel="noopener noreferrer">metoffice.gov.uk/hadobs/hadcrut5</a></div>
+        <div class="source-item"><strong>Mauna Loa CO₂ / NOAA GML</strong> — <a href="https://gml.noaa.gov/ccgg/trends/" target="_blank" rel="noopener noreferrer">gml.noaa.gov/ccgg/trends</a></div>
+        <div class="source-item"><strong>NOAA NCEI Ocean Heat Content</strong> — <a href="https://www.ncei.noaa.gov/access/global-ocean-heat-content/" target="_blank" rel="noopener noreferrer">ncei.noaa.gov/access/global-ocean-heat-content</a></div>
+        <div class="source-item"><strong>NASA/CNES Sea Level Change</strong> (TOPEX, Jason series, Sentinel-6) — <a href="https://sealevel.nasa.gov/" target="_blank" rel="noopener noreferrer">sealevel.nasa.gov</a></div>
+        <div class="source-item"><strong>NSIDC Arctic Sea Ice News</strong> — <a href="https://nsidc.org/arcticseaicenews/" target="_blank" rel="noopener noreferrer">nsidc.org/arcticseaicenews</a></div>
+        <div class="source-item"><strong>World Glacier Monitoring Service (WGMS)</strong> — <a href="https://wgms.ch/" target="_blank" rel="noopener noreferrer">wgms.ch</a></div>
+        <div class="source-item"><strong>IPCC AR6 Working Group I</strong> (Physical Science Basis, 2021) — <a href="https://www.ipcc.ch/report/ar6/wg1/" target="_blank" rel="noopener noreferrer">ipcc.ch/report/ar6/wg1</a></div>
+        <div class="source-item"><strong>IPCC AR6 Working Group II</strong> (Impacts, Adaptation and Vulnerability, 2022) — <a href="https://www.ipcc.ch/report/ar6/wg2/" target="_blank" rel="noopener noreferrer">ipcc.ch/report/ar6/wg2</a></div>
+      </div>
+
+    </section>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Is Climate Change Real? Science vs. Media Coverage.&rdquo; Updated March 2026. https://www.truthbased.org/climate-change</span>
+    </div>
+  </article>
+  </main>
+
+
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: NASA GISTEMP, NOAA, Berkeley Earth, HadCRUT5, Mauna Loa, NSIDC, WGMS, IPCC AR6</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <!-- Chart: Temperature Anomaly -->
+  <script>
+    const ctxTemp = document.getElementById('chartTemp').getContext('2d');
+    new Chart(ctxTemp, {
+      type: 'bar',
+      data: {
+        labels: ['1980','1982','1984','1986','1988','1990','1992','1994','1996','1998','2000','2002','2004','2006','2008','2010','2012','2014','2016','2018','2020','2022','2024'],
+        datasets: [{
+          label: 'Temperature Anomaly (°C)',
+          data: [0.27, 0.14, 0.16, 0.18, 0.40, 0.45, 0.24, 0.31, 0.35, 0.61, 0.42, 0.63, 0.55, 0.62, 0.54, 0.72, 0.64, 0.75, 1.01, 0.83, 1.02, 1.00, 1.29],
+          backgroundColor: function(ctx) {
+            var v = ctx.raw;
+            if (v >= 1.0) return 'rgba(184,58,30,0.75)';
+            if (v >= 0.6) return 'rgba(184,58,30,0.45)';
+            if (v >= 0.3) return 'rgba(212,160,48,0.45)';
+            return 'rgba(27,107,62,0.35)';
+          },
+          borderColor: function(ctx) {
+            var v = ctx.raw;
+            if (v >= 1.0) return 'rgba(184,58,30,0.9)';
+            if (v >= 0.6) return 'rgba(184,58,30,0.7)';
+            if (v >= 0.3) return 'rgba(212,160,48,0.7)';
+            return 'rgba(27,107,62,0.6)';
+          },
+          borderWidth: 1.5,
+          borderRadius: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Global Surface Temperature Anomaly vs. 1850–1900 Baseline (°C)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
+        },
+        scales: {
+          y: {
+            beginAtZero: true, max: 1.5,
+            ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278', callback: function(v){ return v.toFixed(1)+'°C'; } },
+            grid: { color: 'rgba(0,0,0,0.06)' },
+            title: { display: true, text: 'Anomaly (°C)', font: { family: "'Sora', sans-serif", size: 9 }, color: '#8a8278' }
+          },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+  <!-- Chart: CO2 -->
+  <script>
+    const ctxCO2 = document.getElementById('chartCO2').getContext('2d');
+    new Chart(ctxCO2, {
+      type: 'line',
+      data: {
+        labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
+        datasets: [{
+          label: 'CO₂ (ppm)',
+          data: [390.1, 391.6, 393.8, 396.5, 398.6, 400.8, 404.2, 406.5, 408.5, 411.4, 412.5, 416.5, 418.6, 421.1, 424.2, 427.4],
+          borderColor: 'rgba(184,58,30,0.8)',
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: 'rgba(184,58,30,0.7)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Atmospheric CO₂ at Mauna Loa Observatory (ppm)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
+        },
+        scales: {
+          y: {
+            min: 385, max: 435,
+            ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278', callback: function(v){ return v+' ppm'; } },
+            grid: { color: 'rgba(0,0,0,0.06)' }
+          },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+  <!-- Chart: Sea Level -->
+  <script>
+    const ctxSea = document.getElementById('chartSea').getContext('2d');
+    new Chart(ctxSea, {
+      type: 'line',
+      data: {
+        labels: ['1993','1995','1997','1999','2001','2003','2005','2007','2009','2011','2013','2015','2017','2019','2021','2023','2024'],
+        datasets: [{
+          label: 'Sea Level Anomaly (mm)',
+          data: [0, 8, 16, 20, 28, 34, 40, 47, 54, 58, 68, 72, 80, 87, 95, 100, 105],
+          borderColor: 'rgba(27,107,62,0.8)',
+          backgroundColor: 'rgba(27,107,62,0.08)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: 'rgba(27,107,62,0.7)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Global Mean Sea Level Anomaly (mm) Relative to 1993 Baseline', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278', callback: function(v){ return v+' mm'; } },
+            grid: { color: 'rgba(0,0,0,0.06)' }
+          },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('tb-theme', next);
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow on scroll ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere to close</span>
+  </div>
+  <script>
+  function expandQR(el){
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+  }
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
