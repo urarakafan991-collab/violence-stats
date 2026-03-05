@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Most Educated Countries in the World — The Full Ranking | TruthBased.org</title>
+  <meta name="description" content="OECD tertiary attainment data for 47 countries ranked. What each top country excels in — engineers, scientists, teachers, researchers. The access-vs-performance paradox explained.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/most-educated-countries">
+  <meta property="og:title"   content="Most Educated Countries in the World — The Full Ranking | TruthBased.org">
+  <meta property="og:description" content="47 countries ranked by tertiary attainment. What each top nation excels in. The paradox where more schooling doesn't mean better outcomes. Both sides of every debate.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Most Educated Countries in the World — The Full Ranking | TruthBased.org">
+  <meta name="twitter:description" content="47 countries ranked by OECD data. What each excels in. Access vs. performance paradox. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/most-educated-countries">
+  <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav { display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 52px; border-bottom: 1px solid var(--rule); background-color: rgba(247,245,241,0.97); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: box-shadow 0.2s ease; position: sticky; top: 0; z-index: 100; }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark { font-family: 'Sora','Spectral',sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--text-primary,var(--text-head,#151311)); text-decoration: none; letter-spacing: -0.02em; white-space: nowrap; }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back { font-family: 'Sora',sans-serif; font-size: 0.72rem; color: var(--text-dim,#706d64); text-decoration: none; border: 1px solid var(--rule); border-radius: 3px; padding: 4px 10px; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category { font-family: 'Courier Prime',monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-quiet,#736e66); padding-left: 16px; border-left: 1px solid var(--rule); white-space: nowrap; }
+
+    :root {
+      --bg: #f7f5f1; --surface: #f0ede8; --card-face: #ffffff; --card-tinted: #fdfcfa;
+      --border: #ddd9d0; --rule: #ddd9d0;
+      --text-head: #1a1714; --text-body: #2d2926; --text-dim: #5a544c; --text-quiet: #736e66;
+      --brick: #b83a1e; --brick-light: #f5e8e4;
+      --green: #1b6b3e; --green-light: #e8f5ed;
+      --amber: #7a4f00; --amber-light: #fdf5e6;
+      --font-serif: 'Spectral', Georgia, serif;
+      --font-sans: 'Sora', system-ui, sans-serif;
+      --font-mono: 'Courier Prime', monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #1a1918; --surface: #242220; --card-face: #242220; --card-tinted: #2a2826;
+      --border: #3a3632; --rule: #3a3632;
+      --text-head: #e8e5e0; --text-body: #c5c0b8; --text-dim: #8a857d; --text-quiet: #6a655e;
+      --brick: #e05a3a; --brick-light: #2d1f1a;
+      --green: #4cbb6a; --green-light: #1a2d20;
+      --amber: #d4a030; --amber-light: #2d2518;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text-body); font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.7; }
+
+    .jump-nav { position: sticky; top: 52px; z-index: 90; background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px; }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    .jump-btn { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500; color: var(--text-dim); text-decoration: none; border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; transition: color .15s, border-color .15s, background .15s; }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    .jump-toggle { display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; color: var(--text-dim); background: none; border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; cursor: pointer; transition: color .15s, border-color .15s; white-space: nowrap; }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+    .article-category { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .article-title { font-family: var(--font-serif); font-size: clamp(1.8rem,4vw,2.6rem); font-weight: 600; line-height: 1.15; color: var(--text-head); letter-spacing: -0.02em; margin-bottom: 14px; }
+    .article-deck { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; padding: 3px 10px; color: var(--text-dim); }
+
+    .box { border-radius: 6px; padding: 16px 20px; margin: 20px 0; border-left: 3px solid; }
+    .box-label { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-quiet); display: block; margin-bottom: 10px; }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500; color: var(--text-dim); text-decoration: none; border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; background: var(--surface); transition: color .15s, border-color .15s; }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header { margin: 48px 0 20px; padding-top: 32px; border-top: 2px solid var(--text-head); }
+    .part-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-quiet); display: block; margin-bottom: 6px; }
+    .part-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--text-head); letter-spacing: -0.01em; }
+
+    .section-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-quiet); display: block; margin: 28px 0 10px; letter-spacing: .04em; }
+
+    .stat-block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; margin: 16px 0; overflow: hidden; }
+    .stat-block-header { background: var(--border); padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; }
+    .stat-block-name { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; color: var(--text-head); }
+    .stat-block-period { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim); }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 14px; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val { font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem; }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral { color: var(--text-head); }
+    .stat-val.warn { color: var(--amber); }
+    .stat-val.positive::before { content: "\2713\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.negative::before { content: "\2717\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.warn::before { content: "\26A0\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.neutral::before { content: "\2014 "; }
+
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 16px 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .data-table th { background: var(--border); padding: 8px 12px; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; text-align: left; color: var(--text-head); }
+    .data-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+    .td-rate { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note { color: var(--text-dim); font-size: 0.78rem; }
+    .td-warn { color: var(--amber); font-weight: 600; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    .chart-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin: 16px 0; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    .chart-title { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    .steelman-wrap { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0; }
+    .steelman-row { display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem; }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: var(--surface); padding: 10px 14px; min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border); }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+
+    .claims-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px 22px; margin: 24px 0; }
+    .claims-box-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-quiet); display: block; margin-bottom: 14px; }
+    .claim-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; line-height: 1.5; }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label { font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display: block; }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+
+    .falsify-box { background: var(--card-face,var(--surface)); border: 1px solid var(--rule,var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway { background: var(--surface); border-left: 3px solid var(--brick); padding: 14px 20px; margin: 32px 0 8px; border-radius: 0 4px 4px 0; font-size: 0.9rem; line-height: 1.65; }
+    .part-takeaway strong { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brick); display: block; margin-bottom: 4px; }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+    .cs-num { font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet); display: block; margin-bottom: 10px; }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+    .source-note { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px; line-height: 1.5; }
+    .info-note { font-size: 0.72rem; color: var(--text-quiet,var(--text-dim)); font-style: italic; margin-top: -6px; margin-bottom: 12px; padding-left: 14px; border-left: 2px solid var(--rule); line-height: 1.55; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; position: relative; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+    .table-scroll::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px; background: linear-gradient(to right, transparent, var(--bg,#f7f5f1)); pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after { background: linear-gradient(to right, transparent, var(--bg,#1a1918)); }
+
+    .cite-this { margin-top: 28px; padding: 14px 18px; background: var(--card-tinted,var(--surface,#fdfcfa)); border: 1px solid var(--rule); border-radius: 4px; }
+    .cite-this-label { font-family: 'Courier Prime',monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-quiet,#736e66); display: block; margin-bottom: 8px; }
+    .cite-this-text { font-family: 'Spectral',Georgia,serif; font-size: 0.78rem; font-style: italic; color: var(--text-dim,#706d64); line-height: 1.65; user-select: all; cursor: text; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--brick); z-index: 9999; width: 0%; transition: width 0.1s linear; pointer-events: none; }
+    .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 40px; height: 40px; border-radius: 50%; background: var(--brick); color: #fff; border: none; cursor: pointer; font-size: 1.1rem; line-height: 1; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(12px); transition: opacity 0.25s, transform 0.25s, background-color 0.3s; z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle { margin-left: auto; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--rule); background: transparent; cursor: pointer; font-size: 1rem; line-height: 1; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s, background-color 0.3s; color: var(--text-dim,#5a544c); }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--brick); color: #fff; padding: 8px 16px; border-radius: 0 0 4px 4px; font-family: 'Courier Prime',monospace; font-size: 0.7rem; z-index: 200; transition: top 0.15s ease; text-decoration: none; }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); cursor:pointer; padding:24px; }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img { max-width:min(320px,85vw); max-height:85vh; border-radius:8px; background:#fff; padding:12px; image-rendering:pixelated; box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+    .qr-overlay-label { position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%); font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem; color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5); padding:6px 14px; border-radius:20px; pointer-events:none; }
+    .qr-tap-hint { display:block; font-family:var(--font-sans,'Sora',sans-serif); font-size:0.48rem; color:var(--text-dim,#706d64); text-align:center; margin-top:4px; opacity:0.7; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; } .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; } .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 900px) and (min-width: 641px) { .site-nav { padding: 0 24px; } .article-wrap { padding: 32px 24px 60px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } html { scroll-behavior: auto !important; } }
+    @media print { .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle, footer { display: none !important; } body { background: #fff !important; color: #000 !important; font-size: 11pt; } .article-wrap { max-width: 100%; padding: 0; } }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Most Educated Countries in the World — The Full Ranking",
+    "description": "OECD tertiary attainment data for 47 countries ranked. What each top country excels in. The access-vs-performance paradox. Gender gaps. Spending vs. outcomes.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-03-05",
+    "mainEntityOfPage": "https://www.truthbased.org/most-educated-countries",
+    "keywords": ["education", "most educated countries", "OECD", "tertiary attainment", "PISA", "rankings", "STEM", "literacy", "fact-check"]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">International Comparisons</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 &ndash; Full Rankings</a>
+      <a href="#part2" class="jump-btn">Part 2 &ndash; What They Excel In</a>
+      <a href="#part3" class="jump-btn">Part 3 &ndash; Access vs. Performance</a>
+      <a href="#part4" class="jump-btn">Part 4 &ndash; Bottom Third</a>
+      <a href="#part5" class="jump-btn">Part 5 &ndash; Gender Gaps</a>
+      <a href="#part6" class="jump-btn">Part 6 &ndash; Spending vs. Outcomes</a>
+      <a href="#part7" class="jump-btn">Part 7 &ndash; Methodology</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header>
+      <span class="article-category">International Comparisons</span>
+      <h1 class="article-title">Most Educated Countries in the World &mdash; The Full Ranking</h1>
+      <p class="article-deck">47 countries ranked by tertiary attainment using OECD Education at a Glance 2025. What each top-third nation specifically excels in &mdash; engineers, scientists, teachers, researchers, tradespeople. The paradox where more years of schooling doesn&rsquo;t mean better outcomes. Gender gaps, spending efficiency, and the bottom third.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">OECD EAG 2025 + 8 datasets</span>
+        <span class="meta-pill">~20 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary sources used</span>
+      <div class="source-pills">
+        <span class="source-pill">OECD EAG 2025</span>
+        <span class="source-pill">UNESCO UIS</span>
+        <span class="source-pill">PISA 2022</span>
+        <span class="source-pill">World Bank EdStats</span>
+        <span class="source-pill">UNDP HDR 2025</span>
+        <span class="source-pill">Nature Index</span>
+        <span class="source-pill">SCImago</span>
+        <span class="source-pill">TALIS</span>
+      </div>
+    </div>
+
+    <div class="tldr-box" role="region" aria-label="Summary">
+      <span class="tldr-label">The short answer</span>
+      <p><strong>Canada leads the world</strong> with 65% of adults holding a tertiary degree, followed by Ireland (58%), Japan (57%), and South Korea (56%). But raw attainment rankings tell only part of the story. South Korea produces a disproportionate share of engineers. Finland&rsquo;s teacher quality is unmatched. Israel leads the world in researchers per capita. Germany&rsquo;s dual-education system produces tradespeople so effectively that its youth unemployment is among the lowest on Earth. India produces more STEM graduates by raw volume than any country.</p>
+      <p>The deepest insight in this data is the <strong>access-vs-performance paradox</strong>: Iceland has among the world&rsquo;s highest mean years of schooling (13.9) but PISA scores below the OECD average, while Singapore achieves the world&rsquo;s best PISA results with only 12 years of average schooling. More school does not mean better outcomes. System design matters more than seat time.</p>
+    </div>
+
+
+    <!-- ═══════════ PART 1 ═══════════ -->
+    <div class="part-header" id="part1">
+      <span class="part-label">Part 1</span>
+      <h2 class="part-title">The Full Ranking: Tertiary Attainment by Country</h2>
+    </div>
+
+    <p>The most comprehensive comparable dataset comes from the OECD&rsquo;s <em>Education at a Glance 2025</em> (released September 2025, reference year mostly 2024). Table A1.1 ranks adults aged 25&ndash;64 by the percentage whose highest qualification is tertiary (ISCED 5&ndash;8: short-cycle tertiary, bachelor&rsquo;s, master&rsquo;s, or doctoral). The OECD average is 42%. The EU25 average is 39%. The G20 average is 34%.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Tertiary attainment by country (% of adults 25&ndash;64, OECD EAG 2025)</div>
+      <div class="chart-canvas-wrap" style="height:520px;">
+        <canvas id="chartRanking" aria-label="Horizontal bar chart showing tertiary education attainment percentage for 30 countries, from Canada at 65% to South Africa at 9%"></canvas>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="data-table" aria-label="Full tertiary attainment ranking from OECD Education at a Glance 2025">
+        <thead><tr><th>#</th><th>Country</th><th>Tertiary % (25&ndash;64)</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr><td class="td-num">1</td><td>Canada</td><td class="td-rate">65%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">2</td><td>Ireland</td><td class="td-rate">58%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">3</td><td>Japan</td><td class="td-rate">57%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">4</td><td>South Korea</td><td class="td-rate">56%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">5</td><td>Luxembourg</td><td class="td-rate">54%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">6</td><td>United Kingdom</td><td class="td-rate">54%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">7</td><td>Australia</td><td class="td-rate">53%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">8</td><td>Sweden</td><td class="td-rate">52%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">9</td><td>United States</td><td class="td-rate">51%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">10</td><td>Israel</td><td class="td-rate">51%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">11</td><td>Norway</td><td class="td-rate">50%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">12</td><td>Lithuania</td><td class="td-rate">48%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">13</td><td>Switzerland</td><td class="td-rate">46%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">14</td><td>Belgium</td><td class="td-rate">45%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">15</td><td>Denmark</td><td class="td-rate">45%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">16</td><td>Netherlands</td><td class="td-rate">45%</td><td class="td-note">Top third</td></tr>
+          <tr><td class="td-num">17</td><td>New Zealand</td><td class="td-rate">44%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">18</td><td>Iceland</td><td class="td-rate">44%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">19</td><td>Estonia</td><td class="td-rate">43%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">20</td><td>Finland</td><td class="td-rate">43%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">21</td><td>France</td><td class="td-rate">43%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">22</td><td>Spain</td><td class="td-rate">42%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">23</td><td>Latvia</td><td class="td-rate">40%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">24</td><td>Poland</td><td class="td-rate">39%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">25</td><td>Peru</td><td class="td-rate">39%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">26</td><td>Austria</td><td class="td-rate">38%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">27</td><td>Greece</td><td class="td-rate">35%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">28</td><td>Slovenia</td><td class="td-rate">35%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">29</td><td>Bulgaria</td><td class="td-rate">34%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">30</td><td>Germany</td><td class="td-rate">34%</td><td class="td-note">Mid-tier</td></tr>
+          <tr><td class="td-num">31</td><td>Chile</td><td class="td-rate">33%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">32</td><td>Colombia</td><td class="td-rate">31%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">33</td><td>Hungary</td><td class="td-rate">31%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">34</td><td>Portugal</td><td class="td-rate">31%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">35</td><td>Croatia</td><td class="td-rate">30%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">36</td><td>Slovak Republic</td><td class="td-rate">29%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">37</td><td>Costa Rica</td><td class="td-rate">28%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">38</td><td>T&uuml;rkiye</td><td class="td-rate">27%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">39</td><td>Czechia</td><td class="td-rate">27%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">40</td><td>Argentina</td><td class="td-rate">24%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">41</td><td>Italy</td><td class="td-rate">22%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">42</td><td>Mexico</td><td class="td-rate">22%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">43</td><td>Brazil</td><td class="td-rate">22%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">44</td><td>Romania</td><td class="td-rate">19%</td><td class="td-note">Lower tier</td></tr>
+          <tr><td class="td-num">45</td><td>China</td><td class="td-rate">19%</td><td class="td-note">Lower tier (2020 data)</td></tr>
+          <tr><td class="td-num">46</td><td>India</td><td class="td-rate">14%</td><td class="td-note">Lower tier (ISCED-97)</td></tr>
+          <tr><td class="td-num">47</td><td>Indonesia</td><td class="td-rate">13%</td><td class="td-note">Lower tier (2022 data)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Source: OECD Education at a Glance 2025, Table A1.1. Partner country data years vary (noted). South Africa (9%) excluded from chart for space but included in OECD data.</p>
+
+    <span class="section-label">The generational shift: 25&ndash;34 year-olds</span>
+
+    <p>The ranking changes dramatically when you isolate younger adults. The OECD average for 25&ndash;34 year-olds jumps to 48% (up from 27% in 2000). South Korea stands out most strikingly: roughly 70&ndash;71% of its 25&ndash;34 year-olds hold tertiary qualifications, compared to only ~28% of its 55&ndash;64 year-olds &mdash; a 42-point generational gap reflecting one of the fastest education expansions in human history. Canada also exceeds 68% in the younger bracket.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 1 takeaway</strong>
+      Canada leads overall (65%), but South Korea leads the younger generation (~71% for 25&ndash;34). Rankings depend heavily on which age bracket and which definition of &ldquo;tertiary&rdquo; you use. The OECD covers ~47 countries reliably; non-OECD global data is patchier.
+    </div>
+
+
+    <!-- ═══════════ PART 2 ═══════════ -->
+    <div class="part-header" id="part2">
+      <span class="part-label">Part 2</span>
+      <h2 class="part-title">What Each Top Country Specifically Excels In</h2>
+    </div>
+
+    <p>Raw attainment percentages tell you who has the most degrees. They don&rsquo;t tell you what those countries are actually <em>good at</em>. Here&rsquo;s what the specialized data shows for each top-third country.</p>
+
+    <div class="table-scroll">
+      <table class="data-table" aria-label="Top-third countries and their specific areas of excellence">
+        <thead><tr><th>Country</th><th>Specific Excellence</th><th>Key Data Point</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td><strong>South Korea</strong></td><td>Engineers &amp; STEM graduates</td><td>~25&ndash;30% of tertiary grads in engineering/manufacturing (vs. OECD ~15&ndash;20%); ~9,435 researchers per million (among global tops)</td><td>OECD Table A1.3; UNESCO UIS R&amp;D</td></tr>
+          <tr><td><strong>Finland</strong></td><td>Teacher quality</td><td>All teachers require master&rsquo;s degree; top ~10% of applicants accepted; 49% salary-satisfied (vs. OECD 39%)</td><td>OECD TALIS 2024; national policy</td></tr>
+          <tr><td><strong>Israel</strong></td><td>Scientists &amp; researchers per capita</td><td>R&amp;D spend ~5.5&ndash;6% of GDP (world #1); researchers per million among highest globally</td><td>UNESCO UIS; World Bank R&amp;D data</td></tr>
+          <tr><td><strong>Germany</strong></td><td>Dual vocational/trades system</td><td>~50% of school-leavers enter dual VET; ~1.2M apprentices; youth unemployment ~5&ndash;6% (OECD lowest)</td><td>OECD; national stats 2023/24</td></tr>
+          <tr><td><strong>Switzerland</strong></td><td>Research output per capita</td><td>Top 5&ndash;10 globally in research papers per capita (Nature Index); highest mean years schooling (14.3, HDR&nbsp;2025)</td><td>Nature Index; SCImago; UNDP HDR</td></tr>
+          <tr><td><strong>Canada</strong></td><td>Overall access &amp; health sciences</td><td>65% attainment (#1 overall); strong health sciences field share; 617,000+ graduates in 2022&ndash;23</td><td>OECD EAG Table A1.3; StatCan</td></tr>
+          <tr><td><strong>Japan</strong></td><td>STEM proportion &amp; research density</td><td>~30%+ of tertiary grads in STEM; ~7,000+ researchers per million; PISA math ~536</td><td>OECD; UNESCO UIS; PISA 2022</td></tr>
+          <tr><td><strong>Ireland</strong></td><td>Graduate density &amp; ICT/STEM fields</td><td>58% attainment (#2 overall); high master&rsquo;s/doctoral share; strong in ICT</td><td>OECD EAG 2025</td></tr>
+          <tr><td><strong>United States</strong></td><td>Raw research volume &amp; PhDs</td><td>STEM Education Index #1 globally (score 86.50); Nature Index raw output #2&ndash;3; high PhD completion</td><td>Global STEM Index 2025; Nature Index</td></tr>
+          <tr><td><strong>India</strong></td><td>STEM graduates by raw volume</td><td>~2.5&ndash;3.3 million STEM graduates/year (~34% of all tertiary grads in STEM); largest absolute output globally</td><td>UNESCO UIS; AISHE national stats</td></tr>
+          <tr><td><strong>United Kingdom</strong></td><td>Research universities &amp; Nobel laureates</td><td>High Nature Index raw output; strong Nobel per capita historically; 113,000 postgrad research students</td><td>Nature Index; OECD EAG 2025</td></tr>
+          <tr><td><strong>Nordics (Sweden, Norway, Denmark)</strong></td><td>Literacy proficiency &amp; equity</td><td>High PIAAC literacy scores; high researchers per million; low gender gaps; low youth unemployment</td><td>OECD PIAAC; UNESCO UIS</td></tr>
+          <tr><td><strong>Estonia</strong></td><td>PISA efficiency</td><td>PISA 2022: math ~510, science ~530 (top European); at moderate spending</td><td>OECD PISA 2022</td></tr>
+          <tr><td><strong>Luxembourg</strong></td><td>PhD density</td><td>Highest share of students in doctoral programs in EU (12.7% of tertiary body)</td><td>OECD EAG 2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box box-amber">
+      <span class="box-label">Definition matters</span>
+      <p>Germany ranks only 30th in tertiary attainment (34%) &mdash; but this is misleading. Germany&rsquo;s dual vocational system channels ~50% of young people into apprenticeships that produce highly skilled tradespeople and technicians. Its youth unemployment of ~5&ndash;6% is among the lowest in the OECD, and it ranks 19th in the world in GDP per capita. A low tertiary percentage does not mean a poorly educated workforce.</p>
+    </div>
+
+    <div class="part-takeaway">
+      <strong>Part 2 takeaway</strong>
+      No single country dominates everything. South Korea leads in engineering density. Finland in teacher quality. Israel in R&amp;D intensity. Germany in vocational training. Switzerland in research per capita. India in raw STEM volume. The &ldquo;most educated&rdquo; label depends entirely on what you&rsquo;re measuring.
+    </div>
+
+
+    <!-- ═══════════ PART 3 ═══════════ -->
+    <div class="part-header" id="part3">
+      <span class="part-label">Part 3</span>
+      <h2 class="part-title">The Access vs. Performance Paradox</h2>
+    </div>
+
+    <p>This is arguably the most important finding in global education data: <strong>more years of schooling does not guarantee better learning outcomes</strong>. The UN Education Index measures mean and expected years of schooling (access). PISA measures what 15-year-olds can actually do (performance). When you plot one against the other, the mismatch is stark.</p>
+
+    <div class="stat-block">
+      <div class="stat-block-header">
+        <span class="stat-block-name">Access vs. Performance: Selected Countries</span>
+        <span class="stat-block-period">UNDP HDR 2025 + PISA 2022</span>
+      </div>
+      <div class="stat-block-body">
+        <div class="stat-row"><span class="stat-key">Singapore: 12.0 mean years</span><span class="stat-val positive">PISA avg ~560</span></div>
+        <div class="stat-row"><span class="stat-key">Japan: 12.7 mean years</span><span class="stat-val positive">PISA math 536</span></div>
+        <div class="stat-row"><span class="stat-key">South Korea: 12.7 mean years</span><span class="stat-val positive">PISA math 527</span></div>
+        <div class="stat-row"><span class="stat-key">Estonia: ~13.0 mean years</span><span class="stat-val positive">PISA math 510</span></div>
+        <div class="stat-row"><span class="stat-key">Germany: 14.3 mean years</span><span class="stat-val warn">PISA math ~475</span></div>
+        <div class="stat-row"><span class="stat-key">Iceland: 13.9 mean years</span><span class="stat-val negative">PISA math ~459</span></div>
+        <div class="stat-row"><span class="stat-key">OECD average</span><span class="stat-val neutral">PISA math 472</span></div>
+      </div>
+    </div>
+
+    <p>Singapore achieves the world&rsquo;s highest PISA results (math 575, science 561, reading 543) with only 12 years of average schooling. Iceland, by contrast, has 13.9 years of average schooling &mdash; among the world&rsquo;s highest &mdash; but scores below the OECD average on PISA (math ~459, science ~447). Vietnam achieves PISA results significantly higher than what its spending level would predict, making it one of the most cost-effective systems globally.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Mean years of schooling vs. PISA math score (selected countries)</div>
+      <div class="chart-canvas-wrap">
+        <canvas id="chartParadox" aria-label="Scatter chart showing mean years of schooling versus PISA math scores for selected countries, revealing that more years does not always mean higher scores"></canvas>
+      </div>
+    </div>
+
+    <p>The &ldquo;efficient&rdquo; countries &mdash; those producing the best outcomes per year of schooling &mdash; are overwhelmingly East Asian: Singapore, South Korea, Japan, and the small Baltic standout Estonia. Curriculum focus, teacher quality, and equity appear to matter far more than time in classrooms.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 3 takeaway</strong>
+      Access &ne; quality. Singapore gets the world&rsquo;s best results with 12 years of schooling. Iceland gets below-average results with 13.9 years. The most &ldquo;efficient&rdquo; systems (Singapore, Korea, Japan, Estonia) share curriculum rigor, high teacher quality, and equity &mdash; not necessarily more years of school.
+    </div>
+
+
+    <!-- ═══════════ PART 4 ═══════════ -->
+    <div class="part-header" id="part4">
+      <span class="part-label">Part 4</span>
+      <h2 class="part-title">The Bottom Third: Least Educated Countries</h2>
+    </div>
+
+    <p>At the other end of the spectrum, the least educated countries &mdash; concentrated in Sub-Saharan Africa, parts of South Asia, and conflict zones &mdash; face barriers that dwarf anything in the OECD world. UNESCO estimates 272 million children were out of school globally in 2023, up 3% since 2015. Nearly half are in Sub-Saharan Africa.</p>
+
+    <div class="table-scroll">
+      <table class="data-table" aria-label="Least educated countries: literacy, mean years of schooling, and primary barriers">
+        <thead><tr><th>Country</th><th>Adult Literacy Rate</th><th>Mean Years Schooling</th><th>Primary Barriers</th></tr></thead>
+        <tbody>
+          <tr><td>Niger</td><td class="td-alert">~38%</td><td class="td-alert">1.4 years</td><td class="td-note">Poverty, early marriage, child labor</td></tr>
+          <tr><td>Chad</td><td class="td-alert">~28%</td><td class="td-alert">~2 years</td><td class="td-note">Conflict, poverty, infrastructure</td></tr>
+          <tr><td>South Sudan</td><td class="td-alert">~35%</td><td class="td-alert">~4 years</td><td class="td-note">Civil war, displacement (11M out of school)</td></tr>
+          <tr><td>Burkina Faso</td><td class="td-alert">~28%</td><td class="td-alert">&lt;2 years</td><td class="td-note">Security crisis, economic hardship</td></tr>
+          <tr><td>Mali</td><td class="td-alert">~44%</td><td class="td-alert">~3 years</td><td class="td-note">Internal conflict; only 52% of teachers are trained</td></tr>
+          <tr><td>Afghanistan</td><td class="td-alert">~37%</td><td class="td-alert">~4 years</td><td class="td-note">Taliban ban on girls&rsquo; education; 9.7M out of school</td></tr>
+          <tr><td>Ethiopia</td><td class="td-alert">~52%</td><td class="td-alert">~3 years</td><td class="td-note">Low enrollment, limited quality; 8M out of school</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Sources: UNESCO UIS 2025; UNDP HDR 2025; UNESCO GEM Report. Literacy figures are latest available (surveys span 2015&ndash;2024). Out-of-school estimates from UNESCO 2023.</p>
+
+    <p>In Niger, the average adult has received 1.4 years of formal education. In Chad, 28% of adults can read. UNESCO reports that roughly four in five 10-year-olds in Sub-Saharan Africa cannot read a simple text &mdash; a consequence not just of low enrollment but of inadequate schooling quality even for those who attend. The barriers are structural: poverty (families depend on child labor), conflict and displacement, gender exclusion (girls face early marriage), and teacher shortages in rural areas. These are not problems that spending alone can solve &mdash; fragile states often spend below 2% of GDP on education, far under the 4&ndash;6% global norm.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 4 takeaway</strong>
+      The gap between the most and least educated countries is staggering: Canada&rsquo;s average adult has 13.9 years of education; Niger&rsquo;s has 1.4. The barriers are poverty, conflict, gender exclusion, and infrastructure collapse &mdash; not cultural attitudes toward learning. 272 million children are out of school globally.
+    </div>
+
+
+    <!-- ═══════════ PART 5 ═══════════ -->
+    <div class="part-header" id="part5">
+      <span class="part-label">Part 5</span>
+      <h2 class="part-title">Gender Gaps in Education</h2>
+    </div>
+
+    <p>One of the most striking shifts in global education: in most countries, the gender gap has not just closed &mdash; it has <strong>reversed</strong>. Women now outnumber men in tertiary education across virtually the entire OECD and most of Latin America. OECD data show that among 25&ndash;34 year-olds, women&rsquo;s tertiary attainment exceeds men&rsquo;s by roughly 13 percentage points on average (women ~52&ndash;55% vs. men ~39&ndash;42%). Standouts include the Nordic countries, Baltics (Latvia, Lithuania, Estonia), Ireland, and the UK, where the female advantage often exceeds 15&ndash;20 points.</p>
+
+    <p>The exception is concentrated in fragile states and conservative regions. Afghanistan has near-total exclusion of girls from secondary and tertiary education since the Taliban&rsquo;s 2021 return. In parts of West Africa (Niger, Chad, Burkina Faso) and South Asia (Pakistan), the gender parity index for tertiary enrollment remains well below 1.0 (often &lt;0.6), meaning men far outnumber women. UNESCO notes that globally, 466 million of 739 million illiterate adults are women &mdash; 63%.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 5 takeaway</strong>
+      The gender gap has reversed in wealthy countries &mdash; women now lead men in tertiary education across most of the OECD by ~13 percentage points. But in fragile states (Afghanistan, Niger, Chad), girls remain systematically excluded. The gap is no longer primarily about gender attitudes; it tracks poverty and conflict.
+    </div>
+
+
+    <!-- ═══════════ PART 6 ═══════════ -->
+    <div class="part-header" id="part6">
+      <span class="part-label">Part 6</span>
+      <h2 class="part-title">Spending vs. Outcomes</h2>
+    </div>
+
+    <p>The relationship between education spending (as % of GDP) and outcomes is not linear. As one academic analysis describes it, the pattern follows an &ldquo;inverted parabola with a peak&rdquo; &mdash; after a threshold, more spending yields diminishing returns. Governance and system design matter far more than raw expenditure above that threshold.</p>
+
+    <div class="stat-block">
+      <div class="stat-block-header">
+        <span class="stat-block-name">Spending Efficiency: Selected Countries</span>
+        <span class="stat-block-period">World Bank + PISA 2022</span>
+      </div>
+      <div class="stat-block-body">
+        <div class="stat-row"><span class="stat-key">Estonia (moderate spend)</span><span class="stat-val positive">PISA math 510</span></div>
+        <div class="stat-row"><span class="stat-key">South Korea (moderate spend)</span><span class="stat-val positive">PISA math 527</span></div>
+        <div class="stat-row"><span class="stat-key">Japan (moderate spend, ~4% GDP)</span><span class="stat-val positive">PISA math 536</span></div>
+        <div class="stat-row"><span class="stat-key">United States (high spend, ~6% GDP)</span><span class="stat-val warn">PISA math ~465</span></div>
+        <div class="stat-row"><span class="stat-key">Vietnam (low spend)</span><span class="stat-val positive">PISA results above predicted level</span></div>
+        <div class="stat-row"><span class="stat-key">Qatar (high spend)</span><span class="stat-val negative">PISA below predicted level</span></div>
+      </div>
+    </div>
+
+    <p>The countries that get the most for their money &mdash; Estonia, South Korea, Japan, Vietnam, Singapore &mdash; share common traits: strong teacher training, rigorous curricula, and systemic equity. The countries that spend heavily with poor relative results &mdash; Qatar, Panama, Cyprus, Dominican Republic, and to some extent the United States &mdash; often have fragmented systems, high inequality, or misallocated resources. As Our World in Data summarizes: &ldquo;national expenditure on education does not explain well cross-country differences in learning outcomes.&rdquo;</p>
+
+    <div class="part-takeaway">
+      <strong>Part 6 takeaway</strong>
+      Above a baseline threshold, spending more money on education does not reliably improve outcomes. System design &mdash; teacher quality, curriculum rigor, equity &mdash; matters far more. Estonia and Vietnam prove that strong results are achievable at moderate cost. The U.S. proves that high spending can produce middling results.
+    </div>
+
+
+    <!-- ═══════════ PART 7 ═══════════ -->
+    <div class="part-header" id="part7">
+      <span class="part-label">Part 7</span>
+      <h2 class="part-title">Methodology, Caveats &amp; What Would Change These Rankings</h2>
+    </div>
+
+    <p>Every ranking in this article uses the OECD&rsquo;s ISCED 2011 framework (levels 5&ndash;8: short-cycle tertiary, bachelor&rsquo;s, master&rsquo;s, doctoral). This is the most comparable cross-country standard, but it has known limitations.</p>
+
+    <p><strong>&ldquo;Tertiary&rdquo; means different things:</strong> Some countries include 2-year vocational certificates; others count only university degrees. Argentina and India use the older ISCED-97 classification. Short-cycle programs of under 2 years may be classified lower in some countries, making direct comparison imperfect.</p>
+
+    <p><strong>Data years vary:</strong> Most OECD data is 2024, but the U.S. reports 2023, Chile/Indonesia report 2022, and China reports 2020. This means China&rsquo;s figure (19%) is almost certainly understated relative to its current reality.</p>
+
+    <p><strong>Non-OECD coverage is thin:</strong> The full ranking covers only ~47 countries. UNESCO UIS provides supplementary data for others, but often through household surveys with different methodology. No single uniform global ranking exists.</p>
+
+    <p><strong>Rankings shift by metric:</strong> By 25&ndash;64 attainment, Canada leads. By 25&ndash;34 attainment, South Korea leads. By PISA performance, Singapore leads. By research per capita, Switzerland leads. By vocational effectiveness, Germany leads. The &ldquo;most educated country&rdquo; depends entirely on what you choose to measure.</p>
+
+    <div class="falsify-box">
+      <span class="falsify-label">What would change these rankings</span>
+      <p><strong>If China reported current data:</strong> China&rsquo;s 2020 figure of 19% is likely significantly higher now given massive university expansion. Updated data could move China substantially up the ranking.</p>
+      <p><strong>If vocational training were weighted equally:</strong> Germany, Switzerland, and Austria would rank much higher. The current OECD framework privileges academic degrees over apprenticeships, which understates these countries&rsquo; actual workforce education.</p>
+      <p><strong>If quality were weighted instead of quantity:</strong> Singapore, Estonia, and Japan would dominate, while countries with high attainment but average PISA scores (Iceland, some Anglo countries) would fall.</p>
+    </div>
+
+
+    <!-- CONCLUSION -->
+    <hr>
+    <span class="section-label">Key numbers</span>
+
+    <div class="conclusion-stats">
+      <div class="cs-row"><div class="cs-num positive">65%</div><div class="cs-text">Canada&rsquo;s tertiary attainment rate &mdash; the highest in the world for adults aged 25&ndash;64. Nearly two-thirds of Canadian adults hold a post-secondary qualification.</div></div>
+      <div class="cs-row"><div class="cs-num neutral">~71%</div><div class="cs-text">South Korea&rsquo;s tertiary attainment among 25&ndash;34 year-olds. The fastest education expansion in modern history: a 42-point jump from the 55&ndash;64 cohort in a single generation.</div></div>
+      <div class="cs-row"><div class="cs-num negative">1.4 years</div><div class="cs-text">Mean years of schooling in Niger &mdash; the lowest in the world. The gap between the most and least educated countries spans 12+ years of formal education.</div></div>
+    </div>
+
+
+    <!-- SOURCES -->
+    <div class="sources-section">
+      <span class="sources-section-label">Sources</span>
+      <div class="source-item"><strong>OECD.</strong> (2025). <em>Education at a Glance 2025: OECD Indicators</em>. Tables A1.1, A1.2, A1.3, B4.2.</div>
+      <div class="source-item"><strong>OECD.</strong> (2023). <em>PISA 2022 Results</em>. Math, science, and reading scores for participating countries.</div>
+      <div class="source-item"><strong>OECD.</strong> (2024). <em>TALIS 2024 Results</em>. Teacher satisfaction, qualifications, and working conditions.</div>
+      <div class="source-item"><strong>UNESCO Institute for Statistics.</strong> (2025). Education and R&amp;D datasets via UIS Databrowser.</div>
+      <div class="source-item"><strong>UNESCO.</strong> (2025). <em>Global Education Monitoring Report</em>. Out-of-school children and literacy data.</div>
+      <div class="source-item"><strong>UNDP.</strong> (2025). <em>Human Development Report 2025</em>. Mean years of schooling, expected years of schooling.</div>
+      <div class="source-item"><strong>World Bank.</strong> EdStats database. Education expenditure, R&amp;D researchers per million, learning-adjusted years of schooling.</div>
+      <div class="source-item"><strong>Nature Index / SCImago.</strong> (2024/2025). Research output and share by country.</div>
+      <div class="source-item"><strong>Global STEM Education Development Index.</strong> (2025). Country rankings by STEM education quality.</div>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Most Educated Countries in the World &mdash; The Full Ranking.&rdquo; Updated March 2026. https://www.truthbased.org/most-educated-countries</span>
+    </div>
+  </article>
+  </main>
+
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: OECD EAG 2025, UNESCO UIS, PISA 2022, UNDP HDR 2025, World Bank</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <!-- Chart: Tertiary Attainment Ranking -->
+  <script>
+    var ctxRank = document.getElementById('chartRanking').getContext('2d');
+    new Chart(ctxRank, {
+      type: 'bar',
+      data: {
+        labels: ['Canada','Ireland','Japan','S. Korea','Luxembourg','UK','Australia','Sweden','USA','Israel','Norway','Lithuania','Switzerland','Belgium','Denmark','Netherlands','N. Zealand','Iceland','Estonia','Finland','France','Spain','Latvia','Poland','Germany','Chile','Italy','Mexico','Brazil','China','India','Indonesia'],
+        datasets: [{
+          label: 'Tertiary attainment % (25–64)',
+          data: [65,58,57,56,54,54,53,52,51,51,50,48,46,45,45,45,44,44,43,43,43,42,40,39,34,33,22,22,22,19,14,13],
+          backgroundColor: function(ctx) {
+            var v = ctx.raw;
+            if (v >= 45) return '#1b6b3e';
+            if (v >= 30) return '#7a4f00';
+            return '#b83a1e';
+          }
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        indexAxis: 'y',
+        plugins: {
+          legend: { display: false },
+          tooltip: { bodyFont: { family: "'Sora', sans-serif" }, callbacks: { label: function(ctx) { return ctx.raw + '%'; } } }
+        },
+        scales: {
+          x: { min: 0, max: 70, title: { display: true, text: '% adults with tertiary education', font: { family: "'Sora', sans-serif", size: 11 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 } } },
+          y: { ticks: { font: { family: "'Courier Prime', monospace", size: 9 } } }
+        }
+      }
+    });
+  </script>
+
+  <!-- Chart: Access vs Performance Paradox -->
+  <script>
+    var ctxPara = document.getElementById('chartParadox').getContext('2d');
+    new Chart(ctxPara, {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: 'Countries',
+          data: [
+            { x: 12.0, y: 575, r: 8 },
+            { x: 12.7, y: 536, r: 8 },
+            { x: 12.7, y: 527, r: 8 },
+            { x: 13.0, y: 510, r: 7 },
+            { x: 13.0, y: 497, r: 8 },
+            { x: 14.3, y: 475, r: 8 },
+            { x: 13.9, y: 459, r: 7 },
+            { x: 13.9, y: 465, r: 9 }
+          ],
+          backgroundColor: [
+            '#1b6b3e','#1b6b3e','#1b6b3e','#1b6b3e','#7a4f00','#b83a1e','#b83a1e','#7a4f00'
+          ]
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            bodyFont: { family: "'Sora', sans-serif" },
+            callbacks: {
+              label: function(ctx) {
+                var names = ['Singapore','Japan','S. Korea','Estonia','Canada','Germany','Iceland','USA'];
+                return names[ctx.dataIndex] + ': ' + ctx.raw.x + ' yrs, PISA ' + ctx.raw.y;
+              }
+            }
+          }
+        },
+        scales: {
+          x: { min: 11.5, max: 15, title: { display: true, text: 'Mean years of schooling', font: { family: "'Sora', sans-serif", size: 11 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 } } },
+          y: { min: 440, max: 590, title: { display: true, text: 'PISA math score (2022)', font: { family: "'Sora', sans-serif", size: 11 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 } } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+    })();
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
