@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Page not found — TruthBased.org, data-driven fact-checking on politically contentious topics.">
+  <meta name="description" content="Page not found — TruthBased.org">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found | TruthBased.org</title>
   <meta name="robots" content="noindex">
@@ -33,7 +33,6 @@
       --text-head: #1a1714; --text-body: #2d2926; --text-dim: #5a544c; --text-quiet: #736e66;
       --brick: #b83a1e; --font-serif: 'Spectral', Georgia, serif;
       --font-sans: 'Sora', system-ui, sans-serif; --font-mono: 'Courier Prime', monospace;
-    
     }
     [data-theme="dark"] {
       --bg: #1a1918; --surface: #242220; --border: #3a3632; --rule: #3a3632;
@@ -100,16 +99,15 @@
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
-      html { scroll-behavior: auto !important; }
     }
   </style>
-  <link rel="canonical" href="https://www.truthbased.org/404">
 </head>
 <body>
   <nav class="site-nav" aria-label="Site navigation">
     <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
   </nav>
 
   <main class="error-wrap">
@@ -141,7 +139,6 @@
         var isDark = html.getAttribute('data-theme')==='dark';
         btn.textContent = isDark ? '\u2600' : '\u263E';
         btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        btn.setAttribute('aria-pressed', String(isDark));
       }
       icon();
       if(btn) btn.addEventListener('click', function(){
