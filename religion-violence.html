@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Religion and Violence &mdash; Parsing the Actual Numbers | TruthBased.org</title>
+  <meta name="description" content="7% of wars were religious. 55% of modern civil conflicts have religious dimensions. Terrorism databases, Crusade death tolls, Inquisition records examined.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/religion-violence">
+  <meta property="og:title"   content="Religion and Violence &mdash; Parsing the Actual Numbers | TruthBased.org">
+  <meta property="og:description" content="Encyclopedia of Wars, UCDP, Global Terrorism Database, Europol TE-SAT. Historical atrocity counts vs popular claims. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Religion and Violence &mdash; Parsing the Actual Numbers | TruthBased.org">
+  <meta name="twitter:description" content="War databases, terrorism data, historical records. Every major claim tested.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/religion-violence">
+  <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* COLORBLIND ACCESSIBILITY SYMBOLS */
+    .stat-val.positive::before { content: "\2713\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.negative::before { content: "\2717\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.warn::before { content: "\26A0\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.neutral::before { content: "\2014 "; }
+
+    /* DATA TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    /* CHART */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CLAIMS BOX */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+
+    /* FALSIFY BOX */
+    .falsify-box {
+      background: var(--card-face, var(--surface));
+      border: 1px solid var(--rule, var(--border));
+      border-left: 3px solid var(--green);
+      border-radius: 4px; padding: 16px 18px; margin: 24px 0;
+    }
+    .falsify-box .falsify-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green); display: block; margin-bottom: 8px;
+    }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* PART TAKEAWAY */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* TLDR BOX */
+    .tldr-box {
+      background: var(--card-face); border: 1px solid var(--rule);
+      border-left: 3px solid var(--brick); border-radius: 4px;
+      padding: 18px 20px; margin: 24px 0;
+    }
+    .tldr-box .tldr-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    /* TABLE SCROLL */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; position: relative; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    /* CITE THIS */
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    /* READING PROGRESS, BACK-TO-TOP, THEME */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    /* QR EXPAND */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    /* RESPONSIVE */
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top,
+      .reading-progress, .theme-toggle, footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Religion and Violence — Parsing the Actual Numbers",
+    "description": "Wars, terrorism, sectarian conflict, historical atrocities — measured against databases, archival records, and peer-reviewed conflict research. Both sides steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-03-05",
+    "mainEntityOfPage": "https://www.truthbased.org/religion-violence",
+    "keywords": ["religion", "violence", "war", "terrorism", "Crusades", "Inquisition", "atheism", "conflict", "peace", "fact-check"]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Religion &amp; Society</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <!-- JUMP NAV -->
+  <div class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jumpLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      Sections
+    </button>
+    <div class="jump-links" id="jumpLinks">
+      <a href="#part1" class="jump-btn">Part 1 &ndash; Wars</a>
+      <a href="#part2" class="jump-btn">Part 2 &ndash; Terrorism</a>
+      <a href="#part3" class="jump-btn">Part 3 &ndash; Sectarian</a>
+      <a href="#part4" class="jump-btn">Part 4 &ndash; Historical</a>
+      <a href="#part5" class="jump-btn">Part 5 &ndash; Peace</a>
+      <a href="#part6" class="jump-btn">Part 6 &ndash; Atheist Regimes</a>
+      <a href="#part7" class="jump-btn">Part 7 &ndash; Steelman</a>
+    </div>
+  </div>
+
+  <main>
+  <article class="article-wrap">
+    <header>
+      <span class="article-category">Religion &amp; Society</span>
+      <h1 class="article-title">Religion and Violence &mdash; Parsing the Actual Numbers</h1>
+      <p class="article-deck">Claims about religiously motivated conflict measured against terrorism databases, historical records, war encyclopedias, and peer-reviewed conflict research. How researchers define and count religious motivation &mdash; and what happens when you control for poverty, state weakness, and political exclusion.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#9679; Live</span>
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">7 Parts</span>
+      </div>
+    </header>
+
+    <div class="sources-bar" style="margin-top:24px;">
+      <span class="sources-bar-label">Primary sources used</span>
+      <div class="source-pills">
+        <span class="source-pill">Phillips &amp; Axelrod (2005)</span>
+        <span class="source-pill">UCDP / RELAC</span>
+        <span class="source-pill">Global Terrorism Database</span>
+        <span class="source-pill">Europol TE-SAT</span>
+        <span class="source-pill">Fearon &amp; Laitin (2003)</span>
+        <span class="source-pill">Svensson &amp; Nilsson (2018)</span>
+        <span class="source-pill">Toft (2011)</span>
+        <span class="source-pill">Cavanaugh (2009)</span>
+        <span class="source-pill">Levack (2016)</span>
+        <span class="source-pill">Kamen (2014)</span>
+      </div>
+    </div>
+
+    <div class="box box-amber" style="margin-top:28px;">
+      <span class="box-label">The short answer</span>
+      <p>Religion accounts for roughly 7% of historical wars under narrow definitions, but the share of modern civil conflicts with religious dimensions has risen from 3% in 1975 to 55% in 2015. Yet when you control for poverty, state weakness, and political exclusion, religious diversity loses statistical significance as a conflict predictor. Popular claims about historical religious atrocities &mdash; Crusade death tolls, Inquisition executions, witch trial numbers &mdash; are inflated by orders of magnitude relative to documented evidence. Religion functions as a <strong>powerful amplifier, mobilization tool, and identity marker</strong> that makes conflicts more lethal and harder to resolve &mdash; while also providing some of history&rsquo;s most effective peacebuilding resources. Anyone offering a simple number is misleading you.</p>
+    </div>
+
+    <!-- ======================================================
+         PART 1 – WARS
+    ======================================================= -->
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">Wars &mdash; The &ldquo;7% of Wars&rdquo; Claim and the Modern Surge</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; The encyclopedia figure</span>
+
+      <p>The most commonly cited statistic &mdash; that only about 7% of all wars were religious &mdash; originates from the <em>Encyclopedia of Wars</em> by Charles Phillips and Alan Axelrod (Facts on File, 2005). The encyclopedia catalogs <strong>1,763 wars</strong> spanning roughly 5,000 years; its index lists <strong>121 entries</strong> under &ldquo;religious wars,&rdquo; yielding approximately 6.87%. The widely circulated figure of &ldquo;123 religious wars&rdquo; actually traces to Theodore Beale&rsquo;s <em>The Irrational Atheist</em> (2008), who added two wars he believed the editors had omitted.</p>
+
+      <p>As historian Andrew Holt (Florida State College, 2018) documented, Phillips and Axelrod never explain their classification criteria &mdash; the &ldquo;religious wars&rdquo; label appears only in the index, with no methodological discussion anywhere in the three-volume work. The classification is binary, offering no spectrum for wars with partial religious dimensions. A corroborating BBC-sponsored audit rated major conflicts on a 0-to-5 religious motivation scale and found over 60% had no religious motivation, with fewer than 7% scoring above 3.</p>
+
+      <div class="stat-block" aria-label="Wars and religious motivation data">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Historical Wars by Religious Motivation</span>
+          <span class="stat-block-period">Multiple sources</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Phillips &amp; Axelrod (2005) &mdash; 1,763 wars cataloged</span><span class="stat-val neutral">121 religious (&asymp;7%)</span></div>
+          <div class="stat-row"><span class="stat-key">Martel&rsquo;s Encyclopedia of War</span><span class="stat-val neutral">&asymp;6% religious</span></div>
+          <div class="stat-row"><span class="stat-key">BBC &ldquo;God and War&rdquo; audit (0&ndash;5 scale)</span><span class="stat-val neutral">&lt;7% scored &gt;3</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">02 &ndash; The modern surge</span>
+
+      <p>The more important story is what has happened since 1975. Three independent, peer-reviewed datasets converge:</p>
+
+      <p>Monica Duffy Toft (<em>God&rsquo;s Century</em>, W.W. Norton, 2011) found religious civil wars rose from roughly 19% of all civil wars in the 1940s to approximately 50% by 2010. Svensson and Nilsson&rsquo;s <strong>RELAC dataset</strong> (2018, <em>Journal of Conflict Resolution</em>, 420 conflict dyads from UCDP) found the share rose from <strong>3% in 1975 to 55% in 2015</strong>. Basedau at GIGA Hamburg found at least 50% of armed conflicts in sub-Saharan Africa were &ldquo;theological&rdquo; by 2017. Critically, <strong>75% of religiously defined conflicts in 2015 involved groups with self-proclaimed Islamist aspirations</strong>.</p>
+
+      <div class="chart-wrap" role="img" aria-label="Share of civil conflicts with religious dimensions over time">
+        <div class="chart-title">Civil Conflicts with Religious Dimensions, 1975&ndash;2015 (RELAC Dataset)</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartConflict" aria-label="Line chart showing rise from 3% in 1975 to 55% in 2015"></canvas>
+        </div>
+      </div>
+
+      <p>Toft further established that religious civil wars are <strong>more deadly</strong>, last on average two years longer, and are <strong>twice as likely to recur</strong>. Svensson (2007, <em>Journal of Conflict Resolution</em>) found conflicts with explicit religious claims are significantly less likely to be settled through negotiated agreements.</p>
+
+      <span class="section-label">03 &ndash; The definition problem</span>
+
+      <p>William Cavanaugh (<em>The Myth of Religious Violence</em>, Oxford University Press, 2009) argues there is no transhistorical essence of &ldquo;religion&rdquo; &mdash; the boundary between &ldquo;religious&rdquo; and &ldquo;secular&rdquo; motivation is a modern Western construction. Catholic France fighting on the Protestant side in the Thirty Years&rsquo; War, and Protestants slaughtering Protestants in the same conflict, illustrate the problem. Neither the Correlates of War dataset nor the core UCDP dataset directly codes for religious causation.</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>A standardized coding scheme for religious motivation &mdash; applied consistently across all conflicts with inter-coder reliability testing &mdash; that yields a substantially different percentage than 6&ndash;7% for historical wars or substantially different from 50&ndash;55% for modern civil conflicts. Evidence that the RELAC coding inflates or deflates the trend.</p>
+      </div>
+
+      <div class="part-takeaway"><strong>Part 1 takeaway:</strong> The 7% figure is defensible under a narrow definition but misleading when used to claim religion is irrelevant to conflict. The share of civil conflicts with religious dimensions has surged from 3% (1975) to 55% (2015), driven primarily by Islamist insurgencies. These conflicts are more deadly and harder to resolve.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 2 – TERRORISM
+    ======================================================= -->
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">Terrorism &mdash; A Lethality Gap, Not a Frequency Gap</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; European data</span>
+
+      <p>Europol&rsquo;s TE-SAT reports consistently show that <strong>separatist attacks outnumber jihadist attacks</strong> in raw numbers. In 2023, separatist attacks (70) constituted 58% of all EU attacks, mostly from Corsican groups, while jihadist attacks numbered just 14. Yet jihadist attacks caused <strong>all six fatalities</strong> that year. In 2024, jihadist attacks (24) killed five and injured 18; all other categories combined produced only two injuries. Arrests tell a parallel story: in 2024, 289 of 449 terrorism-related arrests (64%) were jihadist-related.</p>
+
+      <span class="section-label">02 &ndash; The lethality gap in global data</span>
+
+      <p>Bruce Hoffman&rsquo;s analysis of the RAND-St. Andrews Chronology documented dramatic growth from <strong>zero identifiable modern religious terrorist groups in 1968</strong> to 26 of 56 groups (46.4%) by 1995. In 1995, religious terrorists committed only 25% of recorded international incidents but were responsible for <strong>58% of total fatalities</strong> (<em>Inside Terrorism</em>, Columbia University Press, 2006).</p>
+
+      <div class="stat-block" aria-label="Terrorism lethality data">
+        <div class="stat-block-header">
+          <span class="stat-block-name">The Lethality Disparity</span>
+          <span class="stat-block-period">Multiple databases</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Religious groups as % of international incidents (1995)</span><span class="stat-val neutral">25%</span></div>
+          <div class="stat-row"><span class="stat-key">Religious groups as % of fatalities (1995)</span><span class="stat-val negative">58%</span></div>
+          <div class="stat-row"><span class="stat-key">EU jihadist attacks (2023): 14 attacks</span><span class="stat-val negative">100% of fatalities (6 dead)</span></div>
+          <div class="stat-row"><span class="stat-key">EU separatist attacks (2023): 70 attacks</span><span class="stat-val neutral">0 fatalities</span></div>
+          <div class="stat-row"><span class="stat-key">U.S. terrorism deaths 1970&ndash;2016 attributable to 9/11</span><span class="stat-val neutral">82% (single event)</span></div>
+        </div>
+      </div>
+
+      <p>Victor Asal and R. Karl Rethemeyer (<em>Journal of Politics</em>, 2008) found religious ideology was a statistically significant predictor of organizational lethality even after controlling for group size and territorial control. James Piazza (2009) found in Iraq that al-Qaeda-affiliated groups committed one-third of Islamist attacks but were responsible for <strong>95.9% of all casualties</strong>. Ido Levy (2023) confirmed that <strong>suicide terrorism</strong> &mdash; disproportionately associated with jihadist groups &mdash; largely accounts for the lethality gap.</p>
+
+      <span class="section-label">03 &ndash; Most victims are Muslim</span>
+
+      <p>The Fondation pour l&rsquo;innovation politique (Fondapol) compiled all Islamist terrorist attacks worldwide from 1979 to 2024 and found that <strong>86.3% of attacks and 88.9% of deaths occurred in Muslim-majority countries</strong>. The CSIS analysis (Cordesman, 2017) using GTD data found 90% of deaths from top Islamist groups occurred in Muslim-majority countries.</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>Evidence that the lethality gap disappears when controlling for organizational characteristics (state sponsorship, territorial control, funding) rather than ideology. Or: GTD data showing that non-religious terrorist groups achieve comparable per-attack casualty rates when organizational factors are held constant.</p>
+      </div>
+
+      <div class="part-takeaway"><strong>Part 2 takeaway:</strong> Religiously motivated terrorism is not the most common by frequency but is disproportionately lethal. The lethality gap is concentrated in a specific subset of transnational jihadist groups, and the vast majority of victims (&asymp;87&ndash;90%) are themselves Muslim.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 3 – SECTARIAN VIOLENCE
+    ======================================================= -->
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">Sectarian Violence &mdash; Religion as Identity Marker, Not Root Cause</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; Northern Ireland</span>
+
+      <p>The Troubles (1968&ndash;1998) are frequently miscategorized as a &ldquo;religious war.&rdquo; The scholarly consensus (O&rsquo;Malley, McBride, Ruane &amp; Todd) is that this was an <strong>ethno-nationalist conflict</strong> with a sectarian dimension. The Sutton Index (CAIN Archive) records <strong>3,528 deaths</strong>: Republican paramilitaries killed 58.6%, Loyalist paramilitaries 29.2%, British Security Forces 10.0%. As Padraig O&rsquo;Malley noted: &ldquo;No one has seriously suggested that differences in theological beliefs are the root cause of our problems.&rdquo;</p>
+
+      <span class="section-label">02 &ndash; Iraq&rsquo;s sectarian war</span>
+
+      <p>Following the 2006 Samarra mosque bombing, Iraq&rsquo;s sectarian violence produced an estimated <strong>150,000&ndash;300,000 violent deaths</strong> across the full 2003&ndash;2023 period. Fawaz Gerges argued the U.S. invasion polarized the country along Sunni&ndash;Shia lines by destroying state institutions and imposing a sectarian political system &mdash; the sectarianism was catalyzed by political decisions, not theological disagreement.</p>
+
+      <span class="section-label">03 &ndash; Myanmar and India</span>
+
+      <p>The Rohingya crisis produced at least <strong>6,700 violent deaths in the first month</strong> (MSF, December 2017), with over 700,000 displaced. The UN and U.S. State Department classified it as <strong>genocide</strong>. Yet the crisis involved ethnic, citizenship (1982 Citizenship Law), and colonial-legacy dimensions irreducible to Buddhism vs. Islam.</p>
+
+      <p>Ashutosh Varshney (<em>Ethnic Conflict and Civic Life</em>, Yale, 2002) compiled all Hindu&ndash;Muslim riots from 1950&ndash;1995. His central finding: <strong>eight cities containing 5% of India&rsquo;s population accounted for 45% of all deaths</strong>. Cities with strong intercommunal civic engagement experienced far less violence even with similar demographics. Steven Wilkinson (<em>Votes and Violence</em>, 2004) showed communal violence is more likely where ruling parties don&rsquo;t depend on minority votes.</p>
+
+      <span class="section-label">04 &ndash; The theoretical framework</span>
+
+      <p>Jeffrey Seul (1999) articulated the now-dominant view: &ldquo;Religion is not the cause of religious conflict; rather it frequently supplies the fault line along which intergroup identity and resource competition occurs.&rdquo; Frances Stewart&rsquo;s &ldquo;horizontal inequalities&rdquo; framework (Oxford, 2008) demonstrates that violence erupts when cultural differences <strong>coincide with economic and political inequalities</strong>. Toft coined <strong>&ldquo;religious outbidding&rdquo;</strong> &mdash; how elites compete for religious credentials to mobilize support.</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>A sectarian conflict where theological disagreement was the documented primary cause even in the absence of economic inequality, political exclusion, or ethnic competition. Evidence that sectarian conflicts are equally likely in societies with low horizontal inequality.</p>
+      </div>
+
+      <div class="part-takeaway"><strong>Part 3 takeaway:</strong> Major sectarian conflicts (Northern Ireland, Iraq, Myanmar, India) consistently show religion functioning as an identity marker and mobilization tool atop political, economic, and ethnic drivers. The evidence overwhelmingly points to political structure, not theology, as the primary cause.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 4 – HISTORICAL ATROCITIES
+    ======================================================= -->
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">Historical Atrocities &mdash; Popular Claims vs. Documented Evidence</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; The Crusades</span>
+
+      <p>Modern Crusade historians (Madden, Riley-Smith, Tyerman, Asbridge) emphasize that reliable figures are essentially impossible for a 200-year period. The most commonly cited scholarly range is <strong>1&ndash;3 million total deaths</strong> across all campaigns (Matthew White&rsquo;s geometric mean: 3 million). For the sack of Jerusalem (1099), Muslim sources claimed 70,000 dead, Latin sources ~10,000, and recent Hebrew testimony cited by Asbridge suggests casualties &ldquo;may not have exceeded 3,000.&rdquo;</p>
+
+      <span class="section-label">02 &ndash; The Inquisition: a 1,000&times; gap</span>
+
+      <p>Popular and polemical claims range from 50 million to 100 million killed. The documented evidence is dramatically lower:</p>
+
+      <div class="stat-block" aria-label="Inquisition execution data">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Spanish Inquisition (1478&ndash;1834): Documented Executions</span>
+          <span class="stat-block-period">Multiple historians</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">William Monter (1990)</span><span class="stat-val neutral">2,750&ndash;3,000</span></div>
+          <div class="stat-row"><span class="stat-key">Henry Kamen (4th ed., 2014)</span><span class="stat-val neutral">&asymp;3,000</span></div>
+          <div class="stat-row"><span class="stat-key">Henningsen &amp; Contreras (trial records)</span><span class="stat-val neutral">1.8% execution rate</span></div>
+          <div class="stat-row"><span class="stat-key">Vatican symposium (Borromeo, 1998)</span><span class="stat-val neutral">&asymp;1% of ~125,000 trials</span></div>
+          <div class="stat-row"><span class="stat-key">All Inquisitions combined (Spanish + Portuguese + Roman)</span><span class="stat-val neutral">5,000&ndash;15,000 total</span></div>
+        </div>
+      </div>
+
+      <p class="source-note">The discrepancy between popular claims and scholarly evidence is roughly 1,000&times; to 10,000&times;.</p>
+
+      <span class="section-label">03 &ndash; Witch trials</span>
+
+      <p>The widely cited &ldquo;9 million burned&rdquo; figure originated with Gottfried Christian Voigt in the late 18th century and was popularized by suffragette Matilda Joslyn Gage in 1893. Ronald Hutton called it a figure with &ldquo;no rational basis whatsoever.&rdquo; The peer-reviewed consensus from Levack (<em>The Witch-Hunt in Early Modern Europe</em>, 4th ed., 2016), Hutton (<em>The Witch</em>, 2017), and Sharpe clusters around <strong>40,000&ndash;60,000 executions</strong> from approximately 100,000 trials. Notably, the Spanish Inquisition was actually <strong>more restrained</strong> than secular courts in witch trials.</p>
+
+      <span class="section-label">04 &ndash; Comparing the scale</span>
+
+      <div class="stat-block" aria-label="Historical atrocity scale comparison">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Scale Comparison: Religious vs. 20th-Century Secular Atrocities</span>
+          <span class="stat-block-period">700 years vs. 55 years</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">All Crusades (~1095&ndash;1291)</span><span class="stat-val neutral">&asymp;1&ndash;3 million</span></div>
+          <div class="stat-row"><span class="stat-key">All Inquisitions (~1200&ndash;1834)</span><span class="stat-val neutral">&asymp;5,000&ndash;15,000</span></div>
+          <div class="stat-row"><span class="stat-key">European witch trials (~1450&ndash;1750)</span><span class="stat-val neutral">&asymp;40,000&ndash;60,000</span></div>
+          <div class="stat-row"><span class="stat-key">Thirty Years&rsquo; War (1618&ndash;1648, partly political)</span><span class="stat-val neutral">&asymp;4&ndash;8 million</span></div>
+          <div class="stat-row"><span class="stat-key"><strong>Total religious atrocities (generous, 700 years)</strong></span><span class="stat-val neutral"><strong>&asymp;7&ndash;15 million</strong></span></div>
+          <div class="stat-row" style="border-top: 1px solid var(--rule); padding-top:8px; margin-top:4px;"><span class="stat-key">Stalin&rsquo;s USSR (post-archival estimates)</span><span class="stat-val negative">12&ndash;16 million</span></div>
+          <div class="stat-row"><span class="stat-key">Mao&rsquo;s China (Great Leap + Cultural Revolution)</span><span class="stat-val negative">31&ndash;47 million</span></div>
+          <div class="stat-row"><span class="stat-key">Khmer Rouge (25% of Cambodia)</span><span class="stat-val negative">1.5&ndash;2 million</span></div>
+          <div class="stat-row"><span class="stat-key"><strong>Three regimes combined (&asymp;55 years)</strong></span><span class="stat-val negative"><strong>22&ndash;63 million</strong></span></div>
+        </div>
+      </div>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>New archival evidence substantially revising the scholarly consensus on Inquisition or witch trial death tolls upward. Discovery that the Vatican&rsquo;s 1998 symposium or Monter/Kamen/Levack undercount by an order of magnitude. Evidence that the &ldquo;9 million&rdquo; witch-trial figure has a defensible empirical basis.</p>
+      </div>
+
+      <div class="part-takeaway"><strong>Part 4 takeaway:</strong> Popular claims about historical religious atrocities are inflated by orders of magnitude. All documented religious atrocities combined over 700 years (7&ndash;15 million, including substantially political wars) are dwarfed by three 20th-century secular regimes (22&ndash;63 million in 55 years) by a factor of roughly 2&ndash;8&times;.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 5 – RELIGION AS A RESTRAINING FORCE
+    ======================================================= -->
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Religion as a Restraining Force &mdash; Peacebuilding and the Mechanism</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; Institutional peacebuilding</span>
+
+      <p>The Community of Sant&rsquo;Egidio mediated the 1992 Rome General Peace Accords ending Mozambique&rsquo;s 16-year civil war &mdash; a peace that has held for over 30 years. In Northern Ireland, Father Alec Reid of Clonard Monastery secretly brokered the Hume&ndash;Adams talks that opened the channel to the 1998 Good Friday Agreement; Gerry Adams stated there &ldquo;would not be a peace process without&rdquo; Reid. Archbishop Desmond Tutu&rsquo;s TRC in South Africa infused transitional justice with ubuntu theology. The Inter-Religious Council of Sierra Leone convinced rebel leader Foday Sankoh to agree to a ceasefire.</p>
+
+      <span class="section-label">02 &ndash; The experimental mechanism</span>
+
+      <p>R. Scott Appleby (<em>The Ambivalence of the Sacred</em>, 2000) articulated the core insight: the same &ldquo;militance&rdquo; that drives suicide bombers also drives peacemakers. Jeremy Ginges, Ian Hansen, and Ara Norenzayan (<em>Psychological Science</em>, 2009, four studies across six religions and six nations) found that <strong>frequency of attendance at religious services predicted support for suicide attacks, while frequency of prayer did not</strong>.</p>
+
+      <div class="box box-green">
+        <span class="box-label">Key experimental finding</span>
+        <p>Among Palestinian Muslims, those attending mosque daily were 3&times; as likely to believe Islam &ldquo;requires&rdquo; suicide attacks &mdash; but prayer frequency had zero effect. In an experiment with Israeli Jewish settlers, priming synagogue attendance <em>increased</em> approval of Baruch Goldstein&rsquo;s massacre from 15% to 23%, while priming prayer <em>reduced</em> it to 6%. Replicated across Indonesian Muslims, Mexican Catholics, British Protestants, Russian Orthodox, Israeli Jews, and Indian Hindus. The <strong>coalitional function</strong> of religion links to violence; the <strong>devotional function</strong> restrains it.</p>
+      </div>
+
+      <p>Ginges, Sheikh, Atran, and Argo (<em>PNAS</em>, 2016) showed that when 555 Palestinian Muslim adolescents evaluated a moral dilemma from <strong>Allah&rsquo;s perspective</strong> rather than their own, they valued Israeli Jewish lives and Palestinian Muslim lives more equally. The Abu Dhabi Gallup Center&rsquo;s 131-country study found Muslim Americans were the <strong>most opposed</strong> of any U.S. religious group to military targeting of civilians (78% &ldquo;never justified&rdquo; vs. ~58% for Catholics).</p>
+
+      <span class="section-label">03 &ndash; The just war tradition</span>
+
+      <p>The just war tradition &mdash; from Augustine through Aquinas, Vitoria, and Su&aacute;rez to Hugo Grotius &mdash; directly produced the principles of <strong>distinction</strong> (between combatants and civilians) and <strong>proportionality</strong> that form the backbone of modern international humanitarian law and the Geneva Conventions.</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>Evidence that the Ginges et al. attendance-vs-prayer finding does not replicate in pre-registered multi-site studies. Evidence that religious peacebuilders were no more effective than purely secular mediators in comparable conflict contexts.</p>
+      </div>
+
+      <div class="part-takeaway"><strong>Part 5 takeaway:</strong> Religion provides powerful peacebuilding resources &mdash; from institutional mediation to the just war tradition underlying IHL. The experimental evidence suggests the coalitional function of religion (attending services) links to support for violence, while the devotional function (prayer, contemplating God&rsquo;s perspective) restrains it. Religion is not one thing.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 6 – ATHEIST REGIMES
+    ======================================================= -->
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Atheist-State Atrocities &mdash; Totalitarianism, Not Disbelief</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; The death tolls</span>
+
+      <div class="stat-block" aria-label="Atheist regime death tolls">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Post-Archival Estimates of Regime Death Tolls</span>
+          <span class="stat-block-period">20th century</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Soviet Union under Stalin (Wheatcroft, archival)</span><span class="stat-val negative">12&ndash;16 million total</span></div>
+          <div class="stat-row"><span class="stat-key">Mao&rsquo;s China &mdash; Great Leap Forward (Dikötter / Yang Jisheng)</span><span class="stat-val negative">30&ndash;45 million (famine)</span></div>
+          <div class="stat-row"><span class="stat-key">Mao&rsquo;s China &mdash; Cultural Revolution</span><span class="stat-val negative">1&ndash;2 million (direct)</span></div>
+          <div class="stat-row"><span class="stat-key">Khmer Rouge (25% of Cambodia)</span><span class="stat-val negative">1.5&ndash;2 million</span></div>
+          <div class="stat-row"><span class="stat-key">Soviet anti-religious purges (1937&ndash;38 alone)</span><span class="stat-val negative">106,300 Orthodox clergy shot</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">02 &ndash; The causal question</span>
+
+      <p><strong>Not one of the major historians of these regimes</strong> &mdash; Conquest, Applebaum, Wheatcroft, Snyder, Dikötter, Kiernan &mdash; identifies atheism as the primary causal factor. Tim O&rsquo;Neill (atheist medieval historian) argues both the Christian apologist position (&ldquo;atheism uniquely caused the bloodshed&rdquo;) and the New Atheist position (&ldquo;atheism had nothing to do with it&rdquo;) are wrong. Atheism was a constitutive element of Marxist-Leninist ideology &mdash; churches were destroyed <em>because of</em> committed beliefs about religion as false consciousness. But atheism operated within a package including class warfare, personality cults, and elimination of dissent.</p>
+
+      <p>R.J. Rummel&rsquo;s own research &mdash; paradoxically, given how his numbers are used in debate &mdash; found that <strong>the democratic-totalitarian spectrum, not the religious-atheist spectrum, was the key predictor of mass killing</strong>. His principle: &ldquo;Power kills; absolute Power kills absolutely.&rdquo;</p>
+
+      <div class="box box-amber">
+        <span class="box-label">The parallel logical error</span>
+        <p>Claiming &ldquo;atheism caused the Gulag&rdquo; commits the same error as claiming &ldquo;religion caused the Crusades.&rdquo; The common factor across history&rsquo;s worst atrocities is not the presence or absence of God-belief but the combination of <strong>utopian ideology demanding total social transformation, totalitarian concentration of power, dehumanization of out-groups, and suppression of dissent</strong>. Highly secular liberal democracies (Scandinavia, Japan, Czech Republic) are among the least violent societies in history. Deeply religious societies have produced catastrophic violence (Rwandan genocide: 90% Christian country).</p>
+      </div>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would change this conclusion?</span>
+        <p>Evidence that secular liberal democracies produce mass violence at rates comparable to totalitarian states. Or: evidence that the anti-religious campaigns were the primary motivating force (rather than political consolidation) behind the Great Purge, Great Leap Forward, or Khmer Rouge killing fields.</p>
+      </div>
+
+      <div class="part-takeaway"><strong>Part 6 takeaway:</strong> Atheist-state atrocities were staggering in scale (22&ndash;63 million in three regimes alone) and included massive anti-religious persecution. However, every major historian attributes the primary cause to totalitarian ideology, not disbelief. The democratic-totalitarian axis predicts mass killing far better than the religious-atheist axis.</div>
+    </section>
+
+    <!-- ======================================================
+         PART 7 – STEELMAN & CONFOUNDERS
+    ======================================================= -->
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Both Sides Steelmanned &amp; What the Quantitative Models Show</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; The strongest case that religion drives violence</span>
+
+      <div class="box box-red">
+        <span class="box-label">Steelman: religion is a major driver</span>
+        <p>The share of civil conflicts with religious dimensions has surged from 3% to 55%. Religious terrorism is disproportionately lethal. Religious civil wars last longer, recur more, and are harder to negotiate. The experimental evidence (Ginges et al.) shows that communal religious participation specifically predicts support for suicide attacks across six religions. The Crusades, Wars of Religion, and modern jihadist campaigns demonstrate that religious conviction can motivate extraordinary violence. These are not mere identity markers &mdash; fighters explicitly cite scripture, promise divine reward, and define enemies in theological terms.</p>
+      </div>
+
+      <span class="section-label">02 &ndash; The strongest case that religion&rsquo;s role is overstated</span>
+
+      <div class="box box-green">
+        <span class="box-label">Steelman: religion&rsquo;s role is overstated</span>
+        <p>Only 7% of historical wars are classified as religious. Fearon and Laitin&rsquo;s landmark study (2003, <em>APSR</em>, 12,000+ citations) found that after controlling for per capita income, more religiously diverse countries were no more likely to experience civil war. Poverty, state weakness, and rough terrain predicted civil war regardless of religious composition. Bormann, Cederman, and Vogt (2017) found no support for the thesis that Muslim groups are particularly conflict-prone. Popular historical atrocity claims are inflated by 1,000&times;. The just war tradition produced international humanitarian law. Religion also provides powerful peacebuilding resources.</p>
+      </div>
+
+      <span class="section-label">03 &ndash; What the quantitative models show</span>
+
+      <p>The most important and least-discussed findings come from quantitative conflict models:</p>
+
+      <div class="stat-block" aria-label="Key quantitative findings from conflict research">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Major Conflict Studies: Religion After Controls</span>
+          <span class="stat-block-period">1945&ndash;2017</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Fearon &amp; Laitin (2003, APSR, 12,000+ citations)</span><span class="stat-val neutral">Religious diversity &rarr; not significant after income controls</span></div>
+          <div class="stat-row"><span class="stat-key">Cederman, Wimmer, &amp; Min (2009/2010)</span><span class="stat-val neutral">Political exclusion, not diversity, drives rebellion</span></div>
+          <div class="stat-row"><span class="stat-key">Montalvo &amp; Reynal-Querol (2005, AER)</span><span class="stat-val neutral">Ethnic polarization predicts war; fractionalization does not</span></div>
+          <div class="stat-row"><span class="stat-key">Collier &amp; Hoeffler (2004)</span><span class="stat-val neutral">Economic factors predict civil war better than religious measures</span></div>
+          <div class="stat-row"><span class="stat-key">Bormann, Cederman, &amp; Vogt (2017)</span><span class="stat-val neutral">Linguistic cleavages more conflict-prone than religious ones</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">04 &ndash; What we can say with confidence</span>
+
+      <div class="box box-amber">
+        <span class="box-label">Summary of evidence</span>
+        <p><strong>1.</strong> Historically, religion was the primary driver of only a small minority of wars (&asymp;7%), but the share of contemporary armed conflicts with religious dimensions has risen dramatically since the late 1970s. <strong>2.</strong> Religiously motivated terrorism is disproportionately lethal, though concentrated in transnational jihadist groups; the vast majority of victims are Muslim. <strong>3.</strong> Leading quantitative models consistently show that poverty, state weakness, and political exclusion explain far more variance than religious diversity. <strong>4.</strong> Popular historical atrocity claims are inflated by orders of magnitude. <strong>5.</strong> Religion also provides powerful peacebuilding resources. <strong>Genuinely contested:</strong> Whether religious civil wars are increasing because religion is more salient or because Cold War proxy conflicts have exited the denominator. Whether the lethality gap reflects religious ideology or organizational characteristics of specific groups.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sources-section">
+        <span class="sources-section-label">Primary sources cited</span>
+        <div class="source-item"><strong>Phillips &amp; Axelrod (2005)</strong> &mdash; <em>Encyclopedia of Wars</em>, Facts on File, 1,763 wars cataloged</div>
+        <div class="source-item"><strong>Svensson &amp; Nilsson (2018)</strong> &mdash; RELAC dataset, <em>J. Conflict Resolution</em> 62(5), 420 conflict dyads</div>
+        <div class="source-item"><strong>Toft (2011)</strong> &mdash; <em>God&rsquo;s Century</em>, W.W. Norton</div>
+        <div class="source-item"><strong>Cavanaugh (2009)</strong> &mdash; <em>The Myth of Religious Violence</em>, Oxford University Press</div>
+        <div class="source-item"><strong>Fearon &amp; Laitin (2003)</strong> &mdash; <em>APSR</em> 97(1), all civil wars 1945&ndash;1999</div>
+        <div class="source-item"><strong>Europol TE-SAT</strong> &mdash; EU Terrorism Situation &amp; Trend Reports, 2023&ndash;2024</div>
+        <div class="source-item"><strong>Hoffman (2006)</strong> &mdash; <em>Inside Terrorism</em>, Columbia University Press, RAND-St. Andrews</div>
+        <div class="source-item"><strong>Fondapol (2024)</strong> &mdash; Islamist terrorism database 1979&ndash;2024</div>
+        <div class="source-item"><strong>Ginges, Hansen, &amp; Norenzayan (2009)</strong> &mdash; <em>Psychological Science</em> 20(2)</div>
+        <div class="source-item"><strong>Levack (2016)</strong> &mdash; <em>The Witch-Hunt in Early Modern Europe</em>, 4th ed., Routledge</div>
+        <div class="source-item"><strong>Kamen (2014)</strong> &mdash; <em>The Spanish Inquisition</em>, 4th ed., Yale University Press</div>
+        <div class="source-item"><strong>Wheatcroft, Dikötter, Kiernan</strong> &mdash; Post-archival regime death toll estimates</div>
+        <div class="source-item"><strong>Appleby (2000)</strong> &mdash; <em>The Ambivalence of the Sacred</em>, Rowman &amp; Littlefield</div>
+      </div>
+    </section>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Religion and Violence &mdash; Parsing the Actual Numbers.&rdquo; Updated March 2026. https://www.truthbased.org/religion-violence</span>
+    </div>
+  </article>
+  </main>
+
+
+  <script>
+    // Religious civil conflicts over time (RELAC dataset, Svensson & Nilsson 2018)
+    const ctxConflict = document.getElementById('chartConflict');
+    if (ctxConflict) {
+      new Chart(ctxConflict.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['1975','1980','1985','1990','1995','2000','2005','2010','2015'],
+          datasets: [{
+            label: '% of intrastate conflicts with religious dimensions',
+            data: [3, 8, 15, 22, 30, 35, 40, 50, 55],
+            borderColor: '#b83a1e', backgroundColor: 'rgba(184,58,30,0.1)',
+            fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 8
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { title: { display: true, text: '% of civil conflicts', font: { size: 11 } }, min: 0, max: 65 },
+            x: { title: { display: true, text: 'Year', font: { size: 11 } } }
+          }
+        }
+      });
+    }
+  </script>
+
+
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: NASA GISTEMP, NOAA, Berkeley Earth, HadCRUT5, Mauna Loa, NSIDC, WGMS, IPCC AR6</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <!-- Chart: Temperature Anomaly -->
+
+  <!-- Chart: CO2 -->
+
+  <!-- Chart: Sea Level -->
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow on scroll ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
