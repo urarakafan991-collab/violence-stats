@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Did Police Funding Cuts Cause the 2020 Crime Surge? | TruthBased.org</title>
+  <meta name="description" content="Firearm homicides rose 31% in 2020. Was defunding police the cause? CDC mortality data, FBI UCR, and quasi-experimental evidence examined. Every argument steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/policing-crime">
+  <meta property="og:title"   content="Did Police Funding Cuts Cause the 2020 Crime Surge? | TruthBased.org">
+  <meta property="og:description" content="FBI UCR, CDC mortality, and quasi-experimental evidence on policing and the 2020 homicide spike. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Did Police Funding Cuts Cause the 2020 Crime Surge? | TruthBased.org">
+  <meta name="twitter:description" content="FBI UCR, CDC mortality, and quasi-experimental evidence on policing and the 2020 homicide spike.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/policing-crime">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Did Police Funding Cuts Cause the 2020 Crime Surge?",
+    "description": "FBI UCR, CDC mortality, and quasi-experimental evidence on policing changes and the 2020 homicide spike. Both sides steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-03",
+    "dateModified": "2026-03-03",
+    "mainEntityOfPage": "https://www.truthbased.org/policing-crime",
+    "keywords": ["defund the police", "crime surge 2020", "homicide rate", "policing", "fact-check", "FBI UCR", "CDC mortality"]
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – The 2020 Spike</a>
+      <a href="#part2" class="jump-btn">Part 2 – The Defund Claim</a>
+      <a href="#part3" class="jump-btn">Part 3 – De-Policing</a>
+      <a href="#part4" class="jump-btn">Part 4 – Competing Causes</a>
+      <a href="#part5" class="jump-btn">Part 5 – Steelman</a>
+      <a href="#part6" class="jump-btn">Part 6 – Verdict</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Political Fact Check</span>
+      <h1 class="article-title">Did Police Funding Cuts Cause the 2020 Crime Surge?</h1>
+      <p class="article-deck">Firearm homicides rose 31% in 2020 and peaked in 2021. The narrative that "defund the police" caused this is widespread. The data tells a more complicated story — one involving a pandemic, a historic gun-buying surge, and genuine uncertainty about cause and effect.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">8 primary sources</span>
+        <span class="meta-pill">~15 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Defunding police caused the 2020 crime surge&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported nationally. A study of 264 cities found no evidence that 2020 protests led to police budget cuts. Budgets in many cities actually increased.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The 2020 crime surge was unprecedented&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partly true for homicide (+29.4% murder in 2020, per FBI). False for overall violent crime, which remains well below 1990s levels. The surge was severe but not historically unique.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Crime is still out of control&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>False as of 2025. In 35 large cities, homicides fell 21% in 2025 vs. 2024. FBI data shows violent crime down 4.5% and murder down 14.9% in 2024 vs. 2023.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The spike was just a measurement artifact&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>False. The increase appears in both FBI police-recorded data <em>and</em> CDC mortality data, which use entirely separate reporting systems. Both can&rsquo;t be an artifact simultaneously.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <span class="source-pill">FBI UCR / CIUS</span>
+        <span class="source-pill">CDC NCHS Mortality</span>
+        <span class="source-pill">NCVS (BJS)</span>
+        <span class="source-pill">Council on Criminal Justice</span>
+        <span class="source-pill">BJS Firearm Statistics</span>
+        <span class="source-pill">Social Problems (peer-reviewed)</span>
+        <span class="source-pill">Perspectives on Politics (peer-reviewed)</span>
+        <span class="source-pill">FBI Crime Data Explorer</span>
+      </div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">The 2020 Homicide Spike: What the Data Actually Shows</h2>
+      </div>
+
+      <span class="section-label">01 – Cross-System Confirmation</span>
+
+      <p>The 2020 homicide increase is one of the most thoroughly confirmed events in modern crime statistics. It shows up in two independent measurement systems that share no common data pipeline: police-recorded homicide counts (FBI UCR) and death-certificate mortality data (CDC/NCHS). When two separate systems using different methods agree, the signal is real.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Firearm Homicide Mortality (CDC/NCHS)</span>
+          <span class="stat-block-period">2019–2023</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">2019 (pre-pandemic baseline)</span>
+            <span class="stat-val neutral">4.6 / 100k &mdash; 14,414 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2020 (first surge year)</span>
+            <span class="stat-val negative">6.2 / 100k &mdash; 19,384 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2021 (peak)</span>
+            <span class="stat-val negative">6.7 / 100k &mdash; 20,958 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2023 (most recent CDC data)</span>
+            <span class="stat-val warn">5.6 / 100k &mdash; 17,927 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Change 2019→2021</span>
+            <span class="stat-val negative">+46% age-adjusted rate</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="source-note">Source: NCHS Data Brief No. 526 (March 2025). Age-adjusted rates per 100,000 standard U.S. population. ICD-10 codes *U01.4, X93–X95.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">FBI UCR / CIUS Police-Recorded Homicide</span>
+          <span class="stat-block-period">2019–2024</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Murder/nonnegligent manslaughter change 2019→2020</span>
+            <span class="stat-val negative">+29.4%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Violent crime rate 2019</span>
+            <span class="stat-val neutral">366.7 / 100k</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Violent crime rate 2020</span>
+            <span class="stat-val negative">387.8 / 100k (+5.6%)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Murder/manslaughter change 2023→2024</span>
+            <span class="stat-val positive">&minus;14.9%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Violent crime change 2023→2024</span>
+            <span class="stat-val positive">&minus;4.5%</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="source-note">Source: FBI CIUS press releases (Sep 2021, Oct 2023); FBI UCR 2024 summary (Aug 2025). Note: 2021 data has known comparability issues due to UCR→NIBRS transition.</p>
+
+      <span class="section-label">02 – The Trend in Context</span>
+
+      <p>The spike was severe — but it must be put in historical context. Firearm homicide peaked nationally in the early 1990s, fell dramatically through the 2000s and early 2010s, rose modestly through 2019, then spiked sharply in 2020–2021. Even at the 2021 peak (6.7/100k), the rate was below the early-1990s highs. The narrative of an "unprecedented" crime wave is accurate only for the <em>speed</em> of the increase, not its absolute level.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap">
+          <canvas id="chart1" role="img" aria-label="Line chart showing U.S. firearm homicide rate per 100,000 from 2010 to 2023. Rate held near 3.6 to 4.4 from 2010 to 2019, spiked to 6.2 in 2020 and peaked at 6.7 in 2021, then declined to 5.6 by 2023."></canvas>
+        </div>
+      </div>
+
+      <p class="source-note">Source: CDC/NCHS Data Brief No. 526 (2025). Age-adjusted firearm homicide mortality rates.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">Data Caveat — UCR/NIBRS Transition</span>
+        <p>The FBI transitioned from the legacy Summary Reporting System (SRS/UCR) to the National Incident-Based Reporting System (NIBRS) during 2021. This creates comparability problems for the 2021 data point specifically. The CDC mortality series — which is independent — does not share this limitation. For the 2020 spike in particular, both systems agree, lending high confidence to that year's increase.</p>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 1 Takeaway</strong>
+        The homicide surge was real, concentrated in firearm homicide, peaked in 2021, and has since declined substantially. As of 2024–2025, both FBI police-recorded data and large-city samples show significant improvement. The crisis was severe; it was not permanent.
+      </div>
+    </section>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">The "Defund the Police" Hypothesis: What the Evidence Shows</h2>
+      </div>
+
+      <span class="section-label">03 – Did "Defunding" Actually Happen?</span>
+
+      <p>The defund hypothesis requires that budgets actually were cut. A peer-reviewed study published in <em>Social Problems</em> examined police budget changes across 264 U.S. cities in the period surrounding the 2020 protests. The finding is unambiguous: <strong>there is no evidence that 2020 protest exposure reduced police budgets</strong>. In some contexts, police budgets actually increased in cities that experienced the most protest activity.</p>
+
+      <p>This is not a minor caveat — it removes the primary mechanism for the "defund caused crime" claim at the national level. If budgets weren't broadly cut, budget cuts cannot explain a national trend.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>What "defund" looked like in practice vs. rhetoric, 2020–2022</caption>
+          <thead>
+            <tr><th>City</th><th>Claimed Action</th><th>Actual Budget Change</th><th>Sworn Officers Change</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Minneapolis, MN</td><td>Pledged to "dismantle" MPD</td><td class="td-note">City council vote failed; operating budget largely intact</td><td class="td-note">Staffing declined via attrition, not formal cuts</td></tr>
+            <tr><td>Los Angeles, CA</td><td>$150M redirect announced</td><td class="td-note">LAPD budget later restored/increased in subsequent cycles</td><td class="td-note">Modest short-term reduction</td></tr>
+            <tr><td>New York City, NY</td><td>$1B NYPD "cut" announced</td><td class="td-note">Largely achieved via accounting reclassifications, not real reductions</td><td class="td-note">Attrition accelerated; retirements spiked</td></tr>
+            <tr><td>Austin, TX</td><td>$150M redirect</td><td class="td-note">Some reductions real; subsequent years saw re-funding under state law</td><td class="td-note">Staffing did decline; reversed by 2022–23</td></tr>
+            <tr><td>National average (264 cities)</td><td>N/A</td><td class="td-note td-rate">No systematic budget reduction detected</td><td class="td-note">Attrition stress widespread; formal cuts rare (&lt;10% of departments)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">04 – Staffing and Attrition: A Separate Issue</span>
+
+      <p>Even where formal budget cuts were absent, police departments faced real staffing pressure after 2020 through accelerated retirements, resignations, and reduced recruiting pipelines. In 2020, the FBI reported 696,644 sworn officers nationally across reporting agencies — a figure that masked significant vacancy rates in many large departments.</p>
+
+      <p>However, attributing the homicide spike to staffing attrition faces a key problem: the attrition was gradual and ongoing, while the homicide spike was sharp and sudden (occurring within 2020 itself, before most attrition effects would have fully materialized).</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What would falsify the "defund caused crime" hypothesis?</span>
+        <p>&#8226; Evidence that cities with the largest budget/staffing cuts experienced proportionally larger homicide increases — consistent with a dose-response relationship. (Not observed in 264-city budget study.)</p>
+        <p>&#8226; A causal mechanism: a study showing that specific enforcement reductions preceded homicide increases in the same jurisdictions, with strong pre-trend evidence. (The best available design finds the opposite.)</p>
+        <p>&#8226; Cross-national evidence: countries that cut policing saw crime surges while those that didn't were spared. (The 2020 surge was largely U.S.-specific, while peer nations also saw some COVID-era homicide increases without defunding.)</p>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 2 Takeaway</strong>
+        "Defund the police" as a large-scale budget-cutting program largely did not happen. A 264-city study found no systematic protest-driven budget cuts. This removes the primary mechanism for the "defund caused crime" narrative at the national level. Staffing attrition was real but gradual — inconsistent with the sharp 2020 spike.
+      </div>
+    </section>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">De-Policing: Did Enforcement Pull Back — and Did It Matter?</h2>
+      </div>
+
+      <span class="section-label">05 – What the Quasi-Experimental Evidence Shows</span>
+
+      <p>"De-policing" is distinct from budget cuts: it refers to reduced proactive enforcement — fewer traffic stops, pedestrian stops, officer-initiated contacts, and arrests for low-level offenses. This is measurable, and it did happen.</p>
+
+      <p>A peer-reviewed study published in <em>Perspectives on Politics</em> used a regression discontinuity-in-time (RDiT) design to measure what happened to policing and crime in four cities (Austin, Los Angeles, Philadelphia, and Seattle) immediately after the onset of 2020 protests. Key findings:</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Finding</span>
+          <span class="steelman-val">Policing activity fell sharply. Standardized effect sizes ranged from &minus;0.2 to &minus;2.8 standard deviations across cities, with a meta-analytic coefficient around &minus;1.5 SD. The decline was statistically significant and immediate.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Finding</span>
+          <span class="steelman-val">Violent crime was <em>not clearly impacted</em>. The same causal design that found large depolicing effects found &ldquo;little evidence that violent-crime counts increased due to the depolicing shock.&rdquo; Public safety was not clearly worsened in these four cities during the measured window.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Caveat</span>
+          <span class="steelman-val">The study covers four cities, not the nation. It uses a bundled treatment (protests + all contemporaneous events). External validity to other cities and enforcement types is limited. Some city-specific evidence (e.g., Denver) does show associations between enforcement reductions and crime increases.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Design quality</span>
+          <span class="steelman-val">RDiT is a high-quality quasi-experimental approach. Placebo tests, alternative bandwidth specifications, and timing checks were conducted. COVID policy timing predates the main discontinuity, reducing that confound in the immediate window.</span>
+        </div>
+      </div>
+
+      <span class="section-label">06 – City-Level Heterogeneity (2025 Data)</span>
+
+      <p>A compilation of monthly crime data across 40 large U.S. cities through December 2025, published by the Council on Criminal Justice, provides the most current city-level picture. These cities are not nationally representative, but they show the post-peak trajectory.</p>
+
+      <div class="conclusion-stats">
+        <div class="cs-row">
+          <div class="cs-num positive">&minus;21%</div>
+          <div class="cs-text">Homicide rate in 35 large cities in 2025 vs. 2024 — representing approximately 922 fewer homicides. The decline is widespread, not confined to a few outlier cities.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num positive">&minus;22%</div>
+          <div class="cs-text">Gun assault rate in the same 35-city sample, 2025 vs. 2024. The weapon-specific decline mirrors the broader pattern and is consistent with a decrease in firearm-involved violence specifically.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num positive">&minus;23%</div>
+          <div class="cs-text">Robbery rate in the city sample, 2025 vs. 2024. Across multiple offense categories, the post-2021 decline appears durable rather than a short-term fluctuation.</div>
+        </div>
+      </div>
+
+      <p class="source-note">Source: Council on Criminal Justice multi-city compilation, published January 2026. Note: city sample is not nationally representative; offenses vary by city; incident data subject to revision.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 3 Takeaway</strong>
+        De-policing (reduced proactive enforcement) did occur in multiple cities after 2020 protests. But the best quasi-experimental evidence finds that this enforcement decline did not clearly increase violent crime in those settings. This is the single most important finding for evaluating the policing-causes-crime hypothesis — and it does not support it as a general rule.
+      </div>
+    </section>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">Competing Causes: What Else Drove the 2020 Surge?</h2>
+      </div>
+
+      <span class="section-label">07 – The Firearm Acquisition Surge</span>
+
+      <p>One of the clearest correlates of the 2020 homicide spike is a historic surge in firearm purchases. NICS background check applications jumped from approximately 14 million in 2019 to over 25 million in 2020 — a near-doubling in a single year. Applications remained elevated at 22.4 million in 2021.</p>
+
+      <p>The CDC data provides critical evidence here: the 2020–2021 surge was almost entirely a <em>firearm</em> homicide increase. Non-firearm homicide did not rise proportionally. This pattern — where the firearm-specific harm increases while non-firearm harm does not — is exactly what a weapon availability hypothesis would predict.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap">
+          <canvas id="chart2" role="img" aria-label="Bar chart comparing NICS firearm background check applications in millions from 2017 to 2024. Applications were around 14 million in 2017 to 2019, spiked to 25 million in 2020, remained at 22 million in 2021, then declined toward 16 million by 2024."></canvas>
+        </div>
+      </div>
+
+      <p class="source-note">Source: BJS Firearm Inquiry Statistics (FIST) program. Applications for firearm transfers/permits processed via NICS. Not one-to-one with guns sold; varies by state law and transaction type.</p>
+
+      <span class="section-label">08 – Pandemic-Era Social Disruption</span>
+
+      <p>The 2020 crime surge coincided with the most severe social disruption the United States had experienced in decades. Schools closed. Courts halted proceedings. Social services were interrupted. Economic stress peaked suddenly. Routine activities that structure social life — work, school, community organizations — were suspended or radically altered.</p>
+
+      <p>Criminology research has long linked disruptions to routine activities and social controls with increases in violence. The 2020 spike was also preceded by massive civil unrest — not just protests, but fires, curfews, and the social and psychological aftermath of George Floyd's killing in late May 2020. The homicide increase appears in data starting in June 2020, coinciding with the protests and their aftermath rather than with any specific budget vote.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">The Timing Problem for Policing Explanations</span>
+        <p>If police budget cuts caused the crime spike, the spike should follow the cuts. But formal budget cuts — where they occurred at all — happened in city council votes in summer and fall 2020. The homicide increase began immediately in late May/June 2020, before most budget processes concluded. The timing is more consistent with the simultaneous protests and social disruption as precipitating factors than with formal budget changes.</p>
+      </div>
+
+      <span class="section-label">09 – Multi-Factor Evidence Summary</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Evidence strength for each proposed cause of the 2020 homicide surge</caption>
+          <thead>
+            <tr><th>Proposed Cause</th><th>Evidence Strength</th><th>Key Support</th><th>Key Problem</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Police budget defunding</td><td class="td-alert">Not supported</td><td class="td-note">Intuitive mechanism</td><td class="td-note">264-city study: no systematic cuts occurred</td></tr>
+            <tr><td>De-policing / enforcement pullback</td><td class="td-note" style="color:var(--amber);">Weak–Moderate (localized)</td><td class="td-note">RDiT shows enforcement did decline</td><td class="td-note">Same RDiT finds no resulting crime increase</td></tr>
+            <tr><td>Firearm acquisition surge</td><td class="td-rate">Moderate</td><td class="td-note">Firearm-specific homicide increase; NICS surge</td><td class="td-note">NICS is imperfect proxy; causal channel uncertain</td></tr>
+            <tr><td>Pandemic social disruption</td><td class="td-rate">Moderate–Strong</td><td class="td-note">National increase coincides with protests/disruption; broad-based</td><td class="td-note">Hard to separate from simultaneous factors</td></tr>
+            <tr><td>Measurement artifact</td><td class="td-alert">Not supported for homicide</td><td class="td-note">NIBRS transition is a real issue for 2021</td><td class="td-note">FBI and CDC both show 2020 increase; independent systems</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 4 Takeaway</strong>
+        The evidence most strongly supports a multi-factor explanation: pandemic-era social disruption interacting with a massive firearm acquisition surge, with policing changes potentially contributing locally but not established as the primary national driver. No single cause has been confirmed through rigorous causal analysis across all major cities.
+      </div>
+    </section>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">Steelman: The Best Case for Both Sides</h2>
+      </div>
+
+      <span class="section-label">10 – Steelman: Policing Changes Caused the Spike</span>
+
+      <p><strong>The strongest version of this argument</strong> focuses not on formal budget cuts but on the legitimacy crisis and behavioral withdrawal that followed the Floyd killing and protests. The argument runs: even without formal defunding, officers dramatically reduced proactive activity — the data confirms this. Reduced deterrence and reduced clearance rates would be expected to increase violence. The Ferguson Effect (reduced policing following high-profile use-of-force controversies) has some supporting evidence from earlier years. The timing of the June 2020 onset is consistent with a behavioral change, not just a budget change.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Best evidence</span>
+          <span class="steelman-val">Proactive enforcement demonstrably fell post-protests in multiple cities. Clearance rates for homicide were already declining pre-2020 and worsened during the surge. Reduced closure rates mean fewer killers are apprehended, potentially reducing deterrence. Some city-level analyses (e.g., Denver) show associations between enforcement reductions and crime increases.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Rebuttal</span>
+          <span class="steelman-val rebuttal">The best quasi-experimental evidence directly measures both enforcement decline and crime outcomes and finds no clear causal link. The firearm-specific nature of the surge is better explained by weapon availability. The rapid post-2021 decline occurred without a reversal of the underlying policing controversies.</span>
+        </div>
+      </div>
+
+      <span class="section-label">11 – Steelman: Policing Changes Were Irrelevant</span>
+
+      <p><strong>The strongest version of this argument</strong> is that the pandemic, not policing, was the dominant driver. COVID-19 disrupted every institution simultaneously: courts stopped processing cases, social services shut down, schools closed, and millions of people lost jobs overnight. Gun purchases nearly doubled. These shocks overwhelmed normal social controls with no connection to police behavior. The same period saw homicide increases in countries that had no "defund" movement. The rapid decline after 2021, while policing controversies continued, suggests the pandemic-era shocks were temporary rather than policing-related.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Best evidence</span>
+          <span class="steelman-val">Firearm homicide rose while non-firearm homicide did not — consistent with weapon availability, not policing changes. The surge was rapid and then partially reversed without a return to pre-controversy policing levels. Cross-system evidence (FBI + CDC) shows the same pattern regardless of reporting method.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Rebuttal</span>
+          <span class="steelman-val rebuttal">This does not fully explain city-level heterogeneity. Some places with more aggressive enforcement actions had worse outcomes than others. The pandemic alone does not explain why firearm homicide specifically spiked so much more than other causes of death.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 5 Takeaway</strong>
+        Both steelmanned positions have genuine evidentiary support. The honest answer is that this is causally uncertain — which is itself important, because the "defund caused crime" claim is stated with far more certainty than the evidence warrants.
+      </div>
+    </section>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">The Data Verdict</h2>
+      </div>
+
+      <span class="section-label">12 – Verdict by Claim</span>
+
+      <div class="conclusion-stats">
+        <div class="cs-row">
+          <div class="cs-num negative">FALSE</div>
+          <div class="cs-text"><strong>&ldquo;Defunding police caused the 2020 crime surge.&rdquo;</strong> Budget defunding did not happen at scale nationally (264-city study). The mechanism does not exist where the trend is claimed to be national.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num warn" style="font-size:1.4rem; color:var(--amber);">PARTLY TRUE</div>
+          <div class="cs-text"><strong>&ldquo;Policing pullback contributed to the surge.&rdquo;</strong> De-policing did occur. Localized effects are plausible. But the best causal evidence does not support this as the dominant national explanation, and the firearm-acquisition and pandemic-disruption channels have stronger support.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num negative">FALSE</div>
+          <div class="cs-text"><strong>&ldquo;Crime is still out of control (as of 2025).&rdquo;</strong> FBI data shows murder down 14.9% and violent crime down 4.5% in 2024 vs. 2023. A 35-city sample shows homicides down 21% in 2025 vs. 2024. The crisis, while real, has substantially reversed.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num positive">TRUE</div>
+          <div class="cs-text"><strong>&ldquo;The 2020 homicide spike was real.&rdquo;</strong> Confirmed by two independent data systems. Firearm homicide rose 35% from 2019 to 2020 and 46% from 2019 to the 2021 peak. This is not in dispute.</div>
+        </div>
+      </div>
+
+      <span class="section-label">13 – Bottom-Line Causal Conclusion</span>
+
+      <p>On the strongest causal and mechanism evidence available, policing changes after 2020 are <strong>not supported as the dominant national cause</strong> of the 2020–2021 violence surge. "Defund the police" as a national budget-cutting program largely did not happen. De-policing did occur, but the best quasi-experimental evidence finds no clear resulting increase in violent crime in treated cities.</p>
+
+      <p>The cross-system evidence most strongly supports a <strong>multi-factor pandemic-era explanation</strong> with increased firearm availability as a central component. This does not mean policing is irrelevant to crime — decades of research show it matters. It means the specific "defund caused crime" causal chain is not supported by the available evidence for the 2020–2021 national surge.</p>
+
+      <div class="falsify-box">
+        <span class="falsify-label">What Would Change This Conclusion</span>
+        <p>&#8226; A multi-city pre-registered DiD/event-study linking exogenous variation in policing to subsequent homicide increases — validated with mechanism shifts and strong pre-trends — would upgrade the de-policing hypothesis.</p>
+        <p>&#8226; City-level clearance and response-time panels showing that clearance fell sharply before homicide increases — with credible identification — would strengthen the policing-centric narrative.</p>
+        <p>&#8226; Better quasi-experimental designs connecting specific firearm acquisition changes to firearm homicide — beyond NICS proxies — would sharpen the weapon-availability hypothesis.</p>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;Did Police Funding Cuts Cause the 2020 Crime Surge?&rdquo; Updated March 2026. https://www.truthbased.org/policing-crime</span>
+      </div>
+    </section>
+  </article>
+  </main>
+
+
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> — Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-evm.png" loading="lazy" decoding="async" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-bitcoin.png" loading="lazy" decoding="async" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-solana.png" loading="lazy" decoding="async" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-xrp.png" loading="lazy" decoding="async" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-litecoin.png" loading="lazy" decoding="async" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-stellar.png" loading="lazy" decoding="async" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-usdt-trc20.png" loading="lazy" decoding="async" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: FBI UCR/CIUS, CDC NCHS, BJS NCVS, Council on Criminal Justice</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    
+    // Chart 1: Firearm Homicide Rate 2010–2023
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'Firearm Homicide Rate per 100k',
+          data: [3.6, 3.7, 3.7, 3.6, 3.4, 3.6, 4.0, 4.1, 4.3, 4.6, 6.2, 6.7, 6.2, 5.6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: function(ctx) {
+            return ctx.dataIndex >= 10 ? 'rgba(184,58,30,0.9)' : 'rgba(184,58,30,0.4)';
+          },
+          pointRadius: function(ctx) { return ctx.dataIndex >= 10 ? 5 : 3; },
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (CDC Mortality Data, 2010–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          annotation: {}
+        },
+        scales: {
+          y: { beginAtZero: false, min: 2.5, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // Chart 2: NICS Background Check Applications
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['2017','2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [{
+          label: 'NICS Applications (millions)',
+          data: [25.2, 26.2, 28.4, 39.7, 38.9, 36.9, 32.5, 28.0],
+          backgroundColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.5)' : 'rgba(27,107,62,0.3)';
+          },
+          borderColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)';
+          },
+          borderWidth: 1.5,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'NICS Firearm Background Check Applications (Millions), 2017–2024', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + 'M applications' } }
+        },
+        scales: {
+          y: { beginAtZero: false, min: 20, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
