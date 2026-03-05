@@ -4,28 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>TruthBased.org | Facts. Sources. No Agenda.</title>
-  <meta name="description" content="Source-verified facts across science, history, politics, and media. Every claim traced to primary data. Every counterargument answered. No agenda.">
+  <title>TruthBased.org — Independent Fact-Checking</title>
+  <meta name="description" content="Primary-source fact-checking across science, history, politics, and media. Every claim examined. Every counterargument answered. No agenda.">
 
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://www.truthbased.org/">
-  <meta property="og:title"       content="TruthBased.org | Facts. Sources. No Agenda.">
-  <meta property="og:description" content="Verified facts and primary-source research. Every counterargument steelmanned. No agenda.">
+  <meta property="og:title"       content="TruthBased.org — Independent Fact-Checking">
+  <meta property="og:description" content="Primary-source fact-checking. Every counterargument steelmanned. No agenda.">
   <meta property="og:image"       content="https://www.truthbased.org/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card"       content="summary_large_image">
-  <meta name="twitter:title" content="TruthBased.org | Facts. Sources. No Agenda.">
-  <meta name="twitter:description" content="Verified facts and primary-source research. Every claim tested against the data. No agenda.">
+  <meta name="twitter:title" content="TruthBased.org — Independent Fact-Checking">
+  <meta name="twitter:description" content="Primary sources. Steelmanned arguments. No agenda. Every claim tested against the data.">
   <meta name="twitter:image"      content="https://www.truthbased.org/og-image.png">
 
     <link rel="canonical" href="https://www.truthbased.org/">
 
     <meta name="theme-color" content="#b83a1e">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +44,15 @@
       --green-faint:  #e8f4ed;
       --rule:         #dedad3;
       --rule-mid:     #c5c1ba;
+    
+    
+      /* ── Aliases for donation section ── */
+      --bg: #f7f5f1;
+      --border: #dedad3;
+      --surface: #ffffff;
+      --font-sans: 'Sora', sans-serif;
+      --font-serif: 'Spectral', serif;
+      --font-mono: 'Courier Prime', monospace;
     }
 
     .site-nav {
@@ -71,7 +79,7 @@
 
 
     /* =========================================================
-       TruthBased.org | Homepage
+       TruthBased.org — Homepage
        Clean accordion navigation. No divisive content on index.
        Warm off-white · Spectral headings · Sora body
        Single accent: deep brick #b83a1e
@@ -568,6 +576,11 @@
       --rule:         #3a3632;
       --rule-mid:     #4a4640;
       --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
+    
+      /* dark aliases */
+      --bg: #1a1918;
+      --border: #3a3632;
+      --surface: #1f1e1c;
     }
     [data-theme="dark"] .method-section { background-color: #242220; color: #e8e5e0; }
     [data-theme="dark"] .method-item-title { color: #e8e5e0; }
@@ -648,8 +661,8 @@
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
       }
+      html { scroll-behavior: auto !important; }
     }
   
     /* ── Search ── */
@@ -722,9 +735,11 @@
     /* ── Dark mode ── */
     (function(){
       var html = document.documentElement;
-      var stored = localStorage.getItem('tb-theme');
-      if (stored) html.setAttribute('data-theme', stored);
-      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
     })();
   </script>
   <noscript>
@@ -735,8 +750,8 @@
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
       }
+      html { scroll-behavior: auto !important; }
     }
   
     </style>
@@ -747,7 +762,7 @@
     "@type": "WebSite",
     "url": "https://www.truthbased.org/",
     "name": "TruthBased.org",
-    "description": "Source-verified facts and research across science, history, politics, and media. Every claim traced to primary data. Both sides steelmanned.",
+    "description": "Independent fact-checking using primary sources, steelmanned arguments, and transparent methodology.",
     "publisher": {
       "@type": "Organization",
       "name": "TruthBased.org",
@@ -765,9 +780,9 @@
   <nav class="site-nav" aria-label="Site navigation">
     <div class="nav-left">
       <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-      <span class="nav-tagline">Primary sources | no advocacy</span>
+      <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
     </div>
-    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
   </nav>
 
 
@@ -775,9 +790,9 @@
     <span class="hero-eyebrow">Independent Fact-Checking</span>
     <h1 class="hero-title">The facts,<br><em>plainly stated.</em></h1>
     <p class="hero-body">
-      Verified facts and primary-source research across science, politics, history, and media.
+      Primary-source research across science, history, politics, and media.
       Every claim backed by data. Every counterargument taken seriously.
-      No agenda | just the evidence.
+      No agenda — just the evidence.
     </p>
     <div class="hero-tags">
       <span class="hero-tag">Primary sources only</span>
@@ -799,20 +814,35 @@
 
     <section class="featured-cards" style="max-width:940px; margin:0 auto 36px; padding:0 24px;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
-        <a href="/trans-shooters" class="feat-card">
-          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
-          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Trans People &amp; Mass Shootings</span>
-          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Three databases. Every definition. Full sensitivity analysis.</span>
+        <a href="/vaccine-safety" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">New</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Vaccine Safety &amp; Efficacy</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">23M+ children studied. 138 studies. VAERS explained. Both sides.</span>
         </a>
         <a href="/voter-fraud" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Voter Fraud: 0.000065%</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">2.5B ballots. Every prosecution. Every 2020 lawsuit.</span>
         </a>
-        <a href="/vaccine-safety" class="feat-card">
+        <a href="/trans-shooters" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
-          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Vaccine Safety &amp; Efficacy</span>
-          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">23M+ children studied. 138 studies. VAERS explained. Both sides.</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Trans People &amp; Mass Shootings</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Three databases. Every definition. Full sensitivity analysis.</span>
+        </a>
+        <a href="/youth-gender-medicine" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Gender-Affirming Care for Minors</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Cass Review. Counter-critiques. Both sides steelmanned.</span>
+        </a>
+        <a href="/border-crossings" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Border Crossings: The Real Data</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">25 years of CBP data. Title 42 explained. Every claim tested.</span>
+        </a>
+        <a href="/gun-violence" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Gun Violence vs. Peer Nations</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">OECD rates. CDC data. RAND policy evidence. Both sides.</span>
         </a>
       </div>
     </section>
@@ -859,7 +889,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Out-of-Context Images – Documented Cases</span>
+                  <span class="row-title">Out-of-Context Images — Documented Cases</span>
                   <span class="row-desc">Photographs and video clips that circulated with false or misleading captions. Original source verified, timeline reconstructed, share-count at time of correction recorded.</span>
                 </div>
               </div>
@@ -917,7 +947,7 @@
               <a class="article-row" href="/voter-fraud">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
-                  <span class="row-title">Voter Fraud – The Documented Record</span>
+                  <span class="row-title">Voter Fraud — The Documented Record</span>
                   <span class="row-desc">1,620 proven cases against 2.5 billion ballots. Every fraud type measured per capita. Every 2020 lawsuit outcome. The Fulton County FBI raid. And the only confirmed election law violation by a major political operation in Georgia's 2024 cycle — and who committed it.</span>
                   <div class="row-sources">
                     <span class="sources-label">Primary sources</span>
@@ -938,7 +968,7 @@
               <a href="/border-crossings" class="article-row" style="text-decoration:none;color:inherit;">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
-                  <span class="row-title">Border Crossings – What The Charts Actually Show</span>
+                  <span class="row-title">Border Crossings — What The Charts Actually Show</span>
                   <span class="row-desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested — and both sides steelmanned.</span>
                   <div class="row-sources">
                     <span class="source-pill">CBP Encounter Data</span>
@@ -954,7 +984,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">The National Debt – What Both Parties Actually Did</span>
+                  <span class="row-title">The National Debt — What Both Parties Actually Did</span>
                   <span class="row-desc">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses.</span>
                 </div>
               </div>
@@ -962,7 +992,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Job Creation Claims – Presidents vs. The Data</span>
+                  <span class="row-title">Job Creation Claims — Presidents vs. The Data</span>
                   <span class="row-desc">Every administration's jobs record against BLS data — with context for what presidents actually control vs. what was already in motion.</span>
                 </div>
               </div>
@@ -998,7 +1028,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">The Party Switch – Did the Two Parties Really Swap?</span>
+                  <span class="row-title">The Party Switch — Did the Two Parties Really Swap?</span>
                   <span class="row-desc">Voting records, party platforms, and regional realignment data from 1948 to 1980 — what actually happened and where the historical consensus sits today.</span>
                 </div>
               </div>
@@ -1006,7 +1036,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Columbus and America – What The Record Actually Shows</span>
+                  <span class="row-title">Columbus and America — What The Record Actually Shows</span>
                   <span class="row-desc">Pre-Columbian contact, indigenous populations, and what "discovery" meant to contemporaries — primary documents and archaeological evidence vs. the simplified story.</span>
                 </div>
               </div>
@@ -1014,7 +1044,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">The Moon Landing – What The Evidence Shows</span>
+                  <span class="row-title">The Moon Landing — What The Evidence Shows</span>
                   <span class="row-desc">Every major conspiracy claim examined against independent scientific verification — retroreflectors, Soviet tracking data, photographic analysis, and engineering records.</span>
                 </div>
               </div>
@@ -1039,14 +1069,13 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a class="article-row" href="/climate-change" style="text-decoration:none;color:inherit;">
-                <span class="row-status live">&#9679; Live</span>
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Is Climate Change Real? Science vs. Media Coverage</span>
-                  <span class="row-desc">Seven independent datasets — temperature records, CO₂, ocean heat, sea level, Arctic ice, glaciers, and attribution studies — examined against every major claim.</span>
+                  <span class="row-title">Climate Science vs. Climate Coverage</span>
+                  <span class="row-desc">What the IPCC reports actually project vs. how media coverage frames those findings — measured against the primary scientific literature.</span>
                 </div>
-                <span class="row-arrow" aria-hidden="true">&#8594;</span>
-              </a>
+              </div>
 
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
@@ -1059,7 +1088,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">AI Risk – Separating Expert Opinion From Hype</span>
+                  <span class="row-title">AI Risk — Separating Expert Opinion From Hype</span>
                   <span class="row-desc">What AI researchers actually say about near-term and long-term risk in published literature vs. media narratives on both the alarmist and dismissive ends.</span>
                 </div>
               </div>
@@ -1087,7 +1116,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">The Gender Wage Gap – What Each Statistic Actually Measures</span>
+                  <span class="row-title">The Gender Wage Gap — What Each Statistic Actually Measures</span>
                   <span class="row-desc">The raw 77-cent figure. The occupation-controlled figure. What each one measures, what causes the residual gap, and what neither side in the debate gets right.</span>
                 </div>
               </div>
@@ -1103,7 +1132,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Trickle-Down Economics – What The Research Found</span>
+                  <span class="row-title">Trickle-Down Economics — What The Research Found</span>
                   <span class="row-desc">Tax cut studies from Reagan, Bush, and Trump-era policy changes measured against actual GDP, wage, and inequality outcomes in peer-reviewed economic literature.</span>
                 </div>
               </div>
@@ -1131,8 +1160,8 @@
               <a href="/youth-gender-medicine" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
-                  <span class="row-title">Gender-Affirming Care for Minors: What the Evidence Shows</span>
-                  <span class="row-desc">Puberty blockers, hormones, and surgeries — every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows. Both sides steelmanned.</span>
+                  <span class="row-title">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</span>
+                  <span class="row-desc">Puberty blockers, hormones, and surgeries &mdash; every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows. Both sides steelmanned.</span>
                   <div class="row-sources">
                     <span class="source-pill">WPATH SOC8</span>
                     <span class="source-pill">Cass Review</span>
@@ -1154,9 +1183,9 @@
                   <div class="row-sources">
                     <span class="sources-label">Primary sources</span>
                     <ul class="sources-list">
-                      <li>Cochrane Systematic Review (2021) — 138 studies, 23M+ children</li>
-                      <li>Hviid et al. (2019, Ann Intern Med) — 657,461 Danish children</li>
-                      <li>Jain et al. (2015, JAMA) — 95,727 U.S. children</li>
+                      <li>Cochrane Systematic Review (2021) &mdash; 138 studies, 23M+ children</li>
+                      <li>Hviid et al. (2019, Ann Intern Med) &mdash; 657,461 Danish children</li>
+                      <li>Jain et al. (2015, JAMA) &mdash; 95,727 U.S. children</li>
                       <li>CDC VSD, VAERS, V-safe surveillance systems</li>
                       <li>Pfizer &amp; Moderna Phase 3 trials (73,968 participants)</li>
                       <li>Brighton Collaboration standardized case definitions</li>
@@ -1171,7 +1200,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">U.S. Healthcare Costs – Why They're So High</span>
+                  <span class="row-title">U.S. Healthcare Costs — Why They're So High</span>
                   <span class="row-desc">International price comparisons, administrative overhead data, and what economists across the ideological spectrum actually agree the main drivers are.</span>
                 </div>
               </div>
@@ -1179,7 +1208,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Mental Health &amp; Social Media – What The Research Shows</span>
+                  <span class="row-title">Mental Health &amp; Social Media — What The Research Shows</span>
                   <span class="row-desc">The correlation between teen smartphone use and mental health outcomes — study quality, causation questions, and what the strongest evidence actually supports.</span>
                 </div>
               </div>
@@ -1215,7 +1244,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Religion and Violence – Parsing the Actual Numbers</span>
+                  <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
                   <span class="row-desc">Claims about religiously motivated conflict measured against terrorism databases, historical data, and how researchers define and count religious motivation.</span>
                 </div>
               </div>
@@ -1260,7 +1289,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Healthcare Outcomes – What the U.S. Actually Gets</span>
+                  <span class="row-title">Healthcare Outcomes — What the U.S. Actually Gets</span>
                   <span class="row-desc">International price comparisons, administrative overhead data, and what economists across the ideological spectrum actually agree the main drivers are.</span>
                 </div>
               </div>
@@ -1268,7 +1297,7 @@
               <div class="article-row is-pending">
                 <span class="row-status pending">Coming soon</span>
                 <div class="row-body">
-                  <span class="row-title">Incarceration Rates – The International Context</span>
+                  <span class="row-title">Incarceration Rates — The International Context</span>
                   <span class="row-desc">International incarceration rates, demographic breakdowns, recidivism data, and what policy changes have and haven't worked — measured against BJS and Sentencing Commission data.</span>
                 </div>
               </div>
@@ -1319,9 +1348,9 @@
       <details style="margin-top:14px; text-align:left;">
         <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
         <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> — Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-evm.png" loading="lazy" decoding="async" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
@@ -1329,21 +1358,21 @@
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-bitcoin.png" loading="lazy" decoding="async" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-solana.png" loading="lazy" decoding="async" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-xrp.png" loading="lazy" decoding="async" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
@@ -1354,14 +1383,14 @@
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-litecoin.png" loading="lazy" decoding="async" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-stellar.png" loading="lazy" decoding="async" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
@@ -1372,7 +1401,7 @@
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="/assets/qr/qr-usdt-trc20.png" loading="lazy" decoding="async" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
@@ -1387,7 +1416,8 @@
 
 
   <footer class="page-footer">
-    <span class="footer-note">TruthBased.org | Independent reference, updated March 2026</span>
+    <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
+    <a href="/shootings-by-demographic" class="footer-note footer-link" style="text-decoration:none;transition:color 0.15s;">Supplementary Data &rarr;</a>
     <a href="/methodology" class="footer-note" style="text-decoration:none;transition:color 0.15s;">Our Methodology &rarr;</a>
     <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
   </footer>
@@ -1430,12 +1460,13 @@
         var isDark = html.getAttribute('data-theme')==='dark';
         btn.textContent = isDark ? '\u2600' : '\u263E';
         btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
       }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
-        localStorage.setItem('tb-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
         icon();
       });
     })();
@@ -1473,14 +1504,14 @@
     (function(){
       var articles = [
         { url:'/vaccine-safety', title:'Vaccine Safety & Efficacy: What the Data Actually Shows', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction',
-          snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
+          desc:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
         { url:'/voter-fraud', title:'Voter Fraud: The Documented Record', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen',
           snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Exposed: every 2020 lawsuit and its judicial outcome.'},
-        { url:'/trans-shooters', title:'Trans People & Mass Shootings – The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs',
+        { url:'/trans-shooters', title:'Trans People & Mass Shootings — The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs',
           snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
         { url:'/youth-gender-medicine', title:'Gender-Affirming Care for Minors', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret',
           snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques. Both sides steelmanned.'},
-        { url:'/border-crossings', title:'Border Crossings – What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall',
+        { url:'/border-crossings', title:'Border Crossings — What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall',
           snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
         { url:'/gun-violence', title:'U.S. Gun Violence vs. Peer Nations', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment',
           snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
@@ -1526,7 +1557,7 @@
         results.innerHTML = scored.map(function(s){
           return '<a href="' + s.article.url + '" class="sr-item" role="option">' +
             '<span class="sr-title">' + highlight(s.article.title, terms) + '</span>' +
-            '<span class="sr-snippet">' + highlight(s.article.snippet, terms) + '</span></a>';
+            '<span class="sr-snippet">' + highlight((s.article.snippet || s.article.desc || ''), terms) + '</span></a>';
         }).join('');
         results.classList.add('is-visible');
       }
@@ -1550,17 +1581,30 @@
 
 
   <!-- QR expand modal -->
-  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
     <img id="qrExpanded" src="" alt="Enlarged QR code">
-    <span class="qr-overlay-label">Tap anywhere to close</span>
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
   </div>
   <script>
+  var _qrOpener = null;
   function expandQR(el){
+    _qrOpener = el;
     var ov=document.getElementById('qrOverlay');
     var img=document.getElementById('qrExpanded');
     img.src=el.src; img.alt=el.alt;
     ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
   }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
   // Add tap-to-enlarge hints under each QR
   document.querySelectorAll('.qr-thumb').forEach(function(q){
     if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
