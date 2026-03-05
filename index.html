@@ -1,1 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>TruthBased.org — Independent Fact-Checking</title>
+  <meta name="description" content="Primary-source fact-checking across science, history, politics, and media. Every claim examined. Every counterargument answered. No agenda.">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.truthbased.org/">
+  <meta property="og:title"       content="TruthBased.org — Independent Fact-Checking">
+  <meta property="og:description" content="Primary-source fact-checking. Every counterargument steelmanned. No agenda.">
+  <meta property="og:image"       content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title" content="TruthBased.org — Independent Fact-Checking">
+  <meta name="twitter:description" content="Primary sources. Steelmanned arguments. No agenda. Every claim tested against the data.">
+  <meta name="twitter:image"      content="https://www.truthbased.org/og-image.png">
+
+    <link rel="canonical" href="https://www.truthbased.org/">
+
+    <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --page-ground:  #f7f5f1;
+      --card-face:    #ffffff;
+      --text-primary: #151311;
+      --text-body:    #3d3a33;
+      --text-dim:     #706d64;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --green-live:   #1b6b3e;
+      --green-faint:  #e8f4ed;
+      --rule:         #dedad3;
+      --rule-mid:     #c5c1ba;
+    }
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.96);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-tagline {
+      font-family: 'Courier Prime', monospace; font-size: 0.6rem;
+      color: var(--text-quiet); letter-spacing: 0.06em;
+      padding-left: 16px; border-left: 1px solid var(--rule);
+    }
+
+
+    /* =========================================================
+       TruthBased.org — Homepage
+       Clean accordion navigation. No divisive content on index.
+       Warm off-white · Spectral headings · Sora body
+       Single accent: deep brick #b83a1e
+    ========================================================= */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--page-ground);
+      color: var(--text-body);
+      font-family: 'Sora', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+
+    /* Nav --------------------------------------------------- */
+
+
+    /* Hero -------------------------------------------------- */
+
+    .page-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 48px 64px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brick);
+      margin-bottom: 22px;
+      opacity: 0;
+      animation: entryAnim 0.55s ease forwards 0.1s;
+    }
+
+    .hero-title {
+      font-family: 'Spectral', serif;
+      font-weight: 300;
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      opacity: 0;
+      animation: entryAnim 0.55s ease forwards 0.2s;
+    }
+
+    .hero-title em { font-style: italic; color: var(--brick); }
+
+    .hero-body {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-dim);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      opacity: 0;
+      animation: entryAnim 0.55s ease forwards 0.3s;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
+      opacity: 0;
+      animation: entryAnim 0.55s ease forwards 0.45s;
+    }
+
+    .hero-tag {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+      border: 1px solid var(--rule-mid);
+      border-radius: 2px;
+      padding: 4px 12px;
+    }
+
+
+    /* Section label row ------------------------------------ */
+
+    .section-row {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 48px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-row-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      white-space: nowrap;
+    }
+
+    .section-row-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+
+    /* Accordion container ---------------------------------- */
+
+    .accordion-wrap {
+      max-width: 940px;
+      margin: 0 auto 80px;
+      padding: 0 48px;
+    }
+
+    .acc-item {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .acc-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+
+    /* Trigger button --------------------------------------- */
+
+    .acc-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 0;
+      text-align: left;
+      color: var(--text-primary);
+      transition: color 0.15s ease;
+    }
+
+    .acc-trigger:hover { color: var(--brick); background: rgba(184, 58, 30, 0.03); border-radius: 4px; }
+    .acc-trigger:hover .acc-num { color: var(--brick); }
+
+    .acc-num {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-quiet);
+      min-width: 22px;
+      transition: color 0.15s ease;
+    }
+
+    .acc-label {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      flex: 1;
+    }
+
+    .acc-meta {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+      margin-right: 6px;
+    }
+
+    /* +/− icon */
+    .acc-icon {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .acc-icon::before,
+    .acc-icon::after {
+      content: '';
+      position: absolute;
+      background: currentColor;
+      border-radius: 1px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .acc-icon::before {
+      width: 12px; height: 1.5px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .acc-icon::after {
+      width: 1.5px; height: 12px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .acc-item.is-open .acc-icon::after {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+
+    /* Collapsible panel ------------------------------------ */
+
+    .acc-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .acc-panel.is-open {
+      grid-template-rows: 1fr;
+    }
+
+    .acc-panel-inner { overflow: hidden; }
+
+    .acc-content { padding-bottom: 24px; }
+
+
+    /* Article list ----------------------------------------- */
+
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .article-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--card-face);
+      transition: background-color 0.12s ease;
+    }
+
+    a.article-row:hover {
+      background-color: #fefdfb;
+    }
+
+    .article-row.is-pending {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .row-status {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .row-status.live {
+      background-color: var(--green-faint);
+      color: var(--green-live);
+      border: 1px solid rgba(27, 107, 62, 0.18);
+    }
+
+    .row-status.pending {
+      background-color: transparent;
+      color: var(--text-quiet);
+      border: 1px solid var(--rule);
+    }
+
+    .row-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .row-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+
+    .row-desc {
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
+    /* Source footnotes on live articles */
+    .row-sources {
+      margin-top: 9px;
+      padding-top: 9px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .sources-label {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-quiet);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .sources-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .source-pill {
+      display: inline-block;
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+      background: var(--rule);
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin: 2px 3px 2px 0;
+    }
+
+    .sources-list li {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.62rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .sources-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-quiet);
+    }
+
+    .row-arrow {
+      font-size: 0.8rem;
+      color: var(--text-quiet);
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    a.article-row:hover .row-arrow {
+      color: var(--brick);
+      transform: translateX(3px);
+    }
+
+
+    /* Methodology strip ------------------------------------ */
+
+    .method-section {
+      background-color: var(--text-primary);
+      color: var(--page-ground);
+      padding: 52px 48px;
+    }
+
+    .method-inner {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    .method-title {
+      font-family: 'Spectral', serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(247, 245, 241, 0.12);
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 26px 40px;
+    }
+
+    .method-item-title {
+      font-family: 'Spectral', serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      color: #f7f5f1;
+    }
+
+    .method-item-body {
+      font-size: 0.75rem;
+      line-height: 1.7;
+      color: rgba(247, 245, 241, 0.5);
+    }
+
+
+    /* Footer ----------------------------------------------- */
+
+    .page-footer {
+      border-top: 1px solid var(--rule);
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-note {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.6rem;
+      color: var(--text-quiet);
+      letter-spacing: 0.04em;
+    }
+
+
+    /* Animation -------------------------------------------- */
+
+    @keyframes entryAnim {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* Mobile ----------------------------------------------- */
+
+    @media (max-width: 640px) {
+      .site-nav,
+      .page-hero,
+      .section-row,
+      .accordion-wrap,
+      .method-section,
+      .page-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .page-hero { padding-top: 52px; padding-bottom: 44px; }
+      .nav-tagline { display: none; }
+      .acc-meta { display: none; }
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .nav-back { font-size: 0.65rem; padding: 3px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .acc-trigger { padding: 14px 16px; gap: 10px; }
+      .acc-num { font-size: 0.58rem; min-width: 22px; }
+      .acc-label { font-size: 0.82rem; }
+      .article-row { padding: 14px 16px; gap: 10px; }
+      .row-title { font-size: 0.86rem; }
+      .row-desc { font-size: 0.72rem; }
+      .page-footer { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+
+    }
+
+
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav, .page-hero, .accordion-wrap, .method-section, .page-footer {
+        padding-left: 32px; padding-right: 32px;
+      }
+      .method-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --page-ground:  #1a1918;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --text-primary: #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-faint:  #2d1f1a;
+      --green-live:   #4cbb6a;
+      --green-faint:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-faint:  #2d2518;
+      --rule:         #3a3632;
+      --rule-mid:     #4a4640;
+      --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
+    }
+    [data-theme="dark"] .method-section { background-color: #242220; color: #e8e5e0; }
+    [data-theme="dark"] .method-item-title { color: #e8e5e0; }
+    [data-theme="dark"] .method-item-body { color: rgba(232,229,224,0.5); }
+    [data-theme="dark"] a.article-row:hover { background-color: #2a2826; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+  
+    .feat-card {
+      background: var(--card-face);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .feat-card:hover { border-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .footer-link { transition: color 0.15s; }
+    .footer-link:hover { color: var(--brick) !important; }
+      @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  
+    /* ── Search ── */
+    .search-wrap {
+      max-width: 520px; margin: 0 auto 28px; padding: 0 24px;
+    }
+    .search-box {
+      position: relative; width: 100%;
+    }
+    .search-input {
+      width: 100%; padding: 10px 14px 10px 36px;
+      font-family: var(--font-sans); font-size: 0.82rem; color: var(--text-primary);
+      background: var(--surface); border: 2px solid var(--brick); border-radius: 6px;
+      outline: none; transition: border-color .15s, box-shadow .15s;
+      box-sizing: border-box; box-shadow: 0 0 0 3px rgba(184,58,30,0.1);
+    }
+    .search-input::placeholder { color: var(--text-quiet); }
+    .search-input:focus { border-color: var(--brick); box-shadow: 0 0 0 4px rgba(184,58,30,0.18); }
+    .search-icon {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      width: 16px; height: 16px; color: var(--text-quiet); pointer-events: none;
+    }
+    .search-results {
+      position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 200;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1); display: none; overflow: hidden;
+      max-height: 340px; overflow-y: auto;
+    }
+    .search-results.is-visible { display: block; }
+    .sr-item {
+      display: block; padding: 10px 14px; text-decoration: none;
+      border-bottom: 1px solid var(--border); transition: background .1s;
+    }
+    .sr-item:last-child { border-bottom: none; }
+    .sr-item:hover { background: rgba(184,58,30,0.04); }
+    .sr-title { display: block; font-family: var(--font-serif); font-size: 0.84rem; font-weight: 600; color: var(--text-primary); }
+    .sr-snippet { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-dim); margin-top: 2px; line-height: 1.4; }
+    .sr-snippet mark { background: rgba(184,58,30,0.15); color: inherit; border-radius: 2px; padding: 0 1px; }
+    .sr-empty { padding: 14px; font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-quiet); text-align: center; }
+    [data-theme="dark"] .search-results { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+    /* QR expand */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    /* ── Dark mode ── */
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <noscript>
+    <style>
+      .acc-panel { grid-template-rows: 1fr !important; }
+      .acc-panel-inner { visibility: visible !important; }
+      @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  
+    </style>
+  </noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.truthbased.org/",
+    "name": "TruthBased.org",
+    "description": "Independent fact-checking using primary sources, steelmanned arguments, and transparent methodology.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TruthBased.org",
+      "url": "https://www.truthbased.org"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+
+  <header class="page-hero">
+    <span class="hero-eyebrow">Independent Fact-Checking</span>
+    <h1 class="hero-title">The facts,<br><em>plainly stated.</em></h1>
+    <p class="hero-body">
+      Primary-source research across science, history, politics, and media.
+      Every claim backed by data. Every counterargument taken seriously.
+      No agenda — just the evidence.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Primary sources only</span>
+      <span class="hero-tag">Confidence intervals shown</span>
+      <span class="hero-tag">Both sides steelmanned</span>
+      <span class="hero-tag">Limitations disclosed</span>
+      <span class="hero-tag">No advertising</span>
+    </div>
+  </header>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" class="search-input" placeholder="Search articles and topics&hellip;" aria-label="Search articles">
+      <div class="search-results" role="listbox"></div>
+    </div>
+  </div>
+
+
+    <section class="featured-cards" style="max-width:940px; margin:0 auto 36px; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+        <a href="/trans-shooters" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Trans People &amp; Mass Shootings</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Three databases. Every definition. Full sensitivity analysis.</span>
+        </a>
+        <a href="/vaccine-safety" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Vaccine Safety &amp; Efficacy</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">23M+ children studied. 138 studies. VAERS explained. Both sides.</span>
+        </a>
+        <a href="/border-crossings" class="feat-card">
+          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
+          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Border Crossings: The Real Data</span>
+          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">25 years of CBP data. Title 42 explained. Every claim tested.</span>
+        </a>
+      </div>
+    </section>
+
+
+  <div class="section-row" aria-hidden="true">
+    <span class="section-row-label">Browse by category</span>
+    <div class="section-row-line"></div>
+  </div>
+
+
+  <main class="accordion-wrap" id="content">
+
+
+    <!-- ── 01 Fact Checks ─────────────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-01" id="trigger-01">
+        <span class="acc-num">01</span>
+        <span class="acc-label">Fact Checks</span>
+        <span class="acc-meta">General claims &amp; viral misinformation</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-01" aria-labelledby="trigger-01">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Headline Said X. The Paper Said Y.</span>
+                  <span class="row-desc">Viral scientific claims compared to their actual source studies — the gap between press releases and what the peer-reviewed paper concluded, documented case by case.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Viral Statistic That Wasn't</span>
+                  <span class="row-desc">A running log of widely-shared numbers that don't hold up. Each entry traces the figure back to its actual origin and documents exactly how the distortion happened.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Out-of-Context Images — Documented Cases</span>
+                  <span class="row-desc">Photographs and video clips that circulated with false or misleading captions. Original source verified, timeline reconstructed, share-count at time of correction recorded.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Common Medical Myths, Examined</span>
+                  <span class="row-desc">Things "everyone knows" about health that peer-reviewed evidence contradicts — from nutrition to vaccines to sleep, checked against the actual studies.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 02 Political Fact Checks ───────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-02" id="trigger-02">
+        <span class="acc-num">02</span>
+        <span class="acc-label">Political Fact Checks</span>
+        <span class="acc-meta">Claims politicians make, measured against the record</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-02" aria-labelledby="trigger-02">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a class="article-row" href="/trans-shooters">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Are Trans People Overrepresented as Mass Shooters?</span>
+                  <span class="row-desc">Politicians and political organizations have used this claim to justify legislation targeting the trans community. Three databases, every definition, full sensitivity analysis — and the strongest opposing arguments steelmanned using their own data.</span>
+                  <div class="row-sources">
+                    <span class="sources-label">Primary sources</span>
+                    <ul class="sources-list">
+                      <li>Gun Violence Archive (GVA) — N=5,900+, 2013–2026</li>
+                      <li>Violence Prevention Project — strict definition, through 2024</li>
+                      <li>Mother Jones mass shootings database — 1982–2025</li>
+                      <li>Williams Institute — Trans population estimates (August 2025)</li>
+                      <li>FBI Active Shooter Incidents Report 2024</li>
+                      <li>CPRC / John Lott — opposing claim, steelmanned and examined</li>
+                      <li>FactCheck.org, PolitiFact, Snopes — independent verification</li>
+                      <li>ADL, GLAAD, Human Rights Campaign</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <a class="article-row" href="/voter-fraud">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Voter Fraud — The Documented Record</span>
+                  <span class="row-desc">1,620 proven cases against 2.5 billion ballots. Every fraud type measured per capita. Every 2020 lawsuit outcome. The Fulton County FBI raid. And the only confirmed election law violation by a major political operation in Georgia's 2024 cycle — and who committed it.</span>
+                  <div class="row-sources">
+                    <span class="sources-label">Primary sources</span>
+                    <ul class="sources-list">
+                      <li>Heritage Foundation Election Fraud Database — 1,620 cases, Dec 2025</li>
+                      <li>Brennan Center for Justice — voter fraud research, 2017–2024</li>
+                      <li>DOJ Public Integrity Section — prosecution data &amp; 2023 report</li>
+                      <li>CISA — "Most secure election in American history" (Nov 12, 2020)</li>
+                      <li>Georgia State Election Board — America PAC reprimand (Feb 18, 2026)</li>
+                      <li>MIT Election Lab, Brookings Institution, Cato Institute, GAO</li>
+                      <li>60+ 2020 election lawsuit court records across 12 states</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <a href="/border-crossings" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Border Crossings — What The Charts Actually Show</span>
+                  <span class="row-desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested — and both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">CBP Encounter Data</span>
+                    <span class="source-pill">Pew Research</span>
+                    <span class="source-pill">CBO 2024</span>
+                    <span class="source-pill">MPI</span>
+                    <span class="source-pill">TRAC Syracuse</span>
+                    <span class="source-pill">Cato Institute</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="/policing-crime" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Policing, Race &amp; Crime: What the Data Shows</span>
+                  <span class="row-desc">FBI crime data, use-of-force studies, racial disparity in stops and shootings. Both the reform and law-and-order positions steelmanned against primary evidence.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">FBI UCR</span>
+                    <span class="source-pill">BJS</span>
+                    <span class="source-pill">Knox et al.</span>
+                    <span class="source-pill">Fryer 2016</span>
+                    <span class="source-pill">Roland Fryer</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The National Debt — What Both Parties Actually Did</span>
+                  <span class="row-desc">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Job Creation Claims — Presidents vs. The Data</span>
+                  <span class="row-desc">Every administration's jobs record against BLS data — with context for what presidents actually control vs. what was already in motion.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 03 History & Myth-Busting ─────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-03" id="trigger-03">
+        <span class="acc-num">03</span>
+        <span class="acc-label">History &amp; Myth-Busting</span>
+        <span class="acc-meta">Things everyone "knows," tested against primary documents</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-03" aria-labelledby="trigger-03">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Was Hitler a Socialist?</span>
+                  <span class="row-desc">What historians document about Nazi economic policy, the party's relationship with German industrialists, and how the ideology is categorized in academic literature.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Party Switch — Did the Two Parties Really Swap?</span>
+                  <span class="row-desc">Voting records, party platforms, and regional realignment data from 1948 to 1980 — what actually happened and where the historical consensus sits today.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Columbus and America — What The Record Actually Shows</span>
+                  <span class="row-desc">Pre-Columbian contact, indigenous populations, and what "discovery" meant to contemporaries — primary documents and archaeological evidence vs. the simplified story.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">The Moon Landing — What The Evidence Shows</span>
+                  <span class="row-desc">Every major conspiracy claim examined against independent scientific verification — retroreflectors, Soviet tracking data, photographic analysis, and engineering records.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 04 Science & Media Accuracy ───────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-04" id="trigger-04">
+        <span class="acc-num">04</span>
+        <span class="acc-label">Science &amp; Media Accuracy</span>
+        <span class="acc-meta">What studies actually say vs. how they get reported</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-04" aria-labelledby="trigger-04">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a href="/climate-change" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Climate Change: The Science and the Data</span>
+                  <span class="row-desc">What the IPCC actually projects. Temperature records, sea level, attribution science. Both climate denial and alarmist overclaiming steelmanned against the primary data.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">IPCC AR6</span>
+                    <span class="source-pill">NASA GISS</span>
+                    <span class="source-pill">NOAA</span>
+                    <span class="source-pill">Berkeley Earth</span>
+                    <span class="source-pill">HadCRUT5</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">How Reproducible Is Nutrition Research?</span>
+                  <span class="row-desc">Why diet headlines contradict each other so often — study design, funding sources, statistical methods, and what the meta-analyses actually conclude.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">AI Risk — Separating Expert Opinion From Hype</span>
+                  <span class="row-desc">What AI researchers actually say about near-term and long-term risk in published literature vs. media narratives on both the alarmist and dismissive ends.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 05 Economics & Policy ─────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-05" id="trigger-05">
+        <span class="acc-num">05</span>
+        <span class="acc-label">Economics &amp; Policy</span>
+        <span class="acc-meta">Contested economic claims vs. BLS, CBO, and peer-reviewed data</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-05" aria-labelledby="trigger-05">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a href="/gender-wage-gap" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">The Gender Wage Gap — What the Data Actually Shows</span>
+                  <span class="row-desc">The raw 77-cent figure vs. the adjusted gap. What each statistic actually measures, what causes the residual gap, and what neither side in the debate gets right.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">BLS ATUS</span>
+                    <span class="source-pill">OECD 2023</span>
+                    <span class="source-pill">Goldin 2014</span>
+                    <span class="source-pill">Audit studies</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+              <a href="/inflation" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Inflation (2021–2026): Causes, Drivers, and Context</span>
+                  <span class="row-desc">CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, and energy decomposed. International comparison. Federal Reserve response. Both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">BLS CPI-U</span>
+                    <span class="source-pill">Fed FRED</span>
+                    <span class="source-pill">CBO</span>
+                    <span class="source-pill">OECD</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+              <a href="/us-spending" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Federal Spending: Where the Money Goes</span>
+                  <span class="row-desc">FY2026 budget breakdown. Social Security, Medicare, defense, and net interest explained. The debt trajectory and what CBO projects. Both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">CBO Jan 2026</span>
+                    <span class="source-pill">OMB</span>
+                    <span class="source-pill">Treasury</span>
+                    <span class="source-pill">Tax Foundation</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Does Raising Minimum Wage Kill Jobs?</span>
+                  <span class="row-desc">The economics literature is more divided than either party admits. Every major study and methodology — including the 2021 CBO report both sides cited selectively.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Trickle-Down Economics — What The Research Found</span>
+                  <span class="row-desc">Tax cut studies from Reagan, Bush, and Trump-era policy changes measured against actual GDP, wage, and inequality outcomes in peer-reviewed economic literature.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 06 Health & Medicine ───────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-06" id="trigger-06">
+        <span class="acc-num">06</span>
+        <span class="acc-label">Health &amp; Medicine</span>
+        <span class="acc-meta">Medical statistics and health claims vs. peer-reviewed evidence</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-06" aria-labelledby="trigger-06">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a href="/youth-gender-medicine" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</span>
+                  <span class="row-desc">Puberty blockers, hormones, and surgeries &mdash; every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows. Both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">WPATH SOC8</span>
+                    <span class="source-pill">Cass Review</span>
+                    <span class="source-pill">AAP</span>
+                    <span class="source-pill">Endocrine Society</span>
+                    <span class="source-pill">Tordoff 2022</span>
+                    <span class="source-pill">Yale Law</span>
+                    <span class="source-pill">Trevor Project</span>
+                  </div>
+                </div>
+              </a>
+
+              
+              <a class="article-row" href="/vaccine-safety">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Vaccine Safety &amp; Efficacy: What the Data Actually Shows</span>
+                  <span class="row-desc">Over 23 million children studied across 138 studies. No link to autism. Real but rare adverse events. COVID vaccine trials, myocarditis rates, VAERS vs V-safe, childhood schedule debate. Every argument steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="sources-label">Primary sources</span>
+                    <ul class="sources-list">
+                      <li>Cochrane Systematic Review (2021) &mdash; 138 studies, 23M+ children</li>
+                      <li>Hviid et al. (2019, Ann Intern Med) &mdash; 657,461 Danish children</li>
+                      <li>Jain et al. (2015, JAMA) &mdash; 95,727 U.S. children</li>
+                      <li>CDC VSD, VAERS, V-safe surveillance systems</li>
+                      <li>Pfizer &amp; Moderna Phase 3 trials (73,968 participants)</li>
+                      <li>Brighton Collaboration standardized case definitions</li>
+                      <li>IOM/National Academies 2013 Schedule Review</li>
+                      <li>WHO GACVS vaccine safety assessments</li>
+                    </ul>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <a href="/ultra-processed-food" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Ultra-Processed Food: What the Research Actually Shows</span>
+                  <span class="row-desc">The NIH feeding trial. 45 cohort studies. NOVA classification explained. Mechanisms proposed and contested. Both sides of the nutrition debate steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">Hall et al. 2019</span>
+                    <span class="source-pill">NOVA</span>
+                    <span class="source-pill">NutriNet</span>
+                    <span class="source-pill">BMJ meta-analyses</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Healthcare Costs — Why They're So High</span>
+                  <span class="row-desc">International price comparisons, administrative overhead data, and what economists across the ideological spectrum actually agree the main drivers are.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Mental Health &amp; Social Media — What The Research Shows</span>
+                  <span class="row-desc">The correlation between teen smartphone use and mental health outcomes — study quality, causation questions, and what the strongest evidence actually supports.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── 07 Religion & Society ─────────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
+        <span class="acc-num">07</span>
+        <span class="acc-label">Religion &amp; Society</span>
+        <span class="acc-meta">Measurable claims about religiosity and social outcomes</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Does Religiosity Correlate With Better Social Outcomes?</span>
+                  <span class="row-desc">Crime rates, social trust, wellbeing, charitable giving. What Pew Research, Gallup, and academic studies actually find when comparing more and less religious populations.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
+                  <span class="row-desc">Claims about religiously motivated conflict measured against terrorism databases, historical data, and how researchers define and count religious motivation.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- ── 08 International Comparisons ─────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-08" id="trigger-08">
+        <span class="acc-num">08</span>
+        <span class="acc-label">International Comparisons</span>
+        <span class="acc-meta">How U.S. outcomes compare globally</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-08" aria-labelledby="trigger-08">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a href="/gun-violence" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
+                  <span class="row-desc">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states. Both sides steelmanned.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">CDC WONDER</span>
+                    <span class="source-pill">WHO</span>
+                    <span class="source-pill">UNODC</span>
+                    <span class="source-pill">Small Arms Survey</span>
+                    <span class="source-pill">RAND 2023</span>
+                    <span class="source-pill">FBI UCR</span>
+                  </div>
+                </div>
+              </a>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Healthcare Outcomes — What the U.S. Actually Gets</span>
+                  <span class="row-desc">International price comparisons, administrative overhead data, and what economists across the ideological spectrum actually agree the main drivers are.</span>
+                </div>
+              </div>
+
+              <div class="article-row is-pending">
+                <span class="row-status pending">Coming soon</span>
+                <div class="row-body">
+                  <span class="row-title">Incarceration Rates — The International Context</span>
+                  <span class="row-desc">International incarceration rates, demographic breakdowns, recidivism data, and what policy changes have and haven't worked — measured against BJS and Sentencing Commission data.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- Methodology -->
+  <section class="method-section" aria-label="Our methodology">
+    <div class="method-inner">
+      <h2 class="method-title"><a href="/methodology" style="color:inherit;text-decoration:none;">How this site works <span style="font-size:0.7em;color:var(--brick);">&rarr;</span></a></h2>
+      <div class="method-grid">
+        <div>
+          <p class="method-item-title">Primary sources only</p>
+          <p class="method-item-body">FBI, CDC, Census Bureau, peer-reviewed journals. No aggregators, no op-eds — only the underlying data, cited directly on every page.</p>
+        </div>
+        <div>
+          <p class="method-item-title">Steelmanning both sides</p>
+          <p class="method-item-body">Every opposing argument is presented with its strongest supporting evidence before being addressed. No strawmanning, no selective quotation.</p>
+        </div>
+        <div>
+          <p class="method-item-title">Sensitivity analysis</p>
+          <p class="method-item-body">Every assumption is tested. Results shown under multiple definitions, time windows, and denominators — so you can see how robust each conclusion actually is.</p>
+        </div>
+        <div>
+          <p class="method-item-title">Honest about limits</p>
+          <p class="method-item-body">Wide confidence intervals are shown, not hidden. Data gaps are named. What the evidence can't establish matters as much as what it can.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section style="max-width:620px; margin:0 auto 0; padding:28px 24px; text-align:center;">
+    <div style="padding:22px 24px; background:var(--surface); border:1px solid var(--border); border-radius:6px;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+
+  <footer class="page-footer">
+    <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
+    <a href="/shootings-by-demographic" class="footer-note footer-link" style="text-decoration:none;transition:color 0.15s;">Supplementary Data &rarr;</a>
+    <a href="/methodology" class="footer-note" style="text-decoration:none;transition:color 0.15s;">Our Methodology &rarr;</a>
+    <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
+  </footer>
+
+
+  <script>
+    document.querySelectorAll('[data-acc]').forEach(function(item) {
+      var trigger = item.querySelector('.acc-trigger');
+      var panel   = item.querySelector('.acc-panel');
+
+      trigger.addEventListener('click', function() {
+        var isOpen = item.classList.contains('is-open');
+
+        // Close all open panels first
+        document.querySelectorAll('[data-acc].is-open').forEach(function(open) {
+          open.classList.remove('is-open');
+          open.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
+          open.querySelector('.acc-panel').classList.remove('is-open');
+        });
+
+        // Open the clicked one if it was closed
+        if (!isOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+        }
+      });
+    });
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  
+    /* ── Site Search ── */
+    (function(){
+      var articles = [
+        { url:'/vaccine-safety', title:'Vaccine Safety & Efficacy: What the Data Actually Shows', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction',
+          desc:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
+        { url:'/voter-fraud', title:'Voter Fraud: The Documented Record', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen',
+          snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Exposed: every 2020 lawsuit and its judicial outcome.'},
+        { url:'/trans-shooters', title:'Trans People & Mass Shootings — The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs',
+          snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
+        { url:'/youth-gender-medicine', title:'Gender-Affirming Care for Minors', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret',
+          snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques. Both sides steelmanned.'},
+        { url:'/border-crossings', title:'Border Crossings — What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall',
+          snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
+        { url:'/gun-violence', title:'U.S. Gun Violence vs. Peer Nations', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment',
+          snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
+        { url:'/shootings-by-demographic', title:'Mass Shootings by Demographic', keywords:'mass shooting race demographic white black hispanic asian per capita rate population census poverty socioeconomic',
+          snippet:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals for every group.'},
+        { url:'/climate-change', title:'Climate Change: The Science and the Data', keywords:'climate change global warming ipcc temperature co2 emissions sea level attribution denial skeptic fossil fuel carbon',
+          snippet:'IPCC AR6, NASA GISS, NOAA data. Temperature records. Sea level rise. Both denial and alarmism examined against primary science.'},
+        { url:'/gender-wage-gap', title:'The Gender Wage Gap: What the Data Actually Shows', keywords:'gender wage gap pay equity women men 77 cents bls oecd occupation adjusted unadjusted discrimination audit motherhood penalty',
+          snippet:'BLS data. 77-cent vs adjusted gap explained. Audit studies on discrimination. OECD international comparison.'},
+        { url:'/inflation', title:'U.S. Inflation 2021-2026', keywords:'inflation cpi consumer price index 9.1 federal reserve interest rate supply chain stimulus covid 2022 2023 fed',
+          snippet:'CPI timeline peak 9.1% in 2022. Supply chain, stimulus, and energy decomposed. Fed rate hike response.'},
+        { url:'/policing-crime', title:'Policing, Race & Crime: What the Data Shows', keywords:'police crime race black white use of force shooting arrest disparity racial profiling reform defund fbi ucr bjs fryer',
+          snippet:'FBI UCR crime data. BJS arrest and use-of-force data. Racial disparity studies. Both reform and law-and-order positions examined.'},
+        { url:'/ultra-processed-food', title:'Ultra-Processed Food: What the Research Actually Shows', keywords:'ultra processed food upf nova hall nih rct obesity cancer mortality cardiovascular cohort nutrition diet',
+          snippet:'NIH feeding trial: 500 kcal/day more on UPF diet. 45 cohort studies. NOVA classification. Mechanisms and limitations.'},
+        { url:'/us-spending', title:'U.S. Federal Spending: Where the Money Goes', keywords:'federal spending budget social security medicare medicaid defense interest debt cbo omb fiscal deficit',
+          snippet:'CBO January 2026 baseline. $7.4T in outlays. Social Security, Medicare, defense, and net interest explained.'},
+        { url:'/methodology', title:'Our Methodology', keywords:'methodology sources primary data fact check process steelman sensitivity analysis confidence interval limitation',
+          snippet:'How TruthBased.org works: primary sources, steelmanned arguments, sensitivity analysis, and transparent limitations.'}
+      ];
+
+      var input = document.querySelector('.search-input');
+      var results = document.querySelector('.search-results');
+      if(!input || !results) return;
+
+      function highlight(text, terms){
+        var safe = terms.map(function(t){ return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); });
+        var re = new RegExp('(' + safe.join('|') + ')','gi');
+        return text.replace(re, '<mark>$1</mark>');
+      }
+
+      function search(query){
+        if(!query || query.length < 2){ results.classList.remove('is-visible'); return; }
+        var terms = query.toLowerCase().split(/\s+/).filter(function(t){ return t.length >= 2; });
+        if(!terms.length){ results.classList.remove('is-visible'); return; }
+
+        var scored = articles.map(function(a){
+          var haystack = (a.title + ' ' + a.keywords + ' ' + a.snippet).toLowerCase();
+          var score = 0;
+          terms.forEach(function(t){
+            if(a.title.toLowerCase().indexOf(t) !== -1) score += 10;
+            if(a.keywords.indexOf(t) !== -1) score += 5;
+            if(a.snippet.toLowerCase().indexOf(t) !== -1) score += 2;
+          });
+          return { article: a, score: score };
+        }).filter(function(s){ return s.score > 0; })
+          .sort(function(a,b){ return b.score - a.score; });
+
+        if(!scored.length){
+          results.innerHTML = '<div class="sr-empty">No matching articles found</div>';
+          results.classList.add('is-visible');
+          return;
+        }
+
+        results.innerHTML = scored.map(function(s){
+          return '<a href="' + s.article.url + '" class="sr-item" role="option">' +
+            '<span class="sr-title">' + highlight(s.article.title, terms) + '</span>' +
+            '<span class="sr-snippet">' + highlight(s.article.snippet, terms) + '</span></a>';
+        }).join('');
+        results.classList.add('is-visible');
+      }
+
+      var debounceTimer;
+      input.addEventListener('input', function(){
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function(){ search(input.value.trim()); }, 150);
+      });
+
+      document.addEventListener('click', function(e){
+        if(!e.target.closest('.search-box')) results.classList.remove('is-visible');
+      });
+
+      input.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){ results.classList.remove('is-visible'); input.blur(); }
+      });
+    })();
+
+  </script>
+
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere to close</span>
+  </div>
+  <script>
+  function expandQR(el){
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+  }
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
