@@ -751,6 +751,8 @@
       <span class="article-category">Nutrition Science</span>
       <h1>Ultra-Processed Food: What the Research Actually Shows</h1>
       <p class="article-deck">Ultra-processed foods (UPFs) now make up 57&ndash;60% of calories in the American diet. A 2019 randomized controlled trial found participants ate 508 more calories per day on UPF diets. Large cohort studies find 15% higher all-cause mortality. But &ldquo;processed food&rdquo; is not a monolith&mdash;the heterogeneity in the evidence matters significantly.</p>
+
+      <div class="chart-wrap"><div class="chart-container" style="height:260px;"><canvas id="chart1" role="img" aria-label="Bar chart: UPF diet vs unprocessed diet daily calorie intake in the NIH Hall 2019 RCT"></canvas></div><p style="font-size:0.75rem;color:var(--text-quiet);margin-top:8px;">Source: Hall et al. 2019 (Cell Metabolism). Ad libitum eating; 20 adults, 2-week crossover.</p></div>
       <div class="article-meta">
         <span class="meta-pill">Updated March 2026</span>
         <span class="meta-pill">9 primary sources</span>
@@ -901,6 +903,8 @@
 
       <p>Fiolet et al. (BMJ, 2018) found a 12% increase in cardiovascular disease risk per 10% increase in UPF dietary share (n=105,159, NutriNet-Sant&eacute; cohort, 5-year follow-up). Srour et al. (2020, Lancet) found HR 1.11 for cardiovascular disease and HR 1.17 for coronary heart disease, highest vs. lowest UPF consumers. Effect sizes are modest but consistent across multiple large cohorts.</p>
 
+      <div class="chart-wrap"><div class="chart-container" style="height:270px;"><canvas id="chart2" role="img" aria-label="Bar chart: relative risk increase for various health outcomes per 10% increase in UPF consumption"></canvas></div><p style="font-size:0.75rem;color:var(--text-quiet);margin-top:8px;">Source: Pooled meta-analyses, 2021–2024. Approximate relative risk per 10% UPF diet increase.</p></div>
+
       <span class="section-label">08 &mdash; Limitations of observational evidence</span>
 
       <p>All cohort studies face the same fundamental challenge: UPF consumption correlates with other markers of unhealthy lifestyle (lower income, lower education, less exercise, worse sleep, higher stress), making it difficult to isolate UPF effects even with extensive statistical adjustment. The &ldquo;healthy user bias&rdquo; problem is the central limitation. Multiple well-controlled cohorts adjusting for BMI, income, education, physical activity, smoking, and overall dietary quality continue to find associations&mdash;but residual confounding cannot be fully excluded from observational data alone. This is why the Hall 2019 RCT, despite its small sample, is particularly valuable: it controls these confounders experimentally.</p>
@@ -1001,15 +1005,9 @@
       <p>If any of these occur, this article will be updated.</p>
     </div>
 
-    <div class="cite-this">
-      <span class="cite-this-label">Cite this article</span>
-      <span class="cite-this-text">TruthBased.org. &ldquo;Ultra-Processed Food: What the Research Actually Shows.&rdquo; Updated March 2026. https://www.truthbased.org/ultra-processed-food</span>
-    </div>
-  </article>
-  </main>
-
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
       <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
-      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven research and analysis, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
       <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
       <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
       <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
@@ -1018,7 +1016,7 @@
         <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
           <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-evm.png" loading="lazy" decoding="async" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
@@ -1026,21 +1024,21 @@
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-bitcoin.png" loading="lazy" decoding="async" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-solana.png" loading="lazy" decoding="async" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-xrp.png" loading="lazy" decoding="async" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
@@ -1051,14 +1049,14 @@
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-litecoin.png" loading="lazy" decoding="async" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-stellar.png" loading="lazy" decoding="async" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
@@ -1069,7 +1067,7 @@
             </div>
           </div>
           <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="/assets/qr/qr-usdt-trc20.png" loading="lazy" decoding="async" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
             <div style="min-width:0;">
               <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
               <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
@@ -1080,213 +1078,20 @@
         </div>
       </details>
     </div>
+  </article>
 
-
-  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
-    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
-    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Hall et al. 2019 (NIH RCT), Dicken et al. 2025, IARC cohort data, BMJ meta-analyses, Lancet, NEJM</span>
-    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
-  </footer>
-
-
-  <script>
-    
-    // ── Chart 1: International Firearm Death Rates ────────────────
-    const ctx1 = document.getElementById('chart1').getContext('2d');
-    new Chart(ctx1, {
-      type: 'bar',
-      data: {
-        labels: ['U.S.','Finland','Switzerland','France','Canada','Austria','Sweden','Belgium','Italy','New Zealand','Australia','Germany','Spain','Netherlands','UK','Japan'],
-        datasets: [{
-          label: 'Total firearm deaths per 100,000',
-          data: [12.8, 3.6, 2.8, 2.7, 2.1, 2.0, 1.9, 1.7, 1.3, 1.2, 1.0, 1.01, 0.6, 0.5, 0.23, 0.03],
-          backgroundColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.45)' : 'rgba(27,107,62,0.25)'; },
-          borderColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)'; },
-          borderWidth: 1.5,
-          borderRadius: 3,
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true, maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'Total Firearm Deaths per 100,000 Population (OECD Nations)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
-          tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(1) + ' per 100k' } }
-        },
-        scales: {
-          x: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-          y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-        }
-      }
-    });
-
-    // ── Chart 2: U.S. Firearm Homicide Rate 1993–2023 ────────────────
-    const ctx2 = document.getElementById('chart2').getContext('2d');
-    new Chart(ctx2, {
-      type: 'line',
-      data: {
-        labels: ['1993','1996','2000','2004','2008','2010','2014','2016','2019','2020','2021','2022','2023'],
-        datasets: [{
-          label: 'U.S. Firearm Homicide Rate per 100k',
-          data: [7.0, 5.5, 4.0, 3.9, 3.8, 3.6, 3.7, 4.0, 4.4, 5.9, 6.7, 6.2, 5.6],
-          fill: true,
-          backgroundColor: 'rgba(184,58,30,0.08)',
-          borderColor: 'rgba(184,58,30,0.7)',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: 'rgba(184,58,30,0.7)',
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (1993–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
-        },
-        scales: {
-          y: { beginAtZero: true, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-        }
-      }
-    });
-  </script>
-
-
-  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
-
-  <script>
-    /* ── Theme toggle ── */
-    (function(){
-      var html = document.documentElement;
-      var btn = document.querySelector('.theme-toggle');
-      function icon(){
-        if(!btn) return;
-        var isDark = html.getAttribute('data-theme')==='dark';
-        btn.textContent = isDark ? '\u2600' : '\u263E';
-        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        btn.setAttribute('aria-pressed', String(isDark));
-      }
-      icon();
-      if(btn) btn.addEventListener('click', function(){
-        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        try { localStorage.setItem('tb-theme', next); } catch(e) {}
-        icon();
-      });
-    })();
-
-    /* ── Reading progress bar ── */
-    (function(){
-      var bar = document.querySelector('.reading-progress');
-      if(!bar) return;
-      window.addEventListener('scroll', function(){
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
-      }, {passive:true});
-    })();
-
-    /* ── Back to top ── */
-    (function(){
-      var btn = document.querySelector('.back-to-top');
-      if(!btn) return;
-      window.addEventListener('scroll', function(){
-        btn.classList.toggle('visible', window.scrollY > 400);
-      }, {passive:true});
-      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-    })();
-  
-    /* ── Scroll spy ── */
-    (function(){
-      var btns = document.querySelectorAll('.jump-btn');
-      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
-      function update(){
-        var current = '';
-        for(var i=ids.length-1; i>=0; i--){
-          var el = document.getElementById(ids[i]);
-          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
-        }
-        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
-      }
-      window.addEventListener('scroll', update, {passive:true});
-      update();
-    })();
-  
-
-    /* ── Table overflow detection for mobile ── */
-    (function(){
-      document.querySelectorAll('.table-scroll').forEach(function(el){
-        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
-      });
-      window.addEventListener('resize', function(){
-        document.querySelectorAll('.table-scroll').forEach(function(el){
-          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
-        });
-      });
-    })();
-
-    /* Nav shadow on scroll */
-    (function(){
-      var nav = document.querySelector('.site-nav');
-      if(!nav) return;
-      window.addEventListener('scroll', function(){
-        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
-      }, {passive:true});
-    })();
-  
-    /* ── Collapsible jump-nav toggle ── */
-    (function(){
-      var tog = document.querySelector('.jump-toggle');
-      if(!tog) return;
-      var links = document.querySelector('.jump-links');
-      tog.addEventListener('click', function(){
-        var open = links.classList.toggle('is-open');
-        tog.setAttribute('aria-expanded', String(open));
-        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
-        tog.querySelector('svg').innerHTML = open
-          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
-          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
-      });
-      links.querySelectorAll('.jump-btn').forEach(function(btn){
-        btn.addEventListener('click', function(){
-          if(window.innerWidth <= 640){
-            links.classList.remove('is-open');
-            tog.setAttribute('aria-expanded','false');
-            tog.querySelector('.jtog-label').textContent = 'Sections';
-            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
-          }
-        });
-      });
-    })();
-  </script>
-
-
-  <!-- QR expand modal -->
-  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
-    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+<!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
     <img id="qrExpanded" src="" alt="Enlarged QR code">
-    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+    <span class="qr-overlay-label">Tap anywhere to close</span>
   </div>
   <script>
-  var _qrOpener = null;
   function expandQR(el){
-    _qrOpener = el;
     var ov=document.getElementById('qrOverlay');
     var img=document.getElementById('qrExpanded');
     img.src=el.src; img.alt=el.alt;
     ov.classList.add('is-open');
-    var closeBtn=document.getElementById('qrClose');
-    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
   }
-  function closeQR(){
-    var ov=document.getElementById('qrOverlay');
-    ov.classList.remove('is-open');
-    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
-  }
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
-  });
   // Add tap-to-enlarge hints under each QR
   document.querySelectorAll('.qr-thumb').forEach(function(q){
     if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
@@ -1297,5 +1102,6 @@
     }
   });
   </script>
+
 </body>
 </html>
