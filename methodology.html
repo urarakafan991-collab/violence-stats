@@ -22,7 +22,7 @@
 
   <script>
     (function(){
-      var t = localStorage.getItem('tb-theme');
+      var t; try { t = localStorage.getItem('tb-theme'); } catch(e) {}
       if(t==='dark') document.documentElement.setAttribute('data-theme','dark');
       else if(!t && window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('data-theme','dark');
     })();
@@ -83,6 +83,7 @@
       --font-serif:   'Spectral', Georgia, serif;
       --font-sans:    'Sora', system-ui, sans-serif;
       --font-mono:    'Courier Prime', monospace;
+    
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -271,6 +272,10 @@
       pointer-events: none; opacity: 0; transition: opacity 0.2s;
     }
     .table-scroll.has-overflow::after { opacity: 1; }
+    
+    [data-theme="dark"] .method-table th { background: #242220; color: var(--text-quiet); }
+    [data-theme="dark"] .method-table td { border-color: var(--border); }
+    [data-theme="dark"] .method-table tr:nth-child(even) td { background: #242220; }
     [data-theme="dark"] .table-scroll::after {
       background: linear-gradient(to right, transparent, var(--bg));
     }
@@ -318,8 +323,8 @@
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
       }
+      html { scroll-behavior: auto !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -345,7 +350,7 @@
       <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
       <a href="/" class="nav-back">&larr; Home</a>
     </div>
-    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
   </nav>
 
   <header class="page-hero">
@@ -440,7 +445,7 @@
     </div>
 
     <h2>Contact and feedback</h2>
-    <p>If you believe we've made an error, mischaracterized a source, or missed a critical piece of evidence, we want to hear about it. We'd rather be corrected than be wrong. Reach us at <a href="mailto:truthbased5@gmail.com">truthbased5@gmail.com</a>.</p>
+    <p>If you believe we've made an error, mischaracterized a source, or missed a critical piece of evidence, we want to hear about it. We'd rather be corrected than be wrong. Reach us at <a href="/cdn-cgi/l/email-protection#167579786277756256626463627e747765737238796471"><span class="__cf_email__" data-cfemail="cba8a4a5bfaaa8bf8bbfb9bebfa3a9aab8aeafe5a4b9ac">[email&#160;protected]</span></a>.</p>
 
   </main>
 
@@ -449,13 +454,14 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/vaccine-safety">Latest Article</a>
-      <a href="mailto:truthbased5@gmail.com">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#0b6864657f6a687f4b7f797e7f63696a786e6f2564796c"><span class="__cf_email__" data-cfemail="b6d5d9d8c2d7d5c2f6c2c4c3c2ded4d7c5d3d298d9c4d1">[email&#160;protected]</span></a>
     </div>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
     /* ── Theme toggle ── */
     (function(){
       var html = document.documentElement;
@@ -465,12 +471,13 @@
         var isDark = html.getAttribute('data-theme')==='dark';
         btn.textContent = isDark ? '\u2600' : '\u263E';
         btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
       }
       icon();
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
-        localStorage.setItem('tb-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
         icon();
       });
     })();
@@ -494,8 +501,37 @@
       }, {passive:true});
       btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
     })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  
 
-    /* ── Nav shadow on scroll ── */
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* Nav shadow on scroll */
     (function(){
       var nav = document.querySelector('.site-nav');
       if(!nav) return;
@@ -503,14 +539,20 @@
         nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
       }, {passive:true});
     })();
-
-    /* ── Table overflow detection ── */
+  
+    /* ── Collapsible jump-nav toggle ── */
     (function(){
-      document.querySelectorAll('.table-scroll').forEach(function(el){
-        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
       });
-    })();
-  </script>
-
-</body>
-</html>
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
