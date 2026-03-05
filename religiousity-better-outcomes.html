@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Does Religiosity Correlate With Better Social Outcomes? | TruthBased.org</title>
+  <meta name="description" content="Meta-analyses on crime, giving, health, trust, and education — measured at both the individual and national level. Every major claim tested against the data.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/religiosity-social-outcomes">
+  <meta property="og:title"   content="Does Religiosity Correlate With Better Social Outcomes? | TruthBased.org">
+  <meta property="og:description" content="Pew, Gallup, Harvard longitudinal cohorts, GSS data, cross-national indices — every major claim about religion and social outcomes tested against peer-reviewed evidence. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Does Religiosity Correlate With Better Social Outcomes? | TruthBased.org">
+  <meta name="twitter:description" content="Crime, giving, health, trust, education — every claim tested. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/religiosity-social-outcomes">
+  <meta name="theme-color" content="#b83a1e">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .stat-val.positive::before { content: "\2713\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.negative::before { content: "\2717\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.warn::before { content: "\26A0\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.neutral::before { content: "\2014 "; }
+
+    /* DATA TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    /* CHART */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CLAIMS BOX */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+
+    /* FALSIFY BOX */
+    .falsify-box {
+      background: var(--card-face, var(--surface));
+      border: 1px solid var(--rule, var(--border));
+      border-left: 3px solid var(--green);
+      border-radius: 4px; padding: 16px 18px; margin: 24px 0;
+    }
+    .falsify-box .falsify-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green); display: block; margin-bottom: 8px;
+    }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* PART TAKEAWAY */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* TLDR BOX */
+    .tldr-box {
+      background: var(--card-face); border: 1px solid var(--rule);
+      border-left: 3px solid var(--brick); border-radius: 4px;
+      padding: 18px 20px; margin: 24px 0;
+    }
+    .tldr-box .tldr-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    /* TABLE SCROLL */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; position: relative; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    /* CITE THIS */
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    /* READING PROGRESS, BACK-TO-TOP, THEME */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    /* QR EXPAND */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    /* RESPONSIVE */
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top,
+      .reading-progress, .theme-toggle, footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Does Religiosity Correlate With Better Social Outcomes?",
+    "description": "Meta-analyses on crime, charitable giving, health, social trust, and education — measured at both the individual and national level. Every major claim tested against peer-reviewed data.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-03-05",
+    "mainEntityOfPage": "https://www.truthbased.org/religiosity-social-outcomes",
+    "keywords": ["religion", "religiosity", "social outcomes", "crime", "charitable giving", "health", "longevity", "social trust", "education", "Scandinavian paradox", "ecological fallacy", "fact-check"]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Religion &amp; Society</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <!-- JUMP NAV -->
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 &ndash; Crime</a>
+      <a href="#part2" class="jump-btn">Part 2 &ndash; Giving</a>
+      <a href="#part3" class="jump-btn">Part 3 &ndash; Health</a>
+      <a href="#part4" class="jump-btn">Part 4 &ndash; Trust</a>
+      <a href="#part5" class="jump-btn">Part 5 &ndash; Cross-National</a>
+      <a href="#part6" class="jump-btn">Part 6 &ndash; Education</a>
+      <a href="#part7" class="jump-btn">Part 7 &ndash; Steelmans</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header>
+      <span class="article-category">Religion &amp; Society</span>
+      <h1 class="article-title">Does Religiosity Correlate With Better Social Outcomes?</h1>
+      <p class="article-deck">Crime rates, social trust, wellbeing, charitable giving, education &mdash; what Pew Research, Gallup, Harvard longitudinal cohorts, and dozens of meta-analyses actually find when comparing more and less religious populations. The answer depends entirely on whether you measure individuals or societies.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">40+ primary sources</span>
+        <span class="meta-pill">~22 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary sources used</span>
+      <div class="source-pills">
+        <span class="source-pill">Baier &amp; Wright (2001)</span>
+        <span class="source-pill">VanderWeele et al. (2016)</span>
+        <span class="source-pill">Pew Research</span>
+        <span class="source-pill">Gallup World Poll</span>
+        <span class="source-pill">General Social Survey</span>
+        <span class="source-pill">Giving USA 2025</span>
+        <span class="source-pill">Norris &amp; Inglehart</span>
+        <span class="source-pill">Putnam &amp; Campbell</span>
+        <span class="source-pill">PISA / TIMSS</span>
+        <span class="source-pill">UN HDI</span>
+      </div>
+    </div>
+
+    <div class="tldr-box" role="region" aria-label="Summary">
+      <span class="tldr-label">The short answer</span>
+      <p>At the <em>individual level</em>, religious participation &mdash; specifically communal worship attendance, not private belief &mdash; consistently correlates with modestly lower crime, better mental health, greater civic engagement, and more charitable giving. At the <em>societal level</em>, the pattern inverts: more religious nations and U.S. states tend to have worse outcomes across nearly every measurable dimension. This is not a contradiction but a textbook case of the ecological fallacy, compounded by powerful confounders &mdash; income inequality, welfare state strength, and colonial history &mdash; that drive both higher religiosity and worse outcomes simultaneously.</p>
+      <p>The weight of evidence points to a critical insight first articulated by Robert Putnam: <strong>it is the social community of religion, not theological belief itself, that produces most measurable individual-level benefits</strong> &mdash; and those benefits largely mirror what any dense, morally freighted social network provides.</p>
+    </div>
+
+    <div class="claims-box" role="region" aria-label="Key claims vs. evidence">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Religious people commit less crime&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Meta-analyses find a small inverse correlation (r&nbsp;&asymp;&nbsp;&minus;0.12). Direction is consistent &mdash; none of 79 effect sizes in Baier&nbsp;&amp;&nbsp;Wright was positive &mdash; but the effect explains only 1&ndash;5% of variance. Publication bias likely inflates even this small effect.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Religious people give more to charity&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>True overall. But 70&ndash;75% of congregational revenue funds internal operations (staff salaries, buildings). When tithing to one&rsquo;s own church is excluded, the gap narrows substantially. The mechanism is community peer pressure, not theological belief.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Religious people live longer&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Harvard&rsquo;s VanderWeele found weekly attenders had 33% lower all-cause mortality. But the largest comparative meta-analysis (Shor&nbsp;&amp;&nbsp;Roelfs, 312 estimates) found <em>non</em>-religious social participation produced statistically equivalent benefits.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Secular countries are more successful&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>The cross-national correlation is real (r&nbsp;&asymp;&nbsp;&minus;0.67 for religiosity vs. HDI). But the most likely causal chain runs from economic security and strong welfare states &rarr; less need for religion, running simultaneously with security &rarr; better outcomes. Religion is not the cause of dysfunction.</div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════ PART 1 ═══════════ -->
+    <div class="part-header" id="part1">
+      <span class="part-label">Part 1</span>
+      <h2 class="part-title">Crime &amp; Safety</h2>
+    </div>
+
+    <p>The individual-level evidence is moderately strong and remarkably consistent in direction. Baier and Wright&rsquo;s foundational meta-analysis (2001, <em>Journal of Research in Crime and Delinquency</em>) synthesized 60 studies producing 79 effect size estimates from research spanning 1962&ndash;1998. They found a mean effect of r&nbsp;=&nbsp;&minus;0.12, indicating that religious beliefs and behaviors exert a moderate deterrent on criminal behavior. Not one of the 79 effect sizes was positive &mdash; every study showed either a null or negative relationship.</p>
+
+    <p>A later meta-analysis by Kelly, Polanin, Jang, and Johnson (2015, <em>Criminal Justice Review</em>) drew on 62 studies encompassing 193,656 adolescents and found somewhat larger effects, with bivariate correlations ranging from r&nbsp;=&nbsp;&minus;0.16 to &minus;0.22 across religious salience, church attendance, and various delinquency outcomes. Cheung and Yeung (2011, <em>Children &amp; Youth Services Review</em>, 40 studies) found a weaker overall association of roughly r&nbsp;&asymp;&nbsp;0.19 between religiosity and constructive adolescent behavior.</p>
+
+    <div class="stat-block">
+      <div class="stat-block-header">
+        <span class="stat-block-name">Meta-Analytic Effect Sizes: Religiosity &rarr; Crime</span>
+        <span class="stat-block-period">1962&ndash;2015</span>
+      </div>
+      <div class="stat-block-body">
+        <div class="stat-row"><span class="stat-key">Baier &amp; Wright (2001, 60 studies)</span><span class="stat-val positive">r = &minus;0.12</span></div>
+        <div class="stat-row"><span class="stat-key">Kelly et al. (2015, 62 studies, N=193,656)</span><span class="stat-val positive">r = &minus;0.16 to &minus;0.22</span></div>
+        <div class="stat-row"><span class="stat-key">Cheung &amp; Yeung (2011, 40 studies)</span><span class="stat-val warn">r &asymp; 0.19 (weak)</span></div>
+        <div class="stat-row"><span class="stat-key">Variance explained</span><span class="stat-val neutral">1&ndash;5%</span></div>
+      </div>
+    </div>
+
+    <p>However, the Baier and Wright findings carry a significant caveat. Philosopher Eric Schwitzgebel (2014) conducted Monte Carlo simulations demonstrating that the complete absence of positive effect sizes in their distribution had only a 0.09% probability under normal assumptions &mdash; strongly suggesting publication bias. Studies finding null or positive religion&ndash;crime relationships likely went unpublished.</p>
+
+    <span class="section-label">The moral communities hypothesis</span>
+
+    <p>Rodney Stark&rsquo;s &ldquo;moral communities&rdquo; hypothesis (1982; elaborated 1996) argued that religion deters crime most effectively where collective religious commitment is high. Testing this in Provo, Utah versus Seattle, Washington, Stark found the church attendance&ndash;delinquency correlation was gamma&nbsp;=&nbsp;0.45 in Provo versus gamma&nbsp;=&nbsp;0.13 in Seattle. Stansfield and Mowen (2018, <em>Journal of Quantitative Criminology</em>, N&nbsp;=&nbsp;1,362 former inmates) confirmed that county-level religious adherence predicted lower recidivism, whereas an individual&rsquo;s own religiosity had no effect after adjusting for context.</p>
+
+    <span class="section-label">The aggregate picture reverses</span>
+
+    <p>At the societal level, the pattern flips starkly. Gregory Paul&rsquo;s cross-national analysis (2005, <em>Journal of Religion and Society</em>) of 17 prosperous democracies found the United States &mdash; the most religious wealthy nation &mdash; had among the highest homicide rates, while secular nations like Japan, Sweden, and Norway had the lowest. Phil Zuckerman (2009, <em>Sociology Compass</em>) documented that more secular U.S. states like Vermont, Oregon, and New Hampshire have lower murder rates than highly religious states like Louisiana, Alabama, and Mississippi. Heaton (2006, <em>Journal of Law and Economics</em>) used historical religiosity as an instrumental variable and found the aggregate religion-on-crime effect became negligible once endogeneity was addressed.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 1 takeaway</strong>
+      Individual religious participation shows a small protective association with crime (r&nbsp;&asymp;&nbsp;&minus;0.12 to &minus;0.22), but the effect explains only 1&ndash;5% of variance and is likely inflated by publication bias. At the aggregate level, more religious societies have <em>higher</em> crime &mdash; driven by poverty and inequality, not religion itself. The ecological fallacy is the dominant methodological concern.
+    </div>
+
+
+    <!-- ═══════════ PART 2 ═══════════ -->
+    <div class="part-header" id="part2">
+      <span class="part-label">Part 2</span>
+      <h2 class="part-title">Charitable Giving &amp; Volunteering</h2>
+    </div>
+
+    <p>The finding that religious Americans donate more to charity is among the most replicated in this literature. Using the Social Capital Community Benchmark Survey (~30,000 respondents, 2000), Arthur Brooks reported in <em>Who Really Cares</em> (2006) that religious people were 25 percentage points more likely to donate money and gave 3.5 times more than secular counterparts. Pew Research Center&rsquo;s 2016 Religious Landscape Study found 65% of the highly religious donated to help the poor in the past week, versus 41% of other adults.</p>
+
+    <div class="stat-block">
+      <div class="stat-block-header">
+        <span class="stat-block-name">Charitable Giving: Religious vs. Secular</span>
+        <span class="stat-block-period">2016&ndash;2025</span>
+      </div>
+      <div class="stat-block-body">
+        <div class="stat-row"><span class="stat-key">Highly religious volunteered last week (Pew 2016)</span><span class="stat-val positive">45%</span></div>
+        <div class="stat-row"><span class="stat-key">Less religious volunteered last week</span><span class="stat-val neutral">28%</span></div>
+        <div class="stat-row"><span class="stat-key">U.S. adults gave to religious org (Gallup 2025)</span><span class="stat-val warn">41% (record low)</span></div>
+        <div class="stat-row"><span class="stat-key">U.S. adults gave to secular charities</span><span class="stat-val neutral">69%</span></div>
+        <div class="stat-row"><span class="stat-key">Total giving to religion, 2024 (Giving USA)</span><span class="stat-val neutral">$146.5 billion</span></div>
+      </div>
+    </div>
+
+    <span class="section-label">Where the money actually goes</span>
+
+    <p>The picture changes substantially when you distinguish between religious and secular giving. The National Study of Congregations&rsquo; Economic Practices (Lake Institute on Faith and Giving, 2019, N&nbsp;=&nbsp;1,231 congregations) found that approximately 49% of congregational budgets went to staff salaries, 23% to buildings and facilities, and only 13&ndash;21% to missions and programs &mdash; a category that itself includes internal ministries alongside actual community service. Industry benchmarks consistently place direct charitable benevolence at 2&ndash;15% of church budgets. With total giving to religion at $146.5 billion in 2024, roughly $105&ndash;110 billion went to internal church operations, while perhaps $3&ndash;12 billion reached direct charitable services.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Where congregational revenue goes</div>
+      <div class="chart-canvas-wrap">
+        <canvas id="chartGiving" aria-label="Pie chart showing typical congregational budget allocation: staff salaries, buildings, programs, direct charitable benevolence"></canvas>
+      </div>
+    </div>
+
+    <span class="section-label">The mechanism: community, not theology</span>
+
+    <p>Putnam and Campbell&rsquo;s <em>American Grace</em> (2010, Faith Matters Survey, N&nbsp;=&nbsp;3,108) confirmed the giving gap &mdash; then demolished the theological explanation for it. Zero of 25 theological beliefs correlated with the giving gap. The mechanism was entirely social: having &ldquo;supercharged friends&rdquo; at church. Dense congregational networks create peer pressure to give. Berry, Glaser, and Schildkraut (<em>Everyday Democracy</em>, University of Chicago Press, 2025, N&nbsp;=&nbsp;1,000) found liberals were more likely to give to health, social service, and secular nonprofits, while conservatives&rsquo; giving advantage was driven almost entirely by congregational donations.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 2 takeaway</strong>
+      Religious people give more overall &mdash; that finding is robust. But 70&ndash;75% of congregational revenue funds internal operations (staff, buildings). When you separate out tithing to one&rsquo;s own church, the gap narrows substantially. The mechanism is social community and peer pressure, not theological belief.
+    </div>
+
+
+    <!-- ═══════════ PART 3 ═══════════ -->
+    <div class="part-header" id="part3">
+      <span class="part-label">Part 3</span>
+      <h2 class="part-title">Wellbeing, Mental Health &amp; Longevity</h2>
+    </div>
+
+    <p>Tyler VanderWeele&rsquo;s research group at the Harvard T.H. Chan School of Public Health has produced the most methodologically rigorous evidence for health benefits of religious attendance. Their landmark study (Li, Stampfer, Williams, and VanderWeele, 2016, <em>JAMA Internal Medicine</em>) followed 74,534 women in the Nurses&rsquo; Health Study from 1996 to 2012 and found that attending religious services more than once per week was associated with 33% lower all-cause mortality (HR&nbsp;=&nbsp;0.67, 95% CI: 0.62&ndash;0.71). Cardiovascular mortality dropped 27%, cancer mortality 21%.</p>
+
+    <div class="stat-block">
+      <div class="stat-block-header">
+        <span class="stat-block-name">VanderWeele et al.: Religious Attendance &amp; Mortality</span>
+        <span class="stat-block-period">Nurses&rsquo; Health Study, 1996&ndash;2012</span>
+      </div>
+      <div class="stat-block-body">
+        <div class="stat-row"><span class="stat-key">All-cause mortality (weekly+ vs. never)</span><span class="stat-val positive">HR = 0.67</span></div>
+        <div class="stat-row"><span class="stat-key">Cardiovascular mortality</span><span class="stat-val positive">&minus;27%</span></div>
+        <div class="stat-row"><span class="stat-key">Cancer mortality</span><span class="stat-val positive">&minus;21%</span></div>
+        <div class="stat-row"><span class="stat-key">Suicide rate (weekly vs. never)</span><span class="stat-val positive">HR &asymp; 0.16 (5&times; lower)</span></div>
+        <div class="stat-row"><span class="stat-key">Sample size</span><span class="stat-val neutral">N = 74,534</span></div>
+      </div>
+    </div>
+
+    <p>The suicide findings are particularly striking. VanderWeele, Li, Tsai, and Kawachi (2016, <em>JAMA Psychiatry</em>) followed 89,708 women and found weekly attendance associated with approximately a fivefold lower suicide rate (HR&nbsp;=&nbsp;0.16, 95% CI: 0.06&ndash;0.46). Major meta-analyses confirm the direction: Yaden et al. (2022, <em>Journal of Happiness Studies</em>, 256 studies, N&nbsp;&asymp;&nbsp;666,085) found a modest overall correlation of r&nbsp;&asymp;&nbsp;0.18 between religiosity and life satisfaction. Darvishi et al. (2022, <em>International Journal of Molecular Sciences</em>, 63 studies, N&nbsp;&asymp;&nbsp;8 million) found completed suicide was 69% less likely among the religious (OR&nbsp;&asymp;&nbsp;0.31).</p>
+
+    <span class="section-label">Critical caveats</span>
+
+    <p>Three critical caveats temper these findings. First, when Garssen, Visser, and Pool (2021) restricted their meta-analysis to 48 longitudinal studies, the overall religion&ndash;mental health effect shrank to r&nbsp;=&nbsp;0.08 &mdash; significant but small, suggesting cross-sectional studies substantially overestimate the relationship. A 2024 panel study of 8,146 German adults found &ldquo;almost no evidence&rdquo; that changes in religiosity predicted future mental health changes.</p>
+
+    <p>Second, the &ldquo;healthy-attender bias&rdquo; is real: people who maintain routines (church, medication, exercise) may differ in personality, health behaviors, or social support in ways that drive health gains. Richard Sloan of Columbia (1999, <em>Lancet</em>; 2000, <em>NEJM</em>) argued many studies have weak methods and show only associations.</p>
+
+    <div class="box box-amber">
+      <span class="box-label">Key finding</span>
+      <p>Shor and Roelfs (2013, <em>Journal for the Scientific Study of Religion</em>) conducted the largest comparative meta-analysis, drawing on 312 mortality risk estimates from 74 publications covering over 300,000 persons. They found low religious participation (HR&nbsp;=&nbsp;1.32) and low <em>non</em>-religious social participation (HR&nbsp;=&nbsp;1.25) showed <strong>no statistically significant difference</strong> in mortality effects. Their conclusion: the positive health effects of religious participation may largely be attributable to the social participation component, rather than to any uniquely religious mechanism.</p>
+    </div>
+
+    <div class="part-takeaway">
+      <strong>Part 3 takeaway</strong>
+      The association between religious attendance and lower mortality/depression/suicide is real and replicated. But the largest comparative meta-analysis suggests non-religious social participation produces statistically equivalent benefits. The mechanism appears to be primarily social, not uniquely religious. Effect sizes in longitudinal studies are small (r&nbsp;&asymp;&nbsp;0.08).
+    </div>
+
+
+    <!-- ═══════════ PART 4 ═══════════ -->
+    <div class="part-header" id="part4">
+      <span class="part-label">Part 4</span>
+      <h2 class="part-title">Social Trust &amp; Civic Engagement</h2>
+    </div>
+
+    <p>Robert Putnam&rsquo;s <em>Bowling Alone</em> (2000) established that religious affiliation accounts for roughly half of all U.S. social capital. His follow-up with David Campbell, <em>American Grace</em> (2010, Faith Matters Survey, N&nbsp;=&nbsp;3,108 with 1,909 re-interviewed), found religious Americans are 3&ndash;4 times more generous and substantially more civically engaged &mdash; 34% active in charitable organizations versus 15% for the non-religious.</p>
+
+    <p>General Social Survey data (1972&ndash;2018) analyzed by Valente and Okulicz-Kozaryn (2021, <em>Review of Religious Research</em>) revealed a crucial split: <strong>social religiosity</strong> (attendance, organizational membership) predicts more generalized trust, while <strong>individual religiosity</strong> (prayer, closeness to God) actually predicts <em>lower</em> trust and <em>higher</em> misanthropy. Communal religiosity builds trust; private belief without community does the opposite.</p>
+
+    <span class="section-label">Parochial or universal?</span>
+
+    <p>Whether religious prosociality extends beyond in-group boundaries is where evidence becomes most contested. Luke Galen (2012, <em>Psychological Bulletin</em>) argued that religious prosociality is largely a &ldquo;congruence fallacy&rdquo; reflecting stereotypes, self-report bias, and in-group favoritism. He estimated belief in God accounts for less than 1% of variance in out-group charity.</p>
+
+    <p>Experimental evidence tends to support the parochialism critique. Hallin and Moche (2024, <em>Judgment and Decision Making</em>, N&nbsp;=&nbsp;1,719 across four countries) found that when religious identity was salient, all groups showed parochial generosity &mdash; Christians gave more to Christians, Muslims to Muslims, atheists to atheists. When religious information was unavailable, there was no difference. Everett, Faber, and Cikara (2017, N&nbsp;=&nbsp;621) found Christians showed in-group bias while atheists behaved impartially.</p>
+
+    <p>A partial reconciliation comes from Preston and Ritter (2013, <em>Personality and Social Psychology Bulletin</em>), who found that priming &ldquo;religion&rdquo; (institutional identity) enhanced in-group prosociality, while priming &ldquo;God&rdquo; (universal moral concept) enhanced out-group prosociality. The institutional and theological dimensions of religion may pull in opposite directions.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 4 takeaway</strong>
+      Religious attendance drives civic engagement and local trust &mdash; that finding is robust. But the prosociality is substantially parochial: it extends most reliably to in-group members and diminishes for out-groups. The mechanism is community, not belief. Private religiosity without community actually <em>reduces</em> trust.
+    </div>
+
+
+    <!-- ═══════════ PART 5 ═══════════ -->
+    <div class="part-header" id="part5">
+      <span class="part-label">Part 5</span>
+      <h2 class="part-title">Cross-National Comparisons: The Scandinavian Paradox</h2>
+    </div>
+
+    <p>The cross-national data presents perhaps the most striking &mdash; and most misinterpreted &mdash; pattern in this literature. Phil Zuckerman&rsquo;s <em>Society without God</em> (New York University Press, 2008, based on 149 in-depth interviews in Denmark and Sweden) documented that these countries, where fewer than 25% believe in a personal God and only 3&ndash;7% attend church weekly, nonetheless enjoy among the lowest crime rates, lowest corruption, strongest economies, and highest life satisfaction globally.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Religiosity vs. Human Development Index (Selected Countries)</div>
+      <div class="chart-canvas-wrap">
+        <canvas id="chartHDI" aria-label="Scatter-style chart showing inverse correlation between national religiosity and Human Development Index for selected countries"></canvas>
+      </div>
+    </div>
+
+    <p>Mapping Gallup World Poll religiosity data against the UN Human Development Index, Coyne and Roy (Rensselaer Polytechnic Institute, 2012) found a U.S. state-level correlation of r&nbsp;=&nbsp;&minus;0.669 &mdash; strongly negative. Countries where over 95% say religion is important cluster at the bottom of HDI rankings; countries where fewer than 20% say so cluster at the top. The United States sits anomalously among wealthy nations with both high religiosity and relatively poor outcomes: a homicide rate of ~6.3 per 100,000 versus ~1.0 for Denmark, life expectancy of ~77 years versus ~83 for Sweden, and a Gini coefficient of ~0.39 versus ~0.28 for Scandinavia.</p>
+
+    <span class="section-label">Causation runs the other way</span>
+
+    <p>The direction-of-causation question is addressed most comprehensively by Pippa Norris and Ronald Inglehart&rsquo;s <em>Sacred and Secular</em> (Cambridge University Press, 2004/2011), drawing on World Values Survey data from 80+ societies. They proposed the <strong>existential security thesis</strong>: people raised in conditions of insecurity &mdash; economic instability, poor healthcare, absent social safety nets &mdash; develop stronger need for religion, while those raised in security do not. Solt (2014) provided temporal evidence: rising inequality in one year predicts rising religiosity the next, but changes in religiosity do not predict subsequent changes in inequality &mdash; the causal arrow runs from dysfunction to religion, not the reverse.</p>
+
+    <div class="box box-green">
+      <span class="box-label">Most likely causal chain</span>
+      <p>Economic security and strong welfare states &rarr; less need for religion &rarr; secularization, running simultaneously with: security and welfare &rarr; better social outcomes. The cross-national correlation between religiosity and poor outcomes is real but largely spurious &mdash; driven by the structural conditions that produce both.</p>
+    </div>
+
+    <div class="part-takeaway">
+      <strong>Part 5 takeaway</strong>
+      The cross-national negative correlation between religiosity and good outcomes is strong (r&nbsp;&asymp;&nbsp;&minus;0.67). But when Delamontagne (2010) applied multivariate regression controlling for education, income, and race, results were &ldquo;only minimally supportive&rdquo; &mdash; socioeconomic variables had more explanatory power than religiosity. The most likely direction of causation runs from insecurity to religiosity, not from religion to dysfunction.
+    </div>
+
+
+    <!-- ═══════════ PART 6 ═══════════ -->
+    <div class="part-header" id="part6">
+      <span class="part-label">Part 6</span>
+      <h2 class="part-title">Education &amp; Scientific Literacy</h2>
+    </div>
+
+    <p>The country-level data is unambiguous. Stoet and Geary (2017, <em>Intelligence</em>) combined PISA (2000&ndash;2015) and TIMSS (2003&ndash;2011) scores with World Values Survey religiosity data across 50&ndash;79 countries and found correlations of r&nbsp;=&nbsp;&minus;0.65 to &minus;0.74 between national religiosity and science/math performance. Puthenpeedikayil and colleagues (2019, <em>South African Journal of Science</em>, 68 countries) found the strongest correlation was between PISA science scores and the importance of God: r&nbsp;=&nbsp;&minus;0.759.</p>
+
+    <div class="stat-block">
+      <div class="stat-block-header">
+        <span class="stat-block-name">Religiosity &amp; Education: Individual vs. Country Level</span>
+        <span class="stat-block-period">Multiple datasets</span>
+      </div>
+      <div class="stat-block-body">
+        <div class="stat-row"><span class="stat-key">Country-level: religiosity vs. PISA scores (Stoet &amp; Geary)</span><span class="stat-val negative">r = &minus;0.65 to &minus;0.74</span></div>
+        <div class="stat-row"><span class="stat-key">Individual-level: intelligence vs. religiosity (Zuckerman et al. 2013)</span><span class="stat-val warn">r = &minus;0.13 (small)</span></div>
+        <div class="stat-row"><span class="stat-key">Replication (Pietschnig &amp; D&uuml;rlinger 2022)</span><span class="stat-val warn">r = &minus;0.14 (confirmed)</span></div>
+        <div class="stat-row"><span class="stat-key">Variance explained (individual level)</span><span class="stat-val neutral">2&ndash;6%</span></div>
+      </div>
+    </div>
+
+    <p>At the individual level, however, the picture reverses or becomes negligible. The landmark meta-analysis by Zuckerman, Silberman, and Hall (2013, <em>Personality and Social Psychology Review</em>, 63 studies, ~70,647 participants) found the intelligence&ndash;religiosity correlation was r&nbsp;=&nbsp;&minus;0.13 overall. A replication by Pietschnig and D&uuml;rlinger (2022, <em>PLOS ONE</em>, 89 studies, 201,457 participants) confirmed the direction and magnitude at r&nbsp;=&nbsp;&minus;0.14. These are small effects explaining 2&ndash;6% of variance.</p>
+
+    <p>More strikingly, within the United States, religiosity often predicts <em>better</em> academic outcomes at the individual level. A sibling study using the National Longitudinal Study of Adolescent Health (Kim, 2020, <em>Social Science Research</em>) found that the more religious sibling completed more years of education 14 years later. As Meisenberg, Rindermann, Patel, and Woodley (2012) stated: &ldquo;A weak negative relationship of religiosity with education is culturally amplified into far larger differences at the country level.&rdquo; This is perhaps the clearest illustration of the ecological fallacy in the entire literature.</p>
+
+    <div class="part-takeaway">
+      <strong>Part 6 takeaway</strong>
+      Country-level correlations between religiosity and poor educational outcomes are very strong (r&nbsp;&asymp;&nbsp;&minus;0.65 to &minus;0.74) but heavily confounded by wealth, urbanization, and educational investment. Individual-level effects are small (r&nbsp;&asymp;&nbsp;&minus;0.13) and sometimes positive. The ecological fallacy is on full display: individual religious people are not less capable; the structural conditions that produce high national religiosity also produce poor educational outcomes.
+    </div>
+
+
+    <!-- ═══════════ PART 7 ═══════════ -->
+    <div class="part-header" id="part7">
+      <span class="part-label">Part 7</span>
+      <h2 class="part-title">Steelmans, Confounders &amp; What Would Change Our Minds</h2>
+    </div>
+
+    <span class="section-label">Steelman: Religion improves outcomes</span>
+
+    <div class="steelman-wrap">
+      <div class="steelman-row">
+        <div class="steelman-key">Strongest evidence</div>
+        <div class="steelman-val">VanderWeele&rsquo;s Nurses&rsquo; Health Study data showing 33% lower mortality and fivefold lower suicide for weekly attenders. Multiple meta-analyses showing consistent reductions in depression and crime. Putnam and Campbell&rsquo;s finding that religious Americans are genuinely more generous and civically engaged even toward secular causes. These effects are real, replicated, and not fully explained by selection bias.</div>
+      </div>
+      <div class="steelman-row">
+        <div class="steelman-key">Best argument</div>
+        <div class="steelman-val">The mediating pathways &mdash; behavioral regulation (less smoking, less drinking), social support, psychological resilience through meaning-making &mdash; are biologically plausible and well-documented. VanderWeele&rsquo;s sensitivity analyses (E-values) show an unmeasured confounder would need associations of RR&nbsp;&ge;&nbsp;2.04 with both attendance and mortality to explain away the findings.</div>
+      </div>
+    </div>
+
+    <span class="section-label">Steelman: The correlation is confounded or reversed</span>
+
+    <div class="steelman-wrap">
+      <div class="steelman-row">
+        <div class="steelman-key">Strongest evidence</div>
+        <div class="steelman-val">Shor and Roelfs&rsquo;s comparative meta-analysis (312 estimates, 300,000+ persons) showing non-religious social participation produces statistically equivalent mortality benefits. Hallin and Moche (2024) and Isler et al. (2021) showing religious prosociality is substantially parochial. The entire architecture of cross-national evidence collapsing under multivariate controls.</div>
+      </div>
+      <div class="steelman-row">
+        <div class="steelman-key">Best argument</div>
+        <div class="steelman-val">Once inequality, education, and welfare state strength are accounted for, religion adds little or no independent explanatory power to societal outcomes. The Norris&ndash;Inglehart existential security thesis &mdash; with temporal evidence from Solt (2014) &mdash; demonstrates the causal arrow runs from dysfunction to religion, not reverse. Prati (2024) found &ldquo;almost no evidence&rdquo; in longitudinal within-person analysis.</div>
+      </div>
+    </div>
+
+    <span class="section-label">Key confounders</span>
+
+    <p><strong>Income inequality:</strong> Wilkinson and Pickett&rsquo;s <em>The Spirit Level</em> (2009) documented that 11 categories of health and social problems are significantly worse in more unequal developed countries. Solt (2014) showed rising inequality predicts rising religiosity but not the reverse.</p>
+
+    <p><strong>Welfare state strength:</strong> Gill and Lundsgaarde (2004, <em>Rationality and Society</em>) found a strong negative relationship between welfare spending and religious participation. Strong welfare &rarr; less need for religion &rarr; less religiosity; strong welfare &rarr; better outcomes.</p>
+
+    <p><strong>Self-report bias:</strong> Hadaway, Marler, and Chaves (1993, <em>American Sociological Review</em>) found actual church attendance was roughly half of reported levels. Brenner (2011) confirmed this with time-diary data from 14 countries. The key independent variable in most U.S. studies is substantially inflated.</p>
+
+    <div class="falsify-box">
+      <span class="falsify-label">What would change our conclusions</span>
+      <p><strong>For &ldquo;religion helps&rdquo;:</strong> A large randomized trial assigning people to religious attendance versus equivalent secular social groups with identical frequency, commitment, and moral framing &mdash; showing the religious group outperforms on health, crime, or giving even after matching on social exposure.</p>
+      <p><strong>For &ldquo;religion is irrelevant&rdquo;:</strong> A replication of Shor and Roelfs with even larger samples and better controls that finds religious participation consistently outperforms matched secular activities &mdash; or longitudinal panel data showing within-person religiosity changes predict outcome changes in the direction VanderWeele reports.</p>
+      <p><strong>For &ldquo;secular countries succeed because of secularism&rdquo;:</strong> Evidence that secularization <em>preceded</em> welfare state development in Scandinavia, rather than following it &mdash; or that introducing secular policies into religious societies improves outcomes even without structural economic changes.</p>
+    </div>
+
+
+    <!-- CONCLUSION -->
+    <hr>
+    <span class="section-label">What we can say with confidence</span>
+
+    <div class="conclusion-stats">
+      <div class="cs-row"><div class="cs-num neutral">r &asymp; 0.08&ndash;0.22</div><div class="cs-text">The range of individual-level effect sizes for communal religious participation on various outcomes (crime, depression, life satisfaction, mortality). Real but small to moderate, and most of the benefit appears to derive from the social-community mechanism, not from theological beliefs or private prayer.</div></div>
+      <div class="cs-row"><div class="cs-num negative">r &asymp; &minus;0.67</div><div class="cs-text">Cross-national correlation between religiosity and Human Development Index at the U.S. state level. Real but largely spurious &mdash; driven by income inequality, welfare state weakness, educational underdevelopment, and colonial history.</div></div>
+      <div class="cs-row"><div class="cs-num neutral">0 of 25</div><div class="cs-text">The number of theological beliefs that correlated with the religion&ndash;giving gap in Putnam and Campbell&rsquo;s analysis. The mechanism for all measurable benefits is community, not belief.</div></div>
+    </div>
+
+    <p>What remains genuinely uncertain is whether communal religious participation provides any benefits beyond what equivalent secular social engagement would provide, and whether the Scandinavian model of prosocial secularism is generalizable beyond its specific cultural and institutional context. The research community does not yet have definitive answers to either question &mdash; but the trajectory of evidence increasingly suggests that what religion provides is community, and community need not be religious.</p>
+
+
+    <!-- SOURCES -->
+    <div class="sources-section">
+      <span class="sources-section-label">Sources</span>
+      <div class="source-item"><strong>Baier, C.J. &amp; Wright, B.R.E.</strong> (2001). &ldquo;If You Love Me, Keep My Commandments&rdquo;: A Meta-Analysis of the Effect of Religion on Crime. <em>Journal of Research in Crime and Delinquency</em>, 38(1), 3&ndash;21.</div>
+      <div class="source-item"><strong>Kelly, P.E. et al.</strong> (2015). Religion, Delinquency, and Drug Use: A Meta-Analysis. <em>Criminal Justice Review</em>, 40(4), 505&ndash;523.</div>
+      <div class="source-item"><strong>Li, S. et al.</strong> (2016). Association of Religious Service Attendance With Mortality Among Women. <em>JAMA Internal Medicine</em>, 176(6), 777&ndash;785.</div>
+      <div class="source-item"><strong>VanderWeele, T.J.</strong> (2017). Religion and Health: A Synthesis. <em>Spirituality and Religion Within the Culture of Medicine</em>, Oxford University Press.</div>
+      <div class="source-item"><strong>Yaden, D.B. et al.</strong> (2022). A Meta-Analysis of Religion/Spirituality and Life Satisfaction. <em>Journal of Happiness Studies</em>, 23, 4147&ndash;4168.</div>
+      <div class="source-item"><strong>Shor, E. &amp; Roelfs, D.J.</strong> (2013). The Longevity Effects of Religious and Nonreligious Participation. <em>Journal for the Scientific Study of Religion</em>, 52(1), 120&ndash;141.</div>
+      <div class="source-item"><strong>Putnam, R.D. &amp; Campbell, D.E.</strong> (2010). <em>American Grace: How Religion Divides and Unites Us</em>. Simon &amp; Schuster.</div>
+      <div class="source-item"><strong>Valente, R.R. &amp; Okulicz-Kozaryn, A.</strong> (2021). Religiosity and Trust: Evidence from the U.S. <em>Review of Religious Research</em>, 63, 343&ndash;362.</div>
+      <div class="source-item"><strong>Norris, P. &amp; Inglehart, R.</strong> (2004/2011). <em>Sacred and Secular: Religion and Politics Worldwide</em>. Cambridge University Press.</div>
+      <div class="source-item"><strong>Stoet, G. &amp; Geary, D.C.</strong> (2017). Students in Countries With Higher Levels of Religiosity Perform Lower in Science and Mathematics. <em>Intelligence</em>, 62, 71&ndash;78.</div>
+      <div class="source-item"><strong>Zuckerman, M. et al.</strong> (2013). The Relation Between Intelligence and Religiosity: A Meta-Analysis. <em>Personality and Social Psychology Review</em>, 17(4), 325&ndash;354.</div>
+      <div class="source-item"><strong>Pew Research Center.</strong> (2016). Religion in Everyday Life.</div>
+      <div class="source-item"><strong>Gallup.</strong> (2025). Giving and Volunteering Report.</div>
+      <div class="source-item"><strong>Giving USA.</strong> (2025). The Annual Report on Philanthropy. Lilly Family School of Philanthropy.</div>
+      <div class="source-item"><strong>Paul, G.S.</strong> (2005). Cross-National Correlations of Quantifiable Societal Health. <em>Journal of Religion and Society</em>, 7.</div>
+      <div class="source-item"><strong>Zuckerman, P.</strong> (2008). <em>Society without God</em>. NYU Press.</div>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Does Religiosity Correlate With Better Social Outcomes?&rdquo; Updated March 2026. https://www.truthbased.org/religiosity-social-outcomes</span>
+    </div>
+  </article>
+  </main>
+
+    <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Baier & Wright, VanderWeele, Pew, Gallup, GSS, PISA, Norris & Inglehart</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <!-- Chart: Congregational Budget Allocation -->
+  <script>
+    var ctxGiving = document.getElementById('chartGiving').getContext('2d');
+    new Chart(ctxGiving, {
+      type: 'doughnut',
+      data: {
+        labels: ['Staff Salaries (49%)', 'Buildings & Facilities (23%)', 'Internal Programs (15%)', 'Missions & Outreach (8%)', 'Direct Charitable Benevolence (5%)'],
+        datasets: [{
+          data: [49, 23, 15, 8, 5],
+          backgroundColor: ['#b83a1e', '#d4703a', '#e8a76c', '#1b6b3e', '#4cbb6a'],
+          borderWidth: 1,
+          borderColor: 'rgba(255,255,255,0.3)'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { font: { family: "'Sora', sans-serif", size: 11 }, padding: 12, usePointStyle: true, pointStyleWidth: 10 }
+          },
+          tooltip: { bodyFont: { family: "'Sora', sans-serif" } }
+        }
+      }
+    });
+  </script>
+
+  <!-- Chart: Religiosity vs HDI -->
+  <script>
+    var ctxHDI = document.getElementById('chartHDI').getContext('2d');
+    new Chart(ctxHDI, {
+      type: 'bar',
+      data: {
+        labels: ['Norway', 'Sweden', 'Denmark', 'Japan', 'Australia', 'Germany', 'UK', 'USA', 'Brazil', 'Mexico', 'India', 'Nigeria', 'Ethiopia'],
+        datasets: [
+          {
+            label: 'HDI Score',
+            data: [0.961, 0.947, 0.948, 0.920, 0.951, 0.942, 0.929, 0.921, 0.760, 0.758, 0.644, 0.535, 0.498],
+            backgroundColor: '#1b6b3e',
+            yAxisID: 'y'
+          },
+          {
+            label: '% Say Religion Important',
+            data: [17, 16, 19, 24, 25, 21, 27, 65, 84, 73, 90, 95, 98],
+            backgroundColor: '#b83a1e',
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { font: { family: "'Sora', sans-serif", size: 11 } } },
+          tooltip: { bodyFont: { family: "'Sora', sans-serif" } }
+        },
+        scales: {
+          y: { position: 'left', min: 0, max: 1, title: { display: true, text: 'HDI Score', font: { family: "'Sora', sans-serif", size: 11 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 } } },
+          y1: { position: 'right', min: 0, max: 100, grid: { drawOnChartArea: false }, title: { display: true, text: '% Religion Important', font: { family: "'Sora', sans-serif", size: 11 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 } } },
+          x: { ticks: { font: { family: "'Courier Prime', monospace", size: 10 } } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow on scroll ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
