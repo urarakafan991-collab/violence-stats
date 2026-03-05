@@ -567,6 +567,12 @@
       --rule:         #3a3632;
       --rule-mid:     #4a4640;
       --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
+      --font-sans:    'Sora', sans-serif;
+      --font-serif:   'Spectral', serif;
+      --font-mono:    'Courier Prime', monospace;
+      --surface:      var(--card-face);
+      --border:       var(--rule);
+      --bg:           var(--page-ground);
     }
     [data-theme="dark"] .method-section { background-color: #242220; color: #e8e5e0; }
     [data-theme="dark"] .method-item-title { color: #e8e5e0; }
@@ -1276,21 +1282,35 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <div class="article-row is-pending">
-                <span class="row-status pending">Coming soon</span>
+              <a href="/religiosity-social-outcomes" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Does Religiosity Correlate With Better Social Outcomes?</span>
                   <span class="row-desc">Crime rates, social trust, wellbeing, charitable giving. What Pew Research, Gallup, and academic studies actually find when comparing more and less religious populations.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">Baier &amp; Wright</span>
+                    <span class="source-pill">VanderWeele</span>
+                    <span class="source-pill">Pew</span>
+                    <span class="source-pill">Gallup</span>
+                    <span class="source-pill">GSS</span>
+                  </div>
                 </div>
-              </div>
+              </a>
 
-              <div class="article-row is-pending">
-                <span class="row-status pending">Coming soon</span>
+              <a href="/religion-violence" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
                   <span class="row-desc">Claims about religiously motivated conflict measured against terrorism databases, historical data, and how researchers define and count religious motivation.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">Encyclopedia of Wars</span>
+                    <span class="source-pill">RELAC</span>
+                    <span class="source-pill">GTD</span>
+                    <span class="source-pill">Europol</span>
+                    <span class="source-pill">Fearon &amp; Laitin</span>
+                  </div>
                 </div>
-              </div>
+              </a>
 
             </div>
           </div>
@@ -1325,6 +1345,21 @@
                     <span class="source-pill">Small Arms Survey</span>
                     <span class="source-pill">RAND 2023</span>
                     <span class="source-pill">FBI UCR</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="/most-educated-countries" class="article-row" style="text-decoration:none;color:inherit;">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">Most Educated Countries in the World — The Full Ranking</span>
+                  <span class="row-desc">47 countries ranked by OECD tertiary attainment. What each top-third nation excels in — engineers, scientists, teachers, researchers. The access-vs-performance paradox. Gender gaps. Spending vs. outcomes.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">OECD EAG 2025</span>
+                    <span class="source-pill">UNESCO UIS</span>
+                    <span class="source-pill">PISA 2022</span>
+                    <span class="source-pill">UNDP HDR</span>
+                    <span class="source-pill">World Bank</span>
                   </div>
                 </div>
               </a>
@@ -1572,7 +1607,13 @@
         { url:'/us-spending', title:'U.S. Federal Spending: Where the Money Goes', keywords:'federal spending budget social security medicare medicaid defense interest debt cbo omb fiscal deficit',
           snippet:'CBO January 2026 baseline. $7.4T in outlays. Social Security, Medicare, defense, and net interest explained.'},
         { url:'/methodology', title:'Our Methodology', keywords:'methodology sources primary data fact check process steelman sensitivity analysis confidence interval limitation',
-          snippet:'How TruthBased.org works: primary sources, steelmanned arguments, sensitivity analysis, and transparent limitations.'}
+          snippet:'How we research, write, and verify every article on TruthBased.org.' },
+        { url:'/religiosity-social-outcomes', title:'Does Religiosity Correlate With Better Social Outcomes?', keywords:'religion religiosity social outcomes crime charity giving health longevity trust civic engagement education pew gallup vanderweele putnam scandinavia ecological fallacy welfare',
+          snippet:'Meta-analyses on crime, giving, health, trust, and education — measured at both the individual and national level.' },
+        { url:'/religion-violence', title:'Religion and Violence — Parsing the Actual Numbers', keywords:'religion violence terrorism wars crusades inquisition witch trials conflict peacebuilding fearon laitin sectarian northern ireland myanmar iraq atheism totalitarianism',
+          snippet:'Terrorism databases, conflict datasets, historical death tolls, and quantitative models — every major claim about religion and violence tested.' },
+        { url:'/most-educated-countries', title:'Most Educated Countries in the World — The Full Ranking', keywords:'education most educated countries ranking OECD tertiary attainment PISA college university STEM engineers scientists teachers literacy schooling gender gap spending',
+          snippet:'47 countries ranked by tertiary attainment. What each top nation excels in. The access-vs-performance paradox. Gender gaps. Spending vs outcomes.' }
       ];
 
       var input = document.querySelector('.search-input');
