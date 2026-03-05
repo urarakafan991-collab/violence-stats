@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gender Wage Gap: What the Data Actually Shows | TruthBased.org</title>
+  <meta name="description" content="BLS, Census, and OECD data on the gender wage gap. Unadjusted vs. adjusted gaps decomposed. Occupation sorting, motherhood penalty, audit studies, and discrimination research. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/gender-wage-gap">
+  <meta property="og:title"   content="The Gender Wage Gap: What the Data Actually Shows | TruthBased.org">
+  <meta property="og:description" content="BLS, Census, OECD data. Unadjusted 17.9% gap vs. adjusted 8-14%. Occupation sorting, motherhood penalty, discrimination research steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="The Gender Wage Gap: What the Data Actually Shows | TruthBased.org">
+  <meta name="twitter:description" content="BLS, Census, OECD data. Unadjusted vs. adjusted gap decomposed. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/gender-wage-gap">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TruthBased.org — U.S. Gun Violence vs. Peer Nations
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    /* ── Collapsible jump-nav on small screens ── */
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* PER-CAPITA BOX */
+    .capita-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px; margin: 16px 0; text-align: center;
+    }
+    .capita-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); margin-bottom: 6px;
+    }
+    .capita-big {
+      font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--green); line-height: 1.1;
+    }
+    .capita-sub { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+    .capita-verdict {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--green); margin-top: 10px;
+    }
+
+    /* CASE CARDS (equivalent of shooter cards) */
+    .case-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      margin: 16px 0; overflow: hidden;
+    }
+    .case-card-head {
+      background: var(--surface); padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .case-name {
+      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .case-meta-line {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-dim); margin-top: 2px;
+    }
+    .case-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    }
+    .badge-confirmed { background: var(--brick-light); color: var(--brick); }
+    .badge-admin     { background: var(--amber-light); color: var(--amber); }
+    .badge-acquitted { background: var(--green-light); color: var(--green); }
+    .case-card-body { padding: 0; }
+    .case-row {
+      display: flex; padding: 8px 16px;
+      border-bottom: 1px solid var(--border); font-size: 0.86rem; gap: 12px;
+    }
+    .case-row:last-child { border-bottom: none; }
+    .case-key {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      color: var(--text-quiet); min-width: 100px; padding-top: 1px;
+    }
+    .case-val { color: var(--text-body); line-height: 1.5; }
+    .case-val.warn   { color: var(--amber); }
+    .case-val.alert  { color: var(--brick); }
+
+    /* TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-dismissed { color: var(--brick); font-weight: 600; }
+    .td-merits    { color: var(--amber); font-weight: 600; }
+    .td-both      { color: var(--text-dim); font-size: 0.78rem; }
+
+    /* CHART CANVAS */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #1a1714; color: rgba(247,245,241,0.9);
+      border-radius: 6px; padding: 18px 22px; margin: 16px 0;
+      font-family: var(--font-mono); font-size: 0.88rem; line-height: 2;
+    }
+    .math-box .math-label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(247,245,241,0.45); display: block; margin-bottom: 6px;
+    }
+    .math-box .math-result {
+      color: #7ec99a; font-size: 1.1rem; font-weight: 700;
+    }
+    .math-box .math-dim { color: rgba(247,245,241,0.55); }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .math-box { padding: 14px 16px; font-size: 0.8rem; }
+      .capita-big { font-size: 1.8rem; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Falsifiability threshold ── */
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.negative::before { content: "\2717\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.warn::before { content: "\26A0\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .steelman-wrap, .evidence-table, .capita-box, .tldr-box, .scale-vis { break-inside: avoid; }
+      .part-header { break-after: avoid; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    /* --- TL;DR, Scope, Scale additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scale-vis { margin: 20px 0; padding: 16px; background: var(--card-face); border: 1px solid var(--rule); border-radius: 4px; }
+    .scale-vis .scale-label { font-family: var(--font-mono); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 12px; display: block; }
+    .scale-bar-wrap { position: relative; height: 28px; background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .scale-bar-fill { height: 100%; background: var(--brick); border-radius: 2px 0 0 2px; min-width: 2px; }
+    .scale-bar-nums { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-quiet); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 18px 0 24px; }
+    .evidence-table th { background: var(--card-face); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-quiet); padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--rule); }
+    .evidence-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.4; }
+    .evidence-table tr:last-child td { border-bottom: none; }
+    .evidence-table .total-row td { font-weight: 700; border-top: 2px solid var(--text-head); }
+    @media (max-width: 640px) { .evidence-table { font-size: 0.65rem; } .evidence-table th, .evidence-table td { padding: 6px 6px; } }
+    
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+
+    /* QR expand */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Gender Wage Gap: What the Data Actually Shows",
+    "description": "BLS, Census, and OECD data on the gender wage gap. Unadjusted vs. adjusted gaps decomposed. Occupation sorting, motherhood penalty, and audit studies.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-04",
+    "dateModified": "2026-03-04",
+    "mainEntityOfPage": "https://www.truthbased.org/gender-wage-gap",
+    "keywords": ["gender wage gap", "pay gap", "women earnings", "occupation sorting", "motherhood penalty", "discrimination", "BLS", "Census"]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Labor Economics</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+    <a href="#part1" class="jump-btn">Part 1 &mdash; The Raw Gap</a>
+    <a href="#part2" class="jump-btn">Part 2 &mdash; Adjusted Gap</a>
+    <a href="#part3" class="jump-btn">Part 3 &mdash; Occupation Sorting</a>
+    <a href="#part4" class="jump-btn">Part 4 &mdash; Motherhood Penalty</a>
+    <a href="#part5" class="jump-btn">Part 5 &mdash; Discrimination</a>
+    <a href="#part6" class="jump-btn">Part 6 &mdash; International</a>
+    <a href="#part7" class="jump-btn">Part 7 &mdash; Steelman</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Labor Economics</span>
+      <h1>The Gender Wage Gap: What the Data Actually Shows</h1>
+      <p class="article-deck">Women earn less than men on average. That much is not in dispute. What is disputed is why&mdash;and whether the gap reflects discrimination, occupational choice, hours worked, or all three. The data is more nuanced than either &ldquo;77 cents&rdquo; or &ldquo;it&rsquo;s fully explained&rdquo; suggests.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">8 primary sources</span>
+        <span class="meta-pill">~14 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Women earn 77 cents for every man&rsquo;s dollar&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Outdated. The current BLS figure for full-time workers is 82.1 cents (2025). The all-workers figure including part-time is 75.6 cents. But neither controls for occupation, hours, experience, or industry. The adjusted gap is 8&ndash;14%.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The wage gap is entirely explained by women&rsquo;s choices&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not accurate. After controlling for occupation, education, hours, and experience, a residual gap of 8&ndash;14% remains. Audit studies find discrimination in some sectors. The &ldquo;choice&rdquo; explanation doesn&rsquo;t account for why female-dominated occupations pay less as a structural matter.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Women who make the same choices earn the same&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partially true for some groups. Young, childless, college-educated women in the same occupation earn very close to male peers. But a motherhood penalty of ~20% emerges over 10 years after childbirth. A fatherhood premium exists simultaneously.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The pay gap is just discrimination&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Discrimination exists in some contexts but isn&rsquo;t the sole explanation. The adjusted residual gap is partly unexplained discrimination and partly unmeasured factors. Audit studies find mixed results that vary by occupation and seniority level.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <a href="https://www.bls.gov/cps/" class="source-pill" target="_blank" rel="noopener noreferrer">BLS CPS 2025</a>
+        <a href="https://www.census.gov/topics/income-poverty/income.html" class="source-pill" target="_blank" rel="noopener noreferrer">Census ASEC 2024</a>
+        <a href="https://stats.oecd.org/Index.aspx?DataSetCode=GENDER_EMP" class="source-pill" target="_blank" rel="noopener noreferrer">OECD Gender Stats 2023</a>
+        <a href="https://www.pewresearch.org/social-trends/2023/03/01/the-enduring-grip-of-the-gender-pay-gap/" class="source-pill" target="_blank" rel="noopener noreferrer">Pew Research 2024</a>
+        <a href="https://www.nber.org/papers/w24219" class="source-pill" target="_blank" rel="noopener noreferrer">Goldin (NBER)</a>
+        <a href="https://doi.org/10.1257/jep.28.2.853" class="source-pill" target="_blank" rel="noopener noreferrer">Blau &amp; Kahn (2017)</a>
+        <a href="https://science.sciencemag.org/content/357/6348/eaah6524" class="source-pill" target="_blank" rel="noopener noreferrer">Chetty et al. (Science)</a>
+        <a href="https://cepr.org/publications/dp12387" class="source-pill" target="_blank" rel="noopener noreferrer">Danish Admin Data (CEPR)</a>
+      </div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">The Raw (Unadjusted) Gap</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; What the headline figures actually measure</span>
+
+      <p>The most-cited figure&mdash;&ldquo;women earn 77 cents on the dollar&rdquo;&mdash;comes from comparing <em>all</em> male and female workers&rsquo; annual earnings, regardless of occupation, hours worked, industry, or experience. This is a real gap, but it&rsquo;s a measure of aggregate earnings differences, not a measure of pay discrimination within identical jobs.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Unadjusted Gender Wage Gap &mdash; Official U.S. Figures</span>
+          <span class="stat-block-period">2024&ndash;2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">BLS: Full-time workers (weekly median)</span><span class="stat-val negative">82.1% (gap: 17.9%)</span></div>
+          <div class="stat-row"><span class="stat-key">Women&rsquo;s median weekly earnings</span><span class="stat-val neutral">$1,089/week</span></div>
+          <div class="stat-row"><span class="stat-key">Men&rsquo;s median weekly earnings</span><span class="stat-val neutral">$1,326/week</span></div>
+          <div class="stat-row"><span class="stat-key">Census ASEC: Full-time, year-round (annual)</span><span class="stat-val negative">80.9% (gap: 19.1%)</span></div>
+          <div class="stat-row"><span class="stat-key">Women&rsquo;s median annual earnings</span><span class="stat-val neutral">$57,520</span></div>
+          <div class="stat-row"><span class="stat-key">Men&rsquo;s median annual earnings</span><span class="stat-val neutral">$71,090</span></div>
+          <div class="stat-row"><span class="stat-key">All workers (incl. part-time): BLS</span><span class="stat-val negative">75.6% (gap: 24.4%)</span></div>
+          <div class="stat-row"><span class="stat-key">Hourly workers only (Pew 2024)</span><span class="stat-val warn">85% (gap: 15%)</span></div>
+        </div>
+      </div>
+
+      <p>The &ldquo;77 cents&rdquo; figure predates 2015 and uses the all-workers comparison. The current comparable figure is approximately 75&ndash;76 cents, or 82 cents when restricted to full-time workers. Neither is wrong as a description of aggregate earnings; both are misleading if used to describe pay discrimination within comparable jobs.</p>
+
+      <span class="section-label">02 &mdash; Why the raw gap is not the same as pay discrimination</span>
+
+      <p>The raw gap combines several factors: differences in occupation and industry, differences in average hours worked (women average ~36 hours/week vs. men&rsquo;s ~40 among full-time workers), differences in years of work experience and seniority, and differences in employer size and sector. None of these differences are neutral in terms of cause&mdash;they themselves may reflect structural inequalities&mdash;but conflating them with &ldquo;same job, different pay&rdquo; misrepresents what the data shows.</p>
+
+      <p>The appropriate question is: how much of the gap remains after controlling for these factors? That is the adjusted gap.</p>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway:</strong> The unadjusted gap is real: women who work full-time earn approximately 82 cents for every dollar men earn (BLS 2025). This is not &ldquo;77 cents&rdquo;&mdash;that figure is outdated and uses a broader comparison. The raw gap captures aggregate earnings differences driven by multiple factors, not a direct measure of pay discrimination within identical jobs.</div>
+    </section>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">The Adjusted Gap</h2>
+      </div>
+
+      <span class="section-label">03 &mdash; What remains after controlling for measurable factors</span>
+
+      <p>Economists decompose the wage gap into the portion explained by measurable worker characteristics (occupation, education, hours, experience, industry, firm size) and an unexplained residual. The unexplained portion is often called the &ldquo;adjusted gap.&rdquo; It captures a mix of potential discrimination and unmeasured factors.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Adjusted Gender Wage Gap &mdash; Key Studies</span>
+          <span class="stat-block-period">Various years, controlled analyses</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">After controlling for occupation, education, hours (Blau &amp; Kahn 2017)</span><span class="stat-val warn">8&ndash;11% residual gap</span></div>
+          <div class="stat-row"><span class="stat-key">Broad controls incl. industry &amp; firm (IZA meta-analysis)</span><span class="stat-val warn">8&ndash;14% residual gap</span></div>
+          <div class="stat-row"><span class="stat-key">Glassdoor "adjusted" (same employer, job, location, experience)</span><span class="stat-val warn">5.4% residual</span></div>
+          <div class="stat-row"><span class="stat-key">Reduction from unadjusted: explained by observable factors</span><span class="stat-val positive">~60&ndash;70% of raw gap explained</span></div>
+          <div class="stat-row"><span class="stat-key">Unexplained portion (potential discrimination + unmeasured)</span><span class="stat-val negative">~30&ndash;40% of raw gap</span></div>
+        </div>
+      </div>
+
+      <p>The academic consensus, summarized by Claudia Goldin&rsquo;s Nobel Prize-winning research (2023), is that <strong>the largest single driver of the gender wage gap is not direct discrimination but the &ldquo;greedy jobs&rdquo; premium</strong>&mdash;the disproportionate compensation for long, inflexible hours in certain high-earning professions (law, finance, consulting). Because women disproportionately reduce hours or switch to more flexible arrangements around childbirth, they lose access to this premium at higher rates than men.</p>
+
+      <span class="section-label">04 &mdash; What &ldquo;unexplained&rdquo; actually means</span>
+
+      <p>The unexplained residual gap does <em>not</em> equal discrimination. It represents: (1) unmeasured worker characteristics (commute willingness, specific skills, performance, negotiation); (2) unmeasured job characteristics (risk, physical demands); (3) actual discrimination in pay-setting; and (4) statistical noise. Separating these components requires methods beyond standard decomposition&mdash;primarily audit studies and natural experiments.</p>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway:</strong> After controlling for occupation, hours, education, industry, and experience, a residual gap of approximately 8&ndash;14% remains. About 60&ndash;70% of the unadjusted gap is explained by observable differences. The unexplained residual includes both potential discrimination and unmeasured factors. Goldin&rsquo;s research identifies the &ldquo;greedy jobs&rdquo; premium as the most important structural driver.</div>
+    </section>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">Occupation Sorting</h2>
+      </div>
+
+      <span class="section-label">05 &mdash; Why women and men work in different jobs</span>
+
+      <p>Approximately 50% of the raw wage gap is attributable to women and men working in <em>different</em> occupations and industries&mdash;a phenomenon called occupational sorting. Women are overrepresented in education, healthcare support, administrative services, and social work; men are overrepresented in engineering, construction, finance, and technology.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Selected occupation wage comparisons and gender composition (BLS 2024)</caption>
+          <thead><tr><th>Occupation</th><th>Median Annual Pay</th><th>% Female</th></tr></thead>
+          <tbody>
+            <tr><td>Software developer</td><td class="td-num">$131,490</td><td>22%</td></tr>
+            <tr><td>Financial manager</td><td class="td-num">$156,100</td><td>54%</td></tr>
+            <tr><td>Registered nurse</td><td class="td-num">$81,220</td><td>87%</td></tr>
+            <tr><td>Elementary teacher</td><td class="td-num">$61,820</td><td>77%</td></tr>
+            <tr><td>Social worker</td><td class="td-num">$58,380</td><td>83%</td></tr>
+            <tr><td>Civil engineer</td><td class="td-num">$99,540</td><td>17%</td></tr>
+            <tr><td>Home health aide</td><td class="td-num">$33,530</td><td>87%</td></tr>
+            <tr><td>Physician</td><td class="td-num">$229,300+</td><td>38%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">06 &mdash; Does occupation choice fully explain the gap?</span>
+
+      <p>The key structural finding from Goldin and others is the <strong>&ldquo;devaluation&rdquo; pattern</strong>: when women enter a field in large numbers, wages in that field tend to decline relative to other fields, and vice versa. Research on the computing industry (once female-dominated) and other fields shows this pattern historically. This means &ldquo;choice of occupation&rdquo; and &ldquo;labor market discrimination&rdquo; are not cleanly separable&mdash;the value placed on occupations is partly endogenous to gender composition.</p>
+
+      <p>Paula England and others have documented this systematically: female-dominated occupations pay less than male-dominated occupations with similar skill requirements, educational demands, and working conditions. This gap is not fully explained by the characteristics of the work itself.</p>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway:</strong> Occupational sorting explains roughly half the raw gap. Women disproportionately work in lower-paying fields, men in higher-paying ones. But this &ldquo;choice&rdquo; explanation has limits: female-dominated occupations pay less than comparably skilled male-dominated ones, and wages in fields tend to fall when women enter them in large numbers. Sorting is not a neutral choice operating in a neutral market.</div>
+    </section>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">The Motherhood Penalty</h2>
+      </div>
+
+      <span class="section-label">07 &mdash; The child earnings penalty</span>
+
+      <p>The most well-documented driver of the gender wage gap is not raw discrimination but the <strong>motherhood penalty</strong>: the earnings loss women experience following childbirth, relative to similarly qualified men who have children.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Motherhood Penalty &mdash; Key Findings</span>
+          <span class="stat-block-period">Long-run earnings trajectory studies</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Earnings penalty 10 years post-birth (Danish admin data, Kleven et al.)</span><span class="stat-val negative">&minus;20% relative to pre-birth trajectory</span></div>
+          <div class="stat-row"><span class="stat-key">Effect on hours worked (same study)</span><span class="stat-val negative">Large reduction, especially years 1&ndash;5</span></div>
+          <div class="stat-row"><span class="stat-key">Fatherhood &ldquo;premium&rdquo; (fathers vs. childless men)</span><span class="stat-val positive">+6% in some studies</span></div>
+          <div class="stat-row"><span class="stat-key">U.S. gender earnings gap explained by child penalty (Kleven)</span><span class="stat-val warn">~80% of the long-run gap</span></div>
+          <div class="stat-row"><span class="stat-key">Share of gap explained by child penalty (Denmark, 2013)</span><span class="stat-val warn">80% of total gender gap</span></div>
+          <div class="stat-row"><span class="stat-key">Penalty reduction in countries with generous parental leave</span><span class="stat-val positive">Smaller but not eliminated</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">08 &mdash; Why the penalty exists</span>
+
+      <p>The motherhood penalty is driven by several mechanisms: (1) career interruptions and reduced experience accumulation; (2) reduction in hours worked; (3) switching to lower-paying but more flexible employers or roles; and (4) possible employer discrimination against mothers (the &ldquo;maternal wall&rdquo;).</p>
+
+      <p>The relative contributions of these mechanisms vary by study. Claudia Goldin&rsquo;s work emphasizes the role of <strong>temporal flexibility</strong>: in professions that pay a very high premium for being available at specific times (law, finance, consulting), reducing hours by even 20% reduces pay by far more than 20%. Women who shift to flexible arrangements post-childbirth exit the &ldquo;greedy job&rdquo; pay structure entirely.</p>
+
+      <p>Audit studies find some direct employer discrimination against mothers: identical r&eacute;sum&eacute;s with signals of parenthood result in lower callback rates for women and the same or higher rates for men (Correll et al., 2007, American Journal of Sociology). This &ldquo;maternal wall&rdquo; effect is separate from the hours/flexibility channel.</p>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway:</strong> The motherhood penalty&mdash;approximately 20% lower earnings 10 years post-birth relative to childless women and to fathers&mdash;is the single largest driver of the long-run gender wage gap, potentially explaining up to 80% of it. Mechanisms include reduced hours, career interruptions, flexibility trades, and direct employer discrimination against mothers. The fatherhood &ldquo;premium&rdquo; (fathers earn more than childless men) exists simultaneously, widening the gap from both directions.</div>
+    </section>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Discrimination: Audit Studies</h2>
+      </div>
+
+      <span class="section-label">09 &mdash; What audit studies find</span>
+
+      <p>The most rigorous direct evidence on gender discrimination in hiring and pay comes from <strong>audit studies</strong> (randomized resume experiments) and natural experiments. These bypass the self-selection problems in observational data.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Selected audit studies on gender discrimination in hiring and pay</caption>
+          <thead><tr><th>Study</th><th>Method</th><th>Finding</th></tr></thead>
+          <tbody>
+            <tr><td>Goldin &amp; Rouse (2000, AER)</td><td>Blind auditions in orchestras</td><td>Blind auditions increased female hiring by 25&ndash;46%</td></tr>
+            <tr><td>Moss-Racusin et al. (2012, PNAS)</td><td>Identical STEM r&eacute;sum&eacute;s (male/female names)</td><td>Female-named applicants rated less competent; offered lower starting salaries</td></tr>
+            <tr><td>Correll, Benard &amp; Paik (2007, AJS)</td><td>R&eacute;sum&eacute;s with parenthood signal</td><td>Mothers penalized; fathers given premium; child penalty in callbacks</td></tr>
+            <tr><td>Kricheli-Katz &amp; Regev (2016)</td><td>eBay identical items, seller gender</td><td>Items sold by women received lower prices (approx. 20% less)</td></tr>
+            <tr><td>Neumark, Bank &amp; Van Nort (1996, QJE)</td><td>Matched pairs at restaurants</td><td>High-price restaurants favored male waitstaff significantly</td></tr>
+            <tr><td>Riach &amp; Rich (2002, EJ) meta-analysis</td><td>Review of 26 studies across countries</td><td>Mixed results; discrimination context-specific, not universal</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">10 &mdash; The limits of audit evidence</span>
+
+      <p>Audit studies find discrimination is <em>real but not universal</em>. It varies significantly by occupation (more prevalent in male-dominated high-status fields), seniority level, and context. Studies specifically designed to measure discrimination in pay (rather than hiring) are fewer and harder to conduct. The conclusion from this literature is that discrimination is one component of the wage gap&mdash;not the sole explanation, but not zero.</p>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway:</strong> Audit studies confirm gender discrimination exists in specific contexts&mdash;STEM hiring, high-end restaurants, maternal wall penalties. Blind auditions in orchestras significantly increased female hiring. But discrimination is context-dependent and not uniformly present across all sectors. It is one contributor to the adjusted residual wage gap, alongside unmeasured worker characteristics and the flexible-work premium structure.</div>
+    </section>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">International Comparisons</h2>
+      </div>
+
+      <span class="section-label">11 &mdash; OECD gender wage gap data</span>
+
+      <p>The gender wage gap is a global phenomenon but varies substantially across countries, suggesting policy and institutional factors matter.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Gender wage gap (unadjusted, full-time workers) across selected OECD nations, 2023</caption>
+          <thead><tr><th>Country</th><th>Gender Wage Gap (%)</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>South Korea</td><td class="td-num">31.2%</td><td>Highest in OECD</td></tr>
+            <tr><td>Japan</td><td class="td-num">21.3%</td><td>Strong occupational segregation</td></tr>
+            <tr><td>United States</td><td class="td-num">17.0%</td><td>OECD definition; near median</td></tr>
+            <tr><td>OECD Average</td><td class="td-num">11.9%</td><td>Varies widely by methodology</td></tr>
+            <tr><td>Germany</td><td class="td-num">14.2%</td><td>High despite strong labor protections</td></tr>
+            <tr><td>United Kingdom</td><td class="td-num">14.0%</td><td>Mandatory gender pay gap reporting since 2017</td></tr>
+            <tr><td>Canada</td><td class="td-num">16.1%</td><td>&mdash;</td></tr>
+            <tr><td>Sweden</td><td class="td-num">7.3%</td><td>Generous parental leave; still persistent gap</td></tr>
+            <tr><td>Denmark</td><td class="td-num">5.8%</td><td>Near-universal childcare; lowest in OECD</td></tr>
+            <tr><td>Belgium</td><td class="td-num">5.0%</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">12 &mdash; What explains cross-country variation</span>
+
+      <p>Countries with smaller gender wage gaps share several features: <strong>universal, affordable childcare</strong> (reduces career interruptions); <strong>paid parental leave available to both parents</strong> (Iceland and Scandinavian models reduce the signal value of maternity); <strong>equal pay legislation with enforcement</strong>; and <strong>lower occupational segregation</strong>. However, even Sweden&mdash;with generous family policy&mdash;maintains a 7.3% gap, suggesting structural factors persist regardless of policy.</p>
+
+      <p>The Nordic gap is primarily attributable to occupational segregation (Nordic labor markets are among the most occupationally segregated by gender in the developed world, despite high female employment) rather than within-occupation pay differences.</p>
+
+    <div class="part-takeaway"><strong>Part 6 takeaway:</strong> The U.S. gender wage gap (17% OECD measure) is above the OECD average (11.9%) but far below South Korea (31.2%) and Japan (21.3%). Countries with the smallest gaps combine universal childcare, shared parental leave, and pay transparency laws. But even Denmark and Sweden maintain persistent gaps primarily driven by occupational segregation, suggesting no policy mix eliminates the gap entirely.</div>
+    </section>
+
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Steelmanning Both Sides</h2>
+      </div>
+
+      <span class="section-label">13 &mdash; The strongest case that the gap reflects serious structural inequality</span>
+
+      <p>The motherhood penalty of ~20% over 10 years is documented in high-quality administrative data across multiple countries. It is not primarily explained by women freely choosing less demanding work&mdash;it is driven by the structure of high-paying jobs that penalize flexibility disproportionately. Women who take the same leave as men in countries with gender-neutral parental leave systems still experience larger career interruptions because of unequal uptake.</p>
+
+      <p>Occupational devaluation is real: wages in female-dominated fields are systematically lower than male-dominated fields with comparable skill demands, and this pattern emerged historically as women entered fields (computing, biology). The &ldquo;choice of occupation&rdquo; argument therefore doesn&rsquo;t fully explain the gap&mdash;the market doesn&rsquo;t value female-coded work equally. Audit studies confirm direct discrimination in specific high-value hiring contexts (STEM, high-status service industries). The residual 8&ndash;14% adjusted gap is real and partially reflects employer behavior.</p>
+
+      <span class="section-label">14 &mdash; The strongest case that the gap is largely explained by non-discriminatory factors</span>
+
+      <p>After controlling for occupation, hours, industry, and experience, approximately 60&ndash;70% of the gap is explained by measurable differences. Young, childless, college-educated women in the same field as comparably qualified men earn at near parity in many sectors. The gap is primarily a phenomenon that emerges with childbearing, not a uniform experience across the female workforce.</p>
+
+      <p>The &ldquo;greedy jobs&rdquo; premium is not discrimination per se&mdash;it is a market valuing specific time patterns. The solution is changing the structure of high-paying work (reducing the premium for continuous availability) rather than attributing earnings differences entirely to bias. Countries with equal pay laws and high female labor force participation still have significant gaps because of occupational sorting, suggesting legislation alone does not resolve the structural issue.</p>
+
+      <p>Men take more dangerous jobs (93% of occupational fatalities are male), work longer hours on average, and are more concentrated in high-variance/high-risk career paths. These factors are compensated by higher average wages and are not captured in simple comparisons.</p>
+
+      <span class="section-label">15 &mdash; Where the evidence converges</span>
+
+      <p>Both sides of this debate share common ground on several empirical points: the raw gap is real; a significant portion is explained by occupational and hours differences; a residual of 8&ndash;14% persists after controls; the motherhood penalty is the dominant long-run driver; and discrimination exists in some contexts but is not uniform. The main dispute is over interpretation&mdash;whether the occupational structure itself reflects discrimination (devaluation thesis) or free preferences operating in a neutral market (compensating differentials thesis). Both have empirical support.</p>
+
+    <div class="part-takeaway"><strong>Part 7 takeaway:</strong> The case for structural inequality rests on devaluation evidence, the motherhood penalty, and audit studies showing discrimination in specific high-value contexts. The case against a solely discriminatory explanation rests on the adjusted residual being smaller than the raw gap, near-parity for childless women, and the greedy-jobs premium being a market phenomenon. Neither &ldquo;it&rsquo;s all discrimination&rdquo; nor &ldquo;it&rsquo;s all choice&rdquo; survives the evidence. The motherhood penalty and occupational devaluation are the most important structural forces.</div>
+    </section>
+
+    <div class="falsify-box">
+      <span class="falsify-label">&#9650; What would change this article&rsquo;s conclusions</span>
+      <p><strong>This article concludes that:</strong> (1) the unadjusted gap is ~18% (full-time); (2) after controls, ~8&ndash;14% residual remains; (3) the motherhood penalty is the largest single driver; (4) discrimination exists in specific contexts; (5) occupational devaluation is real.</p>
+      <p><strong>These conclusions would be falsified by:</strong></p>
+      <p>&bull; Controlled studies consistently finding zero residual gap after complete accounting for measurable factors</p>
+      <p>&bull; Longitudinal data showing the motherhood penalty has disappeared as childcare access expanded</p>
+      <p>&bull; Replication failures of the major audit studies (Goldin &amp; Rouse, Moss-Racusin, Correll)</p>
+      <p>&bull; Evidence that occupational wage differences between female-dominated and male-dominated fields are fully explained by non-gender skill and risk differences</p>
+      <p>If any of these occur, this article will be updated.</p>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;The Gender Wage Gap: What the Data Actually Shows.&rdquo; Updated March 2026. https://www.truthbased.org/gender-wage-gap</span>
+    </div>
+  </article>
+  </main>
+
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven research and analysis, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-evm.png" loading="lazy" decoding="async" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-bitcoin.png" loading="lazy" decoding="async" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-solana.png" loading="lazy" decoding="async" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-xrp.png" loading="lazy" decoding="async" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-litecoin.png" loading="lazy" decoding="async" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-stellar.png" loading="lazy" decoding="async" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-usdt-trc20.png" loading="lazy" decoding="async" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: BLS Current Population Survey, Census ASEC, OECD, Pew Research Center, IZA</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    
+    // ── Chart 1: International Firearm Death Rates ────────────────
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['U.S.','Finland','Switzerland','France','Canada','Austria','Sweden','Belgium','Italy','New Zealand','Australia','Germany','Spain','Netherlands','UK','Japan'],
+        datasets: [{
+          label: 'Total firearm deaths per 100,000',
+          data: [12.8, 3.6, 2.8, 2.7, 2.1, 2.0, 1.9, 1.7, 1.3, 1.2, 1.0, 1.01, 0.6, 0.5, 0.23, 0.03],
+          backgroundColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.45)' : 'rgba(27,107,62,0.25)'; },
+          borderColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)'; },
+          borderWidth: 1.5,
+          borderRadius: 3,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Total Firearm Deaths per 100,000 Population (OECD Nations)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(1) + ' per 100k' } }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // ── Chart 2: U.S. Firearm Homicide Rate 1993–2023 ────────────────
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['1993','1996','2000','2004','2008','2010','2014','2016','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'U.S. Firearm Homicide Rate per 100k',
+          data: [7.0, 5.5, 4.0, 3.9, 3.8, 3.6, 3.7, 4.0, 4.4, 5.9, 6.7, 6.2, 5.6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: 'rgba(184,58,30,0.7)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (1993–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
+        },
+        scales: {
+          y: { beginAtZero: true, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
