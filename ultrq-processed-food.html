@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultra-Processed Food: What the Research Actually Shows | TruthBased.org</title>
+  <meta name="description" content="RCT and cohort data on ultra-processed food. Hall 2019 RCT found +508 kcal/day intake. Mortality HR 1.15, T2D HR 1.56. NOVA classification explained. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/ultra-processed-food">
+  <meta property="og:title"   content="Ultra-Processed Food: What the Research Actually Shows | TruthBased.org">
+  <meta property="og:description" content="Hall 2019 RCT: +508 kcal/day on UPF diet. Mortality HR 1.15. T2D HR 1.56. NOVA classification. Both sides steelmanned.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Ultra-Processed Food: What the Research Actually Shows | TruthBased.org">
+  <meta name="twitter:description" content="RCT and cohort evidence. +508 kcal/day intake, mortality HR 1.15, T2D HR 1.56. Both sides steelmanned.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/ultra-processed-food">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       TruthBased.org — U.S. Gun Violence vs. Peer Nations
+       Matches homepage design system exactly.
+    ========================================================= */
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    /* JUMP NAV */
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    /* ── Collapsible jump-nav on small screens ── */
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ARTICLE HEADER */
+    .article-header { margin-bottom: 28px; }
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    /* BOXES */
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    /* SOURCE PILLS */
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    /* PART HEADERS */
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    /* STAT BLOCKS */
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    /* PER-CAPITA BOX */
+    .capita-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px; margin: 16px 0; text-align: center;
+    }
+    .capita-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); margin-bottom: 6px;
+    }
+    .capita-big {
+      font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+      color: var(--green); line-height: 1.1;
+    }
+    .capita-sub { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+    .capita-verdict {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--green); margin-top: 10px;
+    }
+
+    /* CASE CARDS (equivalent of shooter cards) */
+    .case-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      margin: 16px 0; overflow: hidden;
+    }
+    .case-card-head {
+      background: var(--surface); padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .case-name {
+      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .case-meta-line {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-dim); margin-top: 2px;
+    }
+    .case-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    }
+    .badge-confirmed { background: var(--brick-light); color: var(--brick); }
+    .badge-admin     { background: var(--amber-light); color: var(--amber); }
+    .badge-acquitted { background: var(--green-light); color: var(--green); }
+    .case-card-body { padding: 0; }
+    .case-row {
+      display: flex; padding: 8px 16px;
+      border-bottom: 1px solid var(--border); font-size: 0.86rem; gap: 12px;
+    }
+    .case-row:last-child { border-bottom: none; }
+    .case-key {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      color: var(--text-quiet); min-width: 100px; padding-top: 1px;
+    }
+    .case-val { color: var(--text-body); line-height: 1.5; }
+    .case-val.warn   { color: var(--amber); }
+    .case-val.alert  { color: var(--brick); }
+
+    /* TABLES */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-dismissed { color: var(--brick); font-weight: 600; }
+    .td-merits    { color: var(--amber); font-weight: 600; }
+    .td-both      { color: var(--text-dim); font-size: 0.78rem; }
+
+    /* CHART CANVAS */
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    /* MATH BOX */
+    .math-box {
+      background: #1a1714; color: rgba(247,245,241,0.9);
+      border-radius: 6px; padding: 18px 22px; margin: 16px 0;
+      font-family: var(--font-mono); font-size: 0.88rem; line-height: 2;
+    }
+    .math-box .math-label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(247,245,241,0.45); display: block; margin-bottom: 6px;
+    }
+    .math-box .math-result {
+      color: #7ec99a; font-size: 1.1rem; font-weight: 700;
+    }
+    .math-box .math-dim { color: rgba(247,245,241,0.55); }
+
+    /* STEELMAN */
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    /* CONCLUSION STATS */
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    /* SOURCES SECTION */
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+    .source-item a { color: var(--brick); word-break: break-all; }
+
+    /* PROSE */
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .case-card-head { flex-direction: column; gap: 8px; }
+      .case-row { flex-direction: column; gap: 2px; }
+      .case-key { min-width: unset; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .math-box { padding: 14px 16px; font-size: 0.8rem; }
+      .capita-big { font-size: 1.8rem; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+
+    [id^="part"] { scroll-margin-top: 120px; }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 560px; }
+
+    /* ─── Dark Mode ─── */
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .math-box { background: #0f0e0d; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+
+
+    /* ── Claims vs. Evidence quick-reference ── */
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell {
+      padding: 10px 12px;
+    }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Falsifiability threshold ── */
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Part takeaway boxes ── */
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    /* ── Colorblind accessibility symbols ── */
+    .stat-val.positive::before { content: "\2713\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.negative::before { content: "\2717\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.warn::before { content: "\26A0\00a0"; font-size: 1.05em; font-weight: 700; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
+      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; color: #666; }
+      a.source-pill[href]::after { content: none; }
+      .stat-block, .box, .steelman-wrap, .evidence-table, .capita-box, .tldr-box, .scale-vis { break-inside: avoid; }
+      .part-header { break-after: avoid; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+  
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #f7f5f1)));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, var(--page-ground, #1a1918)));
+    }
+    /* --- TL;DR, Scope, Scale additions --- */
+    .tldr-box { background: var(--card-face); border: 1px solid var(--rule); border-left: 3px solid var(--brick); border-radius: 4px; padding: 18px 20px; margin: 24px 0; }
+    .tldr-box .tldr-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick); display: block; margin-bottom: 10px; }
+    .tldr-box p { margin: 6px 0; font-size: 0.82rem; line-height: 1.55; }
+    .scale-vis { margin: 20px 0; padding: 16px; background: var(--card-face); border: 1px solid var(--rule); border-radius: 4px; }
+    .scale-vis .scale-label { font-family: var(--font-mono); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-quiet); margin-bottom: 12px; display: block; }
+    .scale-bar-wrap { position: relative; height: 28px; background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+    .scale-bar-fill { height: 100%; background: var(--brick); border-radius: 2px 0 0 2px; min-width: 2px; }
+    .scale-bar-nums { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-quiet); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 18px 0 24px; }
+    .evidence-table th { background: var(--card-face); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-quiet); padding: 8px 10px; text-align: left; border-bottom: 2px solid var(--rule); }
+    .evidence-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.4; }
+    .evidence-table tr:last-child td { border-bottom: none; }
+    .evidence-table .total-row td { font-weight: 700; border-top: 2px solid var(--text-head); }
+    @media (max-width: 640px) { .evidence-table { font-size: 0.65rem; } .evidence-table th, .evidence-table td { padding: 6px 6px; } }
+    
+    caption, .sr-only-caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left;
+      caption-side: top;
+      padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+
+    /* QR expand */
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ultra-Processed Food: What the Research Actually Shows",
+    "description": "Hall 2019 RCT, Dicken 2025, and large cohort studies on ultra-processed food. NOVA classification. Mortality, cardiovascular, and T2D outcomes reviewed.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-04",
+    "dateModified": "2026-03-04",
+    "mainEntityOfPage": "https://www.truthbased.org/ultra-processed-food",
+    "keywords": ["ultra-processed food", "UPF", "NOVA classification", "Hall 2019", "food additives", "processed meat", "sugar sweetened beverages", "diet"]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Nutrition Science</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+    <a href="#part1" class="jump-btn">Part 1 &mdash; What Are UPFs</a>
+    <a href="#part2" class="jump-btn">Part 2 &mdash; RCT Evidence</a>
+    <a href="#part3" class="jump-btn">Part 3 &mdash; Mortality &amp; Disease</a>
+    <a href="#part4" class="jump-btn">Part 4 &mdash; Mechanisms</a>
+    <a href="#part5" class="jump-btn">Part 5 &mdash; Heterogeneity</a>
+    <a href="#part6" class="jump-btn">Part 6 &mdash; Steelman</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Nutrition Science</span>
+      <h1>Ultra-Processed Food: What the Research Actually Shows</h1>
+      <p class="article-deck">Ultra-processed foods (UPFs) now make up 57&ndash;60% of calories in the American diet. A 2019 randomized controlled trial found participants ate 508 more calories per day on UPF diets. Large cohort studies find 15% higher all-cause mortality. But &ldquo;processed food&rdquo; is not a monolith&mdash;the heterogeneity in the evidence matters significantly.</p>
+      <div class="article-meta">
+        <span class="meta-pill">Updated March 2026</span>
+        <span class="meta-pill">9 primary sources</span>
+        <span class="meta-pill">~13 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Ultra-processed food is poison&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Overstated. UPFs are associated with worse health outcomes at population level, but the effect is heterogeneous. Whole-grain bread, low-fat yogurt, and plant-based meat substitutes are technically &ldquo;ultra-processed&rdquo; under NOVA but associated with neutral or protective effects in cohort data.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Processed food is fine&mdash;it&rsquo;s just calories&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not fully supported. The Hall 2019 RCT found that matching UPF and unprocessed diets for calories, fat, sugar, fiber, and macronutrients still produced greater <em>ad libitum</em> intake on UPF diets (+508 kcal/day), suggesting processing characteristics beyond nutritional content drive overconsumption.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Food additives are the main problem&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Insufficient evidence at this stage. Additives are one of several hypothesized mechanisms. The evidence is stronger for the food matrix disruption and energy density hypotheses. Some specific additives (certain emulsifiers, artificial sweeteners) have mechanistic evidence for gut microbiome disruption, but population-level causal evidence is limited.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;All processed meat is equally harmful&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not exactly. Processed meat (ham, bacon, sausages) consistently shows the highest risk associations in cohort studies (T2D HR 1.68, colorectal cancer RR 1.16 per 50g/day). Within UPFs, processed meats and sugar-sweetened beverages drive the largest risk signals. Not all UPF subcategories behave the same.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <a href="https://doi.org/10.1016/j.cmet.2019.05.008" class="source-pill" target="_blank" rel="noopener noreferrer">Hall et al. 2019 (RCT)</a>
+        <a href="https://doi.org/10.1136/bmj.m688" class="source-pill" target="_blank" rel="noopener noreferrer">Rico-Campà et al. 2019</a>
+        <a href="https://doi.org/10.1016/S2468-2667(21)00148-7" class="source-pill" target="_blank" rel="noopener noreferrer">Srour et al. 2020 (CVD)</a>
+        <a href="https://doi.org/10.1136/bmj.l2408" class="source-pill" target="_blank" rel="noopener noreferrer">Fiolet et al. 2018</a>
+        <a href="https://doi.org/10.1136/bmj-2023-077310" class="source-pill" target="_blank" rel="noopener noreferrer">Dicken et al. 2025</a>
+        <a href="https://www.thelancet.com/journals/lanrhe/article/PIIS2665-9913(21)00099-6" class="source-pill" target="_blank" rel="noopener noreferrer">Llavero-Valero et al.</a>
+        <a href="https://doi.org/10.1007/s40279-022-01671-5" class="source-pill" target="_blank" rel="noopener noreferrer">Lane et al. 2023 (meta)</a>
+        <a href="https://doi.org/10.1136/bmj.o857" class="source-pill" target="_blank" rel="noopener noreferrer">Monteiro et al. (NOVA)</a>
+        <a href="https://doi.org/10.1016/j.amepre.2015.12.035" class="source-pill" target="_blank" rel="noopener noreferrer">Steele et al. (U.S. intake)</a>
+      </div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">What Are Ultra-Processed Foods?</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; The NOVA classification system</span>
+
+      <p>The NOVA classification system, developed by Carlos Monteiro and colleagues at the University of S&atilde;o Paulo, categorizes foods by their degree of industrial processing rather than nutrient content:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>NOVA food classification groups</caption>
+          <thead><tr><th>Group</th><th>Description</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Group 1</strong></td><td>Unprocessed or minimally processed foods</td><td>Fresh fruit, vegetables, plain meat, eggs, milk</td></tr>
+            <tr><td><strong>Group 2</strong></td><td>Processed culinary ingredients</td><td>Flour, cooking oils, butter, salt, sugar</td></tr>
+            <tr><td><strong>Group 3</strong></td><td>Processed foods (Group 1 + Group 2)</td><td>Canned vegetables, salted nuts, cured meats, cheese</td></tr>
+            <tr><td><strong>Group 4</strong></td><td>Ultra-processed foods &mdash; industrial formulations with additives not used in home cooking</td><td>Packaged snacks, soft drinks, instant noodles, chicken nuggets, margarine, flavored yogurt, breakfast cereals</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The defining characteristic of Group 4 (UPFs) is the use of food substances extracted or derived from foods, and additives that serve industrial functions: emulsifiers, stabilizers, colors, flavors, texture agents. These are not found in home cooking and are not used to &ldquo;preserve&rdquo; food but to create desirable sensory properties (texture, flavor, color) and extend shelf life.</p>
+
+      <span class="section-label">02 &mdash; How prevalent are UPFs in the American diet?</span>
+
+      <p>According to Steele et al. (2016, American Journal of Preventive Medicine), using NHANES 2009&ndash;2010 data: UPFs provided <strong>57.9% of total energy intake</strong> and 89.7% of added sugar intake in the U.S. adult diet. More recent estimates suggest this has risen to approximately 60%. By contrast, UPF consumption is lower in most European nations (30&ndash;50% of energy intake) and substantially lower in many middle-income countries.</p>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway:</strong> Ultra-processed foods (NOVA Group 4) are defined by their industrial formulation with additives not used in home cooking&mdash;not merely by being packaged or containing preservatives. They constitute approximately 58&ndash;60% of caloric intake in the U.S. diet. The NOVA system classifies by processing type, not nutrient content, which is why some nutritionally unremarkable foods (flavored yogurt) qualify as UPFs while some nutritionally problematic foods (fried eggs, butter) do not.</div>
+    </section>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">The RCT Evidence</h2>
+      </div>
+
+      <span class="section-label">03 &mdash; The Hall 2019 feeding trial (NIH)</span>
+
+      <p>The strongest experimental evidence for UPF effects on caloric intake comes from a <strong>randomized controlled crossover trial</strong> by Kevin Hall and colleagues at the National Institutes of Health (Cell Metabolism, 2019). This is the highest-quality design available for diet research because it controls for confounders that plague observational studies.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Hall et al. 2019 &mdash; Key Findings</span>
+          <span class="stat-block-period">NIH inpatient RCT, n=20</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Design</span><span class="stat-val neutral">Crossover RCT; 2-week each diet; ad libitum eating; NIH inpatient unit</span></div>
+          <div class="stat-row"><span class="stat-key">Dietary match</span><span class="stat-val neutral">Matched for calories, fat, sugar, salt, fiber, macronutrients offered</span></div>
+          <div class="stat-row"><span class="stat-key">Ad libitum caloric intake on UPF diet vs. unprocessed</span><span class="stat-val negative">+508 kcal/day on UPF diet</span></div>
+          <div class="stat-row"><span class="stat-key">Body weight change after 2 weeks on UPF diet</span><span class="stat-val negative">+0.9 kg</span></div>
+          <div class="stat-row"><span class="stat-key">Body weight change after 2 weeks on unprocessed diet</span><span class="stat-val positive">&minus;0.9 kg</span></div>
+          <div class="stat-row"><span class="stat-key">Eating rate on UPF diet</span><span class="stat-val negative">Significantly faster</span></div>
+          <div class="stat-row"><span class="stat-key">Appetite hormones</span><span class="stat-val warn">UPF diet suppressed PYY (satiety) more; ghrelin similar</span></div>
+        </div>
+      </div>
+
+      <p>The critical finding is that despite being offered matched nutritional content, participants ate significantly more calories on UPF diets. This suggests that <strong>processing characteristics beyond macronutrients</strong>&mdash;texture, palatability, eating rate, texture disruption&mdash;drive overconsumption independently of caloric density. The study was small (n=20) and short (2 weeks each), limiting generalizability, but it is the strongest causal evidence available for UPF effects on food intake.</p>
+
+      <span class="section-label">04 &mdash; Dicken et al. 2025</span>
+
+      <p>A follow-up RCT (Dicken et al., BMJ 2025) comparing weight loss on minimally processed vs. UPF-matched diets over 12 weeks (n=36) found that participants on the minimally processed diet lost significantly more weight (&minus;2.06% body weight) than those on the matched UPF diet (&minus;1.05%), despite matched macronutrients and calorie targets. This extends the Hall findings to a longer-term, weight-loss context.</p>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway:</strong> The Hall 2019 NIH inpatient RCT found that matched-nutrition UPF diets produced +508 kcal/day ad libitum intake and +0.9 kg weight gain vs. unprocessed diets over 2 weeks. Dicken 2025 found less weight loss on matched UPF diets over 12 weeks. These RCTs are the highest-quality evidence available and support a causal role for processing characteristics&mdash;beyond macronutrient content&mdash;in driving overconsumption and weight gain.</div>
+    </section>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">Mortality and Disease: Cohort Evidence</h2>
+      </div>
+
+      <span class="section-label">05 &mdash; All-cause mortality</span>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">UPF and All-Cause Mortality &mdash; Key Cohort Studies</span>
+          <span class="stat-block-period">Adjusted hazard ratios: highest vs. lowest UPF intake quintile</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Rico-Campà et al. 2019 (Spain, SUN cohort, n=19,899)</span><span class="stat-val negative">HR 1.62 highest vs. lowest quartile</span></div>
+          <div class="stat-row"><span class="stat-key">Schnabel et al. 2019 (France, NutriNet, n=44,551)</span><span class="stat-val negative">HR 1.14 per 10% increment in UPF share</span></div>
+          <div class="stat-row"><span class="stat-key">Lane et al. 2023 meta-analysis (n=985,000)</span><span class="stat-val negative">HR 1.15 highest vs. lowest; RR 1.04 per 10% increment</span></div>
+          <div class="stat-row"><span class="stat-key">Kim et al. 2021 (U.S., PLCO trial, n=46,341)</span><span class="stat-val negative">HR 1.31 highest vs. lowest quintile</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">06 &mdash; Type 2 diabetes</span>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">UPF and T2D Risk</span>
+          <span class="stat-block-period">Adjusted estimates from prospective cohort studies</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Llavero-Valero et al. (SUN cohort) &mdash; overall UPF</span><span class="stat-val negative">HR 1.56 highest vs. lowest quartile</span></div>
+          <div class="stat-row"><span class="stat-key">Srour et al. 2020 (NutriNet, France) &mdash; per 10% increment</span><span class="stat-val negative">RR 1.12</span></div>
+          <div class="stat-row"><span class="stat-key">Processed meat specifically</span><span class="stat-val negative">HR 1.68 (multiple meta-analyses)</span></div>
+          <div class="stat-row"><span class="stat-key">Sugar-sweetened beverages (SSBs)</span><span class="stat-val negative">RR 1.20&ndash;1.35 per serving/day</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">07 &mdash; Cardiovascular disease</span>
+
+      <p>Fiolet et al. (BMJ, 2018) found a 12% increase in cardiovascular disease risk per 10% increase in UPF dietary share (n=105,159, NutriNet-Sant&eacute; cohort, 5-year follow-up). Srour et al. (2020, Lancet) found HR 1.11 for cardiovascular disease and HR 1.17 for coronary heart disease, highest vs. lowest UPF consumers. Effect sizes are modest but consistent across multiple large cohorts.</p>
+
+      <span class="section-label">08 &mdash; Limitations of observational evidence</span>
+
+      <p>All cohort studies face the same fundamental challenge: UPF consumption correlates with other markers of unhealthy lifestyle (lower income, lower education, less exercise, worse sleep, higher stress), making it difficult to isolate UPF effects even with extensive statistical adjustment. The &ldquo;healthy user bias&rdquo; problem is the central limitation. Multiple well-controlled cohorts adjusting for BMI, income, education, physical activity, smoking, and overall dietary quality continue to find associations&mdash;but residual confounding cannot be fully excluded from observational data alone. This is why the Hall 2019 RCT, despite its small sample, is particularly valuable: it controls these confounders experimentally.</p>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway:</strong> Large cohort studies (combined n=1M+) find approximately 15% higher all-cause mortality (HR 1.15), 12&ndash;56% higher T2D risk, and 11&ndash;17% higher CVD risk for high vs. low UPF consumers. The associations are consistent across multiple cohorts and countries. Observational limitations (residual confounding) mean these are associations rather than proven causal effects&mdash;the RCT evidence provides the causal mechanism.</div>
+    </section>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">Proposed Mechanisms</h2>
+      </div>
+
+      <span class="section-label">09 &mdash; How UPFs might cause harm</span>
+
+      <p>Several non-mutually-exclusive mechanisms are proposed, with varying levels of evidence:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Proposed mechanisms linking UPFs to health outcomes</caption>
+          <thead><tr><th>Mechanism</th><th>Evidence Strength</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Hyperpalatability / overconsumption (texture, flavor intensity, eating rate)</td><td>Strong (Hall RCT)</td><td>Experimentally demonstrated. Faster eating rate reduces satiety signals.</td></tr>
+            <tr><td>Food matrix disruption (degraded fiber structure, emulsified fats)</td><td>Moderate</td><td>Intact food structure slows digestion and promotes satiety. Ultra-processing destroys this.</td></tr>
+            <tr><td>Energy density and addictive palatability</td><td>Moderate</td><td>UPFs optimized for bliss point (fat+sugar+salt). Mechanistic evidence in animal models.</td></tr>
+            <tr><td>Specific additives (emulsifiers, artificial sweeteners)</td><td>Weak&ndash;Moderate</td><td>Some animal evidence for gut microbiome disruption. Human RCT evidence limited.</td></tr>
+            <tr><td>Advanced glycation end-products (AGEs) from high-heat processing</td><td>Moderate</td><td>AGEs associated with inflammation and insulin resistance.</td></tr>
+            <tr><td>Displacement of unprocessed foods (opportunity cost)</td><td>Moderate</td><td>High UPF intake crowds out fruits, vegetables, legumes with known benefits.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway:</strong> The strongest mechanistic evidence supports hyperpalatability-driven overconsumption (Hall RCT directly tested this) and food matrix disruption. Additive-specific mechanisms are hypothesized and have some animal model support but limited human causal evidence. The displacement hypothesis (UPFs crowding out protective foods) likely contributes independently of any direct UPF effect. Most researchers believe multiple mechanisms operate simultaneously.</div>
+    </section>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">Heterogeneity: Not All UPFs Are Equal</h2>
+      </div>
+
+      <span class="section-label">10 &mdash; The subcategory problem</span>
+
+      <p>The NOVA UPF category is broad. It includes both Coca-Cola and whole-grain bread made with dough conditioners. Cohort studies that break out UPF subcategories consistently find heterogeneity:</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Risk by UPF subcategory (relative to low consumption, multiple cohort studies)</caption>
+          <thead><tr><th>UPF Subcategory</th><th>Mortality/T2D Signal</th><th>Direction</th></tr></thead>
+          <tbody>
+            <tr><td>Processed meats (ham, bacon, sausages)</td><td>HR 1.68 T2D; RR 1.16 colorectal cancer</td><td class="td-dismissed">Consistently harmful</td></tr>
+            <tr><td>Sugar-sweetened beverages</td><td>RR 1.20&ndash;1.35 T2D per serving/day</td><td class="td-dismissed">Consistently harmful</td></tr>
+            <tr><td>Packaged snacks (chips, cookies)</td><td>HR 1.1&ndash;1.3 mortality</td><td class="td-dismissed">Harmful</td></tr>
+            <tr><td>Breakfast cereals (whole-grain)</td><td>HR &lt;1.0 in some cohorts</td><td class="td-merits">Neutral to protective</td></tr>
+            <tr><td>Yogurt (flavored, low-fat)</td><td>RR 0.86&ndash;0.94 T2D</td><td class="td-merits">Neutral to protective</td></tr>
+            <tr><td>Plant-based meat substitutes</td><td>Limited data; HR ~1.0 in available cohorts</td><td class="td-merits">Unclear</td></tr>
+            <tr><td>Whole-grain bread (commercial)</td><td>HR &lt;1.0 for CVD in some cohorts</td><td class="td-merits">Neutral to protective</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>This heterogeneity has important implications: treating all UPFs as equivalent may be an oversimplification. The harm signal in aggregate UPF analyses is likely driven disproportionately by processed meats, SSBs, and packaged snacks&mdash;not by whole-grain breads or low-fat dairy products that happen to qualify as &ldquo;ultra-processed&rdquo; under NOVA.</p>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway:</strong> The UPF category is heterogeneous. Processed meats (HR 1.68 for T2D), SSBs (RR 1.35), and packaged snacks drive the harm signal. Whole-grain bread, flavored low-fat yogurt, and breakfast cereals&mdash;all technically NOVA Group 4&mdash;are associated with neutral or protective effects in cohort data. Policy and dietary advice that targets &ldquo;all UPFs&rdquo; equally may misallocate concern. The most evidence-based advice targets specific high-risk subcategories.</div>
+    </section>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">Steelmanning Both Sides</h2>
+      </div>
+
+      <span class="section-label">11 &mdash; The strongest case that UPFs cause significant harm</span>
+
+      <p>The Hall 2019 RCT is the key piece of evidence: an inpatient, controlled experiment where matched nutritional content did not prevent +508 kcal/day overconsumption on UPF diets. This is causal evidence that processing characteristics&mdash;independent of macronutrient content&mdash;drive overconsumption. Combined with consistent associations across 10+ large cohort studies (combined n &gt;1M) showing elevated mortality and disease risk, and the plausible mechanisms (hyperpalatability, matrix disruption, displacement), the evidence for harm is substantial.</p>
+
+      <p>The displacement effect is also important even without direct UPF toxicity: when 58% of calories come from UPFs, less room exists for fruits, vegetables, legumes, and whole grains with well-established protective effects. The harm may be partially indirect but is nonetheless real.</p>
+
+      <span class="section-label">12 &mdash; The strongest case for caution in the anti-UPF narrative</span>
+
+      <p>The observational evidence cannot establish causation due to confounding. People who eat more UPFs also tend to be lower income, less educated, less physically active, under more stress, and sleep less&mdash;all independent risk factors for the outcomes being studied. Even well-adjusted models cannot fully exclude these correlates.</p>
+
+      <p>The NOVA classification lumps foods with very different nutritional profiles and health effects into the same category. Yogurt and hot dogs are not comparable health risks. Policy based on broad &ldquo;ultra-processed&rdquo; categorization may be less effective than targeted advice on the highest-risk subcategories (processed meat, SSBs).</p>
+
+      <p>The RCT evidence (Hall 2019) is compelling but small (n=20) and short (2 weeks). Scaling these effects to long-term population outcomes requires assumptions the data cannot directly support. A larger, longer-term RCT is needed but extremely difficult to conduct due to the impracticality of years-long controlled feeding studies.</p>
+
+    <div class="part-takeaway"><strong>Part 6 takeaway:</strong> The case for UPF harm rests on a high-quality RCT showing processing-driven overconsumption (+508 kcal/day) independent of macronutrients, consistent observational associations across 1M+ participants, and plausible mechanisms. The case for caution rests on the observational evidence being unable to fully exclude confounding, the NOVA category being too broad, and the RCT being small and short. The most defensible conclusion: UPFs as a category are associated with worse outcomes, driven primarily by specific subcategories (processed meats, SSBs, packaged snacks); whole-grain and dairy UPF subcategories do not show the same pattern.</div>
+    </section>
+
+    <div class="falsify-box">
+      <span class="falsify-label">&#9650; What would change this article&rsquo;s conclusions</span>
+      <p><strong>This article concludes that:</strong> (1) Hall 2019 RCT demonstrates processing-driven overconsumption (+508 kcal/day); (2) cohort evidence shows HR ~1.15 for all-cause mortality; (3) processed meats and SSBs drive the highest risk signals; (4) plant-based and whole-grain UPF subcategories show neutral to protective associations.</p>
+      <p><strong>These conclusions would be falsified by:</strong></p>
+      <p>&bull; Larger RCTs (&gt;200 participants, &gt;6 months) finding no caloric intake difference between matched UPF and unprocessed diets</p>
+      <p>&bull; Mendelian randomization studies finding no causal pathway between UPF genetic instruments and health outcomes</p>
+      <p>&bull; Large cohort analyses with more granular confounding controls finding hazard ratios collapse toward 1.0</p>
+      <p>&bull; Evidence that whole-grain bread or flavored yogurt UPF subcategories cause harm comparable to processed meats</p>
+      <p>If any of these occur, this article will be updated.</p>
+    </div>
+
+    <div class="cite-this">
+      <span class="cite-this-label">Cite this article</span>
+      <span class="cite-this-text">TruthBased.org. &ldquo;Ultra-Processed Food: What the Research Actually Shows.&rdquo; Updated March 2026. https://www.truthbased.org/ultra-processed-food</span>
+    </div>
+  </article>
+  </main>
+
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven research and analysis, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-evm.png" loading="lazy" decoding="async" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-bitcoin.png" loading="lazy" decoding="async" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-solana.png" loading="lazy" decoding="async" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-xrp.png" loading="lazy" decoding="async" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-litecoin.png" loading="lazy" decoding="async" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-stellar.png" loading="lazy" decoding="async" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="/assets/qr/qr-usdt-trc20.png" loading="lazy" decoding="async" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Hall et al. 2019 (NIH RCT), Dicken et al. 2025, IARC cohort data, BMJ meta-analyses, Lancet, NEJM</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    
+    // ── Chart 1: International Firearm Death Rates ────────────────
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['U.S.','Finland','Switzerland','France','Canada','Austria','Sweden','Belgium','Italy','New Zealand','Australia','Germany','Spain','Netherlands','UK','Japan'],
+        datasets: [{
+          label: 'Total firearm deaths per 100,000',
+          data: [12.8, 3.6, 2.8, 2.7, 2.1, 2.0, 1.9, 1.7, 1.3, 1.2, 1.0, 1.01, 0.6, 0.5, 0.23, 0.03],
+          backgroundColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.45)' : 'rgba(27,107,62,0.25)'; },
+          borderColor: function(ctx) { return ctx.dataIndex === 0 ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)'; },
+          borderWidth: 1.5,
+          borderRadius: 3,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Total Firearm Deaths per 100,000 Population (OECD Nations)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(1) + ' per 100k' } }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // ── Chart 2: U.S. Firearm Homicide Rate 1993–2023 ────────────────
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['1993','1996','2000','2004','2008','2010','2014','2016','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'U.S. Firearm Homicide Rate per 100k',
+          data: [7.0, 5.5, 4.0, 3.9, 3.8, 3.6, 3.7, 4.0, 4.4, 5.9, 6.7, 6.2, 5.6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: 'rgba(184,58,30,0.7)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (1993–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } }
+        },
+        scales: {
+          y: { beginAtZero: true, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+  
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+  
+
+    /* ── Table overflow detection for mobile ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* Nav shadow on scroll */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+  
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  // Add tap-to-enlarge hints under each QR
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+</html>
