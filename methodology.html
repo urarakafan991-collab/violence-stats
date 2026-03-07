@@ -501,7 +501,9 @@
       if(!nav) return;
       window.addEventListener('scroll', function(){
         nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
-      }, {
+      }, {passive:true});
+    })();
+  </script>
 
 
   <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
