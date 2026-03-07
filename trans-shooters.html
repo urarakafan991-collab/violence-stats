@@ -404,6 +404,7 @@
     }
 
     .stat-val.positive { color: var(--green-live); }
+    .stat-val.verdict  { color: var(--green-live); font-weight: 700; }
     .stat-val.negative { color: var(--brick); }
     .stat-val.neutral  { color: var(--amber); }
 
@@ -1489,7 +1490,7 @@
 
     <div class="tldr-box">
       <span class="tldr-label">TL;DR &mdash; The headline numbers</span>
-      <p><strong>Zero of three major databases</strong> show trans people overrepresented as mass shooters. Under the broadest definition (GVA): ~5&times; underrepresentation per capita. Under the strictest (Mother Jones/VPP): <strong>1 confirmed trans shooter out of 149&ndash;201 incidents</strong>. In 2020&ndash;2025 specifically: 2 out of 3,516 incidents. The claim does not survive contact with the data under any consistent methodology. <strong>Nine of ten sensitivity analysis combinations produce underrepresentation.</strong></p>
+      <p><strong>Zero of three major databases</strong> show trans people overrepresented as mass shooters. Under the broadest definition (GVA): ~7&times; underrepresentation per capita. Under the strictest (Mother Jones/VPP): <strong>1 confirmed trans shooter out of 149&ndash;201 incidents</strong>. In 2020&ndash;2025 specifically: 2 out of 3,516 incidents. The claim does not survive contact with the data under any consistent methodology. <strong>Nine of ten sensitivity analysis combinations produce underrepresentation.</strong></p>
     </div>
 
     <div class="scope-box">
@@ -1550,8 +1551,8 @@
         <div class="stat-row"><span class="stat-key">Total mass shootings</span><span class="stat-val neutral">~5,900</span></div>
         <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">5</span></div>
         <div class="stat-row"><span class="stat-key">Trans share of shooters</span><span class="stat-val negative">0.09%</span></div>
-        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
-        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val positive">UNDERREPRESENTED ~9× (share of incidents)</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US population</span><span class="stat-val positive">~0.84% of US population (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val verdict">UNDERREPRESENTED ~10× by share of incidents</span></div>
       </div>
     </div>
 
@@ -1561,8 +1562,8 @@
         <div class="stat-row"><span class="stat-key">Total shooters tracked</span><span class="stat-val neutral">~201</span></div>
         <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">1 — Audrey Hale only</span></div>
         <div class="stat-row"><span class="stat-key">Trans share of shooters</span><span class="stat-val negative">0.5%</span></div>
-        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
-        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val positive">UNDERREPRESENTED ~2×</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US population</span><span class="stat-val positive">~0.84% of US population (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val verdict">UNDERREPRESENTED ~2× by share of incidents</span></div>
       </div>
     </div>
 
@@ -1572,38 +1573,38 @@
         <div class="stat-row"><span class="stat-key">Total incidents</span><span class="stat-val neutral">~149</span></div>
         <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">1 — Audrey Hale</span></div>
         <div class="stat-row"><span class="stat-key">Trans share of shooters</span><span class="stat-val negative">~0.67%</span></div>
-        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
-        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val positive">UNDERREPRESENTED</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US population</span><span class="stat-val positive">~0.84% of US population (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict</span><span class="stat-val verdict">UNDERREPRESENTED by share of incidents</span></div>
       </div>
     </div>
 
     <div class="chart-wrap">
       <div class="chart-title">Trans Share of Shooters vs. Trans Share of Population</div>
       <div class="chart-sub">All-time data · each bar pair shows trans % of shooters vs. trans % of US population across three databases</div>
-      <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart: trans share of shooters (0.09%–0.67%) vs. trans share of US adults (~0.8%). Trans people are underrepresented in every database."></canvas></div>
+      <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart: trans share of shooters (0.09%–0.67%) vs. trans share of population (~0.84%). Trans people are underrepresented in every database."></canvas></div>
     </div>
 
     <div class="chart-wrap" style="margin-top:12px;">
-      <div class="chart-title">Per Capita Mass Shooting Rate: Trans vs. Cisgender (All-Time, GVA)</div>
-      <div class="chart-sub">Rate per 100,000 people. Lower = fewer shooters from that population.</div>
-      <div class="chart-canvas-wrap" style="height:160px;"><canvas id="chart1b" role="img" aria-label="Horizontal bar chart showing per-capita mass shooting rate: trans people 0.35 per 100k vs cisgender people 1.72 per 100k. Trans people are approximately 5 times less likely per capita."></canvas></div>
+      <div class="chart-title">Per Capita Mass Shooting Rate: Trans vs. Cisgender (GVA, All-Time)</div>
+      <div class="chart-sub">Shooters per 100,000 people. Binary trans pop ~1.87M (all ages); US total ~335M. GVA is the only database with enough trans cases (n=5) for a meaningful per-capita comparison.</div>
+      <div class="chart-canvas-wrap" style="height:170px;"><canvas id="chart1b" role="img" aria-label="Horizontal bar chart: trans people 0.27 per 100,000 vs cisgender people 1.77 per 100,000. Trans people are approximately 7 times less likely per capita."></canvas></div>
     </div>
 
     <div class="divider"></div>
     <span class="section-label">03 — Per Capita Rate (GVA Definition)</span>
-    <p style="font-size:0.8rem;color:var(--text-quiet);margin-bottom:12px;">Binary trans population ~1.43M vs. US total ~335M</p>
+    <p style="font-size:0.8rem;color:var(--text-quiet);margin-bottom:12px;">Binary trans population ~1.87M (all ages) vs. US total ~335M</p>
 
     <div class="capita-grid">
       <div class="capita-card">
-        <div class="capita-big">0.00035%</div>
+        <div class="capita-big">0.00027%</div>
         <div class="capita-label">of trans people have committed a mass shooting (GVA, all-time)</div>
       </div>
       <div class="capita-card">
-        <div class="capita-big negative">0.0017%</div>
+        <div class="capita-big negative">0.0018%</div>
         <div class="capita-label">of the general US population have committed a mass shooting (GVA, all-time)</div>
       </div>
     </div>
-    <div class="capita-verdict">TRANS PEOPLE ARE ~5× LESS LIKELY PER CAPITA</div>
+    <div class="capita-verdict">TRANS PEOPLE ARE ~7× LESS LIKELY PER CAPITA</div>
 
     <div class="divider"></div>
     <span class="section-label">04 — The Eight Cited Shooters: Full Breakdown</span>
@@ -1758,7 +1759,7 @@
     </div>
 
     <div class="box box-green">
-      <p>Under the <strong>broadest definition (GVA)</strong>: Trans people are ~9× underrepresented as mass shooters by share of incidents, and ~5× less likely per capita. Under the <strong>strictest definition</strong>: 1 confirmed trans shooter out of ~149–201 incidents. Trans people are statistically <strong>~4× more likely to be victims</strong> of violent crime than perpetrators. (GLAAD / Human Rights Campaign)</p>
+      <p>Under the <strong>broadest definition (GVA)</strong>: Trans people are ~10× underrepresented as mass shooters by share of incidents, and ~7× less likely per capita. Under the <strong>strictest definition</strong>: 1 confirmed trans shooter out of ~149–201 incidents. Trans people are statistically <strong>~4× more likely to be victims</strong> of violent crime than perpetrators. (GLAAD / Human Rights Campaign)</p>
     </div>
 
     <div class="sources-section">
@@ -1778,7 +1779,7 @@
     <!-- ======================================================
          PART 2 — 2020–2025
     ====================================================== -->
-    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Across all three major databases (GVA, Violence Prevention Project, Mother Jones), transgender people are underrepresented among mass shooters relative to their share of the population. The broadest definition shows ~9× underrepresentation; the strictest shows 1 confirmed trans shooter out of 149–201 incidents. Of 8 names commonly cited online, 2 are disputed or unconfirmed.</div>
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Across all three major databases (GVA, Violence Prevention Project, Mother Jones), transgender people are underrepresented among mass shooters relative to their share of the population. The broadest definition shows ~10× underrepresentation; the strictest shows 1 confirmed trans shooter out of 149–201 incidents. Of 8 names commonly cited online, 2 are disputed or unconfirmed.</div>
 
     <div id="part2"></div>
     <div class="part-heading">
@@ -1813,8 +1814,8 @@
         <div class="stat-row"><span class="stat-key">Confirmed trans shooters</span><span class="stat-val negative">2 — Hale, Westman</span></div>
         <div class="stat-row"><span class="stat-key">+ Disputed (Aldrich — nonbinary claim via lawyer only)</span><span class="stat-val neutral">1 additional if counted</span></div>
         <div class="stat-row"><span class="stat-key">Trans share (confirmed only)</span><span class="stat-val negative">0.057%</span></div>
-        <div class="stat-row"><span class="stat-key">Trans share of US adults</span><span class="stat-val positive">~0.8% (Williams Institute 2025)</span></div>
-        <div class="stat-row"><span class="stat-key">Verdict (confirmed only)</span><span class="stat-val positive">UNDERREPRESENTED ~14× (share of incidents)</span></div>
+        <div class="stat-row"><span class="stat-key">Trans share of US population</span><span class="stat-val positive">~0.84% of US population (Williams Institute 2025)</span></div>
+        <div class="stat-row"><span class="stat-key">Verdict (confirmed only)</span><span class="stat-val verdict">UNDERREPRESENTED ~14× by share of incidents</span></div>
       </div>
     </div>
 
@@ -1823,7 +1824,7 @@
 
     <div class="capita-grid">
       <div class="capita-card">
-        <div class="capita-big">0.00014%</div>
+        <div class="capita-big">0.00011%</div>
         <div class="capita-label">of trans people committed a GVA mass shooting in 2020–2025</div>
       </div>
       <div class="capita-card">
@@ -1831,12 +1832,12 @@
         <div class="capita-label">of the general US population committed a GVA mass shooting in 2020–2025</div>
       </div>
     </div>
-    <div class="capita-verdict">TRANS PEOPLE ~7.5× LESS LIKELY PER CAPITA IN THIS EXACT WINDOW</div>
+    <div class="capita-verdict">TRANS PEOPLE ~10× LESS LIKELY PER CAPITA IN THIS EXACT WINDOW</div>
 
     <div class="chart-wrap" style="margin-top:12px;">
       <div class="chart-title">2020–2025: Per Capita Mass Shooting Rate Comparison</div>
       <div class="chart-sub">GVA mass shootings per 100,000 people in the exact window most cited in political debates</div>
-      <div class="chart-canvas-wrap" style="height:200px;"><canvas id="chart2" role="img" aria-label="Horizontal bar chart: trans people 0.14 per 100k vs. general US population 1.05 per 100k in 2020–2025. Trans people are ~7.5x less likely."></canvas></div>
+      <div class="chart-canvas-wrap" style="height:200px;"><canvas id="chart2" role="img" aria-label="Horizontal bar chart: trans people 0.107 per 100k vs. general US population 1.05 per 100k in 2020–2025. Trans people are ~10x less likely."></canvas></div>
     </div>
 
     <div class="divider"></div>
@@ -1899,7 +1900,7 @@
     </div>
 
     <div class="box box-brick">
-      <p>Every response above was prompted by <strong>2 confirmed trans shooters out of 3,516 GVA mass shootings</strong> in this window — a period in which trans people were ~14× underrepresented by share of incidents, and ~7.5× less likely per capita. Neither confirmed shooter had a motive linked to their trans identity. The statistical data does not support the pattern being cited as justification for these policy actions.</p>
+      <p>Every response above was prompted by <strong>2 confirmed trans shooters out of 3,516 GVA mass shootings</strong> in this window — a period in which trans people were ~14× underrepresented by share of incidents, and ~10× less likely per capita. Neither confirmed shooter had a motive linked to their trans identity. The statistical data does not support the pattern being cited as justification for these policy actions.</p>
     </div>
 
     <div class="sources-section">
@@ -1925,7 +1926,7 @@
 
     <div class="box box-neutral">
       <span class="box-label">An intentional methodological choice — explained</span>
-      <p>Parts 1 and 2 used <strong>1.43 million</strong> as the trans population denominator — binary trans adults only, deliberately excluding nonbinary people. This was a conscious choice to use the most conservative possible figure. Even with that undercount, trans people remain underrepresented in every database. The August 2025 Williams Institute report places the full trans adult population at <strong>2.1 million</strong>. When that figure is used, underrepresentation increases substantially.</p>
+      <p>Parts 1 and 2 used <strong>1.87 million</strong> as the trans population denominator — binary trans people of all ages, deliberately excluding nonbinary people. This was a conscious choice to use the most conservative possible figure. Even with that undercount, trans people remain underrepresented in every database. The August 2025 Williams Institute report places the full trans population (all ages) at approximately <strong>2.8 million</strong>. When that figure is used, underrepresentation increases substantially. Note: Alec McKinney was 16 at the time of the STEM School shooting — if minors are counted in the numerator, they must be counted in the denominator.</p>
     </div>
 
     <span class="section-label">11 — The Real Trans Population (Williams Institute, August 2025)</span>
@@ -1934,19 +1935,20 @@
       <div class="breakdown-row"><span class="breakdown-key">Trans women (MtF)</span><span class="breakdown-val">698,500</span></div>
       <div class="breakdown-row"><span class="breakdown-key">Trans men (FtM)</span><span class="breakdown-val">730,500</span></div>
       <div class="breakdown-row"><span class="breakdown-key">Nonbinary trans adults</span><span class="breakdown-val">707,100</span></div>
-      <div class="breakdown-row total-row"><span class="breakdown-key">Total trans adults (US)</span><span class="breakdown-val">2,136,100</span></div>
+      <div class="breakdown-row"><span class="breakdown-key">Trans youth (13&ndash;17)</span><span class="breakdown-val">~664,000</span></div>
+      <div class="breakdown-row total-row"><span class="breakdown-key">Total trans population (US, all ages)</span><span class="breakdown-val">~2,800,000</span></div>
     </div>
 
     <div class="denom-grid">
       <div class="denom-card conservative">
-        <div class="denom-label">Used in Parts 1 &amp; 2</div>
-        <div class="denom-num">1,429,000</div>
-        <div class="denom-sub">Binary trans only. Intentionally conservative — excludes nonbinary trans people entirely.</div>
+        <div class="denom-label">Used in Parts 1 &amp; 2 (conservative)</div>
+        <div class="denom-num">~1,873,000</div>
+        <div class="denom-sub">Binary trans, all ages. Intentionally conservative — excludes nonbinary trans people entirely.</div>
       </div>
       <div class="denom-card full">
         <div class="denom-label">Correct full figure</div>
-        <div class="denom-num">2,136,100</div>
-        <div class="denom-sub">All trans adults (Williams Institute 2025), including the 707,100 nonbinary trans people who are implicitly counted as shooters when Aldrich is cited.</div>
+        <div class="denom-num">~2,800,000</div>
+        <div class="denom-sub">All trans people including nonbinary and youth (Williams Institute 2025). If minors like McKinney (age 16) are in the numerator, youth must be in the denominator.</div>
       </div>
     </div>
 
@@ -1956,21 +1958,32 @@
           <caption>Mass shooting rates: trans population vs. general population</caption>
       <thead>
         <tr>
-          <th>Metric</th><th>Binary only (1.43M)</th><th>Full trans pop (2.1M)</th><th>Verdict</th>
+          <th>Metric</th><th>Binary only (1.87M)</th><th>Full trans pop (2.8M)</th><th>Verdict</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>All-time GVA rate per 100k</td><td class="td-neutral">0.35 per 100k</td><td class="td-positive">0.23 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
-        <tr><td>All-time underrepresentation</td><td class="td-neutral">~5× less likely</td><td class="td-positive">~7.4× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
-        <tr><td>2020–2025 GVA rate per 100k</td><td class="td-neutral">0.14 per 100k</td><td class="td-positive">0.094 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
-        <tr><td>2020–2025 underrepresentation</td><td class="td-neutral">~7.5× less likely</td><td class="td-positive">~11× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
+        <tr><td>All-time GVA rate per 100k</td><td class="td-neutral">0.27 per 100k</td><td class="td-positive">0.18 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
+        <tr><td>All-time underrepresentation</td><td class="td-neutral">~7× less likely</td><td class="td-positive">~10× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
+        <tr><td>2020–2025 GVA rate per 100k</td><td class="td-neutral">0.107 per 100k</td><td class="td-positive">0.071 per 100k</td><td class="td-verdict">&#8595; Even lower</td></tr>
+        <tr><td>2020–2025 underrepresentation</td><td class="td-neutral">~10× less likely</td><td class="td-positive">~15× less likely</td><td class="td-verdict">&#8593; More underrep</td></tr>
       </tbody>
     </table></div>
 
     <div class="chart-wrap">
+      <div class="chart-title">Per Capita Rate: All Three Databases (Full Trans Population)</div>
+      <div class="chart-sub">Shooters per 100,000 people using the correct full trans population (2.8M, all ages) vs. cisgender population. Each database at its own scale.</div>
+      <div class="chart-canvas-wrap" style="height:150px;"><canvas id="chart3a-gva" role="img" aria-label="GVA per-capita: trans 0.24 per 100k vs cis 1.77 per 100k"></canvas></div>
+      <div class="chart-canvas-wrap" style="height:130px;"><canvas id="chart3a-vpp" role="img" aria-label="VPP per-capita: trans 0.048 per 100k vs cis 0.060 per 100k"></canvas></div>
+      <div class="chart-canvas-wrap" style="height:130px;"><canvas id="chart3a-mj" role="img" aria-label="Mother Jones per-capita: trans 0.048 per 100k vs cis 0.044 per 100k"></canvas></div>
+      <div style="margin-top:10px; padding:10px 14px; background:var(--amber-faint); border-left:3px solid var(--amber); border-radius:0 4px 4px 0; font-size:0.75rem; line-height:1.55; color:var(--text-body);">
+        <strong style="color:var(--amber);">Why VPP and Mother Jones rates are unreliable:</strong> Both databases contain exactly <strong>one</strong> confirmed trans shooter (Audrey Hale). A per-capita rate built on a single data point has no statistical power &mdash; adding or removing one case swings the trans rate from 0.048 to 0.000. The 95% confidence interval is so wide it spans from zero to multiples of the cis rate. GVA (n=5) is the only database with enough cases for a per-capita comparison that means anything. The VPP and Mother Jones charts are shown for transparency, not because the rates are reliable.
+      </div>
+    </div>
+
+    <div class="chart-wrap">
       <div class="chart-title">Underrepresentation Factor: Binary-Only vs. Full Trans Population</div>
       <div class="chart-sub">How many times less likely trans people are to commit a mass shooting vs. the general population — two denominators</div>
-      <div class="chart-canvas-wrap" style="height:220px;"><canvas id="chart3" role="img" aria-label="Grouped bar chart: all-time GVA 5x or 7.4x underrepresented. 2020–2025: 7.5x or 11x. Both denominators show underrepresentation."></canvas></div>
+      <div class="chart-canvas-wrap" style="height:220px;"><canvas id="chart3" role="img" aria-label="Grouped bar chart: all-time GVA 5x or 9.9x underrepresented. 2020–2025: 7.5x or 14.8x. Both denominators show underrepresentation."></canvas></div>
     </div>
 
     <div class="box box-neutral">
@@ -1988,7 +2001,7 @@
     <!-- ======================================================
          PART 4 — LIMITATIONS & COUNTERARGUMENTS
     ====================================================== -->
-    <div class="part-takeaway"><strong>Part 3 takeaway</strong>The population denominator used throughout this article (1.43 million) deliberately excludes nonbinary people to produce the most conservative possible figure. Using the full Williams Institute estimate of 2.1 million trans adults makes the underrepresentation even larger. If Aldrich (nonbinary) is counted in the numerator, the denominator must include nonbinary people — and the conclusion remains the same.</div>
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>The population denominator used throughout this article (1.87 million) deliberately excludes nonbinary people to produce the most conservative possible figure. Using the full Williams Institute estimate of ~2.8 million trans people (all ages) makes the underrepresentation even larger. If Aldrich (nonbinary) or McKinney (age 16) are counted in the numerator, the denominator must include nonbinary people and youth — and the conclusion remains the same.</div>
 
     <div id="part4"></div>
     <div class="part-heading">
@@ -2000,7 +2013,7 @@
 
     <div class="box box-amber">
       <span class="box-label">Critical statistical limitation</span>
-      <p>Every per-capita figure in this analysis is calculated from <strong>1 to 5 confirmed events</strong> spread across a population of 1.4–2.1 million people and thousands of total mass shootings. The 95% confidence interval on the underlying all-time GVA rate is roughly <strong>0.03% to 0.20%</strong>. The direction (underrepresentation) is clear across every calculation; the exact magnitude has wide error bars and should not be treated as a precise figure. A single newly verified case would shift the all-time rate from 0.09% to 0.10% — the qualitative conclusion would not change, but the magnitude would.</p>
+      <p>Every per-capita figure in this analysis is calculated from <strong>1 to 5 confirmed events</strong> spread across a population of 1.9–2.8 million people and thousands of total mass shootings. The 95% confidence interval on the underlying all-time GVA rate is roughly <strong>0.03% to 0.20%</strong>. The direction (underrepresentation) is clear across every calculation; the exact magnitude has wide error bars and should not be treated as a precise figure. A single newly verified case would shift the all-time rate from 0.09% to 0.10% — the qualitative conclusion would not change, but the magnitude would.</p>
     </div>
 
     <div class="divider"></div>
@@ -2018,7 +2031,7 @@
         <div class="steelman-row"><div class="steelman-key">The Claim</div><div class="steelman-val">Lott and CPRC argue that transgender individuals are overrepresented among mass shooters by 4–7× when examining public indiscriminate mass shootings between approximately 2016–2023. Their published list includes 8–10 individuals identified as trans or nonbinary.</div></div>
         <div class="steelman-row"><div class="steelman-key">Their Method</div><div class="steelman-val">Uses a strict "public indiscriminate" definition, counts 8–10 trans/nonbinary perpetrators, and divides by a trans population share of approximately 0.3–0.5% — an older estimate from earlier CDC surveys.</div></div>
         <div class="steelman-divider"></div>
-        <div class="steelman-row"><div class="steelman-key">Issue 1</div><div class="steelman-val rebuttal">The population estimate of 0.3–0.5% is outdated. The Williams Institute's August 2025 report places the adult trans population at 0.8% (1.43M binary, 2.1M including nonbinary). Using the current figure cuts or eliminates the apparent overrepresentation.</div></div>
+        <div class="steelman-row"><div class="steelman-key">Issue 1</div><div class="steelman-val rebuttal">The population estimate of 0.3–0.5% is outdated. The Williams Institute's August 2025 report places the adult trans population at 0.8% (1.87M binary all ages, ~2.8M total including nonbinary and youth). Using the current figure cuts or eliminates the apparent overrepresentation.</div></div>
         <div class="steelman-row"><div class="steelman-key">Issue 2</div><div class="steelman-val rebuttal">Lott's list includes Butler (never confirmed by law enforcement), Aldrich (post-arrest legal claim only), and Van Rootselaar (Canadian, not in any US database). Removing unverified cases brings his count to 4–5.</div></div>
         <div class="steelman-row"><div class="steelman-key">Issue 3</div><div class="steelman-val rebuttal">Even accepting his full list of 8–10 and his population estimate of 0.5%: 8 shooters / 700,000 trans adults × 100,000 = 1.14 per 100k. The GVA general population rate = 1.76 per 100k. This still shows underrepresentation. The comparison uses the GVA baseline deliberately: if we are asking whether trans people are more dangerous to the general public than anyone else, the appropriate baseline is the rate at which anyone commits a mass shooting — which is the GVA rate. You cannot apply a strict counting filter only to trans shooters and not to the general population; that produces a biased numerator against an unfiltered denominator.</div></div>
         <div class="steelman-row"><div class="steelman-key">Issue 4</div><div class="steelman-val rebuttal">Overrepresentation in Lott's framing only appears when using share-of-incidents (not per-capita) combined with an outdated, lower population estimate. These are not equivalent measures.</div></div>
@@ -2036,14 +2049,14 @@
         <tr><th>Shooter count assumption</th><th>Population used</th><th>Trans rate/100k</th><th>vs. General pop</th><th>Result</th></tr>
       </thead>
       <tbody>
-        <tr class="row-highlight"><td class="sc-assump">Confirmed only (5)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.35</td><td class="sc-rate">5.0× lower</td><td class="sc-under">UNDER ~5×</td></tr>
-        <tr class="row-highlight"><td class="sc-assump">Confirmed only (5)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.23</td><td class="sc-rate">7.4× lower</td><td class="sc-under">UNDER ~7×</td></tr>
-        <tr><td class="sc-assump">+ Aldrich as trans (6)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.42</td><td class="sc-rate">4.2× lower</td><td class="sc-under">UNDER ~4×</td></tr>
-        <tr><td class="sc-assump">+ Aldrich as trans (6)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.28</td><td class="sc-rate">6.3× lower</td><td class="sc-under">UNDER ~6×</td></tr>
-        <tr><td class="sc-assump">+ Butler unverified (7)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.49</td><td class="sc-rate">3.6× lower</td><td class="sc-under">UNDER ~4×</td></tr>
-        <tr><td class="sc-assump">+ Butler unverified (7)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.33</td><td class="sc-rate">5.3× lower</td><td class="sc-under">UNDER ~5×</td></tr>
-        <tr><td class="sc-assump">All 8 incl. Canadian (8)</td><td class="sc-pop">Binary 1.43M</td><td class="sc-rate">0.56</td><td class="sc-rate">3.1× lower</td><td class="sc-under">UNDER ~3×</td></tr>
-        <tr><td class="sc-assump">All 8 incl. Canadian (8)</td><td class="sc-pop">Full 2.1M</td><td class="sc-rate">0.37</td><td class="sc-rate">4.8× lower</td><td class="sc-under">UNDER ~5×</td></tr>
+        <tr class="row-highlight"><td class="sc-assump">Confirmed only (5)</td><td class="sc-pop">Binary 1.87M</td><td class="sc-rate">0.27</td><td class="sc-rate">6.6× lower</td><td class="sc-under">UNDER ~7×</td></tr>
+        <tr class="row-highlight"><td class="sc-assump">Confirmed only (5)</td><td class="sc-pop">Full 2.8M</td><td class="sc-rate">0.18</td><td class="sc-rate">9.9× lower</td><td class="sc-under">UNDER ~10×</td></tr>
+        <tr><td class="sc-assump">+ Aldrich as trans (6)</td><td class="sc-pop">Binary 1.87M</td><td class="sc-rate">0.32</td><td class="sc-rate">5.5× lower</td><td class="sc-under">UNDER ~6×</td></tr>
+        <tr><td class="sc-assump">+ Aldrich as trans (6)</td><td class="sc-pop">Full 2.8M</td><td class="sc-rate">0.21</td><td class="sc-rate">8.3× lower</td><td class="sc-under">UNDER ~8×</td></tr>
+        <tr><td class="sc-assump">+ Butler unverified (7)</td><td class="sc-pop">Binary 1.87M</td><td class="sc-rate">0.37</td><td class="sc-rate">4.7× lower</td><td class="sc-under">UNDER ~5×</td></tr>
+        <tr><td class="sc-assump">+ Butler unverified (7)</td><td class="sc-pop">Full 2.8M</td><td class="sc-rate">0.25</td><td class="sc-rate">7.1× lower</td><td class="sc-under">UNDER ~7×</td></tr>
+        <tr><td class="sc-assump">All 8 incl. Canadian (8)</td><td class="sc-pop">Binary 1.87M</td><td class="sc-rate">0.43</td><td class="sc-rate">4.1× lower</td><td class="sc-under">UNDER ~4×</td></tr>
+        <tr><td class="sc-assump">All 8 incl. Canadian (8)</td><td class="sc-pop">Full 2.8M</td><td class="sc-rate">0.29</td><td class="sc-rate">6.2× lower</td><td class="sc-under">UNDER ~6×</td></tr>
         <tr><td class="sc-assump">Lott max ~10 + old pop (0.5%)</td><td class="sc-pop">Old est. 700k</td><td class="sc-rate">1.43</td><td class="sc-rate">1.2× lower</td><td class="sc-under">UNDER (marginal)</td></tr>
         <tr class="row-problem"><td class="sc-assump">Share-of-incidents only, Lott max + old pop — <em>not per-capita</em></td><td class="sc-pop">0.3–0.5% share</td><td class="sc-rate">~5% of VPP</td><td class="sc-rate">vs. 0.3–0.5% pop</td><td class="sc-over">OVER* (method flaw)</td></tr>
       </tbody>
@@ -2096,11 +2109,11 @@
     <div class="conclusion-stats">
       <div class="conclusion-stat">
         <div class="cs-num positive">0 of 3</div>
-        <div class="cs-text"><strong>Zero of the three major databases</strong> show trans people overrepresented as perpetrators. The broadest definition (GVA) shows ~9× underrepresentation by share of incidents (~5× per capita). The strictest (VPP/Mother Jones) produces exactly one confirmed trans shooter out of 149–201 incidents.</div>
+        <div class="cs-text"><strong>Zero of the three major databases</strong> show trans people overrepresented as perpetrators. The broadest definition (GVA) shows ~10× underrepresentation by share of incidents (~7× per capita). The strictest (VPP/Mother Jones) produces exactly one confirmed trans shooter out of 149–201 incidents.</div>
       </div>
       <div class="conclusion-stat">
         <div class="cs-num neutral">2/3,516</div>
-        <div class="cs-text"><strong>In the exact five-year window most cited in policy debates</strong> (2020–2025), two confirmed trans people committed GVA mass shootings out of 3,516 total incidents. Trans people were ~14× underrepresented by share of incidents, and ~7.5× less likely per capita than the general population.</div>
+        <div class="cs-text"><strong>In the exact five-year window most cited in policy debates</strong> (2020–2025), two confirmed trans people committed GVA mass shootings out of 3,516 total incidents. Trans people were ~14× underrepresented by share of incidents, and ~10× less likely per capita than the general population.</div>
       </div>
       <div class="conclusion-stat">
         <div class="cs-num positive">0</div>
@@ -2268,8 +2281,8 @@
               borderRadius: 3,
             },
             {
-              label: 'Trans % of US adults (Williams Institute 2025)',
-              data: [0.8, 0.8, 0.8],
+              label: 'Trans % of US population (Williams Institute 2025)',
+              data: [0.84, 0.84, 0.84],
               backgroundColor: 'rgba(27,107,62,0.5)',
               borderColor: '#1b6b3e',
               borderWidth: 1.5,
@@ -2305,22 +2318,21 @@
       });
     })();
 
-    // Chart 1b — Per-capita rate comparison (all-time, GVA)
+    // Chart 1b — Per-capita rate: trans vs cis (GVA, all-time)
     (function() {
       var ctx = document.getElementById('chart1b');
       if (!ctx) return;
       new Chart(ctx.getContext('2d'), {
         type: 'bar',
         data: {
-          labels: ['Trans people', 'Cisgender people'],
+          labels: ['Trans people (5 shooters / 1.87M)', 'Cisgender people (~5,895 / ~333.6M)'],
           datasets: [{
-            label: 'Mass shootings per 100,000 people (all-time GVA)',
-            data: [0.35, 1.72],
-            backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.5)'],
+            data: [0.267, 1.77],
+            backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.45)'],
             borderColor: ['#1b6b3e', '#b83a1e'],
             borderWidth: 1.5,
             borderRadius: 4,
-            barThickness: 50,
+            barThickness: 44
           }]
         },
         options: {
@@ -2335,7 +2347,7 @@
               borderWidth: 1,
               titleColor: '#151311',
               bodyColor: '#3d3a33',
-              callbacks: { label: function(c) { return c.parsed.x.toFixed(2) + ' per 100k'; } }
+              callbacks: { label: function(c) { return c.parsed.x.toFixed(2) + ' per 100,000 people'; } }
             }
           },
           scales: {
@@ -2345,7 +2357,7 @@
               title: { display: true, text: 'Shooters per 100,000 people', color: '#736e66', font: { size: 10 } },
               min: 0, max: 2.0
             },
-            y: { grid: { display: false }, ticks: { color: '#706d64' } }
+            y: { grid: { display: false }, ticks: { color: '#706d64', font: { size: 11 } } }
           }
         }
       });
@@ -2360,7 +2372,7 @@
           labels: ['Trans people', 'General US population'],
           datasets: [{
             label: 'Mass shootings per 100,000 people (2020–2025)',
-            data: [0.14, 1.05],
+            data: [0.107, 1.05],
             backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.5)'],
             borderColor: ['#1b6b3e', '#b83a1e'],
             borderWidth: 1.5,
@@ -2395,6 +2407,48 @@
       });
     })();
 
+    // Chart 3a — Per-capita, full trans pop vs cis, all 3 databases
+    (function() {
+      var ttOpts = {
+        backgroundColor: '#ffffff', borderColor: '#dedad3', borderWidth: 1,
+        titleColor: '#151311', bodyColor: '#3d3a33',
+        callbacks: { label: function(c) { return ' ' + c.dataset.label + ': ' + c.parsed.x.toFixed(3) + ' per 100k'; } }
+      };
+      var makeChart = function(id, label, transVal, cisVal, xMax, showLegend) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        new Chart(el.getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: [label],
+            datasets: [
+              { label: 'Trans people (2.8M)', data: [transVal], backgroundColor: 'rgba(27,107,62,0.55)', borderColor: '#1b6b3e', borderWidth: 1.5, borderRadius: 4, barThickness: 30 },
+              { label: 'Cisgender people', data: [cisVal], backgroundColor: 'rgba(184,58,30,0.45)', borderColor: '#b83a1e', borderWidth: 1.5, borderRadius: 4, barThickness: 30 }
+            ]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            plugins: {
+              legend: showLegend ? { position: 'top', labels: { boxWidth: 11, padding: 10, color: '#706d64', font: { size: 10 } } } : { display: false },
+              tooltip: ttOpts
+            },
+            scales: {
+              x: {
+                grid: { color: '#ede9e0' },
+                ticks: { color: '#736e66', callback: function(v) { return v < 0.1 ? v.toFixed(2) : v.toFixed(1); } },
+                title: { display: true, text: 'per 100k', color: '#736e66', font: { size: 9 } },
+                min: 0, max: xMax
+              },
+              y: { grid: { display: false }, ticks: { color: '#706d64', font: { size: 11 } } }
+            }
+          }
+        });
+      };
+      makeChart('chart3a-gva', 'GVA (n=5 / ~5,900)', 0.179, 1.77, 2.0, true);
+      makeChart('chart3a-vpp', 'VPP (n=1 / ~201)', 0.036, 0.060, 0.07, false);
+      makeChart('chart3a-mj', 'Mother Jones (n=1 / ~149)', 0.036, 0.045, 0.07, false);
+    })();
+
     // Chart 3 — Underrepresentation factor by denominator
     (function() {
       const ctx = document.getElementById('chart3').getContext('2d');
@@ -2404,16 +2458,16 @@
           labels: ['All-time GVA\n(5 confirmed / ~5,900 total)', '2020–2025 GVA\n(2 confirmed / 3,516 total)'],
           datasets: [
             {
-              label: 'Binary-only denominator (1.43M)',
-              data: [5.0, 7.5],
+              label: 'Binary-only denominator (1.87M)',
+              data: [6.6, 10.0],
               backgroundColor: 'rgba(27,107,62,0.35)',
               borderColor: '#1b6b3e',
               borderWidth: 1.5,
               borderRadius: 3,
             },
             {
-              label: 'Full trans pop denominator (2.1M)',
-              data: [7.4, 11.0],
+              label: 'Full trans pop denominator (2.8M)',
+              data: [9.9, 14.8],
               backgroundColor: 'rgba(27,107,62,0.6)',
               borderColor: '#1b6b3e',
               borderWidth: 1.5,
@@ -2442,7 +2496,7 @@
               grid: { color: '#ede9e0' },
               ticks: { color: '#736e66', callback: v => '~' + v + '×' },
               title: { display: true, text: 'Times less likely than general population', color: '#736e66' },
-              min: 0, max: 14
+              min: 0, max: 16
             }
           }
         }
