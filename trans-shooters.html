@@ -1583,6 +1583,12 @@
       <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart: trans share of shooters (0.09%–0.67%) vs. trans share of US adults (~0.8%). Trans people are underrepresented in every database."></canvas></div>
     </div>
 
+    <div class="chart-wrap" style="margin-top:12px;">
+      <div class="chart-title">Per Capita Mass Shooting Rate: Trans vs. Cisgender (All-Time, GVA)</div>
+      <div class="chart-sub">Rate per 100,000 people. Lower = fewer shooters from that population.</div>
+      <div class="chart-canvas-wrap" style="height:160px;"><canvas id="chart1b" role="img" aria-label="Horizontal bar chart showing per-capita mass shooting rate: trans people 0.35 per 100k vs cisgender people 1.72 per 100k. Trans people are approximately 5 times less likely per capita."></canvas></div>
+    </div>
+
     <div class="divider"></div>
     <span class="section-label">03 — Per Capita Rate (GVA Definition)</span>
     <p style="font-size:0.8rem;color:var(--text-quiet);margin-bottom:12px;">Binary trans population ~1.43M vs. US total ~335M</p>
@@ -2294,6 +2300,52 @@
               title: { display: true, text: 'Percentage (%)', color: '#736e66' },
               max: 1.1
             }
+          }
+        }
+      });
+    })();
+
+    // Chart 1b — Per-capita rate comparison (all-time, GVA)
+    (function() {
+      var ctx = document.getElementById('chart1b');
+      if (!ctx) return;
+      new Chart(ctx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Trans people', 'Cisgender people'],
+          datasets: [{
+            label: 'Mass shootings per 100,000 people (all-time GVA)',
+            data: [0.35, 1.72],
+            backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.5)'],
+            borderColor: ['#1b6b3e', '#b83a1e'],
+            borderWidth: 1.5,
+            borderRadius: 4,
+            barThickness: 50,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#ffffff',
+              borderColor: '#dedad3',
+              borderWidth: 1,
+              titleColor: '#151311',
+              bodyColor: '#3d3a33',
+              callbacks: { label: function(c) { return c.parsed.x.toFixed(2) + ' per 100k'; } }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#ede9e0' },
+              ticks: { color: '#736e66', callback: function(v) { return v.toFixed(1); } },
+              title: { display: true, text: 'Shooters per 100,000 people', color: '#736e66', font: { size: 10 } },
+              min: 0, max: 2.0
+            },
+            y: { grid: { display: false }, ticks: { color: '#706d64' } }
           }
         }
       });
