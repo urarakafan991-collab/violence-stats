@@ -743,8 +743,6 @@
     <a href="#part5" class="jump-btn">Part 5 &mdash; Fed Response</a>
     <a href="#part6" class="jump-btn">Part 6 &mdash; Steelman</a>
     </div>
-
-      <div class="chart-wrap"><div class="chart-container" style="height:280px;"><canvas id="chart1" role="img" aria-label="Line chart showing U.S. CPI inflation from 2020 to 2025, peaking at 9.1% in June 2022"></canvas></div><p style="font-size:0.75rem;color:var(--text-quiet);margin-top:8px;">Source: BLS CPI-U. Year-over-year % change.</p></div>
   </nav>
 
   <main id="content">
@@ -819,6 +817,8 @@
           <div class="stat-row"><span class="stat-key">PCE December 2025 (Fed preferred measure)</span><span class="stat-val warn">2.9% headline / 3.0% core</span></div>
         </div>
       </div>
+
+      <div class="chart-wrap"><div class="chart-container" style="height:280px;"><canvas id="chart1" role="img" aria-label="Line chart showing U.S. CPI inflation from 2020 to 2025, peaking at 9.1% in June 2022"></canvas></div><p style="font-size:0.75rem;color:var(--text-quiet);margin-top:8px;">Source: BLS CPI-U. Year-over-year % change.</p></div>
 
       <span class="section-label">02 &mdash; CPI vs. PCE: why the measures differ</span>
 
@@ -1090,6 +1090,219 @@
   });
   </script>
 
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <!-- Chart initialization -->
+  <script>
+    Chart.defaults.color = '#706d64';
+    Chart.defaults.font.family = "'Courier Prime', monospace";
+    Chart.defaults.font.size = 11;
+
+    // Chart 1 — CPI inflation timeline
+    (function() {
+      var ctx = document.getElementById('chart1');
+      if (!ctx) return;
+      new Chart(ctx.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['Jan 2020','Apr 2020','Jul 2020','Oct 2020','Jan 2021','Mar 2021','Jun 2021','Sep 2021','Dec 2021','Mar 2022','Jun 2022','Sep 2022','Dec 2022','Mar 2023','Jun 2023','Sep 2023','Dec 2023','Mar 2024','Jun 2024','Sep 2024','Dec 2024','Jan 2026'],
+          datasets: [{
+            label: 'CPI-U Year-over-Year %',
+            data: [2.5, 0.3, 1.0, 1.2, 1.4, 2.6, 5.4, 5.4, 7.0, 8.5, 9.1, 8.2, 6.5, 5.0, 3.0, 3.7, 3.4, 3.5, 3.0, 2.4, 2.9, 2.4],
+            borderColor: '#b83a1e',
+            backgroundColor: 'rgba(184,58,30,0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3,
+            pointHoverRadius: 6,
+            borderWidth: 2.5
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#ffffff',
+              borderColor: '#dedad3',
+              borderWidth: 1,
+              titleColor: '#151311',
+              bodyColor: '#3d3a33',
+              callbacks: { label: function(c) { return 'CPI: ' + c.parsed.y.toFixed(1) + '%'; } }
+            }
+          },
+          scales: {
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 45, font: { size: 9 } } },
+            y: {
+              grid: { color: '#ede9e0' },
+              ticks: { color: '#736e66', callback: function(v) { return v + '%'; } },
+              title: { display: true, text: 'Year-over-Year Inflation (%)', color: '#736e66' },
+              min: 0, max: 10
+            }
+          }
+        }
+      });
+    })();
+
+    // Chart 2 — International comparison: peak 2022 vs Jan 2026
+    (function() {
+      var ctx = document.getElementById('chart2');
+      if (!ctx) return;
+      new Chart(ctx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['UK', 'Sweden', 'Eurozone', 'Germany', 'U.S.', 'Australia', 'Canada', 'New Zealand', 'Japan'],
+          datasets: [
+            {
+              label: 'Peak 2022–2023 CPI',
+              data: [11.1, 10.9, 10.6, 10.4, 9.1, 8.4, 8.1, 7.3, 4.3],
+              backgroundColor: 'rgba(184,58,30,0.55)',
+              borderColor: '#b83a1e',
+              borderWidth: 1.5,
+              borderRadius: 3
+            },
+            {
+              label: 'January 2026 CPI',
+              data: [2.5, 1.5, 2.4, 2.6, 2.4, 3.2, 2.0, 2.2, 3.0],
+              backgroundColor: 'rgba(27,107,62,0.5)',
+              borderColor: '#1b6b3e',
+              borderWidth: 1.5,
+              borderRadius: 3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top', labels: { boxWidth: 11, padding: 14, color: '#706d64' } },
+            tooltip: {
+              backgroundColor: '#ffffff',
+              borderColor: '#dedad3',
+              borderWidth: 1,
+              titleColor: '#151311',
+              bodyColor: '#3d3a33',
+              callbacks: { label: function(c) { return ' ' + c.dataset.label + ': ' + c.parsed.y.toFixed(1) + '%'; } }
+            }
+          },
+          scales: {
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 0 } },
+            y: {
+              grid: { color: '#ede9e0' },
+              ticks: { color: '#736e66', callback: function(v) { return v + '%'; } },
+              title: { display: true, text: 'CPI (%)', color: '#736e66' },
+              min: 0, max: 12
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow on scroll ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
 
   <footer class="site-footer">
     <span class="footer-note">TruthBased.org &mdash; Last updated March 2026 &middot; Data through March 2026</span>
