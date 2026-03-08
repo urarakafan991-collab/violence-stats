@@ -1083,6 +1083,187 @@
   });
   </script>
 
+  <!-- Chart initialization -->
+  <script>
+    Chart.defaults.color = '#706d64';
+    Chart.defaults.font.family = "'Courier Prime', monospace";
+    Chart.defaults.font.size = 11;
+
+    // Chart 1 — FY2026 spending doughnut
+    (function() {
+      var ctx = document.getElementById('chart1');
+      if (!ctx) return;
+      new Chart(ctx.getContext('2d'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Social Security', 'Medicare', 'Net Interest', 'Defense', 'Non-Defense Discretionary', 'Other Mandatory', 'Medicaid & CHIP'],
+          datasets: [{
+            data: [20.3, 14.9, 12.8, 12.2, 11.7, 10.8, 8.5],
+            backgroundColor: [
+              'rgba(184,58,30,0.65)', 'rgba(184,58,30,0.45)', 'rgba(138,92,0,0.55)',
+              'rgba(27,107,62,0.5)', 'rgba(90,138,212,0.5)', 'rgba(120,120,120,0.4)',
+              'rgba(184,58,30,0.30)'
+            ],
+            borderColor: '#fff',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'right', labels: { boxWidth: 10, padding: 8, color: '#706d64', font: { size: 10 } } },
+            tooltip: { backgroundColor: '#fff', borderColor: '#dedad3', borderWidth: 1, titleColor: '#151311', bodyColor: '#3d3a33',
+              callbacks: { label: function(c) { return ' ' + c.label + ': ' + c.parsed.toFixed(1) + '%'; } }
+            }
+          }
+        }
+      });
+    })();
+
+    // Chart 2 — Net interest as % of GDP
+    (function() {
+      var ctx = document.getElementById('chart2');
+      if (!ctx) return;
+      new Chart(ctx.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['2010', '2012', '2014', '2016', '2018', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+          datasets: [{
+            label: 'Net Interest as % of GDP',
+            data: [1.4, 1.3, 1.3, 1.3, 1.6, 1.6, 1.5, 1.9, 2.5, 3.1, 3.4, 3.6],
+            borderColor: '#b83a1e',
+            backgroundColor: 'rgba(184,58,30,0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3,
+            pointHoverRadius: 6,
+            borderWidth: 2.5
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { backgroundColor: '#fff', borderColor: '#dedad3', borderWidth: 1, titleColor: '#151311', bodyColor: '#3d3a33',
+              callbacks: { label: function(c) { return c.parsed.y.toFixed(1) + '% of GDP'; } }
+            }
+          },
+          scales: {
+            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66' } },
+            y: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', callback: function(v) { return v.toFixed(1) + '%'; } },
+              title: { display: true, text: 'Net Interest (% of GDP)', color: '#736e66' }, min: 0, max: 4.5 }
+          }
+        }
+      });
+    })();
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow on scroll ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    /* ── Collapsible jump-nav toggle ── */
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
 
   <footer class="site-footer">
     <span class="footer-note">TruthBased.org &mdash; Last updated March 2026 &middot; Data through March 2026</span>
