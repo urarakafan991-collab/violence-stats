@@ -338,7 +338,7 @@
     <div class="chart-wrap">
       <div class="chart-title">Tertiary attainment by country (% of adults 25&ndash;64, OECD EAG 2025)</div>
       <div class="chart-canvas-wrap" style="height:520px;">
-        <canvas id="chartRanking" aria-label="Horizontal bar chart showing tertiary education attainment percentage for 30 countries, from Canada at 65% to South Africa at 9%"></canvas>
+        <canvas id="chartRanking" role="img" aria-label="Horizontal bar chart showing tertiary education attainment percentage for 30 countries, from Canada at 65% to South Africa at 9%"></canvas>
       </div>
     </div>
 
@@ -478,7 +478,7 @@
     <div class="chart-wrap">
       <div class="chart-title">Mean years of schooling vs. PISA math score (selected countries)</div>
       <div class="chart-canvas-wrap">
-        <canvas id="chartParadox" aria-label="Scatter chart showing mean years of schooling versus PISA math scores for selected countries, revealing that more years does not always mean higher scores"></canvas>
+        <canvas id="chartParadox" role="img" aria-label="Scatter chart showing mean years of schooling versus PISA math scores for selected countries, revealing that more years does not always mean higher scores"></canvas>
       </div>
     </div>
 
@@ -728,6 +728,7 @@
       options: {
         responsive: true, maintainAspectRatio: false,
         indexAxis: 'y',
+        layout: { padding: { left: 16 } },
         plugins: {
           legend: { display: false },
           tooltip: { bodyFont: { family: "'Sora', sans-serif" }, callbacks: { label: function(ctx) { return ctx.raw + '%'; } } }
