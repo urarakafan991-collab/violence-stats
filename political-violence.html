@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Political, Ideological & Hate-Motivated Violence in the United States | TruthBased.org</title>
+  <meta name="description" content="A comprehensive, primary-source analysis of far-right, far-left, Islamist, religious, and hate-motivated violence in the US. Every ideology examined. Every counterargument steelmanned. Confidence-rated throughout.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/political-violence">
+  <meta property="og:title"   content="Political, Ideological & Hate-Motivated Violence in the US | TruthBased.org">
+  <meta property="og:description" content="FBI, START GTD, New America, ADL, and ACLED data on domestic terrorism, hate crimes, and ideologically motivated violence. Both sides steelmanned throughout.">
+  <meta property="og:image"   content="https://www.truthbased.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"   content="summary_large_image">
+  <meta name="twitter:title"  content="Political, Ideological & Hate-Motivated Violence in the US | TruthBased.org">
+  <meta name="twitter:description" content="Primary-source analysis of domestic terrorism and hate crimes by ideology. FBI, New America, ADL, ACLED — all sources disclosed, all methodologies explained.">
+  <meta name="twitter:image"  content="https://www.truthbased.org/og-image.png">
+
+  <link rel="canonical" href="https://www.truthbased.org/political-violence">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-num.warn     { color: var(--amber); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .confidence-tag {
+      display: inline-block;
+      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+    .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
+    .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Political, Ideological & Hate-Motivated Violence in the United States",
+    "description": "A comprehensive, primary-source analysis of far-right, far-left, Islamist, religious, and hate-motivated violence in the US. Every ideology examined. Every counterargument steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://www.truthbased.org/political-violence",
+    "keywords": ["domestic terrorism", "hate crimes", "far-right violence", "Islamist terrorism", "FBI UCR", "New America Foundation", "political violence", "anti-LGBT violence", "anti-semitism"]
+  }
+  </script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Violence &amp; Extremism</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – Definitions</a>
+      <a href="#part2" class="jump-btn">Part 2 – Far-Right</a>
+      <a href="#part3" class="jump-btn">Part 3 – Far-Left</a>
+      <a href="#part4" class="jump-btn">Part 4 – Religious Violence</a>
+      <a href="#part5" class="jump-btn">Part 5 – Hate Crimes</a>
+      <a href="#part6" class="jump-btn">Part 6 – Anti-LGBT Violence</a>
+      <a href="#part7" class="jump-btn">Part 7 – State Violence</a>
+      <a href="#part8" class="jump-btn">Part 8 – Methodology</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Violence &amp; Extremism</span>
+      <h1 class="article-title">Political, Ideological &amp; Hate-Motivated Violence in the United States</h1>
+      <p class="article-deck">A comprehensive, primary-source examination of domestic terrorism, hate crimes, and ideologically motivated violence across every major political and religious category. Every counterargument steelmanned. Confidence-rated throughout. No ideological special treatment.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">Published March 2026</span>
+        <span class="meta-pill">12+ primary sources</span>
+        <span class="meta-pill">~35 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="box box-amber" style="margin-top:20px;">
+      <span class="box-label">Critical Prefatory Note</span>
+      <p>This article synthesizes data from multiple independent databases that measure <em>different things</em> using different methodologies. FBI hate crime data uses voluntary law enforcement reports. The New America Foundation tracks terrorism charges and incident records. ADL counts extremist-related murders. ACLED codes protest events. None of these are interchangeable. Cross-category comparisons are made carefully and caveated throughout. Any report — political or journalistic — that merges these systems as if they were one dataset is overstating certainty.</p>
+    </div>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Far-right terrorism is the biggest domestic threat&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Directionally supported post-9/11: far-right killed ~137 vs. ~121 from Islamist attacks (New America). But 9/11 itself — a singular outlier — killed 2,977. The category comparison requires disclosing which time window and which database you are using.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Muslim Americans are a terrorism-prone population&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. Kurzman's longitudinal research shows Muslim Americans have among the lowest per-capita terrorism involvement of any religious group. Total US fatalities from Muslim-American violent extremism since 9/11 represent &lt;0.04% of all US murders in the same period.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Far-left and far-right violence are comparably lethal&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. New America finds 1 post-9/11 death from far-left terrorism vs. 137 from far-right. CSIS data: 13 left-wing fatalities in the past decade vs. 112 right-wing. Left-wing property destruction incidents are higher; left-wing <em>lethality</em> is dramatically lower.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;LGBT people pose an elevated risk to children&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. APA, CDC, and peer-reviewed criminological research find no evidence that sexual orientation or gender identity predicts risk of child sexual abuse perpetration. Studies find the overwhelming majority of perpetrators are heterosexual individuals with family or institutional access.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Anti-Christian hate crimes are a major crisis&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported at the scale claimed. OSCE/FBI data (2024): 279 anti-Christian offenses vs. 2,137 anti-Semitic and 288 anti-Muslim. Anti-Christian political discourse frequently conflates policy disputes and social criticism with physical violence — these are distinct and must be separated.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources Used</span>
+      <div class="source-pills">
+        <span class="source-pill">FBI UCR / Hate Crime Statistics</span>
+        <span class="source-pill">New America Foundation</span>
+        <span class="source-pill">CSIS Terrorism Database</span>
+        <span class="source-pill">ADL Center on Extremism</span>
+        <span class="source-pill">ACLED US Crisis Monitor</span>
+        <span class="source-pill">GAO (2017 Report)</span>
+        <span class="source-pill">BJS / NCVS</span>
+        <span class="source-pill">Kurzman (UNC Chapel Hill)</span>
+        <span class="source-pill">NAF (cross-checked DOJ)</span>
+        <span class="source-pill">HRC Foundation</span>
+        <span class="source-pill">Williams Institute</span>
+        <span class="source-pill">Mapping Police Violence</span>
+        <span class="source-pill">Equal Justice Initiative</span>
+        <span class="source-pill">OSCE Hate Crime Reporting</span>
+      </div>
+    </div>
+
+    <!-- PART 1: DEFINITIONS -->
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 8</span>
+        <h2 class="part-title">Definitions: Why They Matter More Than You Think</h2>
+      </div>
+
+      <span class="section-label">01 – The Structural Problem</span>
+
+      <p>Every number in this article depends on definitions — and the most consequential fact about the American data landscape is that the major databases are <em>not measuring the same thing.</em> An attack like the 2022 Buffalo supermarket shooting appears in hate crime statistics, terrorism statistics, and extremist murder statistics — but as a different entry in each system, coded by different rules, and producing different aggregate totals depending on which you consult. Using numbers from these systems interchangeably without disclosure is the single most common error in public discourse on this topic.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Major databases compared: what each counts and what it excludes</caption>
+          <thead>
+            <tr><th>Database</th><th>What It Counts</th><th>Key Exclusions</th><th>Advocacy?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>FBI UCR Hate Crime</strong></td><td class="td-note">Bias-motivated criminal offenses reported by participating law enforcement agencies</td><td class="td-note">Voluntary; ~30% of agencies don't report; many incidents go unclassified as hate crimes</td><td class="td-note">Government</td></tr>
+            <tr><td><strong>New America Foundation</strong></td><td class="td-note">Post-9/11 US terrorism cases where individuals were charged or killed in domestic terrorism incidents</td><td class="td-note">Requires legal action or death; misses many non-prosecuted incidents</td><td class="td-note">Research</td></tr>
+            <tr><td><strong>CSIS Database</strong></td><td class="td-note">Attacks and plots — includes disrupted plots alongside executed attacks</td><td class="td-note">Foiled plots inflate apparent volume vs. databases counting only executed attacks</td><td class="td-note">Research</td></tr>
+            <tr><td><strong>ADL Extremist Murders</strong></td><td class="td-note">Murders with clear documented extremist ideological motivation — annual tally</td><td class="td-note">Covers murders only, not injuries; requires clear ideological link</td><td class="td-note">Advocacy (disclosed)</td></tr>
+            <tr><td><strong>ACLED US Crisis Monitor</strong></td><td class="td-note">Protest events, riots, strategic developments — coded from open-source reports</td><td class="td-note">Not a terrorism database; counts events not exclusively violence</td><td class="td-note">Research</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">02 – The Motive Standard (Applied Consistently)</span>
+
+      <p>This report enforces a single standard across all ideological categories: <strong>identity or affiliation is not sufficient to attribute an act of violence to an ideological cause.</strong> Only documented motive does. This means:</p>
+
+      <p>A Muslim individual who commits violence without documented Islamist ideological motivation is <strong>not</strong> classified as Islamist terrorism here — the same way a Christian individual who commits violence without documented Christian nationalist motivation is not classified as Christian terrorism. A white perpetrator is not classified as white nationalist terrorism without documented ideology. A gay or trans person who commits violence is not classified as LGBT-motivated violence without documented motive.</p>
+
+      <p>This is the only methodologically defensible standard. It is applied symmetrically to every category in this report — including categories where applying it may reduce the apparent scale of violence attributed to ideologies that are politically convenient targets.</p>
+
+      <div class="box box-red">
+        <span class="box-label">The 9/11 Problem</span>
+        <p>The September 11 attacks killed 2,977 people in a single day — more than all documented far-right domestic terrorism fatalities over any 24-year period combined. Including 9/11 in a time-series comparison with other domestic terrorism categories makes 2001 so large that all other years become invisible, and makes every subsequent year look artificially safer. <strong>This report treats 9/11 as a separate data point in every analysis</strong>, exactly as every serious terrorism researcher does. Failure to do this is the most common manipulation in public discourse on terrorism fatalities.</p>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 1 Takeaway</strong>
+        Cross-database terrorism comparisons are valid only when the databases being compared are explicitly named and their methodological differences disclosed. Numbers from different systems cannot be added together or directly compared without this disclosure. This report names every source used for every claim.
+      </div>
+    </section>
+
+    <!-- PART 2: FAR-RIGHT -->
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 8</span>
+        <h2 class="part-title">Far-Right Political Violence (US Domestic)</h2>
+      </div>
+
+      <span class="section-label">03 – Fatality and Incident Data</span>
+
+      <p>The directional finding across multiple independent databases is consistent: <strong>far-right/anti-government/white-supremacist violence has been the deadliest domestic extremist category in the United States in the post-9/11 era</strong> — measured by fatalities from executed attacks.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Post-9/11 Domestic Far-Right Terrorism Fatalities</span>
+          <span class="stat-block-period">September 12, 2001 – 2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">New America Foundation (anti-government, militia, white supremacist, anti-abortion)</span>
+            <span class="stat-val neutral">137 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">ADL: Right-wing extremist murders, 2014–2023 (10 years)</span>
+            <span class="stat-val neutral">336 of 442 total (76%)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">ADL: Extremist murders in 2024 (all categories)</span>
+            <span class="stat-val neutral">13 deaths — all right-wing</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">GAO (2017): Share of domestic terrorism fatalities since 9/11 from far-right</span>
+            <span class="stat-val neutral">73%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">CSIS: Far-right share of domestic terrorism incidents, 1994–2019</span>
+            <span class="stat-val neutral">~57% of incidents</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="source-note">Note: New America figures cover domestic Islamist vs. far-right. GAO figure covers all ideologies post-9/11. ADL includes murders with clear documented ideological links. These are not interchangeable — see Part 1.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap">
+          <canvas id="chartIdeology" role="img" aria-label="Bar chart comparing domestic terrorism fatalities by ideology since 9/11. Far-right: 137, Islamist/jihadist: 121, Misogynist/incel: 17, Black nationalist: 13, Far-left: 1. Source: New America Foundation post-9/11 terrorism project."></canvas>
+        </div>
+      </div>
+      <p class="source-note">Source: New America Foundation Terrorism in America post-9/11 project. Covers executed attacks only (not foiled plots). 9/11 (2,977 deaths) excluded as a singular outlier — including it would make all other categories invisible on this chart. These categories use New America's own coding definitions.</p>
+
+      <span class="section-label">04 – Trend Analysis</span>
+
+      <p>The ADL trend data shows far-right extremist murders declining from a peak of 79 in 2017 to 13 in 2024 — but the organization notes this decline reflects fewer mass-casualty events, not a reduction in the underlying movement. The DHS Homeland Threat Assessment of October 2020 concluded that <em>racially and ethnically motivated violent extremists — specifically white supremacist extremists — would remain the most persistent and lethal threat in the homeland.</em></p>
+
+      <p>Meanwhile, CSIS data shows that while left-wing incidents surpassed right-wing incidents in frequency for the first time in 30+ years by early 2025, the lethality of far-right violence remains substantially higher. Incident counts and fatality counts are different metrics — and politically, each side tends to use whichever one supports their preferred narrative.</p>
+
+      <span class="section-label">05 – Landmark Cases (Verified)</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Major confirmed far-right domestic terrorism incidents, 1995–2022</caption>
+          <thead>
+            <tr><th>Incident</th><th>Year</th><th>Perpetrator &amp; Ideology</th><th>Deaths</th><th>Classification</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Oklahoma City Bombing</td><td>1995</td><td class="td-note">Timothy McVeigh — anti-government, anti-federal</td><td class="td-num">168</td><td class="td-note">Domestic terrorism; deadliest pre-9/11 act of American domestic terror</td></tr>
+            <tr><td>Sikh Temple of Wisconsin Shooting</td><td>2012</td><td class="td-note">Wade Michael Page — neo-Nazi</td><td class="td-num">6</td><td class="td-note">Hate crime and domestic terrorism</td></tr>
+            <tr><td>Charleston Church Shooting</td><td>2015</td><td class="td-note">Dylann Roof — white nationalist manifesto</td><td class="td-num">9</td><td class="td-note">Hate crime and terrorism; targeted Black parishioners</td></tr>
+            <tr><td>Pittsburgh Tree of Life Shooting</td><td>2018</td><td class="td-note">Robert Bowers — antisemitic, cited HIAS conspiracy</td><td class="td-num">11</td><td class="td-note">Deadliest antisemitic attack in US history</td></tr>
+            <tr><td>El Paso Walmart Shooting</td><td>2019</td><td class="td-note">Patrick Crusius — Great Replacement manifesto, anti-Hispanic</td><td class="td-num">23</td><td class="td-note">Hate crime and terrorism; 8 of 23 victims were Mexican nationals</td></tr>
+            <tr><td>Buffalo Supermarket Shooting</td><td>2022</td><td class="td-note">Payton Gendron — Great Replacement, livestreamed</td><td class="td-num">10</td><td class="td-note">Targeted predominantly Black neighborhood; hate crime and terrorism</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box-amber">
+        <span class="box-label">The Pulse Nightclub Problem</span>
+        <p>The 2016 Orlando Pulse nightclub shooting (49 killed) is listed in some databases as far-right/anti-LGBT and in others as Islamist. The cleanest answer: it is both, and neither purely. Omar Mateen pledged allegiance to ISIS during the attack (Islamist), but investigators found he had previously visited the venue, had documented personal conflicts, and may have selected a gay bar from several possible targets. FBI materials classify it as both a terrorist attack and a hate crime. <strong>This report does not use Pulse as a clean data point for either the far-right or Islamist category.</strong></p>
+      </div>
+
+      <span class="section-label">06 – Steelman: Conservative Critiques of the Category</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Argument</span>
+          <span class="steelman-val"><strong>&ldquo;Far-right&rdquo; is stretched too broadly.</strong> Critics including scholars at Claremont and Heritage argue the category sweeps in mentally ill lone actors, online-radicalized individuals with incoherent ideologies, and ordinary criminals who happen to have right-wing social media activity — none of whom represent a coherent organized movement. Conflating The Base/Atomwaffen (organized terror networks) with isolated individuals inflates apparent scale.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Assessment</span>
+          <span class="steelman-val">This objection has partial merit. ADL, CSIS, and New America all apply stricter standards requiring documented ideological content before attribution. But edge cases remain genuinely contested — some incidents coded as far-right by one database are coded as mass violence or personal grievance by another. The directional finding (far-right is the most lethal recent domestic category) survives these disputes, but precise counts are sensitive to coding decisions.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Argument</span>
+          <span class="steelman-val"><strong>FBI surveillance bias inflates the right-wing count.</strong> Post-9/11, FBI/DHS deployed substantially more surveillance resources against right-wing extremist groups. More surveillance of a group produces more documented plots, arrests, and attributions. Kurzman documented that DOJ press releases named right-wing terrorism defendants inconsistently while naming Muslim-American defendants routinely — creating asymmetric data capture.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Assessment</span>
+          <span class="steelman-val">A legitimate methodological point. It does not reverse the directional finding — multiple independent systems converge on far-right dominance in lethality — but it may affect the precise ratio between categories.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 2 Takeaway</strong>
+        Far-right/anti-government/white-supremacist violence has been the most lethal form of domestic terrorism in the post-9/11 era by multiple independent measures. This finding is HIGH confidence directionally; MEDIUM confidence on precise cross-database totals. Steelmanned critiques of the category's breadth are legitimate but do not reverse the finding.
+      </div>
+    </section>
+
+    <!-- PART 3: FAR-LEFT -->
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 8</span>
+        <h2 class="part-title">Far-Left Political Violence (US Domestic)</h2>
+      </div>
+
+      <span class="section-label">07 – Fatality Data</span>
+
+      <p>The public evidence supports a clear finding here: <strong>far-left lethal violence exists, but has produced dramatically fewer deaths than far-right or Islamist domestic violence in the post-9/11 period.</strong></p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Far-Left Domestic Terrorism Fatalities vs. Other Categories</span>
+          <span class="stat-block-period">Post-9/11 through 2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Far-left fatalities post-9/11 (New America)</span>
+            <span class="stat-val neutral">1 death</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Far-left fatalities, past decade (CSIS)</span>
+            <span class="stat-val neutral">13 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Right-wing fatalities, past decade (CSIS)</span>
+            <span class="stat-val neutral">112 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Jihadist fatalities, past decade (CSIS)</span>
+            <span class="stat-val neutral">82 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Far-left incidents (frequency), 2016–2024 (CSIS avg/year)</span>
+            <span class="stat-val warn">4.0/year — rising</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Far-left incidents vs. right-wing in frequency, H1 2025 (CSIS)</span>
+            <span class="stat-val warn">Left surpassed right for first time in 30+ years</span>
+          </div>
+        </div>
+      </div>
+
+      <p>This creates a split picture: left-wing <em>incidents</em> are rising and in early 2025 exceeded right-wing incidents for the first time in decades, while left-wing <em>lethality</em> remains dramatically lower. The choice between these metrics is politically consequential and should always be disclosed.</p>
+
+      <span class="section-label">08 – The 2020 George Floyd Protest Period</span>
+
+      <p>This requires care. Enormous claims have been made from both political directions about 2020 protest-era violence, and the data supports a nuanced picture that neither side fully acknowledges:</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">2020 BLM-Linked Demonstrations — ACLED / Princeton Bridging Divides</span>
+          <span class="stat-block-period">May–August 2020</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Total demonstrations recorded (ACLED)</span>
+            <span class="stat-val neutral">10,600+</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Peaceful demonstrations (ACLED)</span>
+            <span class="stat-val positive">~95% — more than 10,100 events</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Demonstrations involving violence or destruction</span>
+            <span class="stat-val warn">~5% — approximately 570 events</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Minneapolis–Saint Paul property damage estimate</span>
+            <span class="stat-val negative">~$550 million at 1,500 locations</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">DOJ prosecutions for serious 2020–21 riot-related offenses</span>
+            <span class="stat-val neutral">300+ charged across 29 states</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="info-note">CSIS notes its database excluded many 2020 violent events because analysts could not document clear political/ideological motive — meaning some 2020 violence is absent from ideological terrorism counts by deliberate methodological choice.</p>
+
+      <span class="section-label">09 – The Property vs. Lethality Distinction</span>
+
+      <p>This is among the most politically manipulated distinctions in the domestic violence debate. The ELF/ALF eco-terrorism wave of the 1990s–2000s produced hundreds of arsons targeting property — at one point the FBI declared ELF the top domestic terrorist threat — with zero directly attributed deaths. The 2020 protest period produced significant property destruction alongside rare homicides. Collapsing arson of an empty car dealership and murder into the same terrorism category is a definitional error with major political valence; this report does not do it.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Progressive</span>
+          <span class="steelman-val">Far-left violence is overcounted by including property destruction as terrorism. The ELF explicitly maintained a &ldquo;no one gets hurt&rdquo; policy; targeting empty buildings is categorically different from targeting people. Historically, COINTELPRO targeted left-wing groups with surveillance and disruption, creating a legacy of over-documentation of left-wing activity.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Conservative</span>
+          <span class="steelman-val">Left-wing violence during 2020 was systematically underprosecuted, with prosecutors in Democratic-run cities declining charges against arrested protesters, artificially deflating documented counts. The &ldquo;93% peaceful&rdquo; figure is mathematically true but operationally misleading: 5% of 10,600+ events is 530+ violent incidents causing billions in damage concentrated in specific neighborhoods. Those residents were harmed.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Assessment</span>
+          <span class="steelman-val">Both positions have legitimate empirical support. Both are used to manipulate the overall picture. The honest synthesis: most protests were peaceful; some violence was real and caused significant harm; far-left violence causes dramatically fewer deaths than far-right; property destruction should be reported but not conflated with homicide.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 3 Takeaway</strong>
+        Far-left violence is real and rising in incident frequency. It causes dramatically fewer deaths than far-right violence — this is HIGH confidence across multiple sources. The property/lethality distinction is critical and both political sides manipulate it. The 2020 protest period was overwhelmingly peaceful by direct event measurement, while producing real and significant property damage and some serious violence.
+      </div>
+    </section>
+
+    <!-- PART 4: RELIGIOUS VIOLENCE -->
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 8</span>
+        <h2 class="part-title">Religiously Motivated Violence</h2>
+      </div>
+
+      <span class="section-label">10 – Islamist-Motivated Violence (US Domestic)</span>
+
+      <p>The most important definitional enforcement in this entire article: <strong>Islamist ≠ Muslim.</strong> Only violence with documented Salafi-jihadist or Islamist political motivation is classified here. Violence by a Muslim individual without documented Islamist ideology is not in these numbers — exactly the same standard applied to Christian-coded violence in the next section.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Domestic Islamist Terrorism Post-9/11 (9/11 Treated Separately)</span>
+          <span class="stat-block-period">September 12, 2001 – 2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Post-9/11 US fatalities from jihadist attacks (New America)</span>
+            <span class="stat-val neutral">121 deaths</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Kurzman (UNC): Total US murders 2001–2025 (approx)</span>
+            <span class="stat-val neutral">~399,000+</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Muslim-American involvement in violent extremism as % of all US murders</span>
+            <span class="stat-val positive">&lt;0.04%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Peak year for Muslim-American violent extremism cases (Kurzman)</span>
+            <span class="stat-val neutral">2015 — 90 cases</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2020 Muslim-American violent extremism cases (Kurzman)</span>
+            <span class="stat-val positive">7 — lowest since 2008</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">9/11 (treated separately)</span>
+            <span class="stat-val neutral">2,977 deaths — singular outlier</span>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>The global context is essential and frequently omitted:</strong> The overwhelming majority of Islamist terrorism victims globally are Muslim. The GTD and Fondapol's global dataset find that approximately 88–89% of deaths from Islamist terrorism occur in Muslim-majority countries — Iraq, Afghanistan, Pakistan, Nigeria, Somalia, Syria. ISIS and al-Qaeda have killed far more Sunni and Shia Muslims than non-Muslims by absolute count. Omitting this fact from discussions of Islamist terrorism is not neutral — it actively distorts the picture of who bears the burden of this violence.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Civil liberties</span>
+          <span class="steelman-val"><strong>Entrapment and surveillance bias inflate Muslim terrorism statistics.</strong> ACLU and Kurzman document that the proportion of foiled-to-executed plots is dramatically higher for Islamist cases than for right-wing cases. Some &ldquo;plots&rdquo; in the count involve FBI informants playing central roles in facilitating them. More surveillance produces more documented plots, regardless of underlying threat level.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">National security</span>
+          <span class="steelman-val"><strong>Islamist terrorism poses a structurally different mass-casualty risk.</strong> The per-capita frequency argument does not address the tail risk of a coordinated mass-casualty attack like 9/11. Al-Qaeda and ISIS have demonstrated operational planning for attacks of that scale — something domestic lone-actor right-wing violence has not replicated. Both threats are real and both deserve resources.</span>
+        </div>
+      </div>
+
+      <span class="section-label">11 – Christian Nationalist / Christian Identity Violence</span>
+
+      <p>Three distinct categories — <em>not</em> to be conflated: (1) <strong>Christianity</strong> (~230 million self-identified US adherents), (2) <strong>Christian nationalism</strong> (a political movement), and (3) <strong>Christian Identity</strong> (an explicitly white-supremacist theology rejected by mainstream Christianity as heretical). Violence in this section is attributed to Christian Identity and the Army of God — not to Christianity broadly.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Anti-Abortion and Christian Identity Violence (NAF cross-checked against DOJ/news)</span>
+          <span class="stat-block-period">1977 – 2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Murders of abortion providers</span>
+            <span class="stat-val neutral">11 documented</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Attempted murders</span>
+            <span class="stat-val neutral">26+</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Bombings at abortion facilities</span>
+            <span class="stat-val neutral">42</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Arsons at abortion facilities</span>
+            <span class="stat-val neutral">200+</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Post-Dobbs (2022): bomb threats increase</span>
+            <span class="stat-val warn">+133% year-on-year</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Per-capita rate among ~230M US Christians</span>
+            <span class="stat-val positive">Statistically negligible</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="info-note">NAF is a pro-choice advocacy organization — its data must be treated accordingly. The specific murders, bombings, and arsons listed are independently verifiable through DOJ records, court documents, and news archives. The exact numbers are contested by methodology; the landmark cases are not.</p>
+
+      <p><strong>Notable cases: </strong>Eric Rudolph (1996–1998 bombings including 1996 Olympics, lesbian bar, two abortion clinics — Christian Identity and anti-abortion ideology); Scott Roeder (2009 murder of Dr. George Tiller in church — anti-abortion theology stated at trial); Army of God (FBI-classified domestic terrorist organization, claimed responsibility for multiple bombings and threats).</p>
+
+      <div class="box box-green">
+        <span class="box-label">The Mainstream Christianity Steelman</span>
+        <p>Christian theologians and major denominations — Southern Baptist Convention, US Conference of Catholic Bishops, mainline Protestants — explicitly and consistently condemn anti-abortion violence and reject Christian Identity as theologically aberrant and heretical. The mainstream anti-abortion movement also explicitly rejects violence. The perpetrators of documented anti-abortion and Christian Identity terrorism represent a tiny, theologically fringe population that most Christians actively denounce. This is the identical relationship between mainstream Islam and Salafi-jihadism — and must be acknowledged with equal consistency.</p>
+      </div>
+
+      <span class="section-label">12 – Other Religious Violence (Brief)</span>
+
+      <p>Jewish extremist violence in the US is historically documented but small in current count. The Jewish Defense League (JDL) was classified as a domestic terrorist organization by the FBI. The 1985 assassination of Alex Odeh and JDL bombing campaigns of the 1970s–80s are documented, as is the 2001 plot to bomb a mosque and congressional office. Contemporary domestic incidents are low relative to other categories — this is reported accurately rather than inflated or omitted.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 4 Takeaway</strong>
+        Islamist terrorism is real and has caused significant US domestic fatalities, but Muslim Americans have an extremely low per-capita terrorism rate (HIGH confidence). Anti-abortion and Christian Identity violence is documented and ongoing (HIGH confidence on specific cases; MEDIUM on aggregate counts due to advocacy data sourcing). The global burden of Islamist terrorism falls overwhelmingly on Muslim-majority countries — a critical fact often omitted from US public discourse.
+      </div>
+    </section>
+
+    <!-- PART 5: HATE CRIMES -->
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 8</span>
+        <h2 class="part-title">Hate Crimes by Bias Category</h2>
+      </div>
+
+      <span class="section-label">13 – The Underreporting Problem</span>
+
+      <p>Every figure in this section is a lower bound. FBI hate crime data depends on voluntary reporting by ~15,000 law enforcement agencies. Many submit zero reports — not because zero hate crimes occur in their jurisdictions, but because they lack classification protocols, training, or will. The Bureau of Justice Statistics' National Crime Victimization Survey, which captures self-reported victimization, consistently finds 2–3 times more hate crime victimizations than the UCR — approximately 243,000–247,000 per year in the 2005–2019 period versus roughly 7,000–11,000 in UCR annual reports.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">FBI UCR Hate Crime Statistics Overview</span>
+          <span class="stat-block-period">2024 (most recent)</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Total incidents reported</span>
+            <span class="stat-val neutral">11,679</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Total victims</span>
+            <span class="stat-val neutral">14,243</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Race/ethnicity/ancestry bias (largest category)</span>
+            <span class="stat-val neutral">53.2% of single-bias incidents</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Religion bias</span>
+            <span class="stat-val neutral">22.5%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Sexual orientation bias</span>
+            <span class="stat-val neutral">17.2%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Gender identity bias</span>
+            <span class="stat-val neutral">3.9%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Disability bias</span>
+            <span class="stat-val neutral">1.3%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">NCVS estimated actual annual victimizations (BJS)</span>
+            <span class="stat-val warn">~243,000–247,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap">
+          <canvas id="chartHateCrime" role="img" aria-label="Bar chart showing FBI hate crime incidents by bias category in 2024. Race/ethnicity: 6,211 incidents. Religion: 2,627 incidents. Sexual orientation: 2,008 incidents. Gender identity: 455 incidents. Disability: 152 incidents."></canvas>
+        </div>
+      </div>
+      <p class="source-note">Source: FBI UCR Hate Crime Statistics 2024; OSCE Hate Crime Reporting. These are reported incidents — a known undercount. NCVS surveys suggest true annual victimizations are 20–30x higher.</p>
+
+      <span class="section-label">14 – Anti-Black Hate Crimes</span>
+
+      <p>Anti-Black incidents make up over 51% of all race-based hate crimes — consistently the largest single racial category across multiple years of FBI data. Black Americans comprise approximately 13.7% of the US population; anti-Black victimization is plainly not proportional to population share.</p>
+
+      <p>Historical context is essential: the Equal Justice Initiative has documented more than 4,400 racial terror lynchings of African Americans between 1877 and 1950 — framing them explicitly as terrorism against the Black population. Church burnings targeting Black congregations have occurred in documented waves, including over 100 fires in 1995–1996. The 2022 Buffalo shooting and 2015 Charleston shooting represent the lethal end of contemporary white supremacist violence targeting Black Americans.</p>
+
+      <span class="section-label">15 – Anti-Semitic Hate Crimes</span>
+
+      <p><strong>Anti-Jewish hate crime is consistently the largest single religious hate crime category in the US</strong> — a finding that has held across every year of FBI data collection since 1991. In 2023, anti-Jewish incidents reached their highest recorded level: 1,832 FBI-reported incidents, a 63% increase from 2022, driven in part by the October 7 Hamas attacks and their aftermath.</p>
+
+      <p>ADL's 2024 Audit of Antisemitic Incidents recorded 9,354 incidents — the highest in its 46-year series. The ADL figure and the FBI figure measure different things: ADL includes non-criminal harassment and vandalism that never gets reported to police. They must not be compared directly.</p>
+
+      <p>Perpetrators of antisemitic attacks span multiple ideological categories: far-right (Pittsburgh Tree of Life, Poway synagogue), Islamist-adjacent (Jersey City 2019), and post-October 7 protest-related harassment. The debate about whether criticism of Israeli government policy constitutes antisemitism is genuine and contested — this report notes it as a definitional dispute that materially affects aggregate counts without resolving it politically.</p>
+
+      <span class="section-label">16 – Anti-Muslim, Anti-Asian, Anti-Indigenous</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Hate crime bias categories — documented trends and landmark cases</caption>
+          <thead>
+            <tr><th>Category</th><th>2024 Reported Incidents</th><th>Documented Spike Events</th><th>Key Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Anti-Muslim</strong></td><td class="td-num">~236</td><td class="td-note">+1,600% in 2001 (post-9/11); spikes after ISIS attacks; +49% in 2023 post-Oct 7</td><td class="td-note">Mosque vandalism and arson documented; Chapel Hill shooting 2015 (3 killed) contested as hate crime</td></tr>
+            <tr><td><strong>Anti-Asian</strong></td><td class="td-num">~379</td><td class="td-note">+77% in 2020 (COVID-19 era); Stop AAPI Hate counted broader non-criminal incidents</td><td class="td-note">Atlanta spa shootings 2021 (8 killed) — hate crime charge contested; rhetoric-to-spike correlation documented</td></tr>
+            <tr><td><strong>Anti-Hispanic</strong></td><td class="td-num">~840</td><td class="td-note">El Paso 2019 (23 killed) — most severe documented anti-Hispanic attack</td><td class="td-note">Undocumented migrants severely underreport due to fear of deportation</td></tr>
+            <tr><td><strong>Anti-Indigenous</strong></td><td class="td-note td-alert">Severe undercount</td><td class="td-note">MMIW epidemic: Indigenous women murdered at 10x+ national average in some states</td><td class="td-note">Jurisdictional complexity on reservations; 506 MMIW cases documented, 128 unsolved (UIHI 2018)</td></tr>
+            <tr><td><strong>Anti-Arab</strong></td><td class="td-num">~123 in 2023</td><td class="td-note">Highest-ever count since category added in 2015; +34% from 2022</td><td class="td-note">Balbir Singh Sodhi (Sikh American) killed 4 days after 9/11 — first documented 9/11 hate crime fatality, perpetrator thought he was Arab</td></tr>
+            <tr><td><strong>Anti-Disability</strong></td><td class="td-num">~171</td><td class="td-note">Among most underreported categories</td><td class="td-note">BJS: people with disabilities experience violent crime at 2.5x the rate of non-disabled people; bias-motivated subset largely invisible in official data</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">17 – Anti-Christian Hate Crimes</span>
+
+      <p>Anti-Christian hate crimes exist and are documented annually in FBI data. In 2024, OSCE/FBI data showed 279 anti-Christian offenses — compared with 2,137 anti-Semitic and 288 anti-Muslim. The data consistently shows anti-Christian hate crimes at lower frequency than anti-Jewish or anti-Muslim incidents.</p>
+
+      <p>The Nashville Covenant School shooting (2023, Audrey Hale, 6 killed) is often cited in this context. What is documented: Hale was a 28-year-old transgender man; the school was chosen partly because Hale had attended it. What is <em>not</em> publicly verified in full: investigators recovered writings, but no complete manifesto establishing anti-Christian terrorism motivation has been publicly released by law enforcement as of March 2026. <strong>This report does not use unverified characterizations of those writings from either political direction.</strong></p>
+
+      <div class="part-takeaway">
+        <strong>Part 5 Takeaway</strong>
+        Anti-Black and anti-Jewish hate crimes are the largest racial and religious categories respectively — HIGH confidence findings consistent across years. All categories are significant undercounts of true victimization. Anti-trans hate crimes show an upward trend. Anti-Christian hate crimes exist but are substantially lower-volume than anti-Jewish or anti-Muslim — the scale of the problem in political discourse is not matched by the data.
+      </div>
+    </section>
+
+    <!-- PART 6: ANTI-LGBT VIOLENCE -->
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 8</span>
+        <h2 class="part-title">Anti-LGBT Violence &amp; Related Violence</h2>
+      </div>
+
+      <span class="section-label">18 – Anti-LGBT Hate Crimes (Overview)</span>
+
+      <p>In 2024, sexual orientation motivated 17.2% of all reported hate crimes — 2,008 incidents. Gender identity motivated an additional 3.9% — 455 incidents. Combined, nearly one in five reported hate crimes targeted LGBTQ+ individuals.</p>
+
+      <p>These figures are among the most severely undercounted in all hate crime categories. LGBTQ+ victims systematically underreport to police due to: fear of discrimination by officers, fear of being outed, distrust of law enforcement based on historical targeting of LGBTQ+ communities, and in some cases, fear that identifying their identity to law enforcement will itself create harm.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">LGBTQ+ Victimization Rates — Williams Institute / BJS (NCVS-based)</span>
+          <span class="stat-block-period">Most recent available</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">LGBT violent victimization rate (NCVS)</span>
+            <span class="stat-val negative">106.4 per 1,000 people</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Non-LGBT violent victimization rate (NCVS)</span>
+            <span class="stat-val neutral">21.1 per 1,000 people</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">LGBT vs. non-LGBT violent crime rate</span>
+            <span class="stat-val negative">5x higher</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">LGBT violent hate crime rate vs. non-LGBT</span>
+            <span class="stat-val negative">9x higher</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Transgender victimization rate (NCVS)</span>
+            <span class="stat-val negative">93.7 per 1,000 people</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="section-label">19 – Anti-Transgender Violence: The Per-Capita Debate</span>
+
+      <p>The Human Rights Campaign Foundation has tracked at least 372 transgender and gender-expansive homicide victims since 2013, including approximately 32–44 per year in recent years. This tracking relies on media reports, community monitoring, and advocacy networks — it captures deaths that law enforcement may misclassify. In 2021, HRC documented at least 57 trans homicides while federal health data recorded 2 — a discrepancy driven primarily by misgendering of victims in official records, not actual differences in incidence.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Anti-Transgender Homicide — HRC Foundation Annual Tracking</span>
+          <span class="stat-block-period">2013–2024</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Total tracked since 2013</span>
+            <span class="stat-val neutral">372+ cases</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Annual rate (recent years)</span>
+            <span class="stat-val neutral">32–44 per year</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Share of victims who are BIPOC</span>
+            <span class="stat-val negative">~84%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Share of victims who are Black trans women</span>
+            <span class="stat-val negative">~75%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Williams Institute US trans adult population estimate</span>
+            <span class="stat-val neutral">~2.1–2.8 million (2025)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Estimated homicide rate for young Black trans women</span>
+            <span class="stat-val negative">~1 in 2,600 (vs. 1 in 12,000 for young cis population)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="box box-amber">
+        <span class="box-label">The Per-Capita Complexity</span>
+        <p>The per-capita homicide rate comparison for transgender people is genuinely complex. A 2017 study in the <em>American Journal of Public Health</em> (Dinno) found that overall trans homicide rates may be comparable to or even lower than cisgender rates when controlling for demographic exposure factors — because trans people are less frequently involved in contexts (drug trade, gang activity) that drive most homicide. However, <strong>young Black trans women face dramatically elevated homicide rates</strong> — an estimated 1 in 2,600 chance, compared with 1 in 12,000 for the young cisgender population. These two findings coexist: the overall rate is contested; the Black trans women subgroup disparity is one of the most robust findings in the data.</p>
+      </div>
+
+      <span class="section-label">20 – Major Venue Attacks</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Major documented attacks on LGBTQ+ venues, 2016–2022</caption>
+          <thead>
+            <tr><th>Incident</th><th>Year</th><th>Deaths / Injured</th><th>Classification</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pulse Nightclub, Orlando FL</td><td>2016</td><td class="td-num">49 killed / 53 injured</td><td class="td-note">Both Islamist and anti-LGBT motivation documented — see Part 4. Not a clean single-ideology case.</td></tr>
+            <tr><td>Club Q, Colorado Springs CO</td><td>2022</td><td class="td-num">5 killed / 22 injured</td><td class="td-note">Federal hate crime conviction obtained. Anderson Lee Aldrich sentenced to life. Clearest recent anti-LGBT venue attack.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">21 – Violence Involving LGBT Perpetrators: What the Research Shows</span>
+
+      <p>This section exists for intellectual completeness and TruthBased.org's steelmanning standard.</p>
+
+      <p><strong>The claim that LGBTQ+ individuals pose elevated risk to children</strong> is made frequently in political discourse. The peer-reviewed evidence does not support it. Studies by Groth and Birnbaum (1978), Jenny et al. (1994), and subsequent reviews consistently find that the overwhelming majority of child sexual abuse is committed by heterosexual individuals with family or institutional access. The APA, the American Academy of Pediatrics, and major child protection organizations find no scientific basis for the claim that LGBTQ+ identity is a risk factor for child sexual abuse perpetration. Studies that have claimed otherwise have been methodologically criticized for conflating pedophilia (a paraphilia) with sexual orientation, or for using non-representative samples. <span class="confidence-tag conf-high">HIGH confidence</span> for the refutation of this claim.</p>
+
+      <p>On general violent crime: research comparing LGBT and non-LGBT perpetration rates is sparse because sexual orientation is inconsistently recorded in criminal justice data. The available evidence does not support a claim of elevated violent crime perpetration rates among LGBTQ+ individuals. LGBTQ+ individuals are significantly more likely to be <em>victims</em> than perpetrators across all available data.</p>
+
+      <span class="section-label">22 – Conversion Therapy as Documented Harm</span>
+
+      <p>Major medical and mental health organizations — APA, AMA, WHO, American Academy of Pediatrics — have concluded that conversion therapy causes harm and does not achieve its stated goals. Studies document elevated rates of PTSD, depression, and suicidality among survivors. The Trevor Project's 2022 National Survey found LGBTQ+ youth who underwent conversion therapy were more than twice as likely to attempt suicide. 22+ US states have enacted bans on conversion therapy for minors. This constitutes documented, severe institutional harm against the LGBTQ+ population, included here because the publication covers systemic harms alongside physical violence.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 6 Takeaway</strong>
+        Anti-LGBT victimization rates are substantially higher than for non-LGBT people — HIGH confidence from NCVS survey data. Black trans women face dramatically elevated homicide risk — HIGH confidence. The claim that LGBTQ+ individuals pose elevated risk to children has no credible empirical support — HIGH confidence for the refutation. Anti-LGBT hate crimes are severely undercounted in official statistics.
+      </div>
+    </section>
+
+    <!-- PART 7: STATE VIOLENCE -->
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 8</span>
+        <h2 class="part-title">State &amp; Institutional Violence</h2>
+      </div>
+
+      <span class="section-label">23 – Police Killings: The Racial Disparity</span>
+
+      <p>The racial disparity in police killings is one of the most thoroughly documented findings in this entire report. Multiple independent databases using different methods converge on the same direction:</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Racial Disparities in Police Killings — Multiple Sources</span>
+          <span class="stat-block-period">2013–2025</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row">
+            <span class="stat-key">Black Americans killed by police per million (Mapping Police Violence)</span>
+            <span class="stat-val neutral">97 per million</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">White Americans killed by police per million (Mapping Police Violence)</span>
+            <span class="stat-val neutral">35 per million</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Black/white per-capita ratio</span>
+            <span class="stat-val negative">~2.8x higher for Black Americans</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Washington Post Fatal Force database (annual Black per-capita rate)</span>
+            <span class="stat-val negative">6.1 per million vs. 2.4/million for white</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">2024: year's police killings (Mapping Police Violence)</span>
+            <span class="stat-val negative">Deadliest year on record</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-key">Native Hawaiian/Pacific Islander vs. white rate</span>
+            <span class="stat-val negative">7.6x higher</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Conservative</span>
+          <span class="steelman-val"><strong>Controlling for police encounter rates reduces the disparity.</strong> The argument: Black Americans have higher rates of police encounters due to higher rates of violent crime in some communities; adjusting for encounter rate narrows or eliminates the racial shooting disparity in some models (e.g., Fryer 2016). The disparity may reflect structural exposure rather than officer-level bias.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Assessment</span>
+          <span class="steelman-val">The National Academies has warned that using arrest or encounter rates as denominators can embed earlier-stage bias, making adjusted disparities appear smaller than the underlying problem. A 2020 reanalysis by Knox and Mummolo found strong evidence of anti-Black disparities in killings of unarmed Americans even after controlling for these factors. Fryer's specific dataset and methodology have been disputed. Current scholarly consensus: the raw disparity is well-established (HIGH confidence); the causal decomposition between direct officer bias and structural exposure remains contested (MEDIUM confidence).</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Progressive</span>
+          <span class="steelman-val"><strong>The denominator itself is biased.</strong> Controlling for arrest rates cannot remove bias if the arrest rate is itself racially biased — you cannot use a biased measure to control for bias. The disparity must be understood as a product of systems with bias at multiple stages, not solely as an artifact of individual officer decisions.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 7 Takeaway</strong>
+        The racial disparity in police killings is large, consistent, and well-documented across multiple independent databases — HIGH confidence. The causal mechanism (direct officer racial bias vs. structural exposure from differential encounter rates that are themselves a product of historical racial inequality) is an active, unresolved scholarly debate — MEDIUM confidence on causal attribution.
+      </div>
+    </section>
+
+    <!-- PART 8: METHODOLOGY -->
+    <section id="part8">
+      <div class="part-header">
+        <span class="part-label">Part 8 of 8</span>
+        <h2 class="part-title">Methodological Synthesis: What the Evidence Supports</h2>
+      </div>
+
+      <span class="section-label">24 – The Most Abused Statistic in Each Category</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Most commonly misused statistics by political direction, by category</caption>
+          <thead>
+            <tr><th>Category</th><th>Abused by Right/Conservative discourse</th><th>Abused by Left/Progressive discourse</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Far-right violence</strong></td>
+              <td class="td-note">Dismissing the entire category as fabricated or inflated; conflating any research on right-wing extremism with political persecution</td>
+              <td class="td-note">&ldquo;Far-right terrorism accounts for X% of all domestic terrorism fatalities&rdquo; — stated without disclosing that 9/11 is excluded; or using incident counts instead of fatality counts</td>
+            </tr>
+            <tr>
+              <td><strong>Far-left violence</strong></td>
+              <td class="td-note">&ldquo;$2 billion in property damage from BLM/Antifa&rdquo; — conflates opportunistic looting with ideologically motivated terrorism and assumes all 2020 protest violence was left-wing</td>
+              <td class="td-note">&ldquo;93% of BLM protests were peaceful&rdquo; — arithmetically true but used to dismiss ~570 violent events causing billions in real harm to real communities</td>
+            </tr>
+            <tr>
+              <td><strong>Islamist violence</strong></td>
+              <td class="td-note">Including 9/11 (2,977 deaths) in post-9/11 time-series comparisons as if it represents an ongoing annual pattern; citing global Islamist deaths as evidence of US Muslim danger</td>
+              <td class="td-note">Claiming the per-capita community rate disproves any national security concern; Kurzman&rsquo;s finding about Muslim-American communities does not address mass-casualty attack tail risk from transnational networks</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-Black racism</strong></td>
+              <td class="td-note">&ldquo;More white people are killed by police than Black people in absolute numbers&rdquo; — true but deliberately misleading; per-capita disparity is 2.8x and well-documented</td>
+              <td class="td-note">&ldquo;Racism is the leading cause of death for Black Americans&rdquo; — a 2020 misreading of a police violence study; police killings are a serious harm but not the leading cause of death</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-Semitism</strong></td>
+              <td class="td-note">Attributing the majority of documented antisemitism to Islamists or left-wing activists, when FBI data shows far-right actors responsible for the most lethal antisemitic attacks</td>
+              <td class="td-note">Claiming antisemitism numbers are primarily inflated by conflating anti-Zionism with antisemitism — a legitimate definitional dispute used to minimize a very real and high baseline of antisemitic violence</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-LGBT violence</strong></td>
+              <td class="td-note">Citing overall trans homicide raw counts (32–44/year) as low, without noting the per-capita rate and dramatic disparity for Black trans women</td>
+              <td class="td-note">Using FBI hate crime totals without noting that NCVS surveys suggest true victimization is 20–30x higher; framing official counts as the full picture</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">25 – Underreporting Hierarchy (Most to Least)</span>
+
+      <p>Not all hate crime categories are undercounted equally. The mechanisms differ: victim distrust of police, inability to report, definitional exclusion, and jurisdictional fragmentation each create distinct patterns. The following ranking is a judgment call, not a settled metric:</p>
+
+      <ol style="font-size:0.9rem; line-height:1.8; padding-left:1.4rem; margin-bottom:14px;">
+        <li><strong>Disability-based hate crimes</strong> — victims often cannot report; institutional abuse categorized separately; law enforcement rarely identifies the bias motive</li>
+        <li><strong>Anti-transgender hate crimes</strong> — victims fear outing and discrimination; most trans homicides are misgendered in official records, removing them from the trans-violence count entirely</li>
+        <li><strong>Anti-Indigenous/Native American violence</strong> — jurisdictional complexity on reservations; inadequate federal reporting infrastructure; chronic underfunding of tribal law enforcement</li>
+        <li><strong>Violence against undocumented migrants</strong> — victims fear deportation; lack legal standing in many circumstances; geographic isolation in border regions</li>
+        <li><strong>Anti-LGBT (non-trans)</strong> — fear of outing; many victims don&rsquo;t know their experience qualifies as a hate crime</li>
+        <li><strong>Anti-Black, anti-Hispanic, anti-Asian</strong> — significant underreporting, though better documented than the categories above</li>
+        <li><strong>Anti-Jewish hate crimes</strong> — relatively better-reported due to ADL infrastructure and community reporting networks; still undercounted</li>
+        <li><strong>Anti-Christian hate crimes</strong> — possibly over-reported relative to severity; political discourse inflates the perceived scale</li>
+      </ol>
+
+      <span class="section-label">26 – What the Full Body of Evidence Supports</span>
+
+      <div class="conclusion-stats">
+        <div class="cs-row">
+          <div class="cs-num neutral" style="font-size:1.1rem;">HIGH CONFIDENCE</div>
+          <div class="cs-text">Far-right/anti-government violence has been the deadliest domestic extremist category in the post-9/11 era by multiple independent measures. This finding is directionally robust even accounting for legitimate methodological disputes about category definitions.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num neutral" style="font-size:1.1rem;">HIGH CONFIDENCE</div>
+          <div class="cs-text">Muslim Americans have among the lowest per-capita terrorism involvement of any religious community. Islamist violent extremism accounts for &lt;0.04% of all US murders in the post-9/11 period. This does not eliminate the mass-casualty threat posed by transnational Islamist networks — both facts can be true simultaneously.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num neutral" style="font-size:1.1rem;">HIGH CONFIDENCE</div>
+          <div class="cs-text">Anti-Jewish hate crimes are consistently the largest religious hate crime category in the US. Anti-Black hate crimes are consistently the largest racial category. Both findings are stable across years of FBI data.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num neutral" style="font-size:1.1rem;">HIGH CONFIDENCE</div>
+          <div class="cs-text">LGBTQ+ individuals face violent victimization at 5x the rate of non-LGBTQ+ people (NCVS). Black trans women face especially elevated homicide risk — approximately 1 in 2,600 vs. 1 in 12,000 for the young general population. Official FBI hate crime counts severely undercount LGBT victimization.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num neutral" style="font-size:1.1rem;">HIGH CONFIDENCE</div>
+          <div class="cs-text">LGBTQ+ identity does not predict risk of child sexual abuse perpetration. This claim has no credible empirical foundation in peer-reviewed research and is definitively contradicted by APA, CDC, and major criminological bodies.</div>
+        </div>
+        <div class="cs-row">
+          <div class="cs-num neutral" style="font-size:1.1rem;">HIGH CONFIDENCE</div>
+          <div class="cs-text">The racial disparity in police killings is large and consistent: Black Americans are killed at approximately 2.8x the per-capita rate of white Americans. The causal decomposition between direct officer bias and structural exposure is an active scholarly debate; the disparity itself is not.</div>
+        </div>
+      </div>
+
+      <span class="section-label">27 – What the Evidence Does NOT Support</span>
+
+      <div class="falsify-box">
+        <span class="falsify-label">Claims the data does not support</span>
+        <p>&#8226; That left-wing political violence is comparably lethal to right-wing domestic terrorism. Incident counts are rising; fatality counts are dramatically lower — conflating these metrics is deliberate manipulation.</p>
+        <p>&#8226; That Muslim Americans are disproportionately responsible for terrorism. The per-capita rate is among the lowest of any religious community. Kurzman&rsquo;s research is peer-reviewed and methodologically rigorous.</p>
+        <p>&#8226; That anti-Christian hate crimes represent a crisis comparable in scale to anti-Jewish or anti-Muslim hate crimes. The numbers are documented and consistently lower.</p>
+        <p>&#8226; That LGBTQ+ individuals pose elevated risk to children. No credible peer-reviewed evidence supports this; major institutions explicitly contradict it.</p>
+        <p>&#8226; That 9/11 represents an ongoing pattern of Muslim-American terrorism. It was a singular mass-casualty event executed by foreign nationals; it belongs in its own analysis, not in time-series comparisons with domestic terrorism trends.</p>
+        <p>&#8226; That the 2020 BLM protests were a violent insurrection. ACLED data shows 95%+ of events were peaceful. Significant violence and property destruction did occur in a minority of events; neither the &ldquo;insurrection&rdquo; framing nor the &ldquo;entirely peaceful&rdquo; framing is accurate.</p>
+        <p>&#8226; That all political violence is basically one-sided. The data shows different magnitudes by metric — fatalities favor right-wing; incident counts show left rising; hate crime victimization falls heaviest on groups that are political targets of right-wing rhetoric. This pattern is complex and should be reported as such.</p>
+      </div>
+
+      <span class="section-label">28 – Confidence Tier Summary</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Confidence tier ratings for major cross-category claims in this report</caption>
+          <thead>
+            <tr><th>Claim</th><th>Confidence</th><th>Key Caveat</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Far-right violence is the most lethal recent domestic extremist category</td><td class="td-rate">HIGH</td><td class="td-note">Directional consensus across CSIS, New America, ADL, GAO; precise counts vary by methodology</td></tr>
+            <tr><td>Muslim-American per-capita terrorism rate is very low</td><td class="td-rate">HIGH</td><td class="td-note">Kurzman longitudinal research; peer-reviewed methodology</td></tr>
+            <tr><td>Far-left violence causes far fewer fatalities than far-right</td><td class="td-rate">HIGH</td><td class="td-note">Consistent across New America (1 vs 137) and CSIS (13 vs 112)</td></tr>
+            <tr><td>Anti-Jewish hate crimes are the largest religious hate crime category</td><td class="td-rate">HIGH</td><td class="td-note">Consistent FBI finding across all years since 1991</td></tr>
+            <tr><td>Anti-Black hate crimes are the largest racial hate crime category</td><td class="td-rate">HIGH</td><td class="td-note">Consistent FBI finding; 51%+ of race-based incidents</td></tr>
+            <tr><td>LGBT victimization rates are 5x higher than non-LGBT (NCVS)</td><td class="td-rate">HIGH</td><td class="td-note">Williams Institute, BJS data; captures unreported crimes</td></tr>
+            <tr><td>Black trans women face disproportionately elevated homicide risk</td><td class="td-rate">HIGH</td><td class="td-note">Most robust subgroup finding in trans violence literature</td></tr>
+            <tr><td>Police killings show a 2.8x racial disparity (Black vs white per capita)</td><td class="td-rate">HIGH</td><td class="td-note">Consistent across Mapping Police Violence and Washington Post databases</td></tr>
+            <tr><td>LGBTQ+ identity does not predict child abuse perpetration</td><td class="td-rate">HIGH</td><td class="td-note">APA, CDC, and peer-reviewed criminological consensus</td></tr>
+            <tr><td>Overall trans homicide rate vs. cisgender population</td><td class="td-warn">MEDIUM</td><td class="td-note">Conflicting studies; depends on denominator choice and demographic controls</td></tr>
+            <tr><td>Incel violence constitutes terrorism as legally defined</td><td class="td-warn">MEDIUM</td><td class="td-note">Genuine scholarly dispute; some researchers argue it fits mass violence more than terrorism</td></tr>
+            <tr><td>Anti-trans legislation correlates with increased hate crime</td><td class="td-warn">LOW-MEDIUM</td><td class="td-note">Suggestive correlation; establishing causation is methodologically difficult</td></tr>
+            <tr><td>Exact decade-by-decade far-right incident totals are comparable across databases</td><td class="td-warn">MEDIUM</td><td class="td-note">Each database uses different inclusion criteria — see Part 1</td></tr>
+            <tr><td>2020 riot violence was primarily ideologically motivated left-wing terrorism</td><td class="td-alert">LOW</td><td class="td-note">CSIS explicitly excluded much 2020 violence due to inability to document political motive</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;Political, Ideological &amp; Hate-Motivated Violence in the United States.&rdquo; Published March 2026. https://www.truthbased.org/political-violence</span>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Sources and Methodology Disclosures</span>
+        <div class="source-item"><strong>FBI UCR Hate Crime Statistics (2022, 2023, 2024).</strong> Government primary source. Voluntary reporting — significant undercount. <a href="https://www.justice.gov/hatecrimes/hate-crime-statistics" class="inline-link" target="_blank" rel="noopener">justice.gov</a></div>
+        <div class="source-item"><strong>New America Foundation Terrorism in America Database.</strong> Post-9/11 US terrorism cases with charges or deaths. <a href="https://www.newamerica.org/insights/terrorism-in-america/" class="inline-link" target="_blank" rel="noopener">newamerica.org</a></div>
+        <div class="source-item"><strong>CSIS Database (Seth Jones).</strong> Attacks and plots 1994–present; includes disrupted plots. <a href="https://www.csis.org" class="inline-link" target="_blank" rel="noopener">csis.org</a></div>
+        <div class="source-item"><strong>ADL Center on Extremism — Murder and Extremism annual reports.</strong> Advocacy organization; methodology: extremist-linked murders verified against news and court records.</div>
+        <div class="source-item"><strong>ACLED US Crisis Monitor.</strong> Protest event coding; not a terrorism database. <a href="https://acleddata.com" class="inline-link" target="_blank" rel="noopener">acleddata.com</a></div>
+        <div class="source-item"><strong>GAO (2017).</strong> &ldquo;Countering Violent Extremism: Actions Needed to Define Strategy and Assess Progress&rdquo; — covers domestic terrorism fatalities post-9/11.</div>
+        <div class="source-item"><strong>Kurzman, Charles (UNC Chapel Hill).</strong> Annual Muslim-American terrorism tracking. Peer-reviewed; longitudinal. <a href="https://kurzman.unc.edu/muslim-american-terrorism/annual-report/" class="inline-link" target="_blank" rel="noopener">kurzman.unc.edu</a></div>
+        <div class="source-item"><strong>NAF (National Abortion Federation).</strong> Anti-abortion violence database. Advocacy organization — landmark case data cross-verified against DOJ records and court documents.</div>
+        <div class="source-item"><strong>HRC Foundation — An Epidemic of Violence (annual).</strong> Trans homicide tracking via media and community monitoring. Advocacy organization — counts verified against news archives.</div>
+        <div class="source-item"><strong>Williams Institute (UCLA).</strong> LGBTQ+ population estimates and victimization research using NCVS microdata.</div>
+        <div class="source-item"><strong>BJS / NCVS.</strong> National Crime Victimization Survey — captures unreported crimes; best available underreporting-adjusted estimates. <a href="https://bjs.ojp.gov" class="inline-link" target="_blank" rel="noopener">bjs.ojp.gov</a></div>
+        <div class="source-item"><strong>Mapping Police Violence.</strong> Database of police killings 2013–present. <a href="https://mappingpoliceviolence.org" class="inline-link" target="_blank" rel="noopener">mappingpoliceviolence.org</a></div>
+        <div class="source-item"><strong>Equal Justice Initiative.</strong> Lynching in America — historical racial terror documentation. <a href="https://eji.org/reports/lynching-in-america/" class="inline-link" target="_blank" rel="noopener">eji.org</a></div>
+        <div class="source-item"><strong>OSCE Hate Crime Reporting (US).</strong> FBI-based data with additional coding. <a href="https://hatecrime.osce.org/reporting/united-states-america/2024" class="inline-link" target="_blank" rel="noopener">hatecrime.osce.org</a></div>
+      </div>
+    </section>
+  </article>
+  </main>
+
+  <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center; max-width:780px; margin:36px auto 0;">
+    <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+    <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven, source-disclosed fact-checking, consider supporting TruthBased.org.</p>
+    <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+    <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay</a>
+  </div>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Published March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: FBI UCR, New America, CSIS, ADL, ACLED, BJS, Kurzman</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    // Chart 1: Domestic Terrorism Fatalities by Ideology (post-9/11, excl. 9/11)
+    const ctxIdeology = document.getElementById('chartIdeology').getContext('2d');
+    new Chart(ctxIdeology, {
+      type: 'bar',
+      data: {
+        labels: ['Far-Right / Anti-Govt', 'Islamist / Jihadist', 'Misogynist / Incel', 'Black Nationalist', 'Far-Left'],
+        datasets: [{
+          label: 'Deaths (post-9/11, 9/11 excluded)',
+          data: [137, 121, 17, 13, 1],
+          backgroundColor: [
+            'rgba(184,58,30,0.55)',
+            'rgba(122,79,0,0.55)',
+            'rgba(184,58,30,0.35)',
+            'rgba(122,79,0,0.35)',
+            'rgba(27,107,62,0.45)'
+          ],
+          borderColor: [
+            'rgba(184,58,30,0.85)',
+            'rgba(122,79,0,0.85)',
+            'rgba(184,58,30,0.65)',
+            'rgba(122,79,0,0.65)',
+            'rgba(27,107,62,0.85)'
+          ],
+          borderWidth: 1.5,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        indexAxis: 'y',
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'US Domestic Terrorism Fatalities by Ideology — Post-9/11 (9/11 Excluded)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.x + ' deaths (Source: New America Foundation)' } }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // Chart 2: Hate Crimes by Bias Category 2024
+    const ctxHate = document.getElementById('chartHateCrime').getContext('2d');
+    new Chart(ctxHate, {
+      type: 'bar',
+      data: {
+        labels: ['Race/Ethnicity', 'Religion', 'Sexual Orientation', 'Gender Identity', 'Disability', 'Gender'],
+        datasets: [{
+          label: 'FBI Reported Incidents (2024)',
+          data: [6211, 2627, 2008, 455, 152, 105],
+          backgroundColor: [
+            'rgba(184,58,30,0.5)',
+            'rgba(122,79,0,0.5)',
+            'rgba(27,107,62,0.5)',
+            'rgba(27,107,62,0.35)',
+            'rgba(90,84,76,0.4)',
+            'rgba(90,84,76,0.3)'
+          ],
+          borderColor: [
+            'rgba(184,58,30,0.85)',
+            'rgba(122,79,0,0.85)',
+            'rgba(27,107,62,0.85)',
+            'rgba(27,107,62,0.65)',
+            'rgba(90,84,76,0.7)',
+            'rgba(90,84,76,0.6)'
+          ],
+          borderWidth: 1.5,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'FBI UCR Hate Crime Incidents by Bias Category — 2024 (Known Undercount; True Victimization Est. 20–30x Higher)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y.toLocaleString() + ' incidents reported' } }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c', maxRotation: 30 }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
