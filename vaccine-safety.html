@@ -487,6 +487,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
+          <caption>Key studies on vaccine safety outcomes</caption>
           <thead>
             <tr><th>Study</th><th>Year</th><th>Sample Size</th><th>Finding</th></tr>
           </thead>
@@ -561,6 +562,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
+          <caption>VAERS adverse event reporting levels and clinical interpretation</caption>
           <thead><tr><th>Level</th><th>Description</th><th>Use</th></tr></thead>
           <tbody>
             <tr><td><strong>Level 1</strong></td><td>Highest diagnostic certainty</td><td>Most specific; gold standard</td></tr>
@@ -593,6 +595,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
+          <caption>Childhood vaccine schedule antigens over time (1980s vs. today)</caption>
           <thead><tr><th>Era</th><th>Diseases</th><th>Doses (by age 6)</th><th>Total Antigens</th></tr></thead>
           <tbody>
             <tr><td><strong>Mid-1980s</strong></td><td>7 (DTP, polio, MMR)</td><td>~10&ndash;11</td><td><strong>~3,200</strong> (whole-cell DTP alone: ~3,000)</td></tr>
@@ -626,6 +629,7 @@
       <h3>Original Trial Efficacy</h3>
       <div class="table-scroll">
         <table class="data-table">
+          <caption>COVID-19 vaccine trial efficacy results</caption>
           <thead><tr><th>Vaccine</th><th>Trial Size</th><th>Efficacy</th><th>Cases: Vaccine vs. Placebo</th></tr></thead>
           <tbody>
             <tr><td><strong>Pfizer-BioNTech</strong></td><td>43,548</td><td>95.0% (CI 90.3&ndash;97.6)</td><td>8 vs. 162</td></tr>
@@ -662,6 +666,7 @@
 
       <div class="table-scroll">
         <table class="data-table">
+          <caption>Myocarditis risk: vaccine vs. COVID-19 infection</caption>
           <thead><tr><th>Exposure</th><th>Clot Risk</th><th>Context</th></tr></thead>
           <tbody>
             <tr><td><strong>J&amp;J vaccine</strong></td><td>~3 per million overall; ~10/million in women 30&ndash;49</td><td>60 confirmed cases in 18M+ doses</td></tr>
@@ -1061,17 +1066,31 @@
   <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 
   <!-- QR expand modal -->
-  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
     <img id="qrExpanded" src="" alt="Enlarged QR code">
-    <span class="qr-overlay-label">Tap anywhere to close</span>
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
   </div>
   <script>
+  var _qrOpener = null;
   function expandQR(el){
+    _qrOpener = el;
     var ov=document.getElementById('qrOverlay');
     var img=document.getElementById('qrExpanded');
     img.src=el.src; img.alt=el.alt;
     ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
   }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
   // Add tap-to-enlarge hints under each QR
   document.querySelectorAll('.qr-thumb').forEach(function(q){
     if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
