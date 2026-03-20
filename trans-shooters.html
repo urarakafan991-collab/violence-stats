@@ -2283,7 +2283,8 @@
 
     // Chart 1 — Trans % of shooters vs % of population across 3 databases
     (function() {
-      const ctx = document.getElementById('chart1').getContext('2d');
+      var el1 = document.getElementById('chart1'); if (!el1) return;
+      const ctx = el1.getContext('2d');
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -2383,7 +2384,8 @@
 
     // Chart 2 — Per-capita rate 2020–2025
     (function() {
-      const ctx = document.getElementById('chart2').getContext('2d');
+      var el2 = document.getElementById('chart2'); if (!el2) return;
+      const ctx = el2.getContext('2d');
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -2471,7 +2473,8 @@
 
     // Chart 3 — Underrepresentation factor by denominator
     (function() {
-      const ctx = document.getElementById('chart3').getContext('2d');
+      var el3 = document.getElementById('chart3'); if (!el3) return;
+      const ctx = el3.getContext('2d');
       new Chart(ctx, {
         type: 'bar',
         data: {
