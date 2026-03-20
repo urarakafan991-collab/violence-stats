@@ -1,21 +1,86 @@
+# TruthBased.org — robots.txt
+# Last updated: 2026-03-19
+
+# === DEFAULT: ALL CRAWLERS ===
 User-agent: *
 Allow: /
+Crawl-delay: 2
 
-# Block crawlers from reaching non-content files
+# Block non-content files from being indexed as standalone pages
 Disallow: /404.html
-Disallow: /qr-*.png
-Disallow: /favicon*.png
+Disallow: /qr-bitcoin.png
+Disallow: /qr-evm.png
+Disallow: /qr-litecoin.png
+Disallow: /qr-solana.png
+Disallow: /qr-stellar.png
+Disallow: /qr-usdt-trc20.png
+Disallow: /qr-xrp.png
+Disallow: /favicon.png
+Disallow: /favicon-32.png
 Disallow: /apple-touch-icon.png
 Disallow: /og-image.png
-Disallow: /1-b8d45ab2.png
 
-# Block common vulnerability scanners and bad bots
-User-agent: AhrefsBot
-Crawl-delay: 10
+# === AI TRAINING BOTS ===
+# Content may not be used for AI/ML training without permission.
 
-User-agent: SemrushBot
-Crawl-delay: 10
+User-agent: GPTBot
+Disallow: /
 
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: PerplexityBot
+Crawl-delay: 30
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+# === JUNK / SPAM BOTS ===
 User-agent: MJ12bot
 Disallow: /
 
@@ -25,15 +90,35 @@ Disallow: /
 User-agent: BLEXBot
 Disallow: /
 
-User-agent: PetalBot
-Crawl-delay: 10
+User-agent: DataForSeoBot
+Disallow: /
 
-# Allow major search engines unrestricted access
+User-agent: AhrefsBot
+Crawl-delay: 30
+
+User-agent: SemrushBot
+Crawl-delay: 30
+
+User-agent: PetalBot
+Crawl-delay: 30
+
+User-agent: Seekport
+Disallow: /
+
+User-agent: seoscanners.net
+Disallow: /
+
+User-agent: Netcraft
+Disallow: /
+
+# === MAJOR SEARCH ENGINES (unrestricted) ===
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Slurp
 Allow: /
@@ -41,7 +126,13 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Allow social crawlers for embeds
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# === SOCIAL EMBED CRAWLERS (needed for link previews) ===
 User-agent: Twitterbot
 Allow: /
 
@@ -54,4 +145,14 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# === SITEMAP ===
 Sitemap: https://www.truthbased.org/sitemap.xml
