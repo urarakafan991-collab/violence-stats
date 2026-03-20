@@ -1,97 +1,268 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-
   "rewrites": [
-    { "source": "/shootings-by-demographic/:slug", "destination": "/shootings-by-demographic.html" }
+    {
+      "source": "/shootings-by-demographic/:slug",
+      "destination": "/shootings-by-demographic.html"
+    }
   ],
-
   "redirects": [
-    { "source": "/trans-shooter", "destination": "/trans-shooters", "permanent": true },
-    { "source": "/trans-shooter.html", "destination": "/trans-shooters", "permanent": true },
-    { "source": "/vaccine", "destination": "/vaccine-safety", "permanent": true },
-    { "source": "/vaccines", "destination": "/vaccine-safety", "permanent": true },
-    { "source": "/immigration", "destination": "/border-crossings", "permanent": true },
-    { "source": "/borders", "destination": "/border-crossings", "permanent": true },
-    { "source": "/guns", "destination": "/gun-violence", "permanent": true },
-    { "source": "/gun", "destination": "/gun-violence", "permanent": true },
-    { "source": "/inflation-data", "destination": "/inflation", "permanent": true },
-    { "source": "/spending", "destination": "/us-spending", "permanent": true },
-    { "source": "/federal-spending", "destination": "/us-spending", "permanent": true },
-    { "source": "/wage-gap", "destination": "/gender-wage-gap", "permanent": true },
-    { "source": "/wages", "destination": "/gender-wage-gap", "permanent": true },
-    { "source": "/climate", "destination": "/climate-change", "permanent": true },
-    { "source": "/fraud", "destination": "/voter-fraud", "permanent": true },
-    { "source": "/election-fraud", "destination": "/voter-fraud", "permanent": true },
-    { "source": "/policing", "destination": "/policing-crime", "permanent": true },
-    { "source": "/police", "destination": "/policing-crime", "permanent": true },
-    { "source": "/religion", "destination": "/religion-violence", "permanent": true },
-    { "source": "/religiosity", "destination": "/religiosity-social-outcomes", "permanent": true },
-    { "source": "/education", "destination": "/most-educated-countries", "permanent": true },
-    { "source": "/food", "destination": "/ultra-processed-food", "permanent": true },
-    { "source": "/upf", "destination": "/ultra-processed-food", "permanent": true },
-    { "source": "/gender-medicine", "destination": "/youth-gender-medicine", "permanent": true },
-    { "source": "/trans-healthcare", "destination": "/youth-gender-medicine", "permanent": true },
-    { "source": "/about", "destination": "/methodology", "permanent": true }
+    {
+      "source": "/trans-shooter",
+      "destination": "/trans-shooters",
+      "permanent": true
+    },
+    {
+      "source": "/trans-shooter.html",
+      "destination": "/trans-shooters",
+      "permanent": true
+    },
+    {
+      "source": "/vaccine",
+      "destination": "/vaccine-safety",
+      "permanent": true
+    },
+    {
+      "source": "/vaccines",
+      "destination": "/vaccine-safety",
+      "permanent": true
+    },
+    {
+      "source": "/immigration",
+      "destination": "/border-crossings",
+      "permanent": true
+    },
+    {
+      "source": "/borders",
+      "destination": "/border-crossings",
+      "permanent": true
+    },
+    {
+      "source": "/guns",
+      "destination": "/gun-violence",
+      "permanent": true
+    },
+    {
+      "source": "/gun",
+      "destination": "/gun-violence",
+      "permanent": true
+    },
+    {
+      "source": "/inflation-data",
+      "destination": "/inflation",
+      "permanent": true
+    },
+    {
+      "source": "/spending",
+      "destination": "/us-spending",
+      "permanent": true
+    },
+    {
+      "source": "/federal-spending",
+      "destination": "/us-spending",
+      "permanent": true
+    },
+    {
+      "source": "/wage-gap",
+      "destination": "/gender-wage-gap",
+      "permanent": true
+    },
+    {
+      "source": "/wages",
+      "destination": "/gender-wage-gap",
+      "permanent": true
+    },
+    {
+      "source": "/climate",
+      "destination": "/climate-change",
+      "permanent": true
+    },
+    {
+      "source": "/fraud",
+      "destination": "/voter-fraud",
+      "permanent": true
+    },
+    {
+      "source": "/election-fraud",
+      "destination": "/voter-fraud",
+      "permanent": true
+    },
+    {
+      "source": "/policing",
+      "destination": "/policing-crime",
+      "permanent": true
+    },
+    {
+      "source": "/police",
+      "destination": "/policing-crime",
+      "permanent": true
+    },
+    {
+      "source": "/religion",
+      "destination": "/religion-violence",
+      "permanent": true
+    },
+    {
+      "source": "/religiosity",
+      "destination": "/religiosity-social-outcomes",
+      "permanent": true
+    },
+    {
+      "source": "/education",
+      "destination": "/most-educated-countries",
+      "permanent": true
+    },
+    {
+      "source": "/food",
+      "destination": "/ultra-processed-food",
+      "permanent": true
+    },
+    {
+      "source": "/upf",
+      "destination": "/ultra-processed-food",
+      "permanent": true
+    },
+    {
+      "source": "/gender-medicine",
+      "destination": "/youth-gender-medicine",
+      "permanent": true
+    },
+    {
+      "source": "/trans-healthcare",
+      "destination": "/youth-gender-medicine",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/methodology",
+      "permanent": true
+    }
   ],
-
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';" },
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        }
       ]
     },
     {
       "source": "/(.*)\\.html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" },
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" },
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/(.*)\\.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
       ]
     },
     {
       "source": "/favicon.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
       ]
     },
     {
       "source": "/apple-touch-icon.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/security.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     }
   ]
