@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dress | White &amp; Gold or Blue &amp; Black? | TruthBased.org</title>
+  <meta name="description" content="The science behind why millions of people saw different colors in the same photo. Color constancy, Bayesian inference, and what it means for shared reality. | TruthBased.orgFirearm homicides rose 31% in 2020. Was defunding police the cause? CDC mortality data, FBI UCR, and quasi-experimental evidence examined. Every argument...">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/the-dress">
+  <meta property="og:title"   content="The Dress | White &amp; Gold or Blue &amp; Black? | TruthBased.org">
+  <meta property="og:description" content="The neuroscience behind why millions of people saw different colors in the same photograph. Color constancy, Bayesian inference, and what it means for shared reality.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title"  content="The Dress | White &amp; Gold or Blue &amp; Black? | TruthBased.org">
+  <meta name="twitter:description" content="The same pixels. Two completely different colors. The neuroscience behind why — and what it reveals about human perception.">
+
+  <link rel="canonical" href="https://www.truthbased.org/the-dress">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Dress — White & Gold or Blue & Black?",
+    "description": "The neuroscience of color constancy and why millions of people saw different colors in the same photograph.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://www.truthbased.org/the-dress",
+    "keywords": ["the dress", "blue black white gold", "color constancy", "color perception", "Bayesian inference", "visual perception", "neuroscience"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Science &amp; Perception</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – What Is Being Asked</a>
+      <a href="#part2" class="jump-btn">Part 2 – Why It Split People</a>
+      <a href="#part3" class="jump-btn">Part 3 – White &amp; Gold</a>
+      <a href="#part4" class="jump-btn">Part 4 – Blue &amp; Black</a>
+      <a href="#part5" class="jump-btn">Part 5 – What Science Settles</a>
+      <a href="#part6" class="jump-btn">Part 6 – Implications</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Science &amp; Perception</span>
+      <h1 class="article-title">The Dress &mdash; White &amp; Gold or Blue &amp; Black?</h1>
+      <p class="article-deck">In 2015, a single photograph split the internet in half. People were not arguing about opinion &mdash; they were genuinely seeing different things. The neuroscience behind why is more interesting than the viral moment it came from.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">March 2026</span>
+        <span class="meta-pill">17 primary sources</span>
+        <span class="meta-pill">~12 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common misconceptions vs. what the science shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Misconception</span>&ldquo;Anyone who sees white and gold is just wrong&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partly true, partly false. The dress is factually blue and black (confirmed by manufacturer and spectral measurements). But white/gold viewers are not failing &mdash; their visual system is producing a legitimate output under a different, equally rational assumption about lighting.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Misconception</span>&ldquo;It&rsquo;s subjective &mdash; both colors are equally valid&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>False. The dress has one objective physical color (blue and black, measured by spectroradiometry). The experiences are different; the fabric is not.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Misconception</span>&ldquo;Sleep deprivation explains the split&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. No dress-specific evidence links sleep deprivation to color perception differences. A 60-hour sleep deprivation study found no statistically significant change in blue-yellow contrast sensitivity.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Misconception</span>&ldquo;Morning people see white/gold; night people see blue/black&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Suggestive but not settled. Wallisch (2017) found a correlation. Aston and Hurlbert found only moderate significance (p&lt;0.10). One study failed to cleanly replicate the circadian pattern. It is a contributing factor, not an explanation.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <span class="source-pill">Lafer-Sousa et al. 2015 (Current Biology)</span>
+        <span class="source-pill">Wallisch 2017 (Journal of Vision)</span>
+        <span class="source-pill">Melgosa et al. 2015 (Color Research)</span>
+        <span class="source-pill">Winkler et al. 2015 (Current Biology)</span>
+        <span class="source-pill">Aston &amp; Hurlbert 2017 (PMC)</span>
+        <span class="source-pill">Schlaffke et al. 2015 (fMRI)</span>
+        <span class="source-pill">Chetverikov &amp; Ivanchei 2016</span>
+        <span class="source-pill">Roman Originals (manufacturer)</span>
+      </div>
+    </div>
+
+    <!-- JUMP NAV UPDATE -->
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">What Is Actually Being Asked</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Not a trick. A perception problem.</span>
+
+      <p>In February 2015, Cecilia Bleasdale took a photograph of a dress she planned to wear to her daughter&rsquo;s wedding. When her daughter posted it online asking for opinions on the color, it split the internet in half. People did not disagree about taste or style. They disagreed about basic visual fact &mdash; some saw white and gold, others saw blue and black, and neither side could understand how the other was possible.</p>
+
+      <p>This is not a trick photograph. There are no hidden lines, no optical illusion in the classic sense. The dress pixels are a fixed set of RGB values on a screen. The question it poses is deeper than &ldquo;what color is the fabric?&rdquo; It asks: <strong>how can identical pixel values produce fundamentally different color experiences in different people?</strong></p>
+
+      <p>The answer lies in one of the most important and least-understood functions of the visual system: color constancy. The brain does not passively read color off the retina. It actively infers the most likely color of a surface after accounting for the illumination it assumes is falling on that surface. The dress photograph is a nearly perfect ambiguous case for that inference &mdash; and different brains resolve it differently, for reasons that are systematic, predictable, and rooted in normal function.</p>
+
+      <div class="box box-green">
+        <span class="box-label">The central scientific paper</span>
+        <p>Rosa Lafer-Sousa, Katherine Hermann, and Bevil Conway (Current Biology, 2015) is the definitive peer-reviewed study. It surveyed 1,401 participants, confirmed three stable perceptual clusters (not a smooth continuum), and demonstrated that adding explicit illumination cues could flip perception predictably. All four AI systems consulted for this article independently identified this as the primary source.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>The dress question is not about opinion. It is about how the brain performs color inference under ambiguity. Two people can look at identical pixels and construct different colors &mdash; not because one is wrong to trust their eyes, but because their visual systems made different assumptions about lighting.</div>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">Why This Photograph Split People</h2>
+      </div>
+
+      <span class="section-label">02 &mdash; Color constancy and the illuminant problem</span>
+
+      <p>The light reaching your eye from any surface depends on two things: the surface&rsquo;s own reflectance properties (its &ldquo;true&rdquo; color) and the color of the light illuminating it. A red apple in orange sunset light and a red apple under blue fluorescent light send different signals to the retina &mdash; but both look red. Your visual system continuously subtracts its estimate of the illuminant to recover the object&rsquo;s stable color. This is color constancy, and it normally works so well that you never notice it.</p>
+
+      <p>The dress image is a catastrophic failure case for this mechanism. The photograph is overexposed, with a washed-out background that provides almost no reliable cues about the ambient light. The chromaticities of the dress pixels sit along the daylight locus &mdash; the natural range of illumination colors from sunrise to deep shade &mdash; which is exactly the axis where the visual system expects illumination variation. This means the brain cannot easily distinguish &ldquo;is this blue because the light is blue, or because the fabric is blue?&rdquo;</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Lafer-Sousa, Hermann &amp; Conway 2015 &mdash; Survey Results</span>
+          <span class="stat-block-period">Current Biology, N=1,401</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Blue / Black</span><span class="stat-val positive">57% of respondents</span></div>
+          <div class="stat-row"><span class="stat-key">White / Gold</span><span class="stat-val neutral">30% of respondents</span></div>
+          <div class="stat-row"><span class="stat-key">Blue / Brown</span><span class="stat-val neutral">11% of respondents</span></div>
+          <div class="stat-row"><span class="stat-key">Other</span><span class="stat-val neutral">2% of respondents</span></div>
+          <div class="stat-row"><span class="stat-key">Perception type</span><span class="stat-val neutral">Stable categorical clusters, not a continuum &mdash; confirmed by color-matching task</span></div>
+          <div class="stat-row"><span class="stat-key">Multistability</span><span class="stat-val warn">Some observers switched percept on retest &mdash; genuine bistability confirmed</span></div>
+          <div class="stat-row"><span class="stat-key">Illuminant cue test</span><span class="stat-val positive">64% of white/gold viewers flipped to blue/black when warm lighting cue added; 80% of blue/black flipped to white/gold under cool lighting cue</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">03 &mdash; The blue-yellow axis: why this image specifically</span>
+
+      <p>Not all color ambiguity produces disagreement at this scale. The dress is specifically unstable because it exploits the <strong>blue-yellow axis</strong>, which is the primary axis of natural illumination variation (daylight shifts from warm yellow at sunrise to cool blue in shade). The visual system is especially likely to attribute bluish tints to illumination rather than to the object itself &mdash; because in nature, that is almost always the right interpretation.</p>
+
+      <p>Winkler, Spillmann, Werner, and Webster (Current Biology, 2015) published a companion paper specifically on this asymmetry. When the colors of the dress were rotated off the blue-yellow axis to a red-green palette, the perceptual disagreement almost entirely disappeared. The ambiguity is not a generic property of overexposed photos &mdash; it is specifically tied to the color axis along which illumination normally varies.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">The Bayesian explanation</span>
+        <p>The visual cortex (particularly areas V4 and inferotemporal cortex) performs statistical inference: it combines ambiguous sensory input with lifetime priors about the probable illuminant. In Bayesian terms, viewers with different priors (built from different lighting histories) reach different posterior percepts from the same data. This is not a flaw &mdash; it is the correct operation of a system evolved to function under variable natural lighting.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>The dress image is ambiguous specifically because its colors sit on the blue-yellow axis of natural illumination variation &mdash; the axis where the brain most readily attributes color to lighting rather than objects. Different illuminant assumptions produce different, stable percepts. Adding explicit lighting cues flips perception predictably for most people.</div>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">The Strongest Case for White and Gold</h2>
+      </div>
+
+      <span class="section-label">04 &mdash; A rational bet on cool, bluish light</span>
+
+      <p>People who see the dress as white and gold are not misfiring or being tricked. Their visual system has made a specific, internally consistent inference: <strong>the dress is illuminated by cool, bluish light</strong> &mdash; the kind found in outdoor shade, overcast sky, or north-facing windows. Under this assumption, the visual cortex discounts the blue component of the image as illumination, not fabric. When that blue cast is subtracted, the underlying signal resolves as light (white) and yellowish (gold).</p>
+
+      <p>This prior is statistically reasonable for many people. Daylight under open sky has a strong blue component. Shadows are filled with cool, diffuse skylight. People who spend more waking hours outdoors, or who are morning chronotypes with greater daytime light exposure, have visual systems tuned to expect and discount cool illumination. The overexposed background in the original photo, which is washed out and bright, is consistent with a strongly lit outdoor scene &mdash; exactly the context where cool-light discounting makes sense.</p>
+
+      <p>Older observers and women showed modestly higher rates of white/gold perception in the Lafer-Sousa study. The age effect may relate to lens yellowing over time (which slightly shifts color processing toward warmer perception, counterintuitively nudging the brain toward assuming cooler illumination to compensate) and cumulative daylight exposure. The effect is real but not large enough to fully explain individual differences.</p>
+
+      <div class="box box-green">
+        <span class="box-label">The white/gold percept is rational</span>
+        <p>White/gold viewers are wrong about the fabric&rsquo;s physical reflectance. They are not wrong about their experience, and they are not applying an irrational visual prior. Their brain is doing exactly what color constancy is designed to do &mdash; discounting the assumed illuminant &mdash; and landing on a plausible interpretation of an genuinely ambiguous image.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>White/gold viewers assume a cool, bluish illuminant and discount it. The result is a lawful, internally consistent percept. They are factually incorrect about the dress color but are not experiencing a perceptual failure.</div>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">The Strongest Case for Blue and Black</h2>
+      </div>
+
+      <span class="section-label">05 &mdash; A rational bet on warm, direct light</span>
+
+      <p>People who see blue and black are applying the inverse inference: the dress is illuminated by <strong>warm, yellowish light</strong> &mdash; incandescent bulbs, direct sunlight, or late-afternoon indoor lighting. Under this assumption, the visual cortex discounts the yellow-warm component of the image as illumination. When that warm cast is removed, the remaining signal resolves as blue fabric with black lace.</p>
+
+      <p>This prior is reinforced by exposure to artificial indoor lighting, which is nearly always warmer than daylight. Evening chronotypes who spend more waking hours under warm artificial light have visual systems calibrated to expect and discount warm illumination. Chetverikov and Ivanchei (2016) found that blue/black viewers were more likely to infer a frontal light source and less likely to assume shadow &mdash; a coherent interpretation given the image&rsquo;s overexposure artifacts, which are consistent with direct illumination washing out the scene.</p>
+
+      <p>The blue/black percept also happens to be factually correct about the fabric. The manufacturer Roman Originals confirmed in a tweet on February 27, 2015: &ldquo;We can confirm #TheDress is blue and black!&rdquo; Cecilia Bleasdale, who took the original photograph and bought the dress, said: &ldquo;It&rsquo;s blue and black. I&rsquo;ve never seen the white and gold. Ever.&rdquo; Melgosa et al. (2015) purchased an original model of the dress and measured its spectral reflectance directly, confirming the body reflects blue and the lace is near-black under standard D65 daylight.</p>
+
+      <div class="box box-green">
+        <span class="box-label">The blue/black percept is both rational and factually correct</span>
+        <p>Blue/black viewers arrive at the correct answer about the fabric, but not through special visual ability. They are applying a different illuminant prior &mdash; one tuned to warmer indoor lighting &mdash; that happens to produce the physically accurate result. Their mechanism is identical to that of white/gold viewers; their prior differs.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>Blue/black viewers assume warm, direct illumination and discount it. The blue/black percept is factually correct about the dress, but not because these viewers have better color vision &mdash; they made a different illuminant bet that happened to match physical reality.</div>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">What the Science Actually Settles &mdash; and What It Doesn&rsquo;t</h2>
+      </div>
+
+      <span class="section-label">06 &mdash; What is settled</span>
+
+      <p><strong>The dress is blue and black.</strong> This is a factual claim supported by manufacturer confirmation, direct spectroradiometric measurement (Melgosa et al., 2015), and the testimony of the original photographer. There is no scientific or evidential ambiguity about the physical color of the fabric.</p>
+
+      <p><strong>Color constancy and illuminant inference explain the split.</strong> This is the consensus finding across all major studies (Lafer-Sousa et al., Wallisch, Aston &amp; Hurlbert, Winkler et al.). People who see white/gold are discounting a cool illuminant; people who see blue/black are discounting a warm one. Adding explicit illumination cues flips perception in the predicted direction for the majority of viewers. This is not a theory &mdash; it has been experimentally demonstrated.</p>
+
+      <p><strong>The blue-yellow axis specifically causes the instability.</strong> Rotating the colors off this axis eliminates the disagreement (Winkler et al., 2015). The effect is not a generic property of ambiguous images.</p>
+
+      <span class="section-label">07 &mdash; What is not fully settled</span>
+
+      <p><strong>Chronotype and time-of-day effects are suggestive, not definitive.</strong> Wallisch (2017) found a correlation between chronotype and dress perception. But Aston and Hurlbert (2017) found the effect only at p&lt;0.10 significance. One follow-up study failed to cleanly replicate the circadian pattern. It is a plausible contributing factor, not an established explanation. Any article that presents chronotype as the explanation is overclaiming.</p>
+
+      <p><strong>Sleep deprivation has no established role.</strong> ChatGPT&rsquo;s research for this article found no dress-specific evidence for this claim. The closest relevant study (Koefoed et al., 2015, on 60-hour sleep deprivation) found no statistically significant change in blue-yellow contrast sensitivity. This explanation appears frequently in popular coverage but lacks empirical support.</p>
+
+      <p><strong>The fMRI and EEG evidence is real but preliminary.</strong> Schlaffke et al. (2015) found that white/gold perceivers showed higher activation in frontal and parietal brain regions, suggesting top-down cognitive contributions. An EEG study found that observer type (blue/black vs. white/gold) could be predicted with over 80% accuracy from neural activity in occipitoparietal regions. These findings are consistent with the Bayesian framework but do not constitute a complete neural explanation.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--green-light);color:var(--green);">White/Gold overclaim</div>
+          <div class="steelman-val">&ldquo;Both perceptions are equally valid&rdquo; &mdash; False. The dress has one physical color. The experiences differ; the object does not. Saying both are equally valid collapses the distinction between perception (subjective, variable) and reality (objective, fixed).</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--brick-light);color:var(--brick);">Blue/Black overclaim</div>
+          <div class="steelman-val">&ldquo;White/gold people are just wrong&rdquo; &mdash; Misleading. White/gold viewers are wrong about the object&rsquo;s reflectance, but their perception is a lawful output of a functioning visual system. Framing them as simply &ldquo;wrong&rdquo; misses the more important point that their brain is correctly performing color constancy under a different, plausible assumption.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway</strong>The science settles the object color (blue/black) and the mechanism (illuminant inference). It does not fully settle the role of chronotype, and it definitively does not support sleep deprivation as an explanation. Popular coverage overclaimed on both counts.</div>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">What This Actually Means &mdash; and the AI Disclosure</h2>
+      </div>
+
+      <span class="section-label">08 &mdash; Implications beyond a viral photo</span>
+
+      <p>The dress is memorable because it made the constructive nature of perception undeniable. Most of the time, color constancy works so well that you never notice your brain is inferring rather than receiving. The dress broke that invisibility. Two people, looking at the same screen, seeing completely different things &mdash; both entirely sincere, both entirely rational, one factually wrong about the object.</p>
+
+      <p><strong>Eyewitness testimony.</strong> If two observers of a static image can construct opposite colors from identical pixels, what does that say about two witnesses to a dynamic, stressful, brief real-world event? Eyewitness misidentification is involved in roughly 75% of convictions later overturned by DNA evidence (Innocence Project). The dress does not prove eyewitnesses are useless &mdash; it illustrates, concretely, why perception under uncertain conditions should never be treated as mechanically objective recording.</p>
+
+      <p><strong>Photography as evidence.</strong> Lighting conditions unknown to a viewer can flip the apparent color or brightness of objects in photographs. Color-critical applications &mdash; forensics, medical imaging, quality control &mdash; require standardized illumination precisely because the same image under different lighting assumptions produces different apparent colors.</p>
+
+      <p><strong>Shared reality.</strong> We navigate daily life under the assumption that our perceptual experiences are universal. The dress demonstrated that this assumption can fail in specific, predictable ways tied to individual visual history. We do not all inhabit identical phenomenal worlds &mdash; and the cases where we diverge are not random but systematic.</p>
+
+      <span class="section-label">09 &mdash; Factors most coverage missed</span>
+
+      <p><strong>The Bayesian inference mechanism</strong> was underreported. This is not a vague &ldquo;brains work differently&rdquo; story &mdash; it is a specific, mathematically formalizable process in which the visual cortex weights prior illuminant expectations against current sensory evidence. The specific prior, not overall visual acuity, determines the outcome.</p>
+
+      <p><strong>The image is multistable but not infinitely so.</strong> Some people can switch percepts. Knowledge of the true color biases future perception toward blue/black. But most observers remain stable across sessions, and the effect is not analogous to the Necker cube, which flips regularly for most people. Dress perception is much more resistant to switching once established.</p>
+
+      <p><strong>You cannot train yourself out of it easily.</strong> Context manipulation (changing backgrounds, adding illumination cues, covering parts of the image) can shift perception for some viewers. But once the initial percept is formed, it tends to be sticky. This is consistent with the Bayesian framework: strong priors are hard to override with local evidence.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">AI Disclosure &mdash; How this article was produced</span>
+        <p>This article was compiled from research produced by four separate AI systems, each given an identical research prompt requiring primary sources and balanced steelmanning. Their research was cross-checked against each other and against the primary studies directly.</p>
+        <p style="margin-top:10px;"><strong>Grok</strong> (xAI) &mdash; two independent runs produced consistent findings. Strong on mechanism and primary study detail. Both runs generated on March 19, 2026.</p>
+        <p style="margin-top:6px;"><strong>DeepSeek</strong> (DeepSeek AI) &mdash; found the EEG neural correlates study and the Innocence Project connection. Note: DeepSeek&rsquo;s AI disclosure section incorrectly labeled itself as &ldquo;GPT-4o by OpenAI&rdquo; &mdash; this is factually wrong and was corrected here.</p>
+        <p style="margin-top:6px;"><strong>ChatGPT GPT-5.4 Thinking</strong> (OpenAI) &mdash; strongest research of the four. Found spectral reflectance measurements (Melgosa et al.), the fMRI study, and explicitly debunked the sleep deprivation claim. Most careful about distinguishing what evidence does and does not support. Generated March 19, 2026.</p>
+        <p style="margin-top:6px;">No AI was used to write this synthesis &mdash; the final article was compiled by TruthBased.org editorial review of all four research documents. All factual claims have been cross-checked against the cited primary sources.</p>
+      </div>
+
+      <div class="falsify-box">
+        <span class="falsify-label">Falsifiability threshold &mdash; what would change this conclusion</span>
+        <p>This article concludes that illuminant inference (color constancy) is the primary mechanism, that the dress is blue and black, and that chronotype effects are suggestive but not settled. This would change if:</p>
+        <p><strong>1.</strong> A large pre-registered study demonstrated that chronotype robustly predicts dress perception with high accuracy, replicating across multiple labs.</p>
+        <p><strong>2.</strong> A study demonstrated that an alternative mechanism (not illuminant inference) better accounts for the distribution of percepts, the blue-yellow axis specificity, or the illuminant-cue flip data.</p>
+        <p><strong>3.</strong> New spectral data showed the dress to have ambiguous physical reflectance under a plausible illuminant &mdash; which would require explaining why both manufacturer and spectroradiometric measurements found blue/black.</p>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Full Sources &amp; References</span>
+        <div class="source-item"><strong>Lafer-Sousa R., Hermann K.L., Conway B.R. (2015)</strong> &mdash; Striking individual differences in color perception uncovered by &lsquo;the dress&rsquo; photograph. <em>Current Biology</em>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4921196/" target="_blank" rel="noopener noreferrer">PMC4921196</a></div>
+        <div class="source-item"><strong>Winkler A.D., Spillmann L., Werner J.S., Webster M.A. (2015)</strong> &mdash; Asymmetries in blue-yellow color perception and in the color of &ldquo;the dress.&rdquo; <em>Current Biology</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/25981792/" target="_blank" rel="noopener noreferrer">PubMed 25981792</a></div>
+        <div class="source-item"><strong>Wallisch P. (2017)</strong> &mdash; Illumination assumptions account for individual differences in the perceptual interpretation of &ldquo;the dress.&rdquo; <em>Journal of Vision</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/28388701/" target="_blank" rel="noopener noreferrer">PubMed 28388701</a></div>
+        <div class="source-item"><strong>Aston S., Hurlbert A. (2017)</strong> &mdash; What #theDress reveals about the role of illumination priors in color perception and color constancy. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5812438/" target="_blank" rel="noopener noreferrer">PMC5812438</a></div>
+        <div class="source-item"><strong>Melgosa M. et al. (2015)</strong> &mdash; What can we learn from a dress with ambiguous colors? Spectroradiometric measurements confirming blue/black. <em>Color Research &amp; Application</em>. <a href="https://digibug.ugr.es/bitstream/handle/10481/96461/Color%20Research%20%20%20Application%20-%202015%20-%20Melgosa%20-%20What%20can%20we%20learn%20from%20a%20dress%20with%20ambiguous%20colors.pdf" target="_blank" rel="noopener noreferrer">Digibug UGR</a></div>
+        <div class="source-item"><strong>Witzel C., Racey C., O&rsquo;Regan J.K. (2017)</strong> &mdash; The dress and individual differences in the perception of surface properties. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5739438/" target="_blank" rel="noopener noreferrer">PMC5739438</a></div>
+        <div class="source-item"><strong>Chetverikov A., Ivanchei I. (2016)</strong> &mdash; Seeing &ldquo;the Dress&rdquo; in the Right Light: Perceived Colors and Inferred Light Sources. <a href="https://andreychetverikov.org/files/Papers/Chetverikov%2C%20Ivanchei%20-%202016%20-%20Seeing%20the%20Dress%20in%20the%20Right%20Light.pdf" target="_blank" rel="noopener noreferrer">Chetverikov.org</a></div>
+        <div class="source-item"><strong>Aston S. et al. (2020)</strong> &mdash; Exploring the Determinants of Color Perception Using #TheDress and Its Variants. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7672784/" target="_blank" rel="noopener noreferrer">PMC7672784</a></div>
+        <div class="source-item"><strong>Schlaffke L. et al. (2015)</strong> &mdash; The brain&rsquo;s dress code: How The Dress allows to decode the neuronal pathway of an optical illusion. fMRI study. <a href="https://pubmed.ncbi.nlm.nih.gov/26478963/" target="_blank" rel="noopener noreferrer">PubMed 26478963</a></div>
+        <div class="source-item"><strong>Brainard D.H., Hurlbert A.C. (2015)</strong> &mdash; Colour Vision: Understanding #TheDress. <em>Current Biology</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0960982215005941" target="_blank" rel="noopener noreferrer">ScienceDirect</a></div>
+        <div class="source-item"><strong>Koefoed V.F. et al. (2015)</strong> &mdash; Contrast sensitivity and the effect of 60-hour sleep deprivation. No significant blue-yellow change found. <a href="https://pubmed.ncbi.nlm.nih.gov/25308819/" target="_blank" rel="noopener noreferrer">PubMed 25308819</a></div>
+        <div class="source-item"><strong>Lim D.Y. et al. (2022)</strong> &mdash; Incongruence in Lighting Impairs Face Identification. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8918724/" target="_blank" rel="noopener noreferrer">PMC8918724</a></div>
+        <div class="source-item"><strong>Roman Originals (2015)</strong> &mdash; Manufacturer confirmation: &ldquo;We can confirm #TheDress is blue and black!&rdquo; Twitter, February 27, 2015. <a href="https://x.com/romanoriginals/status/571224722438004736" target="_blank" rel="noopener noreferrer">X/Twitter</a></div>
+        <div class="source-item"><strong>Bleasdale C., quoted in The Guardian (2015)</strong> &mdash; &ldquo;It&rsquo;s blue and black. I&rsquo;ve never seen the white and gold. Ever.&rdquo; <a href="https://www.theguardian.com/fashion/2015/dec/22/thedress-internet-divided-cecilia-bleasdale-black-blue-white-gold" target="_blank" rel="noopener noreferrer">The Guardian</a></div>
+        <div class="source-item"><strong>Innocence Project</strong> &mdash; Eyewitness misidentification statistics. <a href="https://innocenceproject.org/eyewitness-identification-reform/" target="_blank" rel="noopener noreferrer">innocenceproject.org</a></div>
+        <div class="source-item"><strong>Elliott S.L. et al. (2012)</strong> &mdash; Individual and age-related variation in chromatic contrast adaptation. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3444168/" target="_blank" rel="noopener noreferrer">PMC3444168</a></div>
+        <div class="source-item"><strong>Zlatkova M.B. et al. (2003)</strong> &mdash; Short-wavelength acuity: blue-yellow and achromatic resolution loss with age. <a href="https://pubmed.ncbi.nlm.nih.gov/12505610/" target="_blank" rel="noopener noreferrer">PubMed 12505610</a></div>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;The Dress &mdash; White &amp; Gold or Blue &amp; Black?&rdquo; March 2026. https://www.truthbased.org/the-dress</span>
+      </div>
+    </section>
+  </article>
+  </main>
+
+
+
+    
+    <div class="related-reading" style="max-width:780px;margin:0 auto 0;padding:0 24px 24px;">
+      <span style="font-family:var(--font-sans);font-size:0.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-quiet);display:block;margin-bottom:10px;">Related Reading</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="/gun-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">U.S. Gun Violence &rarr;</a>
+        <a href="/political-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">Political Violence &rarr;</a>
+      </div>
+    </div>
+  <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: FBI UCR/CIUS, CDC NCHS, BJS NCVS, Council on Criminal Justice</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    
+    // Chart 1: Firearm Homicide Rate 2010–2023
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'Firearm Homicide Rate per 100k',
+          data: [3.6, 3.7, 3.7, 3.6, 3.4, 3.6, 4.0, 4.1, 4.3, 4.6, 6.2, 6.7, 6.2, 5.6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: function(ctx) {
+            return ctx.dataIndex >= 10 ? 'rgba(184,58,30,0.9)' : 'rgba(184,58,30,0.4)';
+          },
+          pointRadius: function(ctx) { return ctx.dataIndex >= 10 ? 5 : 3; },
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (CDC Mortality Data, 2010–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          annotation: {}
+        },
+        scales: {
+          y: { beginAtZero: false, min: 2.5, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // Chart 2: NICS Background Check Applications
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['2017','2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [{
+          label: 'NICS Applications (millions)',
+          data: [25.2, 26.2, 28.4, 39.7, 38.9, 36.9, 32.5, 28.0],
+          backgroundColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.5)' : 'rgba(27,107,62,0.3)';
+          },
+          borderColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)';
+          },
+          borderWidth: 1.5,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'NICS Firearm Background Check Applications (Millions), 2017–2024', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + 'M applications' } }
+        },
+        scales: {
+          y: { beginAtZero: false, min: 20, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>

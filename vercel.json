@@ -137,6 +137,36 @@
       "source": "/about",
       "destination": "/methodology",
       "permanent": true
+    },
+    {
+      "source": "/dress",
+      "destination": "/the-dress",
+      "permanent": true
+    },
+    {
+      "source": "/the-dress-color",
+      "destination": "/the-dress",
+      "permanent": true
+    },
+    {
+      "source": "/mandela",
+      "destination": "/mandela-effect",
+      "permanent": true
+    },
+    {
+      "source": "/false-memory",
+      "destination": "/mandela-effect",
+      "permanent": true
+    },
+    {
+      "source": "/mpemba",
+      "destination": "/mpemba-effect",
+      "permanent": true
+    },
+    {
+      "source": "/hot-water",
+      "destination": "/mpemba-effect",
+      "permanent": true
     }
   ],
   "headers": [

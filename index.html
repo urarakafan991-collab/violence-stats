@@ -1078,6 +1078,70 @@
     </div>
 
 
+    <!-- ── 07 Science & Perception ──────────────────────── -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
+        <span class="acc-num">07</span>
+        <span class="acc-label">Science &amp; Perception</span>
+        <span class="acc-meta">Viral phenomena explained with primary source neuroscience and physics</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
+        <div class="acc-panel-inner">
+          <div class="acc-content">
+            <div class="article-list">
+
+              <a href="/the-dress" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">The Dress &mdash; White &amp; Gold or Blue &amp; Black?</span>
+                  <span class="row-desc">The same pixels. Two completely different colors. The neuroscience of color constancy, Bayesian inference, and what it means for shared reality.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">Lafer-Sousa et al. 2015</span>
+                    <span class="source-pill">Wallisch 2017</span>
+                    <span class="source-pill">Melgosa et al. 2015</span>
+                    <span class="source-pill">Roman Originals</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <a href="/mandela-effect" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">The Mandela Effect &mdash; Mass False Memory or Something Else?</span>
+                  <span class="row-desc">Berenstain or Berenstein? Did the Monopoly man have a monocle? Why millions share the same vivid, confident, wrong memories &mdash; and what that reveals about the mind.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">Loftus &amp; Palmer 1974</span>
+                    <span class="source-pill">Roediger &amp; McDermott 1995</span>
+                    <span class="source-pill">YouGov 2022</span>
+                    <span class="source-pill">Valle et al. 2025</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+              <a href="/mpemba-effect" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
+                <div class="row-body">
+                  <span class="row-title">The Mpemba Effect &mdash; Does Hot Water Freeze Faster Than Cold?</span>
+                  <span class="row-desc">Aristotle noticed it in 350 BCE. A Tanzanian student rediscovered it in 1963. Sixty years of modern physics later, the answer is still contested &mdash; and more interesting than either side admits.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">Mpemba &amp; Osborne 1969</span>
+                    <span class="source-pill">Burridge &amp; Linden 2016</span>
+                    <span class="source-pill">RSC Applied Interfaces 2026</span>
+                    <span class="source-pill">Aristotle 350 BCE</span>
+                  </div>
+                </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ── 04 Science & Media Accuracy ───────────────────── -->
     <div class="acc-item" data-acc>
       <button class="acc-trigger" aria-expanded="false" aria-controls="panel-04" id="trigger-04">
@@ -1641,7 +1705,13 @@
         { url:'/religion-violence', title:'Religion and Violence — Parsing the Actual Numbers', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war',
           snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities. Both sides steelmanned.'},
         { url:'/political-violence', title:'Political, Ideological & Hate-Motivated Violence in the United States', keywords:'domestic terrorism far right far left islamist hate crime anti-semitism anti-black anti-lgbt police violence white nationalist incel misogynist ADL FBI UCR New America CSIS ACLED',
-          snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated. Both sides steelmanned.'}
+          snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated. Both sides steelmanned.'},
+        { url:'/the-dress', title:'The Dress — White & Gold or Blue & Black?', keywords:'the dress white gold blue black color perception color constancy Bayesian inference visual perception neuroscience viral 2015',
+          snippet:'The science behind why millions saw different colors in the same photo. Color constancy, Bayesian inference, and what it reveals about human perception.'},
+        { url:'/mandela-effect', title:'The Mandela Effect — Mass False Memory or Something Else?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus',
+          snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory, social contagion, and what the evidence actually shows.'},
+        { url:'/mpemba-effect', title:'The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba',
+          snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent — the physics is still not fully resolved.'}
       ];
 
       var input = document.querySelector('.search-input');
@@ -1704,17 +1774,31 @@
 
 
   <!-- QR expand modal -->
-  <div class="qr-overlay" id="qrOverlay" onclick="this.classList.remove('is-open')">
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
     <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
-    <span class="qr-overlay-label">Tap anywhere to close</span>
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
   </div>
   <script>
+  var _qrOpener = null;
   function expandQR(el){
+    _qrOpener = el;
     var ov=document.getElementById('qrOverlay');
     var img=document.getElementById('qrExpanded');
     img.src=el.src; img.alt=el.alt;
     ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn){ setTimeout(function(){ closeBtn.focus(); },50); }
   }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
   // Add tap-to-enlarge hints under each QR
   document.querySelectorAll('.qr-thumb').forEach(function(q){
     if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
