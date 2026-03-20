@@ -20,44 +20,53 @@ Disallow: /favicon-32.png
 Disallow: /apple-touch-icon.png
 Disallow: /og-image.png
 
-# === AI CRAWLERS (allowed — content is intended to inform) ===
+# === AI TRAINING BOTS (blocked — content not free for model training) ===
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: ChatGPT-User
-Allow: /
+Disallow: /
 
 User-agent: OAI-SearchBot
-Allow: /
+Disallow: /
 
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 
 User-agent: CCBot
-Allow: /
+Disallow: /
 
 User-agent: anthropic-ai
-Allow: /
+Disallow: /
 
 User-agent: Claude-Web
-Allow: /
+Disallow: /
 
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-agent: PerplexityBot
-Allow: /
+Disallow: /
 
 User-agent: YouBot
-Allow: /
+Disallow: /
 
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
 
 User-agent: cohere-ai
-Allow: /
+Disallow: /
 
-# === JUNK / SPAM / SCRAPER BOTS ===
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+# === JUNK / SPAM BOTS ===
 User-agent: MJ12bot
 Disallow: /
 
@@ -70,19 +79,10 @@ Disallow: /
 User-agent: DataForSeoBot
 Disallow: /
 
-User-agent: Diffbot
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
 User-agent: Omgilibot
 Disallow: /
 
 User-agent: Omgili
-Disallow: /
-
-User-agent: img2dataset
 Disallow: /
 
 User-agent: Scrapy
