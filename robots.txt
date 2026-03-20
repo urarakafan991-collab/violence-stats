@@ -20,35 +20,55 @@ Disallow: /favicon-32.png
 Disallow: /apple-touch-icon.png
 Disallow: /og-image.png
 
-# === AI TRAINING BOTS ===
-# Content may not be used for AI/ML training without permission.
-
+# === AI CRAWLERS (allowed — content is intended to inform) ===
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: OAI-SearchBot
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
 
 User-agent: Claude-Web
-Disallow: /
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
 User-agent: PerplexityBot
-Crawl-delay: 30
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# === JUNK / SPAM / SCRAPER BOTS ===
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
 
 User-agent: Diffbot
 Disallow: /
@@ -62,35 +82,16 @@ Disallow: /
 User-agent: Omgili
 Disallow: /
 
-User-agent: YouBot
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: cohere-ai
-Disallow: /
-
 User-agent: img2dataset
 Disallow: /
 
 User-agent: Scrapy
 Disallow: /
 
-# === JUNK / SPAM BOTS ===
-User-agent: MJ12bot
+User-agent: Seekport
 Disallow: /
 
-User-agent: DotBot
-Disallow: /
-
-User-agent: BLEXBot
-Disallow: /
-
-User-agent: DataForSeoBot
+User-agent: seoscanners.net
 Disallow: /
 
 User-agent: AhrefsBot
@@ -101,15 +102,6 @@ Crawl-delay: 30
 
 User-agent: PetalBot
 Crawl-delay: 30
-
-User-agent: Seekport
-Disallow: /
-
-User-agent: seoscanners.net
-Disallow: /
-
-User-agent: Netcraft
-Disallow: /
 
 # === MAJOR SEARCH ENGINES (unrestricted) ===
 User-agent: Googlebot
@@ -132,7 +124,7 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# === SOCIAL EMBED CRAWLERS (needed for link previews) ===
+# === SOCIAL EMBED CRAWLERS ===
 User-agent: Twitterbot
 Allow: /
 
