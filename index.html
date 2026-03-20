@@ -1003,21 +1003,35 @@
                 </div>
               </a>
 
-              <div class="article-row is-pending">
-                <span class="row-status pending">Coming soon</span>
+              <a href="/national-debt" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
-                  <span class="row-title">The National Debt — What Both Parties Actually Did</span>
+                  <span class="row-title">The National Debt &mdash; What Both Parties Actually Did</span>
                   <span class="row-desc">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">OMB Historical Tables</span>
+                    <span class="source-pill">CBO Outlook 2025</span>
+                    <span class="source-pill">Treasury FiscalData</span>
+                    <span class="source-pill">FRED</span>
+                  </div>
                 </div>
-              </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
 
-              <div class="article-row is-pending">
-                <span class="row-status pending">Coming soon</span>
+              <a href="/job-creation" class="article-row">
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
-                  <span class="row-title">Job Creation Claims — Presidents vs. The Data</span>
-                  <span class="row-desc">Every administration's jobs record against BLS data — with context for what presidents actually control vs. what was already in motion.</span>
+                  <span class="row-title">Job Creation Claims &mdash; Presidents vs. The Data</span>
+                  <span class="row-desc">Every administration&rsquo;s jobs record against BLS data &mdash; with context for policy lags, inherited recessions, and the Blinder-Watson &ldquo;luck&rdquo; finding.</span>
+                  <div class="row-sources">
+                    <span class="source-pill">BLS CES (PAYEMS)</span>
+                    <span class="source-pill">NBER</span>
+                    <span class="source-pill">Blinder &amp; Watson 2016</span>
+                    <span class="source-pill">CBO/JCT</span>
+                  </div>
                 </div>
-              </div>
+                <span class="row-arrow">&#8594;</span>
+              </a>
 
             </div>
           </div>
@@ -1711,7 +1725,11 @@
         { url:'/mandela-effect', title:'The Mandela Effect — Mass False Memory or Something Else?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus',
           snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory, social contagion, and what the evidence actually shows.'},
         { url:'/mpemba-effect', title:'The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba',
-          snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent — the physics is still not fully resolved.'}
+          snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent — the physics is still not fully resolved.'},
+        { url:'/national-debt', title:'The National Debt — What Both Parties Actually Did', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements',
+          snippet:'CBO and OMB data by administration. Both parties steelmanned against the primary-source record. Deficit, debt-to-GDP, and mandatory spending explained.'},
+        { url:'/job-creation', title:'Job Creation Claims — Presidents vs. The Data', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll',
+          snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags, inherited recessions, Federal Reserve independence, and the Blinder-Watson findings.'}
       ];
 
       var input = document.querySelector('.search-input');

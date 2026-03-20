@@ -167,6 +167,26 @@
       "source": "/hot-water",
       "destination": "/mpemba-effect",
       "permanent": true
+    },
+    {
+      "source": "/debt",
+      "destination": "/national-debt",
+      "permanent": true
+    },
+    {
+      "source": "/the-debt",
+      "destination": "/national-debt",
+      "permanent": true
+    },
+    {
+      "source": "/jobs",
+      "destination": "/job-creation",
+      "permanent": true
+    },
+    {
+      "source": "/presidential-jobs",
+      "destination": "/job-creation",
+      "permanent": true
     }
   ],
   "headers": [

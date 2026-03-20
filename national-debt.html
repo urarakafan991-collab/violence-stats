@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The National Debt | What Both Parties Did | TruthBased.org</title>
+  <meta name="description" content="Firearm homicides rose 31% in 2020. Was defunding police the cause? CDC mortality data, FBI UCR, and quasi-experimental evidence examined. Every argument...">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/national-debt">
+  <meta property="og:title"   content="The National Debt | What Both Parties Actually Did | TruthBased.org">
+  <meta property="og:description" content="Deficit, debt-to-GDP, and mandatory spending by administration — what each party actually did.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title"  content="The National Debt | What Both Parties Actually Did | TruthBased.org">
+  <meta name="twitter:description" content="FBI UCR, CDC mortality, and quasi-experimental evidence on policing and the 2020 homicide spike.">
+
+  <link rel="canonical" href="https://www.truthbased.org/national-debt">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The National Debt — What Both Parties Actually Did",
+    "description": "CBO, OMB, and Treasury data on the national debt by administration. Both parties steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://www.truthbased.org/national-debt",
+    "keywords": ["national debt", "federal deficit", "debt to GDP", "OMB", "CBO", "Reagan debt", "Obama debt", "Trump debt", "Biden debt", "fiscal policy", "mandatory spending"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Economics</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – Definitions</a>
+      <a href="#part2" class="jump-btn">Part 2 – Raw Data</a>
+      <a href="#part3" class="jump-btn">Part 3 – Who Controls What</a>
+      <a href="#part4" class="jump-btn">Part 4 – Both Sides</a>
+      <a href="#part5" class="jump-btn">Part 5 – Expert View</a>
+      <a href="#part6" class="jump-btn">Part 6 – Conclusion</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Economics</span>
+      <h1 class="article-title">The National Debt &mdash; What Both Parties Actually Did</h1>
+      <p class="article-deck">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses. Both parties contributed. The causes are not what the slogans say.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">March 2026</span>
+        <span class="meta-pill">20+ primary sources</span>
+        <span class="meta-pill">~18 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the primary-source data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Obama doubled the national debt&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>True in nominal gross dollars. Misleading without context: Obama inherited the Great Recession with a deficit already at $1.4T. Debt-to-GDP rose ~26 points — significant, but the ratio rose more under G.W. Bush (+22 pts) and Trump 1st term (+21 pts) in shorter windows.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Republican tax cuts caused the debt&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Substantially true as a contributing factor. JCT/CBO scored the 2001/2003 Bush cuts and 2017 TCJA adding trillions to deficits. But mandatory spending growth and bipartisan emergency spending also added trillions. Neither party has sole ownership.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Tax cuts pay for themselves through growth&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>False under consistent analysis. JCT dynamic scoring of TCJA found ~$385B in growth offsets — about 20–25% of the static cost, not full self-financing. CBO projects TCJA extension would add ~$37T to debt over 30 years while slightly shrinking the economy by 2034.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The debt is a spending problem, not a revenue problem&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Half-true. Mandatory spending (Social Security, Medicare, interest) is the dominant structural driver and grows with demographics. But official scoring also shows major tax cuts have reduced revenue by trillions. Both revenue and spending choices built this problem.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <span class="source-pill">OMB Historical Tables</span>
+        <span class="source-pill">CBO Budget Outlook 2025</span>
+        <span class="source-pill">Treasury FiscalData</span>
+        <span class="source-pill">FRED (St. Louis Fed)</span>
+        <span class="source-pill">JCT TCJA Score</span>
+        <span class="source-pill">SS &amp; Medicare Trustees 2025</span>
+        <span class="source-pill">Costs of War (Brown)</span>
+        <span class="source-pill">IMF World Economic Outlook</span>
+      </div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">The Definitions That Change Everything</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; Why the same event looks different depending on which metric you use</span>
+
+      <p>The national debt is not a single number. It is several numbers, and choosing among them without disclosure is how most misleading political claims about fiscal policy are constructed. Before any data comparison is possible, every reader needs to understand what these measures are and which economists consider meaningful.</p>
+
+      <p><strong>Deficit vs. debt:</strong> The deficit is the annual gap &mdash; federal spending minus federal revenue in one fiscal year. The national debt is the accumulated total of every past deficit minus every surplus. A president can reduce the deficit (the annual shortfall is smaller) while still adding to the debt (because any deficit, even a shrinking one, adds to the running total). These two facts are routinely conflated in political debate.</p>
+
+      <p><strong>Gross federal debt vs. debt held by the public:</strong> Gross debt (~$39T as of early 2026) includes intragovernmental debt &mdash; Treasury securities held by federal trust funds like Social Security and Medicare. Debt held by the public (~$31T) is what the government owes to external creditors: the Federal Reserve, foreign governments, domestic investors. The CBPP, CBO, and virtually every economist treat debt held by the public as the more economically meaningful figure because it represents actual claims on U.S. credit markets. Intragovernmental debt is essentially one government account owing another. Politicians sometimes choose gross debt to make numbers sound larger.</p>
+
+      <p><strong>Nominal debt vs. debt-to-GDP:</strong> Adding $1T to the debt in a $30T economy is less burdensome than adding $500B in a $5T economy. Debt-to-GDP is the standard measure used by CBO, the IMF, and the Federal Reserve. A president can add substantial nominal debt during rapid economic growth while actually improving the debt burden, or add modest nominal debt during a recession while dramatically worsening the ratio.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">Mandatory vs. discretionary spending — the most underreported distinction</span>
+        <p>Mandatory spending (Social Security, Medicare, Medicaid, net interest) runs on autopilot under existing law. Discretionary spending (defense, education, domestic programs) is set annually by Congress. In 2024, mandatory spending and net interest totaled roughly $4.7T of $6.8T in total outlays &mdash; about 69%. The president and Congress have limited short-term control over the majority of the federal budget. A new president inheriting large mandatory programs is largely along for the ride on most spending.</p>
+      </div>
+
+      <p><strong>Structural vs. cyclical deficit:</strong> A cyclical deficit occurs automatically in recessions &mdash; tax revenues fall and safety-net spending rises with no new legislation required. A structural deficit is the underlying gap that would exist at full employment. CBO estimates that automatic stabilizers alone increased deficits by roughly $1.1T during 2009&ndash;2012. Much of what looks like a president&rsquo;s &ldquo;spending&rdquo; during a crisis is automatic stabilizer spending inherited from prior law.</p>
+
+      <p><strong>Debt ceiling vs. appropriations:</strong> The debt ceiling limits Treasury&rsquo;s ability to borrow to finance spending Congress has already authorized. It is not authorization to spend. Both parties have raised or suspended it dozens of times; it is a procedural mechanism, not a policy statement about who caused the debt.</p>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Most political claims about the debt are technically true under one definition and misleading under another. Debt held by the public as a percentage of GDP is the standard metric. Gross nominal debt figures &mdash; the ones most often cited in political attacks &mdash; maximize the apparent size of any increase.</div>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">The Raw Data by Administration</h2>
+      </div>
+
+      <span class="section-label">02 &mdash; Gross federal debt as % of GDP, consistent methodology from OMB/FRED</span>
+
+      <p>The table below uses gross federal debt as a percentage of GDP from OMB Historical Tables and FRED series GFDEGDQ188S. This is the most consistently available series across all administrations. Nominal dollar figures for debt held by the public are from Treasury FiscalData and FRED series FYGFDPUN. Congress control is noted because the president proposes but Congress passes spending and tax law.</p>
+
+      <div class="table-scroll">
+        <table class="evidence-table">
+          <caption>Gross federal debt as % of GDP by administration (OMB/FRED), with debt held by public nominal changes</caption>
+          <thead>
+            <tr><th>Administration</th><th>Debt/GDP Start</th><th>Debt/GDP End</th><th>&Delta; pts</th><th>Nominal &Delta; (held by public)</th><th>Avg Annual Deficit</th><th>Congress</th><th>Key Events</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Reagan (1981&ndash;89)</strong></td><td>30.9%</td><td>49.7%</td><td class="stat-val negative">+18.9</td><td>+$1.4T</td><td>~4.0% GDP</td><td>Dem House entire term; GOP Senate &rsquo;81&ndash;&rsquo;87</td><td>1981&ndash;82 recession; 1981 tax cuts; defense buildup</td></tr>
+            <tr><td><strong>G.H.W. Bush (1989&ndash;93)</strong></td><td>49.7%</td><td>62.9%</td><td class="stat-val negative">+13.1</td><td>+$1.1T</td><td>~3.8% GDP</td><td>Dem House &amp; Senate</td><td>1990&ndash;91 recession; Gulf War; S&amp;L crisis</td></tr>
+            <tr><td><strong>Clinton (1993&ndash;01)</strong></td><td>62.9%</td><td>55.1%</td><td class="stat-val positive">&minus;7.7</td><td>+$0.2T</td><td>~0.7% GDP (surpluses &rsquo;98&ndash;&rsquo;01)</td><td>Dem &rsquo;93&ndash;&rsquo;95; GOP Congress &rsquo;95&ndash;&rsquo;01</td><td>Tech boom; 1993 tax hikes; welfare reform; dot-com peak</td></tr>
+            <tr><td><strong>G.W. Bush (2001&ndash;09)</strong></td><td>55.1%</td><td>77.1%</td><td class="stat-val negative">+22.0</td><td>+$3.4T</td><td>~2.9% GDP</td><td>GOP unified &rsquo;01&ndash;&rsquo;07; Dem Congress &rsquo;07&ndash;&rsquo;09</td><td>9/11; 2001 recession; 2001/2003 tax cuts; Iraq/Afghanistan; 2008 financial crisis + TARP</td></tr>
+            <tr><td><strong>Obama (2009&ndash;17)</strong></td><td>77.1%</td><td>102.9%</td><td class="stat-val negative">+25.8</td><td>+$7.5T</td><td>~5.7% GDP</td><td>Dem unified &rsquo;09&ndash;&rsquo;11; divided/GOP thereafter</td><td>Inherited Great Recession; ARRA stimulus; ACA; inherited Iraq/Afghan wars</td></tr>
+            <tr><td><strong>Trump I (2017&ndash;21)</strong></td><td>102.9%</td><td>124.0%</td><td class="stat-val negative">+21.1</td><td>+$7.6T</td><td>~6.6% GDP</td><td>GOP unified &rsquo;17&ndash;&rsquo;19; Dem House &rsquo;19&ndash;&rsquo;21</td><td>2017 TCJA (~$1.9T/decade cost); pre-COVID growth; COVID CARES Act (~$2.2T)</td></tr>
+            <tr><td><strong>Biden (2021&ndash;25)</strong></td><td>124.0%</td><td>120.5%</td><td class="stat-val positive">&minus;3.5</td><td>+$6.9T</td><td>~7.3% GDP (early); declining</td><td>Dem unified &rsquo;21&ndash;&rsquo;23; divided &rsquo;23&ndash;&rsquo;25</td><td>COVID relief extensions; Infrastructure Act; IRA; high inflation then cooling</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">03 &mdash; What the raw data shows before attribution</span>
+
+      <p>The only post-1980 president to reduce the gross debt-to-GDP ratio was Clinton &mdash; down 7.7 points over eight years. But this requires immediate context: the Clinton surplus was driven by a once-in-a-generation tech boom that inflated tax revenues from capital gains, a peace dividend from reduced Cold War defense spending, and divided government that constrained new spending on both sides. The conditions were extraordinary.</p>
+
+      <p>Every other administration since Reagan saw the ratio rise, including Biden despite a slight nominal ratio decline (the deficit remained over $1.9T annually; the ratio improved slightly because nominal GDP grew faster than nominal debt). The nominal debt has risen under every president since Eisenhower. The relevant question is not whether a president added nominal dollars &mdash; virtually every president does &mdash; but whether they improved or worsened the debt burden relative to the economy.</p>
+
+      <div class="box box-red">
+        <span class="box-label">CBO 30-year projection (2025)</span>
+        <p>Under current law, CBO projects federal debt held by the public will rise from ~100% of GDP at end of FY2025 to 107% by 2029 and 156% by 2055 &mdash; triple the 50-year historical average of 50% of GDP. Annual deficits are projected to grow from 6.2% of GDP in 2025 to 7.3% by 2055. Net interest on the debt &mdash; already ~$1T annually &mdash; is projected to become the largest line item in the federal budget. This trajectory is driven primarily by aging demographics pushing Social Security and Medicare costs faster than any plausible revenue growth.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>Debt-to-GDP rose under every modern president except Clinton. The biggest single-administration debt surges have been bipartisan: G.W. Bush (+22 pts, 9/11 + two wars + financial crisis), Obama (+26 pts, inherited Great Recession), Trump (+21 pts, TCJA + COVID). Nominal dollar figures without GDP context consistently mislead.</div>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">What Presidents &amp; Congress Actually Control</h2>
+      </div>
+
+      <span class="section-label">04 &mdash; The budget lag, inherited obligations, and Congressional primacy</span>
+
+      <p><strong>The budget lag:</strong> A president&rsquo;s first budget does not take effect until October 1 of their first year &mdash; the start of Fiscal Year 2. A new president&rsquo;s first 8&ndash;10 months run on the prior president&rsquo;s enacted appropriations. Trump&rsquo;s second term is a live example: the FY2025 deficit of ~$1.8T covers a fiscal year that began October 1, 2024, before he took office January 20, 2025. Simple &ldquo;President X added Y in year one&rdquo; claims ignore this entirely.</p>
+
+      <p><strong>Mandatory spending is inherited:</strong> CBO estimates ~60&ndash;70% of federal outlays are mandatory. No new legislation is needed for Social Security, Medicare, Medicaid, or interest payments to continue. They grow automatically with demographics and existing benefit formulas. A president who wants to change mandatory spending must pass new legislation through Congress &mdash; which is politically among the hardest things to do in American government.</p>
+
+      <p><strong>Inherited wars and crises:</strong> The Brown University Costs of War project estimates post-9/11 wars cost the U.S. approximately $8T in budgetary terms across administrations. Obama inherited both wars, paid for them through most of his term. Bush inherited the dot-com recession; Obama inherited the financial crisis; Trump inherited the end of the recovery; Biden inherited the tail of COVID. These shocks do not belong primarily to the president on whose watch they peaked.</p>
+
+      <p><strong>Interest on inherited debt:</strong> When a president inherits a large debt, they are required to pay interest on it regardless of any new policy choice. Net interest payments have doubled as a share of GDP from 1.6% in 2020 to a record ~3.2% projected for 2025. The federal government now spends more on interest than on defense or Medicare. Every dollar of interest on pre-existing debt that appears in a president&rsquo;s spending total is an obligation they did not create.</p>
+
+      <span class="section-label">05 &mdash; Congress controls the budget; the president signs or vetoes</span>
+
+      <p>The Constitution gives Congress the power of the purse. Presidents propose; Congress enacts. In multiple periods, Congress spent substantially more than presidential budgets proposed. The debt ceiling requires Congressional action. Tax legislation requires Congressional action. The president&rsquo;s leverage is primarily the veto and the bully pulpit &mdash; real but indirect.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Major legislation and bipartisan support</span>
+          <span class="stat-block-period">Key fiscal bills, vote breakdown</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">2001/2003 Bush tax cuts</span><span class="stat-val negative">Passed with significant bipartisan support in Senate (2001: 58-33; 2003: 50-50 + VP). Not purely partisan.</span></div>
+          <div class="stat-row"><span class="stat-key">2009 ARRA (Obama stimulus)</span><span class="stat-val warn">Passed with minimal Republican support (3 Senate Republicans). CBO estimate: 1.4&ndash;3.3M jobs saved/created at peak.</span></div>
+          <div class="stat-row"><span class="stat-key">2017 TCJA (Trump tax cuts)</span><span class="stat-val negative">Passed with zero Democratic votes via reconciliation. JCT/CBO: ~$1.9T added to deficits over first decade.</span></div>
+          <div class="stat-row"><span class="stat-key">2020 CARES Act (COVID relief)</span><span class="stat-val positive">Passed 96-0 in Senate, overwhelming bipartisan. ~$2.2T. Cost was shared across parties.</span></div>
+          <div class="stat-row"><span class="stat-key">2021 American Rescue Plan</span><span class="stat-val negative">Passed with zero Republican votes. ~$1.9T. CBO and Fed estimated significant acceleration of recovery.</span></div>
+          <div class="stat-row"><span class="stat-key">2021 Infrastructure Act</span><span class="stat-val positive">Passed with significant bipartisan support (69-30 Senate). ~$1.2T over ten years.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>Presidents inherit most of their spending through mandatory programs, inherited interest costs, and wars begun by predecessors. Congress writes the actual bills. The cleanest attribution of fiscal responsibility follows specific legislation to its votes &mdash; not to the president who happened to be in office when automatic stabilizers fired or when inherited debt continued to compound.</div>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">Steelmanning Both Sides</h2>
+      </div>
+
+      <span class="section-label">06 &mdash; The strongest Republican fiscal case</span>
+
+      <p>The most rigorous conservative argument does not claim Republicans always borrow less. The data does not support that. The strongest case is structural: the long-run fiscal problem is primarily a mandatory spending growth problem, not a revenue problem. Revenue as a share of GDP has remained relatively stable at 17&ndash;18% historically. Spending has grown from ~20% of GDP in the 1980s to ~23% in 2025 and is projected to reach ~27% by 2055 under current law &mdash; driven almost entirely by Social Security, Medicare, and interest, not discretionary choices.</p>
+
+      <p>Republicans can correctly point to the ARRA and American Rescue Plan as large discretionary spending additions during Democratic administrations, and to the ACA as an entitlement expansion. They can correctly note that the 1990s surpluses required divided government and a boom &mdash; and that Democratic unified government periods (2009&ndash;10, 2021&ndash;22) produced the two largest single-year deficits in peacetime history outside of COVID emergency spending.</p>
+
+      <p>On tax cuts: the strongest supply-side case is not &ldquo;they pay for themselves&rdquo; &mdash; that claim is false under official scoring. The strongest case is that lower marginal rates raise investment returns, which raises growth modestly, which partially offsets revenue losses. JCT&rsquo;s dynamic analysis of the TCJA found the law would raise GDP by an average of ~0.7% over the budget window, recovering approximately $385B of roughly $1.9T in conventional deficit cost. That is a real positive effect &mdash; just not remotely self-financing.</p>
+
+      <span class="section-label">07 &mdash; The strongest Democratic fiscal case</span>
+
+      <p>The most rigorous progressive argument focuses on the revenue side and on what CBO actually scores. The Bush 2001/2003 tax cuts added an estimated ~$1.8T to deficits over their first decade. The TCJA added ~$1.9T. CBO&rsquo;s 2024 analysis found that making TCJA provisions permanent without offsets would add ~$37T to debt over 30 years and begin <em>shrinking</em> the economy by 2028 as interest crowding-out effects overwhelm growth benefits. These are not partisan claims &mdash; they are official scoring from a nonpartisan agency.</p>
+
+      <p>Democrats can correctly note that Clinton&rsquo;s 1993 tax increase on higher earners &mdash; passed with zero Republican votes &mdash; was followed by the only sustained period of deficit reduction and eventual surpluses in modern U.S. history. The argument is not that tax increases alone produce fiscal balance, but that the revenue side is a real lever that supply-side rhetoric consistently dismisses.</p>
+
+      <p>On the IMF austerity evidence: post-2010 research revised earlier views. The IMF found fiscal multipliers in recessions are higher than previously estimated, meaning sharp spending cuts during downturns can worsen debt-to-GDP by contracting the denominator (GDP) faster than the numerator (debt). The European austerity experience post-2010 is the strongest case study: countries that cut spending sharply saw prolonged stagnation that kept debt-to-GDP elevated despite nominal spending reductions.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--green-light);color:var(--green);">Conservative overclaim</div>
+          <div class="steelman-val">&ldquo;Obama doubled the debt.&rdquo; Technically true in nominal gross terms. Deeply misleading: he inherited a $1.4T baseline deficit and the worst recession since WWII. Debt-to-GDP rose 26 points, but that is similar to G.W. Bush (+22 pts) and Trump&rsquo;s first term (+21 pts) in comparable periods. The number lands differently when stripped of its context.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--brick-light);color:var(--brick);">Progressive overclaim</div>
+          <div class="steelman-val">&ldquo;Republican tax cuts caused the entire debt.&rdquo; Tax cuts were a major contributor, but mandatory spending growth driven by demographics is projected by CBO to be the larger long-run driver. The Clinton-era surplus also required divided government, a tech boom, and a peace dividend &mdash; conditions that cannot simply be replicated by raising taxes on the wealthy.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>Republicans are right that mandatory spending growth is the dominant structural problem. Democrats are right that tax cuts (especially TCJA) added trillions to the deficit without self-financing. Both are right. The debt is a both/and problem, not an either/or one.</div>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">What the Experts Actually Think</h2>
+      </div>
+
+      <span class="section-label">08 &mdash; The Reinhart-Rogoff threshold, MMT, and expert consensus</span>
+
+      <p>Reinhart and Rogoff&rsquo;s 2010 paper claimed countries with debt above 90% of GDP experienced sharply slower growth &mdash; including negative growth. This became a major argument for austerity policy across the developed world. In 2013, Herndon, Ash, and Pollin found the paper contained a coding error, selectively excluded data, and used unconventional weighting. When corrected, average GDP growth for high-debt countries was +2.2% &mdash; not &minus;0.1%. Reinhart and Rogoff acknowledged the error while maintaining the broader point that very high debt correlates with slower growth.</p>
+
+      <p>The honest summary: there is no clean 90% cliff. High and rising debt does impose real costs &mdash; through higher interest burden, reduced fiscal space for emergencies, and potential crowding out of private investment &mdash; but the relationship is not as deterministic as the original paper suggested. Japan has carried 230%+ debt-to-GDP for decades without collapse, partly due to domestic bond holdings and domestic savings. The U.S. benefits from the dollar&rsquo;s reserve currency status, which gives it more latitude than most countries. Neither of these facts means high debt is harmless.</p>
+
+      <p><strong>Modern Monetary Theory (MMT):</strong> The strongest MMT position is that a sovereign currency-issuing government cannot face a solvency crisis in the same way a household or currency-user can. Spending and tax policy can proceed without being constrained by revenue in the short run; inflation is the operative limit. The mainstream counterargument: real resources are limited, and sustained deficit spending in a near-full-employment economy produces inflation (as the 2021&ndash;2023 experience illustrated). The Fed itself does not analyze U.S. debt as irrelevant despite dollar reserve status. MMT&rsquo;s framework is coherent but does not eliminate real constraints.</p>
+
+      <p><strong>CBO projection:</strong> CBO&rsquo;s February 2026 budget outlook projects deficits rising from $1.9T in FY2026 to larger amounts through the decade; debt held by the public reaching ~107% of GDP by 2029 and ~156% of GDP by 2055 under current law. The dominant driver is major health care programs, Social Security, and net interest. This is not a partisan claim &mdash; it is CBO&rsquo;s nonpartisan projection of what current law produces.</p>
+
+      <span class="section-label">09 &mdash; Factors most coverage misses</span>
+
+      <p><strong>Unfunded liabilities dwarf the reported debt.</strong> The 2025 Social Security Trustees report estimates a 75-year actuarial deficit of ~$25T for Social Security alone. The Medicare Trustees report estimates an unfunded obligation of ~$53T over 75 years. Combined, the total social insurance net shortfall is approximately $78T over 75 years &mdash; more than double annual U.S. GDP. None of this appears in the ~$39T gross debt figure most politicians cite.</p>
+
+      <p><strong>Who holds the debt matters.</strong> As of 2025: domestic private investors hold ~50%, the Federal Reserve holds ~13% (down from COVID-era peaks as QT proceeds), foreign investors hold ~24% (Japan ~$1.1T, UK ~$809B, China ~$756B &mdash; China is not the dominant holder the political narrative implies). Approximately two-thirds of the debt is held by U.S. entities. The &ldquo;we owe it all to China&rdquo; framing is a significant oversimplification.</p>
+
+      <p><strong>Off-budget war spending.</strong> For years after 9/11, Iraq and Afghanistan costs were funded through &ldquo;emergency supplemental appropriations&rdquo; outside normal budget caps. This made annual headline deficits appear smaller than they were and understated the fiscal cost of the wars during the Bush administration.</p>
+
+      <p><strong>The Federal Reserve&rsquo;s role.</strong> Quantitative easing involved the Fed purchasing trillions in Treasury securities, effectively recycling debt and keeping interest rates suppressed through 2022. This helped finance large deficits at low cost. Interest payments on Fed-held Treasuries flow back to Treasury, partially offsetting their burden. The unwinding of QE (quantitative tightening) since 2022 has shifted Treasury bonds back to private markets and contributed to rising interest costs.</p>
+
+      <p><strong>Federal assets.</strong> The Treasury&rsquo;s FY2024 financial report shows federal assets of ~$5.7T against liabilities of ~$45.5T, for a negative net position of ~$39.9T. This is different from the &ldquo;debt to the penny&rdquo; figure and is another reason simplistic slogans are inadequate.</p>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway</strong>There is no clean fiscal tipping point, but CBO&rsquo;s projections are genuinely alarming under current law. The expert consensus is that both mandatory spending reform and revenue choices are needed. The unfunded liabilities of Social Security and Medicare dwarf the reported national debt and are almost never included in the political conversation.</div>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">Honest Conclusion &amp; AI Disclosure</h2>
+      </div>
+
+      <span class="section-label">10 &mdash; What the evidence actually supports</span>
+
+      <p><strong>Both parties have added substantially to the debt.</strong> This is true in nominal dollars and, except for Clinton, in debt-to-GDP terms. No post-Reagan president left the country in a better fiscal position by the debt-to-GDP measure except Clinton &mdash; and Clinton required divided government, a historic tech boom, and a peace dividend that cannot simply be replicated by ideology.</p>
+
+      <p><strong>Republicans have more consistently driven debt increases through tax cuts.</strong> The Reagan 1981 cuts, Bush 2001/2003 cuts, and Trump 2017 TCJA are all scored by JCT/CBO as adding trillions in deficits without self-financing. These are the most cleanly attributable partisan fiscal choices in the record. &ldquo;Tax cuts pay for themselves&rdquo; has been the dominant Republican fiscal claim for 45 years and has never been confirmed by official nonpartisan scoring.</p>
+
+      <p><strong>Democrats have more consistently driven debt increases through spending.</strong> ARRA, ACA, and the American Rescue Plan are the most clearly attributable Democratic fiscal expansions in the recent record. Emergency spending is not inherently irresponsible &mdash; counter-cyclical stimulus in deep recessions has strong economic support &mdash; but the scale of Biden-era deficits even after COVID recovery represents structural spending above revenue that official projections do not show correcting.</p>
+
+      <p><strong>The structural problem transcends both parties.</strong> Social Security and Medicare costs grow with an aging population regardless of any presidential ideology. Interest on accumulated debt grows with the debt stock. These forces currently consume roughly 60&ndash;70% of federal outlays and will consume more. CBO&rsquo;s projection of 156% debt-to-GDP by 2055 under current law reflects demographic reality, not partisan choices &mdash; though partisan choices on taxes and spending determine how much worse it gets.</p>
+
+      <p><strong>Claims that should simply stop being made:</strong></p>
+      <p>&mdash; &ldquo;[Party] alone caused the debt.&rdquo; Both parties contributed through different mechanisms over 45 years.</p>
+      <p>&mdash; &ldquo;Tax cuts always pay for themselves.&rdquo; Official scoring has never supported this. The strongest dynamic estimates recover 20&ndash;25% of the static cost.</p>
+      <p>&mdash; &ldquo;Obama doubled the debt.&rdquo; As a causal attribution, this is inaccurate. As raw arithmetic in nominal gross dollars starting from a crisis baseline, it is true. The distinction matters.</p>
+      <p>&mdash; &ldquo;Spending alone is the problem.&rdquo; Revenue choices also matter. Both sides of the ledger built this deficit.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">AI Disclosure &mdash; How this article was produced</span>
+        <p>This article was compiled from research produced by five AI systems given an identical research prompt requiring primary-source verification, steelmanned arguments for both parties, and honest conclusions:</p>
+        <p style="margin-top:10px;"><strong>Grok</strong> (xAI) &mdash; Strong on administration-by-administration data and definitions. March 19, 2026.</p>
+        <p style="margin-top:6px;"><strong>ChatGPT GPT-4o</strong> (OpenAI) &mdash; Good coverage of partisan overclaims and international comparison. March 2026.</p>
+        <p style="margin-top:6px;"><strong>ChatGPT GPT-5.4 Thinking</strong> (OpenAI) &mdash; Most rigorous. Found the Herndon-Ash-Pollin critique of Reinhart-Rogoff, sourced TARP vote records, and provided the most careful attribution analysis. March 19, 2026.</p>
+        <p style="margin-top:6px;"><strong>Unknown AI</strong> &mdash; Provided additional research perspective on unfunded liabilities, debt holders, and CBO projections. Disclosure section was absent from output; identity unconfirmed.</p>
+        <p style="margin-top:6px;"><strong>Note:</strong> One AI in the research pool incorrectly labeled itself as &ldquo;ChatGPT GPT-4&rdquo; but showed identity markers inconsistent with that model. All factual claims were cross-checked against primary sources before inclusion.</p>
+        <p style="margin-top:6px;">Final synthesis and article by TruthBased.org editorial review. All claims verified against primary sources listed below.</p>
+      </div>
+
+      <div class="falsify-box">
+        <span class="falsify-label">Falsifiability threshold &mdash; what would change this conclusion</span>
+        <p>This article concludes both parties contributed through different mechanisms, and that tax cuts have not self-financed. This would change if:</p>
+        <p><strong>1.</strong> CBO or JCT produced a dynamic score showing a major tax cut recovered 80%+ of its static revenue cost over a 10-year window. No such score has been produced for any modern U.S. tax legislation.</p>
+        <p><strong>2.</strong> A sustained period of Democratic unified government produced significant debt-to-GDP improvement without an extraordinary external boom &mdash; which would support the argument that demand-side policy can achieve fiscal balance.</p>
+        <p><strong>3.</strong> A comprehensive credible analysis showed that mandatory spending growth could be substantially slowed without revenue changes and without benefit cuts, which would vindicate the pure spending-problem framing.</p>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Full Sources &amp; References</span>
+        <div class="source-item"><strong>OMB Historical Tables</strong> &mdash; Table 1.1 (outlays/revenues), Table 7.1 (debt), Table 8.1 (mandatory vs. discretionary). <a href="https://www.whitehouse.gov/omb/budget/historical-tables/" target="_blank" rel="noopener noreferrer">whitehouse.gov</a></div>
+        <div class="source-item"><strong>CBO Budget &amp; Economic Outlook 2025</strong> &mdash; Deficits, debt projections, long-term outlook. <a href="https://www.cbo.gov/publication/61882" target="_blank" rel="noopener noreferrer">cbo.gov</a></div>
+        <div class="source-item"><strong>Treasury FiscalData</strong> &mdash; Debt to the Penny; deficit tracking; FY financial reports. <a href="https://fiscaldata.treasury.gov/americas-finance-guide/national-debt/" target="_blank" rel="noopener noreferrer">fiscaldata.treasury.gov</a></div>
+        <div class="source-item"><strong>FRED (St. Louis Fed)</strong> &mdash; Series GFDEGDQ188S (gross debt/GDP), FYGFDPUN (debt held by public), FDHBFIN (foreign holders), FRBFHTB (Fed holdings). <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener noreferrer">fred.stlouisfed.org</a></div>
+        <div class="source-item"><strong>JCT TCJA Score (2017)</strong> &mdash; Conventional and dynamic estimates. <a href="https://www.jct.gov/publications/2017/jcx-67-17/" target="_blank" rel="noopener noreferrer">jct.gov</a></div>
+        <div class="source-item"><strong>CBO ARRA Estimate (2011)</strong> &mdash; Employment effects of ARRA, 1.4&ndash;3.3M jobs at peak. <a href="https://www.cbo.gov/sites/default/files/111th-congress-2009-2010/reports/08-24-arra.pdf" target="_blank" rel="noopener noreferrer">cbo.gov</a></div>
+        <div class="source-item"><strong>Social Security Trustees Report 2025</strong> &mdash; 75-year actuarial deficit, trust fund exhaustion dates. <a href="https://www.ssa.gov/oact/trsum/" target="_blank" rel="noopener noreferrer">ssa.gov</a></div>
+        <div class="source-item"><strong>Medicare Trustees Report 2025</strong> &mdash; HI trust fund, 75-year unfunded obligation. <a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/ReportsTrustFunds" target="_blank" rel="noopener noreferrer">cms.gov</a></div>
+        <div class="source-item"><strong>Costs of War Project, Brown University</strong> &mdash; Post-9/11 war cost estimates ~$8T. <a href="https://costsofwar.watson.brown.edu/findings" target="_blank" rel="noopener noreferrer">costsofwar.watson.brown.edu</a></div>
+        <div class="source-item"><strong>Herndon, Ash &amp; Pollin (2013)</strong> &mdash; Critique of Reinhart-Rogoff 90% threshold. <a href="https://gesd.free.fr/herndon13.pdf" target="_blank" rel="noopener noreferrer">gesd.free.fr</a></div>
+        <div class="source-item"><strong>U.S. Senate Roll Call Vote 110-2 No. 213 (2008)</strong> &mdash; TARP vote, 74&ndash;25 bipartisan. <a href="https://www.senate.gov/legislative/LIS/roll_call_votes/vote1102/vote_110_2_00213.htm" target="_blank" rel="noopener noreferrer">senate.gov</a></div>
+        <div class="source-item"><strong>House Party Control History</strong> &mdash; Congress composition by year. <a href="https://history.house.gov/Institution/Presidents-Coinciding/Party-Government/" target="_blank" rel="noopener noreferrer">history.house.gov</a></div>
+        <div class="source-item"><strong>IMF World Economic Outlook October 2025</strong> &mdash; International debt-to-GDP comparisons. <a href="https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/" target="_blank" rel="noopener noreferrer">imf.org</a></div>
+        <div class="source-item"><strong>NBER Business Cycle Dating</strong> &mdash; Official recession start/end dates. <a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions" target="_blank" rel="noopener noreferrer">nber.org</a></div>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;The National Debt &mdash; What Both Parties Actually Did.&rdquo; March 2026. https://www.truthbased.org/national-debt</span>
+      </div>
+    </section>
+  </article>
+  </main>
+
+
+
+    
+    <div class="related-reading" style="max-width:780px;margin:0 auto 0;padding:0 24px 24px;">
+      <span style="font-family:var(--font-sans);font-size:0.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-quiet);display:block;margin-bottom:10px;">Related Reading</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="/gun-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">U.S. Gun Violence &rarr;</a>
+        <a href="/political-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">Political Violence &rarr;</a>
+      </div>
+    </div>
+  <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: FBI UCR/CIUS, CDC NCHS, BJS NCVS, Council on Criminal Justice</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    
+    // Chart 1: Firearm Homicide Rate 2010–2023
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'Firearm Homicide Rate per 100k',
+          data: [3.6, 3.7, 3.7, 3.6, 3.4, 3.6, 4.0, 4.1, 4.3, 4.6, 6.2, 6.7, 6.2, 5.6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: function(ctx) {
+            return ctx.dataIndex >= 10 ? 'rgba(184,58,30,0.9)' : 'rgba(184,58,30,0.4)';
+          },
+          pointRadius: function(ctx) { return ctx.dataIndex >= 10 ? 5 : 3; },
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (CDC Mortality Data, 2010–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          annotation: {}
+        },
+        scales: {
+          y: { beginAtZero: false, min: 2.5, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // Chart 2: NICS Background Check Applications
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['2017','2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [{
+          label: 'NICS Applications (millions)',
+          data: [25.2, 26.2, 28.4, 39.7, 38.9, 36.9, 32.5, 28.0],
+          backgroundColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.5)' : 'rgba(27,107,62,0.3)';
+          },
+          borderColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)';
+          },
+          borderWidth: 1.5,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'NICS Firearm Background Check Applications (Millions), 2017–2024', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + 'M applications' } }
+        },
+        scales: {
+          y: { beginAtZero: false, min: 20, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>

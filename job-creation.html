@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Creation Claims | Presidents vs. Data | TruthBased.org</title>
+  <meta name="description" content="Firearm homicides rose 31% in 2020. Was defunding police the cause? CDC mortality data, FBI UCR, and quasi-experimental evidence examined. Every argument...">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/job-creation">
+  <meta property="og:title"   content="Job Creation Claims | Presidents vs. The Data | TruthBased.org">
+  <meta property="og:description" content="Every administration's jobs record against BLS data. Policy lags, Fed independence, and the Blinder-Watson findings examined.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title"  content="Job Creation Claims | Presidents vs. The Data | TruthBased.org">
+  <meta name="twitter:description" content="FBI UCR, CDC mortality, and quasi-experimental evidence on policing and the 2020 homicide spike.">
+
+  <link rel="canonical" href="https://www.truthbased.org/job-creation">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 260px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 110px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .stat-val.positive::before { content: "\2713 "; }
+    .stat-val.negative::before { content: "\2717 "; }
+    .stat-val.warn::before { content: "\26A0 "; }
+    .stat-val.neutral::before { content: "\2014 "; }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Job Creation Claims — Presidents vs. The Data",
+    "description": "BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags, inherited recessions, and the Blinder-Watson findings.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-19",
+    "dateModified": "2026-03-19",
+    "mainEntityOfPage": "https://www.truthbased.org/job-creation",
+    "keywords": ["job creation", "presidential jobs record", "BLS payrolls", "unemployment rate", "Blinder Watson", "Reagan jobs", "Obama jobs", "Trump jobs", "Biden jobs", "PAYEMS"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Economics</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – Measurement</a>
+      <a href="#part2" class="jump-btn">Part 2 – Raw Data</a>
+      <a href="#part3" class="jump-btn">Part 3 – What Presidents Control</a>
+      <a href="#part4" class="jump-btn">Part 4 – Admin-by-Admin</a>
+      <a href="#part5" class="jump-btn">Part 5 – Both Sides</a>
+      <a href="#part6" class="jump-btn">Part 6 – What Evidence Shows</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Economics</span>
+      <h1 class="article-title">Job Creation Claims &mdash; Presidents vs. The Data</h1>
+      <p class="article-deck">Every administration&rsquo;s jobs record against BLS primary-source data &mdash; with full context for policy lags, inherited recessions, Fed independence, and what the Blinder-Watson research actually found about why Democratic presidents preside over stronger outcomes.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">March 2026</span>
+        <span class="meta-pill">20+ primary sources</span>
+        <span class="meta-pill">~20 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the BLS primary-source data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Biden created more jobs than any president in history&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>True by raw total under one methodology, deeply misleading. Biden started from a pandemic-depleted baseline. Clinton&rsquo;s +22.9M in a stable expansion context is the stronger raw record. A large fraction of Biden&rsquo;s total were COVID-recovery jobs that would have returned under any president.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Trump had the best economy ever before COVID&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Overstated. Pre-COVID (Jan 2017&ndash;Feb 2020), Trump added ~6.7M jobs at ~180k/month. In the comparable late-Obama period (Jan 2014&ndash;Jan 2017), the pace was ~224k/month. The pre-COVID record was solid but was largely a continuation of the inherited trajectory.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Trump lost 2.7 million jobs&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Arithmetically true for the full term (Jan 2017&ndash;Jan 2021) and deeply misleading. The 22M jobs lost in March&ndash;April 2020 were caused by a global pandemic, not economic policy. Stating this without the COVID context is comparable to blaming a president for a hurricane.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Democrats have a better jobs record &mdash; proof their policies work better&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>The Democratic raw record is better. But Blinder and Watson (AER, 2016) found the advantage stems largely from more favorable oil shocks, higher productivity growth, and a better international environment &mdash; not demonstrably better policy. The difference is largely luck, not superior governance.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <span class="source-pill">BLS CES (PAYEMS)</span>
+        <span class="source-pill">BLS CPS (UNRATE)</span>
+        <span class="source-pill">FRED data series</span>
+        <span class="source-pill">NBER Recession Dates</span>
+        <span class="source-pill">Blinder &amp; Watson 2016 (AER)</span>
+        <span class="source-pill">CBO ARRA Estimates</span>
+        <span class="source-pill">JCT TCJA Dynamic Score</span>
+      </div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 6</span>
+        <h2 class="part-title">How the Numbers Are Measured and Manipulated</h2>
+      </div>
+
+      <span class="section-label">01 &mdash; The definitions that produce wildly different results</span>
+
+      <p>&ldquo;The president created X million jobs&rdquo; sounds like a fact. It is actually several choices bundled into a single claim &mdash; choices about which survey to use, which start date to choose, whether to include government jobs, whether to measure full-time or total employment, and which unemployment metric to report. Each choice can change the apparent result by hundreds of thousands or millions of jobs.</p>
+
+      <p><strong>The two surveys:</strong> The BLS produces two main employment measures. The Current Employment Statistics (CES) or payroll survey counts <em>jobs</em> at nonfarm establishments; a person with two jobs is counted twice, and agricultural, self-employed, and unpaid family workers are excluded. The Current Population Survey (CPS) counts <em>employed people</em> once and includes agriculture and the self-employed. BLS notes these series diverge regularly by hundreds of thousands, especially during periods of high part-time or gig work. Presidential claims usually use CES &mdash; the headline nonfarm payroll number &mdash; but the two can tell opposite stories in a given month.</p>
+
+      <p><strong>Private vs. total jobs:</strong> Total nonfarm payrolls include ~19M government workers (federal, state, local). A president can have strong private-sector job creation offset by government layoffs (Obama), or tepid private growth masked by government hiring. Citing one without the other is a common manipulation.</p>
+
+      <p><strong>The start-date problem:</strong> Changing the baseline by two months can shift a president&rsquo;s total by hundreds of thousands of jobs. Measuring Obama from the February 2010 payroll trough instead of January 2009 adds ~4M to his total. Measuring Trump from his pre-COVID peak (February 2020) instead of January 2021 makes his record positive instead of negative. Every partisan source chooses the window that flatters their preferred conclusion.</p>
+
+      <p><strong>The break-even context:</strong> The economy needs to add approximately 100,000&ndash;150,000 jobs per month just to keep the unemployment rate flat, absorbing new labor force entrants from population growth. A president adding 120k/month is effectively treading water. This context is almost never included in headline jobs claims.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">U-3 vs. U-6 vs. employment-population ratio</span>
+        <p>The headline unemployment rate (U-3) counts people actively looking for work. U-6 adds discouraged workers and involuntary part-timers &mdash; typically 3&ndash;4 points higher. The employment-population ratio shows employed people as a share of the working-age population and is immune to the discouraged-worker distortion. During the Obama recovery, U-3 fell significantly while U-6 remained elevated and the employment-population ratio stayed depressed, revealing a weaker recovery than headline numbers suggested. These distinctions matter equally across all administrations.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 1 takeaway</strong>Presidential job creation claims are almost always calculated to maximize the apparent credit for the claimant. The honest approach uses consistent methodology: BLS CES nonfarm payrolls from inauguration month to last month in office, the same dates for every administration, private and total jobs both reported, with recession periods explicitly flagged.</div>
+
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 6</span>
+        <h2 class="part-title">The Raw Data Table &mdash; Consistent Methodology</h2>
+      </div>
+
+      <span class="section-label">02 &mdash; BLS CES PAYEMS from inauguration to last month, every administration</span>
+
+      <div class="table-scroll">
+        <table class="evidence-table">
+          <caption>BLS nonfarm payroll employment by administration (FRED PAYEMS), consistent Jan-to-Jan methodology</caption>
+          <thead>
+            <tr><th>Administration</th><th>Net Jobs (total)</th><th>Avg/Month</th><th>Net Private</th><th>U-3 Start/End</th><th>LFPR Change</th><th>Recession (NBER)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Reagan (1981&ndash;89)</strong></td><td class="stat-val positive">+16.1M</td><td>+168k</td><td>+14.7M</td><td>7.5% &rarr; 5.4%</td><td>Rising (baby boomers)</td><td>Jul 1981&ndash;Nov 1982</td></tr>
+            <tr><td><strong>G.H.W. Bush (1989&ndash;93)</strong></td><td class="stat-val warn">+2.6M</td><td>+55k</td><td>+1.5M</td><td>5.4% &rarr; 7.3%</td><td>Declining</td><td>Jul 1990&ndash;Mar 1991</td></tr>
+            <tr><td><strong>Clinton (1993&ndash;01)</strong></td><td class="stat-val positive">+22.9M</td><td>+239k</td><td>+21.0M</td><td>7.3% &rarr; 4.2%</td><td>Rising to 67%</td><td>None</td></tr>
+            <tr><td><strong>G.W. Bush (2001&ndash;09)</strong></td><td class="stat-val warn">+1.4M</td><td>+14k</td><td>&minus;0.4M (private)</td><td>4.2% &rarr; 7.8%</td><td>Sharp decline</td><td>Mar&ndash;Nov 2001; Dec 2007&ndash;Jun 2009</td></tr>
+            <tr><td><strong>Obama (2009&ndash;17)</strong></td><td class="stat-val positive">+11.6M</td><td>+120k</td><td>+11.8M (pvt offset pub &minus;0.7M)</td><td>7.8% &rarr; 4.7%</td><td>Decline (demographics+scarring)</td><td>Inherited Dec 2007&ndash;Jun 2009</td></tr>
+            <tr><td><strong>Trump I (full term, 2017&ndash;21)</strong></td><td class="stat-val negative">&minus;2.7M</td><td>&minus;56k</td><td>&minus;2.2M</td><td>4.7% &rarr; 6.4%</td><td>Stable then drop</td><td>Feb&ndash;Apr 2020 (COVID)</td></tr>
+            <tr><td><strong>Trump I (pre-COVID only, Jan 2017&ndash;Feb 2020)</strong></td><td class="stat-val positive">+6.7M</td><td>+180k</td><td>+6.2M</td><td>4.7% &rarr; 3.5%</td><td>Rising to 63.4%</td><td>None</td></tr>
+            <tr><td><strong>Biden (2021&ndash;25)</strong></td><td class="stat-val positive">+16.2M</td><td>+337k</td><td>+13.6M</td><td>6.4% &rarr; 4.1%</td><td>Volatile recovery</td><td>None (COVID recovery)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The raw scorecard: Clinton&rsquo;s 22.9M is the strongest full-term total under consistent methodology. Biden&rsquo;s 16.2M looks larger than Reagan&rsquo;s 16.1M but began from a COVID-depleted baseline; Biden&rsquo;s net above pre-pandemic (February 2020) levels is ~+6M. G.W. Bush has the weakest pre-COVID record; private-sector employment actually declined under his full term. Obama&rsquo;s 11.6M understates his private-sector performance because ~700k government jobs (mostly state/local) were lost during his term, partially offsetting 11.8M private gains.</p>
+
+      <div class="box box-green">
+        <span class="box-label">One critical number: the benchmark revision</span>
+        <p>BLS published its annual benchmark revision in February 2025 showing a cumulative reduction of ~818,000 nonfarm payroll jobs for the 12 months ending March 2024. This revised downward the monthly job creation figures reported in real time for that period. Monthly job numbers are estimates revised multiple times; the headline figures announced on the first Friday of each month are the least accurate version. This applies to every administration.</p>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 2 takeaway</strong>Using consistent methodology: Clinton has the strongest raw record (+22.9M). Bush has the weakest pre-COVID record (+1.4M total, negative private). Trump&rsquo;s negative full-term total is COVID-driven; pre-COVID was solid at +6.7M. Biden&rsquo;s large total is substantially COVID recovery math. Obama&rsquo;s total understates private-sector performance because of inherited recession and state/local government layoffs.</div>
+
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 6</span>
+        <h2 class="part-title">What Presidents Actually Control</h2>
+      </div>
+
+      <span class="section-label">03 &mdash; Policy lags, inherited trajectories, Fed independence, and external shocks</span>
+
+      <p><strong>The policy lag problem:</strong> Fiscal policy effects on employment arrive 12&ndash;18 months after enactment, sometimes longer. Monetary policy lags are similar. This means a president&rsquo;s first year reflects the prior president&rsquo;s policies. A major stimulus bill signed in year one affects employment primarily in year two. A tax cut passed in year two affects employment in years three and four &mdash; sometimes falling to the next administration. The St. Louis Fed notes monetary policy effects can arrive anywhere from 4 to 29 months after a policy move.</p>
+
+      <p><strong>Inherited economic trajectory:</strong> The single biggest predictor of a president&rsquo;s jobs record is the trajectory they inherit. Reagan inherited a severe recession; the subsequent recovery added millions of jobs regardless of supply-side claims. Obama inherited the worst labor market collapse since the 1930s; stopping that bleeding while beginning a recovery is an achievement independent of the final total. Trump inherited a mature expansion near full employment; growth was always going to be slower, not faster, than the early Obama-era rebounds from a deep trough.</p>
+
+      <p><strong>Federal Reserve independence:</strong> The Fed sets interest rates without direction from the White House. Volcker&rsquo;s 1979&ndash;82 rate increases (approaching 20%) directly caused the recession that torched Reagan&rsquo;s first two years. Volcker&rsquo;s subsequent rate cuts fueled the 1983&ndash;89 recovery. Greenspan&rsquo;s late-1990s accommodation supported the Clinton boom; his 1999&ndash;2000 tightening set up the 2001 recession that greeted Bush. None of these were presidential decisions. Presidents can influence Fed appointments over time, but cannot direct policy.</p>
+
+      <p><strong>External shocks:</strong> The 9/11 attacks (September 2001), the 2008 global financial crisis, and the COVID-19 pandemic are events that dwarfed any domestic policy lever available to the president. Attributing the job losses during these events primarily to presidential policy is not defensible.</p>
+
+      <p><strong>State and local government employment:</strong> State and local governments employ ~19M Americans and make hiring decisions based on their own revenue conditions. During Obama&rsquo;s term, mass state and local layoffs driven by state budget collapses subtracted roughly 700k jobs from total payrolls while private sector job creation was strong. This state/local drag is largely invisible in headline presidential claims but represents real employment losses that reduced workers&rsquo; paychecks.</p>
+
+      <p><strong>COVID and Biden&rsquo;s record:</strong> The 22.4M jobs lost in March&ndash;April 2020 were a pandemic shock. By January 2021, ~12.6M had already returned. The remaining ~9.8M below pre-pandemic levels were broadly expected to return as vaccines rolled out and the economy reopened. CBO had projected fast employment recovery in 2021 before Biden&rsquo;s policies were implemented. Biden&rsquo;s American Rescue Plan likely accelerated the recovery, but claiming credit for the structural rebound is overclaiming. The honest attribution: Biden&rsquo;s policies contributed to faster recovery; the majority of the raw total was mechanical COVID math.</p>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 3 takeaway</strong>Presidents influence employment at the margins through policy, rhetoric, and Fed appointments. Business cycles, Fed actions, inherited trajectories, and external shocks dominate the raw job totals. The first year to 18 months of any presidency is largely a reflection of what the predecessor created. The COVID collapse and recovery is the single largest employment event in modern U.S. history and should not be treated as an ordinary partisan attribution.</div>
+
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 6</span>
+        <h2 class="part-title">Administration-by-Administration Analysis</h2>
+      </div>
+
+      <span class="section-label">04 &mdash; What the data supports for each presidency</span>
+
+      <p><strong>Reagan:</strong> Inherited the Volcker-induced 1981&ndash;82 recession; unemployment peaked at 10.8% in November 1982. The 16.1M net jobs over two full terms include both the recession losses and the recovery. The 1983&ndash;89 expansion was powerful. The debate is mechanism: supply-siders credit the 1981 tax cuts and deregulation; Keynesians credit the massive defense spending increase (~35% over the term) and the natural snap-back from a deep trough once the Fed eased. Both likely contributed. Reagan is the only modern Republican president to leave office with a lower unemployment rate than when he arrived.</p>
+
+      <p><strong>G.H.W. Bush:</strong> Inherited a healthy expansion but faced the 1990&ndash;91 recession (oil price spike from the Gulf War + S&amp;L crisis). Net +2.6M total jobs, with private job creation of only +1.5M. He left office with the economy just beginning to recover &mdash; the expansion that would become the Clinton boom was already underway when Clinton took office. A clear example of a president receiving blame for inherited headwinds.</p>
+
+      <p><strong>Clinton:</strong> 22.9M jobs, the strongest raw full-term total in the modern record. The tech investment boom was the primary engine; Greenspan&rsquo;s accommodative monetary policy sustained it; the 1993 deficit reduction package and balanced budget likely helped by keeping long-term interest rates low. Clinton&rsquo;s 1993 tax increase on upper earners was a real policy choice. But the core driver &mdash; a historic productivity-enhancing technological transformation &mdash; was exogenous. The dot-com bubble that drove much of the boom later collapsed, producing the 2001 recession that greeted Bush.</p>
+
+      <p><strong>G.W. Bush:</strong> The weakest pre-COVID record: +1.4M total jobs over eight years, with private employment declining by ~0.4M. His first year inherited the 2001 recession (dot-com bust + 9/11 shock). His 2003&ndash;07 period produced solid job gains in absolute terms. The 2008 financial crisis &mdash; itself significantly related to a decade of bipartisan deregulatory choices plus Greenspan&rsquo;s extended low rates &mdash; erased those gains and more. It is not accurate to attribute the financial crisis entirely to Bush policy, nor accurate to ignore his administration&rsquo;s role in the deregulatory environment that contributed to it.</p>
+
+      <p><strong>Obama:</strong> Inherited the worst labor market collapse since the 1930s &mdash; the economy was losing ~800,000 jobs per month when he took office. ARRA (CBO estimate: 1.4&ndash;3.3M jobs saved/created at peak) and the auto bailout were significant interventions. The recovery was genuinely slow by historical standards &mdash; slower than the Reagan rebound from a comparable depth recession. Post-financial-crisis recoveries are structurally slower globally, as IMF research documents. Obama&rsquo;s private-sector record (+11.8M) is significantly stronger than his headline total suggests because of the ~700k state/local government jobs lost during his term. He left with 75+ consecutive months of private-sector job gains &mdash; a record streak at the time.</p>
+
+      <p><strong>Trump (pre-COVID):</strong> The +6.7M in January 2017&ndash;February 2020 at ~180k/month was solid. Unemployment reached a 50-year low of 3.5% by late 2019; Black and Hispanic unemployment rates hit record lows. But the baseline comparison is critical: in the last three years of Obama&rsquo;s term, payrolls rose at ~224k/month. Trump&rsquo;s pre-COVID pace was below, not above, the inherited trajectory. The TCJA&rsquo;s employment effects were positive but modest; the CBO projected ~0.7% GDP boost. Trump&rsquo;s full-term negative total is COVID-driven and should not be treated as a reflection of his pre-pandemic economic management.</p>
+
+      <p><strong>Biden:</strong> The 16.2M total begins from the COVID trough. Pre-pandemic payrolls were ~152.5M; by Biden&rsquo;s term end they reached ~158.5M &mdash; a net gain of ~+6M above the pre-pandemic peak. The American Rescue Plan accelerated the labor market recovery and likely added demand that raised the pace of job gains. But real wages fell in 2021&ndash;22 as inflation outpaced nominal gains, meaning many workers experienced the &ldquo;jobs boom&rdquo; as a period of declining purchasing power. The annual benchmark revision showed 818k fewer jobs than initially reported for the March 2023&ndash;March 2024 period.</p>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 4 takeaway</strong>Every administration&rsquo;s record looks different when inherited conditions are factored in. Clinton and Reagan had the best raw records; Clinton&rsquo;s was driven by a technology boom and Reagan&rsquo;s partly by recovery from a deep trough. Obama&rsquo;s private record is better than his headline number. Trump&rsquo;s negative full-term number is a pandemic artifact. Biden&rsquo;s record number is substantially COVID recovery math.</div>
+
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 6</span>
+        <h2 class="part-title">Steelmanning Both Sides</h2>
+      </div>
+
+      <span class="section-label">05 &mdash; The strongest case for Republican supply-side policy</span>
+
+      <p>The supply-side case: lower marginal tax rates increase after-tax returns on investment, encouraging capital formation and business expansion. Deregulation reduces compliance costs and barriers to entry, enabling hiring. Business confidence &mdash; CEOs&rsquo; and entrepreneurs&rsquo; willingness to invest &mdash; is systematically higher when a business-friendly administration is in power, and this can affect hiring independent of any specific policy.</p>
+
+      <p>The Reagan expansion from 1983&ndash;89 is the strongest historical exhibit: 16M jobs, unemployment from 10.8% to 5.3%, sustained growth for six consecutive years after the tax cuts were phased in. Trump&rsquo;s pre-COVID economy reached the lowest unemployment rate in 50 years (3.5%), with record-low rates for Black and Hispanic workers. JCT&rsquo;s dynamic score of the TCJA found a real positive GDP effect of ~0.7% on average over the budget window &mdash; real, even if not self-financing.</p>
+
+      <p>The strongest supply-side case concedes that recoveries from recessions produce strong job growth regardless of ideology (natural snap-back), and that CBO does not find tax cuts self-financing. But it argues that at the margin, growth-oriented policy does move the economic trajectory and creates a more favorable climate for employment than higher-tax, higher-regulation environments.</p>
+
+      <span class="section-label">06 &mdash; The strongest case for Democratic demand-side policy</span>
+
+      <p>The demand-side case: consumer spending drives ~70% of U.S. GDP. Policies that support working- and middle-class income directly sustain the demand that creates jobs. Government investment in infrastructure, education, and research generates multiplier effects that private-sector investment alone does not replicate, especially during periods of slack demand.</p>
+
+      <p>The Blinder-Watson finding (AER, 2016) is the most important empirical evidence: Democratic presidents presided over significantly better economic outcomes across 1949&ndash;2012 by virtually every measure. Average annual GDP growth: 4.4% under Democrats vs. 2.5% under Republicans. Average monthly payroll growth: significantly higher under Democrats. Unemployment rates fell more under Democrats. This is not a contested partisan claim &mdash; it is a peer-reviewed finding in the field&rsquo;s top journal.</p>
+
+      <p>CBO&rsquo;s own estimates support that the ARRA stimulus created/saved 1.4&ndash;3.3M jobs at peak. The American Rescue Plan accelerated the COVID recovery. Infrastructure spending has high fiscal multipliers in conditions of slack. Progressive labor policies &mdash; minimum wage increases, overtime rules, employer health coverage &mdash; raise worker incomes, which raises consumption, which drives hiring.</p>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--green-light);color:var(--green);">Supply-side limit</div>
+          <div class="steelman-val">The Reagan and Trump pre-COVID expansions are real. But Reagan&rsquo;s rebound followed a severe Fed-induced recession; Trump&rsquo;s pace was below the inherited Obama-era trajectory. Neither case isolates a supply-side mechanism cleanly from cyclical recovery and inherited momentum. The TCJA&rsquo;s employment effect was positive but modest; CBO projected +0.7% GDP, not a transformation.</div>
+        </div>
+        <div class="steelman-row">
+          <div class="steelman-key" style="background:var(--brick-light);color:var(--brick);">Demand-side limit</div>
+          <div class="steelman-val">Blinder-Watson is the strongest Democratic argument but also contains the strongest Democratic caveat: the authors attribute most of the Democratic advantage to external factors (benign oil shocks, higher productivity growth, favorable international environment) &mdash; not to demonstrably better fiscal or monetary policy. &ldquo;Democrats are luckier&rdquo; is not the same as &ldquo;Democratic policies create more jobs.&rdquo;</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="part-takeaway"><strong>Part 5 takeaway</strong>Both supply-side and demand-side policies have real but modest effects on employment. The larger predictors are inherited business cycle position, Federal Reserve policy, and external shocks. The Blinder-Watson finding that Democrats preside over better outcomes is real &mdash; and Blinder-Watson themselves attribute most of it to luck, not superior policy design.</div>
+
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 6</span>
+        <h2 class="part-title">What the Evidence Shows &mdash; and the AI Disclosure</h2>
+      </div>
+
+      <span class="section-label">07 &mdash; Blinder-Watson, what we can and cannot say</span>
+
+      <p><strong>The Blinder-Watson finding (American Economic Review, 2016):</strong> Alan Blinder (Princeton, former Fed Vice Chair) and Mark Watson (Stanford) examined economic performance under Democratic vs. Republican presidents from Truman through Obama. Their finding: the economy grew faster, created more jobs, and performed better on virtually every measurable indicator under Democratic presidents &mdash; and the gap was large and statistically significant. Average annual GDP growth: Democrats +4.35%, Republicans +2.54%. Employment growth: consistently stronger under Democrats.</p>
+
+      <p>Their conclusion about the <em>cause</em>: after exhaustive controls, they did not find systematic evidence that more expansionary monetary or fiscal policy under Democrats explained the gap. Instead, they found the Democratic advantage stems &ldquo;mainly from more benign oil shocks, superior total factor productivity (TFP) performance, a more favorable international environment, and perhaps more optimistic consumer expectations about the near-term future.&rdquo; In plain English: Democrats were luckier. This does not mean Democratic policies are irrelevant &mdash; it means the raw job record is not a clean policy scorecard.</p>
+
+      <p><strong>What we can honestly say:</strong></p>
+      <p>&mdash; Using consistent BLS methodology, Clinton has the strongest raw full-term job creation record (+22.9M), and G.W. Bush the weakest pre-COVID record (+1.4M, negative private).</p>
+      <p>&mdash; Democratic presidents have presided over better employment outcomes in the post-WWII period. This is a factual statement about outcomes, not a causal claim about policy.</p>
+      <p>&mdash; Specific policies have measurable effects: CBO estimates ARRA created/saved 1.4&ndash;3.3M jobs at peak; JCT&rsquo;s dynamic score found TCJA raised GDP ~0.7% on average. Both are real. Neither transforms the employment trajectory as dramatically as the political claims suggest.</p>
+      <p>&mdash; COVID fundamentally distorts the Trump and Biden records in opposite directions. Trump&rsquo;s negative full-term total is ~90% pandemic-driven. Biden&rsquo;s record-setting total is substantially COVID recovery that would have proceeded under any president.</p>
+
+      <p><strong>What we cannot honestly say:</strong></p>
+      <p>&mdash; That any specific president &ldquo;created&rdquo; most of the jobs added during their term in any meaningful causal sense.</p>
+      <p>&mdash; That Democratic policies demonstrably outperform Republican policies on employment, independent of the external conditions Democrats happened to inherit.</p>
+      <p>&mdash; That Biden&rsquo;s raw total represents the same kind of achievement as Clinton&rsquo;s +22.9M in a stable expansion with no pandemic arithmetic.</p>
+
+      <span class="section-label">08 &mdash; Factors most coverage misses</span>
+
+      <p><strong>The break-even rate:</strong> The U.S. needs ~100,000&ndash;150,000 jobs per month just to absorb new labor force entrants. A president adding 130k/month is not growing employment relative to the labor force. Context for any job creation figure requires knowing whether it exceeds break-even.</p>
+
+      <p><strong>Job quality vs. job quantity:</strong> Biden&rsquo;s labor market produced millions of jobs while real wages fell in 2021&ndash;22 due to inflation. Trump&rsquo;s pre-COVID labor market produced fewer jobs but rising real wages at the lower end. A slower recovery with better real pay can improve worker welfare more than a fast recovery with wage compression. Headline job totals consistently miss this dimension.</p>
+
+      <p><strong>Geographic distribution:</strong> National job totals hide massive regional variation. The 1990s tech boom concentrated in coastal metros. The 2000s housing boom concentrated in Sun Belt states. A president whose policies benefit aggregate employment while leaving specific regions behind is creating a different economic reality for millions of workers than the headline implies.</p>
+
+      <p><strong>Automation and structural change:</strong> BLS data show manufacturing employment fell from 19.6M (1979) to ~12.8M (2019) &mdash; a loss of 6.8M jobs. Research consistently finds automation displaced more manufacturing workers than trade policy over this period. No president caused this structural shift; no president has reversed it. Attributing manufacturing decline to any presidential policy without this context is misleading.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">AI Disclosure &mdash; How this article was produced</span>
+        <p>This article was compiled from research produced by six AI systems given an identical research prompt:</p>
+        <p style="margin-top:10px;"><strong>Perplexity</strong> (Perplexity AI, claims Grok 4.1 as underlying model) &mdash; Concise data table, good on Blinder-Watson summary. March 19, 2026.</p>
+        <p style="margin-top:6px;"><strong>DeepSeek</strong> (DeepSeek AI) &mdash; Good coverage of start-date manipulation and break-even rate. Incorrectly labeled disclosure as &ldquo;Claude 3.5 Sonnet by Anthropic&rdquo; &mdash; corrected here.</p>
+        <p style="margin-top:6px;"><strong>Grok</strong> (xAI) &mdash; Strong methodology section and administration-by-administration analysis. Correctly disclosed. March 19, 2026.</p>
+        <p style="margin-top:6px;"><strong>Claude Sonnet 4.6</strong> (Anthropic) &mdash; Strong on policy lag explanation, Federal Reserve independence, and the Blinder-Watson nuance. Correctly disclosed as claude-sonnet-4-6.</p>
+        <p style="margin-top:6px;"><strong>ChatGPT GPT-5.4 Thinking</strong> (OpenAI) &mdash; Most comprehensive. Best on geographic distribution, job quality, real wages, and Blinder-Watson critique from Hoover Institution. March 19, 2026.</p>
+        <p style="margin-top:6px;"><strong>ChatGPT Deep Research</strong> (OpenAI) &mdash; Deepest primary-source citations. Found the Federal Reserve History essays on Volcker and Greenspan rate decisions. Best on state/local employment as a distorting factor across administrations. March 19, 2026.</p>
+        <p style="margin-top:6px;">Final synthesis by TruthBased.org editorial review. All factual claims cross-checked against primary sources.</p>
+      </div>
+
+      <div class="falsify-box">
+        <span class="falsify-label">Falsifiability threshold</span>
+        <p><strong>1.</strong> If Blinder-Watson (or a comparable peer-reviewed analysis) were replicated with different period or lag assumptions and found the Democratic advantage is primarily policy-driven rather than luck-driven, it would strengthen the Democratic policy claim substantially.</p>
+        <p><strong>2.</strong> If a controlled quasi-experimental study isolated a specific Republican tax cut&rsquo;s employment effect and found it substantially exceeded CBO&rsquo;s 0.7% GDP estimate, it would strengthen supply-side claims.</p>
+        <p><strong>3.</strong> If post-pandemic data demonstrated that the American Rescue Plan&rsquo;s employment effects significantly exceeded the natural reopening counterfactual, it would strengthen the Biden policy attribution beyond what current estimates support.</p>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Full Sources &amp; References</span>
+        <div class="source-item"><strong>BLS Current Employment Statistics (CES)</strong> &mdash; PAYEMS series, monthly nonfarm payrolls. <a href="https://www.bls.gov/ces/" target="_blank" rel="noopener noreferrer">bls.gov/ces</a></div>
+        <div class="source-item"><strong>BLS Current Population Survey (CPS)</strong> &mdash; Unemployment rate (UNRATE), LFPR, employment-population ratio. <a href="https://www.bls.gov/cps/" target="_blank" rel="noopener noreferrer">bls.gov/cps</a></div>
+        <div class="source-item"><strong>BLS CES-CPS Comparison</strong> &mdash; Official documentation of survey divergences. <a href="https://www.bls.gov/web/empsit/ces_cps_trends.htm" target="_blank" rel="noopener noreferrer">bls.gov</a></div>
+        <div class="source-item"><strong>FRED (St. Louis Fed)</strong> &mdash; PAYEMS, USPRIV, UNRATE, CIVPART, EMRATIO, U6RATE series. <a href="https://fred.stlouisfed.org/series/PAYEMS" target="_blank" rel="noopener noreferrer">fred.stlouisfed.org</a></div>
+        <div class="source-item"><strong>NBER Business Cycle Dates</strong> &mdash; Official recession start/end dates. <a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions" target="_blank" rel="noopener noreferrer">nber.org</a></div>
+        <div class="source-item"><strong>Blinder A.S. &amp; Watson M.W. (2016)</strong> &mdash; &ldquo;Presidents and the US Economy: An Econometric Exploration.&rdquo; <em>American Economic Review</em>, 106(4): 1015&ndash;45. <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20140913" target="_blank" rel="noopener noreferrer">aeaweb.org</a> | <a href="https://www.nber.org/papers/w20324" target="_blank" rel="noopener noreferrer">NBER Working Paper</a></div>
+        <div class="source-item"><strong>CBO ARRA Estimates</strong> &mdash; Employment effects of the 2009 stimulus. <a href="https://www.cbo.gov/sites/default/files/111th-congress-2009-2010/reports/08-24-arra.pdf" target="_blank" rel="noopener noreferrer">cbo.gov</a></div>
+        <div class="source-item"><strong>JCT TCJA Dynamic Score (2017)</strong> &mdash; Macroeconomic analysis, +0.7% GDP average effect. <a href="https://www.jct.gov/getattachment/53ad7658-20ac-4c10-b4d0-2759305432aa/x-69-17-5055.pdf" target="_blank" rel="noopener noreferrer">jct.gov</a></div>
+        <div class="source-item"><strong>Federal Reserve History</strong> &mdash; Essays on Volcker 1981&ndash;82 recession and Greenspan rate decisions. <a href="https://www.federalreservehistory.org/essays/recession-of-1981-82" target="_blank" rel="noopener noreferrer">federalreservehistory.org</a></div>
+        <div class="source-item"><strong>St. Louis Fed</strong> &mdash; &ldquo;Examining Long and Variable Lags in Monetary Policy.&rdquo; <a href="https://www.stlouisfed.org/on-the-economy/2023/oct/what-are-long-variable-lags-monetary-policy" target="_blank" rel="noopener noreferrer">stlouisfed.org</a></div>
+        <div class="source-item"><strong>BLS</strong> &mdash; &ldquo;Forty Years of Falling Manufacturing Employment.&rdquo; <a href="https://www.bls.gov/opub/btn/volume-9/forty-years-of-falling-manufacturing-employment.htm" target="_blank" rel="noopener noreferrer">bls.gov</a></div>
+        <div class="source-item"><strong>San Francisco Fed</strong> &mdash; State/local fiscal drag on the post-2009 recovery. <a href="https://www.frbsf.org/" target="_blank" rel="noopener noreferrer">frbsf.org</a></div>
+        <div class="source-item"><strong>BLS Benchmark Revision 2025</strong> &mdash; 818k downward revision for March 2023&ndash;March 2024. <a href="https://www.bls.gov/ces/publications/news/2025/resbea.htm" target="_blank" rel="noopener noreferrer">bls.gov</a></div>
+        <div class="source-item"><strong>JEC Democrats</strong> &mdash; &ldquo;The U.S. Economy Performs Better Under Democratic Presidents.&rdquo; <a href="https://www.jec.senate.gov/public/index.cfm/democrats/2024/10/the-u-s-economy-performs-better-under-democratic-presidents" target="_blank" rel="noopener noreferrer">jec.senate.gov</a></div>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;Job Creation Claims &mdash; Presidents vs. The Data.&rdquo; March 2026. https://www.truthbased.org/job-creation</span>
+      </div>
+    </section>
+  </article>
+  </main>
+
+
+
+    
+    <div class="related-reading" style="max-width:780px;margin:0 auto 0;padding:0 24px 24px;">
+      <span style="font-family:var(--font-sans);font-size:0.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-quiet);display:block;margin-bottom:10px;">Related Reading</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="/gun-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">U.S. Gun Violence &rarr;</a>
+        <a href="/political-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">Political Violence &rarr;</a>
+      </div>
+    </div>
+  <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org | Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: FBI UCR/CIUS, CDC NCHS, BJS NCVS, Council on Criminal Justice</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+
+  <script>
+    
+    // Chart 1: Firearm Homicide Rate 2010–2023
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'],
+        datasets: [{
+          label: 'Firearm Homicide Rate per 100k',
+          data: [3.6, 3.7, 3.7, 3.6, 3.4, 3.6, 4.0, 4.1, 4.3, 4.6, 6.2, 6.7, 6.2, 5.6],
+          fill: true,
+          backgroundColor: 'rgba(184,58,30,0.08)',
+          borderColor: 'rgba(184,58,30,0.7)',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: function(ctx) {
+            return ctx.dataIndex >= 10 ? 'rgba(184,58,30,0.9)' : 'rgba(184,58,30,0.4)';
+          },
+          pointRadius: function(ctx) { return ctx.dataIndex >= 10 ? 5 : 3; },
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (CDC Mortality Data, 2010–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          annotation: {}
+        },
+        scales: {
+          y: { beginAtZero: false, min: 2.5, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+
+    // Chart 2: NICS Background Check Applications
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['2017','2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [{
+          label: 'NICS Applications (millions)',
+          data: [25.2, 26.2, 28.4, 39.7, 38.9, 36.9, 32.5, 28.0],
+          backgroundColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.5)' : 'rgba(27,107,62,0.3)';
+          },
+          borderColor: function(ctx) {
+            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)';
+          },
+          borderWidth: 1.5,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'NICS Firearm Background Check Applications (Millions), 2017–2024', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
+          tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + 'M applications' } }
+        },
+        scales: {
+          y: { beginAtZero: false, min: 20, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>
