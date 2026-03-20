@@ -1106,15 +1106,18 @@
       q.parentNode.insertBefore(hint,q.nextSibling);
     }
   });
+      }); // end window.addEventListener
   </script>
 
   <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 
   <!-- Chart initialization -->
   <script>
-    Chart.defaults.color = '#706d64';
-    Chart.defaults.font.family = "'Courier Prime', monospace";
-    Chart.defaults.font.size = 11;
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+      Chart.defaults.color = '#706d64';
+      Chart.defaults.font.family = "'Courier Prime', monospace";
+      Chart.defaults.font.size = 11;
 
     // Chart 1 — CPI inflation timeline
     (function() {

@@ -1103,9 +1103,11 @@
 
   <!-- Chart initialization -->
   <script>
-    Chart.defaults.color = '#706d64';
-    Chart.defaults.font.family = "'Courier Prime', monospace";
-    Chart.defaults.font.size = 11;
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+      Chart.defaults.color = '#706d64';
+      Chart.defaults.font.family = "'Courier Prime', monospace";
+      Chart.defaults.font.size = 11;
 
     // Chart 1 — FY2026 spending doughnut
     (function() {
@@ -1174,6 +1176,7 @@
         }
       });
     })();
+    }); // end window.addEventListener
   </script>
 
 
