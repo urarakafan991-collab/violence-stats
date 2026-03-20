@@ -237,14 +237,15 @@
     }
     .stat-block-body { padding: 4px 0; }
     .stat-row {
-      display: flex; justify-content: space-between; align-items: baseline;
+      display: flex; justify-content: space-between; align-items: flex-start;
       padding: 7px 14px; border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
+      font-size: 0.86rem; gap: 12px;
     }
     .stat-row:last-child { border-bottom: none; }
-    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-key { color: var(--text-dim); font-size: 0.82rem; min-width: 120px; flex-shrink: 0; padding-top: 1px; }
     .stat-val {
-      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+      font-family: var(--font-sans); font-weight: 600; font-size: 0.84rem;
+      text-align: right; line-height: 1.45;
     }
     .stat-val.negative { color: var(--brick); }
     .stat-val.positive { color: var(--green); }
