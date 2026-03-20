@@ -94,6 +94,7 @@
     .overview{max-width:860px;margin:0 auto 30px;padding:0 24px;opacity:0;animation:entryAnim .55s ease forwards .4s}
     .overview-box{background:var(--card-face);border:1px solid var(--rule);border-radius:6px;padding:24px;box-shadow:var(--shadow-card)}
     .section-hdr{font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-quiet);margin-bottom:18px}
+    button.compare-row{background:none;border:none;width:100%;text-align:left;font-family:inherit;font-size:inherit;color:inherit;}
     .compare-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;cursor:pointer;border-radius:3px;padding:4px 6px;transition:background .12s}
     .compare-row:hover{background:var(--brick-faint)}
     .compare-name{font-family:'Courier Prime',monospace;font-size:.68rem;color:var(--text-dim);width:150px;flex-shrink:0;transition:color .2s}
@@ -332,62 +333,62 @@
 <div class="overview">
   <div class="overview-box">
     <div class="section-hdr">Per-Capita Rate Comparison — All Groups (shooters per 100k, strict definition)</div>
-    <div class="compare-row" data-tab="white" onclick="showPanel('white')">
+    <button type="button" class="compare-row" data-tab="white" onclick="showPanel('white')" aria-label="Show White (non-Hispanic) shooting statistics">
       <div class="compare-name">White (non-Hisp.)</div>
       <div class="compare-track">
         <div class="c-pop" style="width:57.8%"></div>
         <div class="c-rate" style="width:46%;background:rgba(200,168,75,.7)"></div>
       </div>
       <div class="compare-val">0.046/100k</div>
-    </div>
-    <div class="compare-row" data-tab="black" onclick="showPanel('black')">
+    </button>
+    <button type="button" class="compare-row" data-tab="black" onclick="showPanel('black')" aria-label="Show Black (non-Hispanic) shooting statistics">
       <div class="compare-name">Black (non-Hisp.)</div>
       <div class="compare-track">
         <div class="c-pop" style="width:13.7%"></div>
         <div class="c-rate" style="width:77%;background:rgba(200,75,75,.75)"></div>
       </div>
       <div class="compare-val">0.077/100k</div>
-    </div>
-    <div class="compare-row" data-tab="hispanic" onclick="showPanel('hispanic')">
+    </button>
+    <button type="button" class="compare-row" data-tab="hispanic" onclick="showPanel('hispanic')" aria-label="Show Hispanic/Latino shooting statistics">
       <div class="compare-name">Hispanic/Latino</div>
       <div class="compare-track">
         <div class="c-pop" style="width:19.5%"></div>
         <div class="c-rate" style="width:21%;background:rgba(75,122,200,.7)"></div>
       </div>
       <div class="compare-val">0.021/100k</div>
-    </div>
-    <div class="compare-row" data-tab="asian" onclick="showPanel('asian')">
+    </button>
+    <button type="button" class="compare-row" data-tab="asian" onclick="showPanel('asian')" aria-label="Show Asian (non-Hispanic) shooting statistics">
       <div class="compare-name">Asian (non-Hisp.)</div>
       <div class="compare-track">
         <div class="c-pop" style="width:6.2%"></div>
         <div class="c-rate" style="width:48%;background:rgba(200,168,75,.5)"></div>
       </div>
       <div class="compare-val">0.048/100k</div>
-    </div>
-    <div class="compare-row" data-tab="native" onclick="showPanel('native')">
+    </button>
+    <button type="button" class="compare-row" data-tab="native" onclick="showPanel('native')" aria-label="Show Native American shooting statistics">
       <div class="compare-name">Native American</div>
       <div class="compare-track">
         <div class="c-pop" style="width:1.3%"></div>
         <div class="c-rate" style="width:63%;background:rgba(200,184,75,.5)"></div>
       </div>
       <div class="compare-val">0.063/100k*</div>
-    </div>
-    <div class="compare-row" data-tab="immigrant" onclick="showPanel('immigrant')">
+    </button>
+    <button type="button" class="compare-row" data-tab="immigrant" onclick="showPanel('immigrant')" aria-label="Show Immigrant shooting statistics">
       <div class="compare-name">Foreign-Born</div>
       <div class="compare-track">
         <div class="c-pop" style="width:13.9%"></div>
         <div class="c-rate" style="width:14.4%;background:rgba(75,170,110,.7)"></div>
       </div>
       <div class="compare-val">~proportional</div>
-    </div>
-    <div class="compare-row" data-tab="gender" onclick="showPanel('gender')">
+    </button>
+    <button type="button" class="compare-row" data-tab="gender" onclick="showPanel('gender')" aria-label="Show Gender shooting statistics">
       <div class="compare-name">Male</div>
       <div class="compare-track">
         <div class="c-pop" style="width:49.5%"></div>
         <div class="c-rate" style="width:97.7%;background:rgba(200,75,75,.5)"></div>
       </div>
       <div class="compare-val">0.101/100k</div>
-    </div>
+    </button>
     <div class="legend">
       <div class="leg-item"><div class="leg-sw" style="background:rgba(200,168,75,.2);border-right:2px solid rgba(200,168,75,.5)"></div>% of U.S. population</div>
       <div class="leg-item"><div class="leg-sw" style="background:rgba(200,168,75,.7)"></div>Per-capita rate (scaled)</div>
@@ -1075,7 +1076,7 @@ function showPanel(id, pushHash) {
   <!-- QR expand modal -->
   <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
     <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
-    <img id="qrExpanded" src="" alt="Enlarged QR code">
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
     <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
   </div>
   <script>
@@ -1108,4 +1109,6 @@ function showPanel(id, pushHash) {
   });
   </script>
 </body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
 </html>
