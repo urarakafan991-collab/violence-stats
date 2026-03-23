@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sexual Orientation, Gender Identity &amp; Crime | TruthBased.org</title>
+  <meta name="description" content="Does sexual orientation or gender identity predict criminal behavior? Per-capita crime data for every group — het men, het women, gay men, lesbian women, trans women, trans men — tested against BLS, BJS, HMPPS, and peer-reviewed data. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url" content="https://www.truthbased.org/lgbtq-crime">
+  <meta property="og:title" content="Sexual Orientation, Gender Identity & Crime | TruthBased.org">
+  <meta property="og:description" content="Per-capita crime comparison across all demographic groups. UK prison infographic debunked. Gay predator myth debunked. LGBTQ+ victimization data. Every claim tested.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title" content="Sexual Orientation, Gender Identity & Crime | TruthBased.org">
+  <meta name="twitter:description" content="Per-capita crime data for every group. UK prison stats, Dhejne study, gay predator myth — all tested against primary sources.">
+
+  <link rel="canonical" href="https://www.truthbased.org/lgbtq-crime">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 160px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-num.warn     { color: var(--amber); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .confidence-tag {
+      display: inline-block;
+      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+    .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
+    .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  
+    /* ── You May Also Like ── */
+    .ymal-section { margin-top: 8px; }
+    .ymal-heading {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+      display: block; margin-bottom: 12px;
+    }
+    .ymal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ymal-card {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+      border-left: 3px solid transparent;
+    }
+    .ymal-card:hover {
+      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ymal-cat {
+      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+    }
+    .ymal-title {
+      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+    .ymal-desc {
+      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sexual Orientation, Gender Identity, and Crime: What the Data Actually Shows",
+    "description": "Per-capita crime comparison across every demographic group. UK prison data, Dhejne study, gay predator myth, LGBTQ+ victimization — all tested against primary sources.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "mainEntityOfPage": "https://www.truthbased.org/lgbtq-crime",
+    "keywords": ["LGBTQ crime rates", "trans women crime", "gay predator myth", "UK prison data", "Dhejne study", "sexual orientation crime", "gender identity crime", "LGBTQ victimization", "Jenny et al", "Paul Cameron debunked"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 &ndash; The Comparison</a>
+      <a href="#part2" class="jump-btn">Part 2 &ndash; Per-Capita Data</a>
+      <a href="#part3" class="jump-btn">Part 3 &ndash; UK Prison Debunk</a>
+      <a href="#part4" class="jump-btn">Part 4 &ndash; Gay Predator Myth</a>
+      <a href="#part5" class="jump-btn">Part 5 &ndash; Victims Data</a>
+      <a href="#part6" class="jump-btn">Part 6 &ndash; Steelman: Risk</a>
+      <a href="#part7" class="jump-btn">Part 7 &ndash; Steelman: Wrong</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Political Fact Check</span>
+      <h1 class="article-title">Sexual Orientation, Gender Identity, and Crime</h1>
+      <p class="article-deck">Does sexual orientation or gender identity predict criminal behavior? Per-capita crime data for heterosexual men, heterosexual women, gay men, lesbian women, trans women, and trans men &mdash; compared against the same evidentiary standard. The UK prison infographic, the Dhejne study, the gay predator myth, and LGBTQ+ victimization data &mdash; all tested against primary sources. Both sides steelmanned.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">Published March 2026</span>
+        <span class="meta-pill">20+ primary sources</span>
+        <span class="meta-pill">~35 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="box box-amber" style="margin-top:20px;">
+      <span class="box-label">Critical Prefatory Note</span>
+      <p>Almost no crime database in the U.S. or UK tracks sexual orientation or gender identity at the population level for offenders. The FBI, BJS, and UK MOJ record sex &mdash; not orientation or identity. What exists: prison snapshots (who is incarcerated on a given day), a handful of cohort studies, and victimization surveys. This article uses every available dataset but is transparent about what they can and cannot prove. Anyone claiming definitive per-capita crime rates by sexual orientation is overstepping what the data allows. The strongest baseline in this literature is <strong>male vs. female</strong>, because that is what crime databases actually track.</p>
+    </div>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Trans women commit sexual offenses at male rates or higher&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported when properly denominated. UK prison snapshot data shows high proportions of trans prisoners with sex offenses (58&ndash;62%), but these are prison headcounts, not crime rates. The per-capita rate varies by a factor of 40x depending on denominator choice. Canada&rsquo;s Correctional Service found 94% of sex offending by trans-identified prisoners occurred pre-transition. Dhejne (2011) found no significant difference between trans women and cis men.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Gay men are disproportionately pedophiles&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. Jenny et al. (1994): of 269 child SA cases, only 2 perpetrators (0.74%) were identifiably gay/lesbian; 82% were heterosexual partners of close relatives. APA, CDC, and National Academy of Sciences all confirm no link. Paul Cameron&rsquo;s contrary claims led to his expulsion from the APA (1983) and condemnation by three professional associations for data fabrication.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;LGBTQ+ people are more violent/criminal overall&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. The only population-level offender study (Netherlands, 2024) found men in same-sex relationships <em>less</em> likely to be suspected of crime (OR 0.685). LGB overrepresentation in U.S. prisons reflects criminalization history (sodomy laws, HIV statutes) and structural disadvantage, not innate propensity.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;These concerns are overblown &mdash; LGBTQ+ people pose zero risk&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Overstated. UK prison data is real even if misinterpreted. Documented cases of system-gaming exist (Karen White). Individual risk assessment in prisons is legitimate. The honest answer is that population-level data doesn&rsquo;t exist to make definitive claims in either direction &mdash; but what exists does not support the predator narrative.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources Used</span>
+      <div class="source-pills">
+        <span class="source-pill">BJS Prisoners in 2023</span>
+        <span class="source-pill">FBI UCR / NIBRS</span>
+        <span class="source-pill">UK HMPPS Offender Equalities</span>
+        <span class="source-pill">Canada CSC R-442</span>
+        <span class="source-pill">Dhejne et al. (PLoS One 2011)</span>
+        <span class="source-pill">Jenny et al. (Pediatrics 1994)</span>
+        <span class="source-pill">Groth &amp; Birnbaum (1978)</span>
+        <span class="source-pill">Williams Institute / NCVS</span>
+        <span class="source-pill">APA / CDC</span>
+        <span class="source-pill">ONS Census 2021</span>
+        <span class="source-pill">Dutch Population Study (PMC 2024)</span>
+        <span class="source-pill">FBI Hate Crime Statistics</span>
+        <span class="source-pill">Gallup LGBTQ+ Identification</span>
+        <span class="source-pill">Cortoni et al. (2017)</span>
+      </div>
+    </div>
+
+    <!-- PART 1 -->
+    <section id="part1">
+      <div class="part-header"><span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">The Comparison Framework</h2></div>
+
+      <span class="section-label">01 &ndash; Why This Matters Now</span>
+      <p>In 2025&ndash;2026, claims about LGBTQ+ people and crime directly drive federal and state policy. President Trump&rsquo;s Executive Order 14168 (January 20, 2025) aimed to prevent &ldquo;men [from] self-identify[ing] as women and gain[ing] access to intimate single-sex spaces.&rdquo; The Heritage Foundation&rsquo;s Project 2025 recommended that educators who &ldquo;purvey transgender ideology&rdquo; be registered as sex offenders. The ACLU tracked 339 anti-LGBTQ+ bills by February 10, 2025 alone, with over 1,022 anti-trans bills introduced across 49 states. At least 23 states had school bathroom bills by early 2026. Use of the term &ldquo;groomer&rdquo; directed at LGBTQ+ people surged 406% on social media following Florida&rsquo;s &ldquo;Don&rsquo;t Say Gay&rdquo; law (HRC/CCDH).</p>
+      <p>A per-capita comparison across <em>all</em> groups &mdash; including heterosexual cisgender baselines &mdash; is the only methodologically honest approach. Raw prison counts without population denominators prove nothing about relative risk.</p>
+
+      <span class="section-label">02 &ndash; Population Estimates</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">U.S. heterosexual adults</span><span class="stat-val">~85.7% (~227 million; Gallup 2024)</span></div>
+          <div class="stat-row"><span class="stat-key">Gay men (U.S.)</span><span class="stat-val">~2.0% of adults (~5.3 million)</span></div>
+          <div class="stat-row"><span class="stat-key">Lesbian women (U.S.)</span><span class="stat-val">~1.4% (~3.7 million)</span></div>
+          <div class="stat-row"><span class="stat-key">Bisexual (U.S.)</span><span class="stat-val">~5.2% (~13.8 million)</span></div>
+          <div class="stat-row"><span class="stat-key">Trans women (U.S.)</span><span class="stat-val">~698,500 (Williams Institute 2025)</span></div>
+          <div class="stat-row"><span class="stat-key">Trans men (U.S.)</span><span class="stat-val">~730,500</span></div>
+          <div class="stat-row"><span class="stat-key">UK trans women (ONS Census)</span><span class="stat-val brick">~48,000 (ONS flagged as unreliable)</span></div>
+          <div class="stat-row"><span class="stat-key">UK trans women (GEO tentative)</span><span class="stat-val">100,000&ndash;250,000</span></div>
+      </div>
+      <p>The denominator choice for trans populations is the single most consequential variable in this entire debate. ONS itself downgraded the Census gender identity data in September 2024, noting question misinterpretation among non-English speakers. Using the ONS figure (~48,000 trans women) versus the GEO tentative estimate (~200,000+) changes per-capita rate calculations by an order of magnitude.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 1 takeaway:</strong> Claims about LGBTQ+ people and crime are driving real legislation. But almost no crime database tracks orientation or identity. The comparison requires establishing population denominators first &mdash; and for trans populations, those denominators are genuinely uncertain. Everything that follows must be read with this limitation in mind.
+      </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section id="part2">
+      <div class="part-header"><span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">Per-Capita Crime Data by Group</h2></div>
+
+      <span class="section-label">03 &ndash; Heterosexual Cisgender Men: The Baseline</span>
+      <p>This is the dominant empirical reality against which all other groups must be measured. Men commit the overwhelming majority of sexual offenses across every available dataset:</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">U.S. prison population (BJS 2023)</span><span class="stat-val brick">93% male</span></div>
+          <div class="stat-row"><span class="stat-key">FBI rape arrestees (2019)</span><span class="stat-val brick">96.6% male</span></div>
+          <div class="stat-row"><span class="stat-key">Sex offense arrestees (FBI)</span><span class="stat-val brick">93.2% male</span></div>
+          <div class="stat-row"><span class="stat-key">Cross-national police data (Cortoni 2017, 12 countries)</span><span class="stat-val brick">97.8% male</span></div>
+          <div class="stat-row"><span class="stat-key">UK sexual offenses (E&amp;W)</span><span class="stat-val brick">98% male</span></div>
+          <div class="stat-row"><span class="stat-key">Male imprisonment rate (U.S.)</span><span class="stat-val brick">871 per 100,000 adult men</span></div>
+          <div class="stat-row"><span class="stat-key">Female imprisonment rate</span><span class="stat-val green">54 per 100,000 adult women</span></div>
+      </div>
+      <p>Any claim about a minority group&rsquo;s crime rate must be understood against this baseline: heterosexual cisgender men account for 93&ndash;98% of sexual offenses by every measure.</p>
+
+      <span class="section-label">04 &ndash; Heterosexual Cisgender Women</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">UK prison sex offenders (2019)</span><span class="stat-val green">125 of 3,812 women (3.3%)</span></div>
+          <div class="stat-row"><span class="stat-key">Per-capita rate (E&amp;W)</span><span class="stat-val green">~4.1 per million women</span></div>
+          <div class="stat-row"><span class="stat-key">U.S. share of sex offenses</span><span class="stat-val green">&lt;5%</span></div>
+      </div>
+
+      <span class="section-label">05 &ndash; Gay and Bisexual Men</span>
+      <p>No population-level per-capita sexual offense data exists for gay men specifically. The best evidence comes from the Netherlands:</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Dutch total-population study (PMC 2024)</span><span class="stat-val green">Men in same-sex relationships LESS likely to be suspected of crime</span></div>
+          <div class="stat-row"><span class="stat-key">Adjusted odds ratio</span><span class="stat-val green">0.685 (lower than het men)</span></div>
+          <div class="stat-row"><span class="stat-key">Suspected at least once (1996&ndash;2020)</span><span class="stat-val green">14.1% same-sex vs. 22.4% opposite-sex</span></div>
+      </div>
+      <p>U.S. data shows LGB people overrepresented in prison (1,882 per 100,000 vs. 612 general rate), but this reflects criminalization history &mdash; sodomy laws (enforced until 2003), HIV statutes (felonies in 28 states with 20+ year sentences in 5 states), and solicitation enforcement &mdash; not elevated violent or sexual offending. The child abuse question is addressed in Part 4.</p>
+
+      <span class="section-label">06 &ndash; Lesbian and Bisexual Women</span>
+      <p>No per-capita sexual offense data exists for this group. They are almost entirely absent from &ldquo;predator&rdquo; narratives, which is itself revealing: if the debate were about data, lesbian women would be analyzed with equal rigor. Their absence from the narrative confirms the discussion is about male-bodied people in female spaces, not about LGBTQ+ identity per se.</p>
+      <p>LBW are massively overrepresented in U.S. prisons (42.1% of women in state prison identify as sexual minority), but this reflects the &ldquo;trauma-to-prison pipeline&rdquo; &mdash; 53.7% of incarcerated sexual minority women experienced childhood sexual assault vs. 31.4% of straight women.</p>
+
+      <span class="section-label">07 &ndash; Trans Women: The Core Controversy</span>
+      <p>This is the most politicized dataset. The headline numbers are real; their interpretation is where errors occur.</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">UK HMPPS 2017 (MOJ FOI)</span><span class="stat-val brick">60 of 125 trans prisoners (48%) had sex offense convictions</span></div>
+          <div class="stat-row"><span class="stat-key">UK HMPPS 2019 (FPFW FOI)</span><span class="stat-val brick">76 of 129 (58.9%)</span></div>
+          <div class="stat-row"><span class="stat-key">UK HMPPS 2024</span><span class="stat-val brick">151 of 245 (61.6%)</span></div>
+          <div class="stat-row"><span class="stat-key">Comparison: male prison pop</span><span class="stat-val">16.8&ndash;22% sex offenders</span></div>
+          <div class="stat-row"><span class="stat-key">Comparison: female prison pop</span><span class="stat-val green">3.3% sex offenders</span></div>
+      </div>
+      <p>These proportions are real and striking. But three factors fundamentally change how they should be interpreted. All three are addressed in Part 3.</p>
+
+      <span class="section-label">08 &ndash; Trans Men</span>
+      <p>Trans men are almost completely absent from offender data. In Canada (CSC R-442), <strong>zero of 21 trans men</strong> in federal custody had sexual offense histories. In the UK, no trans men were found in the men&rsquo;s prison estate. The March 2024 UK data showed &ldquo;five or fewer&rdquo; trans men with sexual offense convictions (suppressed for anonymity). This near-total absence is consistent with female-pattern offending baselines: people assigned female at birth offend at female rates regardless of gender identity.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap"><canvas id="chartSexOffense" role="img"></canvas></div>
+        <span class="chart-source">Source: BJS 2023 &bull; FBI UCR 2019 &bull; UK MOJ 2019 &bull; HMPPS 2024</span>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 2 takeaway:</strong> Cisgender heterosexual men commit 93&ndash;98% of sexual offenses by every measure. The only population-level offender study of gay men (Netherlands) found them <em>less</em> likely to offend. UK prison data on trans women shows high raw proportions, but these are prison headcounts, not crime rates. Trans men are virtually absent from offender data. No dataset supports the claim that LGBTQ+ identity predicts elevated sexual offending when properly denominated.
+      </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section id="part3">
+      <div class="part-header"><span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">The UK Prison Infographic: Why the Viral Claim Fails</h2></div>
+
+      <span class="section-label">09 &ndash; The Denominator Problem</span>
+      <p>Using the 2019 UK figure (76 trans women incarcerated for sex offenses), the per-capita rate changes dramatically by denominator:</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">ONS Census (48,000)</span><span class="stat-val brick">158.3 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">Mid-range estimate (100,000)</span><span class="stat-val">76.0 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">GEO low (200,000 UK, ~50% TW)</span><span class="stat-val">76.0 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">GEO high (500,000 UK, ~50% TW)</span><span class="stat-val green">30.4 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">Cis male rate (comparison)</span><span class="stat-val">~48 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">Cis female rate</span><span class="stat-val green">~4.1 per million (~0.41 per 100k)</span></div>
+      </div>
+      <p>The per-capita rate ranges from <strong>below</strong> the cis male rate (at higher denominators) to <strong>3x above it</strong> (at the ONS figure) &mdash; a 40x uncertainty range. ONS itself says the Census figure should not be used for this purpose.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap"><canvas id="chartDenominator" role="img"></canvas></div>
+        <span class="chart-source">Source: UK MOJ FOI 2019 (76 sex offenders) &bull; Multiple population estimates</span>
+      </div>
+
+      <span class="section-label">10 &ndash; The Sentence-Length Snapshot Artifact</span>
+      <p>A prison population at any given moment is not a crime rate. It is an accumulation weighted by sentence length. In England and Wales, sexual offenses carry average custodial sentences of <strong>66.2 months</strong> versus 20.3 months for all offenses &mdash; an accumulation factor of <strong>3.3x</strong>. If a group has even a small number of sex offenders serving long sentences, a snapshot will show a high proportion of that group as sex offenders &mdash; even if their actual offending rate is identical to the general population.</p>
+      <p>The UK MOJ has explicitly noted that &ldquo;prisoners on longer sentences are more likely to be managed as a transgender prisoner,&rdquo; creating a filter effect that concentrates the most serious convictions in the counted population.</p>
+
+      <span class="section-label">11 &ndash; The Canada 94% Finding</span>
+      <p>The Correctional Service Canada&rsquo;s file review (Research Report R-442, 2022) examined 99 gender-diverse offenders in federal custody. Of 33 with sexual offense histories, <strong>94% had committed their offenses while living as their biological sex, prior to transition</strong>. 82% of those with sex offense histories were trans women; <strong>0% were trans men</strong>.</p>
+      <p>This finding is arguably the single most important piece of evidence in the entire debate. It means a prison snapshot that counts someone as a &ldquo;trans woman sex offender&rdquo; is overwhelmingly capturing people who offended as males years or decades earlier. The offending cannot be attributed to trans identity.</p>
+
+      <span class="section-label">12 &ndash; Dhejne et al. (2011): The Most Misquoted Study</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">MtF vs. cis female controls (any crime)</span><span class="stat-val brick">HR 6.6 (CI 4.1&ndash;10.8) &mdash; significant</span></div>
+          <div class="stat-row"><span class="stat-key">MtF vs. cis male controls (any crime)</span><span class="stat-val green">HR 0.8 (CI 0.5&ndash;1.2) &mdash; NOT significant</span></div>
+          <div class="stat-row"><span class="stat-key">Pre-1989 cohort (any crime)</span><span class="stat-val brick">Elevated vs. cis women &mdash; significant</span></div>
+          <div class="stat-row"><span class="stat-key">Post-1989 cohort (any crime)</span><span class="stat-val green">HR 0.9 (0.6&ndash;1.5) &mdash; NOT significant</span></div>
+      </div>
+      <p>The study compared trans women to <strong>cisgender women</strong>, not cisgender men. Finding that trans women have higher crime rates than cis women (HR 6.6) means they have <em>male-pattern</em> crime rates &mdash; which is expected and does not show they offend <em>more</em> than cis men (HR 0.8, not significant). For the post-1989 cohort, no elevation was found at all. Dhejne herself stated: &ldquo;We were certainly not saying that we found that trans women were a rape risk.&rdquo;</p>
+
+      <span class="section-label">13 &ndash; The HMP Downview Update</span>
+      <p>Since UK policy was strengthened in 2019 (now requiring that trans women with male genitalia or sex offense convictions cannot be held in the general women&rsquo;s estate without ministerial exemption), there have been <strong>no sexual assaults committed by transgender women in women&rsquo;s prisons</strong>. As of February 2026, 7 prisoners were on E Wing at HMP Downview, the separate unit for trans women.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 3 takeaway:</strong> The UK prison infographic fails on three levels: (1) the denominator is uncertain by a factor of 40x and ONS says not to use it; (2) sentence-length accumulation inflates sex offender proportions in any small subgroup by 3.3x; (3) Canada shows 94% of the offending occurred before transition. Dhejne&rsquo;s actual findings show trans women are statistically indistinguishable from cis men (HR 0.8) &mdash; not elevated above them &mdash; and the post-1989 cohort showed no elevation at all.
+      </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section id="part4">
+      <div class="part-header"><span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">The Gay Predator Myth: Historical Receipts</h2></div>
+
+      <span class="section-label">14 &ndash; Anita Bryant and &ldquo;Save Our Children&rdquo; (1977)</span>
+      <p>When Dade County, Florida passed an anti-gay discrimination ordinance, singer Anita Bryant formed &ldquo;Save Our Children, Inc.&rdquo; and claimed: &ldquo;Homosexuals cannot biologically reproduce children; therefore, they must recruit our children.&rdquo; The campaign gathered 64,000+ signatures, voters repealed the ordinance 69% to 31%, and Florida barred gay adoption for 20 years. Two weeks after the vote, Robert Hillsborough was stabbed 15 times in San Francisco while his attackers chanted &ldquo;Faggot.&rdquo; The 2025&ndash;2026 &ldquo;groomer&rdquo; rhetoric uses an identical structure.</p>
+
+      <span class="section-label">15 &ndash; Paul Cameron: The &ldquo;Research&rdquo; Behind the Myth</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">APA (1983)</span><span class="steelman-val">Expelled from membership for non-cooperation with ethics investigation</span></div>
+        <div class="steelman-row"><span class="steelman-key">ASA (1986)</span><span class="steelman-val">Formal resolution: &ldquo;Paul Cameron is not a sociologist, and [we condemn] his consistent misrepresentation of sociological research&rdquo;</span></div>
+        <div class="steelman-row"><span class="steelman-key">Nebraska PA (1984)</span><span class="steelman-val">Formally disassociated from his work</span></div>
+        <div class="steelman-row"><span class="steelman-key">Canadian PA (1996)</span><span class="steelman-val">Disassociated: Cameron &ldquo;consistently misinterpreted and misrepresented research on sexuality&rdquo;</span></div>
+        <div class="steelman-row"><span class="steelman-key">Federal judge (1985)</span><span class="steelman-val">Baker v. Wade: Cameron engaged in &ldquo;fraud&rdquo; and &ldquo;misrepresentations to this Court&rdquo;; his claim of 43x gay crime rate was &ldquo;a total distortion of the Kinsey data&rdquo;</span></div>
+        <div class="steelman-row"><span class="steelman-key">SPLC</span><span class="steelman-val">Designates his Family Research Institute as a hate group</span></div>
+      </div>
+
+      <span class="section-label">16 &ndash; What the Science Actually Shows</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Jenny et al. (1994, Pediatrics)</span><span class="stat-val green">269 child SA cases: only 2 perpetrators (0.74%) identifiably gay/lesbian</span></div>
+          <div class="stat-row"><span class="stat-key">Heterosexual partners of relatives</span><span class="stat-val brick">222 of 269 cases (82.5%)</span></div>
+          <div class="stat-row"><span class="stat-key">Groth &amp; Birnbaum (1978)</span><span class="stat-val green">Zero exclusively homosexual men among 175 convicted child sex offenders</span></div>
+          <div class="stat-row"><span class="stat-key">CDC</span><span class="stat-val">~90% of CSA by someone known and trusted by the child/family</span></div>
+          <div class="stat-row"><span class="stat-key">APA official position</span><span class="stat-val green">&ldquo;No evidence of any positive correlation between homosexual orientation and child molestation&rdquo;</span></div>
+      </div>
+      <p>Groth&rsquo;s distinction is critical: pedophilia is attraction to prepubescent children. It is clinically distinct from adult sexual orientation. Most child molesters of boys do not identify as homosexual in their adult orientation &mdash; their attraction is to age, not gender.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 4 takeaway:</strong> The gay-predator claim was comprehensively debunked by Jenny et al. (0.74% gay perpetrators), Groth &amp; Birnbaum (zero exclusively gay among 175 offenders), the APA, CDC, and National Academy of Sciences. Paul Cameron, its primary academic source, was expelled from the APA and condemned by four professional organizations for fabrication. The 2025 &ldquo;groomer&rdquo; narrative uses an architecturally identical structure to Anita Bryant&rsquo;s 1977 campaign.
+      </div>
+    </section>
+
+    <!-- PART 5 -->
+    <section id="part5">
+      <div class="part-header"><span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">LGBTQ+ People as Victims: The Data Nobody Cites</h2></div>
+
+      <span class="section-label">17 &ndash; Violent Victimization (NCVS 2022&ndash;2023)</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">LGBTQ+ violent victimization</span><span class="stat-val brick">106.4 per 1,000 (5x non-LGBTQ+)</span></div>
+          <div class="stat-row"><span class="stat-key">Non-LGBTQ+ violent victimization</span><span class="stat-val">21.1 per 1,000</span></div>
+          <div class="stat-row"><span class="stat-key">Transgender victimization</span><span class="stat-val brick">93.7 per 1,000</span></div>
+          <div class="stat-row"><span class="stat-key">Serious violence (rape, robbery, agg. assault)</span><span class="stat-val brick">53.7 vs. 8.5 per 1,000 (6.3x higher)</span></div>
+          <div class="stat-row"><span class="stat-key">Violent hate crimes</span><span class="stat-val brick">6.4 vs. 0.7 per 1,000 (9.1x higher)</span></div>
+          <div class="stat-row"><span class="stat-key">Weapon-involved violence</span><span class="stat-val brick">27.4 vs. 5.7 per 1,000 (4.8x higher)</span></div>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-canvas-wrap"><canvas id="chartVictim" role="img"></canvas></div>
+        <span class="chart-source">Source: Williams Institute / BJS NCVS 2022&ndash;2023 pooled data</span>
+      </div>
+
+      <span class="section-label">18 &ndash; Anti-LGBTQ+ Hate Crimes (FBI)</span>
+      <div class="table-wrap" style="overflow-x:auto; margin:16px 0;">
+        <table class="data-table" style="width:100%; border-collapse:collapse; font-family:var(--font-sans); font-size:0.78rem;">
+          <thead>
+            <tr><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Year</th><th style="padding:8px; border-bottom:2px solid var(--border);">Anti-SO Incidents</th><th style="padding:8px; border-bottom:2px solid var(--border);">Anti-GI Incidents</th><th style="padding:8px; border-bottom:2px solid var(--border);">Combined</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">2021</td><td style="padding:8px; border-bottom:1px solid var(--border);">1,711</td><td style="padding:8px; border-bottom:1px solid var(--border);">353</td><td style="padding:8px; border-bottom:1px solid var(--border);">2,064</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">2022</td><td style="padding:8px; border-bottom:1px solid var(--border);">1,947</td><td style="padding:8px; border-bottom:1px solid var(--border);">469</td><td style="padding:8px; border-bottom:1px solid var(--border);">2,416</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">2023</td><td style="padding:8px; border-bottom:1px solid var(--border);">2,077</td><td style="padding:8px; border-bottom:1px solid var(--border);">492</td><td style="padding:8px; border-bottom:1px solid var(--border);">2,569</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">2024</td><td style="padding:8px; border-bottom:1px solid var(--border);">1,950</td><td style="padding:8px; border-bottom:1px solid var(--border);">521</td><td style="padding:8px; border-bottom:1px solid var(--border);">2,471</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Anti-LGBTQ+ bias accounts for more than one in five FBI-reported hate crimes, a proportion that has grown steadily. Anti-transgender incidents specifically roughly doubled from ~184 offenses in 2018 to 521 in 2024.</p>
+
+      <span class="section-label">19 &ndash; Trans Homicides and Sexual Assault</span>
+      <p>HRC has tracked 399 transgender or gender-nonconforming people killed in the U.S. since 2013. Of cumulative victims, 73.7% were Black transgender women and 84.4% were BIPOC. The 2015 U.S. Transgender Survey (n=27,715) found <strong>47% of respondents had been sexually assaulted in their lifetime</strong> &mdash; compared to ~20&ndash;25% for the general female population (CDC NISVS). Trans people in prison are 10x as likely to be sexually assaulted by fellow inmates.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 5 takeaway:</strong> LGBTQ+ people are <strong>five times</strong> more likely to be violently victimized, nine times more likely to experience hate crimes, and trans people face sexual assault at roughly double the rate of cisgender women. The strongest empirical finding in this entire space is not about LGBTQ+ offending &mdash; it is about LGBTQ+ victimization.
+      </div>
+    </section>
+
+    <!-- PART 6 -->
+    <section id="part6">
+      <div class="part-header"><span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Steelman: The Case for Elevated Risk</h2></div>
+
+      <span class="section-label">20 &ndash; The Strongest Data-Informed Case</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">UK prison data is real</span><span class="steelman-val">50&ndash;62% of trans prisoners have sex offense convictions. Even under the most generous denominator (~250,000 trans women), the per-capita rate (~30 per 100k) remains within the same order of magnitude as cis men (~48 per 100k) &mdash; not trivially small.</span></div>
+        <div class="steelman-row"><span class="steelman-key">System-gaming cases exist</span><span class="steelman-val">Karen White &mdash; a repeat sex offender with no surgery, no hormones, no GRC &mdash; was placed in a women&rsquo;s prison and sexually assaulted two female inmates. Isla Bryson (Scotland) similarly offended. These are not just anecdotes; they demonstrate real vulnerabilities.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Dhejne pre-1989 cohort</span><span class="steelman-val">The pre-1989 cohort <em>did</em> show significantly elevated crime vs. cis women (HR 6.6 for any crime, 18x for violent crime). While the post-1989 cohort did not reach significance, the study had limited statistical power.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Precautionary principle</span><span class="steelman-val">When data is uncertain and stakes involve vulnerable populations (incarcerated women, children), policy can reasonably err on the side of caution through individual risk assessment.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Male socialization</span><span class="steelman-val">People raised as male may retain male-pattern offending regardless of later gender identity. Dhejne&rsquo;s finding that trans women&rsquo;s crime rate was indistinguishable from cis men&rsquo;s (HR 0.8) is consistent with this.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Individual risk assessment</span><span class="steelman-val">Even if group-level data shows no elevation, individual risk assessment for prison housing &mdash; considering offense history, risk factors, and current anatomy &mdash; is legitimate and prudent.</span></div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 6 takeaway:</strong> The strongest caution-case rests on real prison proportions, documented system-gaming cases, Dhejne&rsquo;s pre-1989 findings, and the precautionary principle. Individual risk assessment is legitimate. But these arguments do not support the broader claim that LGBTQ+ identity itself predicts criminal behavior.
+      </div>
+    </section>
+
+    <!-- PART 7 -->
+    <section id="part7">
+      <div class="part-header"><span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Steelman: The Case That the Claims Are Wrong</h2></div>
+
+      <span class="section-label">21 &ndash; The Strongest Rebuttal</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">The baseline dominates</span><span class="steelman-val">Heterosexual cisgender men commit 93&ndash;98% of sexual offenses by every measure. Any policy response should be proportionate to where the actual risk lies.</span></div>
+        <div class="steelman-row"><span class="steelman-key">No population-level elevation</span><span class="steelman-val">The only population-level offender study (Dutch, 2024) found gay men <em>less</em> likely to offend. Dhejne post-1989 showed no significant elevation. Canada: 94% of trans offending occurred pre-transition.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Prison snapshots &ne; crime rates</span><span class="steelman-val">The 3.3x sentence-length accumulation factor mechanically inflates sex offender proportions. The UK MOJ itself notes trans prisoners are filtered for long sentences.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Gay predator myth: dead on arrival</span><span class="steelman-val">Jenny (2/269 = 0.74%), Groth (zero exclusively gay among 175), APA, CDC, NAS &mdash; the scientific consensus is unambiguous and has been for 30 years. Cameron was expelled and condemned by four organizations.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Victims 5x more than perpetrators</span><span class="steelman-val">LGBTQ+ people are 5x more likely to be violently victimized (NCVS), 9x more likely to face hate crimes, and 47% of trans people report lifetime sexual assault. The ratio of victimization to perpetration is astronomically skewed.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Historical pattern</span><span class="steelman-val">Every generation picks a marginalized group to label as predators: Black men in the early 20th century, gay men from the 1970s through 2000s, trans women today. The claims follow the same structure, use the same flawed methodologies, and are promoted by the same networks. Each was eventually debunked.</span></div>
+      </div>
+
+      <span class="section-label">22 &ndash; Confidence Ratings</span>
+      <div class="table-wrap" style="overflow-x:auto; margin:16px 0;">
+        <table class="data-table" style="width:100%; border-collapse:collapse; font-family:var(--font-sans); font-size:0.78rem;">
+          <thead>
+            <tr><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Finding</th><th style="padding:8px; border-bottom:2px solid var(--border);">Confidence</th><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Basis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Cis het men commit vast majority of sexual offenses</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">BJS, FBI, Cortoni cross-national: 93&ndash;98% male</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Gay men are not disproportionately pedophilic</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Jenny (0.74%), Groth (zero), APA, CDC, NAS consensus</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">UK trans prison proportions are real but misinterpreted</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">MOJ data confirmed; denominator, snapshot, and pre-transition corrections documented</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Canada 94% pre-transition offending</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">CSC file review (R-442); official government research</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">LGBTQ+ people are victimized at 5x general rate</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Williams Institute/BJS NCVS 2022&ndash;2023 pooled</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Trans women offend at higher rates than cis men</td><td class="td-alert" style="padding:8px; border-bottom:1px solid var(--border);">LOW</td><td style="padding:8px; border-bottom:1px solid var(--border);">Dhejne: HR 0.8 (NS vs. cis men); denominator makes rate incalculable</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">LGBTQ+ identity itself predicts crime</td><td class="td-alert" style="padding:8px; border-bottom:1px solid var(--border);">LOW</td><td style="padding:8px; border-bottom:1px solid var(--border);">No population-level data supports this; Dutch study shows opposite for gay men</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Individual risk assessment is appropriate for prisons</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Standard correctional practice; UK/Canada both use case-by-case approach</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;Sexual Orientation, Gender Identity, and Crime: What the Data Actually Shows.&rdquo; Published March 2026. https://www.truthbased.org/lgbtq-crime</span>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Sources and Methodology Disclosures</span>
+        <div class="source-item"><strong>BJS. Prisoners in 2023 &mdash; Statistical Tables.</strong> U.S. incarceration by sex: 93% male, 871 vs. 54 per 100k. <a href="https://bjs.ojp.gov/document/p23st.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">bjs.ojp.gov</a></div>
+        <div class="source-item"><strong>FBI. UCR Table 42: Arrests by Sex (2019).</strong> 96.6% of rape arrestees male; 93.2% sex offense arrestees male. <a href="https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/tables/table-42" class="inline-link" target="_blank" rel="noopener noreferrer">fbi.gov</a></div>
+        <div class="source-item"><strong>HMPPS. Offender Equalities Report 2024&ndash;25.</strong> 339 trans prisoners (March 2025); definitions and caveats. <a href="https://www.gov.uk/government/statistics/hmpps-offender-equalities-annual-report-2024-to-2025/hmpps-offender-equalities-annual-report-2024-25--2" class="inline-link" target="_blank" rel="noopener noreferrer">gov.uk</a></div>
+        <div class="source-item"><strong>Freedman, Stock &amp; Sullivan (2021). UK Parliament Written Evidence.</strong> 76/129 trans prisoners with sex offenses; Dhejne analysis. <a href="https://committees.parliament.uk/writtenevidence/18973/pdf/" class="inline-link" target="_blank" rel="noopener noreferrer">parliament.uk</a></div>
+        <div class="source-item"><strong>CSC. Research Report R-442 (2022).</strong> Gender-diverse offenders; 94% of sex offending pre-transition. <a href="https://www.canada.ca/en/correctional-service/corporate/library/research/glance/442.html" class="inline-link" target="_blank" rel="noopener noreferrer">canada.ca</a></div>
+        <div class="source-item"><strong>Dhejne et al. PLoS One (2011).</strong> Swedish cohort: MtF vs. cis female HR 6.6; vs. cis male HR 0.8 (NS). <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016885" class="inline-link" target="_blank" rel="noopener noreferrer">plos.org</a></div>
+        <div class="source-item"><strong>Jenny et al. Pediatrics (1994).</strong> 269 child SA cases: 2 gay/lesbian perpetrators (0.74%); 82% het partners. <a href="https://pubmed.ncbi.nlm.nih.gov/8008535/" class="inline-link" target="_blank" rel="noopener noreferrer">pubmed.ncbi.nlm.nih.gov</a></div>
+        <div class="source-item"><strong>Groth &amp; Birnbaum. Archives of Sexual Behavior (1978).</strong> Zero exclusively homosexual among 175 child sex offenders. <a href="https://pubmed.ncbi.nlm.nih.gov/666571/" class="inline-link" target="_blank" rel="noopener noreferrer">pubmed.ncbi.nlm.nih.gov</a></div>
+        <div class="source-item"><strong>Dutch Population Study. PMC (2024).</strong> Men in same-sex relationships OR 0.685 for crime suspicion. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11335784/" class="inline-link" target="_blank" rel="noopener noreferrer">pmc.ncbi.nlm.nih.gov</a></div>
+        <div class="source-item"><strong>Williams Institute / BJS NCVS (2025).</strong> LGBTQ+ victimization 106.4 vs. 21.1 per 1,000; 5x higher. <a href="https://williamsinstitute.law.ucla.edu/publications/anti-lgbt-victimization-us/" class="inline-link" target="_blank" rel="noopener noreferrer">williamsinstitute.law.ucla.edu</a></div>
+        <div class="source-item"><strong>BJS. Violent Victimization by SOGI (2017&ndash;2020).</strong> Earlier NCVS data confirming pattern. <a href="https://bjs.ojp.gov/document/vvsogi1720.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">bjs.ojp.gov</a></div>
+        <div class="source-item"><strong>ONS. Census 2021 Gender Identity (with 2025 quality guidance).</strong> 262,000 (0.5%) with uncertainty caveats. <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/genderidentity/bulletins/genderidentityenglandandwales/census2021" class="inline-link" target="_blank" rel="noopener noreferrer">ons.gov.uk</a></div>
+        <div class="source-item"><strong>Gallup (Feb 2025).</strong> 9.3% LGBTQ+ identification; subcategory breakdowns. <a href="https://news.gallup.com/poll/656708/lgbtq-identification-rises.aspx" class="inline-link" target="_blank" rel="noopener noreferrer">gallup.com</a></div>
+        <div class="source-item"><strong>Williams Institute (Aug 2025).</strong> 2.8M trans people age 13+; 698,500 trans women. <a href="https://williamsinstitute.law.ucla.edu/wp-content/uploads/Trans-Pop-Update-Aug-2025.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">williamsinstitute.law.ucla.edu</a></div>
+        <div class="source-item"><strong>Cortoni, Babchishin &amp; Rat. Criminal Justice and Behavior (2017).</strong> 97.8% male sex offenders across 12 countries. <a href="https://journals.sagepub.com/doi/10.1177/0093854816658923" class="inline-link" target="_blank" rel="noopener noreferrer">sagepub.com</a></div>
+        <div class="source-item"><strong>APA. Amicus brief, Romer v. Evans.</strong> No positive correlation between homosexuality and child molestation. <a href="https://www.apa.org/about/offices/ogc/amicus/romer-brief" class="inline-link" target="_blank" rel="noopener noreferrer">apa.org</a></div>
+        <div class="source-item"><strong>FBI. Hate Crime Statistics 2021&ndash;2024.</strong> Anti-LGBTQ+ incidents and trends. <a href="https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics" class="inline-link" target="_blank" rel="noopener noreferrer">fbi.gov</a></div>
+        <div class="source-item"><strong>CDC. About Child Sexual Abuse.</strong> ~90% by someone known/trusted. <a href="https://www.cdc.gov/child-abuse-neglect/about/about-child-sexual-abuse.html" class="inline-link" target="_blank" rel="noopener noreferrer">cdc.gov</a></div>
+        <div class="source-item"><strong>HRC. Fatal Violence Against Trans People (2013&ndash;2025).</strong> 399 deaths tracked; 73.7% Black trans women. <a href="https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Research/Trans-Violence-2025.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">hrc.org</a></div>
+        <div class="source-item"><strong>2015 U.S. Transgender Survey.</strong> n=27,715; 47% lifetime sexual assault. <a href="https://transequality.org/sites/default/files/docs/usts/USTS-Full-Report-Dec17.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">transequality.org</a></div>
+      </div>
+    </section>
+  </article>
+  </main>
+
+    
+            <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/trans-shooters" class="ymal-card">
+          <span class="ymal-cat">Political Fact Check</span>
+          <span class="ymal-title">Trans People &amp; Mass Shootings &rarr;</span>
+          <span class="ymal-desc">Three databases. Every definition. Full sensitivity analysis.</span>
+        </a>
+        <a href="/political-violence" class="ymal-card">
+          <span class="ymal-cat">Violence &amp; Extremism</span>
+          <span class="ymal-title">Political Violence in the U.S. &rarr;</span>
+          <span class="ymal-desc">Domestic terrorism and hate crimes across every ideological category.</span>
+        </a>
+        <a href="/youth-gender-medicine" class="ymal-card">
+          <span class="ymal-cat">Science &amp; Medicine</span>
+          <span class="ymal-title">Youth Gender Medicine &rarr;</span>
+          <span class="ymal-desc">Blockers, hormones, surgery &mdash; what the Cass Review and WPATH data show.</span>
+        </a>
+      </div>
+    </div>
+<div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: BJS, FBI UCR, HMPPS, CSC R-442, Dhejne (PLoS One), Jenny (Pediatrics), Williams Institute/NCVS, APA, Gallup</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    // Charts for LGBTQ+ Crime article
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+
+      // Chart 1: Sexual Offense Perpetration by Sex
+      new Chart(document.getElementById('chartSexOffense').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Police data (12 countries)', 'FBI rape arrests', 'UK sexual offenses', 'U.S. sex offense arrests'],
+          datasets: [
+            { label: 'Male', data: [97.8, 96.6, 98, 93.2], backgroundColor: 'rgba(184,58,30,0.55)', borderColor: 'rgba(184,58,30,0.85)', borderWidth: 1.5, borderRadius: 3 },
+            { label: 'Female', data: [2.2, 3.4, 2, 6.8], backgroundColor: 'rgba(27,107,62,0.55)', borderColor: 'rgba(27,107,62,0.85)', borderWidth: 1.5, borderRadius: 3 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14, padding: 12 } },
+            title: { display: true, text: 'Sexual Offense Perpetration by Sex (% of Total)', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw + '%'; } } }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 100, ticks: { callback: function(v) { return v + '%'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 2: Trans Women Per-Capita Rate Under Different Denominators
+      new Chart(document.getElementById('chartDenominator').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['ONS (48k)', 'Mid-range (100k)', 'GEO low (200k)', 'GEO high (250k)', 'Cis male rate'],
+          datasets: [{
+            label: 'Sex offense incarceration per 100,000',
+            data: [158.3, 76.0, 38.0, 30.4, 48.0],
+            backgroundColor: ['rgba(184,58,30,0.6)', 'rgba(184,58,30,0.4)', 'rgba(122,79,0,0.4)', 'rgba(27,107,62,0.4)', 'rgba(90,84,76,0.4)'],
+            borderColor: ['rgba(184,58,30,0.9)', 'rgba(184,58,30,0.7)', 'rgba(122,79,0,0.7)', 'rgba(27,107,62,0.7)', 'rgba(90,84,76,0.7)'],
+            borderWidth: 1.5, borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false },
+            title: { display: true, text: 'Trans Women Sex Offense Rate Under Different Denominators vs. Cis Male Rate', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.raw + ' per 100,000'; } } }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 3: LGBTQ+ Victimization Rates
+      new Chart(document.getElementById('chartVictim').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Violent victimization', 'Serious violence', 'Hate crimes', 'Weapon-involved'],
+          datasets: [
+            { label: 'LGBTQ+ (per 1,000)', data: [106.4, 53.7, 6.4, 27.4], backgroundColor: 'rgba(184,58,30,0.55)', borderColor: 'rgba(184,58,30,0.85)', borderWidth: 1.5, borderRadius: 3 },
+            { label: 'Non-LGBTQ+ (per 1,000)', data: [21.1, 8.5, 0.7, 5.7], backgroundColor: 'rgba(27,107,62,0.55)', borderColor: 'rgba(27,107,62,0.85)', borderWidth: 1.5, borderRadius: 3 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14, padding: 12 } },
+            title: { display: true, text: 'Violent Victimization: LGBTQ+ vs. Non-LGBTQ+ (per 1,000 persons)', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw; } } }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 9 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+    });
+
+
+  </script>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>
