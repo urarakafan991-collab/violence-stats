@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do Tariffs Help U.S. Manufacturing? | TruthBased.org</title>
+  <meta name="description" content="Steel tariffs, tire tariffs, China tariffs, the 2025 escalation — every episode measured by jobs saved, jobs lost, cost per job, and consumer impact. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url" content="https://www.truthbased.org/tariffs-manufacturing">
+  <meta property="og:title" content="Do Tariffs Help U.S. Manufacturing? | TruthBased.org">
+  <meta property="og:description" content="Every major tariff episode since 2002, measured by jobs, prices, and downstream costs. USITC, Fed, CBO, and BLS data.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title" content="Do Tariffs Help U.S. Manufacturing? | TruthBased.org">
+  <meta name="twitter:description" content="Steel, tires, China, 2025 — every tariff tested against the data. Both sides steelmanned.">
+
+  <link rel="canonical" href="https://www.truthbased.org/tariffs-manufacturing">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 160px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-num.warn     { color: var(--amber); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .confidence-tag {
+      display: inline-block;
+      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+    .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
+    .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  
+    /* ── You May Also Like ── */
+    .ymal-section { margin-top: 8px; }
+    .ymal-heading {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+      display: block; margin-bottom: 12px;
+    }
+    .ymal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ymal-card {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+      border-left: 3px solid transparent;
+    }
+    .ymal-card:hover {
+      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ymal-cat {
+      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+    }
+    .ymal-title {
+      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+    .ymal-desc {
+      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Do Tariffs Help U.S. Manufacturing?",
+    "description": "Every major U.S. tariff episode measured by jobs saved, jobs lost, cost per job, consumer prices, and trade deficit impact.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-22",
+    "dateModified": "2026-03-22",
+    "mainEntityOfPage": "https://www.truthbased.org/tariffs-manufacturing",
+    "keywords": ["tariffs", "manufacturing jobs", "steel tariffs", "trade deficit", "cost per job saved", "Section 232", "China tariffs", "trade policy"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Economics &amp; Trade</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – The 2025 Tariff Regime</a>
+      <a href="#part2" class="jump-btn">Part 2 – The Historical Record</a>
+      <a href="#part3" class="jump-btn">Part 3 – The Cost-Per-Job Metric</a>
+      <a href="#part4" class="jump-btn">Part 4 – Trade vs. Automation</a>
+      <a href="#part5" class="jump-btn">Part 5 – Steelman: Tariffs Help</a>
+      <a href="#part6" class="jump-btn">Part 6 – Steelman: Tariffs Hurt</a>
+      <a href="#part7" class="jump-btn">Part 7 – Key Voices &amp; Confidence</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Economics &amp; Trade</span>
+      <h1 class="article-title">Do Tariffs Help U.S. Manufacturing?</h1>
+      <p class="article-deck">Steel tariffs, tire tariffs, China tariffs, and the 2025&ndash;2026 escalation &mdash; every major episode measured by jobs saved, jobs lost downstream, cost per job, consumer prices, and trade deficit impact. USITC, Federal Reserve, CBO, and BLS data. The national security case and the economic efficiency case &mdash; both steelmanned.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">Published March 2026</span>
+        <span class="meta-pill">15+ primary sources</span>
+        <span class="meta-pill">~30 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="box box-amber" style="margin-top:20px;">
+      <span class="box-label">Critical Prefatory Note</span>
+      <p>This is a genuinely two-sided debate. The answer depends on which metric you prioritize: jobs in a specific protected sector vs. total employment vs. consumer costs vs. national security vs. GDP. Tariffs usually do protect the targeted industry in the short run. The question is whether the broader economy pays more than the protected sector gains. The national security argument for <em>some</em> tariffs is mainstream economics, not a fringe position &mdash; but it is different from the claim that broad tariffs grow manufacturing overall.</p>
+    </div>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Tariffs bring back manufacturing jobs&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Mixed. Protected sectors (steel, aluminum) see modest job gains (+1,000&ndash;4,800). But the Federal Reserve found 2018 tariffs caused a net 1.4% reduction in manufacturing employment (~75,000&ndash;175,000 downstream jobs lost) once input costs and retaliation were counted. Manufacturing employment fell 63,000&ndash;108,000 in 2025.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Tariffs reduce the trade deficit&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. The U.S.-China bilateral deficit fell, but the overall goods deficit was stable or higher post-2018 and post-2025 ($552B in 2017 &rarr; ~$916B in 2025). Tariffs mostly rerouted trade through Vietnam, Mexico, and Taiwan rather than reducing it.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Tariffs are just a tax on Americans&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Largely supported. Amiti, Redding &amp; Weinstein found ~100% pass-through to U.S. prices in 2018. Tax Policy Center estimated ~$1,230 per household in 2026. But the claim misses that some tariffs also generate domestic production, investment, and strategic capacity that standard tax analysis does not capture.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Tariffs are necessary for national security&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partially supported for specific sectors. Domestic capacity in semiconductors, rare earths, pharmaceuticals, and defense inputs has genuine strategic value. But &ldquo;national security&rdquo; has been used to justify tariffs on products with weak security rationale (e.g., derivative steel products, furniture, lumber).</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources Used</span>
+      <div class="source-pills">
+        <span class="source-pill">USITC Section 232/301 Report</span>
+        <span class="source-pill">Flaaen &amp; Pierce (Federal Reserve)</span>
+        <span class="source-pill">Amiti, Redding &amp; Weinstein (JEP/NBER)</span>
+        <span class="source-pill">Fajgelbaum et al. (QJE)</span>
+        <span class="source-pill">CBO Tariff Projections</span>
+        <span class="source-pill">PIIE Cost-Per-Job Studies</span>
+        <span class="source-pill">BLS Manufacturing Employment</span>
+        <span class="source-pill">BEA Trade Deficit Data</span>
+        <span class="source-pill">Yale Budget Lab Tracker</span>
+        <span class="source-pill">USDA Retaliation Estimates</span>
+        <span class="source-pill">Ball State / Autor China Shock</span>
+      </div>
+    </div>
+
+    <!-- PART 1 -->
+    <section id="part1">
+      <div class="part-header"><span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">The 2025&ndash;2026 Tariff Regime</h2></div>
+
+      <span class="section-label">01 &ndash; What&rsquo;s in Effect</span>
+      <p>As of March 2026, the U.S. maintains the broadest tariff regime since the 1940s. Key layers: Section 232 tariffs at 25&ndash;50% on steel and aluminum (expanded to autos, copper, semiconductors); a Section 122 temporary 10% global surcharge on most imports; country-specific tariffs of 10&ndash;125% on China, 25&ndash;35% on Canada/Mexico (with USMCA exemptions), and 15&ndash;20% on the EU. Legacy Section 301 tariffs on Chinese goods include 100% on EVs, 50% on semiconductors, and 50% on solar cells.</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Effective tariff rate (June 2025)</span><span class="stat-val brick">14.7% (highest since 1938)</span></div>
+          <div class="stat-row"><span class="stat-key">Effective rate (Oct 2025)</span><span class="stat-val brick">18.0% (highest since 1934)</span></div>
+          <div class="stat-row"><span class="stat-key">Effective rate (March 2026)</span><span class="stat-val">10.5% (after legal changes)</span></div>
+          <div class="stat-row"><span class="stat-key">Pre-2025 baseline</span><span class="stat-val green">~2.8%</span></div>
+          <div class="stat-row"><span class="stat-key">Household cost estimate</span><span class="stat-val brick">~$1,230/year (Tax Policy Center)</span></div>
+          <div class="stat-row"><span class="stat-key">Affected trade</span><span class="stat-val">$3+ trillion annually across layers</span></div>
+      </div>
+
+      <span class="section-label">02 &ndash; What Both Sides Agree On</span>
+      <p>Both protectionist and free-trade analyses agree on core mechanics: tariffs raise the domestic price of the tariffed good, benefit domestic producers of that good, and cost domestic consumers and businesses using it as an input. The debate is over <em>net</em> effects: whether upstream gains plus strategic benefits outweigh downstream losses plus deadweight costs plus retaliation.</p>
+
+      <span class="section-label">03 &ndash; The Concentrated Benefits, Diffuse Costs Problem</span>
+      <p>Jobs in industries that <em>use</em> steel outnumber jobs in industries that <em>make</em> steel by about 80 to 1. When a steel tariff saves 1,000 steelworker jobs, those workers know it and are politically vocal. When the same tariff raises costs for auto, construction, and appliance workers, each individual barely notices. This political asymmetry &mdash; visible beneficiaries vs. invisible losers &mdash; is the central dynamic in every tariff debate.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 1 takeaway:</strong> The U.S. effective tariff rate jumped from ~2.8% to as high as 18% in 2025 &mdash; the highest in almost a century. Tariffs predictably help protected upstream producers and cost downstream users and consumers. The question is whether the net effect is positive or negative.
+      </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section id="part2">
+      <div class="part-header"><span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">The Historical Record: Every Major Episode</h2></div>
+
+      <span class="section-label">04 &ndash; Bush Steel Tariffs (2002): 8&ndash;30%</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Steel jobs protected</span><span class="stat-val">~3,500 (IIE estimate)</span></div>
+          <div class="stat-row"><span class="stat-key">Downstream jobs lost</span><span class="stat-val brick">~200,000 (Trade Partnership)</span></div>
+          <div class="stat-row"><span class="stat-key">Cost to steel users</span><span class="stat-val brick">~$2 billion/year</span></div>
+          <div class="stat-row"><span class="stat-key">Duration</span><span class="stat-val">21 months (lifted after WTO ruling)</span></div>
+      </div>
+
+      <span class="section-label">05 &ndash; Obama Tire Tariffs (2009): 25&ndash;35%</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Tire jobs saved</span><span class="stat-val">~1,200</span></div>
+          <div class="stat-row"><span class="stat-key">Consumer cost (2011)</span><span class="stat-val brick">~$1.1 billion</span></div>
+          <div class="stat-row"><span class="stat-key">Cost per job saved</span><span class="stat-val brick">~$926,000</span></div>
+          <div class="stat-row"><span class="stat-key">Net jobs (after retail losses)</span><span class="stat-val brick">~&minus;2,531</span></div>
+      </div>
+
+      <span class="section-label">06 &ndash; Trump Steel &amp; Aluminum (2018 Section 232)</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Steel tariff</span><span class="stat-val">25%</span></div>
+          <div class="stat-row"><span class="stat-key">Aluminum tariff</span><span class="stat-val">10%</span></div>
+          <div class="stat-row"><span class="stat-key">Steel imports</span><span class="stat-val green">&minus;24% (USITC)</span></div>
+          <div class="stat-row"><span class="stat-key">Steel production</span><span class="stat-val green">+1.9%</span></div>
+          <div class="stat-row"><span class="stat-key">Steel employment</span><span class="stat-val">+4,800 (2018&ndash;2019)</span></div>
+          <div class="stat-row"><span class="stat-key">Net manufacturing employment</span><span class="stat-val brick">&minus;1.4% (~175,000 jobs; Fed)</span></div>
+          <div class="stat-row"><span class="stat-key">Downstream output loss (2021)</span><span class="stat-val brick">&minus;$3.48 billion (USITC)</span></div>
+          <div class="stat-row"><span class="stat-key">Steel price surge</span><span class="stat-val brick">$731 &rarr; $1,001/mt (Jan&ndash;Jul 2018)</span></div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="chartSteelJobs" height="260"></canvas>
+        <span class="chart-source">Source: USITC Section 232/301 Report (2023) &bull; Flaaen &amp; Pierce (Federal Reserve)</span>
+      </div>
+
+      <span class="section-label">07 &ndash; China Tariffs (2018&ndash;2019 Section 301)</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Domestic production boost</span><span class="stat-val">+0.4% (USITC)</span></div>
+          <div class="stat-row"><span class="stat-key">Consumer/importer cost</span><span class="stat-val brick">$51 billion gross annually (Fajgelbaum et al.)</span></div>
+          <div class="stat-row"><span class="stat-key">Net welfare loss</span><span class="stat-val brick">$7.2 billion/year (0.04% GDP)</span></div>
+          <div class="stat-row"><span class="stat-key">Ag export losses (retaliation)</span><span class="stat-val brick">&gt;$27 billion cumulative</span></div>
+          <div class="stat-row"><span class="stat-key">Farm bailout cost</span><span class="stat-val brick">$23 billion (2018&ndash;2019 MFP)</span></div>
+          <div class="stat-row"><span class="stat-key">China share of affected imports</span><span class="stat-val">17% &rarr; 12% (trade diversion)</span></div>
+      </div>
+
+      <span class="section-label">08 &ndash; 2025&ndash;2026 Escalation: Early Evidence</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Manufacturing jobs (since April 2025)</span><span class="stat-val brick">&minus;63,000 to &minus;108,000 (BLS)</span></div>
+          <div class="stat-row"><span class="stat-key">ISM PMI (Dec 2025)</span><span class="stat-val brick">47.9 (contraction; 10+ months below 50)</span></div>
+          <div class="stat-row"><span class="stat-key">CBO GDP impact</span><span class="stat-val brick">&minus;0.4&ndash;0.6% long-run GDP level</span></div>
+          <div class="stat-row"><span class="stat-key">Inflation impact (CBO)</span><span class="stat-val brick">+0.4pp in 2025 and 2026</span></div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 2 takeaway:</strong> Every major tariff episode shows the same pattern: modest upstream job gains in the protected sector, larger downstream job losses, significant consumer costs, and retaliatory damage to exporters. The 2025 escalation follows the same pattern at larger scale.
+      </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section id="part3">
+      <div class="part-header"><span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">The Cost-Per-Job-Saved Metric</h2></div>
+
+      <span class="section-label">09 &ndash; What Each Saved Job Actually Costs</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Bush steel (2002)</span><span class="stat-val brick">$400,000&ndash;$584,000 per job</span></div>
+          <div class="stat-row"><span class="stat-key">Obama tires (2009)</span><span class="stat-val brick">~$926,000 per job</span></div>
+          <div class="stat-row"><span class="stat-key">Trump steel (2018)</span><span class="stat-val brick">~$650,000 per job</span></div>
+          <div class="stat-row"><span class="stat-key">Typical steelworker wage</span><span class="stat-val">$50,000&ndash;$68,000/year</span></div>
+          <div class="stat-row"><span class="stat-key">Cost-to-wage ratio</span><span class="stat-val brick">8&ndash;18x annual pay per job saved</span></div>
+      </div>
+      <p>The cost-per-job-saved metric is brutal for broad tariff defenses because it puts the visible labor benefit beside the broader price burden. In every major episode, the economy-wide cost per protected job has been many times larger than the wage of the job itself.</p>
+
+      <div class="chart-wrap">
+        <canvas id="chartCostPerJob" height="260"></canvas>
+        <span class="chart-source">Source: PIIE (Hufbauer) &bull; Conversable Economist &bull; BLS wage data</span>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 3 takeaway:</strong> Protecting one steelworker or tire worker costs consumers and the economy $400,000&ndash;$926,000 per year &mdash; 8 to 18 times the worker&rsquo;s actual annual wage. This does not mean the jobs are not worth saving; it means tariffs are an extraordinarily expensive way to save them.
+      </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section id="part4">
+      <div class="part-header"><span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">Tariffs vs. Automation: The Elephant in the Room</h2></div>
+
+      <span class="section-label">10 &ndash; What Actually Killed the Jobs?</span>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Ball State (2000&ndash;2010)</span><span class="stat-val">87.8% of job losses from productivity/automation</span></div>
+          <div class="stat-row"><span class="stat-key">Trade share</span><span class="stat-val">13.4% from trade</span></div>
+          <div class="stat-row"><span class="stat-key">China Shock (Autor et al.)</span><span class="stat-val">2.0&ndash;2.4 million jobs lost 1999&ndash;2011</span></div>
+          <div class="stat-row"><span class="stat-key">Manufacturing peak</span><span class="stat-val">19.6 million (June 1979)</span></div>
+          <div class="stat-row"><span class="stat-key">Current</span><span class="stat-val">~12.6 million (Feb 2026)</span></div>
+      </div>
+      <p>Both things are true at once: automation explains most of the aggregate decline in manufacturing employment, while import competition explains severe local and sectoral dislocation. This matters because even if a tariff blocks imports and restores some production, the jobs may not come back one-for-one if the surviving domestic plants are highly automated.</p>
+
+      <span class="section-label">11 &ndash; The Trade Deficit Question</span>
+      <p>The overall trade deficit is driven by the gap between domestic saving and investment, not by whether trade deals are &ldquo;good&rdquo; or &ldquo;bad.&rdquo; Bilateral deficits are economically weak scorecards: the U.S.-China bilateral fell, but sourcing moved to Vietnam, Mexico, and Taiwan. The overall goods-and-services deficit: $552B (2017), $621B (2018), $577B (2019), $679B (2020), $859B (2021), ~$962B (2022), ~$784B (2023), ~$918B (2024), ~$916B (2025). Not a sustained post-tariff narrowing.</p>
+
+      <div class="chart-wrap">
+        <canvas id="chartDeficit" height="260"></canvas>
+        <span class="chart-source">Source: BEA annual trade data (2017&ndash;2025)</span>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 4 takeaway:</strong> Most manufacturing job losses are from automation, not trade. Trade caused real, concentrated damage in specific communities (the China Shock was real), but tariffs cannot reverse automation. The trade deficit has not narrowed despite tariffs &mdash; it has mostly rerouted through other countries.
+      </div>
+    </section>
+
+    <!-- PART 5 -->
+    <section id="part5">
+      <div class="part-header"><span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Steelman: The Case That Tariffs Help</h2></div>
+
+      <span class="section-label">12 &ndash; The Strongest Pro-Tariff Case</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">National security</span><span class="steelman-val">Domestic capacity in semiconductors, rare earths, pharmaceuticals, and defense inputs has genuine strategic value that GDP accounting underweights. The Biden supply-chain review and USTR Section 301 changes explicitly tied tariffs to U.S. investment in chips, batteries, and clean energy. This is mainstream economics, not fringe.</span></div>
+        <div class="steelman-row"><span class="steelman-key">China Shock was real</span><span class="steelman-val">Autor, Dorn &amp; Hanson documented 2.0&ndash;2.4 million jobs lost from Chinese import competition, concentrated in specific communities with lasting damage. The free-trade consensus underestimated adjustment costs. Communities did not &ldquo;just adjust.&rdquo;</span></div>
+        <div class="steelman-row"><span class="steelman-key">Bargaining leverage</span><span class="steelman-val">Tariffs sometimes extract concessions. The 2019 U.S.-Canada/Mexico deal removed steel tariffs and retaliation while establishing monitoring. USTR Greer claims 75+ countries sought negotiations after the 2025 push.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Manufacturing multipliers</span><span class="steelman-val">Moretti estimates ~1.6 additional local jobs per manufacturing job. Factory closures devastate towns; tariffs that preserve strategic clusters have spillover value beyond the direct headcount.</span></div>
+        <div class="steelman-row"><span class="steelman-key">COVID exposed fragility</span><span class="steelman-val">Pandemic shortages in PPE, pharmaceuticals, and semiconductors demonstrated dangerous dependencies. Some reshoring via tariffs buys resilience that free-trade models don&rsquo;t price.</span></div>
+        <div class="steelman-row"><span class="steelman-key">USITC found real gains</span><span class="steelman-val">Section 232 reduced steel imports 24%, raised domestic production 1.9%, and pushed capacity utilization to 80&ndash;81%. In the protected sectors, tariffs delivered measurable results.</span></div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 5 takeaway:</strong> The strongest pro-tariff case is not &ldquo;tariffs always create net jobs.&rdquo; It is that some domestic manufacturing capacity has strategic value standard GDP accounting misses, the China Shock was real and underestimated, tariffs sometimes work as bargaining leverage, and protected sectors did see real output and investment gains.
+      </div>
+    </section>
+
+    <!-- PART 6 -->
+    <section id="part6">
+      <div class="part-header"><span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Steelman: The Case That Tariffs Hurt</h2></div>
+
+      <span class="section-label">13 &ndash; The Strongest Anti-Tariff Case</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">Regressive tax</span><span class="steelman-val">Tariffs function as a consumption tax that hits lower-income households hardest. Tax Policy Center: bottom quintile sees a larger tax-rate increase than the top. ~$1,230 per household in 2026.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Downstream destruction</span><span class="steelman-val">Fed found net manufacturing employment losses once input costs and retaliation were counted. USITC found $3.48 billion in downstream output losses in 2021 alone. Steel-using industries employ 80x more workers than steelmaking.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Retaliation</span><span class="steelman-val">Every major tariff action triggered retaliatory tariffs. Agricultural export losses exceeded $27 billion; USDA paid $23 billion in compensation. Retaliatory tariffs were politically targeted (Harley-Davidson, soybeans).</span></div>
+        <div class="steelman-row"><span class="steelman-key">Trade diversion, not reshoring</span><span class="steelman-val">China&rsquo;s share of affected imports fell 17% &rarr; 12%, but sourcing moved to Vietnam, Taiwan, Mexico &mdash; not back to U.S. factories. Domestic shipments rose only 0.4% under Section 301.</span></div>
+        <div class="steelman-row"><span class="steelman-key">They become permanent</span><span class="steelman-val">&ldquo;Temporary&rdquo; tariffs create political constituencies for permanence. The 2018 Section 301 tariffs are still in place and were expanded. Section 232 was not only preserved but doubled to 50%.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Expert consensus</span><span class="steelman-val">85%+ of economists in surveys agree tariffs reduce overall welfare. The Clark Center poll on steel/aluminum tariffs found zero respondents agreeing they would improve Americans&rsquo; welfare.</span></div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 6 takeaway:</strong> The anti-tariff case wins on prices, net jobs, and broad macro costs. The empirical record consistently shows high costs for modest upstream gains. Tariffs are regressive, trigger retaliation, produce trade diversion rather than reshoring, and tend to entrench once established.
+      </div>
+    </section>
+
+    <!-- PART 7 -->
+    <section id="part7">
+      <div class="part-header"><span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Key Voices and Confidence Ratings</h2></div>
+
+      <span class="section-label">14 &ndash; Pro-Tariff Voices</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">Jamieson Greer</span><span class="steelman-val"><strong>U.S. Trade Representative.</strong> BA BYU, JD UVA, joint MA Sciences Po. Frames tariffs as Hamiltonian industrial strategy; cites 75+ countries seeking negotiations and 2.3% annualized growth. <em>Critique:</em> Correlates macro growth with tariffs without isolating the effect; BLS shows net manufacturing job losses.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Robert E. Scott</span><span class="steelman-val"><strong>Director, EPI Trade Policy.</strong> PhD UC Berkeley. Argues steel/aluminum tariffs produced $15.7B+ in new investment and 3,200+ direct jobs; China Shock caused 3.7M+ losses. <em>Critique:</em> Sector-specific gains don&rsquo;t offset economy-wide losses once downstream costs counted.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Oren Cass</span><span class="steelman-val"><strong>CEO, American Compass.</strong> Williams/Harvard Law. Argues manufacturing multipliers and community externalities justify short-term price increases for long-term wage growth and resilience. <em>Critique:</em> ISM PMI contracted 10+ months in 2025; manufacturing employment fell despite tariffs.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Shawn Fain / David McCall</span><span class="steelman-val"><strong>UAW President / USW President.</strong> Labor voices arguing targeted tariffs force domestic investment and preserve union jobs. Fain cites Stellantis committing billions to U.S. plants. <em>Critique:</em> Headline investments don&rsquo;t prove net national gains once higher vehicle prices and job losses in input-using sectors are counted.</span></div>
+      </div>
+
+      <span class="section-label">15 &ndash; Anti-Tariff Voices</span>
+      <div class="steelman-block">
+        <div class="steelman-row"><span class="steelman-key">Kimberly Clausing</span><span class="steelman-val"><strong>UCLA Law / PIIE.</strong> PhD Harvard. Called 2025 tariffs the &ldquo;largest tax increase on American consumers in a generation&rdquo; &mdash; ~$1,700/household. Co-authored &ldquo;Tariffs as Fiscal Policy&rdquo; with Obstfeld. <em>Critique:</em> Models may understate domestic supply response and bargaining gains.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Flaaen &amp; Pierce</span><span class="steelman-val"><strong>Federal Reserve Board economists.</strong> Found 2018 tariffs associated with 1.4&ndash;2.7% relative manufacturing employment decline. Input costs (&minus;1.1%) and retaliation (&minus;0.7%) outweighed import protection (+0.3%). <em>Critique:</em> Short-run focus; doesn&rsquo;t price national-security or reshoring benefits.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Chad Bown</span><span class="steelman-val"><strong>PIIE Senior Fellow; former State Dept. chief economist.</strong> PhD Wisconsin. Found real U.S. imports from China down 28% in 2025 but offset by 9%+ rise from other countries &mdash; trade diversion, not reshoring. <em>Critique:</em> Pro-tariff side says even diversion diversifies supply chains.</span></div>
+        <div class="steelman-row"><span class="steelman-key">Scott Lincicome</span><span class="steelman-val"><strong>VP, Cato Institute.</strong> JD, former trade lawyer. Cites BLS: 63,000&ndash;108,000 manufacturing jobs lost in 2025; steel production in 2024 was lower than 2017 despite tariffs. <em>Critique:</em> Libertarian framework may systematically underweight legitimate security rationale.</span></div>
+      </div>
+
+      <span class="section-label">16 &ndash; Confidence Tier Summary</span>
+      <div class="table-wrap" style="overflow-x:auto; margin:16px 0;">
+        <table class="data-table" style="width:100%; border-collapse:collapse; font-family:var(--font-sans); font-size:0.78rem;">
+          <thead>
+            <tr><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Finding</th><th style="padding:8px; border-bottom:2px solid var(--border);">Confidence</th><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Basis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Tariffs raise domestic prices of targeted goods</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Universal finding; ~100% pass-through in 2018 data</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Protected sectors see modest output/employment gains</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">USITC: steel imports &minus;24%, production +1.9%</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Downstream costs exceed upstream gains in net employment</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Federal Reserve: net &minus;1.4%; consistent across episodes</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Retaliation harms U.S. exporters (especially agriculture)</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">USDA: &gt;$27B ag losses; $23B bailout</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Tariffs reduce the overall trade deficit</td><td class="td-alert" style="padding:8px; border-bottom:1px solid var(--border);">LOW</td><td style="padding:8px; border-bottom:1px solid var(--border);">Deficit stable/higher 2018&ndash;2025; diversion, not reduction</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Some tariffs justified on national security grounds</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Mainstream economics; specific to chips, rare earths, defense inputs</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Broad tariffs grow manufacturing employment overall</td><td class="td-alert" style="padding:8px; border-bottom:1px solid var(--border);">LOW</td><td style="padding:8px; border-bottom:1px solid var(--border);">BLS: manufacturing declined in 2025; consistent with historical episodes</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Long-run reshoring offsets short-run costs</td><td class="td-warn" style="padding:8px; border-bottom:1px solid var(--border);">MEDIUM</td><td style="padding:8px; border-bottom:1px solid var(--border);">Plausible but unproven at scale; some investment announced, effects take years</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;Do Tariffs Help U.S. Manufacturing?&rdquo; Published March 2026. https://www.truthbased.org/tariffs-manufacturing</span>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Sources and Methodology Disclosures</span>
+        <div class="source-item"><strong>USITC. Economic Impact of Section 232 and 301 Tariffs (2023).</strong> Official import, price, production, and downstream effects. <a href="https://www.usitc.gov/publications/332/pub5405.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">usitc.gov</a></div>
+        <div class="source-item"><strong>Flaaen &amp; Pierce. Federal Reserve FEDS 2019-086.</strong> Industry-level manufacturing employment effects. <a href="https://www.federalreserve.gov/econres/feds/files/2019086pap.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">federalreserve.gov</a></div>
+        <div class="source-item"><strong>Amiti, Redding &amp; Weinstein. JEP (2019) / NBER.</strong> Tariff pass-through and real-income losses. <a href="https://www.aeaweb.org/articles?id=10.1257%2Fjep.33.4.187" class="inline-link" target="_blank" rel="noopener noreferrer">aeaweb.org</a></div>
+        <div class="source-item"><strong>Fajgelbaum et al. QJE (2020).</strong> Welfare-cost estimate for the 2018 trade war. <a href="https://academic.oup.com/qje/article/135/1/1/5626442" class="inline-link" target="_blank" rel="noopener noreferrer">oup.com</a></div>
+        <div class="source-item"><strong>CBO. Effects of Tariffs and Trade Barriers (2019; 2025&ndash;2026 updates).</strong> GDP, inflation, and deficit projections. <a href="https://www.cbo.gov/publication/55576" class="inline-link" target="_blank" rel="noopener noreferrer">cbo.gov</a></div>
+        <div class="source-item"><strong>PIIE. Cost-per-job analyses (Hufbauer, various).</strong> Steel safeguards, tire tariffs, Section 232. <a href="https://www.piie.com/publications/policy-briefs/time-grand-bargain-steel" class="inline-link" target="_blank" rel="noopener noreferrer">piie.com</a></div>
+        <div class="source-item"><strong>Budget Lab at Yale. 2025&ndash;2026 tariff trackers.</strong> Effective rates, household costs, revenue, early price effects. <a href="https://budgetlab.yale.edu/research/state-us-tariffs-june-17-2025" class="inline-link" target="_blank" rel="noopener noreferrer">budgetlab.yale.edu</a></div>
+        <div class="source-item"><strong>USDA ERS. Retaliatory Tariffs on U.S. Agriculture (ERR-304, 2022).</strong> Agricultural export losses. <a href="https://ers.usda.gov/sites/default/files/_laserfiche/publications/102980/ERR-304.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">ers.usda.gov</a></div>
+        <div class="source-item"><strong>BEA. Annual trade releases (2017&ndash;2025).</strong> Official trade-deficit series. <a href="https://www.bea.gov/" class="inline-link" target="_blank" rel="noopener noreferrer">bea.gov</a></div>
+        <div class="source-item"><strong>Ball State / Conexus. Manufacturing Reality (2015).</strong> Productivity vs. trade job-loss decomposition. <a href="https://conexus.cberdata.org/files/MfgReality.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">conexus.cberdata.org</a></div>
+        <div class="source-item"><strong>Autor, Dorn &amp; Hanson. China Shock papers (2016/2021).</strong> Local labor-market trade-shock estimates. <a href="https://www.journals.uchicago.edu/doi/abs/10.1086/682384" class="inline-link" target="_blank" rel="noopener noreferrer">uchicago.edu</a></div>
+        <div class="source-item"><strong>Tax Policy Center. 2025 tariff distributional analysis.</strong> Household burden and regressivity estimates. <a href="https://taxpolicycenter.org/features/tracking-trump-tariffs" class="inline-link" target="_blank" rel="noopener noreferrer">taxpolicycenter.org</a></div>
+        <div class="source-item"><strong>BLS / FRED. Manufacturing employment and wage series.</strong> Official labor-market data. <a href="https://fred.stlouisfed.org/series/MANEMP" class="inline-link" target="_blank" rel="noopener noreferrer">fred.stlouisfed.org</a></div>
+      </div>
+    </section>
+  </article>
+  </main>
+
+    
+            <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/inflation" class="ymal-card">
+          <span class="ymal-cat">Macroeconomics</span>
+          <span class="ymal-title">U.S. Inflation Data &rarr;</span>
+          <span class="ymal-desc">CPI from 9.1% peak to 2.4% &mdash; what caused it and what the Fed did.</span>
+        </a>
+        <a href="/us-spending" class="ymal-card">
+          <span class="ymal-cat">Fiscal Policy</span>
+          <span class="ymal-title">U.S. Federal Spending Data &rarr;</span>
+          <span class="ymal-desc">Where $7.4 trillion goes &mdash; and why interest now exceeds defense.</span>
+        </a>
+        <a href="/job-creation" class="ymal-card">
+          <span class="ymal-cat">Economics</span>
+          <span class="ymal-title">Job Creation: Presidents vs. Data &rarr;</span>
+          <span class="ymal-desc">Every administration&rsquo;s jobs record against BLS primary-source data.</span>
+        </a>
+      </div>
+    </div>
+<div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: USITC, Fed (Flaaen/Pierce), Amiti/Redding/Weinstein, CBO, PIIE, BLS, BEA, Yale Budget Lab</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    // Charts for Tariffs article
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+
+      // Chart 1: Steel Tariffs - Upstream vs Downstream Jobs
+      new Chart(document.getElementById('chartSteelJobs').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Bush 2002', 'Trump 2018 (Section 232)'],
+          datasets: [
+            { label: 'Protected-sector jobs gained', data: [3500, 4800], backgroundColor: 'rgba(27,107,62,0.55)', borderColor: 'rgba(27,107,62,0.85)', borderWidth: 1.5, borderRadius: 3 },
+            { label: 'Downstream jobs lost', data: [200000, 175000], backgroundColor: 'rgba(184,58,30,0.55)', borderColor: 'rgba(184,58,30,0.85)', borderWidth: 1.5, borderRadius: 3 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14, padding: 12 } },
+            title: { display: true, text: 'Steel Tariff Episodes: Protected Jobs Gained vs. Downstream Jobs Lost', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw.toLocaleString(); } } }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { callback: function(v) { return (v/1000) + 'k'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 2: Cost Per Job Saved
+      new Chart(document.getElementById('chartCostPerJob').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Bush Steel 2002', 'Obama Tires 2009', 'Trump Steel 2018', 'Typical steelworker wage'],
+          datasets: [{
+            label: 'Annual cost ($)',
+            data: [584000, 926000, 650000, 68000],
+            backgroundColor: ['rgba(184,58,30,0.5)', 'rgba(184,58,30,0.5)', 'rgba(184,58,30,0.5)', 'rgba(27,107,62,0.5)'],
+            borderColor: ['rgba(184,58,30,0.85)', 'rgba(184,58,30,0.85)', 'rgba(184,58,30,0.85)', 'rgba(27,107,62,0.85)'],
+            borderWidth: 1.5, borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+          plugins: { legend: { display: false },
+            title: { display: true, text: 'Cost Per Job Saved vs. Actual Worker Wage', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.raw.toLocaleString(); } } }
+          },
+          scales: {
+            x: { beginAtZero: true, ticks: { callback: function(v) { return '$' + (v/1000) + 'k'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 3: Trade Deficit Trajectory
+      new Chart(document.getElementById('chartDeficit').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+          datasets: [{
+            label: 'U.S. goods & services deficit ($B)',
+            data: [552, 621, 577, 679, 859, 962, 784, 918, 916],
+            borderColor: '#b83a1e', backgroundColor: 'rgba(184,58,30,0.08)', fill: true,
+            tension: 0.3, pointRadius: 5, pointBackgroundColor: '#b83a1e', borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'U.S. Trade Deficit ($B) — Tariffs Did Not Reduce It', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.raw + 'B'; } } }
+          },
+          scales: {
+            y: { beginAtZero: false, ticks: { callback: function(v) { return '$' + v + 'B'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+    });
+
+
+  </script>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>
