@@ -301,7 +301,43 @@
       font-size:0.48rem; color:var(--text-dim,#706d64);
       text-align:center; margin-top:4px; opacity:0.7;
     }
-  </style>
+  
+    /* ── You May Also Like ── */
+    .ymal-section { margin-top: 8px; }
+    .ymal-heading {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+      display: block; margin-bottom: 12px;
+    }
+    .ymal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ymal-card {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+      border-left: 3px solid transparent;
+    }
+    .ymal-card:hover {
+      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ymal-cat {
+      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+    }
+    .ymal-title {
+      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+    .ymal-desc {
+      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    </style>
 </head>
 <body>
 
@@ -879,6 +915,28 @@
 </div><!-- /panels -->
 
 </main>
+
+    <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/trans-shooters" class="ymal-card">
+          <span class="ymal-cat">Political Fact Check</span>
+          <span class="ymal-title">Trans People & Mass Shootings &rarr;</span>
+          <span class="ymal-desc">Three databases, every definition, full sensitivity analysis.</span>
+        </a>
+        <a href="/gun-violence" class="ymal-card">
+          <span class="ymal-cat">International Comparison</span>
+          <span class="ymal-title">U.S. Gun Violence vs. Peer Nations &rarr;</span>
+          <span class="ymal-desc">Per-capita firearm deaths across OECD nations, decomposed and compared.</span>
+        </a>
+        <a href="/policing-crime" class="ymal-card">
+          <span class="ymal-cat">Political Fact Check</span>
+          <span class="ymal-title">Police Funding and Crime &rarr;</span>
+          <span class="ymal-desc">Did 'defund the police' cause the 2020 homicide spike? It's complicated.</span>
+        </a>
+      </div>
+    </div>
+
 
 
     <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">

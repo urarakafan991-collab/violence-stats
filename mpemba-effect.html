@@ -534,7 +534,43 @@
       font-size:0.48rem; color:var(--text-dim,#706d64);
       text-align:center; margin-top:4px; opacity:0.7;
     }
-  </style>
+  
+    /* ── You May Also Like ── */
+    .ymal-section { margin-top: 8px; }
+    .ymal-heading {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+      display: block; margin-bottom: 12px;
+    }
+    .ymal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ymal-card {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+      border-left: 3px solid transparent;
+    }
+    .ymal-card:hover {
+      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ymal-cat {
+      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+    }
+    .ymal-title {
+      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+    .ymal-desc {
+      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    </style>
 
   <script>
     (function(){
@@ -845,11 +881,24 @@
 
 
     
-    <div class="related-reading" style="max-width:780px;margin:0 auto 0;padding:0 24px 24px;">
-      <span style="font-family:var(--font-sans);font-size:0.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-quiet);display:block;margin-bottom:10px;">Related Reading</span>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="/gun-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">U.S. Gun Violence &rarr;</a>
-        <a href="/political-violence" style="font-family:var(--font-sans);font-size:0.78rem;font-weight:500;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:6px 12px;background:var(--surface);transition:color .15s,border-color .15s;" onmouseover="this.style.color='var(--brick)';this.style.borderColor='var(--brick)'" onmouseout="this.style.color='';this.style.borderColor=''">Political Violence &rarr;</a>
+        <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/the-dress" class="ymal-card">
+          <span class="ymal-cat">Science & Perception</span>
+          <span class="ymal-title">The Dress: White & Gold or Blue & Black? &rarr;</span>
+          <span class="ymal-desc">The neuroscience of why people genuinely saw different colors.</span>
+        </a>
+        <a href="/mandela-effect" class="ymal-card">
+          <span class="ymal-cat">Science & Memory</span>
+          <span class="ymal-title">The Mandela Effect &rarr;</span>
+          <span class="ymal-desc">Why millions share the same vivid, confident, wrong memories.</span>
+        </a>
+        <a href="/climate-change" class="ymal-card">
+          <span class="ymal-cat">Science & Media Accuracy</span>
+          <span class="ymal-title">Climate Change Data &rarr;</span>
+          <span class="ymal-desc">Seven independent datasets versus the claims from all sides.</span>
+        </a>
       </div>
     </div>
   <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
