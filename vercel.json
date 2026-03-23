@@ -187,6 +187,31 @@
       "source": "/presidential-jobs",
       "destination": "/job-creation",
       "permanent": true
+    },
+    {
+      "source": "/capital-punishment",
+      "destination": "/death-penalty",
+      "permanent": true
+    },
+    {
+      "source": "/execution",
+      "destination": "/death-penalty",
+      "permanent": true
+    },
+    {
+      "source": "/min-wage",
+      "destination": "/minimum-wage",
+      "permanent": true
+    },
+    {
+      "source": "/social-media",
+      "destination": "/social-media-mental-health",
+      "permanent": true
+    },
+    {
+      "source": "/screen-time",
+      "destination": "/social-media-mental-health",
+      "permanent": true
     }
   ],
   "headers": [

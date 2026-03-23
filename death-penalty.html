@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Death Penalty: Deterrence, Cost &amp; Racial Disparities | TruthBased.org</title>
+  <meta name="description" content="Does the death penalty deter murder? What does it cost? Are there racial disparities? NRC, state audits, GAO, BJS, peer-reviewed studies. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/death-penalty">
+  <meta property="og:title"   content="Political, Ideological & Hate-Motivated Violence in the US | TruthBased.org">
+  <meta property="og:description" content="NRC, GAO, state audits, and peer-reviewed studies on capital punishment. Deterrence, cost, racial bias, and wrongful convictions — both sides steelmanned throughout.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title"  content="Political, Ideological & Hate-Motivated Violence in the US | TruthBased.org">
+  <meta name="twitter:description" content="Primary-source analysis of capital punishment in the U.S. — deterrence claims, fiscal costs, racial disparities, wrongful convictions. NRC, GAO, BJS, state audits.">
+
+  <link rel="canonical" href="https://www.truthbased.org/death-penalty">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 160px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-num.warn     { color: var(--amber); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .confidence-tag {
+      display: inline-block;
+      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+    .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
+    .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  
+    /* ── You May Also Like ── */
+    .ymal-section { margin-top: 8px; }
+    .ymal-heading {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+      display: block; margin-bottom: 12px;
+    }
+    .ymal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ymal-card {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+      border-left: 3px solid transparent;
+    }
+    .ymal-card:hover {
+      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ymal-cat {
+      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+    }
+    .ymal-title {
+      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+    .ymal-desc {
+      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Death Penalty in the United States: Deterrence, Cost & Racial Disparities",
+    "description": "A comprehensive, primary-source analysis of capital punishment in the U.S. — deterrence evidence, fiscal costs, racial disparities, wrongful convictions. Both sides steelmanned.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "mainEntityOfPage": "https://www.truthbased.org/death-penalty",
+    "keywords": ["death penalty", "capital punishment", "deterrence", "racial disparities", "wrongful convictions", "NRC", "GAO", "cost of death penalty", "Baldus study", "exonerations"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 &ndash; Definitions</a>
+      <a href="#part2" class="jump-btn">Part 2 &ndash; Deterrence</a>
+      <a href="#part3" class="jump-btn">Part 3 &ndash; Cost</a>
+      <a href="#part4" class="jump-btn">Part 4 &ndash; Racial Disparities</a>
+      <a href="#part5" class="jump-btn">Part 5 &ndash; Wrongful Convictions</a>
+      <a href="#part6" class="jump-btn">Part 6 &ndash; Steelman Both Sides</a>
+      <a href="#part7" class="jump-btn">Part 7 &ndash; Confidence Ratings</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Political Fact Check</span>
+      <h1 class="article-title">The Death Penalty: Deterrence, Cost &amp; Racial Disparities</h1>
+      <p class="article-deck">Does capital punishment deter murder? Is it cheaper than life imprisonment? Are there racial disparities in who is sentenced to die? A primary-source review of the strongest evidence on each question &mdash; both sides steelmanned, confidence-rated throughout.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">Published March 2026</span>
+        <span class="meta-pill">15+ primary sources</span>
+        <span class="meta-pill">~30 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="box box-amber" style="margin-top:20px;">
+      <span class="box-label">Critical Prefatory Note</span>
+      <p>This article examines three empirical questions about capital punishment: deterrence, cost, and racial disparities. The death penalty also raises profound moral and constitutional questions that this article does not attempt to resolve. Our focus is on what the data and peer-reviewed research actually show &mdash; not what they <em>should</em> show. Every data point is sourced. Every counterargument is steelmanned. Where evidence is contested, the contest is disclosed.</p>
+    </div>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Each execution prevents 18 murders&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Based on Dezhbakhsh, Rubin &amp; Shepherd (2003). The National Research Council (2012) found this and all similar studies &ldquo;not informative&rdquo; &mdash; results flip with minor specification changes. Donohue &amp; Wolfers showed the range spans from +429 lives saved to &minus;86 lives lost per execution.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The death penalty is cheaper than life in prison&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. Every modern state audit (Maryland, Kansas, Washington, Nevada, North Carolina, California) finds capital cases cost substantially more &mdash; driven by bifurcated trials, specialized defense, and mandatory multi-level appeals.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The death penalty is applied fairly regardless of race&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Partially contradicted. The GAO (1990) found that 82% of studies showed victim-race influence on death sentencing. Defendants who killed white victims were far more likely to face death. Defendant-race effects are weaker and more mixed after controls.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The appeals process proves the system works &mdash; wrongful executions are impossible&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Overstated. DPIC documents 202 death-row exonerations since 1973. Gross et al. (PNAS 2014) estimated at least 4.1% of those sentenced to death are likely innocent. Several individuals have been posthumously exonerated.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources Used</span>
+      <div class="source-pills">
+        <span class="source-pill">National Research Council (2012)</span>
+        <span class="source-pill">U.S. GAO (1990)</span>
+        <span class="source-pill">Bureau of Justice Statistics</span>
+        <span class="source-pill">Death Penalty Info. Center</span>
+        <span class="source-pill">Nat&rsquo;l Registry of Exonerations</span>
+        <span class="source-pill">Donohue &amp; Wolfers (2005)</span>
+        <span class="source-pill">Baldus et al. (McCleskey)</span>
+        <span class="source-pill">Urban Institute (MD 2008)</span>
+        <span class="source-pill">Kansas Legislative Post Audit</span>
+        <span class="source-pill">Washington (Collins 2015)</span>
+        <span class="source-pill">North Carolina (Cook 2009)</span>
+        <span class="source-pill">Nevada Legislative Auditor</span>
+        <span class="source-pill">Gross et al. (PNAS 2014)</span>
+        <span class="source-pill">Ehrlich (1975) / Dezhbakhsh (2003)</span>
+        <span class="source-pill">Parker (2021, JELS)</span>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════ PART 1 ════════════════════════════ -->
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">Definitions and Scope</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; Key Terms</span>
+
+      <p>The death penalty debate conflates several distinct things. A <strong>death sentence</strong> is a judicial pronouncement; an <strong>execution</strong> is the carrying out of that sentence. Many sentenced individuals are never executed &mdash; they die in custody, receive commutations, or win appeals. At year-end 2023, BJS reported 2,192 people under sentence of death across 26 states plus the federal system, with only 24 executions carried out that year. The average time from sentence to execution for those executed in 2023 was 279 months &mdash; about 23.3 years.</p>
+
+      <p><strong>Life without parole (LWOP)</strong> is the real comparator for both deterrence and cost questions. Parole-eligible life sentences are less relevant because most capital-eligible states now use LWOP as the alternative. A <strong>capital-eligible murder</strong> is a first-degree murder plus statutory aggravating circumstances (e.g., multiple victims, felony murder, prior record). This distinction matters because bad cost or deterrence comparisons often compare death cases to average prison cases instead of comparable aggravated murder cases.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">U.S. Death Penalty at a Glance</span>
+          <span class="stat-block-period">As of 2023 (BJS)</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">People under sentence of death</span><span class="stat-val neutral">2,192</span></div>
+          <div class="stat-row"><span class="stat-key">Executions in 2023</span><span class="stat-val neutral">24</span></div>
+          <div class="stat-row"><span class="stat-key">New death sentences in 2023</span><span class="stat-val neutral">15</span></div>
+          <div class="stat-row"><span class="stat-key">Total executions since 1977</span><span class="stat-val neutral">1,582</span></div>
+          <div class="stat-row"><span class="stat-key">Average time from sentence to execution (2023)</span><span class="stat-val neutral">23.3 years</span></div>
+          <div class="stat-row"><span class="stat-key">States with active death penalty statutes (2023)</span><span class="stat-val neutral">27 + federal</span></div>
+        </div>
+      </div>
+      <p class="source-note">Source: Bureau of Justice Statistics, Capital Punishment 2023 &mdash; Statistical Tables.</p>
+
+      <span class="section-label">02 &ndash; Scope of This Analysis</span>
+
+      <p>This report focuses on the modern era of U.S. capital punishment &mdash; post-<em>Furman v. Georgia</em> (1972 moratorium) and especially post-<em>Gregg v. Georgia</em> (1976 reinstatement) &mdash; with emphasis on the strongest evidence from the last 25 years. We examine three empirical questions: (1) does the death penalty deter homicide beyond what LWOP achieves? (2) does it cost more or less than the alternative? (3) are there racial disparities in its application? Each question is answered by named studies with disclosed methodologies.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 1 Takeaway</strong>
+        The death penalty system is smaller than many people realize: 24 executions in a country with ~21,000 homicides per year. The average condemned person waits over two decades. Any analysis must compare capital cases to comparable LWOP cases &mdash; not average prison sentences &mdash; to be valid.
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ PART 2 ════════════════════════════ -->
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">Does the Death Penalty Deter Murder?</h2>
+      </div>
+
+      <span class="section-label">03 &ndash; The Pro-Deterrence Studies</span>
+
+      <p><strong>Isaac Ehrlich (1975)</strong>, an economist at the University of Chicago, published the seminal pro-deterrence paper in the <em>American Economic Review</em>. Using national time-series data from 1933&ndash;1969, he found an elasticity suggesting each execution prevented roughly 7&ndash;8 murders. This paper revived the econometric deterrence debate. However, the National Academy of Sciences (1978) found Ehrlich&rsquo;s results highly sensitive to model specification, with key findings disappearing under alternative assumptions.</p>
+
+      <p><strong>Dezhbakhsh, Rubin &amp; Shepherd (2003)</strong> used county-level panel data (3,054 counties, 1977&ndash;1996) with instrumental-variables regression and reported each execution saves approximately 18 murders (&plusmn;10). This is the most-cited pro-deterrence finding. However, Donohue &amp; Wolfers (2005) demonstrated that the DRS model produces the <em>opposite</em> sign with minor instrument changes. Berk (2005) showed that roughly 1% of the data (high-execution years in a few states) drove the entire result.</p>
+
+      <p><strong>Joanna Shepherd (2004&ndash;2005)</strong> found heterogeneous effects: among 27 states with at least one execution, deterrence appeared in only 6 states, <em>brutalization</em> (increased murders) appeared in 13, and no effect in 8. Even on the pro-deterrence side, this is not a simple &ldquo;the death penalty clearly deters&rdquo; result.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Key Deterrence Study Claims</span>
+          <span class="stat-block-period">Various Years</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Ehrlich (1975): murders prevented per execution</span><span class="stat-val neutral">7&ndash;8</span></div>
+          <div class="stat-row"><span class="stat-key">Dezhbakhsh/Rubin/Shepherd (2003): murders prevented</span><span class="stat-val neutral">~18 (&plusmn;10)</span></div>
+          <div class="stat-row"><span class="stat-key">Donohue &amp; Wolfers (2005): range with specification changes</span><span class="stat-val negative">+429 to &minus;86</span></div>
+          <div class="stat-row"><span class="stat-key">National Research Council (2012): conclusion</span><span class="stat-val warn">&ldquo;Not informative&rdquo;</span></div>
+          <div class="stat-row"><span class="stat-key">Shepherd: states with deterrence effect (of 27)</span><span class="stat-val neutral">6 of 27</span></div>
+          <div class="stat-row"><span class="stat-key">Shepherd: states with brutalization effect</span><span class="stat-val negative">13 of 27</span></div>
+          <div class="stat-row"><span class="stat-key">Radelet &amp; Lacock (2009): criminologists who believe in deterrence</span><span class="stat-val negative">5%</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">04 &ndash; The Anti-Deterrence Evidence and the NRC Verdict</span>
+
+      <p><strong>Donohue &amp; Wolfers (2005/2006)</strong>, a Stanford law professor and an economist respectively, conducted a comprehensive re-analysis of all major panel and time-series studies. Their finding was stark: estimated deterrent effects range from +429 lives saved per execution to &minus;86 lives lost with trivial specification changes. The data are too noisy and executions too rare (&lt;2% of capital murders result in execution) for any robust causal inference.</p>
+
+      <p><strong>The National Research Council (2012)</strong> panel, chaired by criminologist Daniel Nagin, conducted the definitive review. Their conclusion: &ldquo;Research to date on the effect of capital punishment on homicide is not informative about whether capital punishment decreases, increases, or has no effect on homicide rates.&rdquo; This was not an abolitionist slogan &mdash; it was the official conclusion of the National Academies. The reasons: studies fail to model the full sanction regime (LWOP vs. parole), use implausible perception models, and face massive confounders including low execution certainty, demographic shifts, drug markets, urbanization, and prosecutorial variation.</p>
+
+      <p><strong>Parker (2021)</strong> used synthetic control methods comparing seven states that abolished the death penalty against 29 that retained it and found no evidence that death penalty statutes deter murders, including stranger homicides. This is methodologically stronger than older panel studies.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Claimed Lives Saved Per Execution &mdash; Major Studies</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartDeterrence" role="img" aria-label="Bar chart showing claimed deterrent effects across major studies. Ehrlich: 7.5, DRS: 18, Shepherd (6 states): positive, Shepherd (13 states): negative, Donohue/Wolfers reanalysis range: highly unstable, NRC verdict: uninformative."></canvas>
+        </div>
+      </div>
+      <p class="source-note">Sources: Ehrlich (AER 1975), Dezhbakhsh/Rubin/Shepherd (ALER 2003), Donohue &amp; Wolfers (Stanford Law Review 2005), National Research Council (2012). The Donohue/Wolfers bars show the range of estimates obtained from minor specification changes to the DRS model.</p>
+
+      <span class="section-label">05 &ndash; Certainty vs. Severity</span>
+
+      <p>The broader criminological literature repeatedly finds that <strong>certainty of punishment</strong> &mdash; the likelihood of being caught and convicted &mdash; deters crime far more than <strong>severity</strong> of punishment. The death penalty, being rarely imposed and even more rarely executed, is unlikely to provide meaningful additional deterrence over LWOP. With only ~24 executions per year in a country with ~21,000 homicides, the probability of any given murderer actually being executed is vanishingly small.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 2 Takeaway</strong>
+        The best current evidence supports no credible conclusion either way on whether the death penalty deters homicide relative to LWOP. Pro-deterrence studies exist but are fragile and not robust to alternative specifications. The National Research Council concluded the entire research base is &ldquo;not informative.&rdquo; Confidence: LOW on deterrence. This does not prove the effect is zero &mdash; only that no study has convincingly identified it.
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ PART 3 ════════════════════════════ -->
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">What Does the Death Penalty Actually Cost?</h2>
+      </div>
+
+      <span class="section-label">06 &ndash; State-by-State Cost Evidence</span>
+
+      <p>The cost question has one of the clearest evidence bases of any issue in this article. Every modern state audit &mdash; across Republican and Democratic states, across different methodologies &mdash; finds the same thing: <strong>capital cases cost substantially more than comparable non-capital cases.</strong> The extra costs come from bifurcated trials, specialized counsel, longer proceedings, mandatory multi-level appeals, and separate death-row housing.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Extra Cost of Death Penalty by State</span>
+          <span class="stat-block-period">Various Audit Years</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Maryland (Urban Institute 2008): extra per death sentence</span><span class="stat-val negative">+$1.9M</span></div>
+          <div class="stat-row"><span class="stat-key">Washington (Collins et al. 2015): extra per case</span><span class="stat-val negative">+$1.06M</span></div>
+          <div class="stat-row"><span class="stat-key">Kansas (Legislative Post Audit 2003): trial costs ratio</span><span class="stat-val negative">16&times; higher</span></div>
+          <div class="stat-row"><span class="stat-key">North Carolina (Cook 2009): extra statewide per year</span><span class="stat-val negative">+$11M/year</span></div>
+          <div class="stat-row"><span class="stat-key">Nevada (Legislative Auditor 2014): extra per case</span><span class="stat-val negative">+$500K&ndash;$1.3M</span></div>
+          <div class="stat-row"><span class="stat-key">California: extra per year above LWOP equivalent</span><span class="stat-val negative">+$150M/year</span></div>
+          <div class="stat-row"><span class="stat-key">California: total extra since 1978 (13 executions)</span><span class="stat-val negative">$4 billion+</span></div>
+        </div>
+      </div>
+      <p class="source-note">Sources: Urban Institute (Roman et al. 2008), Seattle University (Collins 2015), Kansas Judicial Council (2014), Cook (Duke 2009), Nevada LA (2014), California CRPC (2021).</p>
+
+      <span class="section-label">07 &ndash; What Drives the Cost Difference?</span>
+
+      <p>The popular argument that the death penalty would be cheaper &ldquo;if appeals were shortened&rdquo; is not a description of how the current U.S. system actually operates. It is a counterfactual that assumes away safeguards central to American capital jurisprudence. In practice, the cost drivers are structural:</p>
+
+      <p><strong>Trial phase:</strong> Capital trials require a separate penalty phase with its own jury instructions, witnesses, and expert testimony. Kansas found death penalty jury trials averaged ~40 court days versus ~17 for non-death cases. Defense costs averaged $395,762 in capital trials versus $98,963 in non-capital trials.</p>
+
+      <p><strong>Appeals:</strong> Automatic direct appeal, state post-conviction review, federal habeas corpus, and sometimes additional rounds of litigation are mandatory. Kansas Supreme Court justices spent 20 times more hours on capital appeals. Washington found average state and federal review time of 11.2 years.</p>
+
+      <p><strong>Incarceration:</strong> Death-row housing costs more due to higher security and isolation. Kansas estimated death-row incarceration at ~$49,380/year versus $24,690 for general population &mdash; roughly double.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Extra Cost Per Death Penalty Case vs. Comparable LWOP Case</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartCost" role="img" aria-label="Horizontal bar chart showing extra cost per death penalty case by state. Maryland: 1.9 million, Washington: 1.06 million, Nevada: 0.5 to 1.3 million."></canvas>
+        </div>
+      </div>
+      <p class="source-note">Sources: Urban Institute (MD), Collins et al. (WA), Nevada LA. Figures represent the extra cost above a comparable non-capital aggravated murder case, not the total cost. California and Kansas figures omitted from this chart because they use different cost metrics (system-wide annual or trial-only ratios).</p>
+
+      <div class="part-takeaway">
+        <strong>Part 3 Takeaway</strong>
+        The death penalty is more expensive than LWOP in every jurisdiction that has conducted a comprehensive audit. The main driver is not the execution itself but the entire capital system: bifurcated trials, mandatory appellate review, specialized defense, and death-row incarceration. No credible modern study shows the death penalty cheaper in practice. Confidence: HIGH.
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ PART 4 ════════════════════════════ -->
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">Racial Disparities in Capital Sentencing</h2>
+      </div>
+
+      <span class="section-label">08 &ndash; Raw Descriptive Data</span>
+
+      <p>The raw numbers show stark overrepresentation. BJS (2023) reports that 41.6% of people under sentence of death are Black, compared to roughly 13&ndash;14% of the U.S. population. About 42.2% are white. However, <strong>raw disparities alone do not prove bias</strong> &mdash; they could reflect differences in offense severity, prior records, aggravating circumstances, or geographic concentration. The question is whether disparities persist after controlling for legally relevant factors.</p>
+
+      <span class="section-label">09 &ndash; The Victim-Race Effect (Strongest Finding)</span>
+
+      <p>The most consistent and best-documented racial pattern is the <strong>race-of-victim effect</strong>: cases with white victims are far more likely to result in death sentences than cases with Black victims, even after statistical controls. About 75&ndash;80% of executions involve white-victim cases, even though only 40&ndash;50% of murder victims nationally are white.</p>
+
+      <p>The <strong>U.S. GAO (1990)</strong> synthesized 28 post-<em>Furman</em> studies and found that in 82% of them, race of victim influenced the likelihood of capital charging or a death sentence. This pattern held in both high-quality and medium-quality studies, at all stages of the process, and was strongest at the earlier discretionary stages (charging and sentencing). Legally relevant variables were influential but &ldquo;did not fully explain&rdquo; the victim-race disparities.</p>
+
+      <p>The <strong>Baldus study</strong> in Georgia, covering ~2,484 cases from 1973&ndash;1979, found that after controlling for over 100 case characteristics (crime severity, prior record, multiple victims, etc.), defendants accused of killing white victims were <strong>4.3 times</strong> more likely to receive a death sentence than those accused of killing Black victims. This study was central to <em>McCleskey v. Kemp</em> (1987), where the Supreme Court assumed the study&rsquo;s validity but held that statistical disparities alone, without proof of discriminatory intent in the specific case, do not constitute an Equal Protection violation.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Racial Disparities in Capital Sentencing</span>
+          <span class="stat-block-period">Multiple Studies</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Death row: Black (BJS 2023)</span><span class="stat-val neutral">41.6% (vs. ~13% of population)</span></div>
+          <div class="stat-row"><span class="stat-key">GAO: studies finding victim-race influence</span><span class="stat-val negative">82% of 28 studies</span></div>
+          <div class="stat-row"><span class="stat-key">Baldus (Georgia): white-victim death sentence odds ratio</span><span class="stat-val negative">4.3&times; (after 100+ controls)</span></div>
+          <div class="stat-row"><span class="stat-key">Maryland (Paternoster): white-victim odds ratio</span><span class="stat-val negative">2&ndash;3&times; (after 35 controls)</span></div>
+          <div class="stat-row"><span class="stat-key">NC: Black defendant/white victim vs. Black defendant/Black victim</span><span class="stat-val negative">5.2&times; more likely to face death</span></div>
+          <div class="stat-row"><span class="stat-key">Counties producing majority of death sentences</span><span class="stat-val warn">~2% of all U.S. counties</span></div>
+          <div class="stat-row"><span class="stat-key">NC jury study: prosecutors struck Black venire members</span><span class="stat-val negative">52.4% vs. 25.8% for others</span></div>
+        </div>
+      </div>
+
+      <span class="section-label">10 &ndash; Defendant Race: The More Mixed Evidence</span>
+
+      <p>The national evidence on defendant race alone is less consistent. The GAO found it &ldquo;equivocal&rdquo; across 28 studies. Some studies show Black defendants more likely to be sentenced to death; others find null effects or even reverse effects after controls for case severity. Jennings et al. (2014) used North Carolina data and propensity-score matching on over 50 factors, finding that after matching, both victim-race and defendant-race effects disappeared &mdash; suggesting the raw gap reflected case severity more than pure racial bias.</p>
+
+      <p>However, &ldquo;equivocal nationally&rdquo; does not mean &ldquo;no defendant-race problem anywhere.&rdquo; In Washington, Black defendants were more than four times as likely as non-Black defendants to be sentenced to death. In Louisiana, Black male defendant/white female victim cases were more than five times as likely to produce a final capital charge. These jurisdiction-specific findings cannot be dismissed.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Victim-Race Effect: Odds of Death Sentence by Victim&rsquo;s Race (Adjusted)</div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chartRace" role="img" aria-label="Bar chart showing odds ratios for death sentencing by victim race across jurisdictions. Georgia Baldus: 4.3x, Maryland Paternoster: 2.5x, North Carolina: 5.2x."></canvas>
+        </div>
+      </div>
+      <p class="source-note">Sources: Baldus et al. (Georgia, 1983), Paternoster et al. (Maryland), Robinson (North Carolina). All figures are adjusted odds ratios after multivariate controls. North Carolina figure compares Black defendant/white victim vs. Black defendant/Black victim combinations.</p>
+
+      <span class="section-label">11 &ndash; County and Prosecutorial Discretion</span>
+
+      <p>Capital punishment is geographically concentrated. About 2% of U.S. counties account for a majority of death-sentencing outcomes leading to executions since 1976. Prosecutorial discretion in charging death-eligible cases is a major driver of disparity. A similarly situated crime in one county may draw the death penalty while the identical crime in a neighboring county does not. Maryland&rsquo;s study found extreme county variation: some counties virtually never sought death, others often did. As Paternoster summarized: &ldquo;Whom you kill and where in Maryland you commit the crime make a difference.&rdquo;</p>
+
+      <div class="part-takeaway">
+        <strong>Part 4 Takeaway</strong>
+        Disparities are strongest and most consistent by <strong>victim race</strong>, especially at charging and sentencing stages &mdash; defendants who killed white victims are substantially more likely to face death, even after controls. Defendant-race effects are more mixed nationally but strong in some jurisdictions. Geographic and prosecutorial variation adds another layer of arbitrariness. Confidence: HIGH on victim-race disparities; MODERATE on defendant-race disparities.
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ PART 5 ════════════════════════════ -->
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Wrongful Convictions and Irreversibility</h2>
+      </div>
+
+      <span class="section-label">12 &ndash; Documented Exonerations</span>
+
+      <p>The Death Penalty Information Center documents <strong>202 death-row exonerations</strong> since 1973 across 29 states. The National Registry of Exonerations reported 147 exonerations in 2024 alone, including 85 homicide exonerations and 4 involving former death sentences. Leading causes include official misconduct (present in ~77% of 2024 cases), perjury, false accusations, inadequate defense, and mistaken eyewitness identification.</p>
+
+      <p>Gross, O&rsquo;Brien, Hu &amp; Kennedy (PNAS 2014) used statistical survival analysis to estimate that if all death-sentenced defendants remained under sentence indefinitely, <strong>at least 4.1%</strong> would eventually be exonerated. This is a model-based estimate &mdash; a conservative lower bound &mdash; not a direct observed innocence rate, but it remains one of the most important quantitative attempts to measure hidden innocence in capital cases.</p>
+
+      <div class="stat-block">
+        <div class="stat-block-header">
+          <span class="stat-block-name">Wrongful Conviction Data</span>
+          <span class="stat-block-period">1973&ndash;2024</span>
+        </div>
+        <div class="stat-block-body">
+          <div class="stat-row"><span class="stat-key">Death-row exonerations since 1973 (DPIC)</span><span class="stat-val negative">202</span></div>
+          <div class="stat-row"><span class="stat-key">Estimated innocence rate (Gross et al., PNAS 2014)</span><span class="stat-val negative">&ge;4.1%</span></div>
+          <div class="stat-row"><span class="stat-key">Total exonerations in 2024 (NRE, all crimes)</span><span class="stat-val neutral">147</span></div>
+          <div class="stat-row"><span class="stat-key">Official misconduct in 2024 exonerations</span><span class="stat-val negative">~77%</span></div>
+          <div class="stat-row"><span class="stat-key">Ratio: roughly 1 exoneration per how many executions?</span><span class="stat-val warn">~1 per 8</span></div>
+        </div>
+      </div>
+      <p class="source-note">Sources: DPIC innocence database; National Registry of Exonerations 2024 Annual Report; Gross et al. (PNAS 2014).</p>
+
+      <span class="section-label">13 &ndash; Irreversibility and Recent Cases</span>
+
+      <p>The unique moral weight of wrongful execution is that unlike wrongful imprisonment, it cannot be undone. Recent exonerations underscore the ongoing reality of this risk: Derrick Jamison (Ohio) was formally vindicated in 2026, 41 years after conviction; Elwood Jones (Ohio) had his case dismissed in 2025 after 27 years on death row; Tommy Lee Walker (Texas) was posthumously exonerated 70 years after execution.</p>
+
+      <p>This risk also worsens the cost argument. The safeguards needed to minimize wrongful execution &mdash; mandatory appeals, post-conviction review, specialized defense &mdash; are themselves a major reason capital cases cost so much more than LWOP cases. The system must either accept greater error risk or bear very high process costs to reduce it.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 5 Takeaway</strong>
+        Over 200 people sentenced to death have been exonerated. Model-based estimates suggest at least 4.1% of those sentenced are likely innocent. Execution is irreversible. The pro-side notes exonerations show safeguards work; the anti-side notes that safeguards are both costly and imperfect. Confidence: MODERATE&ndash;HIGH on the reality of meaningful innocence risk.
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ PART 6 ════════════════════════════ -->
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Steelman Both Sides</h2>
+      </div>
+
+      <span class="section-label">14 &ndash; Strongest Pro-Death-Penalty Case</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">Deterrence Possibility</span>
+          <span class="steelman-val">Even if econometric deterrence is uncertain, <strong>possibility remains</strong>. The NRC said evidence is uninformative, not that deterrence is zero. Low execution rates may explain why the signal is hard to detect. If even a small deterrent effect exists, the moral calculus changes.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Retributive Justice</span>
+          <span class="steelman-val">For the most heinous aggravated murders, the death penalty may be the only proportionate punishment. It provides closure and moral affirmation for victims&rsquo; families. This argument does not depend on deterrence evidence at all.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Absolute Incapacitation</span>
+          <span class="steelman-val">Execution permanently eliminates any risk of recidivism, escape, or violence in prison. LWOP achieves incapacitation too, but not with the same absolute certainty.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Disparity Objections Overstated</span>
+          <span class="steelman-val">Some raw racial gaps shrink substantially with proper controls for case severity, aggravators, and prior record. Jennings et al. (2014) found that after matching on 50+ factors, both victim-race and defendant-race effects disappeared. Not every observed disparity reflects unlawful bias.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">System Self-Correction</span>
+          <span class="steelman-val">The 202 exonerations demonstrate that the appellate system catches errors. Capital cases receive more procedural scrutiny than any other criminal cases. Exonerations are evidence of caution, not proof the system is incorrigible.</span>
+        </div>
+      </div>
+
+      <span class="section-label">15 &ndash; Strongest Anti-Death-Penalty Case</span>
+
+      <div class="steelman-wrap">
+        <div class="steelman-row">
+          <span class="steelman-key">No Reliable Deterrence</span>
+          <span class="steelman-val">The NRC &mdash; the most authoritative scientific review &mdash; concluded the research is uninformative. Decades of study have failed to identify a robust deterrent effect. LWOP achieves incapacitation without the unique risks of execution.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Higher Costs Proven</span>
+          <span class="steelman-val">Every comprehensive state audit finds capital cases cost more. California spent $4 billion extra for 13 executions. These resources could fund victim services, cold-case units, or crime prevention.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Persistent Racial Arbitrariness</span>
+          <span class="steelman-val">Victim-race disparities persist after controls in the GAO synthesis, Baldus, Maryland, and Louisiana studies. Only 2% of counties produce most death sentences. Prosecutorial discretion and jury selection embed structural bias that individual controls cannot fully capture.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Irreversible Error</span>
+          <span class="steelman-val">Over 200 death-row exonerations, with an estimated 4.1%+ innocence rate. Execution ends any possibility of correction. The state cannot unkill an innocent person. This risk is unique to capital punishment.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Worst of Both Worlds</span>
+          <span class="steelman-val">The death penalty combines weak evidence of benefits, strong evidence of extra cost, uneven application, and irreversible error. Even if retribution is morally valid, the empirical case against capital punishment as a public-policy instrument is much stronger than the case for it.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 6 Takeaway</strong>
+        The strongest pro case survives mainly on retributive grounds and unresolved deterrence possibility. The strongest anti case is empirically stronger on cost, racial disparities, and innocence risk. Both sides make legitimate points. This article does not advocate &mdash; it presents the evidence and the strongest form of each argument.
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ PART 7 ════════════════════════════ -->
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Confidence Ratings and What Would Change the Conclusion</h2>
+      </div>
+
+      <span class="section-label">16 &ndash; Confidence Tier Summary</span>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr><th>Finding</th><th>Confidence</th><th>Basis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Death penalty deters homicide beyond LWOP</td><td class="td-alert">LOW</td><td>NRC: &ldquo;not informative&rdquo;; pro studies fragile; 88% of criminologists skeptical</td></tr>
+            <tr><td>Capital cases cost more than comparable LWOP cases</td><td class="td-rate">HIGH</td><td>Universal finding across MD, WA, KS, NC, NV, CA; no counter-evidence</td></tr>
+            <tr><td>Victim-race disparities persist after controls</td><td class="td-rate">HIGH</td><td>GAO 82% of studies; Baldus 4.3&times;; replicated in multiple states</td></tr>
+            <tr><td>Defendant-race disparities persist nationally after controls</td><td class="td-warn">MODERATE</td><td>GAO: equivocal nationally; strong in some jurisdictions (WA, LA)</td></tr>
+            <tr><td>Geographic/prosecutorial arbitrariness in death sentencing</td><td class="td-rate">HIGH</td><td>~2% of counties produce majority of sentences; documented county variation</td></tr>
+            <tr><td>Meaningful wrongful-conviction risk exists in capital cases</td><td class="td-rate">HIGH</td><td>202 exonerations; Gross et al. &ge;4.1% estimate; ongoing DNA-era discoveries</td></tr>
+            <tr><td>System safeguards fully prevent wrongful execution</td><td class="td-alert">LOW</td><td>Posthumous exonerations documented; 4.1% estimate exceeds exoneration rate</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-label">17 &ndash; What Would Change the Conclusion</span>
+
+      <div class="falsify-box">
+        <span class="falsify-label">Falsifiability</span>
+        <p><strong>Deterrence:</strong> A large-scale natural experiment (e.g., a sudden sharp increase in executions with a fixed LWOP baseline) producing a clear, robust, replicable reduction in homicide &mdash; surviving all Donohue/Wolfers-style robustness tests &mdash; would change the conclusion.</p>
+        <p><strong>Cost:</strong> A comprehensive national standardized audit showing net savings from capital cases once all litigation, incarceration, and administrative costs are included. No such study exists.</p>
+        <p><strong>Racial bias:</strong> A large-scale linked study with full case-file controls (aggravators, priors, jurisdiction fixed effects, counsel quality, plea data) consistently showing that victim-race and geographic disparities disappear at all stages.</p>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;The Death Penalty: Deterrence, Cost &amp; Racial Disparities.&rdquo; Published March 2026. https://www.truthbased.org/death-penalty</span>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Sources and Methodology Disclosures</span>
+        <div class="source-item"><strong>National Research Council. <em>Deterrence and the Death Penalty</em> (Nagin &amp; Pepper, eds., 2012).</strong> Comprehensive review of all post-1978 deterrence studies. <a href="https://www.nationalacademies.org/publications/13363" class="inline-link" target="_blank" rel="noopener noreferrer">nationalacademies.org</a></div>
+        <div class="source-item"><strong>Donohue, J.J. &amp; Wolfers, J. &ldquo;Uses and Abuses of Empirical Evidence in the Death Penalty Debate.&rdquo; Stanford Law Review 58 (2005).</strong> Re-analysis of all major panel studies. <a href="https://www.jstor.org/stable/40040281" class="inline-link" target="_blank" rel="noopener noreferrer">jstor.org</a></div>
+        <div class="source-item"><strong>Ehrlich, I. &ldquo;The Deterrent Effect of Capital Punishment.&rdquo; American Economic Review 65 (1975).</strong> Seminal pro-deterrence time-series. <a href="https://www.jstor.org/stable/1804842" class="inline-link" target="_blank" rel="noopener noreferrer">jstor.org</a></div>
+        <div class="source-item"><strong>Dezhbakhsh, H., Rubin, P.H. &amp; Shepherd, J.M. ALER 5 (2003).</strong> County-level panel claiming ~18 deterred murders/execution. <a href="https://www.cjlf.org/deathpenalty/DezRubShepDeterFinal.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">cjlf.org</a></div>
+        <div class="source-item"><strong>Parker, B. &ldquo;Death Penalty Statutes and Murder Rates.&rdquo; JELS 18 (2021).</strong> Synthetic controls; no deterrence found. <a href="https://econpapers.repec.org/RePEc:wly:empleg:v:18:y:2021:i:3:p:488-533" class="inline-link" target="_blank" rel="noopener noreferrer">econpapers.repec.org</a></div>
+        <div class="source-item"><strong>U.S. GAO. &ldquo;Death Penalty Sentencing: Research Indicates Pattern of Racial Disparities&rdquo; (1990).</strong> Synthesis of 28 studies. <a href="https://www.gao.gov/assets/ggd-90-57.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">gao.gov</a></div>
+        <div class="source-item"><strong>Baldus, D.C. et al. &ldquo;Comparative Review of Death Sentences.&rdquo; J. Crim. L. &amp; Crim. 74 (1983).</strong> Georgia study used in <em>McCleskey v. Kemp</em>. <a href="https://supreme.justia.com/cases/federal/us/481/279/" class="inline-link" target="_blank" rel="noopener noreferrer">justia.com</a></div>
+        <div class="source-item"><strong>Roman, J. et al. &ldquo;The Cost of the Death Penalty in Maryland.&rdquo; Urban Institute (2008).</strong> 1,136 capital-eligible cases. <a href="https://www.urban.org/sites/default/files/publication/31526/411625-The-Cost-of-the-Death-Penalty-in-Maryland.PDF" class="inline-link" target="_blank" rel="noopener noreferrer">urban.org</a></div>
+        <div class="source-item"><strong>Collins, P. et al. (Seattle University, 2015).</strong> Washington aggravated murder case costs. <a href="https://www.courts.wa.gov/newsinfo/content/deathpenalty/deathpenalty.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">courts.wa.gov</a></div>
+        <div class="source-item"><strong>Kansas Legislative Post Audit / Judicial Council (2003, 2014).</strong> Capital vs. non-capital cost comparison. <a href="https://www.kslpa.gov/wp-content/uploads/2019/08/r-04-03.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">kslpa.gov</a></div>
+        <div class="source-item"><strong>Cook, P.J. (Duke, 2009).</strong> North Carolina capital costs analysis. <a href="https://fbaum.unc.edu/teaching/articles/Cook-cost-study.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">fbaum.unc.edu</a></div>
+        <div class="source-item"><strong>Nevada Legislative Auditor (2014).</strong> Death penalty case cost audit. <a href="https://www.leg.state.nv.us/division/audit/full/BE2014/Costs%20of%20Death%20Penalty%2C%20LA14-25%2C%20Full.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">leg.state.nv.us</a></div>
+        <div class="source-item"><strong>Gross, S.R. et al. &ldquo;Rate of false conviction of criminal defendants.&rdquo; PNAS 111 (2014).</strong> 4.1% innocence estimate. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4034186/" class="inline-link" target="_blank" rel="noopener noreferrer">pmc.ncbi.nlm.nih.gov</a></div>
+        <div class="source-item"><strong>Bureau of Justice Statistics. Capital Punishment 2023 &mdash; Statistical Tables.</strong> Death row census, executions, demographics. <a href="https://bjs.ojp.gov/library/publications/capital-punishment-2023-statistical-tables" class="inline-link" target="_blank" rel="noopener noreferrer">bjs.ojp.gov</a></div>
+        <div class="source-item"><strong>Death Penalty Information Center.</strong> Innocence database, execution data, state statutes. <a href="https://deathpenaltyinfo.org/" class="inline-link" target="_blank" rel="noopener noreferrer">deathpenaltyinfo.org</a></div>
+        <div class="source-item"><strong>National Registry of Exonerations. 2024 Annual Report.</strong> <a href="https://exonerationregistry.org/sites/exonerationregistry.org/files/documents/2024_Annual_Report.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">exonerationregistry.org</a></div>
+        <div class="source-item"><strong>Radelet, M.L. &amp; Lacock, T.L. J. Crim. L. &amp; Crim. 99 (2009).</strong> Survey of 88% of leading criminologists rejecting deterrence. <a href="https://files.deathpenaltyinfo.org/legacy/DeterrenceStudy2009.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">deathpenaltyinfo.org</a></div>
+      </div>
+    </section>
+  </article>
+  </main>
+
+    
+        <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/policing-crime" class="ymal-card">
+          <span class="ymal-cat">Political Fact Check</span>
+          <span class="ymal-title">Policing, Race &amp; Crime &rarr;</span>
+          <span class="ymal-desc">Use-of-force data, racial profiling research, and crime-rate disparities.</span>
+        </a>
+        <a href="/political-violence" class="ymal-card">
+          <span class="ymal-cat">Violence &amp; Extremism</span>
+          <span class="ymal-title">Political &amp; Hate-Motivated Violence &rarr;</span>
+          <span class="ymal-desc">Far-right, far-left, Islamist violence. FBI, New America, ADL data.</span>
+        </a>
+        <a href="/shootings-by-demographic" class="ymal-card">
+          <span class="ymal-cat">Statistical Analysis</span>
+          <span class="ymal-title">Mass Shootings by Demographic &rarr;</span>
+          <span class="ymal-desc">Per-capita rates with socioeconomic confounders and confidence intervals.</span>
+        </a>
+      </div>
+    </div>
+  <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: NRC, GAO, BJS, Urban Inst., DPIC, Nat'l Registry of Exonerations</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+
+      // Chart 1: Deterrence Study Claims
+      new Chart(document.getElementById('chartDeterrence').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Ehrlich (1975)', 'DRS (2003)', 'D&W Low Respec.', 'D&W High Respec.', 'NRC (2012)'],
+          datasets: [{
+            label: 'Claimed lives saved per execution',
+            data: [7.5, 18, -86, 429, 0],
+            backgroundColor: [
+              'rgba(27,107,62,0.55)',
+              'rgba(27,107,62,0.55)',
+              'rgba(184,58,30,0.55)',
+              'rgba(27,107,62,0.35)',
+              'rgba(122,79,0,0.55)'
+            ],
+            borderColor: [
+              'rgba(27,107,62,0.85)',
+              'rgba(27,107,62,0.85)',
+              'rgba(184,58,30,0.85)',
+              'rgba(27,107,62,0.65)',
+              'rgba(122,79,0,0.85)'
+            ],
+            borderWidth: 1.5,
+            borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Claimed Deterrent Effect (Lives Saved Per Execution) — Major Studies', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) {
+              if (ctx.label === 'NRC (2012)') return '"Not informative" — no estimate possible';
+              return ctx.parsed.x + ' lives (claimed)';
+            }}}
+          },
+          scales: {
+            x: { ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 2: Extra Cost Per Death Penalty Case
+      new Chart(document.getElementById('chartCost').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Maryland', 'Washington', 'Nevada (low)', 'Nevada (high)'],
+          datasets: [{
+            label: 'Extra cost above comparable LWOP case ($M)',
+            data: [1.9, 1.06, 0.5, 1.3],
+            backgroundColor: 'rgba(184,58,30,0.5)',
+            borderColor: 'rgba(184,58,30,0.85)',
+            borderWidth: 1.5,
+            borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Extra Cost Per Capital Case vs. Comparable Non-Capital Case ($M)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.parsed.x + 'M extra per case'; } } }
+          },
+          scales: {
+            x: { beginAtZero: true, ticks: { callback: function(v) { return '$' + v + 'M'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            y: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 3: Victim-Race Effect on Death Sentencing
+      new Chart(document.getElementById('chartRace').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Georgia (Baldus)', 'Maryland (Paternoster)', 'North Carolina'],
+          datasets: [{
+            label: 'Odds ratio: white-victim vs. Black-victim death sentence',
+            data: [4.3, 2.5, 5.2],
+            backgroundColor: 'rgba(184,58,30,0.5)',
+            borderColor: 'rgba(184,58,30,0.85)',
+            borderWidth: 1.5,
+            borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Adjusted Odds Ratio: Death Sentence Likelihood by Victim Race (After Controls)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.parsed.y + '× more likely with white victim'; } } }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { callback: function(v) { return v + '×'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+    });
+  </script>
+
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>
