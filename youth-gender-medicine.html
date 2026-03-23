@@ -237,8 +237,9 @@
     }
     .stat-block-body { padding: 4px 0; }
     .stat-row {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: 130px 1fr;
+      align-items: flex-start; padding: 7px 14px;
+      border-bottom: 1px solid var(--border);
       font-size: 0.86rem; gap: 12px;
     }
     .stat-row:last-child { border-bottom: none; }
@@ -250,6 +251,9 @@
     .stat-val.negative { color: var(--brick); }
     .stat-val.positive { color: var(--green); }
     .stat-val.neutral   { color: var(--text-head); }
+    .stat-row:has(.stat-val.positive) { background: rgba(27,107,62,0.04); }
+    .stat-row:has(.stat-val.negative) { background: rgba(184,58,30,0.04); }
+    .stat-row:has(.stat-val.warn)     { background: rgba(122,79,0,0.04); }
     .stat-val.warn      { color: var(--amber); }
 
     /* PER-CAPITA BOX */
@@ -1715,7 +1719,7 @@
 
 
   <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
-    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">14+ peer-reviewed sources cited</span>
     <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
   </footer>

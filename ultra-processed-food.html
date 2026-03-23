@@ -227,18 +227,22 @@
     }
     .stat-block-body { padding: 4px 0; }
     .stat-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 7px 14px; border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
+      display: grid; grid-template-columns: 130px 1fr;
+      align-items: flex-start; padding: 7px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.86rem; gap: 12px;
     }
     .stat-row:last-child { border-bottom: none; }
-    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-key { color: var(--text-dim); font-size: 0.82rem; min-width: 120px; flex-shrink: 0; padding-top: 1px; }
     .stat-val {
-      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+      font-family: var(--font-sans); font-weight: 600; font-size: 0.84rem; text-align: left; line-height: 1.5;
     }
     .stat-val.negative { color: var(--brick); }
     .stat-val.positive { color: var(--green); }
     .stat-val.neutral   { color: var(--text-head); }
+    .stat-row:has(.stat-val.positive) { background: rgba(27,107,62,0.04); }
+    .stat-row:has(.stat-val.negative) { background: rgba(184,58,30,0.04); }
+    .stat-row:has(.stat-val.warn)     { background: rgba(122,79,0,0.04); }
     .stat-val.warn      { color: var(--amber); }
 
     /* PER-CAPITA BOX */
