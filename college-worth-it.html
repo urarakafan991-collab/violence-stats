@@ -710,7 +710,7 @@
       <p>The wage premium has been remarkably stable for decades at 60&ndash;80%. NY Fed estimates an annualized return of ~12.5%. A simple undiscounted 40-year extrapolation of the annual gap is roughly $1.3 million &mdash; but formal lifetime estimates vary widely depending on discount rates, taxes, and the counterfactual path.</p>
 
       <div class="chart-wrap">
-        <canvas id="chartPremium" height="260"></canvas>
+        <div class="chart-canvas-wrap"><canvas id="chartPremium" role="img"></canvas></div>
         <span class="chart-source">Source: BLS 2024 &bull; Census &bull; College Board Trends 2025</span>
       </div>
 
@@ -756,7 +756,7 @@
       <p>&ldquo;College&rdquo; is not one investment. Electrical engineering and social work are both bachelor&rsquo;s degrees, but they are not remotely the same financial bet. The bottom quartile of majors yields earnings often comparable to or only modestly above high school graduates after costs and opportunity costs.</p>
 
       <div class="chart-wrap">
-        <canvas id="chartMajors" height="300"></canvas>
+        <div class="chart-canvas-wrap"><canvas id="chartMajors" role="img"></canvas></div>
         <span class="chart-source">Source: Census 2025 field-of-degree earnings release (prime-age medians)</span>
       </div>
 
@@ -883,7 +883,7 @@
       </div>
 
       <div class="chart-wrap">
-        <canvas id="chartPerception" height="260"></canvas>
+        <div class="chart-canvas-wrap"><canvas id="chartPerception" role="img"></canvas></div>
         <span class="chart-source">Source: Gallup, Pew, WSJ/NORC polling (2010&ndash;2025)</span>
       </div>
 
@@ -1052,7 +1052,7 @@
           datasets: [{
             label: 'Median annual earnings (prime-age)',
             data: [146000, 108500, 100600, 80570, 75000, 57090, 55060, 53450],
-            backgroundColor: function(ctx) { return ctx.raw >= 80000 ? 'rgba(27,107,62,0.55)' : ctx.raw >= 60000 ? 'rgba(122,79,0,0.45)' : 'rgba(184,58,30,0.45)'; },
+            backgroundColor: ['rgba(27,107,62,0.55)', 'rgba(27,107,62,0.55)', 'rgba(27,107,62,0.55)', 'rgba(27,107,62,0.45)', 'rgba(122,79,0,0.45)', 'rgba(184,58,30,0.45)', 'rgba(184,58,30,0.45)', 'rgba(184,58,30,0.45)'],
             borderRadius: 3
           }]
         },
