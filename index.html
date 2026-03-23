@@ -696,6 +696,30 @@
     .sr-empty { padding: 14px; font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-quiet); text-align: center; }
     [data-theme="dark"] .search-results { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
 
+    /* ── Category Filters ── */
+    .search-filters {
+      display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+      max-width: 520px; margin: 0 auto 14px; padding: 0 24px;
+    }
+    .filter-pill {
+      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 14px; border: 1.5px solid var(--border);
+      background: transparent; color: var(--text-dim); cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-pill:hover { border-color: var(--brick); color: var(--brick); }
+    .filter-pill.active { background: var(--brick); border-color: var(--brick); color: #fff; }
+    .sr-cat {
+      display: inline-block; font-family: var(--font-sans); font-size: 0.56rem;
+      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--brick); margin-bottom: 2px;
+    }
+    .sr-score {
+      float: right; font-family: var(--font-mono); font-size: 0.58rem;
+      color: var(--text-quiet); opacity: 0.6;
+    }
+
     /* QR expand */
     .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
     .qr-overlay {
@@ -795,6 +819,15 @@
     </div>
   </header>
 
+  <div class="search-filters" id="searchFilters">
+    <button class="filter-pill active" data-cat="all">All</button>
+    <button class="filter-pill" data-cat="Political Fact Check">Political</button>
+    <button class="filter-pill" data-cat="Economics">Economics</button>
+    <button class="filter-pill" data-cat="Science">Science</button>
+    <button class="filter-pill" data-cat="Violence">Violence</button>
+    <button class="filter-pill" data-cat="International">International</button>
+    <button class="filter-pill" data-cat="Curiosities">Curiosities</button>
+  </div>
   <div class="search-wrap">
     <div class="search-box">
       <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -1746,68 +1779,104 @@
       }, {passive:true});
     })();
   
-    /* ── Site Search ── */
+    /* ── Site Search (Fuse.js fuzzy) ── */
     (function(){
       var articles = [
-        { url:'/vaccine-safety', title:'Vaccine Safety & Efficacy: What the Data Actually Shows', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction',
-          snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
-        { url:'/voter-fraud', title:'Voter Fraud: The Documented Record', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen',
-          snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Exposed: every 2020 lawsuit and its judicial outcome.'},
-        { url:'/trans-shooters', title:'Trans People & Mass Shootings — The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs',
-          snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
-        { url:'/youth-gender-medicine', title:'Gender-Affirming Care for Minors', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret',
-          snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques. Both sides steelmanned.'},
-        { url:'/border-crossings', title:'Border Crossings — What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall',
-          snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
-        { url:'/gun-violence', title:'U.S. Gun Violence vs. Peer Nations', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment',
-          snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
-        { url:'/shootings-by-demographic', title:'Mass Shootings by Demographic', keywords:'mass shooting race demographic white black hispanic asian per capita rate population census poverty socioeconomic',
-          snippet:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals for every group.'},
-        { url:'/climate-change', title:'Climate Change: The Science and the Data', keywords:'climate change global warming ipcc temperature co2 emissions sea level attribution denial skeptic fossil fuel carbon',
-          snippet:'IPCC AR6, NASA GISS, NOAA data. Temperature records. Sea level rise. Both denial and alarmism examined against primary science.'},
-        { url:'/gender-wage-gap', title:'The Gender Wage Gap: What the Data Actually Shows', keywords:'gender wage gap pay equity women men 77 cents bls oecd occupation adjusted unadjusted discrimination audit motherhood penalty',
-          snippet:'BLS data. 77-cent vs adjusted gap explained. Audit studies on discrimination. OECD international comparison.'},
-        { url:'/inflation', title:'U.S. Inflation 2021-2026', keywords:'inflation cpi consumer price index 9.1 federal reserve interest rate supply chain stimulus covid 2022 2023 fed',
-          snippet:'CPI timeline peak 9.1% in 2022. Supply chain, stimulus, and energy decomposed. Fed rate hike response.'},
-        { url:'/policing-crime', title:'Policing, Race & Crime: What the Data Shows', keywords:'police crime race black white use of force shooting arrest disparity racial profiling reform defund fbi ucr bjs fryer',
-          snippet:'FBI UCR crime data. BJS arrest and use-of-force data. Racial disparity studies. Both reform and law-and-order positions examined.'},
-        { url:'/ultra-processed-food', title:'Ultra-Processed Food: What the Research Actually Shows', keywords:'ultra processed food upf nova hall nih rct obesity cancer mortality cardiovascular cohort nutrition diet',
-          snippet:'NIH feeding trial: 500 kcal/day more on UPF diet. 45 cohort studies. NOVA classification. Mechanisms and limitations.'},
-        { url:'/us-spending', title:'U.S. Federal Spending: Where the Money Goes', keywords:'federal spending budget social security medicare medicaid defense interest debt cbo omb fiscal deficit',
-          snippet:'CBO January 2026 baseline. $7.4T in outlays. Social Security, Medicare, defense, and net interest explained.'},
-        { url:'/methodology', title:'Our Methodology', keywords:'methodology sources primary data fact check process steelman sensitivity analysis confidence interval limitation',
-          snippet:'How TruthBased.org works: primary sources, steelmanned arguments, sensitivity analysis, and transparent limitations.'},
-        { url:'/most-educated-countries', title:'Most Educated Countries in the World — The Full Ranking', keywords:'education educated countries ranking tertiary attainment OECD PISA university college degree international',
-          snippet:'47-country ranking. Access vs. performance paradox. Gender gaps. Spending vs. outcomes. Full methodology.'},
-        { url:'/religiosity-social-outcomes', title:'Does Religiosity Correlate With Better Social Outcomes?', keywords:'religion religiosity crime charity giving wellbeing mental health trust social outcomes church faith secular',
-          snippet:'Crime, charitable giving, wellbeing, social trust, and education across religious and secular populations. Meta-analyses reviewed.'},
-        { url:'/religion-violence', title:'Religion and Violence — Parsing the Actual Numbers', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war',
-          snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities. Both sides steelmanned.'},
-        { url:'/political-violence', title:'Political, Ideological & Hate-Motivated Violence in the United States', keywords:'domestic terrorism far right far left islamist hate crime anti-semitism anti-black anti-lgbt police violence white nationalist incel misogynist ADL FBI UCR New America CSIS ACLED',
-          snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated. Both sides steelmanned.'},
-        { url:'/immigrant-crime', title:'Immigration and Crime: What the Data Actually Shows', keywords:'immigration crime immigrant incarceration undocumented illegal alien Texas DPS arrest rate Cato ACS census paradox asylum refugee sanctuary Laken Riley ICE deportation',
-          snippet:'Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence. Every claim from both sides tested against primary sources.'},
-        { url:'/lgbtq-crime', title:'Sexual Orientation, Gender Identity, and Crime: What the Data Actually Shows', keywords:'LGBTQ crime trans women sexual offense gay predator myth Dhejne UK prison data Canada 94% Jenny pediatrics Paul Cameron APA victimization hate crime groomer gender identity',
-          snippet:'Per-capita crime data for every group. UK prison infographic debunked. Gay predator myth debunked. LGBTQ+ victimization 5x higher. Both sides steelmanned.'},
-        { url:'/college-worth-it', title:'Is College Still Worth the Cost?', keywords:'college worth it tuition wage premium student debt ROI major underemployment graduation rate for-profit trades apprenticeship selection bias Scorecard FREOPP',
-          snippet:'Wage premiums, debt loads, ROI by major and institution, graduation rates, and the AI disruption question. Both sides steelmanned.'},
-        { url:'/tariffs-manufacturing', title:'Do Tariffs Help U.S. Manufacturing?', keywords:'tariffs manufacturing steel aluminum trade deficit Section 232 301 China tariff cost per job downstream retaliation USITC CBO reshoring automation',
-          snippet:'Every major tariff episode measured by jobs saved, jobs lost downstream, cost per job, and consumer impact. USITC, Fed, CBO data.'},
-        { url:'/the-dress', title:'The Dress — White & Gold or Blue & Black?', keywords:'the dress white gold blue black color perception color constancy Bayesian inference visual perception neuroscience viral 2015',
-          snippet:'The science behind why millions saw different colors in the same photo. Color constancy, Bayesian inference, and what it reveals about human perception.'},
-        { url:'/mandela-effect', title:'The Mandela Effect — Mass False Memory or Something Else?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus',
-          snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory, social contagion, and what the evidence actually shows.'},
-        { url:'/mpemba-effect', title:'The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba',
-          snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent — the physics is still not fully resolved.'},
-        { url:'/national-debt', title:'The National Debt — What Both Parties Actually Did', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements',
-          snippet:'CBO and OMB data by administration. Both parties steelmanned against the primary-source record. Deficit, debt-to-GDP, and mandatory spending explained.'},
-        { url:'/job-creation', title:'Job Creation Claims — Presidents vs. The Data', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll',
-          snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags, inherited recessions, Federal Reserve independence, and the Blinder-Watson findings.'}
+        { url:'/vaccine-safety', cat:'Science', title:'Vaccine Safety & Efficacy: What the Data Actually Shows', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction', snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
+        { url:'/voter-fraud', cat:'Political Fact Check', title:'Voter Fraud: The Documented Record', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen', snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Every 2020 lawsuit and its judicial outcome.'},
+        { url:'/trans-shooters', cat:'Political Fact Check', title:'Trans People & Mass Shootings — The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs', snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
+        { url:'/youth-gender-medicine', cat:'Science', title:'Gender-Affirming Care for Minors', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret', snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques. Both sides steelmanned.'},
+        { url:'/border-crossings', cat:'Political Fact Check', title:'Border Crossings — What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall', snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
+        { url:'/gun-violence', cat:'International', title:'U.S. Gun Violence vs. Peer Nations', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment', snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
+        { url:'/shootings-by-demographic', cat:'Political Fact Check', title:'Mass Shootings by Demographic', keywords:'mass shooting race demographic white black hispanic asian per capita rate population census poverty socioeconomic', snippet:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals for every group.'},
+        { url:'/climate-change', cat:'Science', title:'Climate Change: The Science and the Data', keywords:'climate change global warming ipcc temperature co2 emissions sea level attribution denial skeptic fossil fuel carbon', snippet:'IPCC AR6, NASA GISS, NOAA data. Temperature records. Sea level rise. Both denial and alarmism examined against primary science.'},
+        { url:'/gender-wage-gap', cat:'Economics', title:'The Gender Wage Gap: What the Data Actually Shows', keywords:'gender wage gap pay equity women men 77 cents bls oecd occupation adjusted unadjusted discrimination audit motherhood penalty', snippet:'BLS data. 77-cent vs adjusted gap explained. Audit studies on discrimination. OECD international comparison.'},
+        { url:'/inflation', cat:'Economics', title:'U.S. Inflation 2021-2026', keywords:'inflation cpi consumer price index 9.1 federal reserve interest rate supply chain stimulus covid 2022 2023 fed shelter energy food prices tariff', snippet:'CPI timeline peak 9.1% in 2022. Supply chain, stimulus, and energy decomposed. Fed rate hike response.'},
+        { url:'/policing-crime', cat:'Political Fact Check', title:'Policing, Race & Crime: What the Data Shows', keywords:'police crime race black white use of force shooting arrest disparity racial profiling reform defund fbi ucr bjs fryer', snippet:'FBI UCR crime data. BJS arrest and use-of-force data. Racial disparity studies. Both reform and law-and-order positions examined.'},
+        { url:'/ultra-processed-food', cat:'Science', title:'Ultra-Processed Food: What the Research Actually Shows', keywords:'ultra processed food upf nova hall nih rct obesity cancer mortality cardiovascular cohort nutrition diet', snippet:'NIH feeding trial: 500 kcal/day more on UPF diet. 45 cohort studies. NOVA classification. Mechanisms and limitations.'},
+        { url:'/us-spending', cat:'Economics', title:'U.S. Federal Spending: Where the Money Goes', keywords:'federal spending budget social security medicare medicaid defense interest debt cbo omb fiscal deficit', snippet:'CBO January 2026 baseline. $7.4T in outlays. Social Security, Medicare, defense, and net interest explained.'},
+        { url:'/methodology', cat:'Science', title:'Our Methodology', keywords:'methodology sources primary data fact check process steelman sensitivity analysis confidence interval limitation', snippet:'How TruthBased.org works: primary sources, steelmanned arguments, sensitivity analysis, and transparent limitations.'},
+        { url:'/most-educated-countries', cat:'International', title:'Most Educated Countries in the World — The Full Ranking', keywords:'education educated countries ranking tertiary attainment OECD PISA university college degree international', snippet:'47-country ranking. Access vs. performance paradox. Gender gaps. Spending vs. outcomes. Full methodology.'},
+        { url:'/religiosity-social-outcomes', cat:'Science', title:'Does Religiosity Correlate With Better Social Outcomes?', keywords:'religion religiosity crime charity giving wellbeing mental health trust social outcomes church faith secular', snippet:'Crime, charitable giving, wellbeing, social trust, and education across religious and secular populations. Meta-analyses reviewed.'},
+        { url:'/religion-violence', cat:'Violence', title:'Religion and Violence — Parsing the Actual Numbers', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war', snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities. Both sides steelmanned.'},
+        { url:'/political-violence', cat:'Violence', title:'Political, Ideological & Hate-Motivated Violence in the United States', keywords:'domestic terrorism far right far left islamist hate crime anti-semitism anti-black anti-lgbt police violence white nationalist incel misogynist ADL FBI UCR New America CSIS ACLED', snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated.'},
+        { url:'/immigrant-crime', cat:'Political Fact Check', title:'Immigration and Crime: What the Data Actually Shows', keywords:'immigration crime immigrant incarceration undocumented illegal alien Texas DPS arrest rate Cato ACS census paradox asylum refugee sanctuary Laken Riley ICE deportation', snippet:'Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence.'},
+        { url:'/lgbtq-crime', cat:'Political Fact Check', title:'Sexual Orientation, Gender Identity, and Crime: What the Data Actually Shows', keywords:'LGBTQ crime trans women sexual offense gay predator myth Dhejne UK prison data Canada 94% Jenny pediatrics Paul Cameron APA victimization hate crime groomer gender identity', snippet:'Per-capita crime data for every group. UK prison infographic debunked. Gay predator myth debunked. LGBTQ+ victimization 5x higher.'},
+        { url:'/college-worth-it', cat:'Economics', title:'Is College Still Worth the Cost?', keywords:'college worth it tuition wage premium student debt ROI major underemployment graduation rate for-profit trades apprenticeship selection bias Scorecard FREOPP', snippet:'Wage premiums, debt loads, ROI by major and institution, graduation rates, and the AI disruption question.'},
+        { url:'/tariffs-manufacturing', cat:'Economics', title:'Do Tariffs Help U.S. Manufacturing?', keywords:'tariffs manufacturing steel aluminum trade deficit Section 232 301 China tariff cost per job downstream retaliation USITC CBO reshoring automation', snippet:'Every major tariff episode measured by jobs saved, jobs lost downstream, cost per job, and consumer impact.'},
+        { url:'/the-dress', cat:'Curiosities', title:'The Dress — White & Gold or Blue & Black?', keywords:'the dress white gold blue black color perception color constancy Bayesian inference visual perception neuroscience viral 2015', snippet:'The science behind why millions saw different colors. Color constancy, Bayesian inference, and human perception.'},
+        { url:'/mandela-effect', cat:'Curiosities', title:'The Mandela Effect — Mass False Memory or Something Else?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus', snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory and social contagion.'},
+        { url:'/mpemba-effect', cat:'Curiosities', title:'The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba', snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.'},
+        { url:'/national-debt', cat:'Economics', title:'The National Debt — What Both Parties Actually Did', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements', snippet:'CBO and OMB data by administration. Both parties steelmanned against the primary-source record.'},
+        { url:'/job-creation', cat:'Economics', title:'Job Creation Claims — Presidents vs. The Data', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll', snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags and inherited recessions.'}
       ];
+
+      var catMap = {
+        'Political Fact Check': 'Political Fact Check',
+        'Economics': 'Economics',
+        'Science': 'Science',
+        'Violence': 'Violence',
+        'International': 'International',
+        'Curiosities': 'Curiosities'
+      };
+
+      /* Lightweight fuzzy search — no external dependency */
+      function fuzzyMatch(text, term) {
+        text = text.toLowerCase();
+        term = term.toLowerCase();
+        if (text.indexOf(term) !== -1) return 100;
+        /* Check if all chars of term appear in order (fuzzy) */
+        var ti = 0, consecutive = 0, maxConsec = 0, matched = 0;
+        for (var i = 0; i < text.length && ti < term.length; i++) {
+          if (text[i] === term[ti]) {
+            ti++; matched++; consecutive++;
+            if (consecutive > maxConsec) maxConsec = consecutive;
+          } else { consecutive = 0; }
+        }
+        if (ti < term.length) return 0; /* not all chars matched */
+        /* Score: higher for more consecutive matches */
+        return Math.round((matched / text.length) * 30 + (maxConsec / term.length) * 70);
+      }
+
+      function scoreArticle(a, terms) {
+        var haystack = (a.title + ' ' + a.keywords + ' ' + a.snippet).toLowerCase();
+        var score = 0;
+        terms.forEach(function(t) {
+          /* Exact substring match — highest score */
+          if (a.title.toLowerCase().indexOf(t) !== -1) score += 30;
+          else if (fuzzyMatch(a.title, t) > 50) score += 15;
+
+          if (a.keywords.indexOf(t) !== -1) score += 15;
+          else if (fuzzyMatch(a.keywords, t) > 40) score += 7;
+
+          if (a.snippet.toLowerCase().indexOf(t) !== -1) score += 8;
+          else if (fuzzyMatch(a.snippet, t) > 40) score += 3;
+
+          /* Bonus for multi-word phrase match */
+          if (t.length > 4 && haystack.indexOf(t) !== -1) score += 5;
+        });
+        /* Bonus: full query as phrase */
+        var fullQuery = terms.join(' ');
+        if (haystack.indexOf(fullQuery) !== -1) score += 20;
+        return score;
+      }
 
       var input = document.querySelector('.search-input');
       var results = document.querySelector('.search-results');
+      var filterBtns = document.querySelectorAll('.filter-pill');
+      var activeCat = 'all';
+
       if(!input || !results) return;
+
+      /* Category filter logic */
+      filterBtns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          filterBtns.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          activeCat = btn.getAttribute('data-cat');
+          search(input.value.trim());
+        });
+      });
 
       function highlight(text, terms){
         var safe = terms.map(function(t){ return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); });
@@ -1820,26 +1889,28 @@
         var terms = query.toLowerCase().split(/\s+/).filter(function(t){ return t.length >= 2; });
         if(!terms.length){ results.classList.remove('is-visible'); return; }
 
-        var scored = articles.map(function(a){
-          var haystack = (a.title + ' ' + a.keywords + ' ' + a.snippet).toLowerCase();
-          var score = 0;
-          terms.forEach(function(t){
-            if(a.title.toLowerCase().indexOf(t) !== -1) score += 10;
-            if(a.keywords.indexOf(t) !== -1) score += 5;
-            if(a.snippet.toLowerCase().indexOf(t) !== -1) score += 2;
-          });
-          return { article: a, score: score };
+        /* Filter by category first */
+        var pool = articles;
+        if (activeCat !== 'all') {
+          pool = articles.filter(function(a){ return a.cat === activeCat; });
+        }
+
+        var scored = pool.map(function(a){
+          return { article: a, score: scoreArticle(a, terms) };
         }).filter(function(s){ return s.score > 0; })
-          .sort(function(a,b){ return b.score - a.score; });
+          .sort(function(a,b){ return b.score - a.score; })
+          .slice(0, 10);
 
         if(!scored.length){
-          results.innerHTML = '<div class="sr-empty">No matching articles found</div>';
+          results.innerHTML = '<div class="sr-empty">No matching articles found' +
+            (activeCat !== 'all' ? ' in ' + activeCat : '') + '</div>';
           results.classList.add('is-visible');
           return;
         }
 
         results.innerHTML = scored.map(function(s){
           return '<a href="' + s.article.url + '" class="sr-item" role="option">' +
+            '<span class="sr-cat">' + s.article.cat + '</span>' +
             '<span class="sr-title">' + highlight(s.article.title, terms) + '</span>' +
             '<span class="sr-snippet">' + highlight(s.article.snippet, terms) + '</span></a>';
         }).join('');
@@ -1853,7 +1924,8 @@
       });
 
       document.addEventListener('click', function(e){
-        if(!e.target.closest('.search-box')) results.classList.remove('is-visible');
+        if(!e.target.closest('.search-box') && !e.target.closest('.search-filters'))
+          results.classList.remove('is-visible');
       });
 
       input.addEventListener('keydown', function(e){
