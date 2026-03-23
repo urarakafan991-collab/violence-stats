@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immigration and Crime Data | TruthBased.org</title>
+  <meta name="description" content="Do immigrants commit more crime? Incarceration rates, arrest data, ecological studies, and the European evidence — every claim tested against primary sources. Both sides steelmanned.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url" content="https://www.truthbased.org/immigrant-crime">
+  <meta property="og:title" content="Immigration and Crime: What the Data Actually Shows | TruthBased.org">
+  <meta property="og:description" content="Incarceration rates, Texas arrest data, 150 years of Census records, and the European context. Every claim from both sides tested against primary sources.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title" content="Immigration and Crime: What the Data Actually Shows | TruthBased.org">
+  <meta name="twitter:description" content="Do immigrants commit more crime? Three databases, 150 years of data, both sides steelmanned.">
+
+  <link rel="canonical" href="https://www.truthbased.org/immigrant-crime">
+  <meta name="theme-color" content="#b83a1e">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px;
+      border-bottom: 1px solid var(--rule);
+      background-color: rgba(247, 245, 241, 0.97);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+      position: sticky; top: 0; z-index: 100;
+    }
+    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-wordmark {
+      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary, var(--text-head, #151311));
+      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    .nav-wordmark strong { color: var(--brick); }
+    .nav-back {
+      font-family: 'Sora', sans-serif; font-size: 0.72rem;
+      color: var(--text-dim, #706d64); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+    .nav-category {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66);
+      padding-left: 16px; border-left: 1px solid var(--rule);
+      white-space: nowrap;
+    }
+
+    :root {
+      --bg:           #f7f5f1;
+      --surface:      #f0ede8;
+      --card-face:    #ffffff;
+      --card-tinted:  #fdfcfa;
+      --border:       #ddd9d0;
+      --rule:         #ddd9d0;
+      --text-head:    #1a1714;
+      --text-body:    #2d2926;
+      --text-dim:     #5a544c;
+      --text-quiet:   #736e66;
+      --brick:        #b83a1e;
+      --brick-light:  #f5e8e4;
+      --green:        #1b6b3e;
+      --green-light:  #e8f5ed;
+      --amber:        #7a4f00;
+      --amber-light:  #fdf5e6;
+      --font-serif:   'Spectral', Georgia, serif;
+      --font-sans:    'Sora', system-ui, sans-serif;
+      --font-mono:    'Courier Prime', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .jump-nav {
+      position: sticky; top: 52px; z-index: 90;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .jump-btn {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+    }
+    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+    .jump-toggle {
+      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); background: none; border: 1px solid var(--border);
+      border-radius: 4px; padding: 5px 12px; cursor: pointer;
+      transition: color .15s, border-color .15s; white-space: nowrap;
+    }
+    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .article-category {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brick); display: block; margin-bottom: 10px;
+    }
+    .article-title {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; color: var(--text-head);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .article-deck {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+    }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .meta-pill {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+    }
+    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+    .box {
+      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+      border-left: 3px solid;
+    }
+    .box-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .box p { font-size: 0.9rem; line-height: 1.6; }
+    .box-amber { background: var(--amber-light); border-color: #c8850a; }
+    .box-amber .box-label { color: var(--amber); }
+    .box-green { background: var(--green-light); border-color: var(--green); }
+    .box-green .box-label { color: var(--green); }
+    .box-red { background: var(--brick-light); border-color: var(--brick); }
+    .box-red .box-label { color: var(--brick); }
+
+    .sources-bar { margin: 24px 0; }
+    .sources-bar-label {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-pill {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      color: var(--text-dim); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 4px 10px; background: var(--surface);
+      transition: color .15s, border-color .15s;
+    }
+    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+    .part-header {
+      margin: 48px 0 20px;
+      padding-top: 32px;
+      border-top: 2px solid var(--text-head);
+    }
+    .part-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 6px;
+    }
+    .part-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--text-head); letter-spacing: -0.01em;
+    }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+      color: var(--text-quiet); display: block;
+      margin: 28px 0 10px; letter-spacing: .04em;
+    }
+
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; margin: 16px 0; overflow: hidden;
+    }
+    .stat-block-header {
+      background: var(--border); padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-block-name {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-head);
+    }
+    .stat-block-period {
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+    }
+    .stat-block-body { padding: 4px 0; }
+    .stat-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 14px; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+    .stat-val {
+      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+    }
+    .stat-val.negative { color: var(--brick); }
+    .stat-val.positive { color: var(--green); }
+    .stat-val.neutral   { color: var(--text-head); }
+    .stat-val.warn      { color: var(--amber); }
+
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem; margin: 16px 0;
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .data-table th {
+      background: var(--border); padding: 8px 12px;
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      text-align: left; color: var(--text-head);
+    }
+    .data-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top; line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
+    .td-alert { color: var(--brick); font-weight: 600; }
+    .td-warn  { color: var(--amber); font-weight: 600; }
+
+    .chart-wrap {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 16px; margin: 16px 0;
+    }
+    .chart-title {
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .chart-canvas-wrap { position: relative; height: 280px; }
+
+    .steelman-wrap {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+    }
+    .steelman-row {
+      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+    }
+    .steelman-row:last-child { border-bottom: none; }
+    .steelman-key {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--surface); padding: 10px 14px;
+      min-width: 160px; color: var(--text-dim); border-right: 1px solid var(--border);
+    }
+    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+    .steelman-val.rebuttal { color: var(--brick); }
+
+    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+    .cs-row {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 14px 16px;
+    }
+    .cs-num {
+      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+      line-height: 1.1; margin-bottom: 6px;
+    }
+    .cs-num.positive { color: var(--green); }
+    .cs-num.negative { color: var(--brick); }
+    .cs-num.neutral  { color: var(--text-head); }
+    .cs-num.warn     { color: var(--amber); }
+    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .sources-section-label {
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 10px;
+    }
+    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+    .source-item strong { color: var(--text-body); font-weight: 500; }
+
+    p { margin-bottom: 14px; }
+    .inline-link { color: var(--brick); text-decoration: none; }
+    .inline-link:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .source-note {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .confidence-tag {
+      display: inline-block;
+      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+    .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
+    .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 16px; height: 46px; }
+      .nav-category { display: none; }
+      .article-wrap { padding: 24px 16px 60px; }
+      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+      .jump-toggle { display: inline-flex; align-items: center; }
+      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+      .jump-links.is-open { display: flex; }
+      [id^="part"] { scroll-margin-top: 105px; }
+      .part-header { margin: 36px 0 16px; padding-top: 24px; }
+      .steelman-row { flex-direction: column; }
+      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+      .data-table { font-size: 0.76rem; }
+      .data-table th, .data-table td { padding: 6px 8px; }
+      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+      .source-pills { gap: 4px; }
+      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+    }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .site-nav { padding: 0 24px; }
+      .article-wrap { padding: 32px 24px 60px; }
+    }
+
+    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+    [id^="part"] { scroll-margin-top: 120px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+    .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+    [data-theme="dark"] {
+      --bg:           #1a1918;
+      --surface:      #242220;
+      --card-face:    #242220;
+      --card-tinted:  #2a2826;
+      --border:       #3a3632;
+      --rule:         #3a3632;
+      --text-head:    #e8e5e0;
+      --text-body:    #c5c0b8;
+      --text-dim:     #8a857d;
+      --text-quiet:   #6a655e;
+      --brick:        #e05a3a;
+      --brick-light:  #2d1f1a;
+      --green:        #4cbb6a;
+      --green-light:  #1a2d20;
+      --amber:        #d4a030;
+      --amber-light:  #2d2518;
+    }
+    [data-theme="dark"] .jump-nav { background: #242220; }
+    [data-theme="dark"] .chart-wrap { background: #2a2826; }
+    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+    html { transition: background-color 0.3s ease, color 0.3s ease; }
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--brick); z-index: 9999;
+      width: 0%; transition: width 0.1s linear;
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brick); color: #fff;
+      border: none; cursor: pointer;
+      font-size: 1.1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { filter: brightness(1.15); }
+    .theme-toggle {
+      margin-left: auto;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: transparent; cursor: pointer;
+      font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background-color 0.3s;
+      color: var(--text-dim, #5a544c);
+    }
+    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--brick); color: #fff;
+      padding: 8px 16px; border-radius: 0 0 4px 4px;
+      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+      z-index: 200; transition: top 0.15s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+    .claims-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+    }
+    .claims-box-label {
+      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet); display: block; margin-bottom: 14px;
+    }
+    .claim-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; line-height: 1.5;
+    }
+    .claim-row:last-child { border-bottom: none; }
+    .claim-cell { padding: 10px 12px; }
+    .claim-cell-label {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 4px; display: block;
+    }
+    .claim-said { color: var(--brick); }
+    .claim-data { color: var(--green); }
+    .claim-cell:first-child { border-right: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      .claim-row { grid-template-columns: 1fr; }
+      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
+    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+    .part-takeaway {
+      background: var(--surface); border-left: 3px solid var(--brick);
+      padding: 14px 20px; margin: 32px 0 8px;
+      border-radius: 0 4px 4px 0; font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .part-takeaway strong {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--brick); display: block; margin-bottom: 4px;
+    }
+
+    .info-note {
+      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+      font-style: italic; margin-top: -6px; margin-bottom: 12px;
+      padding-left: 14px; border-left: 2px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .table-scroll { position: relative; }
+    .table-scroll::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+      pointer-events: none; opacity: 0; transition: opacity 0.2s;
+    }
+    .table-scroll.has-overflow::after { opacity: 0.7; }
+    [data-theme="dark"] .table-scroll::after {
+      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+    }
+
+    caption {
+      font-family: var(--font-mono, 'Courier Prime', monospace);
+      font-size: 0.6rem; letter-spacing: 0.06em;
+      color: var(--text-quiet, #736e66);
+      text-align: left; caption-side: top;
+      padding: 0 0 6px 0;
+    }
+
+    .cite-this {
+      margin-top: 28px; padding: 14px 18px;
+      background: var(--card-tinted, var(--surface, #fdfcfa));
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+    .cite-this-label {
+      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+    }
+    .cite-this-text {
+      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto !important; }
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+    }
+    @media print {
+      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+      .article-wrap { max-width: 100%; padding: 0; }
+    }
+
+    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .qr-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
+      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+      cursor:pointer; padding:24px;
+    }
+    .qr-overlay.is-open { display:flex; }
+    .qr-overlay img {
+      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
+      background:#fff; padding:12px; image-rendering:pixelated;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+    .qr-overlay-label {
+      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
+      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
+      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
+      padding:6px 14px; border-radius:20px; pointer-events:none;
+    }
+    .qr-tap-hint {
+      display:block; font-family:var(--font-sans,'Sora',sans-serif);
+      font-size:0.48rem; color:var(--text-dim,#706d64);
+      text-align:center; margin-top:4px; opacity:0.7;
+    }
+  
+    /* ── You May Also Like ── */
+    .ymal-section { margin-top: 8px; }
+    .ymal-heading {
+      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+      display: block; margin-bottom: 12px;
+    }
+    .ymal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ymal-card {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+      border-left: 3px solid transparent;
+    }
+    .ymal-card:hover {
+      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ymal-cat {
+      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+    }
+    .ymal-title {
+      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text-body); line-height: 1.3;
+    }
+    .ymal-desc {
+      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      line-height: 1.45;
+    }
+
+    </style>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      try {
+        var stored = localStorage.getItem('tb-theme');
+        if (stored) html.setAttribute('data-theme', stored);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+      } catch(e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Immigration and Crime: What the Data Actually Shows",
+    "description": "Do immigrants commit more crime? Incarceration rates, Texas arrest data, 150 years of Census records, and the strongest arguments on both sides tested against primary sources.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-03-22",
+    "dateModified": "2026-03-22",
+    "mainEntityOfPage": "https://www.truthbased.org/immigrant-crime",
+    "keywords": ["immigration crime", "immigrant incarceration", "Texas DPS data", "undocumented immigrants crime rate", "Cato ACS analysis", "immigrant paradox", "crime statistics"]
+  }
+  </script>
+</head>
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Political Fact Check</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+    <div class="jump-links" id="jump-links">
+      <a href="#part1" class="jump-btn">Part 1 – The Claim</a>
+      <a href="#part2" class="jump-btn">Part 2 – The Data</a>
+      <a href="#part3" class="jump-btn">Part 3 – Context</a>
+      <a href="#part4" class="jump-btn">Part 4 – Steelman: Raises Crime</a>
+      <a href="#part5" class="jump-btn">Part 5 – Steelman: Less Crime</a>
+      <a href="#part6" class="jump-btn">Part 6 – Key Voices</a>
+      <a href="#part7" class="jump-btn">Part 7 – Confidence</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Political Fact Check</span>
+      <h1 class="article-title">Immigration and Crime: What the Data Actually Shows</h1>
+      <p class="article-deck">Do immigrants commit more crime than native-born Americans? Incarceration rates, Texas arrest data, 150 years of Census records, ecological studies, the European evidence, and the strongest arguments on both sides &mdash; tested against primary sources.</p>
+      <div class="article-meta">
+        <span class="meta-pill live">&#10003; Live</span>
+        <span class="meta-pill">Published March 2026</span>
+        <span class="meta-pill">15+ primary sources</span>
+        <span class="meta-pill">~25 min read</span>
+        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="box box-amber" style="margin-top:20px;">
+      <span class="box-label">Critical Prefatory Note</span>
+      <p>This article examines whether immigrants &mdash; legal and undocumented &mdash; commit crime at higher or lower rates than native-born Americans. The distinction between legal and undocumented immigrants is maintained throughout because they face different screening, incentive structures, and data availability. Most U.S. crime databases do not record immigration status, which is why Texas dominates this debate: it is effectively the only state with a large arrest dataset that systematically links arrestees to DHS status information. Area-level correlations and individual-level incarceration/arrest data are both used but should not be confused with each other.</p>
+    </div>
+
+    <div class="claims-box">
+      <span class="claims-box-label">Common claims vs. what the data shows</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Immigrants are committing a crime wave&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported by per-capita data. As the immigrant share of the U.S. population grew from 6.2% (1980) to 13.9% (2022), the total crime rate dropped ~60%. Individual-level incarceration and arrest data consistently show immigrants at lower rates than natives.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Texas DPS data proves illegal aliens commit hundreds of thousands of crimes&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>The raw counts are real &mdash; 597,000+ offenses charged since 2011 &mdash; but Texas DPS itself says these figures do not show undocumented immigrants commit more crime than other groups. They are counts, not rates. Per-capita analysis of the same Texas data shows undocumented immigrants have the lowest felony arrest rates.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Immigrants are less crime-prone than natives, full stop&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Directionally supported in U.S. per-capita data across decades, but overstated as a universal claim. European asylum-seeker contexts sometimes show different patterns. Legal immigrants in Texas had higher sexual-assault arrest rates than natives. Data gaps outside Texas create genuine uncertainty about national generalizability.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Sanctuary cities make communities less safe&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported by ecological studies, which find sanctuary policies associated with similar or lower crime rates. However, specific cases of declined ICE detainers followed by reoffending are real, even if they do not alter the population-level picture.</div>
+      </div>
+    </div>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources Used</span>
+      <div class="source-pills">
+        <span class="source-pill">ACS / Census (1980&ndash;2023)</span>
+        <span class="source-pill">Texas DPS Criminal Data</span>
+        <span class="source-pill">Light et al. (PNAS 2020)</span>
+        <span class="source-pill">Cato Institute ACS Analysis</span>
+        <span class="source-pill">Abramitzky et al. (NBER/AER)</span>
+        <span class="source-pill">Butcher &amp; Piehl (NBER)</span>
+        <span class="source-pill">FBI Uniform Crime Reports</span>
+        <span class="source-pill">National Academies (2015)</span>
+        <span class="source-pill">Pew / PRRI Polling</span>
+        <span class="source-pill">Dallas Fed Working Paper</span>
+        <span class="source-pill">Marie &amp; Pinotti (JEP 2024)</span>
+      </div>
+    </div>
+
+    <!-- PART 1: THE CLAIM AND WHY IT MATTERS -->
+    <section id="part1">
+      <div class="part-header">
+        <span class="part-label">Part 1 of 7</span>
+        <h2 class="part-title">The Claim and Why It Matters</h2>
+      </div>
+
+      <span class="section-label">01 &ndash; The Political Context</span>
+      <p>In 2025&ndash;2026, the claim that immigrants &mdash; especially undocumented immigrants &mdash; commit crime at higher rates than native-born Americans has become central to federal policy. The Trump administration&rsquo;s January 20, 2025 executive order &ldquo;Protecting the American People Against Invasion&rdquo; framed immigration enforcement as a public-safety priority. The Laken Riley Act, signed January 29, 2025, mandated ICE detention for noncitizens charged with theft, burglary, or similar crimes. ICE arrests doubled post-inauguration, with DHS reporting 70% of arrests involved people convicted of or charged with crimes.</p>
+      <p>The opposing claim &mdash; that immigrants are less crime-prone than the native-born &mdash; is backed by most of the modern U.S. empirical literature. But public perception remains divided: Pew found in February 2024 that 57% of Americans said the migrant influx leads to more crime, while PRRI found in October 2024 that 43% agreed immigrants increase local crime and 54% disagreed.</p>
+
+      <span class="section-label">02 &ndash; Why the Legal vs. Undocumented Split Matters</span>
+      <p>This distinction is not a technicality &mdash; it is central to interpreting every dataset in this article. Legal immigrants undergo background checks and admissibility screening that may select against criminality. Undocumented immigrants face deportation risk as an additional deterrent but lack systematic national tracking in most crime databases. Political rhetoric often blurs the two, citing total &ldquo;criminal alien&rdquo; removals that include both statuses, or raw counts that do not disaggregate precisely.</p>
+      <p>Data availability favors the split: ACS/Census residual methods can identify legal vs. undocumented populations; Texas DPS uses DHS Secure Communities/IDENT matching for arrests. Outside Texas, almost no jurisdiction systematically records status at arrest or conviction.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 1 takeaway:</strong> The immigrant-crime question drives detention policy, deportation scope, sanctuary-city fights, and billions in enforcement funding. Both sides cite data &mdash; but they are often citing different things (raw counts vs. per-capita rates, anecdotes vs. population-level studies). The rest of this article evaluates both.
+      </div>
+    </section>
+
+    <!-- PART 2: WHAT THE DATA SHOWS -->
+    <section id="part2">
+      <div class="part-header">
+        <span class="part-label">Part 2 of 7</span>
+        <h2 class="part-title">What the Data Actually Shows</h2>
+      </div>
+
+      <span class="section-label">03 &ndash; Incarceration Rates</span>
+      <p>The most recent national estimate comes from Cato Institute analysis of 2023 ACS data (Landgrave &amp; Nowrasteh, Policy Analysis No. 994, April 2025). Using a modified residual method for ages 18&ndash;54:</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Native-born</span><span class="stat-val brick">1,221 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">Undocumented</span><span class="stat-val green">613 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">Legal immigrants</span><span class="stat-val green">319 per 100,000</span></div>
+          <div class="stat-row"><span class="stat-key">Gap</span><span class="stat-val">Undocumented exactly half as likely; legal 74% less likely</span></div>
+      </div>
+      <p>The gap is not new. Butcher &amp; Piehl (NBER Working Paper 13229) tracked men ages 18&ndash;40 across Census decades: native-born institutionalization was 1.35% vs. immigrants 0.42% in 1980, widening to 3.45% vs. 0.68% by 2000 &mdash; sample sizes exceeding 1.8 million native-born and 350,000 immigrants.</p>
+      <p>Abramitzky et al. (NBER/AER 2024) extended the series from 1870 to 2020, finding immigrants have had lower incarceration rates than the U.S.-born for most of the modern period since 1960 &mdash; approximately 60% less likely, even after controlling for age, education, race, and state.</p>
+
+      <div class="chart-wrap">
+        <canvas id="chartIncarc" height="260"></canvas>
+        <span class="chart-source">Source: Cato ACS 2023 (ages 18&ndash;54) &bull; Butcher &amp; Piehl Census data (men 18&ndash;40)</span>
+      </div>
+
+      <span class="section-label">04 &ndash; Texas Arrest Rates: The Best Status-Specific Data</span>
+      <p>Texas is uniquely informative because its DPS criminal history system links arrestees to DHS status data with 96% compliance. Light et al. (PNAS 2020) analyzed all jailable felony arrests 2012&ndash;2018:</p>
+      <div class="stat-block">
+          <div class="stat-row"><span class="stat-key">Violent felony (native)</span><span class="stat-val brick">213.0 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Violent felony (undocumented)</span><span class="stat-val green">96.2 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Property (native)</span><span class="stat-val brick">165.2 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Property (undocumented)</span><span class="stat-val green">38.5 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Drug (native)</span><span class="stat-val brick">337.2 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Drug (undocumented)</span><span class="stat-val green">136.0 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Homicide (native)</span><span class="stat-val brick">4.8 per 100k</span></div>
+          <div class="stat-row"><span class="stat-key">Homicide (undocumented)</span><span class="stat-val green">1.9 per 100k</span></div>
+      </div>
+      <p>Undocumented immigrants had the lowest felony arrest rates across every category shown. Legal immigrants were usually in the middle, with two exceptions: sexual assault (legal: 31.2, native: 18.2) and homicide (legal: 5.0, native: 4.8) &mdash; where legal immigrants were at or above native rates in this dataset.</p>
+      <p>Sensitivity analysis: to make undocumented violent-crime rates reach parity with natives, the actual undocumented population in Texas would have to be less than 45% of the accepted estimate. For property crime, 23%. These thresholds are implausibly low.</p>
+
+      <div class="chart-wrap">
+        <canvas id="chartTexas" height="280"></canvas>
+        <span class="chart-source">Source: Light et al. (PNAS 2020) &bull; Texas DPS/DHS linked felony arrests 2012&ndash;2018</span>
+      </div>
+
+      <span class="section-label">05 &ndash; The Raw Counts vs. Rate Distinction</span>
+      <p>Texas DPS also publishes running raw counts that are the most politically cited numbers in this debate. As of March 2026: 335,000+ people classified as illegal noncitizens charged with 597,000+ offenses, including 1,123 homicide charges and 7,629 sexual assault charges, with 224,000+ convictions since June 2011.</p>
+      <p>These numbers are real. But Texas DPS itself states these figures do not establish that undocumented immigrants commit more crime than other groups. They are counts without population denominators. When researchers apply denominators to the same underlying Texas data, the per-capita rates consistently show lower rates for undocumented immigrants.</p>
+
+      <span class="section-label">06 &ndash; Area-Level Studies</span>
+      <p>The broad U.S. ecological literature finds no positive association and often a negative one between immigration and local crime. The National Academies issue brief (2015) found that higher immigrant concentrations are associated with lower crime. The Dallas Fed review concluded the empirical evidence &ldquo;comes down decidedly&rdquo; on the side of immigrants being less likely to commit crime. The Ousey &amp; Kubrin meta-analysis found the average association was negative but weak, with 62% of effect sizes statistically insignificant.</p>
+      <p>The ecological-fallacy caveat matters: a county with more immigrants and less crime does not automatically prove each immigrant is individually less crime-prone. That is why the strongest analysis uses individual-level data (incarceration and arrest) alongside area-level data, not in place of it.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 2 takeaway:</strong> The best individual-level U.S. evidence &mdash; covering incarceration (ACS/Census, decades of data), arrest rates (Texas, the only status-specific dataset), and ecological studies &mdash; consistently shows immigrants at lower crime rates than native-born Americans. The gap holds for both legal and undocumented immigrants, persists after demographic controls, and has been stable across decades and research teams.
+      </div>
+    </section>
+
+    <!-- PART 3: CONTEXT -->
+    <section id="part3">
+      <div class="part-header">
+        <span class="part-label">Part 3 of 7</span>
+        <h2 class="part-title">The Immigrant Paradox and International Context</h2>
+      </div>
+
+      <span class="section-label">07 &ndash; The Generational Convergence</span>
+      <p>First-generation immigrants show markedly lower crime rates than comparable native-born people, but the advantage shrinks across generations. 2000 Census data: foreign-born Mexican men 0.70% incarcerated vs. U.S.-born Mexican 5.90%; Salvadoran/Guatemalan foreign-born 0.52% vs. U.S.-born 3.01%; Vietnamese foreign-born 0.46% vs. U.S.-born 5.60%.</p>
+      <p>Leading explanations: positive self-selection (migration costs/risks filter for law-abiding traits), deportation deterrence for noncitizens, stronger family/community controls in immigrant communities, and then gradual convergence through acculturation &mdash; the second generation adopts native behavioral patterns including higher-risk ones.</p>
+
+      <span class="section-label">08 &ndash; The Age-Crime Curve Problem</span>
+      <p>Immigrants &mdash; especially undocumented immigrants &mdash; are disproportionately young working-age males, the peak offending demographic. This composition should <em>elevate</em> their aggregate crime rates. Yet they still show lower rates than natives. This makes the lower-crime finding more impressive, not less: the gap persists or widens after age/sex adjustment in every major study.</p>
+
+      <span class="section-label">09 &ndash; European Data: A Different Picture</span>
+      <p>European patterns differ in ways that matter. Germany (BKA 2024): temporary migrants (asylum seekers, undocumented) were 8.8% of criminal suspects vs. ~4.3% of population. Sweden: foreign-background individuals ~2.5x overrepresented among violent-crime suspects. Greece: a 1-percentage-point increase in refugee share increased crime incidents 1.7&ndash;2.5 percentage points.</p>
+      <p>The U.S.&ndash;Europe gap is not one side lying. The contexts genuinely differ: U.S. immigration combines family, labor, and screened refugee migration; Europe&rsquo;s recent debates center on asylum seekers in legal limbo with weak work access and mass proximate inflows. Italy&rsquo;s legalization evidence (Pinotti, AER 2017) is instructive: legalization reduced serious crime from 2.9 to 1.2 per 100 applicants, strongly suggesting that irregular status and blocked work access matter.</p>
+
+      <div class="part-takeaway">
+        <strong>Part 3 takeaway:</strong> First-generation immigrants are consistently less crime-prone, even compared to same-ethnicity native-born groups. The advantage fades by the second and third generation. European evidence shows different patterns under different institutional conditions &mdash; particularly for asylum seekers without work access &mdash; but does not invalidate the U.S. findings, which reflect a different migration system.
+      </div>
+    </section>
+
+    <!-- PART 4: STEELMAN RESTRICTIONIST -->
+    <section id="part4">
+      <div class="part-header">
+        <span class="part-label">Part 4 of 7</span>
+        <h2 class="part-title">Steelman: The Case That Immigration Raises Crime</h2>
+      </div>
+
+      <span class="section-label">10 &ndash; The Strongest Data-Informed Restrictionist Case</span>
+      <p>A serious restrictionist argument is not &ldquo;all immigrants are criminals.&rdquo; It is this:</p>
+
+      <div class="steelman-block">
+        <div class="steelman-row">
+          <span class="steelman-key">Data gaps</span>
+          <span class="steelman-val">Most jurisdictions do not track status nationally. Texas dominates the debate because almost no one else can separate legal from undocumented at scale. This creates genuine uncertainty about generalizing Texas to the whole country.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Offense-specific exceptions</span>
+          <span class="steelman-val">Even in Texas, legal immigrants had higher sexual-assault arrest rates (31.2) than natives (18.2) and roughly equal homicide rates. Subgroup and offense-type patterns matter more than the headline average.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">European evidence</span>
+          <span class="steelman-val">Germany, Sweden, and Greece show that some migrant subgroups &mdash; especially asylum seekers with poor work access &mdash; can raise crime in certain settings. The U.S. is not Europe, but conditions can change.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Absolute vs. per-capita</span>
+          <span class="steelman-val">&ldquo;Immigrants commit less crime per capita&rdquo; is not the same as &ldquo;immigration adds zero crimes.&rdquo; Any large population with a nonzero offending rate produces victims in absolute terms. Texas DPS raw counts &mdash; 1,123 homicide charges, 7,629 sexual assault charges &mdash; represent real people.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">The policy-failure argument</span>
+          <span class="steelman-val">Even a low per-capita rate may be unacceptable to voters if the offender could have been screened out, denied entry, detained, or removed earlier. This is the logic behind the Laken Riley Act: any preventable victimization from a removable person is a policy failure.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Recidivism and reentry</span>
+          <span class="steelman-val">Repeat immigration offending is real. In FY2024, 72.4% of federal immigration cases involved illegal reentry. Deported criminals who return add uncounted offenses. The 18-month reapprehension rate for male Mexican border crossers was 24.2% before sanctions reduced it.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 4 takeaway:</strong> The strongest restrictionist case rests on data gaps that create genuine uncertainty, specific offense-type exceptions, the European precedent, the absolute-victim argument, and the normative claim that any preventable crime from a removable population is a policy failure. These are not frivolous arguments &mdash; but they do not overturn the per-capita findings.
+      </div>
+    </section>
+
+    <!-- PART 5: STEELMAN PRO-IMMIGRATION -->
+    <section id="part5">
+      <div class="part-header">
+        <span class="part-label">Part 5 of 7</span>
+        <h2 class="part-title">Steelman: The Case That Immigrants Commit Less Crime</h2>
+      </div>
+
+      <span class="section-label">11 &ndash; The Strongest Empirical Case</span>
+
+      <div class="steelman-block">
+        <div class="steelman-row">
+          <span class="steelman-key">Weight of evidence</span>
+          <span class="steelman-val">The peer-reviewed literature is remarkably consistent: Butcher &amp; Piehl (1980&ndash;2000 Censuses), Rumbaut (2000 Census subgroups), Light et al. (Texas arrests), Abramitzky et al. (150-year series), and Cato ACS analyses all point in the same direction. Immigrants &mdash; legal and undocumented &mdash; have substantially lower incarceration and arrest rates.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Self-selection</span>
+          <span class="steelman-val">Migration is costly, risky, and effortful. People who successfully migrate may be more future-oriented, more attached to work and family, and less willing to risk everything through crime. Dallas Fed identifies positive selection and stronger family ties as leading explanations.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Deterrence effect</span>
+          <span class="steelman-val">A U.S.-born citizen risks jail; an undocumented immigrant risks jail and deportation with a permanent bar. This creates a uniquely powerful additional deterrent that the Texas research explicitly notes as consistent with findings.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Historical consistency</span>
+          <span class="steelman-val">Every wave of immigration &mdash; Irish, Italian, Chinese, Mexican, Central American &mdash; triggered identical moral panics about crime. The data repeatedly showed the same thing: lower rates. The pattern has now been documented across 150 years of Census data.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Perception gap</span>
+          <span class="steelman-val">57% of Americans (Pew 2024) believed the migrant influx leads to more crime. The per-capita evidence does not support this. Media coverage amplifies rare immigrant-committed crimes (availability heuristic) while native crime &mdash; the vast majority &mdash; is normalized.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 5 takeaway:</strong> The U.S. empirical case for lower immigrant crime rates is strong: consistent across decades, datasets, research teams, and methodologies. Self-selection and deterrence provide plausible mechanisms. The historical pattern of crime panics followed by exonerating data is itself one of the most consistent findings in immigration research.
+      </div>
+    </section>
+
+    <!-- PART 6: KEY VOICES -->
+    <section id="part6">
+      <div class="part-header">
+        <span class="part-label">Part 6 of 7</span>
+        <h2 class="part-title">Who Says What: The Debate&rsquo;s Key Voices</h2>
+      </div>
+
+      <span class="section-label">12 &ndash; Restrictionist Voices</span>
+      <div class="steelman-block">
+        <div class="steelman-row">
+          <span class="steelman-key">Tom Homan</span>
+          <span class="steelman-val"><strong>White House Border Czar; former Acting ICE Director.</strong> 34-year law enforcement career. Cites 650,000 noncitizens with criminal histories on the ICE Non-Detained Docket. <em>Critique:</em> Figure is cumulative over decades, includes non-violent offenses and pending charges; per-capita analyses show lower rates.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Jessica Vaughan</span>
+          <span class="steelman-val"><strong>Director of Policy Studies, Center for Immigration Studies</strong> (CIS; classified as a hate group by SPLC). Frequent congressional witness. Cites ICE detainer data showing 22,000+ criminal aliens released by sanctuary jails since 2021. <em>Critique:</em> Raw detainer counts lack per-capita adjustment; sanctuary-city ecological studies show no crime increase.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Lora Ries</span>
+          <span class="steelman-val"><strong>Director, Heritage Foundation Border Security Center.</strong> JD, nearly 30 years in DHS/immigration work. Argues border insecurity and lax enforcement lead to preventable crime; pairs victim cases with enforcement mechanics. <em>Critique:</em> Strongest on enforcement logic, weaker on the population-level per-capita question.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Texas DPS</span>
+          <span class="steelman-val"><strong>State law enforcement agency.</strong> Publishes running criminal noncitizen data (597,000+ offenses since 2011). Most politically cited dataset by restrictionists. <em>Critical note:</em> Texas DPS itself says these figures do not show undocumented immigrants commit more crime. They are counts, not rates.</span>
+        </div>
+      </div>
+
+      <span class="section-label">13 &ndash; Pro-Immigration Voices</span>
+      <div class="steelman-block">
+        <div class="steelman-row">
+          <span class="steelman-key">Alex Nowrasteh</span>
+          <span class="steelman-val"><strong>Senior VP for Policy, Cato Institute.</strong> BA George Mason, MS LSE. Author of Cato ACS incarceration analyses. Key finding: undocumented incarceration rate exactly half that of natives (613 vs. 1,221 per 100k, 2023). <em>Critique:</em> ACS residual method may undercount some undocumented prisoners; Cato is libertarian/pro-immigration.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Michael T. Light</span>
+          <span class="steelman-val"><strong>Professor of Sociology, University of Wisconsin&ndash;Madison.</strong> PhD Penn State. NIJ-funded researcher. Published the definitive Texas arrest-rate study (PNAS 2020): undocumented violent-felony rate 96.2 vs. native 213.0 per 100k. <em>Critique:</em> Texas-specific, may not generalize nationally.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">Ran Abramitzky</span>
+          <span class="steelman-val"><strong>Professor of Economics, Stanford; NBER.</strong> With Boustan et al., constructed a 150-year immigrant incarceration series (1870&ndash;2020). Finding: immigrants 60% less likely to be incarcerated than U.S.-born men since 1960. <em>Critique:</em> Historical long-run data may not capture very recent post-2021 arrivals.</span>
+        </div>
+        <div class="steelman-row">
+          <span class="steelman-key">LAPD / PERF</span>
+          <span class="steelman-val"><strong>Chief Jim McDonnell (LAPD) and Chuck Wexler (Police Executive Research Forum).</strong> Law enforcement voices arguing immigrant trust is essential for policing and that this population is &ldquo;not generally driving crime trends.&rdquo; <em>Critique:</em> Restrictionists say this prioritizes community relations over cooperation with federal enforcement.</span>
+        </div>
+      </div>
+
+      <div class="part-takeaway">
+        <strong>Part 6 takeaway:</strong> The restrictionist side is driven primarily by the White House, DHS/ICE, congressional Republicans, Heritage, and CIS, relying on victim cases, arrest counts, and enforcement logic. The pro-immigration side is driven by Cato scholars, academic criminologists, and police-policy voices, relying on per-capita research and historical patterns. The two sides are often talking past each other: counts vs. rates, anecdotes vs. population studies.
+      </div>
+    </section>
+
+    <!-- PART 7: CONFIDENCE RATINGS -->
+    <section id="part7">
+      <div class="part-header">
+        <span class="part-label">Part 7 of 7</span>
+        <h2 class="part-title">Data Limitations and Confidence Ratings</h2>
+      </div>
+
+      <span class="section-label">14 &ndash; What the Data Does NOT Answer Well</span>
+      <p>National undocumented offending outside Texas; fine-grained offense categories across states; refugee-specific U.S. crime effects; recidivism after deportation for non-immigration crimes; whether local police behavior changes arrest rates differently by status. A true national linked dataset of arrests, convictions, immigration status, and exposure time by state would matter most. It does not exist.</p>
+
+      <span class="section-label">15 &ndash; Confidence Tier Summary</span>
+      <div class="table-wrap" style="overflow-x:auto; margin:16px 0;">
+        <table class="data-table" style="width:100%; border-collapse:collapse; font-family:var(--font-sans); font-size:0.78rem;">
+          <thead>
+            <tr><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Finding</th><th style="padding:8px; border-bottom:2px solid var(--border);">Confidence</th><th style="text-align:left; padding:8px; border-bottom:2px solid var(--border);">Basis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Foreign-born incarceration lower than native-born</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Consistent across Census/ACS 1980&ndash;2023, multiple research teams, 150-year series</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Undocumented arrest rates lower in Texas</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Light et al. PNAS; full-state data, 96% compliance, robust sensitivity tests</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Immigrant paradox (first-gen lower, convergence later)</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Multiple longitudinal studies; consistent across ethnic groups</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">High-immigration areas do not see higher crime</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">National Academies, Dallas Fed, Ousey &amp; Kubrin meta-analysis</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Perception gap (public believes more crime)</td><td class="td-rate" style="padding:8px; border-bottom:1px solid var(--border);">HIGH</td><td style="padding:8px; border-bottom:1px solid var(--border);">Pew, PRRI, Gallup polling vs. per-capita research</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">Texas results generalize nationally</td><td class="td-warn" style="padding:8px; border-bottom:1px solid var(--border);">MEDIUM</td><td style="padding:8px; border-bottom:1px solid var(--border);">No other state has comparable data; Texas is large but may not capture all variation</td></tr>
+            <tr><td style="padding:8px; border-bottom:1px solid var(--border);">European asylum patterns applicable to U.S.</td><td class="td-alert" style="padding:8px; border-bottom:1px solid var(--border);">LOW</td><td style="padding:8px; border-bottom:1px solid var(--border);">Different migration systems, screening, labor access, and demographics</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="chartTrend" height="260"></canvas>
+        <span class="chart-source">Source: AIC/Census: immigrant share &amp; crime rate 1980&ndash;2022 &bull; Descriptive, not causal</span>
+      </div>
+
+      <div class="cite-this">
+        <span class="cite-this-label">Cite this article</span>
+        <span class="cite-this-text">TruthBased.org. &ldquo;Immigration and Crime: What the Data Actually Shows.&rdquo; Published March 2026. https://www.truthbased.org/immigrant-crime</span>
+      </div>
+
+      <div class="sources-section">
+        <span class="sources-section-label">Sources and Methodology Disclosures</span>
+        <div class="source-item"><strong>Landgrave &amp; Nowrasteh, Cato Policy Analysis No. 994 (April 2025).</strong> Latest national ACS incarceration rates by legal/undocumented status. <a href="https://www.cato.org/policy-analysis/illegal-immigrant-incarceration-rates-2010-2023" class="inline-link" target="_blank" rel="noopener noreferrer">cato.org</a></div>
+        <div class="source-item"><strong>Light et al., PNAS (2020).</strong> Texas arrest rates 2012&ndash;2018 by citizenship/status. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7768760/" class="inline-link" target="_blank" rel="noopener noreferrer">pmc.ncbi.nlm.nih.gov</a></div>
+        <div class="source-item"><strong>Abramitzky et al., NBER/AER (2024).</strong> 150-year immigrant incarceration series 1870&ndash;2020. <a href="https://www.nber.org/system/files/working_papers/w31440/w31440.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">nber.org</a></div>
+        <div class="source-item"><strong>Butcher &amp; Piehl, NBER Working Paper 13229 (2007).</strong> Census/IPUMS incarceration comparisons 1980&ndash;2000. <a href="https://www.chicagofed.org/-/media/publications/working-papers/2005/wp2005-19-pdf.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">chicagofed.org</a></div>
+        <div class="source-item"><strong>Texas DPS Criminal Illegal Noncitizen Data (updated through 2026).</strong> Raw arrest/conviction counts. <a href="https://www.dps.texas.gov/section/crime-records/texas-criminal-illegal-noncitizen-data" class="inline-link" target="_blank" rel="noopener noreferrer">dps.texas.gov</a></div>
+        <div class="source-item"><strong>National Academies, Crime Issue Brief (2015).</strong> Summary of mainstream evidence. <a href="https://nap.nationalacademies.org/resource/21746/issue_brief_crime.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">nap.nationalacademies.org</a></div>
+        <div class="source-item"><strong>Orrenius &amp; Zavodny, Dallas Fed Working Paper 1905 (2019).</strong> Research review synthesizing lower immigrant crime. <a href="https://www.dallasfed.org/~/media/documents/research/papers/2019/wp1905.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">dallasfed.org</a></div>
+        <div class="source-item"><strong>Nowrasteh, Cato (2024).</strong> Texas homicide conviction rates 2013&ndash;2022 by status. <a href="https://www.cato.org/sites/cato.org/files/2024-06/Policy-Analysis-977-new-release-date.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">cato.org</a></div>
+        <div class="source-item"><strong>Marie &amp; Pinotti, JEP (2024).</strong> Cross-national immigration-crime synthesis. <a href="https://www.aeaweb.org/articles?id=10.1257%2Fjep.38.1.181" class="inline-link" target="_blank" rel="noopener noreferrer">aeaweb.org</a></div>
+        <div class="source-item"><strong>Ousey &amp; Kubrin, Annual Review of Criminology (2018).</strong> Meta-analysis of U.S. ecological immigration-crime studies. <a href="https://www.researchgate.net/publication/317952235" class="inline-link" target="_blank" rel="noopener noreferrer">researchgate.net</a></div>
+        <div class="source-item"><strong>Pew Research Center (Feb. 2024) and PRRI (Oct. 2024).</strong> Public perception polling. <a href="https://www.pewresearch.org/politics/2024/02/15/how-americans-view-the-situation-at-the-u-s-mexico-border-its-causes-and-consequences/" class="inline-link" target="_blank" rel="noopener noreferrer">pewresearch.org</a></div>
+        <div class="source-item"><strong>Rumbaut (2007).</strong> Ethnic-origin incarceration comparisons, 2000 Census. <a href="https://www.ilw.com/articles/2007%2C0725-rumbaut.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">ilw.com</a></div>
+        <div class="source-item"><strong>Masterson, IZA (2019).</strong> U.S. refugee ban natural experiment; null crime effect. <a href="https://docs.iza.org/dp12551.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">iza.org</a></div>
+        <div class="source-item"><strong>Pinotti, AER (2017).</strong> Italy legalization reduced crime; status and work access matter. <a href="https://www.aeaweb.org/articles?id=10.1257%2Faer.20150355" class="inline-link" target="_blank" rel="noopener noreferrer">aeaweb.org</a></div>
+        <div class="source-item"><strong>Gehrsitz &amp; Ungerer, Economica (2022).</strong> Germany asylum-shock crime evidence. <a href="https://strathprints.strath.ac.uk/79867/" class="inline-link" target="_blank" rel="noopener noreferrer">strathprints.strath.ac.uk</a></div>
+      </div>
+    </section>
+  </article>
+  </main>
+
+
+    
+            <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/border-crossings" class="ymal-card">
+          <span class="ymal-cat">Political Fact Check</span>
+          <span class="ymal-title">Border Crossings Data &rarr;</span>
+          <span class="ymal-desc">25 years of CBP data, Title 42 effects, and every major claim tested.</span>
+        </a>
+        <a href="/political-violence" class="ymal-card">
+          <span class="ymal-cat">Violence &amp; Extremism</span>
+          <span class="ymal-title">Political Violence in the U.S. &rarr;</span>
+          <span class="ymal-desc">Domestic terrorism and hate crimes across every ideological category.</span>
+        </a>
+        <a href="/policing-crime" class="ymal-card">
+          <span class="ymal-cat">Political Fact Check</span>
+          <span class="ymal-title">Police Funding and Crime &rarr;</span>
+          <span class="ymal-desc">Did &lsquo;defund the police&rsquo; cause the 2020 homicide spike? It&rsquo;s complicated.</span>
+        </a>
+      </div>
+    </div>
+
+<div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+      <details style="margin-top:14px; text-align:left;">
+        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
+              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
+                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
+                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
+            <div style="min-width:0;">
+              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
+              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
+              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
+            </div>
+          </div>
+          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
+        </div>
+      </details>
+    </div>
+
+<footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: ACS/Census, Texas DPS, PNAS Light et al., Cato, NBER Abramitzky, FBI UCR</span>
+    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    // Chart 1: Incarceration Rates by Status (2023 ACS)
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+
+      new Chart(document.getElementById('chartIncarc').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Native-born', 'Undocumented', 'Legal immigrants'],
+          datasets: [{
+            label: 'Incarceration rate per 100,000 (ages 18-54)',
+            data: [1221, 613, 319],
+            backgroundColor: ['rgba(184,58,30,0.6)', 'rgba(212,165,116,0.7)', 'rgba(27,107,62,0.6)'],
+            borderColor: ['rgba(184,58,30,0.9)', 'rgba(180,140,90,0.9)', 'rgba(27,107,62,0.9)'],
+            borderWidth: 1.5,
+            borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false },
+            title: { display: true, text: 'Incarceration Rates by Immigration Status (2023 ACS, Ages 18-54)', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } }
+          },
+          scales: {
+            y: { beginAtZero: true, title: { display: true, text: 'Per 100,000', font: { family: "'Sora'", size: 10 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 2: Texas Felony Arrest Rates
+      new Chart(document.getElementById('chartTexas').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Violent', 'Property', 'Drug'],
+          datasets: [
+            { label: 'Native-born', data: [213.0, 165.2, 337.2], backgroundColor: 'rgba(184,58,30,0.55)', borderColor: 'rgba(184,58,30,0.85)', borderWidth: 1.5, borderRadius: 3 },
+            { label: 'Legal immigrant', data: [185.3, 98.2, 235.6], backgroundColor: 'rgba(212,165,116,0.6)', borderColor: 'rgba(180,140,90,0.85)', borderWidth: 1.5, borderRadius: 3 },
+            { label: 'Undocumented', data: [96.2, 38.5, 136.0], backgroundColor: 'rgba(27,107,62,0.55)', borderColor: 'rgba(27,107,62,0.85)', borderWidth: 1.5, borderRadius: 3 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14, padding: 12 } },
+            title: { display: true, text: 'Texas Felony Arrest Rates per 100,000 by Immigration Status (2012-2018)', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } }
+          },
+          scales: {
+            y: { beginAtZero: true, title: { display: true, text: 'Per 100,000', font: { family: "'Sora'", size: 10 } }, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+
+      // Chart 3: Immigration Share vs Crime Rate (descriptive trend)
+      new Chart(document.getElementById('chartTrend').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['1980', '1990', '2000', '2010', '2022'],
+          datasets: [
+            { label: 'Crime rate (per 100k)', data: [5900, 5800, 4100, 3300, 2335], borderColor: '#b83a1e', backgroundColor: 'rgba(184,58,30,0.08)', fill: true, yAxisID: 'y', tension: 0.3, pointRadius: 5, pointBackgroundColor: '#b83a1e', borderWidth: 2 },
+            { label: 'Immigrant share (%)', data: [6.2, 7.9, 11.1, 12.9, 13.9], borderColor: '#1b6b3e', backgroundColor: 'rgba(27,107,62,0.08)', fill: true, yAxisID: 'y1', tension: 0.3, pointRadius: 5, pointBackgroundColor: '#1b6b3e', borderWidth: 2 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14, padding: 12 } },
+            title: { display: true, text: 'U.S. Crime Rate vs. Immigrant Population Share (1980-2022) — Descriptive, Not Causal', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } }
+          },
+          scales: {
+            y: { type: 'linear', position: 'left', beginAtZero: false, title: { display: true, text: 'Crime rate per 100k', font: { family: "'Sora'", size: 10 }, color: '#b83a1e' }, ticks: { color: '#b83a1e', font: { family: "'Courier Prime', monospace", size: 10 } }, grid: { color: 'rgba(0,0,0,0.06)' } },
+            y1: { type: 'linear', position: 'right', beginAtZero: true, max: 20, title: { display: true, text: 'Immigrant share (%)', font: { family: "'Sora'", size: 10 }, color: '#1b6b3e' }, ticks: { color: '#1b6b3e', font: { family: "'Courier Prime', monospace", size: 10 } }, grid: { drawOnChartArea: false } },
+            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+          }
+        }
+      });
+    });
+  </script>
+
+  <script>
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+    (function(){
+      var tog = document.querySelector('.jump-toggle');
+      if(!tog) return;
+      var links = document.querySelector('.jump-links');
+      tog.addEventListener('click', function(){
+        var open = links.classList.toggle('is-open');
+        tog.setAttribute('aria-expanded', String(open));
+        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+        tog.querySelector('svg').innerHTML = open
+          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      });
+      links.querySelectorAll('.jump-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(window.innerWidth <= 640){
+            links.classList.remove('is-open');
+            tog.setAttribute('aria-expanded','false');
+            tog.querySelector('.jtog-label').textContent = 'Sections';
+            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+          }
+        });
+      });
+    })();
+  </script>
+  <!-- QR expand modal -->
+  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
+    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
+    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
+    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
+  </div>
+  <script>
+  var _qrOpener = null;
+  function expandQR(el){
+    _qrOpener = el;
+    var ov=document.getElementById('qrOverlay');
+    var img=document.getElementById('qrExpanded');
+    img.src=el.src; img.alt=el.alt;
+    ov.classList.add('is-open');
+    var closeBtn=document.getElementById('qrClose');
+    if(closeBtn) { setTimeout(function(){ closeBtn.focus(); },50); }
+  }
+  function closeQR(){
+    var ov=document.getElementById('qrOverlay');
+    ov.classList.remove('is-open');
+    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
+  });
+  document.querySelectorAll('.qr-thumb').forEach(function(q){
+    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
+      var hint=document.createElement('span');
+      hint.className='qr-tap-hint';
+      hint.textContent='Tap QR to enlarge';
+      q.parentNode.insertBefore(hint,q.nextSibling);
+    }
+  });
+  </script>
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>
