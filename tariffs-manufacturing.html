@@ -1040,6 +1040,7 @@
       if (typeof Chart === 'undefined') return;
 
       // Chart 1: Steel Tariffs - Upstream vs Downstream Jobs
+      // Note: green bars (3,500 / 4,800) are barely visible because downstream losses are 40-50× larger. This is intentional — the scale difference IS the finding.
       new Chart(document.getElementById('chartSteelJobs').getContext('2d'), {
         type: 'bar',
         data: {
@@ -1053,8 +1054,9 @@
           responsive: true, maintainAspectRatio: false,
           plugins: {
             legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14, padding: 12 } },
-            title: { display: true, text: 'Steel Tariff Episodes: Protected Jobs Gained vs. Downstream Jobs Lost', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 12 } },
-            tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw.toLocaleString(); } } }
+            title: { display: true, text: 'Steel Tariff Episodes: Protected Jobs Gained vs. Downstream Jobs Lost', font: { family: "'Sora', sans-serif", size: 11, weight: '600' }, color: '#5a544c', padding: { bottom: 2 } },
+            subtitle: { display: true, text: 'Green bars (3,500 / 4,800 jobs) barely visible — downstream losses are 40–50× larger', font: { family: "'Sora', sans-serif", size: 9, style: 'italic' }, color: '#8a857d', padding: { bottom: 12 } },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw.toLocaleString() + ' jobs'; } } }
           },
           scales: {
             y: { beginAtZero: true, ticks: { callback: function(v) { return (v/1000) + 'k'; }, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
