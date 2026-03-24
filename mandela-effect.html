@@ -858,7 +858,6 @@
       <p><strong>Personal identity is built on a reconstructive system.</strong> If your clearest, most certain memories can be wrong &mdash; neurologically indistinguishable from false ones &mdash; then the self-narrative you built from those memories is partly fictional. Not because you are dishonest, but because memory was never designed to be a perfect archive. It was designed to preserve meaning and enable prediction.</p>
 
 
-
       <div class="falsify-box">
         <span class="falsify-label">Falsifiability threshold &mdash; what would change this conclusion</span>
         <p>This article concludes that false memory fully explains the Mandela Effect. This would change if:</p>
@@ -896,7 +895,6 @@
     </section>
   </article>
   </main>
-
 
 
     
@@ -1000,78 +998,6 @@
     <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: Loftus &amp; Palmer 1974, Roediger &amp; McDermott 1995 (DRM), Brainerd &amp; Reyna (Fuzzy Trace Theory), Valle et al. 2025 (Cognitive Science), YouGov 2022 Survey, Nelson Mandela Foundation, Snopes, Innocence Project</span>
     <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
   </footer>
-
-
-  <script>
-    
-    // Chart 1: Firearm Homicide Rate 2010–2023
-    const ctx1 = document.getElementById('chart1').getContext('2d');
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'],
-        datasets: [{
-          label: 'Firearm Homicide Rate per 100k',
-          data: [3.6, 3.7, 3.7, 3.6, 3.4, 3.6, 4.0, 4.1, 4.3, 4.6, 6.2, 6.7, 6.2, 5.6],
-          fill: true,
-          backgroundColor: 'rgba(184,58,30,0.08)',
-          borderColor: 'rgba(184,58,30,0.7)',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: function(ctx) {
-            return ctx.dataIndex >= 10 ? 'rgba(184,58,30,0.9)' : 'rgba(184,58,30,0.4)';
-          },
-          pointRadius: function(ctx) { return ctx.dataIndex >= 10 ? 5 : 3; },
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'U.S. Firearm Homicide Rate per 100,000 (CDC Mortality Data, 2010–2023)', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
-          annotation: {}
-        },
-        scales: {
-          y: { beginAtZero: false, min: 2.5, max: 8, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-        }
-      }
-    });
-
-    // Chart 2: NICS Background Check Applications
-    const ctx2 = document.getElementById('chart2').getContext('2d');
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['2017','2018','2019','2020','2021','2022','2023','2024'],
-        datasets: [{
-          label: 'NICS Applications (millions)',
-          data: [25.2, 26.2, 28.4, 39.7, 38.9, 36.9, 32.5, 28.0],
-          backgroundColor: function(ctx) {
-            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.5)' : 'rgba(27,107,62,0.3)';
-          },
-          borderColor: function(ctx) {
-            return (ctx.dataIndex === 3 || ctx.dataIndex === 4) ? 'rgba(184,58,30,0.8)' : 'rgba(27,107,62,0.8)';
-          },
-          borderWidth: 1.5,
-          borderRadius: 3
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'NICS Firearm Background Check Applications (Millions), 2017–2024', font: { family: "'Sora', sans-serif", size: 11 }, color: '#5a544c', padding: { bottom: 12 } },
-          tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + 'M applications' } }
-        },
-        scales: {
-          y: { beginAtZero: false, min: 20, ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-          x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-        }
-      }
-    });
-  </script>
 
 
   <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>

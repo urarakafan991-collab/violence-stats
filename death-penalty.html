@@ -770,10 +770,10 @@
       <div class="chart-wrap">
         <div class="chart-title">Claimed Lives Saved Per Execution &mdash; Major Studies</div>
         <div class="chart-canvas-wrap">
-          <canvas id="chartDeterrence" role="img" aria-label="Bar chart showing claimed deterrent effects across major studies. Ehrlich: 7.5, DRS: 18, Shepherd (6 states): positive, Shepherd (13 states): negative, Donohue/Wolfers reanalysis range: highly unstable, NRC verdict: uninformative."></canvas>
+          <canvas id="chartDeterrence" role="img" aria-label="Bar chart showing claimed deterrent effects: Ehrlich 1975 claims 7.5 lives saved per execution, DRS 2003 claims 18, Donohue and Wolfers reanalysis low end shows negative 86 (lives lost). The full D&W range extends to +429, omitted for readability."></canvas>
         </div>
       </div>
-      <p class="source-note">Sources: Ehrlich (AER 1975), Dezhbakhsh/Rubin/Shepherd (ALER 2003), Donohue &amp; Wolfers (Stanford Law Review 2005), National Research Council (2012). The Donohue/Wolfers bars show the range of estimates obtained from minor specification changes to the DRS model.</p>
+      <p class="source-note">Sources: Ehrlich (AER 1975), Dezhbakhsh/Rubin/Shepherd (ALER 2003), Donohue &amp; Wolfers (Stanford Law Review 2005), National Research Council (2012). Chart shows the low end of the D&amp;W reanalysis (&minus;86 lives); the high end (+429 lives saved) is omitted because it makes all other bars invisible &mdash; that instability is itself the point. NRC (2012) produced no numeric estimate, concluding the field is &ldquo;not informative.&rdquo;</p>
 
       <span class="section-label">05 &ndash; Certainty vs. Severity</span>
 
@@ -1171,26 +1171,25 @@
       if (typeof Chart === 'undefined') return;
 
       // Chart 1: Deterrence Study Claims
+      // Note: D&W High Respecification (+429) omitted from chart because it crushes
+      // all other bars into invisibility. Full range (-86 to +429) explained in source note.
+      // NRC (2012) omitted because they produced no estimate — "not informative."
       new Chart(document.getElementById('chartDeterrence').getContext('2d'), {
         type: 'bar',
         data: {
-          labels: ['Ehrlich (1975)', 'DRS (2003)', 'D&W Low Respec.', 'D&W High Respec.', 'NRC (2012)'],
+          labels: ['Ehrlich (1975)', 'DRS (2003)', 'D&W Reanalysis (low end)'],
           datasets: [{
             label: 'Claimed lives saved per execution',
-            data: [7.5, 18, -86, 429, 0],
+            data: [7.5, 18, -86],
             backgroundColor: [
               'rgba(27,107,62,0.55)',
               'rgba(27,107,62,0.55)',
-              'rgba(184,58,30,0.55)',
-              'rgba(27,107,62,0.35)',
-              'rgba(122,79,0,0.55)'
+              'rgba(184,58,30,0.55)'
             ],
             borderColor: [
               'rgba(27,107,62,0.85)',
               'rgba(27,107,62,0.85)',
-              'rgba(184,58,30,0.85)',
-              'rgba(27,107,62,0.65)',
-              'rgba(122,79,0,0.85)'
+              'rgba(184,58,30,0.85)'
             ],
             borderWidth: 1.5,
             borderRadius: 3
@@ -1202,10 +1201,7 @@
           plugins: {
             legend: { display: false },
             title: { display: true, text: 'Claimed Deterrent Effect (Lives Saved Per Execution) — Major Studies', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } },
-            tooltip: { callbacks: { label: function(ctx) {
-              if (ctx.label === 'NRC (2012)') return '"Not informative" — no estimate possible';
-              return ctx.parsed.x + ' lives (claimed)';
-            }}}
+            tooltip: { callbacks: { label: function(ctx) { return ctx.parsed.x + ' lives (claimed)'; } } }
           },
           scales: {
             x: { ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
