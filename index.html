@@ -722,29 +722,8 @@
 
     /* QR expand */
     .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-    .qr-overlay {
-      display:none; position:fixed; inset:0; z-index:9999;
-      background:rgba(0,0,0,0.7); align-items:center; justify-content:center;
-      -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
-      cursor:pointer; padding:24px;
-    }
-    .qr-overlay.is-open { display:flex; }
-    .qr-overlay img {
-      max-width:min(320px,85vw); max-height:85vh; border-radius:8px;
-      background:#fff; padding:12px; image-rendering:pixelated;
-      box-shadow:0 8px 32px rgba(0,0,0,0.3);
-    }
-    .qr-overlay-label {
-      position:absolute; bottom:max(24px,env(safe-area-inset-bottom,24px)); left:50%; transform:translateX(-50%);
-      font-family:var(--font-sans,'Sora',sans-serif); font-size:0.72rem;
-      color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.5);
-      padding:6px 14px; border-radius:20px; pointer-events:none;
-    }
-    .qr-tap-hint {
-      display:block; font-family:var(--font-sans,'Sora',sans-serif);
-      font-size:0.48rem; color:var(--text-dim,#706d64);
-      text-align:center; margin-top:4px; opacity:0.7;
-    }
+
+
   </style>
 
   <script>
@@ -839,17 +818,17 @@
 
     <section class="featured-cards" style="max-width:940px; margin:0 auto 36px; padding:0 24px;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
-        <a href="/trans-shooters" class="feat-card">
+        <a href="/are-trans-people-more-likely-to-be-mass-shooters" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Trans People &amp; Mass Shootings</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Three databases. Every definition. Full sensitivity analysis.</span>
         </a>
-        <a href="/vaccine-safety" class="feat-card">
+        <a href="/are-vaccines-safe-and-effective" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Vaccine Safety &amp; Efficacy</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">23M+ children studied. 138 studies. VAERS explained. Both sides.</span>
         </a>
-        <a href="/border-crossings" class="feat-card">
+        <a href="/is-there-really-a-border-crisis" class="feat-card">
           <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
           <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Border Crossings: The Real Data</span>
           <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">25 years of CBP data. Title 42 explained. Every claim tested.</span>
@@ -932,7 +911,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a class="article-row" href="/trans-shooters">
+              <a class="article-row" href="/are-trans-people-more-likely-to-be-mass-shooters">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Are Trans People Overrepresented as Mass Shooters?</span>
@@ -954,7 +933,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a class="article-row" href="/voter-fraud">
+              <a class="article-row" href="/is-voter-fraud-a-real-problem">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Voter Fraud — The Documented Record</span>
@@ -975,7 +954,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/border-crossings" class="article-row" style="text-decoration:none;color:inherit;">
+              <a href="/is-there-really-a-border-crisis" class="article-row" style="text-decoration:none;color:inherit;">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Border Crossings — What The Charts Actually Show</span>
@@ -991,7 +970,7 @@
                 </div>
               </a>
 
-              <a href="/policing-crime" class="article-row">
+              <a href="/does-more-policing-reduce-crime" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Policing, Race &amp; Crime: What the Data Shows</span>
@@ -1006,7 +985,7 @@
                 </div>
                 <span class="row-arrow">&#8594;</span>
               </a>
-              <a href="/political-violence" class="article-row">
+              <a href="/which-side-commits-more-political-violence" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Political, Ideological &amp; Hate-Motivated Violence in the United States</span>
@@ -1022,7 +1001,7 @@
                 </div>
               </a>
 
-              <a href="/immigrant-crime" class="article-row">
+              <a href="/do-immigrants-commit-more-crime" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Immigration and Crime: What the Data Actually Shows</span>
@@ -1038,7 +1017,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/lgbtq-crime" class="article-row">
+              <a href="/are-lgbtq-people-more-likely-to-face-violence" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Sexual Orientation, Gender Identity &amp; Crime</span>
@@ -1055,7 +1034,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/death-penalty" class="article-row">
+              <a href="/does-the-death-penalty-deter-crime" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The Death Penalty: Deterrence, Cost &amp; Racial Disparities</span>
@@ -1072,7 +1051,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/shootings-by-demographic" class="article-row">
+              <a href="/who-commits-mass-shootings-in-america" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Mass Shootings by Demographic</span>
@@ -1086,7 +1065,7 @@
                 </div>
               </a>
 
-              <a href="/national-debt" class="article-row">
+              <a href="/how-bad-is-the-national-debt" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The National Debt &mdash; What Both Parties Actually Did</span>
@@ -1101,7 +1080,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/job-creation" class="article-row">
+              <a href="/which-presidents-created-the-most-jobs" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Job Creation Claims &mdash; Presidents vs. The Data</span>
@@ -1188,7 +1167,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a href="/the-dress" class="article-row">
+              <a href="/was-the-dress-blue-and-black-or-white-and-gold" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The Dress &mdash; White &amp; Gold or Blue &amp; Black?</span>
@@ -1203,7 +1182,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/mandela-effect" class="article-row">
+              <a href="/is-the-mandela-effect-real" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The Mandela Effect &mdash; Mass False Memory or Something Else?</span>
@@ -1218,7 +1197,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/mpemba-effect" class="article-row">
+              <a href="/does-hot-water-freeze-faster-than-cold" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The Mpemba Effect &mdash; Does Hot Water Freeze Faster Than Cold?</span>
@@ -1252,7 +1231,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a href="/climate-change" class="article-row">
+              <a href="/is-climate-change-real-and-human-caused" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Climate Change: The Science and the Data</span>
@@ -1304,7 +1283,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a href="/gender-wage-gap" class="article-row">
+              <a href="/is-the-gender-wage-gap-real" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The Gender Wage Gap — What the Data Actually Shows</span>
@@ -1318,7 +1297,7 @@
                 </div>
                 <span class="row-arrow">&#8594;</span>
               </a>
-              <a href="/inflation" class="article-row">
+              <a href="/what-actually-causes-inflation" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Inflation (2021–2026): Causes, Drivers, and Context</span>
@@ -1332,7 +1311,7 @@
                 </div>
                 <span class="row-arrow">&#8594;</span>
               </a>
-              <a href="/us-spending" class="article-row">
+              <a href="/where-does-us-federal-spending-go" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Federal Spending: Where the Money Goes</span>
@@ -1347,7 +1326,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/college-worth-it" class="article-row">
+              <a href="/is-college-still-worth-it" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Is College Still Worth the Cost?</span>
@@ -1363,7 +1342,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/tariffs-manufacturing" class="article-row">
+              <a href="/do-tariffs-bring-back-manufacturing-jobs" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Do Tariffs Help U.S. Manufacturing?</span>
@@ -1379,7 +1358,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/minimum-wage" class="article-row">
+              <a href="/does-raising-the-minimum-wage-kill-jobs" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Does Raising the Minimum Wage Kill Jobs?</span>
@@ -1423,7 +1402,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a href="/youth-gender-medicine" class="article-row">
+              <a href="/is-youth-gender-medicine-safe" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</span>
@@ -1441,7 +1420,7 @@
               </a>
 
               
-              <a class="article-row" href="/vaccine-safety">
+              <a class="article-row" href="/are-vaccines-safe-and-effective">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Vaccine Safety &amp; Efficacy: What the Data Actually Shows</span>
@@ -1463,7 +1442,7 @@
                 <span class="row-arrow">&#8594;</span>
               </a>
 
-              <a href="/ultra-processed-food" class="article-row">
+              <a href="/is-ultra-processed-food-bad-for-you" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Ultra-Processed Food: What the Research Actually Shows</span>
@@ -1485,7 +1464,7 @@
                 </div>
               </div>
 
-              <a href="/social-media-mental-health" class="article-row">
+              <a href="/does-social-media-harm-teenagers-mental-health" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Social Media &amp; Youth Mental Health</span>
@@ -1521,7 +1500,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a href="/religiosity-social-outcomes" class="article-row">
+              <a href="/are-religious-countries-better-off" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Does Religiosity Correlate With Better Social Outcomes?</span>
@@ -1535,7 +1514,7 @@
                 </div>
               </a>
 
-              <a href="/religion-violence" class="article-row">
+              <a href="/does-religion-cause-violence" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
@@ -1570,7 +1549,7 @@
           <div class="acc-content">
             <div class="article-list">
 
-              <a href="/gun-violence" class="article-row" style="text-decoration:none;color:inherit;">
+              <a href="/does-gun-control-reduce-violence" class="article-row" style="text-decoration:none;color:inherit;">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
@@ -1586,7 +1565,7 @@
                 </div>
               </a>
 
-              <a href="/most-educated-countries" class="article-row">
+              <a href="/which-countries-are-the-most-educated" class="article-row">
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Most Educated Countries in the World — The Full Ranking</span>
@@ -1659,79 +1638,14 @@
       <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
       <a href="https://patreon.com/TruthBased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#222; color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9733; Patreon</a>
       <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
-      <details style="margin-top:14px; text-align:left;">
-        <summary style="font-family:var(--font-sans); font-size:0.68rem; font-weight:600; color:var(--text-dim); cursor:pointer;">Donate with Crypto</summary>
-        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-family:var(--font-sans); font-size:0.52rem; color:var(--text-dim); margin:0 0 2px; line-height:1.4;">We use <strong>Binance</strong> &mdash; Binance-to-Binance transfers are <strong>fee-free and instant</strong>. Scan the QR code or copy the address.</p>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABkElEQVR4nO2ZwY4CMQxDnxH//8veg9POcOKWibaABFHxwWOliRNkvrxe3wA/xD9GvEGJDMqnka/TKUzb9MAQVSzLAlnep1OY9umx8gKzdLhOxzDtRxgjJD3M40nE+xYLYxnQretMYdqox3p6YyzqzriTxxQE/hDj9l4/T2Hag7jdDNVlSdjMYwoCr1xwousjZ4flxwusiCKQLctWNPF5/iNSOE9vG5IfVVhOzA9UJh0hm0qOxLOYtiBiTePXEWXdwRIexbQB8YatBcSxrxHPQqfNczXJGrm+03Xl1XSnMO27L3c3WqVDVsQZxbQBUW0lfcWX/9im/bD+knnfmfXTXWoflGszh2lf/fgsIaSgWuXepzDtnPe3BIASrjwZw7TXn1b5qBpyFdfT6sd9vvVqsnuvfJ7/uO3XazGmeLO9J5vCtNGfAqhMe7JiLUBOzI+9SV8L1DXDqJHHSISRqP3HXhqOZNqCqCuSOH9NHVk/1nJwdRQUE5KZdwrTPj2qwUSN7UvXVnkK03b/8SiPH2Im4g/z9+m7nwSyUwAAAABJRU5ErkJggg==" alt="QR code for Ethereum / BSC / OPBNB (All EVM Chains)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Ethereum / BSC / OPBNB (All EVM Chains)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">0xb39106930b8c29536a6505274f4cc8b4c3b06569</code>
-              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send ETH, BNB, USDT, USDC, or any ERC-20/BEP-20 token. Same address works on Ethereum, BSC, and OPBNB.</span>
-            </div>
-          </div>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABk0lEQVR4nO2YS47DMAxDH4vc/8qcheRPBhh0FVUYtwVS2+WCEWSKksybz+sd4Iv4x4gLFCsDyAgcP3HahWlZPDISyLKFZXmdtmFaFw+Ubw+RGwjP0y5M6xECjIX/QtTwaILIKIh7QBoyfRBxwboskRpG9jrtwrQGgWcwfn3H312YluXHdjlCS0ErIG2YliHCaYSYgm2MJOLRiWkB4hruyzdDxrRpbZjW6UeIp0NL84zY+TT9kOczEiJWFkZGp/n1FyAhJGetGUU3m5hOTJ9HRGYYeSiHmJKi8/x6+DHhUV8yJDq03ualiLeffZ1CPw7s54aSOhe+Nbvn6Wl6j7gwljcJybB0YVqKyLSw7HTrEaXj5kEviNSwh++I+ViOynoxfR6x6ouj8oa6Cg2D1oVppT/dlikgHkWmDdPy+YejX5nLODysf9nm6zljn+IaOdKGaaF+DMvheV22oUgXpvWIm/GY7X9Hps8hrn0jyOYOjUrThmkhwqvRd/iOrDE+zo9dzMmgWBkyNsflx+Y/Psrji+iJ+AFAHsjdEimijAAAAABJRU5ErkJggg==" alt="QR code for Bitcoin (BTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Bitcoin (BTC)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">1NB5zA3352iHkAQbsQgSZNPXNidW1pW54i</code>
-            </div>
-          </div>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAAB9ElEQVR4nO2a24oDMQxDj5b+/y9rH2znsqXQp4lh49ILM4IKo9iKMzJfxM83oIu6qPdwCcxgbAPGeSUhXdk/j3qReREGZCxAcTXvtGV/Jl+VHQBZBoOQx52u7A/lK0KZJwRgLZ2gK/uj+SKWYqTJW8K6sj+Ur7kY41NYngWsL/uz/fH9VZCu7I/oa3esFoqVORPWlv0RVPgHVZM0tjBCknT9xBtKyLJBShvhaJHG0Sw7s38Wlf0xavziXNO0ypL7sj/m70NJ0RhF2QojjNyW/ZH+WK1wfBtjrxe6sj+3HomFF28rKr6rlnVlf8Z/eerK6ce8CM5XXxsqS31KKecUIu2+j/FqiVokxRSaaxSWv7qyfx4l1wfhKiDGFAaGx+jK/pC/N4o5TmTHQnmJcGKN2T+MUviuEFi4+ryR3v76r78oG0ui6ldNDDOuv9/CUdldBrUGPJuh6Mr+jL6A9BExm0idObeRV19LZH9UubCqYYKxAe/L/kx/lOUs+Roag2qZp3i1RC2HGjkwnL3Scbx2++MSr9EMh48YqzJHh7d+/UHZufexVJOwHOjAnUdvsZxvL08E5E/gznM+ooycu8bQWLjXux4/opxCE0yPf/fba2zn24zDobEUdedfW7wYSsppTpUxjWebrp+YsT6F88w/XtR/Qv0Cm60h84J5kEoAAAAASUVORK5CYII=" alt="QR code for Solana (SOL &amp; SPL Tokens)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Solana (SOL &amp; SPL Tokens)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">EWF1hbTyRbXZw2ZNr1qo8YUYUT6z5vwZrSLC8umncL5K</code>
-            </div>
-          </div>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABlklEQVR4nO2ZwY7DQAhDn6v8/y97D8Ak3T30FIJ2mqhVRXxwEWMMkflwvT4Bvoh/jMBVII7bEVtRT2Hagzgg/ruwjIWFfEbHMO3LBwKDAFmqRxEdw7QxH3FlUbgS0cpjJEIgFBl5kseDiAOqGmTLl+pwJ48piD/9Zd31eArTHoQuSqESj2twDNM2hKKziPh25ijFZBLTHoRByKh0w1Kkx+rkMQKBQ0AMtsOfnnLq7fTjRTbXbLKCM0fGo5h2IWwkkyfGhHikZR3F9HZE1oLjwKzS4IxNYdqrH7BsR0644d13y0ecF0I/ZK2ZnxLWUUxvRxyk/xIGWavtIthVTxWaCmSxKMaZZh4DEOnDaohTuFNlrVgew7TPn1qxGZNknWNM6sggpg0I5QS3bEcMc2HLELvVx8HpwVxSWvvDDfXjff+B61dZkd38x3W/jpGzy67PGKZ99VGVcLGl+Ww/v/6GcDmQ5daf4TEDIfKtVAz+zp3ZQKY3Ii77dUvZZ4A0Y208piB+9ZeQk5IR79df3lbpD/L4ImYifgAS3eaTfD3yjAAAAABJRU5ErkJggg==" alt="QR code for XRP (XRP Ledger)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">XRP (XRP Ledger)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV</code>
-              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
-                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">488087572</code></span>
-                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
-              </div>
-            </div>
-          </div>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACa0lEQVR4nO2aQW7jMAxFH8cGupRv0KPIV5ub2UfpDezlADL+LCQrSoO2UyANIgy5MBL7LQgQn6RImfiOrb++hYPzzjvvvPPOO/8Rb8VGWKfyFzgM9vPb/EB/nL8zHyVJGxDfRrQAZvYimxkkSbrmf9of5+/M70WhZtNhNoeEtB0GQBb2Y/1x/if5+DbC+qrbw1Mf/jt/2nj7akhGSKMRjtuvz+a/85/bGcEgYAcIG8Ag2F8EO7Qqfjb/nf8nfjUzs4mSmtlHbAZs5rCznX6gP87fic/6bRS6viaUlcxhulbv8/nv/BeWDz9xA2CQlvNdsfpBkrQ8m//Of2HN4TYqQS69kA/BOfBxG5SPyB7fzvii1SWkGtAa3yBJSkCQ67dPvubiRH4sIQF5vgEQJAgJ12+XfFNrgZKGidtQNF1i7vrtlG/6q5KLm3dDiTlBXn+75tfXRBloZCujZy3512G5Oj+r/85/ZCU151x8NlRVzk0Rdv32yDe5uPTPNciEUnovnMe3N/6MbxZxfVDDvVFj7vHtj7+ZX+WGmcvB+Hx4fLvmBxH1x2xmkM0hYTNwbhoO3y/0ydf9YEKrDTIAsY9onTYMDiMuyOLyCH+cvy/f7o+iAPYJXfb7cQGDY9Rj/HH+vny7X7jU33pIKkMOr7+d87lD3sBmAPaxmUQDh9+P7ZNv++fLQDKqLBQKVKcfrt/e+bgdpt/5Quxh57qhCvvp/Xf+ym5uSK7TkIjbBOu0idWg9FwP8cf5+/LN/ErKQ8qSn9slkufnXvn3/XPzpQa5MY9vZ/z7+5NXtyWH67uTj/DHeeedd9555/8H/i//twVv6IokeAAAAABJRU5ErkJggg==" alt="QR code for Litecoin (LTC)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Litecoin (LTC)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">LS6yUqARHBE1tk2mcpjNbw2xNamyWQQD1h</code>
-            </div>
-          </div>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABfElEQVR4nO2ZwW7DMAxDHwv//y9zB0l2tktvqjDXRREl4YEgZItSZN6s1zvAF/GPEbgSxICxI9hPPYVpD2IRSiAwMiKDejqFaZ8eoQUgZBDC5+kUpu0Iq4ITfoLHRxHrhDKynGEzjymIBblZsGwsrBDEnTymIJ715fevXk9h2oN47oysMcBOjjYeUxCLKrLsrMgNIws8hmlbfggs9jW12YkzhWmjHibFoO68ndkYps0IWw41pMwO+1Z/atKT1sapNGnjMQVxzs3t0l0v4mYK006EQYrOJZYyZa47P3Sa23Omnhp8qR5RS0oLstzqTj1E/Z+2dDvXKUx7+9syH8JxvspX+o/d7xvk8KdKRxaSTGHa6tdrTJhToZoH3ec/Vp4ZzmlhCFGmvY/HFMSCnQs6WZITIV13frwA246vDZUrO7q0fykTJkDGqh7myvyo5Swsqg9TF9aXB8LV2Dn7GenSfv+40qgxrl73vnr7d76OXeN12/jq+foHeXwRMxE/ZNnJ21kcyHMAAAAASUVORK5CYII=" alt="QR code for Stellar (XLM)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">Stellar (XLM)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">GABFQIK63R2NETJM7T673EAMZN4RJLLGP3OFUEJU5SZVTGWUKULZJNL6</code>
-              <div style="margin-top:6px; padding:6px 8px; background:rgba(184,58,30,0.06); border:1px solid rgba(184,58,30,0.2); border-radius:3px;">
-                <span style="font-family:var(--font-sans); font-size:0.52rem; font-weight:700; color:var(--brick);">&#9888; Memo (required): <code style="font-family:var(--font-mono); user-select:all;">392701693</code></span>
-                <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--brick); margin-top:2px;">Both address AND memo are required or funds will be lost.</span>
-              </div>
-            </div>
-          </div>
-          <div style="padding:10px 12px; background:var(--bg); border:1px solid var(--border); border-radius:4px; display:flex; align-items:flex-start; gap:10px;">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABg0lEQVR4nO2ZwW7DMAxDH4v8/y9zB8mONxToTRGmpg3aOjwQBk1RqsyH6/UJ8EX8Y8QFim8WRoBBeK22YVq2HxhAxB4YGR+rXZjW7QcCp0DiUogEl/FoiBBISAa/R9Tw6IKwl0wkv0XU8HgUccGWgzCyUJipK3l0QeAlBf95rcddmNYgjpOxa23UmFoejRAKG5VxBpBMIkLj6q2ODHYnkHxoNC2PvcB4bQepkSg1cWwaMS1AXMCOXmEnUV6skfVFIYIssDrea60L07rzIq0Su3oWLLAH5vXIY8KKOBa2kRuCGjGtQ6R5AiGW9NXUTCemRYiMH9HWWpDpY2C//4IQiLXj2B1K5vlHuKZjABS9zNHv2zP7l8waMSa0cjKkmfpYTrraWt/mOru/tRzOsfPYPH0c8/W9EwJiqjyzf9nz9fiQ9wh1pD72fJ08Prrvcfo4ENI5R/bKZg2ZFiF2N3dbyiM8HkdEzfWy0j1uH+inv+fr2cXl/5XxuwvT8vzxKI8voifiB0nuzsWjTwhwAAAAAElFTkSuQmCC" alt="QR code for USDT (Tron / TRC-20)" width="120" height="120" class="qr-thumb" onclick="expandQR(this)" style="border-radius:4px; flex-shrink:0; image-rendering:pixelated; background:#fff; padding:4px; cursor:pointer; transition:transform 0.15s ease;">
-            <div style="min-width:0;">
-              <span style="font-family:var(--font-sans); font-size:0.6rem; font-weight:600; color:var(--text-quiet); display:block; margin-bottom:3px;">USDT (Tron / TRC-20)</span>
-              <code style="font-family:var(--font-mono); font-size:0.52rem; color:var(--text-body); word-break:break-all; user-select:all; line-height:1.4;">TLkvs7NtMEKGoQ8s8KkShurZEe2Y6NXZQH</code>
-              <span style="display:block; font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin-top:3px;">Send USDT only on the Tron network.</span>
-            </div>
-          </div>
-          <p style="font-family:var(--font-sans); font-size:0.48rem; color:var(--text-quiet); margin:4px 0 0; line-height:1.4; font-style:italic;">&#9888; Always verify the network before sending. Wrong network = possible permanent loss. Send a small test amount first.</p>
-        </div>
-      </details>
+      <p style="font-family:var(--font-sans); font-size:0.68rem; color:var(--text-dim); margin:14px 0 0;">Prefer crypto? <a href="/support" style="color:var(--brick); text-decoration:none; font-weight:600;">See wallet addresses &rarr;</a></p>
     </div>
   </section>
 
 
   <footer class="page-footer">
     <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
-    <a href="/shootings-by-demographic" class="footer-note footer-link" style="text-decoration:none;transition:color 0.15s;">Supplementary Data &rarr;</a>
+    <a href="/who-commits-mass-shootings-in-america" class="footer-note footer-link" style="text-decoration:none;transition:color 0.15s;">Supplementary Data &rarr;</a>
     <a href="/methodology" class="footer-note" style="text-decoration:none;transition:color 0.15s;">Our Methodology &rarr;</a>
     <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
   </footer>
@@ -1816,37 +1730,37 @@
     /* ── Site Search (Fuse.js fuzzy) ── */
     (function(){
       var articles = [
-        { url:'/vaccine-safety', cat:'Science', title:'Vaccine Safety & Efficacy: What the Data Actually Shows', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction', snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
-        { url:'/voter-fraud', cat:'Political Fact Check', title:'Voter Fraud: The Documented Record', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen', snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Every 2020 lawsuit and its judicial outcome.'},
-        { url:'/trans-shooters', cat:'Political Fact Check', title:'Trans People & Mass Shootings — The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs', snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
-        { url:'/youth-gender-medicine', cat:'Science', title:'Gender-Affirming Care for Minors', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret', snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques. Both sides steelmanned.'},
-        { url:'/border-crossings', cat:'Political Fact Check', title:'Border Crossings — What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall', snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
-        { url:'/gun-violence', cat:'International', title:'U.S. Gun Violence vs. Peer Nations', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment', snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
-        { url:'/shootings-by-demographic', cat:'Political Fact Check', title:'Mass Shootings by Demographic', keywords:'mass shooting race demographic white black hispanic asian per capita rate population census poverty socioeconomic', snippet:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals for every group.'},
-        { url:'/climate-change', cat:'Science', title:'Climate Change: The Science and the Data', keywords:'climate change global warming ipcc temperature co2 emissions sea level attribution denial skeptic fossil fuel carbon', snippet:'IPCC AR6, NASA GISS, NOAA data. Temperature records. Sea level rise. Both denial and alarmism examined against primary science.'},
-        { url:'/gender-wage-gap', cat:'Economics', title:'The Gender Wage Gap: What the Data Actually Shows', keywords:'gender wage gap pay equity women men 77 cents bls oecd occupation adjusted unadjusted discrimination audit motherhood penalty', snippet:'BLS data. 77-cent vs adjusted gap explained. Audit studies on discrimination. OECD international comparison.'},
-        { url:'/inflation', cat:'Economics', title:'U.S. Inflation 2021-2026', keywords:'inflation cpi consumer price index 9.1 federal reserve interest rate supply chain stimulus covid 2022 2023 fed shelter energy food prices tariff', snippet:'CPI timeline peak 9.1% in 2022. Supply chain, stimulus, and energy decomposed. Fed rate hike response.'},
-        { url:'/policing-crime', cat:'Political Fact Check', title:'Policing, Race & Crime: What the Data Shows', keywords:'police crime race black white use of force shooting arrest disparity racial profiling reform defund fbi ucr bjs fryer', snippet:'FBI UCR crime data. BJS arrest and use-of-force data. Racial disparity studies. Both reform and law-and-order positions examined.'},
-        { url:'/ultra-processed-food', cat:'Science', title:'Ultra-Processed Food: What the Research Actually Shows', keywords:'ultra processed food upf nova hall nih rct obesity cancer mortality cardiovascular cohort nutrition diet', snippet:'NIH feeding trial: 500 kcal/day more on UPF diet. 45 cohort studies. NOVA classification. Mechanisms and limitations.'},
-        { url:'/us-spending', cat:'Economics', title:'U.S. Federal Spending: Where the Money Goes', keywords:'federal spending budget social security medicare medicaid defense interest debt cbo omb fiscal deficit', snippet:'CBO January 2026 baseline. $7.4T in outlays. Social Security, Medicare, defense, and net interest explained.'},
+        { url:'/are-vaccines-safe-and-effective', cat:'Science', title:'Vaccine Safety & Efficacy: What the Data Actually Shows', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction', snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates. Both sides steelmanned.' },
+        { url:'/is-voter-fraud-a-real-problem', cat:'Political Fact Check', title:'Voter Fraud: The Documented Record', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen', snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Every 2020 lawsuit and its judicial outcome.'},
+        { url:'/are-trans-people-more-likely-to-be-mass-shooters', cat:'Political Fact Check', title:'Trans People & Mass Shootings — The Full Picture', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs', snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
+        { url:'/is-youth-gender-medicine-safe', cat:'Science', title:'Gender-Affirming Care for Minors', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret', snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques. Both sides steelmanned.'},
+        { url:'/is-there-really-a-border-crisis', cat:'Political Fact Check', title:'Border Crossings — What The Charts Actually Show', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall', snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
+        { url:'/does-gun-control-reduce-violence', cat:'International', title:'U.S. Gun Violence vs. Peer Nations', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment', snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
+        { url:'/who-commits-mass-shootings-in-america', cat:'Political Fact Check', title:'Mass Shootings by Demographic', keywords:'mass shooting race demographic white black hispanic asian per capita rate population census poverty socioeconomic', snippet:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals for every group.'},
+        { url:'/is-climate-change-real-and-human-caused', cat:'Science', title:'Climate Change: The Science and the Data', keywords:'climate change global warming ipcc temperature co2 emissions sea level attribution denial skeptic fossil fuel carbon', snippet:'IPCC AR6, NASA GISS, NOAA data. Temperature records. Sea level rise. Both denial and alarmism examined against primary science.'},
+        { url:'/is-the-gender-wage-gap-real', cat:'Economics', title:'The Gender Wage Gap: What the Data Actually Shows', keywords:'gender wage gap pay equity women men 77 cents bls oecd occupation adjusted unadjusted discrimination audit motherhood penalty', snippet:'BLS data. 77-cent vs adjusted gap explained. Audit studies on discrimination. OECD international comparison.'},
+        { url:'/what-actually-causes-inflation', cat:'Economics', title:'U.S. Inflation 2021-2026', keywords:'inflation cpi consumer price index 9.1 federal reserve interest rate supply chain stimulus covid 2022 2023 fed shelter energy food prices tariff', snippet:'CPI timeline peak 9.1% in 2022. Supply chain, stimulus, and energy decomposed. Fed rate hike response.'},
+        { url:'/does-more-policing-reduce-crime', cat:'Political Fact Check', title:'Policing, Race & Crime: What the Data Shows', keywords:'police crime race black white use of force shooting arrest disparity racial profiling reform defund fbi ucr bjs fryer', snippet:'FBI UCR crime data. BJS arrest and use-of-force data. Racial disparity studies. Both reform and law-and-order positions examined.'},
+        { url:'/is-ultra-processed-food-bad-for-you', cat:'Science', title:'Ultra-Processed Food: What the Research Actually Shows', keywords:'ultra processed food upf nova hall nih rct obesity cancer mortality cardiovascular cohort nutrition diet', snippet:'NIH feeding trial: 500 kcal/day more on UPF diet. 45 cohort studies. NOVA classification. Mechanisms and limitations.'},
+        { url:'/where-does-us-federal-spending-go', cat:'Economics', title:'U.S. Federal Spending: Where the Money Goes', keywords:'federal spending budget social security medicare medicaid defense interest debt cbo omb fiscal deficit', snippet:'CBO January 2026 baseline. $7.4T in outlays. Social Security, Medicare, defense, and net interest explained.'},
         { url:'/methodology', cat:'Science', title:'Our Methodology', keywords:'methodology sources primary data fact check process steelman sensitivity analysis confidence interval limitation', snippet:'How TruthBased.org works: primary sources, steelmanned arguments, sensitivity analysis, and transparent limitations.'},
-        { url:'/most-educated-countries', cat:'International', title:'Most Educated Countries in the World — The Full Ranking', keywords:'education educated countries ranking tertiary attainment OECD PISA university college degree international', snippet:'47-country ranking. Access vs. performance paradox. Gender gaps. Spending vs. outcomes. Full methodology.'},
-        { url:'/religiosity-social-outcomes', cat:'Science', title:'Does Religiosity Correlate With Better Social Outcomes?', keywords:'religion religiosity crime charity giving wellbeing mental health trust social outcomes church faith secular', snippet:'Crime, charitable giving, wellbeing, social trust, and education across religious and secular populations. Meta-analyses reviewed.'},
-        { url:'/religion-violence', cat:'Violence', title:'Religion and Violence — Parsing the Actual Numbers', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war', snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities. Both sides steelmanned.'},
-        { url:'/political-violence', cat:'Violence', title:'Political, Ideological & Hate-Motivated Violence in the United States', keywords:'domestic terrorism far right far left islamist hate crime anti-semitism anti-black anti-lgbt police violence white nationalist incel misogynist ADL FBI UCR New America CSIS ACLED', snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated.'},
-        { url:'/immigrant-crime', cat:'Political Fact Check', title:'Immigration and Crime: What the Data Actually Shows', keywords:'immigration crime immigrant incarceration undocumented illegal alien Texas DPS arrest rate Cato ACS census paradox asylum refugee sanctuary Laken Riley ICE deportation', snippet:'Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence.'},
-        { url:'/lgbtq-crime', cat:'Political Fact Check', title:'Sexual Orientation, Gender Identity, and Crime: What the Data Actually Shows', keywords:'LGBTQ crime trans women sexual offense gay predator myth Dhejne UK prison data Canada 94% Jenny pediatrics Paul Cameron APA victimization hate crime groomer gender identity', snippet:'Per-capita crime data for every group. UK prison infographic debunked. Gay predator myth debunked. LGBTQ+ victimization 5x higher.'},
-        { url:'/college-worth-it', cat:'Economics', title:'Is College Still Worth the Cost?', keywords:'college worth it tuition wage premium student debt ROI major underemployment graduation rate for-profit trades apprenticeship selection bias Scorecard FREOPP', snippet:'Wage premiums, debt loads, ROI by major and institution, graduation rates, and the AI disruption question.'},
-        { url:'/tariffs-manufacturing', cat:'Economics', title:'Do Tariffs Help U.S. Manufacturing?', keywords:'tariffs manufacturing steel aluminum trade deficit Section 232 301 China tariff cost per job downstream retaliation USITC CBO reshoring automation', snippet:'Every major tariff episode measured by jobs saved, jobs lost downstream, cost per job, and consumer impact.'},
-        { url:'/death-penalty', cat:'Political Fact Check', title:'The Death Penalty: Deterrence, Cost & Racial Disparities', keywords:'death penalty capital punishment deterrence cost racial bias NRC exoneration wrongful conviction Baldus GAO BJS execution LWOP Ehrlich Donohue Wolfers', snippet:'Does the death penalty deter murder? What does it cost? Are there racial disparities? NRC, state audits, GAO, BJS. Both sides steelmanned.'},
-        { url:'/minimum-wage', cat:'Economics', title:'Does Raising the Minimum Wage Kill Jobs?', keywords:'minimum wage employment Card Krueger Dube Neumark CBO poverty prices small business automation Seattle fast food teens entry level', snippet:'Employment effects, poverty, prices, small businesses, automation. Card & Krueger, CBO, Dube, Neumark. Both sides steelmanned.'},
-        { url:'/social-media-mental-health', cat:'Science & Medicine', title:'Social Media & Youth Mental Health', keywords:'social media teen mental health depression anxiety youth smartphone Haidt Odgers Twenge YRBS CDC screen time girls boys moral panic Surgeon General ABCD', snippet:'Is social media destroying a generation? CDC YRBS, ABCD, meta-analyses, Haidt vs. Odgers. Effect sizes disclosed. Both sides steelmanned.'},
-        { url:'/gac-patient-voices', cat:'Science & Medicine', title:'GAC Patient-Reported Outcomes', keywords:'gender affirming care patient voices detransition regret qualitative trans youth outcomes testosterone blockers surgery satisfaction', snippet:'What recipients and detransitioners actually report. Published qualitative research. Positive and negative experiences. Rates for context.'},
-        { url:'/the-dress', cat:'Curiosities', title:'The Dress — White & Gold or Blue & Black?', keywords:'the dress white gold blue black color perception color constancy Bayesian inference visual perception neuroscience viral 2015', snippet:'The science behind why millions saw different colors. Color constancy, Bayesian inference, and human perception.'},
-        { url:'/mandela-effect', cat:'Curiosities', title:'The Mandela Effect — Mass False Memory or Something Else?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus', snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory and social contagion.'},
-        { url:'/mpemba-effect', cat:'Curiosities', title:'The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba', snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.'},
-        { url:'/national-debt', cat:'Economics', title:'The National Debt — What Both Parties Actually Did', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements', snippet:'CBO and OMB data by administration. Both parties steelmanned against the primary-source record.'},
-        { url:'/job-creation', cat:'Economics', title:'Job Creation Claims — Presidents vs. The Data', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll', snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags and inherited recessions.'}
+        { url:'/which-countries-are-the-most-educated', cat:'International', title:'Most Educated Countries in the World — The Full Ranking', keywords:'education educated countries ranking tertiary attainment OECD PISA university college degree international', snippet:'47-country ranking. Access vs. performance paradox. Gender gaps. Spending vs. outcomes. Full methodology.'},
+        { url:'/are-religious-countries-better-off', cat:'Science', title:'Does Religiosity Correlate With Better Social Outcomes?', keywords:'religion religiosity crime charity giving wellbeing mental health trust social outcomes church faith secular', snippet:'Crime, charitable giving, wellbeing, social trust, and education across religious and secular populations. Meta-analyses reviewed.'},
+        { url:'/does-religion-cause-violence', cat:'Violence', title:'Religion and Violence — Parsing the Actual Numbers', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war', snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities. Both sides steelmanned.'},
+        { url:'/which-side-commits-more-political-violence', cat:'Violence', title:'Political, Ideological & Hate-Motivated Violence in the United States', keywords:'domestic terrorism far right far left islamist hate crime anti-semitism anti-black anti-lgbt police violence white nationalist incel misogynist ADL FBI UCR New America CSIS ACLED', snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated.'},
+        { url:'/do-immigrants-commit-more-crime', cat:'Political Fact Check', title:'Immigration and Crime: What the Data Actually Shows', keywords:'immigration crime immigrant incarceration undocumented illegal alien Texas DPS arrest rate Cato ACS census paradox asylum refugee sanctuary Laken Riley ICE deportation', snippet:'Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence.'},
+        { url:'/are-lgbtq-people-more-likely-to-face-violence', cat:'Political Fact Check', title:'Sexual Orientation, Gender Identity, and Crime: What the Data Actually Shows', keywords:'LGBTQ crime trans women sexual offense gay predator myth Dhejne UK prison data Canada 94% Jenny pediatrics Paul Cameron APA victimization hate crime groomer gender identity', snippet:'Per-capita crime data for every group. UK prison infographic debunked. Gay predator myth debunked. LGBTQ+ victimization 5x higher.'},
+        { url:'/is-college-still-worth-it', cat:'Economics', title:'Is College Still Worth the Cost?', keywords:'college worth it tuition wage premium student debt ROI major underemployment graduation rate for-profit trades apprenticeship selection bias Scorecard FREOPP', snippet:'Wage premiums, debt loads, ROI by major and institution, graduation rates, and the AI disruption question.'},
+        { url:'/do-tariffs-bring-back-manufacturing-jobs', cat:'Economics', title:'Do Tariffs Help U.S. Manufacturing?', keywords:'tariffs manufacturing steel aluminum trade deficit Section 232 301 China tariff cost per job downstream retaliation USITC CBO reshoring automation', snippet:'Every major tariff episode measured by jobs saved, jobs lost downstream, cost per job, and consumer impact.'},
+        { url:'/does-the-death-penalty-deter-crime', cat:'Political Fact Check', title:'The Death Penalty: Deterrence, Cost & Racial Disparities', keywords:'death penalty capital punishment deterrence cost racial bias NRC exoneration wrongful conviction Baldus GAO BJS execution LWOP Ehrlich Donohue Wolfers', snippet:'Does the death penalty deter murder? What does it cost? Are there racial disparities? NRC, state audits, GAO, BJS. Both sides steelmanned.'},
+        { url:'/does-raising-the-minimum-wage-kill-jobs', cat:'Economics', title:'Does Raising the Minimum Wage Kill Jobs?', keywords:'minimum wage employment Card Krueger Dube Neumark CBO poverty prices small business automation Seattle fast food teens entry level', snippet:'Employment effects, poverty, prices, small businesses, automation. Card & Krueger, CBO, Dube, Neumark. Both sides steelmanned.'},
+        { url:'/does-social-media-harm-teenagers-mental-health', cat:'Science & Medicine', title:'Social Media & Youth Mental Health', keywords:'social media teen mental health depression anxiety youth smartphone Haidt Odgers Twenge YRBS CDC screen time girls boys moral panic Surgeon General ABCD', snippet:'Is social media destroying a generation? CDC YRBS, ABCD, meta-analyses, Haidt vs. Odgers. Effect sizes disclosed. Both sides steelmanned.'},
+        { url:'/what-do-gender-affirming-care-patients-say', cat:'Science & Medicine', title:'GAC Patient-Reported Outcomes', keywords:'gender affirming care patient voices detransition regret qualitative trans youth outcomes testosterone blockers surgery satisfaction', snippet:'What recipients and detransitioners actually report. Published qualitative research. Positive and negative experiences. Rates for context.'},
+        { url:'/was-the-dress-blue-and-black-or-white-and-gold', cat:'Curiosities', title:'The Dress — White & Gold or Blue & Black?', keywords:'the dress white gold blue black color perception color constancy Bayesian inference visual perception neuroscience viral 2015', snippet:'The science behind why millions saw different colors. Color constancy, Bayesian inference, and human perception.'},
+        { url:'/is-the-mandela-effect-real', cat:'Curiosities', title:'The Mandela Effect — Mass False Memory or Something Else?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus', snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory and social contagion.'},
+        { url:'/does-hot-water-freeze-faster-than-cold', cat:'Curiosities', title:'The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba', snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.'},
+        { url:'/how-bad-is-the-national-debt', cat:'Economics', title:'The National Debt — What Both Parties Actually Did', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements', snippet:'CBO and OMB data by administration. Both parties steelmanned against the primary-source record.'},
+        { url:'/which-presidents-created-the-most-jobs', cat:'Economics', title:'Job Creation Claims — Presidents vs. The Data', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll', snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags and inherited recessions.'}
       ];
 
       var catMap = {
@@ -1974,42 +1888,8 @@
   </script>
 
 
-  <!-- QR expand modal -->
-  <!-- QR expand modal -->
-  <div class="qr-overlay" id="qrOverlay" role="dialog" onclick="if(event.target===this)closeQR()" aria-modal="true" aria-label="Enlarged QR code">
-    <button id="qrClose" onclick="closeQR()" aria-label="Close QR code" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.4rem;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;">&#10005;</button>
-    <img id="qrExpanded" src="" alt="Enlarged QR code" width="512" height="512">
-    <span class="qr-overlay-label">Tap anywhere or press Esc to close</span>
-  </div>
-  <script>
-  var _qrOpener = null;
-  function expandQR(el){
-    _qrOpener = el;
-    var ov=document.getElementById('qrOverlay');
-    var img=document.getElementById('qrExpanded');
-    img.src=el.src; img.alt=el.alt;
-    ov.classList.add('is-open');
-    var closeBtn=document.getElementById('qrClose');
-    if(closeBtn){ setTimeout(function(){ closeBtn.focus(); },50); }
-  }
-  function closeQR(){
-    var ov=document.getElementById('qrOverlay');
-    ov.classList.remove('is-open');
-    if(_qrOpener){ _qrOpener.focus(); _qrOpener=null; }
-  }
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){ var ov=document.getElementById('qrOverlay'); if(ov&&ov.classList.contains('is-open')){ closeQR(); } }
-  });
-  // Add tap-to-enlarge hints under each QR
-  document.querySelectorAll('.qr-thumb').forEach(function(q){
-    if(!q.nextElementSibling||!q.nextElementSibling.classList.contains('qr-tap-hint')){
-      var hint=document.createElement('span');
-      hint.className='qr-tap-hint';
-      hint.textContent='Tap QR to enlarge';
-      q.parentNode.insertBefore(hint,q.nextSibling);
-    }
-  });
-  </script>
+  
+  
 </body>
 
 <!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->

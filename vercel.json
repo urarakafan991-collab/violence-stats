@@ -3,134 +3,134 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/shootings-by-demographic/:slug",
-      "destination": "/shootings-by-demographic.html"
+      "source": "/who-commits-mass-shootings-in-america/:slug",
+      "destination": "/who-commits-mass-shootings-in-america.html"
     }
   ],
   "redirects": [
     {
       "source": "/trans-shooter",
-      "destination": "/trans-shooters",
+      "destination": "/are-trans-people-more-likely-to-be-mass-shooters",
       "permanent": true
     },
     {
       "source": "/trans-shooter.html",
-      "destination": "/trans-shooters",
+      "destination": "/are-trans-people-more-likely-to-be-mass-shooters",
       "permanent": true
     },
     {
       "source": "/vaccine",
-      "destination": "/vaccine-safety",
+      "destination": "/are-vaccines-safe-and-effective",
       "permanent": true
     },
     {
       "source": "/vaccines",
-      "destination": "/vaccine-safety",
+      "destination": "/are-vaccines-safe-and-effective",
       "permanent": true
     },
     {
       "source": "/immigration",
-      "destination": "/border-crossings",
+      "destination": "/is-there-really-a-border-crisis",
       "permanent": true
     },
     {
       "source": "/borders",
-      "destination": "/border-crossings",
+      "destination": "/is-there-really-a-border-crisis",
       "permanent": true
     },
     {
       "source": "/guns",
-      "destination": "/gun-violence",
+      "destination": "/does-gun-control-reduce-violence",
       "permanent": true
     },
     {
       "source": "/gun",
-      "destination": "/gun-violence",
+      "destination": "/does-gun-control-reduce-violence",
       "permanent": true
     },
     {
       "source": "/inflation-data",
-      "destination": "/inflation",
+      "destination": "/what-actually-causes-inflation",
       "permanent": true
     },
     {
       "source": "/spending",
-      "destination": "/us-spending",
+      "destination": "/where-does-us-federal-spending-go",
       "permanent": true
     },
     {
       "source": "/federal-spending",
-      "destination": "/us-spending",
+      "destination": "/where-does-us-federal-spending-go",
       "permanent": true
     },
     {
       "source": "/wage-gap",
-      "destination": "/gender-wage-gap",
+      "destination": "/is-the-gender-wage-gap-real",
       "permanent": true
     },
     {
       "source": "/wages",
-      "destination": "/gender-wage-gap",
+      "destination": "/is-the-gender-wage-gap-real",
       "permanent": true
     },
     {
       "source": "/climate",
-      "destination": "/climate-change",
+      "destination": "/is-climate-change-real-and-human-caused",
       "permanent": true
     },
     {
       "source": "/fraud",
-      "destination": "/voter-fraud",
+      "destination": "/is-voter-fraud-a-real-problem",
       "permanent": true
     },
     {
       "source": "/election-fraud",
-      "destination": "/voter-fraud",
+      "destination": "/is-voter-fraud-a-real-problem",
       "permanent": true
     },
     {
       "source": "/policing",
-      "destination": "/policing-crime",
+      "destination": "/does-more-policing-reduce-crime",
       "permanent": true
     },
     {
       "source": "/police",
-      "destination": "/policing-crime",
+      "destination": "/does-more-policing-reduce-crime",
       "permanent": true
     },
     {
       "source": "/religion",
-      "destination": "/religion-violence",
+      "destination": "/does-religion-cause-violence",
       "permanent": true
     },
     {
       "source": "/religiosity",
-      "destination": "/religiosity-social-outcomes",
+      "destination": "/are-religious-countries-better-off",
       "permanent": true
     },
     {
       "source": "/education",
-      "destination": "/most-educated-countries",
+      "destination": "/which-countries-are-the-most-educated",
       "permanent": true
     },
     {
       "source": "/food",
-      "destination": "/ultra-processed-food",
+      "destination": "/is-ultra-processed-food-bad-for-you",
       "permanent": true
     },
     {
       "source": "/upf",
-      "destination": "/ultra-processed-food",
+      "destination": "/is-ultra-processed-food-bad-for-you",
       "permanent": true
     },
     {
       "source": "/gender-medicine",
-      "destination": "/youth-gender-medicine",
+      "destination": "/is-youth-gender-medicine-safe",
       "permanent": true
     },
     {
       "source": "/trans-healthcare",
-      "destination": "/youth-gender-medicine",
+      "destination": "/is-youth-gender-medicine-safe",
       "permanent": true
     },
     {
@@ -140,77 +140,377 @@
     },
     {
       "source": "/dress",
-      "destination": "/the-dress",
+      "destination": "/was-the-dress-blue-and-black-or-white-and-gold",
       "permanent": true
     },
     {
       "source": "/the-dress-color",
-      "destination": "/the-dress",
+      "destination": "/was-the-dress-blue-and-black-or-white-and-gold",
       "permanent": true
     },
     {
       "source": "/mandela",
-      "destination": "/mandela-effect",
+      "destination": "/is-the-mandela-effect-real",
       "permanent": true
     },
     {
       "source": "/false-memory",
-      "destination": "/mandela-effect",
+      "destination": "/is-the-mandela-effect-real",
       "permanent": true
     },
     {
       "source": "/mpemba",
-      "destination": "/mpemba-effect",
+      "destination": "/does-hot-water-freeze-faster-than-cold",
       "permanent": true
     },
     {
       "source": "/hot-water",
-      "destination": "/mpemba-effect",
+      "destination": "/does-hot-water-freeze-faster-than-cold",
       "permanent": true
     },
     {
       "source": "/debt",
-      "destination": "/national-debt",
+      "destination": "/how-bad-is-the-national-debt",
       "permanent": true
     },
     {
       "source": "/the-debt",
-      "destination": "/national-debt",
+      "destination": "/how-bad-is-the-national-debt",
       "permanent": true
     },
     {
       "source": "/jobs",
-      "destination": "/job-creation",
+      "destination": "/which-presidents-created-the-most-jobs",
       "permanent": true
     },
     {
       "source": "/presidential-jobs",
-      "destination": "/job-creation",
+      "destination": "/which-presidents-created-the-most-jobs",
       "permanent": true
     },
     {
       "source": "/capital-punishment",
-      "destination": "/death-penalty",
+      "destination": "/does-the-death-penalty-deter-crime",
       "permanent": true
     },
     {
       "source": "/execution",
-      "destination": "/death-penalty",
+      "destination": "/does-the-death-penalty-deter-crime",
       "permanent": true
     },
     {
       "source": "/min-wage",
-      "destination": "/minimum-wage",
+      "destination": "/does-raising-the-minimum-wage-kill-jobs",
       "permanent": true
     },
     {
       "source": "/social-media",
-      "destination": "/social-media-mental-health",
+      "destination": "/does-social-media-harm-teenagers-mental-health",
       "permanent": true
     },
     {
       "source": "/screen-time",
-      "destination": "/social-media-mental-health",
+      "destination": "/does-social-media-harm-teenagers-mental-health",
+      "permanent": true
+    },
+    {
+      "source": "/border-crossings",
+      "destination": "/is-there-really-a-border-crisis",
+      "permanent": true
+    },
+    {
+      "source": "/border-crossings.html",
+      "destination": "/is-there-really-a-border-crisis",
+      "permanent": true
+    },
+    {
+      "source": "/climate-change",
+      "destination": "/is-climate-change-real-and-human-caused",
+      "permanent": true
+    },
+    {
+      "source": "/climate-change.html",
+      "destination": "/is-climate-change-real-and-human-caused",
+      "permanent": true
+    },
+    {
+      "source": "/college-worth-it",
+      "destination": "/is-college-still-worth-it",
+      "permanent": true
+    },
+    {
+      "source": "/college-worth-it.html",
+      "destination": "/is-college-still-worth-it",
+      "permanent": true
+    },
+    {
+      "source": "/death-penalty",
+      "destination": "/does-the-death-penalty-deter-crime",
+      "permanent": true
+    },
+    {
+      "source": "/death-penalty.html",
+      "destination": "/does-the-death-penalty-deter-crime",
+      "permanent": true
+    },
+    {
+      "source": "/gac-patient-voices",
+      "destination": "/what-do-gender-affirming-care-patients-say",
+      "permanent": true
+    },
+    {
+      "source": "/gac-patient-voices.html",
+      "destination": "/what-do-gender-affirming-care-patients-say",
+      "permanent": true
+    },
+    {
+      "source": "/gender-wage-gap",
+      "destination": "/is-the-gender-wage-gap-real",
+      "permanent": true
+    },
+    {
+      "source": "/gender-wage-gap.html",
+      "destination": "/is-the-gender-wage-gap-real",
+      "permanent": true
+    },
+    {
+      "source": "/gun-violence",
+      "destination": "/does-gun-control-reduce-violence",
+      "permanent": true
+    },
+    {
+      "source": "/gun-violence.html",
+      "destination": "/does-gun-control-reduce-violence",
+      "permanent": true
+    },
+    {
+      "source": "/immigrant-crime",
+      "destination": "/do-immigrants-commit-more-crime",
+      "permanent": true
+    },
+    {
+      "source": "/immigrant-crime.html",
+      "destination": "/do-immigrants-commit-more-crime",
+      "permanent": true
+    },
+    {
+      "source": "/inflation",
+      "destination": "/what-actually-causes-inflation",
+      "permanent": true
+    },
+    {
+      "source": "/inflation.html",
+      "destination": "/what-actually-causes-inflation",
+      "permanent": true
+    },
+    {
+      "source": "/job-creation",
+      "destination": "/which-presidents-created-the-most-jobs",
+      "permanent": true
+    },
+    {
+      "source": "/job-creation.html",
+      "destination": "/which-presidents-created-the-most-jobs",
+      "permanent": true
+    },
+    {
+      "source": "/lgbtq-crime",
+      "destination": "/are-lgbtq-people-more-likely-to-face-violence",
+      "permanent": true
+    },
+    {
+      "source": "/lgbtq-crime.html",
+      "destination": "/are-lgbtq-people-more-likely-to-face-violence",
+      "permanent": true
+    },
+    {
+      "source": "/mandela-effect",
+      "destination": "/is-the-mandela-effect-real",
+      "permanent": true
+    },
+    {
+      "source": "/mandela-effect.html",
+      "destination": "/is-the-mandela-effect-real",
+      "permanent": true
+    },
+    {
+      "source": "/minimum-wage",
+      "destination": "/does-raising-the-minimum-wage-kill-jobs",
+      "permanent": true
+    },
+    {
+      "source": "/minimum-wage.html",
+      "destination": "/does-raising-the-minimum-wage-kill-jobs",
+      "permanent": true
+    },
+    {
+      "source": "/most-educated-countries",
+      "destination": "/which-countries-are-the-most-educated",
+      "permanent": true
+    },
+    {
+      "source": "/most-educated-countries.html",
+      "destination": "/which-countries-are-the-most-educated",
+      "permanent": true
+    },
+    {
+      "source": "/mpemba-effect",
+      "destination": "/does-hot-water-freeze-faster-than-cold",
+      "permanent": true
+    },
+    {
+      "source": "/mpemba-effect.html",
+      "destination": "/does-hot-water-freeze-faster-than-cold",
+      "permanent": true
+    },
+    {
+      "source": "/national-debt",
+      "destination": "/how-bad-is-the-national-debt",
+      "permanent": true
+    },
+    {
+      "source": "/national-debt.html",
+      "destination": "/how-bad-is-the-national-debt",
+      "permanent": true
+    },
+    {
+      "source": "/policing-crime",
+      "destination": "/does-more-policing-reduce-crime",
+      "permanent": true
+    },
+    {
+      "source": "/policing-crime.html",
+      "destination": "/does-more-policing-reduce-crime",
+      "permanent": true
+    },
+    {
+      "source": "/political-violence",
+      "destination": "/which-side-commits-more-political-violence",
+      "permanent": true
+    },
+    {
+      "source": "/political-violence.html",
+      "destination": "/which-side-commits-more-political-violence",
+      "permanent": true
+    },
+    {
+      "source": "/religion-violence",
+      "destination": "/does-religion-cause-violence",
+      "permanent": true
+    },
+    {
+      "source": "/religion-violence.html",
+      "destination": "/does-religion-cause-violence",
+      "permanent": true
+    },
+    {
+      "source": "/religiosity-social-outcomes",
+      "destination": "/are-religious-countries-better-off",
+      "permanent": true
+    },
+    {
+      "source": "/religiosity-social-outcomes.html",
+      "destination": "/are-religious-countries-better-off",
+      "permanent": true
+    },
+    {
+      "source": "/shootings-by-demographic",
+      "destination": "/who-commits-mass-shootings-in-america",
+      "permanent": true
+    },
+    {
+      "source": "/shootings-by-demographic.html",
+      "destination": "/who-commits-mass-shootings-in-america",
+      "permanent": true
+    },
+    {
+      "source": "/social-media-mental-health",
+      "destination": "/does-social-media-harm-teenagers-mental-health",
+      "permanent": true
+    },
+    {
+      "source": "/social-media-mental-health.html",
+      "destination": "/does-social-media-harm-teenagers-mental-health",
+      "permanent": true
+    },
+    {
+      "source": "/tariffs-manufacturing",
+      "destination": "/do-tariffs-bring-back-manufacturing-jobs",
+      "permanent": true
+    },
+    {
+      "source": "/tariffs-manufacturing.html",
+      "destination": "/do-tariffs-bring-back-manufacturing-jobs",
+      "permanent": true
+    },
+    {
+      "source": "/the-dress",
+      "destination": "/was-the-dress-blue-and-black-or-white-and-gold",
+      "permanent": true
+    },
+    {
+      "source": "/the-dress.html",
+      "destination": "/was-the-dress-blue-and-black-or-white-and-gold",
+      "permanent": true
+    },
+    {
+      "source": "/trans-shooters",
+      "destination": "/are-trans-people-more-likely-to-be-mass-shooters",
+      "permanent": true
+    },
+    {
+      "source": "/trans-shooters.html",
+      "destination": "/are-trans-people-more-likely-to-be-mass-shooters",
+      "permanent": true
+    },
+    {
+      "source": "/ultra-processed-food",
+      "destination": "/is-ultra-processed-food-bad-for-you",
+      "permanent": true
+    },
+    {
+      "source": "/ultra-processed-food.html",
+      "destination": "/is-ultra-processed-food-bad-for-you",
+      "permanent": true
+    },
+    {
+      "source": "/us-spending",
+      "destination": "/where-does-us-federal-spending-go",
+      "permanent": true
+    },
+    {
+      "source": "/us-spending.html",
+      "destination": "/where-does-us-federal-spending-go",
+      "permanent": true
+    },
+    {
+      "source": "/vaccine-safety",
+      "destination": "/are-vaccines-safe-and-effective",
+      "permanent": true
+    },
+    {
+      "source": "/vaccine-safety.html",
+      "destination": "/are-vaccines-safe-and-effective",
+      "permanent": true
+    },
+    {
+      "source": "/voter-fraud",
+      "destination": "/is-voter-fraud-a-real-problem",
+      "permanent": true
+    },
+    {
+      "source": "/voter-fraud.html",
+      "destination": "/is-voter-fraud-a-real-problem",
+      "permanent": true
+    },
+    {
+      "source": "/youth-gender-medicine",
+      "destination": "/is-youth-gender-medicine-safe",
+      "permanent": true
+    },
+    {
+      "source": "/youth-gender-medicine.html",
+      "destination": "/is-youth-gender-medicine-safe",
       "permanent": true
     }
   ],

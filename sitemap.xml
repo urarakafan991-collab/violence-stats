@@ -11,49 +11,49 @@
 
   <!-- High-priority articles -->
   <url>
-    <loc>https://www.truthbased.org/trans-shooters</loc>
+    <loc>https://www.truthbased.org/are-trans-people-more-likely-to-be-mass-shooters</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/youth-gender-medicine</loc>
+    <loc>https://www.truthbased.org/is-youth-gender-medicine-safe</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/vaccine-safety</loc>
+    <loc>https://www.truthbased.org/are-vaccines-safe-and-effective</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/gun-violence</loc>
+    <loc>https://www.truthbased.org/does-gun-control-reduce-violence</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/political-violence</loc>
+    <loc>https://www.truthbased.org/which-side-commits-more-political-violence</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/voter-fraud</loc>
+    <loc>https://www.truthbased.org/is-voter-fraud-a-real-problem</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/border-crossings</loc>
+    <loc>https://www.truthbased.org/is-there-really-a-border-crisis</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/climate-change</loc>
+    <loc>https://www.truthbased.org/is-climate-change-real-and-human-caused</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -61,55 +61,55 @@
 
   <!-- Standard articles -->
   <url>
-    <loc>https://www.truthbased.org/gender-wage-gap</loc>
+    <loc>https://www.truthbased.org/is-the-gender-wage-gap-real</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/inflation</loc>
+    <loc>https://www.truthbased.org/what-actually-causes-inflation</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/policing-crime</loc>
+    <loc>https://www.truthbased.org/does-more-policing-reduce-crime</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/ultra-processed-food</loc>
+    <loc>https://www.truthbased.org/is-ultra-processed-food-bad-for-you</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/us-spending</loc>
+    <loc>https://www.truthbased.org/where-does-us-federal-spending-go</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/shootings-by-demographic</loc>
+    <loc>https://www.truthbased.org/who-commits-mass-shootings-in-america</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/religion-violence</loc>
+    <loc>https://www.truthbased.org/does-religion-cause-violence</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/religiosity-social-outcomes</loc>
+    <loc>https://www.truthbased.org/are-religious-countries-better-off</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/most-educated-countries</loc>
+    <loc>https://www.truthbased.org/which-countries-are-the-most-educated</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -119,13 +119,13 @@
 
   <!-- Economics articles -->
   <url>
-    <loc>https://www.truthbased.org/national-debt</loc>
+    <loc>https://www.truthbased.org/how-bad-is-the-national-debt</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/job-creation</loc>
+    <loc>https://www.truthbased.org/which-presidents-created-the-most-jobs</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -133,19 +133,19 @@
 
   <!-- Science & Perception articles -->
   <url>
-    <loc>https://www.truthbased.org/the-dress</loc>
+    <loc>https://www.truthbased.org/was-the-dress-blue-and-black-or-white-and-gold</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/mandela-effect</loc>
+    <loc>https://www.truthbased.org/is-the-mandela-effect-real</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/mpemba-effect</loc>
+    <loc>https://www.truthbased.org/does-hot-water-freeze-faster-than-cold</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -153,49 +153,49 @@
 
   <!-- New articles — March 2026 -->
   <url>
-    <loc>https://www.truthbased.org/immigrant-crime</loc>
+    <loc>https://www.truthbased.org/do-immigrants-commit-more-crime</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/college-worth-it</loc>
+    <loc>https://www.truthbased.org/is-college-still-worth-it</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/tariffs-manufacturing</loc>
+    <loc>https://www.truthbased.org/do-tariffs-bring-back-manufacturing-jobs</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/lgbtq-crime</loc>
+    <loc>https://www.truthbased.org/are-lgbtq-people-more-likely-to-face-violence</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/death-penalty</loc>
+    <loc>https://www.truthbased.org/does-the-death-penalty-deter-crime</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/minimum-wage</loc>
+    <loc>https://www.truthbased.org/does-raising-the-minimum-wage-kill-jobs</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/social-media-mental-health</loc>
+    <loc>https://www.truthbased.org/does-social-media-harm-teenagers-mental-health</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/gac-patient-voices</loc>
+    <loc>https://www.truthbased.org/what-do-gender-affirming-care-patients-say</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -209,4 +209,9 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://www.truthbased.org/support</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>
