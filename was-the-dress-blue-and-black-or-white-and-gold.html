@@ -433,8 +433,8 @@
       .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
     }
 
-    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
-    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box { background: var(--green-light); border: 1px solid var(--green); border-left: 4px solid var(--green); border-radius: 6px; padding: 20px 22px; margin: 32px 0; box-shadow: 0 1px 4px rgba(27,107,62,0.08); }
+    .falsify-box .falsify-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 10px; }
     .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
 
     .part-takeaway {
@@ -658,11 +658,11 @@
         <h2 class="part-title">What Is Actually Being Asked</h2>
       </div>
 
-      <span class="section-label">01 &mdash; Not a trick. A perception problem.</span>
+      <span class="section-label">Not a trick. A perception problem.</span>
 
       <p>In February 2015, Cecilia Bleasdale took a photograph of a dress she planned to wear to her daughter&rsquo;s wedding. When her daughter posted it online asking for opinions on the color, it split the internet in half. People did not disagree about taste or style. They disagreed about basic visual fact &mdash; some saw white and gold, others saw blue and black, and neither side could understand how the other was possible.</p>
 
-      <p>This is not a trick photograph. There are no hidden lines, no optical illusion in the classic sense. The dress pixels are a fixed set of RGB values on a screen. The question it poses is deeper than &ldquo;what color is the fabric?&rdquo; It asks: <strong>how can identical pixel values produce fundamentally different color experiences in different people?</strong></p>
+      <p>This is not a trick photograph. There are no hidden lines, no optical illusion in the classic sense. The dress pixels are a fixed set of RGB values on a screen. The question it poses is deeper than &ldquo;what color is the fabric?&rdquo; It asks: how can identical pixel values produce fundamentally different color experiences in different people?</p>
 
       <p>The answer lies in one of the most important and least-understood functions of the visual system: color constancy. The brain does not passively read color off the retina. It actively infers the most likely color of a surface after accounting for the illumination it assumes is falling on that surface. The dress photograph is a nearly perfect ambiguous case for that inference &mdash; and different brains resolve it differently, for reasons that are systematic, predictable, and rooted in normal function.</p>
 
@@ -680,7 +680,7 @@
         <h2 class="part-title">Why This Photograph Split People</h2>
       </div>
 
-      <span class="section-label">02 &mdash; Color constancy and the illuminant problem</span>
+      <span class="section-label">Color constancy and the illuminant problem</span>
 
       <p>The light reaching your eye from any surface depends on two things: the surface&rsquo;s own reflectance properties (its &ldquo;true&rdquo; color) and the color of the light illuminating it. A red apple in orange sunset light and a red apple under blue fluorescent light send different signals to the retina &mdash; but both look red. Your visual system continuously subtracts its estimate of the illuminant to recover the object&rsquo;s stable color. This is color constancy, and it normally works so well that you never notice it.</p>
 
@@ -702,7 +702,7 @@
         </div>
       </div>
 
-      <span class="section-label">03 &mdash; The blue-yellow axis: why this image specifically</span>
+      <span class="section-label">The blue-yellow axis: why this image specifically</span>
 
       <p>Not all color ambiguity produces disagreement at this scale. The dress is specifically unstable because it exploits the <strong>blue-yellow axis</strong>, which is the primary axis of natural illumination variation (daylight shifts from warm yellow at sunrise to cool blue in shade). The visual system is especially likely to attribute bluish tints to illumination rather than to the object itself &mdash; because in nature, that is almost always the right interpretation.</p>
 
@@ -722,7 +722,7 @@
         <h2 class="part-title">The Strongest Case for White and Gold</h2>
       </div>
 
-      <span class="section-label">04 &mdash; A rational bet on cool, bluish light</span>
+      <span class="section-label">A rational bet on cool, bluish light</span>
 
       <p>People who see the dress as white and gold are not misfiring or being tricked. Their visual system has made a specific, internally consistent inference: <strong>the dress is illuminated by cool, bluish light</strong> &mdash; the kind found in outdoor shade, overcast sky, or north-facing windows. Under this assumption, the visual cortex discounts the blue component of the image as illumination, not fabric. When that blue cast is subtracted, the underlying signal resolves as light (white) and yellowish (gold).</p>
 
@@ -744,7 +744,7 @@
         <h2 class="part-title">The Strongest Case for Blue and Black</h2>
       </div>
 
-      <span class="section-label">05 &mdash; A rational bet on warm, direct light</span>
+      <span class="section-label">A rational bet on warm, direct light</span>
 
       <p>People who see blue and black are applying the inverse inference: the dress is illuminated by <strong>warm, yellowish light</strong> &mdash; incandescent bulbs, direct sunlight, or late-afternoon indoor lighting. Under this assumption, the visual cortex discounts the yellow-warm component of the image as illumination. When that warm cast is removed, the remaining signal resolves as blue fabric with black lace.</p>
 
@@ -766,17 +766,17 @@
         <h2 class="part-title">What the Science Actually Settles &mdash; and What It Doesn&rsquo;t</h2>
       </div>
 
-      <span class="section-label">06 &mdash; What is settled</span>
+      <span class="section-label">What is settled</span>
 
       <p><strong>The dress is blue and black.</strong> This is a factual claim supported by manufacturer confirmation, direct spectroradiometric measurement (Melgosa et al., 2015), and the testimony of the original photographer. There is no scientific or evidential ambiguity about the physical color of the fabric.</p>
 
-      <p><strong>Color constancy and illuminant inference explain the split.</strong> This is the consensus finding across all major studies (Lafer-Sousa et al., Wallisch, Aston &amp; Hurlbert, Winkler et al.). People who see white/gold are discounting a cool illuminant; people who see blue/black are discounting a warm one. Adding explicit illumination cues flips perception in the predicted direction for the majority of viewers. This is not a theory &mdash; it has been experimentally demonstrated.</p>
+      <p>Color constancy and illuminant inference explain the split. This is the consensus finding across all major studies (Lafer-Sousa et al., Wallisch, Aston &amp; Hurlbert, Winkler et al.). People who see white/gold are discounting a cool illuminant; people who see blue/black are discounting a warm one. Adding explicit illumination cues flips perception in the predicted direction for the majority of viewers. This is not a theory &mdash; it has been experimentally demonstrated.</p>
 
-      <p><strong>The blue-yellow axis specifically causes the instability.</strong> Rotating the colors off this axis eliminates the disagreement (Winkler et al., 2015). The effect is not a generic property of ambiguous images.</p>
+      <p>The blue-yellow axis specifically causes the instability. Rotating the colors off this axis eliminates the disagreement (Winkler et al., 2015). The effect is not a generic property of ambiguous images.</p>
 
-      <span class="section-label">07 &mdash; What is not fully settled</span>
+      <span class="section-label">What is not fully settled</span>
 
-      <p><strong>Chronotype and time-of-day effects are suggestive, not definitive.</strong> Wallisch (2017) found a correlation between chronotype and dress perception. But Aston and Hurlbert (2017) found the effect only at p&lt;0.10 significance. One follow-up study failed to cleanly replicate the circadian pattern. It is a plausible contributing factor, not an established explanation. Any article that presents chronotype as the explanation is overclaiming.</p>
+      <p>Chronotype and time-of-day effects are suggestive, not definitive. Wallisch (2017) found a correlation between chronotype and dress perception. But Aston and Hurlbert (2017) found the effect only at p&lt;0.10 significance. One follow-up study failed to cleanly replicate the circadian pattern. It is a plausible contributing factor, not an established explanation. Any article that presents chronotype as the explanation is overclaiming.</p>
 
       <p><strong>Sleep deprivation has no established role.</strong> No dress-specific evidence supports this claim. The closest relevant study &mdash; Koefoed et al. (2015) on 60-hour sleep deprivation &mdash; found no statistically significant change in blue-yellow contrast sensitivity. This explanation appears frequently in popular coverage but lacks empirical support.</p>
 
@@ -802,7 +802,7 @@
         <h2 class="part-title">What This Actually Means</h2>
       </div>
 
-      <span class="section-label">08 &mdash; Implications beyond a viral photo</span>
+      <span class="section-label">Implications beyond a viral photo</span>
 
       <p>The dress is memorable because it made the constructive nature of perception undeniable. Most of the time, color constancy works so well that you never notice your brain is inferring rather than receiving. The dress broke that invisibility. Two people, looking at the same screen, seeing completely different things &mdash; both entirely sincere, both entirely rational, one factually wrong about the object.</p>
 
@@ -812,7 +812,7 @@
 
       <p><strong>Shared reality.</strong> We navigate daily life under the assumption that our perceptual experiences are universal. The dress demonstrated that this assumption can fail in specific, predictable ways tied to individual visual history. We do not all inhabit identical phenomenal worlds &mdash; and the cases where we diverge are not random but systematic.</p>
 
-      <span class="section-label">09 &mdash; Factors most coverage missed</span>
+      <span class="section-label">Factors most coverage missed</span>
 
       <p><strong>The Bayesian inference mechanism</strong> was underreported. This is not a vague &ldquo;brains work differently&rdquo; story &mdash; it is a specific, mathematically formalizable process in which the visual cortex weights prior illuminant expectations against current sensory evidence. The specific prior, not overall visual acuity, determines the outcome.</p>
 
@@ -873,10 +873,10 @@
           <span class="ymal-title">The Mpemba Effect &rarr;</span>
           <span class="ymal-desc">Does hot water freeze faster? 60 years of contested research.</span>
         </a>
-        <a href="/are-vaccines-safe-and-effective" class="ymal-card">
-          <span class="ymal-cat">Data-Driven Analysis</span>
-          <span class="ymal-title">Vaccine Safety Evidence &rarr;</span>
-          <span class="ymal-desc">23 million children studied. No autism link. Real rare risks examined.</span>
+        <a href="/does-social-media-harm-teenagers-mental-health" class="ymal-card">
+          <span class="ymal-cat">Science &amp; Medicine</span>
+          <span class="ymal-title">Social Media &amp; Youth Mental Health &rarr;</span>
+          <span class="ymal-desc">Is social media destroying a generation? CDC data, meta-analyses, and both sides steelmanned.</span>
         </a>
       </div>
     </div>

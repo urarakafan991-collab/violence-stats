@@ -560,8 +560,8 @@
     }
 
     /* ── Falsifiability threshold ── */
-    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
-    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box { background: var(--green-light); border: 1px solid var(--green); border-left: 4px solid var(--green); border-radius: 6px; padding: 20px 22px; margin: 32px 0; box-shadow: 0 1px 4px rgba(27,107,62,0.08); }
+    .falsify-box .falsify-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 10px; }
     .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
 
     /* ── Part takeaway boxes ── */
@@ -810,7 +810,7 @@
         <h2 class="part-title">The Inflation Timeline (2020&ndash;2026)</h2>
       </div>
 
-      <span class="section-label">01 &mdash; CPI monthly data: rise and fall</span>
+      <span class="section-label">CPI monthly data: rise and fall</span>
 
       <div class="stat-block">
         <div class="stat-block-header">
@@ -832,7 +832,7 @@
 
       <div class="chart-wrap"><div class="chart-container" style="height:280px;"><canvas id="chart1" role="img" aria-label="Line chart showing U.S. CPI inflation from 2020 to 2025, peaking at 9.1% in June 2022"></canvas></div><p style="font-size:0.75rem;color:var(--text-quiet);margin-top:8px;">Source: BLS CPI-U. Year-over-year % change.</p></div>
 
-      <span class="section-label">02 &mdash; CPI vs. PCE: why the measures differ</span>
+      <span class="section-label">CPI vs. PCE: why the measures differ</span>
 
       <p>The Bureau of Labor Statistics CPI and the Bureau of Economic Analysis PCE index track inflation differently. CPI has a fixed basket of goods; PCE adjusts weights as consumers substitute. PCE gives less weight to shelter (24% vs. CPI&rsquo;s 34.4%) and includes broader healthcare spending. The Federal Reserve targets PCE, not CPI&mdash;which is why the Fed&rsquo;s 2% inflation target is measured against PCE, not the headline CPI figure most media reports use.</p>
 
@@ -847,19 +847,19 @@
         <h2 class="part-title">Causes: What Drove the Spike</h2>
       </div>
 
-      <span class="section-label">03 &mdash; Supply chains: the initial trigger</span>
+      <span class="section-label">Supply chains: the initial trigger</span>
 
       <p>The first wave of inflation (2021) was dominated by goods price inflation driven by pandemic-related supply chain disruption: semiconductor shortages (auto prices +29% in 12 months), port congestion, container ship backlogs, and factory shutdowns in Asia. The New York Fed Global Supply Chain Pressure Index hit an all-time high in December 2021.</p>
 
       <p>Simultaneously, COVID-19 stimulus shifted consumer spending from services (which were constrained) to goods (which were already supply-constrained). This demand-supply mismatch in goods was the primary driver of 2021 inflation. It did not require fiscal stimulus to occur&mdash;the demand shift happened regardless.</p>
 
-      <span class="section-label">04 &mdash; Energy: the 2022 acceleration</span>
+      <span class="section-label">Energy: the 2022 acceleration</span>
 
       <p>The second wave of inflation (early&ndash;mid 2022) was dominated by energy prices following Russia&rsquo;s invasion of Ukraine (February 2022). Brent crude rose from ~$80/barrel to ~$120. European natural gas prices rose 400%. U.S. gasoline prices peaked at $5/gallon nationally (June 2022). Energy has a multiplier effect on CPI&mdash;it affects transportation, manufacturing inputs, food production, and heating costs simultaneously.</p>
 
       <p>Energy&rsquo;s contribution to the June 2022 peak: approximately 3.5 percentage points of the 9.1% total. Energy had fallen sharply by year-end 2022, contributing significantly to the disinflation process.</p>
 
-      <span class="section-label">05 &mdash; Fiscal stimulus: the demand contribution</span>
+      <span class="section-label">Fiscal stimulus: the demand contribution</span>
 
       <p>Three major U.S. fiscal interventions: CARES Act (March 2020, ~$2.2T), the December 2020 package (~$900B), and the American Rescue Plan (March 2021, ~$1.9T). Total: ~$5T in 18 months, approximately 25% of pre-pandemic GDP.</p>
 
@@ -876,7 +876,7 @@
         <h2 class="part-title">Inflation Components: What&rsquo;s Driving Persistence</h2>
       </div>
 
-      <span class="section-label">06 &mdash; The shelter problem</span>
+      <span class="section-label">The shelter problem</span>
 
       <p>By 2023&ndash;2026, most goods inflation and energy inflation had reversed. The persistent driver of elevated CPI is <strong>shelter</strong>, which comprises 34.4% of the CPI basket&mdash;the largest single component.</p>
 
@@ -897,7 +897,7 @@
 
       <p><strong>Why shelter inflation is so persistent:</strong> The BLS measures &ldquo;Owners&rsquo; Equivalent Rent&rdquo; (OER), which estimates what homeowners would pay if they rented their homes. OER lags actual market rents by 12&ndash;18 months because it&rsquo;s based on existing lease renewals, not new leases. By 2023, new market rents (Zillow Observed Rent Index) were growing at ~4%, but OER continued rising because it was catching up to the 2021&ndash;2022 market rent spike. This structural lag means shelter CPI will remain elevated even after actual housing market conditions normalize.</p>
 
-      <span class="section-label">07 &mdash; The wage-price spiral question</span>
+      <span class="section-label">The wage-price spiral question</span>
 
       <p>A classical concern during inflationary episodes is a &ldquo;wage-price spiral&rdquo;&mdash;wages rising in response to prices, which then push prices higher again in a self-sustaining loop. The evidence for 2021&ndash;2026 does <em>not</em> strongly support a classic spiral. Real wages (inflation-adjusted) <em>declined</em> during the peak inflation of 2021&ndash;2022&mdash;workers were falling behind inflation, not getting ahead of it. By 2024&ndash;2025, real wages recovered above pre-pandemic levels, but this recovery followed disinflation rather than preceding a new inflationary wave.</p>
 
@@ -910,7 +910,7 @@
         <h2 class="part-title">International Comparison</h2>
       </div>
 
-      <span class="section-label">08 &mdash; The global inflation episode</span>
+      <span class="section-label">The global inflation episode</span>
 
       <div class="table-scroll">
         <table class="data-table">
@@ -943,7 +943,7 @@
         <h2 class="part-title">The Federal Reserve Response</h2>
       </div>
 
-      <span class="section-label">09 &mdash; The rate hiking cycle</span>
+      <span class="section-label">The rate hiking cycle</span>
 
       <p>The Fed was widely criticized for being &ldquo;behind the curve&rdquo; in 2021: inflation began rising in spring 2021, but the Fed kept rates near zero until March 2022, describing inflation as &ldquo;transitory.&rdquo; Between March 2022 and July 2023, the Fed hiked rates by 525 basis points (5.25%)&mdash;the most aggressive tightening cycle since 1980. The federal funds rate went from 0&ndash;0.25% to 5.25&ndash;5.5%.</p>
 
@@ -962,7 +962,7 @@
         </div>
       </div>
 
-      <span class="section-label">10 &mdash; Did rate hikes cause the disinflation?</span>
+      <span class="section-label">Did rate hikes cause the disinflation?</span>
 
       <p>This is genuinely debated. The disinflation from 9.1% (June 2022) to ~3% (late 2023) happened while rates were rising, but most of the decline in goods and energy inflation reflects supply chain normalization and the reversal of energy price shocks&mdash;factors unrelated to monetary policy, which primarily works through the housing and credit channels over 12&ndash;18 months.</p>
 
@@ -977,13 +977,13 @@
         <h2 class="part-title">Steelmanning Both Sides</h2>
       </div>
 
-      <span class="section-label">11 &mdash; The strongest case that government policy caused inflation</span>
+      <span class="section-label">The strongest case that government policy caused inflation</span>
 
       <p>The ARP ($1.9T) was passed in March 2021 when many economists&mdash;including Larry Summers and Olivier Blanchard&mdash;warned it would overheat the economy. The Congressional Budget Office estimated the output gap at ~$700B; the ARP was nearly 3x that size. Sending direct payments to households (rather than banks, as in QE) is more inflationary because it directly increases consumer spending power. The San Francisco Fed&rsquo;s estimate of ~3 percentage points of inflation attributable to U.S. stimulus implies it meaningfully amplified an already difficult situation.</p>
 
       <p>The Fed&rsquo;s &ldquo;transitory&rdquo; framework in 2021 was a policy mistake that delayed tightening by approximately 12 months. Had the Fed begun hiking in spring 2021 rather than spring 2022, the peak might have been lower and the disinflation more orderly.</p>
 
-      <span class="section-label">12 &mdash; The strongest case that supply shocks were primary</span>
+      <span class="section-label">The strongest case that supply shocks were primary</span>
 
       <p>Germany experienced 10.4% inflation with an explicitly conservative fiscal policy and no large direct transfers to households. The UK experienced 11.1%. Sweden hit 10.9%. These countries applied different policy mixes at different scales&mdash;but experienced nearly identical inflation timing and magnitude. A cause that requires the same effect regardless of the policy variable is not the cause.</p>
 

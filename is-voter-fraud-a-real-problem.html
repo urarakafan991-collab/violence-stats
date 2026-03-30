@@ -559,8 +559,8 @@
     }
 
     /* ── Falsifiability threshold ── */
-    .falsify-box { background: var(--card-face, var(--surface)); border: 1px solid var(--rule, var(--border)); border-left: 3px solid var(--green); border-radius: 4px; padding: 16px 18px; margin: 24px 0; }
-    .falsify-box .falsify-label { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 8px; }
+    .falsify-box { background: var(--green-light); border: 1px solid var(--green); border-left: 4px solid var(--green); border-radius: 6px; padding: 20px 22px; margin: 32px 0; box-shadow: 0 1px 4px rgba(27,107,62,0.08); }
+    .falsify-box .falsify-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 10px; }
     .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
 
     /* ── Part takeaway boxes ── */
@@ -853,7 +853,7 @@
         <h2 class="part-title">The Scale of American Elections</h2>
       </div>
 
-      <span class="section-label">01 — Why the Denominator Is the Entire Argument</span>
+      <span class="section-label">Why the Denominator Is the Entire Argument</span>
 
       <p>When a politician says "there are 1,620 proven cases of voter fraud," that number sounds significant. Whether it is significant depends entirely on the denominator — the total number of votes against which those cases are measured. Every fraud rate in this article is calculated per relevant ballots cast, not as a raw count. The raw count without the denominator is meaningless.</p>
 
@@ -864,7 +864,7 @@
         <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart showing total ballots cast in US presidential elections from 2000 to 2024, ranging from 105 million in 2000 to 158 million in 2020."></canvas></div>
       </div>
 
-      <span class="section-label">02 — The Heritage Foundation Database — What It Is and What It Is Not</span>
+      <span class="section-label">The Heritage Foundation Database — What It Is and What It Is Not</span>
 
       <p>The Heritage Foundation's Election Fraud Database (<a class="inline-link" href="https://electionfraud.heritage.org/" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org</a>) is the most comprehensive conservative-curated collection of documented fraud cases in the United States. As of December 12, 2025, it contains <strong>1,620 proven instances</strong> of election fraud — criminal convictions, civil penalties, judicial findings, and overturned elections — spanning primarily 1982 through 2025.</p>
 
@@ -922,7 +922,7 @@
 
       <p>This table includes only federal elections. When state and local elections are added, the total ballots cast in the Heritage database window likely exceed 4 billion. The 2.5 billion figure is conservative.</p>
 
-      <span class="section-label">03 — What Outcome-Determinative Fraud Would Actually Require</span>
+      <span class="section-label">What Outcome-Determinative Fraud Would Actually Require</span>
 
       <p>The political claim is not just that fraud exists — it is that fraud has <em>altered or could alter</em> election outcomes. To evaluate that claim, it's necessary to calculate what outcome-determinative fraud would require in a presidential election.</p>
 
@@ -945,8 +945,8 @@
       <div class="sources-section">
         <span class="sources-section-label">Part 1 Sources</span>
         <div class="source-item"><strong>Heritage Foundation Election Fraud Database (Dec 12, 2025)</strong> — <a href="https://electionfraud.heritage.org/" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org</a></div>
-        <div class="source-item"><strong>Heritage Foundation "About" page — database methodology statement</strong> — <a href="https://electionfraud.heritage.org/about" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org/about</a></div>
-        <div class="source-item"><strong>FEC historical election results / Census turnout compilations</strong> — basis for 2.5 billion ballot estimate</div>
+        <div class="source-item">Heritage Foundation "About" page — database methodology statement — <a href="https://electionfraud.heritage.org/about" target="_blank" rel="noopener noreferrer">electionfraud.heritage.org/about</a></div>
+        <div class="source-item">FEC historical election results / Census turnout compilations — basis for 2.5 billion ballot estimate</div>
         <div class="source-item"><strong>Georgia 2020 certified results</strong> — Biden +11,779; Arizona — Biden +10,457; Wisconsin — Biden +20,682; Pennsylvania — Biden +80,555</div>
       </div>
     </div>
@@ -963,7 +963,7 @@
         <h2 class="part-title">Fraud by Category — Six Types, Six Numbers</h2>
       </div>
 
-      <span class="section-label">04 — Taxonomy: Not All Election Fraud Is the Same</span>
+      <span class="section-label">Taxonomy: Not All Election Fraud Is the Same</span>
 
       <p>Different forms of election fraud are not equally common, are not equally detectable, and are not addressed by the same policy responses. Voter ID laws target in-person impersonation — the rarest type. Mail ballot restrictions address absentee fraud — somewhat more common, still vanishingly rare. Understanding which type you're measuring is necessary before any policy argument can be made.</p>
 
@@ -972,7 +972,7 @@
         <div class="chart-canvas-wrap" style="height:220px;"><canvas id="chart2" role="img" aria-label="Horizontal bar chart showing documented fraud rates by type per 10 million ballots. In-person impersonation and noncitizen voting are near zero."></canvas></div>
       </div>
 
-      <span class="section-label">05 — In-Person Voter Impersonation (The Rarest Type)</span>
+      <span class="section-label">In-Person Voter Impersonation (The Rarest Type)</span>
 
       <p>In-person voter impersonation — where someone shows up at a polling place and votes in another person's name — is the form of fraud most commonly cited as justification for voter ID laws. It is also the form with the lowest documented incidence by a significant margin.</p>
 
@@ -993,13 +993,13 @@
         </div>
       </div>
 
-      <span class="section-label">06 — Absentee / Mail Ballot Fraud (Most Common, Still Rare)</span>
+      <span class="section-label">Absentee / Mail Ballot Fraud (Most Common, Still Rare)</span>
 
       <p>Mail ballot fraud — forgeries, illegal collection, or submission of ballots without the voter's knowledge — represents the largest category in the Heritage database. A Brookings Institution analysis of Heritage's data found approximately 0.00006% of mail ballots cast over 20 years were fraudulent. This makes it roughly 20 times more common than in-person impersonation, but still statistically negligible at the level where it could affect statewide or national outcomes.</p>
 
       <p>The highest-profile real case of absentee fraud in recent history is the 2018 North Carolina 9th Congressional District scheme — documented in full in Part 3.</p>
 
-      <span class="section-label">07 — Noncitizen Voting (Most Claimed, Least Proven)</span>
+      <span class="section-label">Noncitizen Voting (Most Claimed, Least Proven)</span>
 
       <p>Claims of mass noncitizen voting — that millions of undocumented immigrants or foreign nationals are voting in federal elections — are among the most frequently made and least evidentially supported in election fraud discourse.</p>
 
@@ -1059,13 +1059,13 @@
         </tbody>
       </table></div>
 
-      <span class="section-label">08 — Registration Fraud ≠ Vote Fraud (A Critical Distinction)</span>
+      <span class="section-label">Registration Fraud ≠ Vote Fraud (A Critical Distinction)</span>
 
       <p>Fraudulent voter registrations — submitting forms with fake names or ineligible individuals — are frequently conflated with fraudulent votes. They are not the same. A fraudulent registration does not produce a fraudulent vote unless someone shows up and votes using that registration, which requires passing through an additional layer of scrutiny at the polls.</p>
 
       <p>The ACORN controversy of 2008 is the canonical example. ACORN voter registration workers submitted an estimated 400,000 potentially fraudulent or duplicate registration forms. The subsequent federal and state investigations produced zero prosecutions for fraudulent votes cast from those registrations. The fraud was in the forms — not in the ballot box. Heritage's own database confirms this distinction: its "False Registration" category lists hundreds of cases, most of which did not result in a single fraudulent vote being cast.</p>
 
-      <span class="section-label">09 — DOJ Prosecution Data, Independent of Heritage</span>
+      <span class="section-label">DOJ Prosecution Data, Independent of Heritage</span>
 
       <p>The Department of Justice's Public Integrity Section (PIN), established in 1976 with an Election Crimes Branch added in 1980, handles federal election offense prosecutions. PIN does not publish consolidated annual voter fraud statistics. The available independent data:</p>
 
@@ -1088,7 +1088,7 @@
         <span class="sources-section-label">Part 2 Sources</span>
         <div class="source-item"><strong>Brennan Center for Justice — Voter Fraud Research (multiple studies, 2017–2024)</strong> — brennancenter.org/issues</div>
         <div class="source-item"><strong>Brookings Institution mail voting analysis (November 6, 2025)</strong> — brookings.edu</div>
-        <div class="source-item"><strong>American Immigration Council — Heritage noncitizen voting review</strong> — americanimmigrationcouncil.org</div>
+        <div class="source-item">American Immigration Council — Heritage noncitizen voting review — americanimmigrationcouncil.org</div>
         <div class="source-item"><strong>Cato Institute — noncitizen voting review (2002–2024)</strong> — cato.org</div>
         <div class="source-item"><strong>Reuters — "24 instances of noncitizens voting, 2003–2023"</strong> — reuters.com</div>
         <div class="source-item"><strong>Georgia Secretary of State voter roll audit (2024)</strong> — sos.ga.gov</div>
@@ -1110,7 +1110,7 @@
         <h2 class="part-title">Real Cases — The Documented Record</h2>
       </div>
 
-      <span class="section-label">10 — The Kobach Test: What Happens When You Actually Look</span>
+      <span class="section-label">The Kobach Test: What Happens When You Actually Look</span>
 
       <p>Kris Kobach ran for Kansas Attorney General in 2022 specifically on a platform of prosecuting voter fraud. He won. He was granted unprecedented state authority to investigate and prosecute election crimes — authority that Kansas AGs had not previously held. His office actively pursued fraud cases.</p>
 
@@ -1118,7 +1118,7 @@
 
       <p>This is the most useful real-world data point in the voter fraud debate: a politician who genuinely believed fraud was widespread, who had the legal authority and political mandate to find it, who actively looked — and found effectively nothing that held up in court. The Kobach test does not prove fraud is absent; it measures what aggressive investigation actually produces.</p>
 
-      <span class="section-label">11 — Confirmed High-Profile Cases (Bipartisan)</span>
+      <span class="section-label">Confirmed High-Profile Cases (Bipartisan)</span>
 
       <!-- Case 1: NC Dowless -->
       <div class="case-card">
@@ -1209,7 +1209,7 @@
         <h2 class="part-title">The 2020 Litigation Record — 60+ Lawsuits, No Widespread Fraud</h2>
       </div>
 
-      <span class="section-label">12 — What the Courts Found</span>
+      <span class="section-label">What the Courts Found</span>
 
       <p>Following the 2020 presidential election, supporters of Donald Trump filed approximately 60–65 lawsuits across 12 battleground states alleging a range of misconduct — from illegal ballot counting procedures to manipulated voting machines. A critical distinction often obscured in political discussion: many cases were dismissed on procedural grounds (lack of standing, mootness, timeliness), but a significant number were also reviewed on the evidentiary merits — and rejected.</p>
 
@@ -1254,7 +1254,7 @@
             <td class="td-both">STANDING/LACHES + MERITS: All claims rejected. Affirmed by 11th Circuit.</td>
           </tr>
           <tr>
-            <td><strong>U.S. Supreme Court — Texas v. Pennsylvania (et al.)</strong></td>
+            <td>U.S. Supreme Court — Texas v. Pennsylvania (et al.)</td>
             <td>Seeks to invalidate electoral votes in 4 states</td>
             <td class="td-dismissed">DISMISSED Dec 11, 2020: No standing. No other federal challenge to the 2020 election succeeded.</td>
           </tr>
@@ -1263,7 +1263,7 @@
 
       <p>Of approximately 60+ lawsuits filed, 47 were dismissed by federal judges — at least 8 of whom were Trump appointees. Zero succeeded in overturning or invalidating a single electoral vote.</p>
 
-      <span class="section-label">13 — What Republican Officials Said</span>
+      <span class="section-label">What Republican Officials Said</span>
 
       <div class="stat-block">
         <div class="stat-block-header">
@@ -1302,7 +1302,7 @@
         <h2 class="part-title">2026 — New Investigations, Same Evidence</h2>
       </div>
 
-      <span class="section-label">14 — The Fulton County FBI Raid (January 2026)</span>
+      <span class="section-label">The Fulton County FBI Raid (January 2026)</span>
 
       <p>On January 28, 2026, FBI agents executed a search warrant on the Fulton County Election Hub in Union City, Georgia, seizing approximately 700 boxes of physical materials from the 2020 election cycle — including original ballots, tabulator tapes, electronic ballot images, and state voter registration rolls.</p>
 
@@ -1315,20 +1315,20 @@
         <p>Fulton County was hand-counted three times in 2020 — including a full hand audit — all confirming Biden's margin. No prior investigation found evidence of widespread fraud in the county's election administration. As of February 2026, the FBI seizure has not produced new evidence that contradicts those findings.</p>
       </div>
 
-      <span class="section-label">15 — DOJ Investigations and the Nevada Closure</span>
+      <span class="section-label">DOJ Investigations and the Nevada Closure</span>
 
       <p>The Justice Department, responding to White House pressure to pursue noncitizen voter fraud cases, has faced a consistent challenge: the cases are not materializing at the scale claimed. In Nevada, law enforcement officials closed their investigation into potential noncitizen voting in the 2020 election in early 2026, having identified fewer than 40 potential instances — and the statute of limitations for any prosecution from that election had expired.</p>
 
       <p>AG Bondi appointed Thomas Albus as a special prosecutor with nationwide jurisdiction for election integrity cases. The DOJ also established a "Weaponization Working Group" and directed resources toward investigating local election administrators based in part on allegations generated in online forums, rather than traditional law enforcement referrals.</p>
 
-      <span class="section-label">16 — The Electoral Count Reform Act (What Bipartisan Election Integrity Looks Like)</span>
+      <span class="section-label">The Electoral Count Reform Act (What Bipartisan Election Integrity Looks Like)</span>
 
       <p>In contrast to the contested fraud narratives, Congress did pass one significant piece of bipartisan election security legislation: the <strong>Electoral Count Reform Act (ECRA) of 2022</strong>. The ECRA addressed real vulnerabilities in the certification process that the 2020 post-election period exposed — specifically the ambiguity about the Vice President's role in certification and the threshold for congressional objections to state electoral slates. It clarified that the VP's role is strictly ceremonial and raised the bar for objections. This is what documented electoral vulnerability remediation looks like when it is based on actual documented problems rather than unproven fraud claims.</p>
 
       <div class="sources-section">
         <span class="sources-section-label">Part 5 Sources</span>
         <div class="source-item"><strong>Detroit News / Washington Post — "DOJ struggles as White House presses on voter fraud" (Feb 20, 2026)</strong> — <a href="https://www.detroitnews.com/story/news/politics/2026/02/20/doj-struggles-as-white-house-presses-on-voter-fraud/88775563007/" target="_blank" rel="noopener noreferrer">detroitnews.com</a></div>
-        <div class="source-item"><strong>Bloomberg Government — Bondi/Albus special appointment</strong> — <a href="https://news.bgov.com/us-law-week/bondi-hands-st-louis-prosecutor-nationwide-election-fraud-remit" target="_blank" rel="noopener noreferrer">news.bgov.com</a></div>
+        <div class="source-item">Bloomberg Government — Bondi/Albus special appointment — <a href="https://news.bgov.com/us-law-week/bondi-hands-st-louis-prosecutor-nationwide-election-fraud-remit" target="_blank" rel="noopener noreferrer">news.bgov.com</a></div>
         <div class="source-item"><strong>IBTimes — Fulton County raid and legal challenge (Feb 2026)</strong> — ibttimes.com</div>
         <div class="source-item"><strong>Electoral Count Reform Act of 2022 (Pub.L. 117–328)</strong> — congress.gov</div>
         <div class="source-item"><strong>NAACP / Lawyers' Committee — emergency motion re: seized voter data (2026)</strong> — lawyerscommittee.org</div>
@@ -1347,7 +1347,7 @@
         <h2 class="part-title">Limitations &amp; The Strongest Counterarguments</h2>
       </div>
 
-      <span class="section-label">17 — What This Data Cannot Tell Us</span>
+      <span class="section-label">What This Data Cannot Tell Us</span>
 
       <p>The absence of documented fraud does not prove the absolute absence of all fraud. Undocumented cases may exist. Specifically:</p>
 
@@ -1357,7 +1357,7 @@
 
       <p><strong>What researchers say.</strong> The academic consensus — including from Heritage-adjacent researchers — is that undetected fraud almost certainly exists at some level. The question is whether it exists at the scale required to alter outcomes. Studies consistently conclude that large-scale undetected fraud would produce detectable statistical anomalies in audits, recounts, and turnout patterns. No such anomalies have been found in the elections most scrutinized.</p>
 
-      <span class="section-label">18 — The Strongest Counterargument: Heritage Foundation's Own Position</span>
+      <span class="section-label">The Strongest Counterargument: Heritage Foundation's Own Position</span>
 
       <div class="steelman-wrap">
         <div class="steelman-row">
@@ -1382,7 +1382,7 @@
         </div>
       </div>
 
-      <span class="section-label">19 &mdash; The Cost of Looking</span>
+      <span class="section-label">The Cost of Looking</span>
 
       <p>Multiple states have conducted post-2020 audits and investigations specifically designed to find widespread fraud. The results are consistent with the Heritage database rates:</p>
 
@@ -1403,8 +1403,8 @@
 
       <div class="sources-section">
         <span class="sources-section-label">Part 6 Sources</span>
-        <div class="source-item"><strong>Heritage Foundation "About" page — acknowledged limitations</strong> — electionfraud.heritage.org/about</div>
-        <div class="source-item"><strong>MIT Election Lab — academic consensus on detection and scale</strong> — electionlab.mit.edu</div>
+        <div class="source-item">Heritage Foundation "About" page — acknowledged limitations — electionfraud.heritage.org/about</div>
+        <div class="source-item">MIT Election Lab — academic consensus on detection and scale — electionlab.mit.edu</div>
         <div class="source-item"><strong>Kris Kobach Kansas AG prosecutions — documented outcomes (2022–2024)</strong> — Kansas AG records</div>
       </div>
     </div>
@@ -1425,7 +1425,7 @@
 
       <div class="cs-row">
         <div class="cs-num positive">0</div>
-        <div class="cs-text"><strong>In-person voter impersonation cases found by the Bush DOJ's dedicated voter fraud unit over five years of targeted investigation.</strong> 31 credible cases identified across more than one billion ballots by the Brennan Center (2000–2014). In-person impersonation is the primary form of fraud targeted by voter ID laws.</div>
+        <div class="cs-text">In-person voter impersonation cases found by the Bush DOJ's dedicated voter fraud unit over five years of targeted investigation. 31 credible cases identified across more than one billion ballots by the Brennan Center (2000–2014). In-person impersonation is the primary form of fraud targeted by voter ID laws.</div>
       </div>
 
       <div class="cs-row">
@@ -1482,10 +1482,10 @@
           <span class="ymal-title">Political Violence in the U.S. &rarr;</span>
           <span class="ymal-desc">Domestic terrorism and hate crimes across every ideological category.</span>
         </a>
-        <a href="/does-more-policing-reduce-crime" class="ymal-card">
+        <a href="/do-immigrants-commit-more-crime" class="ymal-card">
           <span class="ymal-cat">Political Fact Check</span>
-          <span class="ymal-title">Police Funding and Crime &rarr;</span>
-          <span class="ymal-desc">Did 'defund the police' cause the 2020 homicide spike? It's complicated.</span>
+          <span class="ymal-title">Do Immigrants Commit More Crime? &rarr;</span>
+          <span class="ymal-desc">Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence.</span>
         </a>
       </div>
     </div>
