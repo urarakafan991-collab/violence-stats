@@ -1,1094 +1,1067 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media &amp; Youth Mental Health | TruthBased.org</title>
-  <meta name="description" content="Is social media destroying a generation or is it moral panic? CDC YRBS, ABCD, meta-analyses, Haidt vs. Odgers, effect sizes. Both sides steelmanned.">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Does Social Media Harm Teenagers&amp;#39; Mental Health? | TruthBased.org</title>
+ <meta name="description" content="Is social media destroying a generation or is it moral panic? CDC YRBS, ABCD, meta-analyses, Haidt vs. Odgers, effect sizes. ">
 
-  <meta property="og:type"    content="article">
-  <meta property="og:url"     content="https://www.truthbased.org/does-social-media-harm-teenagers-mental-health">
-  <meta property="og:title"   content="Political, Ideological & Hate-Motivated Violence in the US | TruthBased.org">
-  <meta property="og:description" content="CDC YRBS, NHS Digital, ABCD, meta-analyses, and natural experiments on social media and teen mental health. Haidt vs. Odgers. Both sides steelmanned.">
-  <meta name="twitter:card"   content="summary">
-  <meta name="twitter:title"  content="Political, Ideological & Hate-Motivated Violence in the US | TruthBased.org">
-  <meta name="twitter:description" content="Is social media harming teen mental health? CDC, NHS Digital, ABCD, and peer-reviewed evidence. Effect sizes disclosed. Both sides steelmanned.">
+ <meta property="og:type"  content="article">
+ <meta property="og:url"   content="https://www.truthbased.org/does-social-media-harm-teenagers-mental-health">
+ <meta property="og:title"  content="Does Social Media Harm Teenagers&amp;#39; Mental Health? | TruthBased.org">
+ <meta property="og:description" content="CDC YRBS, NHS Digital, ABCD, meta-analyses, and natural experiments on social media and teen mental health. Haidt vs. Odgers. ">
+ <meta name="twitter:card"  content="summary">
+ <meta name="twitter:title" content="Does Social Media Harm Teenagers&amp;#39; Mental Health? — TruthBased.org">
+ <meta name="twitter:description" content="Is social media harming teen mental health? CDC, NHS Digital, ABCD, and peer-reviewed evidence. Effect sizes disclosed. ">
 
-  <link rel="canonical" href="https://www.truthbased.org/does-social-media-harm-teenagers-mental-health">
-  <meta name="theme-color" content="#b83a1e">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+ <link rel="canonical" href="https://www.truthbased.org/does-social-media-harm-teenagers-mental-health">
+ <meta name="theme-color" content="#b83a1e">
+ <link rel="icon" href="/favicon.ico" sizes="any">
+ <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
 
-  <style>
-    .site-nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px; height: 52px;
-      border-bottom: 1px solid var(--rule);
-      background-color: rgba(247, 245, 241, 0.97);
-      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-      transition: box-shadow 0.2s ease;
-      position: sticky; top: 0; z-index: 100;
-    }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
-    .nav-left { display: flex; align-items: center; gap: 16px; }
-    .nav-wordmark {
-      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
-      color: var(--text-primary, var(--text-head, #151311));
-      text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
-    }
-    .nav-wordmark strong { color: var(--brick); }
-    .nav-back {
-      font-family: 'Sora', sans-serif; font-size: 0.72rem;
-      color: var(--text-dim, #706d64); text-decoration: none;
-      border: 1px solid var(--rule); border-radius: 3px;
-      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
-      white-space: nowrap;
-    }
-    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
-    .nav-category {
-      font-family: 'Courier Prime', monospace; font-size: 0.56rem;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet, #736e66);
-      padding-left: 16px; border-left: 1px solid var(--rule);
-      white-space: nowrap;
-    }
-
-    :root {
-      --bg:           #f7f5f1;
-      --surface:      #f0ede8;
-      --card-face:    #ffffff;
-      --card-tinted:  #fdfcfa;
-      --border:       #ddd9d0;
-      --rule:         #ddd9d0;
-      --text-head:    #1a1714;
-      --text-body:    #2d2926;
-      --text-dim:     #5a544c;
-      --text-quiet:   #736e66;
-      --brick:        #b83a1e;
-      --brick-light:  #f5e8e4;
-      --green:        #1b6b3e;
-      --green-light:  #e8f5ed;
-      --amber:        #7a4f00;
-      --amber-light:  #fdf5e6;
-      --font-serif:   'Spectral', Georgia, serif;
-      --font-sans:    'Sora', system-ui, sans-serif;
-      --font-mono:    'Courier Prime', monospace;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text-body);
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .jump-nav {
-      position: sticky; top: 52px; z-index: 90;
-      background: var(--surface); border-bottom: 1px solid var(--border);
-      padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
-    }
-    .jump-btn {
-      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
-      color: var(--text-dim); text-decoration: none;
-      border: 1px solid var(--border); border-radius: 4px;
-      padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
-    }
-    .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
-    .jump-toggle {
-      display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
-      color: var(--text-dim); background: none; border: 1px solid var(--border);
-      border-radius: 4px; padding: 5px 12px; cursor: pointer;
-      transition: color .15s, border-color .15s; white-space: nowrap;
-    }
-    .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
-    .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
-
-    .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
-
-    .article-category {
-      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--brick); display: block; margin-bottom: 10px;
-    }
-    .article-title {
-      font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 600; line-height: 1.15; color: var(--text-head);
-      letter-spacing: -0.02em; margin-bottom: 14px;
-    }
-    .article-deck {
-      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
-      font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
-    }
-    .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
-    .meta-pill {
-      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
-    }
-    .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
-
-    .box {
-      border-radius: 6px; padding: 16px 20px; margin: 20px 0;
-      border-left: 3px solid;
-    }
-    .box-label {
-      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
-      letter-spacing: .08em; text-transform: uppercase;
-      display: block; margin-bottom: 8px;
-    }
-    .box p { font-size: 0.9rem; line-height: 1.6; }
-    .box-amber { background: var(--amber-light); border-color: #c8850a; }
-    .box-amber .box-label { color: var(--amber); }
-    .box-green { background: var(--green-light); border-color: var(--green); }
-    .box-green .box-label { color: var(--green); }
-    .box-red { background: var(--brick-light); border-color: var(--brick); }
-    .box-red .box-label { color: var(--brick); }
-
-    .sources-bar { margin: 24px 0; }
-    .sources-bar-label {
-      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
-      letter-spacing: .08em; text-transform: uppercase;
-      color: var(--text-quiet); display: block; margin-bottom: 10px;
-    }
-    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-    .source-pill {
-      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
-      color: var(--text-dim); text-decoration: none;
-      border: 1px solid var(--border); border-radius: 4px;
-      padding: 4px 10px; background: var(--surface);
-      transition: color .15s, border-color .15s;
-    }
-    .source-pill:hover { color: var(--brick); border-color: var(--brick); }
-
-    .part-header {
-      margin: 48px 0 20px;
-      padding-top: 32px;
-      border-top: 2px solid var(--text-head);
-    }
-    .part-label {
-      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--text-quiet); display: block; margin-bottom: 6px;
-    }
-    .part-title {
-      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
-      color: var(--text-head); letter-spacing: -0.01em;
-    }
-
-    .section-label {
-      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
-      color: var(--text-quiet); display: block;
-      margin: 28px 0 10px; letter-spacing: .04em;
-    }
-
-    .stat-block {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; margin: 16px 0; overflow: hidden;
-    }
-    .stat-block-header {
-      background: var(--border); padding: 8px 14px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .stat-block-name {
-      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
-      color: var(--text-head);
-    }
-    .stat-block-period {
-      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
-    }
-    .stat-block-body { padding: 4px 0; }
-    .stat-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 7px 14px; border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
-    }
-    .stat-row:last-child { border-bottom: none; }
-    .stat-key { color: var(--text-dim); font-size: 0.84rem; }
-    .stat-val {
-      font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
-    }
-    .stat-val.negative { color: var(--brick); }
-    .stat-val.positive { color: var(--green); }
-    .stat-val.neutral   { color: var(--text-head); }
-    .stat-val.warn      { color: var(--amber); }
-
-    .data-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 0.82rem; margin: 16px 0;
-      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
-    }
-    .data-table th {
-      background: var(--border); padding: 8px 12px;
-      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
-      text-align: left; color: var(--text-head);
-    }
-    .data-table td {
-      padding: 8px 12px; border-bottom: 1px solid var(--border);
-      vertical-align: top; line-height: 1.5;
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table tr:nth-child(even) td { background: var(--surface); }
-    .td-rate  { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
-    .td-num   { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
-    .td-note  { color: var(--text-dim); font-size: 0.78rem; }
-    .td-alert { color: var(--brick); font-weight: 600; }
-    .td-warn  { color: var(--amber); font-weight: 600; }
-
-    .chart-wrap {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; padding: 16px; margin: 16px 0;
-    }
-    .chart-title {
-      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
-      color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-    .chart-canvas-wrap { position: relative; height: 280px; }
-
-    .steelman-wrap {
-      border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
-    }
-    .steelman-row {
-      display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
-    }
-    .steelman-row:last-child { border-bottom: none; }
-    .steelman-key {
-      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .06em;
-      background: var(--surface); padding: 10px 14px;
-      min-width: 160px; color: var(--text-dim); border-right: 1px solid var(--border);
-    }
-    .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
-    .steelman-val.rebuttal { color: var(--brick); }
-
-    .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
-    .cs-row {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; padding: 14px 16px;
-    }
-    .cs-num {
-      font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
-      line-height: 1.1; margin-bottom: 6px;
-    }
-    .cs-num.positive { color: var(--green); }
-    .cs-num.negative { color: var(--brick); }
-    .cs-num.neutral  { color: var(--text-head); }
-    .cs-num.warn     { color: var(--amber); }
-    .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
-
-    .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
-    .sources-section-label {
-      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--text-quiet); display: block; margin-bottom: 10px;
-    }
-    .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
-    .source-item strong { color: var(--text-body); font-weight: 500; }
-
-    p { margin-bottom: 14px; }
-    .inline-link { color: var(--brick); text-decoration: none; }
-    .inline-link:hover { text-decoration: underline; }
-    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
-
-    .source-note {
-      font-family: var(--font-mono); font-size: 0.72rem;
-      color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
-      line-height: 1.5;
-    }
-
-    .confidence-tag {
-      display: inline-block;
-      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 2px 8px; border-radius: 3px; margin-left: 6px;
-      vertical-align: middle;
-    }
-    .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
-    .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
-    .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
-
-    @media (max-width: 640px) {
-      .site-nav { padding: 0 16px; height: 46px; }
-      .nav-category { display: none; }
-      .article-wrap { padding: 24px 16px 60px; }
-      .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
-      .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
-      .jump-toggle { display: inline-flex; align-items: center; }
-      .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
-      .jump-links.is-open { display: flex; }
-      [id^="part"] { scroll-margin-top: 105px; }
-      .part-header { margin: 36px 0 16px; padding-top: 24px; }
-      .steelman-row { flex-direction: column; }
-      .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
-      .data-table { font-size: 0.76rem; }
-      .data-table th, .data-table td { padding: 6px 8px; }
-      .nav-back { font-size: 0.7rem; padding: 2px 8px; }
-      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
-      .source-pills { gap: 4px; }
-      .source-pill { font-size: 0.64rem; padding: 3px 7px; }
-    }
-    @media (max-width: 900px) and (min-width: 641px) {
-      .site-nav { padding: 0 24px; }
-      .article-wrap { padding: 32px 24px 60px; }
-    }
-
-    .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
-    [id^="part"] { scroll-margin-top: 120px; }
-    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
-    .table-scroll .data-table { margin: 0; min-width: 500px; }
-
-    [data-theme="dark"] {
-      --bg:           #1a1918;
-      --surface:      #242220;
-      --card-face:    #242220;
-      --card-tinted:  #2a2826;
-      --border:       #3a3632;
-      --rule:         #3a3632;
-      --text-head:    #e8e5e0;
-      --text-body:    #c5c0b8;
-      --text-dim:     #8a857d;
-      --text-quiet:   #6a655e;
-      --brick:        #e05a3a;
-      --brick-light:  #2d1f1a;
-      --green:        #4cbb6a;
-      --green-light:  #1a2d20;
-      --amber:        #d4a030;
-      --amber-light:  #2d2518;
-    }
-    [data-theme="dark"] .jump-nav { background: #242220; }
-    [data-theme="dark"] .chart-wrap { background: #2a2826; }
-    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
-    [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
-
-    html { transition: background-color 0.3s ease, color 0.3s ease; }
-    body { transition: background-color 0.3s ease, color 0.3s ease; }
-
-    .reading-progress {
-      position: fixed; top: 0; left: 0; height: 3px;
-      background: var(--brick); z-index: 9999;
-      width: 0%; transition: width 0.1s linear;
-      pointer-events: none;
-    }
-    .back-to-top {
-      position: fixed; bottom: 28px; right: 28px;
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--brick); color: #fff;
-      border: none; cursor: pointer;
-      font-size: 1.1rem; line-height: 1;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transform: translateY(12px);
-      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
-      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .back-to-top.visible { opacity: 1; transform: translateY(0); }
-    .back-to-top:hover { filter: brightness(1.15); }
-    .theme-toggle {
-      margin-left: auto;
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule);
-      background: transparent; cursor: pointer;
-      font-size: 1rem; line-height: 1;
-      display: flex; align-items: center; justify-content: center;
-      transition: border-color 0.15s, background-color 0.3s;
-      color: var(--text-dim, #5a544c);
-    }
-    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
-    .skip-link {
-      position: absolute; top: -100%; left: 16px;
-      background: var(--brick); color: #fff;
-      padding: 8px 16px; border-radius: 0 0 4px 4px;
-      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
-      z-index: 200; transition: top 0.15s ease;
-      text-decoration: none;
-    }
-    .skip-link:focus { top: 0; }
-    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
-
-    .claims-box {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; padding: 20px 22px; margin: 24px 0;
-    }
-    .claims-box-label {
-      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet); display: block; margin-bottom: 14px;
-    }
-    .claim-row {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; border-bottom: 1px solid var(--border);
-      font-size: 0.82rem; line-height: 1.5;
-    }
-    .claim-row:last-child { border-bottom: none; }
-    .claim-cell { padding: 10px 12px; }
-    .claim-cell-label {
-      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 4px; display: block;
-    }
-    .claim-said { color: var(--brick); }
-    .claim-data { color: var(--green); }
-    .claim-cell:first-child { border-right: 1px solid var(--border); }
-    @media (max-width: 600px) {
-      .claim-row { grid-template-columns: 1fr; }
-      .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
-    }
-
-    .falsify-box { background: var(--green-light); border: 1px solid var(--green); border-left: 4px solid var(--green); border-radius: 6px; padding: 20px 22px; margin: 32px 0; box-shadow: 0 1px 4px rgba(27,107,62,0.08); }
-    .falsify-box .falsify-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 10px; }
-    .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
-
-    .part-takeaway {
-      background: var(--surface); border-left: 3px solid var(--brick);
-      padding: 14px 20px; margin: 32px 0 8px;
-      border-radius: 0 4px 4px 0; font-size: 0.9rem;
-      line-height: 1.65;
-    }
-    .part-takeaway strong {
-      font-family: var(--font-mono); font-size: 0.68rem;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--brick); display: block; margin-bottom: 4px;
-    }
-
-    .info-note {
-      font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
-      font-style: italic; margin-top: -6px; margin-bottom: 12px;
-      padding-left: 14px; border-left: 2px solid var(--rule);
-      line-height: 1.55;
-    }
-
-    .table-scroll { position: relative; }
-    .table-scroll::after {
-      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
-      background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
-      pointer-events: none; opacity: 0; transition: opacity 0.2s;
-    }
-    .table-scroll.has-overflow::after { opacity: 0.7; }
-    [data-theme="dark"] .table-scroll::after {
-      background: linear-gradient(to right, transparent, var(--bg, #1a1918));
-    }
-
-    caption {
-      font-family: var(--font-mono, 'Courier Prime', monospace);
-      font-size: 0.6rem; letter-spacing: 0.06em;
-      color: var(--text-quiet, #736e66);
-      text-align: left; caption-side: top;
-      padding: 0 0 6px 0;
-    }
-
-    .cite-this {
-      margin-top: 28px; padding: 14px 18px;
-      background: var(--card-tinted, var(--surface, #fdfcfa));
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-    }
-    .cite-this-label {
-      font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
-    }
-    .cite-this-text {
-      font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
-      color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-      html { scroll-behavior: auto !important; }
-    }
-    @media (max-width: 640px) {
-      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
-    }
-    @media print {
-      .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
-      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
-      .article-wrap { max-width: 100%; padding: 0; }
-    }
-
-    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-
-
-  
-    /* ── You May Also Like ── */
-    .ymal-section { margin-top: 8px; }
-    .ymal-heading {
-      font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
-      display: block; margin-bottom: 12px;
-    }
-    .ymal-grid {
-      display: grid; grid-template-columns: 1fr; gap: 10px;
-    }
-    @media (min-width: 640px) {
-      .ymal-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    .ymal-card {
-      display: flex; flex-direction: column; gap: 4px;
-      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
-      border-left: 3px solid transparent;
-    }
-    .ymal-card:hover {
-      border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    .ymal-cat {
-      font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
-    }
-    .ymal-title {
-      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
-      color: var(--text-body); line-height: 1.3;
-    }
-    .ymal-desc {
-      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
-      line-height: 1.45;
-    }
-
-    </style>
-
-  <script>
-    (function(){
-      var html = document.documentElement;
-      try {
-        var stored = localStorage.getItem('tb-theme');
-        if (stored) html.setAttribute('data-theme', stored);
-        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
-      } catch(e) {}
-    })();
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Social Media & Youth Mental Health: What the Evidence Actually Shows",
-    "description": "A comprehensive, primary-source analysis of social media's relationship to teen mental health. CDC YRBS, ABCD, meta-analyses, natural experiments. Both sides steelmanned.",
-    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
-    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
-    "datePublished": "2026-03-23",
-    "dateModified": "2026-03-23",
-    "mainEntityOfPage": "https://www.truthbased.org/does-social-media-harm-teenagers-mental-health",
-    "keywords": ["social media", "teen mental health", "youth depression", "Haidt", "Odgers", "CDC YRBS", "ABCD", "screen time", "moral panic", "Surgeon General"]
+ <style>
+  .site-nav {
+   display: flex; align-items: center; justify-content: space-between;
+   padding: 0 48px; height: 52px;
+   border-bottom: 1px solid var(--rule);
+   background-color: rgba(247, 245, 241, 0.97);
+   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+   transition: box-shadow 0.2s ease;
+   position: sticky; top: 0; z-index: 100;
   }
-  </script>
+  [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
+  .nav-left { display: flex; align-items: center; gap: 16px; }
+  .nav-wordmark {
+   font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
+   color: var(--text-primary, var(--text-head, #151311));
+   text-decoration: none; letter-spacing: -0.02em; white-space: nowrap;
+  }
+  .nav-wordmark strong { color: var(--brick); }
+  .nav-back {
+   font-family: 'Sora', sans-serif; font-size: 0.72rem;
+   color: var(--text-dim, #706d64); text-decoration: none;
+   border: 1px solid var(--rule); border-radius: 3px;
+   padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
+   white-space: nowrap;
+  }
+  .nav-back:hover { color: var(--brick); border-color: var(--brick); }
+  .nav-category {
+   font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+   letter-spacing: 0.12em; text-transform: uppercase;
+   color: var(--text-quiet, #736e66);
+   padding-left: 16px; border-left: 1px solid var(--rule);
+   white-space: nowrap;
+  }
+
+  :root {
+   --bg:      #f7f5f1;
+   --surface:   #f0ede8;
+   --card-face:  #ffffff;
+   --card-tinted: #fdfcfa;
+   --border:    #ddd9d0;
+   --rule:     #ddd9d0;
+   --text-head:  #1a1714;
+   --text-body:  #2d2926;
+   --text-dim:   #5a544c;
+   --text-quiet:  #736e66;
+   --brick:    #b83a1e;
+   --brick-light: #f5e8e4;
+   --green:    #1b6b3e;
+   --green-light: #e8f5ed;
+   --amber:    #7a4f00;
+   --amber-light: #fdf5e6;
+   --font-serif:  'Spectral', Georgia, serif;
+   --font-sans:  'Sora', system-ui, sans-serif;
+   --font-mono:  'Courier Prime', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+   background: var(--bg);
+   color: var(--text-body);
+   font-family: var(--font-serif);
+   font-size: 1.05rem;
+   line-height: 1.7;
+  }
+
+  .jump-nav {
+   position: sticky; top: 52px; z-index: 90;
+   background: var(--surface); border-bottom: 1px solid var(--border);
+   padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .jump-btn {
+   font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+   color: var(--text-dim); text-decoration: none;
+   border: 1px solid var(--border); border-radius: 4px;
+   padding: 4px 10px; transition: color .15s, border-color .15s, background .15s;
+  }
+  .jump-btn:hover { color: var(--brick); border-color: var(--brick); background: var(--brick-light); }
+  .jump-toggle {
+   display: none; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+   color: var(--text-dim); background: none; border: 1px solid var(--border);
+   border-radius: 4px; padding: 5px 12px; cursor: pointer;
+   transition: color .15s, border-color .15s; white-space: nowrap;
+  }
+  .jump-toggle:hover { color: var(--brick); border-color: var(--brick); }
+  .jump-toggle svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
+
+  .article-wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .article-category {
+   font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+   letter-spacing: .1em; text-transform: uppercase;
+   color: var(--brick); display: block; margin-bottom: 10px;
+  }
+  .article-title {
+   font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+   font-weight: 600; line-height: 1.15; color: var(--text-head);
+   letter-spacing: -0.02em; margin-bottom: 14px;
+  }
+  .article-deck {
+   font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300;
+   font-style: italic; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+  }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+  .meta-pill {
+   font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+   background: var(--surface); border: 1px solid var(--border);
+   border-radius: 100px; padding: 3px 10px; color: var(--text-dim);
+  }
+  .meta-pill.live { color: var(--green); border-color: var(--green); background: var(--green-light); }
+
+  .box {
+   border-radius: 6px; padding: 16px 20px; margin: 20px 0;
+   border-left: 3px solid;
+  }
+  .box-label {
+   font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+   letter-spacing: .08em; text-transform: uppercase;
+   display: block; margin-bottom: 8px;
+  }
+  .box p { font-size: 0.9rem; line-height: 1.6; }
+  .box-amber { background: var(--amber-light); border-color: #c8850a; }
+  .box-amber .box-label { color: var(--amber); }
+  .box-green { background: var(--green-light); border-color: var(--green); }
+  .box-green .box-label { color: var(--green); }
+  .box-red { background: var(--brick-light); border-color: var(--brick); }
+  .box-red .box-label { color: var(--brick); }
+
+  .sources-bar { margin: 24px 0; }
+  .sources-bar-label {
+   font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+   letter-spacing: .08em; text-transform: uppercase;
+   color: var(--text-quiet); display: block; margin-bottom: 10px;
+  }
+  .source-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .source-pill {
+   font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+   color: var(--text-dim); text-decoration: none;
+   border: 1px solid var(--border); border-radius: 4px;
+   padding: 4px 10px; background: var(--surface);
+   transition: color .15s, border-color .15s;
+  }
+  .source-pill:hover { color: var(--brick); border-color: var(--brick); }
+
+  .part-header {
+   margin: 48px 0 20px;
+   padding-top: 32px;
+   border-top: 2px solid var(--text-head);
+  }
+  .part-label {
+   font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+   letter-spacing: .12em; text-transform: uppercase;
+   color: var(--text-quiet); display: block; margin-bottom: 6px;
+  }
+  .part-title {
+   font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+   color: var(--text-head); letter-spacing: -0.01em;
+  }
+
+  .section-label {
+   font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+   color: var(--text-quiet); display: block;
+   margin: 28px 0 10px; letter-spacing: .04em;
+  }
+
+  .stat-block {
+   background: var(--surface); border: 1px solid var(--border);
+   border-radius: 6px; margin: 16px 0; overflow: hidden;
+  }
+  .stat-block-header {
+   background: var(--border); padding: 8px 14px;
+   display: flex; justify-content: space-between; align-items: center;
+  }
+  .stat-block-name {
+   font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+   color: var(--text-head);
+  }
+  .stat-block-period {
+   font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);
+  }
+  .stat-block-body { padding: 4px 0; }
+  .stat-row {
+   display: flex; justify-content: space-between; align-items: baseline;
+   padding: 7px 14px; border-bottom: 1px solid var(--border);
+   font-size: 0.88rem;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-key { color: var(--text-dim); font-size: 0.84rem; }
+  .stat-val {
+   font-family: var(--font-mono); font-weight: 700; font-size: 0.88rem;
+  }
+  .stat-val.negative { color: var(--brick); }
+  .stat-val.positive { color: var(--green); }
+  .stat-val.neutral  { color: var(--text-head); }
+  .stat-val.warn   { color: var(--amber); }
+
+  .data-table {
+   width: 100%; border-collapse: collapse;
+   font-size: 0.82rem; margin: 16px 0;
+   border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+  }
+  .data-table th {
+   background: var(--border); padding: 8px 12px;
+   font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+   text-align: left; color: var(--text-head);
+  }
+  .data-table td {
+   padding: 8px 12px; border-bottom: 1px solid var(--border);
+   vertical-align: top; line-height: 1.5;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--surface); }
+  .td-rate { font-family: var(--font-mono); color: var(--green); font-weight: 700; }
+  .td-num  { font-family: var(--font-mono); color: var(--text-head); font-weight: 700; }
+  .td-note { color: var(--text-dim); font-size: 0.78rem; }
+  .td-alert { color: var(--brick); font-weight: 600; }
+  .td-warn { color: var(--amber); font-weight: 600; }
+
+  .chart-wrap {
+   background: var(--surface); border: 1px solid var(--border);
+   border-radius: 6px; padding: 16px; margin: 16px 0;
+  }
+  .chart-title {
+   font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600;
+   color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase;
+   letter-spacing: .06em;
+  }
+  .chart-canvas-wrap { position: relative; height: 280px; }
+
+  .steelman-wrap {
+   border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 16px 0;
+  }
+  .steelman-row {
+   display: flex; border-bottom: 1px solid var(--border); font-size: 0.86rem;
+  }
+  .steelman-row:last-child { border-bottom: none; }
+  .steelman-key {
+   font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700;
+   text-transform: uppercase; letter-spacing: .06em;
+   background: var(--surface); padding: 10px 14px;
+   min-width: 160px; color: var(--text-dim); border-right: 1px solid var(--border);
+  }
+  .steelman-val { padding: 10px 14px; line-height: 1.55; color: var(--text-body); }
+  .steelman-val.rebuttal { color: var(--brick); }
+
+  .conclusion-stats { display: grid; gap: 12px; margin: 20px 0; }
+  .cs-row {
+   background: var(--surface); border: 1px solid var(--border);
+   border-radius: 6px; padding: 14px 16px;
+  }
+  .cs-num {
+   font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+   line-height: 1.1; margin-bottom: 6px;
+  }
+  .cs-num.positive { color: var(--green); }
+  .cs-num.negative { color: var(--brick); }
+  .cs-num.neutral { color: var(--text-head); }
+  .cs-num.warn   { color: var(--amber); }
+  .cs-text { font-size: 0.9rem; line-height: 1.55; color: var(--text-body); }
+
+  .sources-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .sources-section-label {
+   font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+   letter-spacing: .1em; text-transform: uppercase;
+   color: var(--text-quiet); display: block; margin-bottom: 10px;
+  }
+  .source-item { margin-bottom: 6px; font-size: 0.76rem; color: var(--text-dim); line-height: 1.5; }
+  .source-item strong { color: var(--text-body); font-weight: 500; }
+
+  p { margin-bottom: 14px; }
+  .inline-link { color: var(--brick); text-decoration: none; }
+  .inline-link:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .source-note {
+   font-family: var(--font-mono); font-size: 0.72rem;
+   color: var(--text-quiet); margin-top: -8px; margin-bottom: 20px;
+   line-height: 1.5;
+  }
+
+  .confidence-tag {
+   display: inline-block;
+   font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
+   letter-spacing: 0.08em; text-transform: uppercase;
+   padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+   vertical-align: middle;
+  }
+  .conf-high { background: var(--green-light); color: var(--green); border: 1px solid var(--green); }
+  .conf-medium { background: var(--amber-light); color: var(--amber); border: 1px solid #c8850a; }
+  .conf-low { background: var(--brick-light); color: var(--brick); border: 1px solid var(--brick); }
+
+  @media (max-width: 640px) {
+   .site-nav { padding: 0 16px; height: 46px; }
+   .nav-category { display: none; }
+   .article-wrap { padding: 24px 16px 60px; }
+   .jump-nav { padding: 8px 16px; gap: 6px; top: 46px; }
+   .jump-btn { font-size: 0.62rem; padding: 3px 8px; }
+   .jump-toggle { display: inline-flex; align-items: center; }
+   .jump-links { display: none; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: 8px; }
+   .jump-links.is-open { display: flex; }
+   [id^="part"] { scroll-margin-top: 105px; }
+   .part-header { margin: 36px 0 16px; padding-top: 24px; }
+   .steelman-row { flex-direction: column; }
+   .steelman-key { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+   .data-table { font-size: 0.76rem; }
+   .data-table th, .data-table td { padding: 6px 8px; }
+   .nav-back { font-size: 0.7rem; padding: 2px 8px; }
+   .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
+   .source-pills { gap: 4px; }
+   .source-pill { font-size: 0.64rem; padding: 3px 7px; }
+  }
+  @media (max-width: 900px) and (min-width: 641px) {
+   .site-nav { padding: 0 24px; }
+   .article-wrap { padding: 32px 24px 60px; }
+  }
+
+  .jump-btn.is-active { color: var(--brick); border-color: var(--brick); background: var(--brick-light); font-weight: 600; }
+  [id^="part"] { scroll-margin-top: 120px; }
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 16px; }
+  .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+  [data-theme="dark"] {
+   --bg:      #1a1918;
+   --surface:   #242220;
+   --card-face:  #242220;
+   --card-tinted: #2a2826;
+   --border:    #3a3632;
+   --rule:     #3a3632;
+   --text-head:  #e8e5e0;
+   --text-body:  #c5c0b8;
+   --text-dim:   #8a857d;
+   --text-quiet:  #6a655e;
+   --brick:    #e05a3a;
+   --brick-light: #2d1f1a;
+   --green:    #4cbb6a;
+   --green-light: #1a2d20;
+   --amber:    #d4a030;
+   --amber-light: #2d2518;
+  }
+  [data-theme="dark"] .jump-nav { background: #242220; }
+  [data-theme="dark"] .chart-wrap { background: #2a2826; }
+  [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+  [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
+
+  html { transition: background-color 0.3s ease, color 0.3s ease; }
+  body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+  .reading-progress {
+   position: fixed; top: 0; left: 0; height: 3px;
+   background: var(--brick); z-index: 9999;
+   width: 0%; transition: width 0.1s linear;
+   pointer-events: none;
+  }
+  .back-to-top {
+   position: fixed; bottom: 28px; right: 28px;
+   width: 40px; height: 40px; border-radius: 50%;
+   background: var(--brick); color: #fff;
+   border: none; cursor: pointer;
+   font-size: 1.1rem; line-height: 1;
+   display: flex; align-items: center; justify-content: center;
+   opacity: 0; transform: translateY(12px);
+   transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
+   z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .back-to-top.visible { opacity: 1; transform: translateY(0); }
+  .back-to-top:hover { filter: brightness(1.15); }
+  .theme-toggle {
+   margin-left: auto;
+   width: 34px; height: 34px; border-radius: 50%;
+   border: 1px solid var(--rule);
+   background: transparent; cursor: pointer;
+   font-size: 1rem; line-height: 1;
+   display: flex; align-items: center; justify-content: center;
+   transition: border-color 0.15s, background-color 0.3s;
+   color: var(--text-dim, #5a544c);
+  }
+  .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
+  .skip-link {
+   position: absolute; top: -100%; left: 16px;
+   background: var(--brick); color: #fff;
+   padding: 8px 16px; border-radius: 0 0 4px 4px;
+   font-family: 'Courier Prime', monospace; font-size: 0.7rem;
+   z-index: 200; transition: top 0.15s ease;
+   text-decoration: none;
+  }
+  .skip-link:focus { top: 0; }
+  :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+
+  .claims-box {
+   background: var(--surface); border: 1px solid var(--border);
+   border-radius: 6px; padding: 20px 22px; margin: 24px 0;
+  }
+  .claims-box-label {
+   font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+   letter-spacing: 0.12em; text-transform: uppercase;
+   color: var(--text-quiet); display: block; margin-bottom: 14px;
+  }
+  .claim-row {
+   display: grid; grid-template-columns: 1fr 1fr;
+   gap: 0; border-bottom: 1px solid var(--border);
+   font-size: 0.82rem; line-height: 1.5;
+  }
+  .claim-row:last-child { border-bottom: none; }
+  .claim-cell { padding: 10px 12px; }
+  .claim-cell-label {
+   font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700;
+   letter-spacing: 0.1em; text-transform: uppercase;
+   margin-bottom: 4px; display: block;
+  }
+  .claim-said { color: var(--brick); }
+  .claim-data { color: var(--green); }
+  .claim-cell:first-child { border-right: 1px solid var(--border); }
+  @media (max-width: 600px) {
+   .claim-row { grid-template-columns: 1fr; }
+   .claim-cell:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  .falsify-box { background: var(--green-light); border: 1px solid var(--green); border-left: 4px solid var(--green); border-radius: 6px; padding: 20px 22px; margin: 32px 0; box-shadow: 0 1px 4px rgba(27,107,62,0.08); }
+  .falsify-box .falsify-label { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 10px; }
+  .falsify-box p { margin: 6px 0; font-size: 0.8rem; line-height: 1.5; }
+
+  .part-takeaway {
+   background: var(--surface); border-left: 3px solid var(--brick);
+   padding: 14px 20px; margin: 32px 0 8px;
+   border-radius: 0 4px 4px 0; font-size: 0.9rem;
+   line-height: 1.65;
+  }
+  .part-takeaway strong {
+   font-family: var(--font-mono); font-size: 0.68rem;
+   text-transform: uppercase; letter-spacing: 0.1em;
+   color: var(--brick); display: block; margin-bottom: 4px;
+  }
+
+  .info-note {
+   font-size: 0.72rem; color: var(--text-quiet, var(--text-dim));
+   font-style: italic; margin-top: -6px; margin-bottom: 12px;
+   padding-left: 14px; border-left: 2px solid var(--rule);
+   line-height: 1.55;
+  }
+
+  .table-scroll { position: relative; }
+  .table-scroll::after {
+   content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 24px;
+   background: linear-gradient(to right, transparent, var(--bg, #f7f5f1));
+   pointer-events: none; opacity: 0; transition: opacity 0.2s;
+  }
+  .table-scroll.has-overflow::after { opacity: 0.7; }
+  [data-theme="dark"] .table-scroll::after {
+   background: linear-gradient(to right, transparent, var(--bg, #1a1918));
+  }
+
+  caption {
+   font-family: var(--font-mono, 'Courier Prime', monospace);
+   font-size: 0.6rem; letter-spacing: 0.06em;
+   color: var(--text-quiet, #736e66);
+   text-align: left; caption-side: top;
+   padding: 0 0 6px 0;
+  }
+
+  .cite-this {
+   margin-top: 28px; padding: 14px 18px;
+   background: var(--card-tinted, var(--surface, #fdfcfa));
+   border: 1px solid var(--rule);
+   border-radius: 4px;
+  }
+  .cite-this-label {
+   font-family: 'Courier Prime', monospace; font-size: 0.56rem; font-weight: 700;
+   letter-spacing: 0.12em; text-transform: uppercase;
+   color: var(--text-quiet, #736e66); display: block; margin-bottom: 8px;
+  }
+  .cite-this-text {
+   font-family: 'Spectral', Georgia, serif; font-size: 0.78rem; font-style: italic;
+   color: var(--text-dim, #706d64); line-height: 1.65; user-select: all; cursor: text;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+   *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+   }
+   html { scroll-behavior: auto !important; }
+  }
+  @media (max-width: 640px) {
+   .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
+  }
+  @media print {
+   .site-nav, .jump-nav, .back-to-top, .reading-progress, .theme-toggle { display: none !important; }
+   body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+   .article-wrap { max-width: 100%; padding: 0; }
+  }
+
+  .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+
+ 
+  /* ── You May Also Like ── */
+  .ymal-section { margin-top: 8px; }
+  .ymal-heading {
+   font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+   letter-spacing: .1em; text-transform: uppercase; color: var(--text-quiet);
+   display: block; margin-bottom: 12px;
+  }
+  .ymal-grid {
+   display: grid; grid-template-columns: 1fr; gap: 10px;
+  }
+  @media (min-width: 640px) {
+   .ymal-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .ymal-card {
+   display: flex; flex-direction: column; gap: 4px;
+   padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+   border-radius: 6px; text-decoration: none; transition: border-color .15s, box-shadow .15s;
+   border-left: 3px solid transparent;
+  }
+  .ymal-card:hover {
+   border-left-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .ymal-cat {
+   font-family: var(--font-sans); font-size: 0.58rem; font-weight: 700;
+   letter-spacing: .08em; text-transform: uppercase; color: var(--brick);
+  }
+  .ymal-title {
+   font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
+   color: var(--text-body); line-height: 1.3;
+  }
+  .ymal-desc {
+   font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+   line-height: 1.45;
+  }
+
+  </style>
+
+ <script>
+  (function(){
+   var html = document.documentElement;
+   try {
+    var stored = localStorage.getItem('tb-theme');
+    if (stored) html.setAttribute('data-theme', stored);
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
+   } catch(e) {}
+  })();
+ </script>
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Does Social Media Harm Teenagers' Mental Health?",
+  "description": "A comprehensive, primary-source analysis of social media's relationship to teen mental health. CDC YRBS, ABCD, meta-analyses, natural experiments. ",
+  "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+  "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+  "datePublished": "2026-03-23",
+  "dateModified": "2026-03-23",
+  "mainEntityOfPage": "https://www.truthbased.org/does-social-media-harm-teenagers-mental-health",
+  "keywords": ["social media", "teen mental health", "youth depression", "Haidt", "Odgers", "CDC YRBS", "ABCD", "screen time", "moral panic", "Surgeon General"]
+ }
+ </script>
 </head>
 <body>
-  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
-  <a class="skip-link" href="#part1">Skip to content</a>
+ <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+ <a class="skip-link" href="#part1">Skip to content</a>
 
-  <nav class="site-nav" aria-label="Site navigation">
-    <div class="nav-left">
-      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-      <a href="/" class="nav-back">&#8592; Home</a>
-      <span class="nav-category">Science &amp; Medicine</span>
+ <nav class="site-nav" aria-label="Site navigation">
+  <div class="nav-left">
+   <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+   <a href="/" class="nav-back">&#8592; Home</a>
+   <span class="nav-category">Science &amp; Medicine</span>
+  </div>
+  <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+ </nav>
+
+ <nav class="jump-nav" aria-label="Jump to section">
+  <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
+  <div class="jump-links" id="jump-links">
+   <a href="#part1" class="jump-btn">Part 1 &ndash; Trends</a>
+   <a href="#part2" class="jump-btn">Part 2 &ndash; Causation</a>
+   <a href="#part3" class="jump-btn">Part 3 &ndash; Haidt vs. Odgers</a>
+   <a href="#part4" class="jump-btn">Part 4 &ndash; Girls vs. Boys</a>
+   <a href="#part5" class="jump-btn">Part 5 &ndash; Mechanisms</a>
+   <a href="#part6" class="jump-btn">Part 6 &ndash; Steelman Both Sides</a>
+   <a href="#part7" class="jump-btn">Part 7 &ndash; Confidence Ratings</a>
+  <a href="#summary" class="jump-btn">Summary</a>
+  </div>
+ </nav>
+
+ <main id="content">
+ <article class="article-wrap">
+  <header class="hero">
+   <span class="article-category">Science &amp; Medicine</span>
+   <h1 class="article-title">Social Media &amp; Youth Mental Health</h1>
+   <p class="article-deck">Is social media destroying a generation &mdash; or is this moral panic? CDC YRBS, NHS Digital, ABCD cohort, meta-analyses, natural experiments. Effect sizes disclosed. Every major researcher&rsquo;s position mapped. </p>
+   <div class="article-meta">
+    <span class="meta-pill live" title="This article is actively maintained and updated as new data becomes available">&#10003; Live</span>
+    <span class="meta-pill">Last reviewed: Mar 2026</span>
+    <span class="meta-pill">Published March 2026</span>
+    <span class="meta-pill">20+ primary sources</span>
+    <span class="meta-pill">~40 min read</span>
+    <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
+   </div>
+  </header>
+
+  <div class="box box-amber" style="margin-top:20px;">
+   <span class="box-label">Critical Prefatory Note</span>
+   <p>This article examines whether social media is causally linked to worsening teen mental health. Most evidence is correlational. Effect sizes are generally small. The debate among serious researchers is not about whether teens are struggling &mdash; they are. It is about <em>how much</em> social media itself is responsible versus other factors (academic pressure, economic insecurity, pandemic effects, family stress). We name every study, disclose every effect size, and present both sides at full strength.</p>
+  </div>
+   <div class="claim-row">
+    <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;This is just moral panic &mdash; there&rsquo;s no real evidence&rdquo;</div>
+    <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Also overstated. Natural experiments (Facebook college rollout: +9% depression), reduction RCTs (g&asymp;0.19&ndash;0.28), and the ABCD prospective panel all point to some causal contribution. Trends are real and worst for girls. Dismissing all concern ignores genuine evidence.</div>
+   </div>
+   <div class="claim-row">
+    <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The Surgeon General proved social media harms youth&rdquo;</div>
+    <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Misstated. The 2023 advisory explicitly says evidence is incomplete and insufficient to conclude social media is &ldquo;sufficiently safe.&rdquo; It is a precautionary argument, not a definitive causal verdict. Media coverage often overstated its conclusions.</div>
+   </div>
+  </div>
+
+  <div class="sources-bar">
+   <span class="sources-bar-label">Primary Sources Used</span>
+   <div class="source-pills">
+    <span class="source-pill">CDC YRBS (2013&ndash;2023)</span>
+    <span class="source-pill">NHS Digital (UK)</span>
+    <span class="source-pill">ABCD Study (Nagata 2025)</span>
+    <span class="source-pill">Braghieri et al. (AER 2022)</span>
+    <span class="source-pill">Orben &amp; Przybylski (2019)</span>
+    <span class="source-pill">Twenge et al. (2022)</span>
+    <span class="source-pill">Surgeon General Advisory (2023)</span>
+    <span class="source-pill">WHO HBSC (2022)</span>
+    <span class="source-pill">Shannon et al. (2022)</span>
+    <span class="source-pill">APA Advisory (2023)</span>
+    <span class="source-pill">SMART Schools (2025)</span>
+   </div>
+  </div>
+
+  <!-- ════════ PART 1 ════════ -->
+  <section id="part1">
+   <div class="part-header"><span class="part-label">Part 1 of 7</span>
+    <h2 class="part-title">What Teen Mental Health Trends Actually Show</h2></div>
+
+   <span class="section-label">01 &ndash; U.S. Data (CDC YRBS)</span>
+
+   <p>The underlying trend is real. The CDC&rsquo;s 2023 Youth Risk Behavior Survey found 39.7% of U.S. high school students reported persistent sadness or hopelessness, 20.4% had seriously considered suicide, and 9.5% had attempted suicide. The sex gap is large: among girls, 52.6% reported persistent sadness versus 27.7% of boys. These problems were worsening <em>before</em> COVID, not just during it.</p>
+
+   <div class="stat-block">
+    <div class="stat-block-header"><span class="stat-block-name">CDC YRBS 2023 &mdash; U.S. High School Students</span><span class="stat-block-period">2023</span></div>
+    <div class="stat-block-body">
+     <div class="stat-row"><span class="stat-key">Persistent sadness/hopelessness (overall)</span><span class="stat-val negative">39.7%</span></div>
+     <div class="stat-row"><span class="stat-key">Persistent sadness/hopelessness (girls)</span><span class="stat-val negative">52.6%</span></div>
+     <div class="stat-row"><span class="stat-key">Persistent sadness/hopelessness (boys)</span><span class="stat-val warn">27.7%</span></div>
+     <div class="stat-row"><span class="stat-key">Seriously considered suicide (overall)</span><span class="stat-val negative">20.4%</span></div>
+     <div class="stat-row"><span class="stat-key">Attempted suicide (overall)</span><span class="stat-val negative">9.5%</span></div>
+     <div class="stat-row"><span class="stat-key">Poor mental health in last 30 days</span><span class="stat-val negative">28.5%</span></div>
     </div>
-    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
-  </nav>
+   </div>
+   <p class="source-note">Source: CDC YRBS 2023 &mdash; nationally representative school-based survey of ~20,000 students.</p>
 
-  <nav class="jump-nav" aria-label="Jump to section">
-    <button class="jump-toggle" aria-expanded="false" aria-controls="jump-links"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="jtog-label">Sections</span></button>
-    <div class="jump-links" id="jump-links">
-      <a href="#part1" class="jump-btn">Part 1 &ndash; Trends</a>
-      <a href="#part2" class="jump-btn">Part 2 &ndash; Causation</a>
-      <a href="#part3" class="jump-btn">Part 3 &ndash; Haidt vs. Odgers</a>
-      <a href="#part4" class="jump-btn">Part 4 &ndash; Girls vs. Boys</a>
-      <a href="#part5" class="jump-btn">Part 5 &ndash; Mechanisms</a>
-      <a href="#part6" class="jump-btn">Part 6 &ndash; Steelman Both Sides</a>
-      <a href="#part7" class="jump-btn">Part 7 &ndash; Confidence Ratings</a>
+   <span class="section-label">02 &ndash; UK and International Data</span>
+
+   <p>UK NHS Digital reports probable mental disorder in ages 8&ndash;16 rose from 12.1% (2017) to 20.3% (2023); for ages 17&ndash;19 it reached 23.3%. OECD and UNICEF data show worsening adolescent well-being in many high-income countries between the mid-2010s and early 2020s. WHO Europe found problematic social media use rising from 7% (2018) to 11% (2022). But the pattern is <strong>not universal</strong>: some countries did not show the same deterioration, weakening any claim that one platform alone explains everything everywhere.</p>
+
+   <div class="chart-wrap">
+    <div class="chart-title">U.S. Teen Persistent Sadness/Hopelessness &mdash; Girls vs. Boys (YRBS)</div>
+    <div class="chart-canvas-wrap">
+     <canvas id="chartYRBS" role="img" aria-label="Line chart showing persistent sadness/hopelessness among US high school students from 2013 to 2023, with girls rising from 39% to 53% and boys from 21% to 28%."></canvas>
     </div>
-  </nav>
+   </div>
+   <p class="source-note">Source: CDC YRBS 2013&ndash;2023. Slight improvement 2021&ndash;2023 (girls: 57%&rarr;53%) may reflect post-peak stabilization or survey-mode effects.</p>
+  </section>
 
-  <main id="content">
-  <article class="article-wrap">
-    <header class="hero">
-      <span class="article-category">Science &amp; Medicine</span>
-      <h1 class="article-title">Social Media &amp; Youth Mental Health</h1>
-      <p class="article-deck">Is social media destroying a generation &mdash; or is this moral panic? CDC YRBS, NHS Digital, ABCD cohort, meta-analyses, natural experiments. Effect sizes disclosed. Every major researcher&rsquo;s position mapped. Both sides steelmanned.</p>
-      <div class="article-meta">
-        <span class="meta-pill live" title="This article is actively maintained and updated as new data becomes available">&#10003; Live</span>
-        <span class="meta-pill">Last reviewed: Mar 2026</span>
-        <span class="meta-pill">Published March 2026</span>
-        <span class="meta-pill">20+ primary sources</span>
-        <span class="meta-pill">~40 min read</span>
-        <a href="/methodology" class="meta-pill" style="text-decoration:none;">Methodology &#8594;</a>
-      </div>
-    </header>
+  <!-- ════════ PART 2 ════════ -->
+  <section id="part2">
+   <div class="part-header"><span class="part-label">Part 2 of 7</span>
+    <h2 class="part-title">What the Best Evidence Says About Causation</h2></div>
 
-    <div class="box box-amber" style="margin-top:20px;">
-      <span class="box-label">Critical Prefatory Note</span>
-      <p>This article examines whether social media is causally linked to worsening teen mental health. Most evidence is correlational. Effect sizes are generally small. The debate among serious researchers is not about whether teens are struggling &mdash; they are. It is about <em>how much</em> social media itself is responsible versus other factors (academic pressure, economic insecurity, pandemic effects, family stress). We name every study, disclose every effect size, and present both sides at full strength.</p>
+   <span class="section-label">03 &ndash; Correlation, Effect Sizes, and the Measurement Problem</span>
+
+   <p>Most studies are cross-sectional or longitudinal with self-reported screen time. These show consistent but <strong>small</strong> associations. Gabrielle et al. (2024 meta-analysis, 45 studies): r=0.12 for depression, r=0.10 for anxiety, r=0.15 for loneliness. Orben &amp; Przybylski (2019) found digital technology explained <strong>&le;0.4% of variance</strong> in well-being across three large datasets &mdash; comparable in magnitude to wearing glasses. Self-reported screen time is imprecise: passive device measures show only moderate correlation with self-report (r=0.18&ndash;0.64).</p>
+
+   <span class="section-label">04 &ndash; Stronger Causal Evidence</span>
+
+   <p><strong>ABCD within-person panel (Nagata et al. 2025):</strong> Following 11,876 U.S. children, increases in a teen&rsquo;s own social-media use above their usual level predicted later increases in depressive symptoms (&beta;&asymp;0.07&ndash;0.09). The reverse path (depression &rarr; later use) was not significant. Small effect, but prospective and within-person.</p>
+
+   <p><strong>Braghieri, Levy &amp; Makarin (AER 2022):</strong> Facebook&rsquo;s staggered rollout across U.S. colleges increased depression by 0.085 SD (~2 percentage points) and anxiety by ~12%. Strongest quasi-experimental evidence, but limited to college students on early Facebook &mdash; not today&rsquo;s teens on TikTok/Instagram.</p>
+
+   <p><strong>Reduction RCTs (meta-analysis 2025):</strong> Small but consistent benefits from curtailing use (Hedges&rsquo; g&asymp;0.19&ndash;0.28 for depression/anxiety/well-being). Most studies are on adults, not adolescents. SMART Schools UK study (2025) found school phone bans reduced in-school use but did <em>not</em> improve overall mental health.</p>
+
+   <div class="stat-block">
+    <div class="stat-block-header"><span class="stat-block-name">Key Effect Sizes</span><span class="stat-block-period">Major Studies</span></div>
+    <div class="stat-block-body">
+     <div class="stat-row"><span class="stat-key">Orben &amp; Przybylski (2019): variance explained</span><span class="stat-val positive">&le;0.4%</span></div>
+     <div class="stat-row"><span class="stat-key">Gabrielle et al. (2024 meta): r for depression</span><span class="stat-val warn">0.12</span></div>
+     <div class="stat-row"><span class="stat-key">ABCD within-person (Nagata 2025): &beta;</span><span class="stat-val warn">0.07&ndash;0.09</span></div>
+     <div class="stat-row"><span class="stat-key">Braghieri et al. (2022): Facebook rollout &rarr; depression</span><span class="stat-val negative">+9% over baseline</span></div>
+     <div class="stat-row"><span class="stat-key">Shannon et al. (2022): <em>problematic</em> use &rarr; depression r</span><span class="stat-val negative">0.27</span></div>
+     <div class="stat-row"><span class="stat-key">Shannon et al.: <em>problematic</em> use &rarr; anxiety r</span><span class="stat-val negative">0.35</span></div>
+     <div class="stat-row"><span class="stat-key">Reduction RCTs (meta 2025): Hedges&rsquo; g</span><span class="stat-val positive">0.19&ndash;0.28</span></div>
+     <div class="stat-row"><span class="stat-key">Surgeon General-cited: &gt;3 hrs/day risk multiplier</span><span class="stat-val negative">~2&times; poor mental health</span></div>
     </div>
+   </div>
+  </section>
 
-    <div class="claims-box">
-      <span class="claims-box-label">Common claims vs. what the data shows</span>
-      <div class="claim-row">
-        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Social media is destroying a generation&rdquo;</div>
-        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Overstated. Meta-analyses find social media accounts for &lt;2% of variance in well-being (Orben &amp; Przybylski 2019: &le;0.4%). The ABCD within-person study found &beta;&asymp;0.07. Effects are real but small on average &mdash; more concentrated in girls and vulnerable subgroups.</div>
-      </div>
-      <div class="claim-row">
-        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;This is just moral panic &mdash; there&rsquo;s no real evidence&rdquo;</div>
-        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Also overstated. Natural experiments (Facebook college rollout: +9% depression), reduction RCTs (g&asymp;0.19&ndash;0.28), and the ABCD prospective panel all point to some causal contribution. Trends are real and worst for girls. Dismissing all concern ignores genuine evidence.</div>
-      </div>
-      <div class="claim-row">
-        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;The Surgeon General proved social media harms youth&rdquo;</div>
-        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Misstated. The 2023 advisory explicitly says evidence is incomplete and insufficient to conclude social media is &ldquo;sufficiently safe.&rdquo; It is a precautionary argument, not a definitive causal verdict. Media coverage often overstated its conclusions.</div>
-      </div>
+  <!-- ════════ PART 3 ════════ -->
+  <section id="part3">
+   <div class="part-header"><span class="part-label">Part 3 of 7</span>
+    <h2 class="part-title">Haidt vs. Odgers: The Real Methodological Dispute</h2></div>
+
+   <span class="section-label">05 &ndash; The Major Researchers</span>
+
+   <p><strong>Jonathan Haidt</strong> (NYU Stern, social psychologist): Core claim &mdash; smartphone-based social media is a <em>major</em> causal driver of the post-2012 crisis, especially for girls. Relies on trend timing, sex differences, mechanisms, quasi-experiments, and precautionary logic. <em>Strongest critique:</em> Often infers more causality than underlying designs support; extrapolates from college/adult studies.</p>
+
+   <p><strong>Candice Odgers</strong> (UC Irvine, developmental psychologist): Core claim &mdash; evidence for a broad, strong causal story is <em>weak</em>; most associations are small or mixed. Stresses reverse causality, confounding, and measurement error. <em>Strongest critique:</em> May underweight subgroup harms and dismiss population-level consequences of small effects.</p>
+
+   <p><strong>Amy Orben &amp; Andrew Przybylski</strong> (Cambridge/Oxford): Average associations tiny (&le;0.4% variance); analytic flexibility inflates apparent effects. <strong>Jean Twenge</strong> (SDSU): Stronger negative effects for girls; heavy use doubles risk. <strong>Mitch Prinstein</strong> (APA): Context-dependent &mdash; effects vary by individual and use patterns.</p>
+
+   <span class="section-label">06 &ndash; Why They Disagree</span>
+
+   <div class="steelman-wrap">
+    <div class="steelman-row"><span class="steelman-key">Causal Standards</span><span class="steelman-val">Haidt accepts convergent correlational evidence + mechanisms + quasi-experiments as sufficient for public-health action. Odgers requires stricter causal identification before strong claims.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Effect Size Interpretation</span><span class="steelman-val">Haidt: small effects matter at population scale when 95%+ of teens are exposed. Odgers: small effects (&lt;1% variance) are not policy-relevant at the individual level.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Subgroup Weighting</span><span class="steelman-val">Haidt emphasizes concentrated harms in girls and vulnerable teens. Odgers emphasizes that average effects are tiny and many studies are null or bidirectional.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Timing Interpretation</span><span class="steelman-val">Haidt sees post-2012 acceleration as strong evidence. Odgers notes pre-existing rises and multiple coinciding stressors (academic pressure, economic changes, pandemic).</span></div>
+    <div class="steelman-row"><span class="steelman-key">Threshold for Action</span><span class="steelman-val">Haidt favors precaution given scale of exposure. Odgers warns over-attribution distracts from proven interventions (sleep, exercise, in-person connection, inequality reduction).</span></div>
+   </div>
+  </section>
+
+  <!-- ════════ PART 4 ════════ -->
+  <section id="part4">
+   <div class="part-header"><span class="part-label">Part 4 of 7</span>
+    <h2 class="part-title">Girls vs. Boys: Why the Sex Difference Matters</h2></div>
+
+   <span class="section-label">07 &ndash; The Evidence for a Sex Gap</span>
+
+   <p>Sex differences are robust and large. YRBS: girls&rsquo; persistent sadness rose from 39% to 53% (2013&ndash;2023) vs. boys&rsquo; 21% to 28%. Meta-analyses find effect sizes for social media and depression are 2&ndash;3&times; larger for girls (Twenge et al. 2022: &beta;=&minus;0.11 to &minus;0.24 for girls vs. &minus;0.03 to &minus;0.06 for boys). WHO HBSC (2022) found problematic social media use at 13% of girls vs. 9% of boys.</p>
+
+   <p><strong>Why girls may be more affected:</strong> Girls use more image-based, appearance-focused platforms (Instagram, TikTok). Greater exposure to social comparison, body-image pressures, cyberbullying, and relational aggression. Girls are more prone to internalizing disorders. Orben et al. (2022) found developmental &ldquo;windows of sensitivity&rdquo; with small negative effects earlier for girls (ages 11&ndash;13).</p>
+
+   <div class="chart-wrap">
+    <div class="chart-title">Effect Size by Sex: Social Media &amp; Depression (&beta; coefficients)</div>
+    <div class="chart-canvas-wrap">
+     <canvas id="chartSexDiff" role="img" aria-label="Bar chart comparing effect sizes for social media and depression between girls and boys. Girls: -0.17 average, Boys: -0.05 average."></canvas>
     </div>
+   </div>
+   <p class="source-note">Source: Twenge et al. (2022) specification curve analysis. &beta; range for girls &minus;0.11 to &minus;0.24; boys &minus;0.03 to &minus;0.06. Midpoints shown.</p>
+  </section>
 
-    <div class="sources-bar">
-      <span class="sources-bar-label">Primary Sources Used</span>
-      <div class="source-pills">
-        <span class="source-pill">CDC YRBS (2013&ndash;2023)</span>
-        <span class="source-pill">NHS Digital (UK)</span>
-        <span class="source-pill">ABCD Study (Nagata 2025)</span>
-        <span class="source-pill">Braghieri et al. (AER 2022)</span>
-        <span class="source-pill">Orben &amp; Przybylski (2019)</span>
-        <span class="source-pill">Twenge et al. (2022)</span>
-        <span class="source-pill">Surgeon General Advisory (2023)</span>
-        <span class="source-pill">WHO HBSC (2022)</span>
-        <span class="source-pill">Shannon et al. (2022)</span>
-        <span class="source-pill">APA Advisory (2023)</span>
-        <span class="source-pill">SMART Schools (2025)</span>
-      </div>
-    </div>
+  <!-- ════════ PART 5 ════════ -->
+  <section id="part5">
+   <div class="part-header"><span class="part-label">Part 5 of 7</span>
+    <h2 class="part-title">Mechanisms of Harm and Benefit</h2></div>
 
-    <!-- ════════ PART 1 ════════ -->
-    <section id="part1">
-      <div class="part-header"><span class="part-label">Part 1 of 7</span>
-        <h2 class="part-title">What Teen Mental Health Trends Actually Show</h2></div>
+   <span class="section-label">08 &ndash; Supported Harm Mechanisms</span>
+   <p><strong>Sleep displacement</strong> has the strongest evidence: late-night use and notifications disrupt sleep, which mediates negative mental health effects. <strong>Social comparison</strong> on appearance-focused, passive-scrolling platforms increases body dissatisfaction and anxiety, especially among girls. <strong>Cyberbullying</strong> is linked to increased depression and suicidality. <strong>Compulsive/problematic use</strong> (addiction-like patterns in ~10&ndash;20%) shows the strongest associations &mdash; Shannon et al. (2022) found r=0.27 for depression and r=0.35 for anxiety, much larger than ordinary time-spent correlations.</p>
 
-      <span class="section-label">01 &ndash; U.S. Data (CDC YRBS)</span>
+   <span class="section-label">09 &ndash; Supported Benefit Mechanisms</span>
+   <p><strong>Social support and belonging:</strong> Online communities can reduce isolation, especially for marginalized or geographically isolated youth. <strong>Identity development:</strong> LGBTQ+ youth and teens in restrictive environments often find affirmation and community online that is unavailable offline. <strong>Access to information and help:</strong> Some teens use social media to find mental health resources and peer support. APA and the National Academies both note that digital spaces can provide real opportunities alongside risks.</p>
 
-      <p>The underlying trend is real. The CDC&rsquo;s 2023 Youth Risk Behavior Survey found 39.7% of U.S. high school students reported persistent sadness or hopelessness, 20.4% had seriously considered suicide, and 9.5% had attempted suicide. The sex gap is large: among girls, 52.6% reported persistent sadness versus 27.7% of boys. These problems were worsening <em>before</em> COVID, not just during it.</p>
+   <span class="section-label">10 &ndash; What the Surgeon General Actually Said</span>
+   <p>The 2023 advisory is explicitly <strong>precautionary, not causal</strong>. It states: &ldquo;We do not yet have enough evidence to determine if social media is sufficiently safe for children and adolescents.&rdquo; It cites concerning correlational findings but explicitly notes gaps in pathways, content effects, and subgroup data. It recommends safety standards, design changes, and research transparency &mdash; not bans. Media headlines often compressed this into &ldquo;social media harms youth mental health,&rdquo; overstating the advisory&rsquo;s actual conclusions.</p>
+  </section>
 
-      <div class="stat-block">
-        <div class="stat-block-header"><span class="stat-block-name">CDC YRBS 2023 &mdash; U.S. High School Students</span><span class="stat-block-period">2023</span></div>
-        <div class="stat-block-body">
-          <div class="stat-row"><span class="stat-key">Persistent sadness/hopelessness (overall)</span><span class="stat-val negative">39.7%</span></div>
-          <div class="stat-row"><span class="stat-key">Persistent sadness/hopelessness (girls)</span><span class="stat-val negative">52.6%</span></div>
-          <div class="stat-row"><span class="stat-key">Persistent sadness/hopelessness (boys)</span><span class="stat-val warn">27.7%</span></div>
-          <div class="stat-row"><span class="stat-key">Seriously considered suicide (overall)</span><span class="stat-val negative">20.4%</span></div>
-          <div class="stat-row"><span class="stat-key">Attempted suicide (overall)</span><span class="stat-val negative">9.5%</span></div>
-          <div class="stat-row"><span class="stat-key">Poor mental health in last 30 days</span><span class="stat-val negative">28.5%</span></div>
-        </div>
-      </div>
-      <p class="source-note">Source: CDC YRBS 2023 &mdash; nationally representative school-based survey of ~20,000 students.</p>
+  <!-- ════════ PART 6 ════════ -->
+  <section id="part6">
+   <div class="part-header"><span class="part-label">Part 6 of 7</span>
+    <h2 class="part-title">Steelman Both Sides</h2></div>
 
-      <span class="section-label">02 &ndash; UK and International Data</span>
+   <span class="section-label">11 &ndash; Strongest &ldquo;Social Media Is Harming Teens&rdquo; Case</span>
+   <div class="steelman-wrap">
+    <div class="steelman-row"><span class="steelman-key">Trend Timing</span><span class="steelman-val">Sharp acceleration in girls&rsquo; internalizing problems post-smartphone/social-media saturation (~2012). Multiple countries, multiple outcomes. Timing is suggestive even if not proof.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Causal Evidence</span><span class="steelman-val">Facebook rollout quasi-experiment (+9% depression). ABCD within-person prospective effects. Reduction RCTs show improvement when use is curtailed. Multiple converging lines.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Mechanisms</span><span class="steelman-val">Well-supported pathways: social comparison, sleep disruption, cyberbullying, compulsive design. These align with platform design and observed sex differences.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Population Scale</span><span class="steelman-val">Even modest average effects (r=0.12) matter when 95%+ of teens are exposed. Vulnerable subgroups (girls, LGBTQ+ youth facing harassment, pre-existing conditions) experience 2&ndash;3&times; amplification.</span></div>
+   </div>
 
-      <p>UK NHS Digital reports probable mental disorder in ages 8&ndash;16 rose from 12.1% (2017) to 20.3% (2023); for ages 17&ndash;19 it reached 23.3%. OECD and UNICEF data show worsening adolescent well-being in many high-income countries between the mid-2010s and early 2020s. WHO Europe found problematic social media use rising from 7% (2018) to 11% (2022). But the pattern is <strong>not universal</strong>: some countries did not show the same deterioration, weakening any claim that one platform alone explains everything everywhere.</p>
+   <span class="section-label">12 &ndash; Strongest &ldquo;Moral Panic / Weak Evidence&rdquo; Case</span>
+   <div class="steelman-wrap">
+    <div class="steelman-row"><span class="steelman-key">Tiny Effect Sizes</span><span class="steelman-val">Orben &amp; Przybylski: &le;0.4% variance explained. Many rigorous within-person studies find null or bidirectional effects. Average associations are clinically insignificant for most individual teens.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Measurement Problems</span><span class="steelman-val">Self-reported screen time is unreliable. &ldquo;Screen time&rdquo; lumps active creation, passive scrolling, and private messaging. Failure to distinguish platforms, content, and context undermines most studies.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Alternative Explanations</span><span class="steelman-val">Academic pressure, economic inequality, family disruption, pandemic effects, declining unstructured play. Many factors changed simultaneously. Cross-national Facebook adoption does not show a uniform global well-being collapse.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Benefits for Subsets</span><span class="steelman-val">Marginalized youth (LGBTQ+, rural, ethnic minorities) gain identity support, belonging, and information. Some teens use social media with no harm or net positive effects. Blanket restrictions risk removing real benefits.</span></div>
+    <div class="steelman-row"><span class="steelman-key">Historical Precedent</span><span class="steelman-val">Previous technology panics (TV, video games, comic books) faded as evidence accumulated. This does not prove current fears are wrong, but it counsels against overclaiming before evidence is settled.</span></div>
+   </div>
+  </section>
 
-      <div class="chart-wrap">
-        <div class="chart-title">U.S. Teen Persistent Sadness/Hopelessness &mdash; Girls vs. Boys (YRBS)</div>
-        <div class="chart-canvas-wrap">
-          <canvas id="chartYRBS" role="img" aria-label="Line chart showing persistent sadness/hopelessness among US high school students from 2013 to 2023, with girls rising from 39% to 53% and boys from 21% to 28%."></canvas>
-        </div>
-      </div>
-      <p class="source-note">Source: CDC YRBS 2013&ndash;2023. Slight improvement 2021&ndash;2023 (girls: 57%&rarr;53%) may reflect post-peak stabilization or survey-mode effects.</p>
+  <!-- ════════ PART 7 ════════ -->
+  <section id="part7">
+   <div class="part-header"><span class="part-label">Part 7 of 7</span>
+    <h2 class="part-title">Confidence Ratings and What Would Change the Conclusion</h2></div>
 
-      <div class="part-takeaway">
-        <strong>Part 1 Takeaway</strong>
-        Teen mental health outcomes have clearly worsened since the early 2010s, with the largest increases among girls. The timing aligns with smartphone and social media adoption &mdash; but correlation is not causation. COVID further complicated the picture. The trend is real; its causes are contested.
-      </div>
-    </section>
+   <span class="section-label">13 &ndash; Confidence Tier Summary</span>
+   <div class="table-scroll">
+    <table class="data-table">
+     <thead><tr><th>Finding</th><th>Confidence</th><th>Basis</th></tr></thead>
+     <tbody>
+      <tr><td>Teen mental health has worsened since ~2012, especially for girls</td><td class="td-rate">HIGH</td><td>CDC YRBS, NHS Digital, MTF, PISA &mdash; multiple large representative surveys</td></tr>
+      <tr><td>Social media use is associated with worse mental health</td><td class="td-rate">HIGH</td><td>Consistent across meta-analyses; but effect sizes small (r&asymp;0.10&ndash;0.15)</td></tr>
+      <tr><td>Social media is a major/dominant causal driver</td><td class="td-alert">LOW</td><td>Most evidence correlational; NRC-level causal review not yet available; many confounders</td></tr>
+      <tr><td>Social media is a modest contributing factor</td><td class="td-warn">MODERATE</td><td>ABCD within-person, Facebook rollout, reduction RCTs &mdash; converging but small</td></tr>
+      <tr><td>Girls are more affected than boys</td><td class="td-rate">HIGH</td><td>Consistent across YRBS, meta-analyses, and mechanism evidence</td></tr>
+      <tr><td>Problematic/compulsive use is more harmful than ordinary use</td><td class="td-rate">HIGH</td><td>Shannon et al.: r=0.27&ndash;0.35 for problematic use vs. r&asymp;0.10 for time spent</td></tr>
+      <tr><td>Sleep disruption is a key mechanism</td><td class="td-rate">HIGH</td><td>Strong evidence linking late-night use to sleep loss to mood effects</td></tr>
+      <tr><td>Social media provides net benefits for some teens</td><td class="td-warn">MODERATE</td><td>LGBTQ+ community support, rural isolation, APA/NAS acknowledgments</td></tr>
+     </tbody>
+    </table>
+   </div>
 
-    <!-- ════════ PART 2 ════════ -->
-    <section id="part2">
-      <div class="part-header"><span class="part-label">Part 2 of 7</span>
-        <h2 class="part-title">What the Best Evidence Says About Causation</h2></div>
+   <span class="section-label">14 &ndash; What Would Change the Conclusion</span>
+   
 
-      <span class="section-label">03 &ndash; Correlation, Effect Sizes, and the Measurement Problem</span>
+  <div id="summary" class="claims-box">
+   <span class="claims-box-label">Summary &mdash; Claims vs. Evidence</span>
+   <div class="claim-row">
+    <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Social media is destroying a generation&rdquo;</div>
+    <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Overstated. Meta-analyses find social media accounts for &lt;2% of variance in well-being (Orben &amp; Przybylski 2019: &le;0.4%). The ABCD within-person study found &beta;&asymp;0.07. Effects are real but small on average &mdash; more concentrated in girls and vulnerable subgroups.</div>
+   </div>
 
-      <p>Most studies are cross-sectional or longitudinal with self-reported screen time. These show consistent but <strong>small</strong> associations. Gabrielle et al. (2024 meta-analysis, 45 studies): r=0.12 for depression, r=0.10 for anxiety, r=0.15 for loneliness. Orben &amp; Przybylski (2019) found digital technology explained <strong>&le;0.4% of variance</strong> in well-being across three large datasets &mdash; comparable in magnitude to wearing glasses. Self-reported screen time is imprecise: passive device measures show only moderate correlation with self-report (r=0.18&ndash;0.64).</p>
+  <div class="falsify-box">
+    <span class="falsify-label">Falsifiability</span>
+    <p><strong>For &ldquo;major cause&rdquo;:</strong> Large-scale RCTs or natural experiments with adolescents on modern platforms (not college-era Facebook) showing consistent, substantial effects on clinical outcomes &mdash; not just self-report well-being. Platform data access enabling content-specific causal analysis.</p>
+    <p><strong>For &ldquo;moral panic&rdquo;:</strong> If future large preregistered panels with objective usage data consistently showed null effects even for high-use girls and vulnerable subgroups, or if school phone bans produced measurable mental health improvements at scale, that would weaken the concern.</p>
+    <p><strong>Most needed:</strong> Better measurement (passive tracking, platform-specific, content-level), longer-run adolescent panels, and access to platform recommendation data that researchers currently lack.</p>
+   </div>
 
-      <span class="section-label">04 &ndash; Stronger Causal Evidence</span>
+   <div class="cite-this">
+    <span class="cite-this-label">Cite this article</span>
+    <span class="cite-this-text">TruthBased.org. &ldquo;Social Media &amp; Youth Mental Health.&rdquo; Published March 2026. https://www.truthbased.org/does-social-media-harm-teenagers-mental-health</span>
+   </div>
 
-      <p><strong>ABCD within-person panel (Nagata et al. 2025):</strong> Following 11,876 U.S. children, increases in a teen&rsquo;s own social-media use above their usual level predicted later increases in depressive symptoms (&beta;&asymp;0.07&ndash;0.09). The reverse path (depression &rarr; later use) was not significant. Small effect, but prospective and within-person.</p>
+   <div class="sources-section">
+    <span class="sources-section-label">Sources and Methodology Disclosures</span>
+    <div class="source-item"><strong>CDC YRBS 2013&ndash;2023.</strong> Youth Risk Behavior Survey results. <a href="https://www.cdc.gov/yrbs/results/2023-yrbs-results.html" class="inline-link" target="_blank" rel="noopener noreferrer">cdc.gov</a></div>
+    <div class="source-item"><strong>NHS Digital. Mental Health of Children and Young People in England (2023).</strong> <a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england/2023-wave-4-follow-up" class="inline-link" target="_blank" rel="noopener noreferrer">digital.nhs.uk</a></div>
+    <div class="source-item"><strong>Nagata, J.M. et al. JAMA Network Open (2025).</strong> ABCD within-person social media and depressive symptoms. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349" class="inline-link" target="_blank" rel="noopener noreferrer">jamanetwork.com</a></div>
+    <div class="source-item"><strong>Braghieri, L., Levy, R. &amp; Makarin, A. AER 112 (2022).</strong> Facebook rollout natural experiment. <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20211218" class="inline-link" target="_blank" rel="noopener noreferrer">aeaweb.org</a></div>
+    <div class="source-item"><strong>Orben, A. &amp; Przybylski, A.K. Nature Human Behaviour 3 (2019).</strong> &le;0.4% variance explained. <a href="https://gwern.net/doc/psychology/2019-orben.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">nature.com</a></div>
+    <div class="source-item"><strong>Twenge, J.M. et al. Acta Psychologica 224 (2022).</strong> Specification curve: girls vs. boys. <a href="https://psycnet.apa.org/record/2022-36423-001" class="inline-link" target="_blank" rel="noopener noreferrer">psycnet.apa.org</a></div>
+    <div class="source-item"><strong>Shannon, H. et al. JMIR Mental Health 9 (2022).</strong> Problematic social media use meta-analysis. <a href="https://mental.jmir.org/2022/4/e33450/" class="inline-link" target="_blank" rel="noopener noreferrer">jmir.org</a></div>
+    <div class="source-item"><strong>U.S. Surgeon General Advisory (2023).</strong> Social Media and Youth Mental Health. <a href="https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">hhs.gov</a></div>
+    <div class="source-item"><strong>WHO HBSC (2022).</strong> Health Behaviour in School-aged Children: digital behaviours report. <a href="https://www.hbsc.org/" class="inline-link" target="_blank" rel="noopener noreferrer">hbsc.org</a></div>
+    <div class="source-item"><strong>APA Advisory (2023).</strong> Health advisory on social media use in adolescence. <a href="https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">apa.org</a></div>
+    <div class="source-item"><strong>SMART Schools Study (Lancet Regional Health Europe, 2025).</strong> School phone policies and mental well-being. <a href="https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(25)00003-1/fulltext" class="inline-link" target="_blank" rel="noopener noreferrer">thelancet.com</a></div>
+    <div class="source-item"><strong>Gabrielle, T. et al. Scientia Psychiatrica 5 (2024).</strong> Meta-analysis: social media and adolescent mental health. <a href="https://scientiapsychiatrica.com/index.php/SciPsy/article/view/175" class="inline-link" target="_blank" rel="noopener noreferrer">scientiapsychiatrica.com</a></div>
+    <div class="source-item"><strong>Orben, A. et al. Nature Communications 13 (2022).</strong> Windows of developmental sensitivity. <a href="https://www.nature.com/articles/s41467-022-29296-3" class="inline-link" target="_blank" rel="noopener noreferrer">nature.com</a></div>
+   </div>
+  </section>
+ </article>
+ </main>
 
-      <p><strong>Braghieri, Levy &amp; Makarin (AER 2022):</strong> Facebook&rsquo;s staggered rollout across U.S. colleges increased depression by 0.085 SD (~2 percentage points) and anxiety by ~12%. Strongest quasi-experimental evidence, but limited to college students on early Facebook &mdash; not today&rsquo;s teens on TikTok/Instagram.</p>
+  
+    <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
+   <span class="ymal-heading">You May Also Like</span>
+   <div class="ymal-grid">
+    <a href="/is-youth-gender-medicine-safe" class="ymal-card">
+     <span class="ymal-cat">Science &amp; Medicine</span>
+     <span class="ymal-title">Gender-Affirming Care for Minors &rarr;</span>
+     <span class="ymal-desc">Systematic reviews, Cass Report, WPATH standards. Evidence-rated.</span>
+    </a>
+    <a href="/what-do-gender-affirming-care-patients-say" class="ymal-card">
+     <span class="ymal-cat">Science &amp; Medicine</span>
+     <span class="ymal-title">GAC Patient-Reported Outcomes &rarr;</span>
+     <span class="ymal-desc">What recipients and detransitioners actually report. Published qualitative research.</span>
+    </a>
+    <a href="/is-ultra-processed-food-bad-for-you" class="ymal-card">
+     <span class="ymal-cat">Science &amp; Medicine</span>
+     <span class="ymal-title">Ultra-Processed Food &rarr;</span>
+     <span class="ymal-desc">NOVA classification, Hall RCT, epidemiological data and critiques.</span>
+    </a>
+   </div>
+  </div>
+ <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
+   <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
+   <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
+   <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
+   <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
+   <a href="https://patreon.com/TruthBased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#222; color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9733; Patreon</a>
+   <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
+   <p style="font-family:var(--font-sans); font-size:0.68rem; color:var(--text-dim); margin:14px 0 0;">Prefer crypto? <a href="/support" style="color:var(--brick); text-decoration:none; font-weight:600;">See wallet addresses &rarr;</a></p>
+  </div>
 
-      <p><strong>Reduction RCTs (meta-analysis 2025):</strong> Small but consistent benefits from curtailing use (Hedges&rsquo; g&asymp;0.19&ndash;0.28 for depression/anxiety/well-being). Most studies are on adults, not adolescents. SMART Schools UK study (2025) found school phone bans reduced in-school use but did <em>not</em> improve overall mental health.</p>
+ <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
+  <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
+  <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: CDC YRBS, NHS Digital, ABCD, Braghieri et al., Orben, Twenge, APA</span>
+  <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
+ </footer>
 
-      <div class="stat-block">
-        <div class="stat-block-header"><span class="stat-block-name">Key Effect Sizes</span><span class="stat-block-period">Major Studies</span></div>
-        <div class="stat-block-body">
-          <div class="stat-row"><span class="stat-key">Orben &amp; Przybylski (2019): variance explained</span><span class="stat-val positive">&le;0.4%</span></div>
-          <div class="stat-row"><span class="stat-key">Gabrielle et al. (2024 meta): r for depression</span><span class="stat-val warn">0.12</span></div>
-          <div class="stat-row"><span class="stat-key">ABCD within-person (Nagata 2025): &beta;</span><span class="stat-val warn">0.07&ndash;0.09</span></div>
-          <div class="stat-row"><span class="stat-key">Braghieri et al. (2022): Facebook rollout &rarr; depression</span><span class="stat-val negative">+9% over baseline</span></div>
-          <div class="stat-row"><span class="stat-key">Shannon et al. (2022): <em>problematic</em> use &rarr; depression r</span><span class="stat-val negative">0.27</span></div>
-          <div class="stat-row"><span class="stat-key">Shannon et al.: <em>problematic</em> use &rarr; anxiety r</span><span class="stat-val negative">0.35</span></div>
-          <div class="stat-row"><span class="stat-key">Reduction RCTs (meta 2025): Hedges&rsquo; g</span><span class="stat-val positive">0.19&ndash;0.28</span></div>
-          <div class="stat-row"><span class="stat-key">Surgeon General-cited: &gt;3 hrs/day risk multiplier</span><span class="stat-val negative">~2&times; poor mental health</span></div>
-        </div>
-      </div>
+ <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 
-      <div class="part-takeaway">
-        <strong>Part 2 Takeaway</strong>
-        The best evidence supports small to moderate associations between social media and negative mental health outcomes. Causal inference is strongest for problematic use and among girls. Most evidence is correlational. Average effects are small (&lt;2% of variance). Confidence: MODERATE on a small causal contribution; LOW on social media as the dominant cause.
-      </div>
-    </section>
+ <script>
+  window.addEventListener('load', function() {
+   if (typeof Chart === 'undefined') return;
 
-    <!-- ════════ PART 3 ════════ -->
-    <section id="part3">
-      <div class="part-header"><span class="part-label">Part 3 of 7</span>
-        <h2 class="part-title">Haidt vs. Odgers: The Real Methodological Dispute</h2></div>
+   // Chart 1: YRBS Persistent Sadness - Girls vs Boys
+   new Chart(document.getElementById('chartYRBS').getContext('2d'), {
+    type: 'line',
+    data: {
+     labels: ['2013','2015','2017','2019','2021','2023'],
+     datasets: [
+      { label: 'Girls', data: [39,40,41,47,57,53], borderColor: 'rgba(184,58,30,0.85)', backgroundColor: 'rgba(184,58,30,0.1)', borderWidth: 2.5, tension: 0.3, fill: true, pointRadius: 4 },
+      { label: 'Boys', data: [21,20,21,24,29,28], borderColor: 'rgba(122,79,0,0.85)', backgroundColor: 'rgba(122,79,0,0.1)', borderWidth: 2, tension: 0.3, fill: true, pointRadius: 4 }
+     ]
+    },
+    options: {
+     responsive: true, maintainAspectRatio: false,
+     plugins: {
+      legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14 } },
+      title: { display: true, text: 'Persistent Sadness/Hopelessness Among U.S. High School Students (CDC YRBS)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' },
+      tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y + '%'; } } }
+     },
+     scales: {
+      y: { beginAtZero: false, min: 15, max: 65, ticks: { callback: function(v){return v+'%';}, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+      x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+     }
+    }
+   });
 
-      <span class="section-label">05 &ndash; The Major Researchers</span>
+   // Chart 2: Effect Size Comparison Girls vs Boys
+   new Chart(document.getElementById('chartSexDiff').getContext('2d'), {
+    type: 'bar',
+    data: {
+     labels: ['Girls (midpoint)', 'Boys (midpoint)'],
+     datasets: [{
+      label: 'Average beta (SM use → depression)',
+      data: [-0.17, -0.05],
+      backgroundColor: ['rgba(184,58,30,0.55)', 'rgba(122,79,0,0.45)'],
+      borderColor: ['rgba(184,58,30,0.85)', 'rgba(122,79,0,0.85)'],
+      borderWidth: 1.5, borderRadius: 3
+     }]
+    },
+    options: {
+     responsive: true, maintainAspectRatio: false,
+     plugins: {
+      legend: { display: false },
+      title: { display: true, text: 'Social Media → Depression: Average Effect Size by Sex (Twenge et al. 2022 SCA)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } }
+     },
+     scales: {
+      y: { ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
+      x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
+     }
+    }
+   });
+  });
+ </script>
 
-      <p><strong>Jonathan Haidt</strong> (NYU Stern, social psychologist): Core claim &mdash; smartphone-based social media is a <em>major</em> causal driver of the post-2012 crisis, especially for girls. Relies on trend timing, sex differences, mechanisms, quasi-experiments, and precautionary logic. <em>Strongest critique:</em> Often infers more causality than underlying designs support; extrapolates from college/adult studies.</p>
 
-      <p><strong>Candice Odgers</strong> (UC Irvine, developmental psychologist): Core claim &mdash; evidence for a broad, strong causal story is <em>weak</em>; most associations are small or mixed. Stresses reverse causality, confounding, and measurement error. <em>Strongest critique:</em> May underweight subgroup harms and dismiss population-level consequences of small effects.</p>
+ <script>
+  (function(){
+   var html = document.documentElement;
+   var btn = document.querySelector('.theme-toggle');
+   function icon(){
+    if(!btn) return;
+    var isDark = html.getAttribute('data-theme')==='dark';
+    btn.textContent = isDark ? '\u2600' : '\u263E';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('aria-pressed', String(isDark));
+   }
+   icon();
+   if(btn) btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    try { localStorage.setItem('tb-theme', next); } catch(e) {}
+    icon();
+   });
+  })();
 
-      <p><strong>Amy Orben &amp; Andrew Przybylski</strong> (Cambridge/Oxford): Average associations tiny (&le;0.4% variance); analytic flexibility inflates apparent effects. <strong>Jean Twenge</strong> (SDSU): Stronger negative effects for girls; heavy use doubles risk. <strong>Mitch Prinstein</strong> (APA): Context-dependent &mdash; effects vary by individual and use patterns.</p>
+  (function(){
+   var bar = document.querySelector('.reading-progress');
+   if(!bar) return;
+   window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+   }, {passive:true});
+  })();
 
-      <span class="section-label">06 &ndash; Why They Disagree</span>
+  (function(){
+   var btn = document.querySelector('.back-to-top');
+   if(!btn) return;
+   window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+   }, {passive:true});
+   btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  })();
 
-      <div class="steelman-wrap">
-        <div class="steelman-row"><span class="steelman-key">Causal Standards</span><span class="steelman-val">Haidt accepts convergent correlational evidence + mechanisms + quasi-experiments as sufficient for public-health action. Odgers requires stricter causal identification before strong claims.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Effect Size Interpretation</span><span class="steelman-val">Haidt: small effects matter at population scale when 95%+ of teens are exposed. Odgers: small effects (&lt;1% variance) are not policy-relevant at the individual level.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Subgroup Weighting</span><span class="steelman-val">Haidt emphasizes concentrated harms in girls and vulnerable teens. Odgers emphasizes that average effects are tiny and many studies are null or bidirectional.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Timing Interpretation</span><span class="steelman-val">Haidt sees post-2012 acceleration as strong evidence. Odgers notes pre-existing rises and multiple coinciding stressors (academic pressure, economic changes, pandemic).</span></div>
-        <div class="steelman-row"><span class="steelman-key">Threshold for Action</span><span class="steelman-val">Haidt favors precaution given scale of exposure. Odgers warns over-attribution distracts from proven interventions (sleep, exercise, in-person connection, inequality reduction).</span></div>
-      </div>
+  (function(){
+   var btns = document.querySelectorAll('.jump-btn');
+   var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+   function update(){
+    var current = '';
+    for(var i=ids.length-1; i>=0; i--){
+     var el = document.getElementById(ids[i]);
+     if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+    }
+    btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+   }
+   window.addEventListener('scroll', update, {passive:true});
+   update();
+  })();
 
-      <div class="part-takeaway">
-        <strong>Part 3 Takeaway</strong>
-        The Haidt-Odgers dispute is not about ideology &mdash; it is about standards of evidence. Haidt trusts convergent imperfect evidence and favors precaution. Odgers demands stricter causation before making strong claims. Both positions are intellectually defensible. The underlying data overlap substantially; the disagreement is about what those data warrant concluding.
-      </div>
-    </section>
-
-    <!-- ════════ PART 4 ════════ -->
-    <section id="part4">
-      <div class="part-header"><span class="part-label">Part 4 of 7</span>
-        <h2 class="part-title">Girls vs. Boys: Why the Sex Difference Matters</h2></div>
-
-      <span class="section-label">07 &ndash; The Evidence for a Sex Gap</span>
-
-      <p>Sex differences are robust and large. YRBS: girls&rsquo; persistent sadness rose from 39% to 53% (2013&ndash;2023) vs. boys&rsquo; 21% to 28%. Meta-analyses find effect sizes for social media and depression are 2&ndash;3&times; larger for girls (Twenge et al. 2022: &beta;=&minus;0.11 to &minus;0.24 for girls vs. &minus;0.03 to &minus;0.06 for boys). WHO HBSC (2022) found problematic social media use at 13% of girls vs. 9% of boys.</p>
-
-      <p><strong>Why girls may be more affected:</strong> Girls use more image-based, appearance-focused platforms (Instagram, TikTok). Greater exposure to social comparison, body-image pressures, cyberbullying, and relational aggression. Girls are more prone to internalizing disorders. Orben et al. (2022) found developmental &ldquo;windows of sensitivity&rdquo; with small negative effects earlier for girls (ages 11&ndash;13).</p>
-
-      <div class="chart-wrap">
-        <div class="chart-title">Effect Size by Sex: Social Media &amp; Depression (&beta; coefficients)</div>
-        <div class="chart-canvas-wrap">
-          <canvas id="chartSexDiff" role="img" aria-label="Bar chart comparing effect sizes for social media and depression between girls and boys. Girls: -0.17 average, Boys: -0.05 average."></canvas>
-        </div>
-      </div>
-      <p class="source-note">Source: Twenge et al. (2022) specification curve analysis. &beta; range for girls &minus;0.11 to &minus;0.24; boys &minus;0.03 to &minus;0.06. Midpoints shown.</p>
-
-      <div class="part-takeaway">
-        <strong>Part 4 Takeaway</strong>
-        Girls are more affected than boys by both the underlying mental health trends and the social media associations. Mechanisms include appearance comparison, relational aggression, and platform design. Not all girls are equally affected &mdash; subgroup vulnerabilities matter. Confidence: HIGH on a meaningful sex difference.
-      </div>
-    </section>
-
-    <!-- ════════ PART 5 ════════ -->
-    <section id="part5">
-      <div class="part-header"><span class="part-label">Part 5 of 7</span>
-        <h2 class="part-title">Mechanisms of Harm and Benefit</h2></div>
-
-      <span class="section-label">08 &ndash; Supported Harm Mechanisms</span>
-      <p><strong>Sleep displacement</strong> has the strongest evidence: late-night use and notifications disrupt sleep, which mediates negative mental health effects. <strong>Social comparison</strong> on appearance-focused, passive-scrolling platforms increases body dissatisfaction and anxiety, especially among girls. <strong>Cyberbullying</strong> is linked to increased depression and suicidality. <strong>Compulsive/problematic use</strong> (addiction-like patterns in ~10&ndash;20%) shows the strongest associations &mdash; Shannon et al. (2022) found r=0.27 for depression and r=0.35 for anxiety, much larger than ordinary time-spent correlations.</p>
-
-      <span class="section-label">09 &ndash; Supported Benefit Mechanisms</span>
-      <p><strong>Social support and belonging:</strong> Online communities can reduce isolation, especially for marginalized or geographically isolated youth. <strong>Identity development:</strong> LGBTQ+ youth and teens in restrictive environments often find affirmation and community online that is unavailable offline. <strong>Access to information and help:</strong> Some teens use social media to find mental health resources and peer support. APA and the National Academies both note that digital spaces can provide real opportunities alongside risks.</p>
-
-      <span class="section-label">10 &ndash; What the Surgeon General Actually Said</span>
-      <p>The 2023 advisory is explicitly <strong>precautionary, not causal</strong>. It states: &ldquo;We do not yet have enough evidence to determine if social media is sufficiently safe for children and adolescents.&rdquo; It cites concerning correlational findings but explicitly notes gaps in pathways, content effects, and subgroup data. It recommends safety standards, design changes, and research transparency &mdash; not bans. Media headlines often compressed this into &ldquo;social media harms youth mental health,&rdquo; overstating the advisory&rsquo;s actual conclusions.</p>
-
-      <div class="part-takeaway">
-        <strong>Part 5 Takeaway</strong>
-        Mechanisms of harm are best supported for sleep disruption, social comparison, cyberbullying, and compulsive use. Mechanisms of benefit include social support, identity development, and access to help &mdash; especially for marginalized youth. The Surgeon General called for precaution, not a definitive causal verdict. Net harm appears when use is passive, excessive, or algorithmically driven toward negative content.
-      </div>
-    </section>
-
-    <!-- ════════ PART 6 ════════ -->
-    <section id="part6">
-      <div class="part-header"><span class="part-label">Part 6 of 7</span>
-        <h2 class="part-title">Steelman Both Sides</h2></div>
-
-      <span class="section-label">11 &ndash; Strongest &ldquo;Social Media Is Harming Teens&rdquo; Case</span>
-      <div class="steelman-wrap">
-        <div class="steelman-row"><span class="steelman-key">Trend Timing</span><span class="steelman-val">Sharp acceleration in girls&rsquo; internalizing problems post-smartphone/social-media saturation (~2012). Multiple countries, multiple outcomes. Timing is suggestive even if not proof.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Causal Evidence</span><span class="steelman-val">Facebook rollout quasi-experiment (+9% depression). ABCD within-person prospective effects. Reduction RCTs show improvement when use is curtailed. Multiple converging lines.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Mechanisms</span><span class="steelman-val">Well-supported pathways: social comparison, sleep disruption, cyberbullying, compulsive design. These align with platform design and observed sex differences.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Population Scale</span><span class="steelman-val">Even modest average effects (r=0.12) matter when 95%+ of teens are exposed. Vulnerable subgroups (girls, LGBTQ+ youth facing harassment, pre-existing conditions) experience 2&ndash;3&times; amplification.</span></div>
-      </div>
-
-      <span class="section-label">12 &ndash; Strongest &ldquo;Moral Panic / Weak Evidence&rdquo; Case</span>
-      <div class="steelman-wrap">
-        <div class="steelman-row"><span class="steelman-key">Tiny Effect Sizes</span><span class="steelman-val">Orben &amp; Przybylski: &le;0.4% variance explained. Many rigorous within-person studies find null or bidirectional effects. Average associations are clinically insignificant for most individual teens.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Measurement Problems</span><span class="steelman-val">Self-reported screen time is unreliable. &ldquo;Screen time&rdquo; lumps active creation, passive scrolling, and private messaging. Failure to distinguish platforms, content, and context undermines most studies.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Alternative Explanations</span><span class="steelman-val">Academic pressure, economic inequality, family disruption, pandemic effects, declining unstructured play. Many factors changed simultaneously. Cross-national Facebook adoption does not show a uniform global well-being collapse.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Benefits for Subsets</span><span class="steelman-val">Marginalized youth (LGBTQ+, rural, ethnic minorities) gain identity support, belonging, and information. Some teens use social media with no harm or net positive effects. Blanket restrictions risk removing real benefits.</span></div>
-        <div class="steelman-row"><span class="steelman-key">Historical Precedent</span><span class="steelman-val">Previous technology panics (TV, video games, comic books) faded as evidence accumulated. This does not prove current fears are wrong, but it counsels against overclaiming before evidence is settled.</span></div>
-      </div>
-
-      <div class="part-takeaway">
-        <strong>Part 6 Takeaway</strong>
-        The &ldquo;destroying a generation&rdquo; claim is overstated. The &ldquo;moral panic&rdquo; claim is also overstated. Social media is probably one meaningful contributor to worsening teen mental health &mdash; especially for girls and vulnerable subgroups &mdash; but the average causal effect appears small and the strongest public claims usually outrun the evidence.
-      </div>
-    </section>
-
-    <!-- ════════ PART 7 ════════ -->
-    <section id="part7">
-      <div class="part-header"><span class="part-label">Part 7 of 7</span>
-        <h2 class="part-title">Confidence Ratings and What Would Change the Conclusion</h2></div>
-
-      <span class="section-label">13 &ndash; Confidence Tier Summary</span>
-      <div class="table-scroll">
-        <table class="data-table">
-          <thead><tr><th>Finding</th><th>Confidence</th><th>Basis</th></tr></thead>
-          <tbody>
-            <tr><td>Teen mental health has worsened since ~2012, especially for girls</td><td class="td-rate">HIGH</td><td>CDC YRBS, NHS Digital, MTF, PISA &mdash; multiple large representative surveys</td></tr>
-            <tr><td>Social media use is associated with worse mental health</td><td class="td-rate">HIGH</td><td>Consistent across meta-analyses; but effect sizes small (r&asymp;0.10&ndash;0.15)</td></tr>
-            <tr><td>Social media is a major/dominant causal driver</td><td class="td-alert">LOW</td><td>Most evidence correlational; NRC-level causal review not yet available; many confounders</td></tr>
-            <tr><td>Social media is a modest contributing factor</td><td class="td-warn">MODERATE</td><td>ABCD within-person, Facebook rollout, reduction RCTs &mdash; converging but small</td></tr>
-            <tr><td>Girls are more affected than boys</td><td class="td-rate">HIGH</td><td>Consistent across YRBS, meta-analyses, and mechanism evidence</td></tr>
-            <tr><td>Problematic/compulsive use is more harmful than ordinary use</td><td class="td-rate">HIGH</td><td>Shannon et al.: r=0.27&ndash;0.35 for problematic use vs. r&asymp;0.10 for time spent</td></tr>
-            <tr><td>Sleep disruption is a key mechanism</td><td class="td-rate">HIGH</td><td>Strong evidence linking late-night use to sleep loss to mood effects</td></tr>
-            <tr><td>Social media provides net benefits for some teens</td><td class="td-warn">MODERATE</td><td>LGBTQ+ community support, rural isolation, APA/NAS acknowledgments</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <span class="section-label">14 &ndash; What Would Change the Conclusion</span>
-      <div class="falsify-box">
-        <span class="falsify-label">Falsifiability</span>
-        <p><strong>For &ldquo;major cause&rdquo;:</strong> Large-scale RCTs or natural experiments with adolescents on modern platforms (not college-era Facebook) showing consistent, substantial effects on clinical outcomes &mdash; not just self-report well-being. Platform data access enabling content-specific causal analysis.</p>
-        <p><strong>For &ldquo;moral panic&rdquo;:</strong> If future large preregistered panels with objective usage data consistently showed null effects even for high-use girls and vulnerable subgroups, or if school phone bans produced measurable mental health improvements at scale, that would weaken the concern.</p>
-        <p><strong>Most needed:</strong> Better measurement (passive tracking, platform-specific, content-level), longer-run adolescent panels, and access to platform recommendation data that researchers currently lack.</p>
-      </div>
-
-      <div class="cite-this">
-        <span class="cite-this-label">Cite this article</span>
-        <span class="cite-this-text">TruthBased.org. &ldquo;Social Media &amp; Youth Mental Health.&rdquo; Published March 2026. https://www.truthbased.org/social-media-mental-health</span>
-      </div>
-
-      <div class="sources-section">
-        <span class="sources-section-label">Sources and Methodology Disclosures</span>
-        <div class="source-item"><strong>CDC YRBS 2013&ndash;2023.</strong> Youth Risk Behavior Survey results. <a href="https://www.cdc.gov/yrbs/results/2023-yrbs-results.html" class="inline-link" target="_blank" rel="noopener noreferrer">cdc.gov</a></div>
-        <div class="source-item"><strong>NHS Digital. Mental Health of Children and Young People in England (2023).</strong> <a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england/2023-wave-4-follow-up" class="inline-link" target="_blank" rel="noopener noreferrer">digital.nhs.uk</a></div>
-        <div class="source-item"><strong>Nagata, J.M. et al. JAMA Network Open (2025).</strong> ABCD within-person social media and depressive symptoms. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349" class="inline-link" target="_blank" rel="noopener noreferrer">jamanetwork.com</a></div>
-        <div class="source-item"><strong>Braghieri, L., Levy, R. &amp; Makarin, A. AER 112 (2022).</strong> Facebook rollout natural experiment. <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20211218" class="inline-link" target="_blank" rel="noopener noreferrer">aeaweb.org</a></div>
-        <div class="source-item"><strong>Orben, A. &amp; Przybylski, A.K. Nature Human Behaviour 3 (2019).</strong> &le;0.4% variance explained. <a href="https://gwern.net/doc/psychology/2019-orben.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">nature.com</a></div>
-        <div class="source-item"><strong>Twenge, J.M. et al. Acta Psychologica 224 (2022).</strong> Specification curve: girls vs. boys. <a href="https://psycnet.apa.org/record/2022-36423-001" class="inline-link" target="_blank" rel="noopener noreferrer">psycnet.apa.org</a></div>
-        <div class="source-item"><strong>Shannon, H. et al. JMIR Mental Health 9 (2022).</strong> Problematic social media use meta-analysis. <a href="https://mental.jmir.org/2022/4/e33450/" class="inline-link" target="_blank" rel="noopener noreferrer">jmir.org</a></div>
-        <div class="source-item"><strong>U.S. Surgeon General Advisory (2023).</strong> Social Media and Youth Mental Health. <a href="https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">hhs.gov</a></div>
-        <div class="source-item"><strong>WHO HBSC (2022).</strong> Health Behaviour in School-aged Children: digital behaviours report. <a href="https://www.hbsc.org/" class="inline-link" target="_blank" rel="noopener noreferrer">hbsc.org</a></div>
-        <div class="source-item"><strong>APA Advisory (2023).</strong> Health advisory on social media use in adolescence. <a href="https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">apa.org</a></div>
-        <div class="source-item"><strong>SMART Schools Study (Lancet Regional Health Europe, 2025).</strong> School phone policies and mental well-being. <a href="https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(25)00003-1/fulltext" class="inline-link" target="_blank" rel="noopener noreferrer">thelancet.com</a></div>
-        <div class="source-item"><strong>Gabrielle, T. et al. Scientia Psychiatrica 5 (2024).</strong> Meta-analysis: social media and adolescent mental health. <a href="https://scientiapsychiatrica.com/index.php/SciPsy/article/view/175" class="inline-link" target="_blank" rel="noopener noreferrer">scientiapsychiatrica.com</a></div>
-        <div class="source-item"><strong>Orben, A. et al. Nature Communications 13 (2022).</strong> Windows of developmental sensitivity. <a href="https://www.nature.com/articles/s41467-022-29296-3" class="inline-link" target="_blank" rel="noopener noreferrer">nature.com</a></div>
-      </div>
-    </section>
-  </article>
-  </main>
-
-    
-        <div class="ymal-section" style="max-width:780px;margin:0 auto;padding:0 24px 24px;">
-      <span class="ymal-heading">You May Also Like</span>
-      <div class="ymal-grid">
-        <a href="/is-youth-gender-medicine-safe" class="ymal-card">
-          <span class="ymal-cat">Science &amp; Medicine</span>
-          <span class="ymal-title">Gender-Affirming Care for Minors &rarr;</span>
-          <span class="ymal-desc">Systematic reviews, Cass Report, WPATH standards. Evidence-rated.</span>
-        </a>
-        <a href="/what-do-gender-affirming-care-patients-say" class="ymal-card">
-          <span class="ymal-cat">Science &amp; Medicine</span>
-          <span class="ymal-title">GAC Patient-Reported Outcomes &rarr;</span>
-          <span class="ymal-desc">What recipients and detransitioners actually report. Published qualitative research.</span>
-        </a>
-        <a href="/is-ultra-processed-food-bad-for-you" class="ymal-card">
-          <span class="ymal-cat">Science &amp; Medicine</span>
-          <span class="ymal-title">Ultra-Processed Food &rarr;</span>
-          <span class="ymal-desc">NOVA classification, Hall RCT, epidemiological data and critiques.</span>
-        </a>
-      </div>
-    </div>
-  <div style="margin-top:36px; padding:20px 22px; background:var(--surface); border:1px solid var(--border); border-radius:6px; text-align:center;">
-      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
-      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
-      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
-      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
-      <a href="https://patreon.com/TruthBased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#222; color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9733; Patreon</a>
-      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
-      <p style="font-family:var(--font-sans); font-size:0.68rem; color:var(--text-dim); margin:14px 0 0;">Prefer crypto? <a href="/support" style="color:var(--brick); text-decoration:none; font-weight:600;">See wallet addresses &rarr;</a></p>
-    </div>
-
-  <footer style="border-top:1px solid var(--border); padding:18px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:780px; margin:0 auto;">
-    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">TruthBased.org &mdash; Last updated March 2026</span>
-    <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-quiet);">Sources: CDC YRBS, NHS Digital, ABCD, Braghieri et al., Orben, Twenge, APA</span>
-    <a href="/methodology" style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-quiet);text-decoration:none;transition:color 0.15s;">Methodology</a>
-  </footer>
-
-  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
-
-  <script>
-    window.addEventListener('load', function() {
-      if (typeof Chart === 'undefined') return;
-
-      // Chart 1: YRBS Persistent Sadness - Girls vs Boys
-      new Chart(document.getElementById('chartYRBS').getContext('2d'), {
-        type: 'line',
-        data: {
-          labels: ['2013','2015','2017','2019','2021','2023'],
-          datasets: [
-            { label: 'Girls', data: [39,40,41,47,57,53], borderColor: 'rgba(184,58,30,0.85)', backgroundColor: 'rgba(184,58,30,0.1)', borderWidth: 2.5, tension: 0.3, fill: true, pointRadius: 4 },
-            { label: 'Boys', data: [21,20,21,24,29,28], borderColor: 'rgba(122,79,0,0.85)', backgroundColor: 'rgba(122,79,0,0.1)', borderWidth: 2, tension: 0.3, fill: true, pointRadius: 4 }
-          ]
-        },
-        options: {
-          responsive: true, maintainAspectRatio: false,
-          plugins: {
-            legend: { position: 'bottom', labels: { font: { family: "'Sora', sans-serif", size: 10 }, boxWidth: 14 } },
-            title: { display: true, text: 'Persistent Sadness/Hopelessness Among U.S. High School Students (CDC YRBS)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' },
-            tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y + '%'; } } }
-          },
-          scales: {
-            y: { beginAtZero: false, min: 15, max: 65, ticks: { callback: function(v){return v+'%';}, font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-          }
-        }
-      });
-
-      // Chart 2: Effect Size Comparison Girls vs Boys
-      new Chart(document.getElementById('chartSexDiff').getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: ['Girls (midpoint)', 'Boys (midpoint)'],
-          datasets: [{
-            label: 'Average beta (SM use → depression)',
-            data: [-0.17, -0.05],
-            backgroundColor: ['rgba(184,58,30,0.55)', 'rgba(122,79,0,0.45)'],
-            borderColor: ['rgba(184,58,30,0.85)', 'rgba(122,79,0,0.85)'],
-            borderWidth: 1.5, borderRadius: 3
-          }]
-        },
-        options: {
-          responsive: true, maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            title: { display: true, text: 'Social Media → Depression: Average Effect Size by Sex (Twenge et al. 2022 SCA)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } }
-          },
-          scales: {
-            y: { ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-            x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-          }
-        }
-      });
+  (function(){
+   document.querySelectorAll('.table-scroll').forEach(function(el){
+    if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+   });
+   window.addEventListener('resize', function(){
+    document.querySelectorAll('.table-scroll').forEach(function(el){
+     el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
     });
-  </script>
+   });
+  })();
 
+  (function(){
+   var nav = document.querySelector('.site-nav');
+   if(!nav) return;
+   window.addEventListener('scroll', function(){
+    nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+   }, {passive:true});
+  })();
 
-  <script>
-    (function(){
-      var html = document.documentElement;
-      var btn = document.querySelector('.theme-toggle');
-      function icon(){
-        if(!btn) return;
-        var isDark = html.getAttribute('data-theme')==='dark';
-        btn.textContent = isDark ? '\u2600' : '\u263E';
-        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        btn.setAttribute('aria-pressed', String(isDark));
-      }
-      icon();
-      if(btn) btn.addEventListener('click', function(){
-        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        try { localStorage.setItem('tb-theme', next); } catch(e) {}
-        icon();
-      });
-    })();
-
-    (function(){
-      var bar = document.querySelector('.reading-progress');
-      if(!bar) return;
-      window.addEventListener('scroll', function(){
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
-      }, {passive:true});
-    })();
-
-    (function(){
-      var btn = document.querySelector('.back-to-top');
-      if(!btn) return;
-      window.addEventListener('scroll', function(){
-        btn.classList.toggle('visible', window.scrollY > 400);
-      }, {passive:true});
-      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-    })();
-
-    (function(){
-      var btns = document.querySelectorAll('.jump-btn');
-      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
-      function update(){
-        var current = '';
-        for(var i=ids.length-1; i>=0; i--){
-          var el = document.getElementById(ids[i]);
-          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
-        }
-        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
-      }
-      window.addEventListener('scroll', update, {passive:true});
-      update();
-    })();
-
-    (function(){
-      document.querySelectorAll('.table-scroll').forEach(function(el){
-        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
-      });
-      window.addEventListener('resize', function(){
-        document.querySelectorAll('.table-scroll').forEach(function(el){
-          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
-        });
-      });
-    })();
-
-    (function(){
-      var nav = document.querySelector('.site-nav');
-      if(!nav) return;
-      window.addEventListener('scroll', function(){
-        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
-      }, {passive:true});
-    })();
-
-    (function(){
-      var tog = document.querySelector('.jump-toggle');
-      if(!tog) return;
-      var links = document.querySelector('.jump-links');
-      tog.addEventListener('click', function(){
-        var open = links.classList.toggle('is-open');
-        tog.setAttribute('aria-expanded', String(open));
-        tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
-        tog.querySelector('svg').innerHTML = open
-          ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
-          : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
-      });
-      links.querySelectorAll('.jump-btn').forEach(function(btn){
-        btn.addEventListener('click', function(){
-          if(window.innerWidth <= 640){
-            links.classList.remove('is-open');
-            tog.setAttribute('aria-expanded','false');
-            tog.querySelector('.jtog-label').textContent = 'Sections';
-            tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
-          }
-        });
-      });
-    })();
-  </script>
-  
-  
+  (function(){
+   var tog = document.querySelector('.jump-toggle');
+   if(!tog) return;
+   var links = document.querySelector('.jump-links');
+   tog.addEventListener('click', function(){
+    var open = links.classList.toggle('is-open');
+    tog.setAttribute('aria-expanded', String(open));
+    tog.querySelector('.jtog-label').textContent = open ? 'Close' : 'Sections';
+    tog.querySelector('svg').innerHTML = open
+     ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
+     : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+   });
+   links.querySelectorAll('.jump-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+     if(window.innerWidth <= 640){
+      links.classList.remove('is-open');
+      tog.setAttribute('aria-expanded','false');
+      tog.querySelector('.jtog-label').textContent = 'Sections';
+      tog.querySelector('svg').innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+     }
+    });
+   });
+  })();
+ </script>
+ 
+ 
 </body>
 
 <!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
