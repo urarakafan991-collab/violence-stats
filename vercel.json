@@ -512,6 +512,36 @@
       "source": "/youth-gender-medicine.html",
       "destination": "/is-youth-gender-medicine-safe",
       "permanent": true
+    },
+    {
+      "source": "/hitler-socialist",
+      "destination": "/was-hitler-actually-a-socialist",
+      "permanent": true
+    },
+    {
+      "source": "/nazi-socialist",
+      "destination": "/was-hitler-actually-a-socialist",
+      "permanent": true
+    },
+    {
+      "source": "/party-switch",
+      "destination": "/did-the-us-political-parties-switch",
+      "permanent": true
+    },
+    {
+      "source": "/southern-strategy",
+      "destination": "/did-the-us-political-parties-switch",
+      "permanent": true
+    },
+    {
+      "source": "/columbus",
+      "destination": "/what-does-the-record-show-about-columbus",
+      "permanent": true
+    },
+    {
+      "source": "/columbus-america",
+      "destination": "/what-does-the-record-show-about-columbus",
+      "permanent": true
     }
   ],
   "headers": [
