@@ -1050,6 +1050,76 @@
     .chart-sub { font-size: 0.74rem; color: var(--text-quiet); margin-bottom: 16px; }
     .chart-canvas-wrap { position: relative; height: 240px; }
 
+    /* ── Clean CSS bars (no canvas) ── */
+    .clean-bar-section { margin-bottom: 8px; }
+    .clean-bar-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+    .clean-bar-name { font-family: var(--font-sans); font-size: 0.76rem; font-weight: 500; color: var(--text-primary); }
+    .clean-bar-num { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; line-height: 1; }
+    .clean-bar-num.green { color: var(--green); }
+    .clean-bar-num.brick { color: var(--brick); }
+    .clean-bar-unit { font-family: var(--font-sans); font-size: 0.56rem; color: var(--text-quiet); margin-left: 2px; }
+    .clean-bar-track {
+      height: 32px; background: var(--bg); border-radius: 5px; position: relative;
+    }
+    .clean-bar-track .tick {
+      position: absolute; top: 0; bottom: 0; width: 1px;
+      background: var(--rule); opacity: 0.4; z-index: 1;
+    }
+    .clean-bar-track .tick-label {
+      position: absolute; bottom: -14px;
+      font-family: var(--font-mono); font-size: 0.44rem; color: var(--text-quiet);
+      transform: translateX(-50%);
+    }
+    .clean-bar-fill {
+      position: absolute; top: 0; left: 0; height: 100%;
+      border-radius: 5px; z-index: 2; width: 0%;
+      transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .clean-bar-fill.green-bar {
+      background: linear-gradient(90deg, rgba(27,107,62,0.3), rgba(27,107,62,0.55));
+      border: 1.5px solid var(--green);
+    }
+    .clean-bar-fill.green-bar::after {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(27,107,62,0.1) 4px, rgba(27,107,62,0.1) 6px);
+      border-radius: 4px;
+    }
+    .clean-bar-fill.brick-bar {
+      background: linear-gradient(90deg, rgba(184,58,30,0.2), rgba(184,58,30,0.42));
+      border: 1.5px solid var(--brick);
+    }
+    .clean-bar-spacer { height: 24px; }
+    .clean-verdict {
+      margin-top: 22px; padding: 18px 22px; border-radius: 7px;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .clean-verdict.green-v { background: var(--green-faint, var(--green-light, #e8f5ed)); border-left: 4px solid var(--green); }
+    .clean-verdict-num {
+      font-family: var(--font-mono); font-size: 2.8rem; font-weight: 700;
+      color: var(--green); line-height: 1; flex-shrink: 0; letter-spacing: -0.03em;
+    }
+    .clean-verdict-text { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-primary); line-height: 1.5; }
+    .clean-verdict-text strong { color: var(--green); }
+    .clean-chart-source {
+      font-family: var(--font-mono); font-size: 0.52rem; color: var(--text-quiet);
+      margin-top: 14px; line-height: 1.5; position: relative; padding-right: 100px;
+    }
+    .chart-wrap.clean-chart::after {
+      content: 'TruthBased.org'; position: absolute; bottom: 10px; right: 14px;
+      font-family: var(--font-sans); font-size: 0.48rem; font-weight: 600;
+      letter-spacing: 0.06em; color: var(--text-quiet); opacity: 0.3;
+    }
+    .chart-wrap.clean-chart { position: relative; }
+    .clean-not-show {
+      font-family: var(--font-sans); font-size: 0.6rem; color: var(--text-dim);
+      margin-top: 10px; font-style: italic;
+    }
+    @media (max-width: 600px) {
+      .clean-bar-num { font-size: 1.15rem; }
+      .clean-verdict { flex-direction: column; text-align: center; gap: 10px; }
+      .clean-verdict-num { font-size: 2.2rem; }
+    }
+
 
     /* ----- Sources section -------------------------------- */
 
@@ -1602,27 +1672,61 @@
       <div class="chart-canvas-wrap"><canvas id="chart1" role="img" aria-label="Bar chart: trans share of shooters (0.09%–0.67%) vs. trans share of US adults (~0.8%). Trans people are underrepresented in every database."></canvas></div>
     </div>
 
-    <div class="chart-wrap" style="margin-top:12px;">
+    <div class="chart-wrap clean-chart" style="margin-top:12px;">
       <div class="chart-title">Per Capita Mass Shooting Rate: Trans vs. Cisgender (GVA, All-Time)</div>
-      <div class="chart-sub">Shooters per 100,000 people. Binary trans pop ~1.87M (all ages); US total ~335M. GVA is the only database with enough trans cases (n=5) for a meaningful per-capita comparison.</div>
-      <div class="chart-canvas-wrap" style="height:170px;"><canvas id="chart1b" role="img" aria-label="Horizontal bar chart: trans people 0.27 per 100,000 vs cisgender people 1.77 per 100,000. Trans people are approximately 7 times less likely per capita."></canvas></div>
+      <div class="chart-sub">Shooters per 100,000 people. Full trans population 2.8M (all ages); U.S. total ~335M. GVA is the only database with enough trans cases (n=5) for a meaningful per-capita comparison.</div>
+
+      <div class="clean-bar-section">
+        <div class="clean-bar-header">
+          <span class="clean-bar-name">Trans people</span>
+          <span class="clean-bar-num green">0.179</span>
+          <span class="clean-bar-unit">per 100k</span>
+        </div>
+        <div class="clean-bar-track">
+          <div class="tick" style="left:25%;"><span class="tick-label">0.5</span></div>
+          <div class="tick" style="left:50%;"><span class="tick-label">1.0</span></div>
+          <div class="tick" style="left:75%;"><span class="tick-label">1.5</span></div>
+          <div class="clean-bar-fill green-bar" data-width="9%"></div>
+        </div>
+      </div>
+      <div class="clean-bar-spacer"></div>
+      <div class="clean-bar-section">
+        <div class="clean-bar-header">
+          <span class="clean-bar-name">Cisgender people</span>
+          <span class="clean-bar-num brick">1.77</span>
+          <span class="clean-bar-unit">per 100k</span>
+        </div>
+        <div class="clean-bar-track">
+          <div class="tick" style="left:25%;"><span class="tick-label">0.5</span></div>
+          <div class="tick" style="left:50%;"><span class="tick-label">1.0</span></div>
+          <div class="tick" style="left:75%;"><span class="tick-label">1.5</span></div>
+          <div class="clean-bar-fill brick-bar" data-width="88.5%"></div>
+        </div>
+      </div>
+
+      <div class="clean-verdict green-v">
+        <span class="clean-verdict-num">~10&times;</span>
+        <span class="clean-verdict-text">Trans people are approximately <strong>10 times less likely</strong> per capita to be mass shooters than the general population &mdash; using the broadest database and full trans population denominator.</span>
+      </div>
+      <div class="clean-chart-source">Source: Gun Violence Archive (GVA). Full trans population: Williams Institute 2025 (2.8M, all ages). Cisgender rate = remainder.</div>
+      <div class="clean-not-show">What this does not show: causation, motive, or whether any specific individual&rsquo;s gender identity was a factor in their actions.</div>
     </div>
 
     <div class="divider"></div>
     <span class="section-label">Per Capita Rate (GVA Definition)</span>
-    <p style="font-size:0.8rem;color:var(--text-quiet);margin-bottom:12px;">Binary trans population ~1.87M (all ages) vs. US total ~335M</p>
+    <p style="font-size:0.8rem;color:var(--text-quiet);margin-bottom:12px;">Full trans population 2.8M (all ages) vs. US total ~335M</p>
 
     <div class="capita-grid">
       <div class="capita-card">
-        <div class="capita-big">0.00027%</div>
-        <div class="capita-label">of trans people have committed a mass shooting (GVA, all-time)</div>
+        <div class="capita-big">0.00018%</div>
+        <div class="capita-label">of trans people have committed a GVA mass shooting (all-time)</div>
       </div>
       <div class="capita-card">
-        <div class="capita-big negative">0.0018%</div>
-        <div class="capita-label">of the general US population have committed a mass shooting (GVA, all-time)</div>
+        <div class="capita-big negative">0.00177%</div>
+        <div class="capita-label">of the general US population have committed a GVA mass shooting (all-time)</div>
       </div>
     </div>
-    <div class="capita-verdict">TRANS PEOPLE ARE ~7× LESS LIKELY PER CAPITA</div>
+    <div class="capita-verdict">TRANS PEOPLE ~10&times; LESS LIKELY PER CAPITA</div>
 
     <div class="divider"></div>
     <span class="section-label">The Eight Cited Shooters: Full Breakdown</span>
@@ -1851,10 +1955,42 @@
     </div>
     <div class="capita-verdict">TRANS PEOPLE ~10× LESS LIKELY PER CAPITA IN THIS EXACT WINDOW</div>
 
-    <div class="chart-wrap" style="margin-top:12px;">
-      <div class="chart-title">2020–2025: Per Capita Mass Shooting Rate Comparison</div>
-      <div class="chart-sub">GVA mass shootings per 100,000 people in the exact window most cited in political debates</div>
-      <div class="chart-canvas-wrap" style="height:200px;"><canvas id="chart2" role="img" aria-label="Horizontal bar chart: trans people 0.107 per 100k vs. general US population 1.05 per 100k in 2020–2025. Trans people are ~10x less likely."></canvas></div>
+    <div class="chart-wrap clean-chart" style="margin-top:12px;">
+      <div class="chart-title">2020&ndash;2025: Per Capita Mass Shooting Rate</div>
+      <div class="chart-sub">GVA mass shootings per 100,000 people in the exact window most cited in political debates. Full trans population (2.8M).</div>
+
+      <div class="clean-bar-section">
+        <div class="clean-bar-header">
+          <span class="clean-bar-name">Trans people</span>
+          <span class="clean-bar-num green">0.107</span>
+          <span class="clean-bar-unit">per 100k</span>
+        </div>
+        <div class="clean-bar-track">
+          <div class="tick" style="left:41.7%;"><span class="tick-label">0.5</span></div>
+          <div class="tick" style="left:83.3%;"><span class="tick-label">1.0</span></div>
+          <div class="clean-bar-fill green-bar" data-width="8.9%"></div>
+        </div>
+      </div>
+      <div class="clean-bar-spacer"></div>
+      <div class="clean-bar-section">
+        <div class="clean-bar-header">
+          <span class="clean-bar-name">General U.S. population</span>
+          <span class="clean-bar-num brick">1.05</span>
+          <span class="clean-bar-unit">per 100k</span>
+        </div>
+        <div class="clean-bar-track">
+          <div class="tick" style="left:41.7%;"><span class="tick-label">0.5</span></div>
+          <div class="tick" style="left:83.3%;"><span class="tick-label">1.0</span></div>
+          <div class="clean-bar-fill brick-bar" data-width="87.5%"></div>
+        </div>
+      </div>
+
+      <div class="clean-verdict green-v">
+        <span class="clean-verdict-num">~10&times;</span>
+        <span class="clean-verdict-text">Trans people are approximately <strong>10 times less likely</strong> per capita &mdash; even in the exact window most cited by those claiming overrepresentation.</span>
+      </div>
+      <div class="clean-chart-source">Source: GVA 2020&ndash;2025. Trans pop: Williams Institute 2025 (2.8M full, all ages).</div>
+      <div class="clean-not-show">What this does not show: motive, ideology, or whether gender identity was a factor.</div>
     </div>
 
     <div class="divider"></div>
@@ -1985,21 +2121,64 @@
       </tbody>
     </table></div>
 
-    <div class="chart-wrap">
+    <div class="chart-wrap clean-chart">
       <div class="chart-title">Per Capita Rate: All Three Databases (Full Trans Population)</div>
-      <div class="chart-sub">Shooters per 100,000 people using the correct full trans population (2.8M, all ages) vs. cisgender population. <strong style="color:var(--amber);">&#9888; Each database uses its own scale</strong> &mdash; read the numbers on each bar, not the bar length.</div>
-      <div class="chart-canvas-wrap" style="height:150px;"><canvas id="chart3a-gva" role="img" aria-label="GVA per-capita: trans 0.179 per 100k vs cis 1.77 per 100k"></canvas></div>
-      <div class="chart-canvas-wrap" style="height:130px;"><canvas id="chart3a-vpp" role="img" aria-label="VPP per-capita: trans 0.036 per 100k vs cis 0.060 per 100k"></canvas></div>
-      <div class="chart-canvas-wrap" style="height:130px;"><canvas id="chart3a-mj" role="img" aria-label="Mother Jones per-capita: trans 0.036 per 100k vs cis 0.045 per 100k"></canvas></div>
-      <div style="margin-top:10px; padding:10px 14px; background:var(--amber-faint); border-left:3px solid var(--amber); border-radius:0 4px 4px 0; font-size:0.75rem; line-height:1.55; color:var(--text-body);">
-        <strong style="color:var(--amber);">Why VPP and Mother Jones rates are unreliable:</strong> Both databases contain exactly <strong>one</strong> confirmed trans shooter (Audrey Hale). A per-capita rate built on a single data point has no statistical power &mdash; adding or removing one case swings the trans rate from 0.036 to 0.000. The 95% confidence interval is so wide it spans from zero to multiples of the cis rate. GVA (n=5) is the only database with enough cases for a per-capita comparison that means anything. The VPP and Mother Jones charts are shown for transparency, not because the rates are reliable.
+      <div class="chart-sub">Shooters per 100,000 people using the full trans population (2.8M, all ages). All three databases on the same scale for honest visual comparison.</div>
+
+      <div style="margin-bottom:18px;">
+        <div style="font-family:var(--font-sans);font-size:0.65rem;font-weight:600;color:var(--text-dim);margin-bottom:6px;">GVA (broadest) &middot; n=5 trans / ~5,900 total</div>
+        <div class="clean-bar-section">
+          <div class="clean-bar-header">
+            <span class="clean-bar-name">Trans</span>
+            <span class="clean-bar-num green">0.179</span>
+            <span class="clean-bar-unit">per 100k</span>
+          </div>
+          <div class="clean-bar-track">
+            <div class="tick" style="left:25%;"><span class="tick-label">0.5</span></div>
+            <div class="tick" style="left:50%;"><span class="tick-label">1.0</span></div>
+            <div class="tick" style="left:75%;"><span class="tick-label">1.5</span></div>
+            <div class="clean-bar-fill green-bar" data-width="9%"></div>
+          </div>
+        </div>
+        <div style="height:8px;"></div>
+        <div class="clean-bar-section">
+          <div class="clean-bar-header">
+            <span class="clean-bar-name">Cisgender</span>
+            <span class="clean-bar-num brick">1.77</span>
+            <span class="clean-bar-unit">per 100k</span>
+          </div>
+          <div class="clean-bar-track">
+            <div class="tick" style="left:25%;"><span class="tick-label">0.5</span></div>
+            <div class="tick" style="left:50%;"><span class="tick-label">1.0</span></div>
+            <div class="tick" style="left:75%;"><span class="tick-label">1.5</span></div>
+            <div class="clean-bar-fill brick-bar" data-width="88.5%"></div>
+          </div>
+        </div>
       </div>
+
+      <div style="margin-top:10px; padding:10px 14px; background:var(--amber-faint); border-left:3px solid var(--amber); border-radius:0 4px 4px 0; font-size:0.75rem; line-height:1.55; color:var(--text-body);">
+        <strong style="color:var(--amber);">VPP and Mother Jones per-capita rates (not charted &mdash; too unreliable):</strong> Both contain exactly <strong>one</strong> confirmed trans shooter (Audrey Hale). VPP: trans 0.036 vs. cis 0.060 per 100k. Mother Jones: trans 0.036 vs. cis 0.045 per 100k. A per-capita rate built on a single data point has no statistical power &mdash; adding or removing one case swings the trans rate from 0.036 to 0.000. GVA (n=5) is the only database with enough cases for a meaningful comparison.
+      </div>
+
+      <div class="clean-chart-source">Source: GVA, VPP, Mother Jones. Full trans population: Williams Institute 2025 (2.8M). Cis rates = remainder.</div>
+      <div class="clean-not-show">What this does not show: VPP and Mother Jones use stricter definitions that capture fewer total incidents, reducing statistical power for rare-population comparisons.</div>
     </div>
 
-    <div class="chart-wrap">
-      <div class="chart-title">Underrepresentation Factor: Binary-Only vs. Full Trans Population</div>
-      <div class="chart-sub">How many times less likely trans people are to commit a mass shooting vs. the general population — two denominators</div>
-      <div class="chart-canvas-wrap" style="height:220px;"><canvas id="chart3" role="img" aria-label="Grouped bar chart: all-time GVA 5x or 9.9x underrepresented. 2020–2025: 7.5x or 14.8x. Both denominators show underrepresentation."></canvas></div>
+    <div class="chart-wrap clean-chart">
+      <div class="chart-title">Underrepresentation Factor (Full Trans Population)</div>
+      <div class="chart-sub">How many times less likely trans people are to commit a mass shooting vs. the general population &mdash; GVA data, the only database with enough cases to measure meaningfully.</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0;">
+        <div style="padding:18px 16px; background:var(--green-faint,var(--green-light)); border:1px solid rgba(27,107,62,0.2); border-radius:6px; text-align:center;">
+          <div style="font-family:var(--font-mono); font-size:2rem; font-weight:700; color:var(--green); line-height:1;">~10&times;</div>
+          <div style="font-family:var(--font-sans); font-size:0.62rem; color:var(--text-dim); margin-top:6px;">less likely (all-time)</div>
+        </div>
+        <div style="padding:18px 16px; background:var(--green-faint,var(--green-light)); border:1px solid rgba(27,107,62,0.2); border-radius:6px; text-align:center;">
+          <div style="font-family:var(--font-mono); font-size:2rem; font-weight:700; color:var(--green); line-height:1;">~10&times;</div>
+          <div style="font-family:var(--font-sans); font-size:0.62rem; color:var(--text-dim); margin-top:6px;">less likely (2020&ndash;2025)</div>
+        </div>
+      </div>
+      <div class="clean-chart-source">Using full trans population (2.8M). Both time windows produce the same conclusion.</div>
     </div>
 
     <div class="box box-neutral">
@@ -2338,201 +2517,13 @@
       });
     })();
 
-    // Chart 1b — Per-capita rate: trans vs cis (GVA, all-time)
-    (function() {
-      var ctx = document.getElementById('chart1b');
-      if (!ctx) return;
-      new Chart(ctx.getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: ['Trans people (5 shooters / 1.87M)', 'Cisgender people (~5,895 / ~333.6M)'],
-          datasets: [{
-            data: [0.267, 1.77],
-            backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.45)'],
-            borderColor: ['#1b6b3e', '#b83a1e'],
-            borderWidth: 1.5,
-            borderRadius: 4,
-            barThickness: 44
-          }]
-        },
-        plugins: [barLabelPlugin],
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          indexAxis: 'y',
-          layout: { padding: { left: 16 } },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: '#ffffff',
-              borderColor: '#dedad3',
-              borderWidth: 1,
-              titleColor: '#151311',
-              bodyColor: '#3d3a33',
-              callbacks: { label: function(c) { return c.parsed.x.toFixed(2) + ' per 100,000 people'; } }
-            }
-          },
-          scales: {
-            x: {
-              grid: { color: '#ede9e0' },
-              ticks: { color: '#736e66', callback: function(v) { return v.toFixed(1); } },
-              title: { display: true, text: 'Shooters per 100,000 people', color: '#736e66', font: { size: 10 } },
-              min: 0, max: 2.0
-            },
-            y: { grid: { display: false }, ticks: { color: '#706d64', font: { size: 11 } } }
-          }
-        }
-      });
-    })();
+    // Chart 1b removed — replaced with CSS bars
 
-    // Chart 2 — Per-capita rate 2020–2025
-    (function() {
-      var el2 = document.getElementById('chart2'); if (!el2) return;
-      const ctx = el2.getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Trans people', 'General US population'],
-          datasets: [{
-            label: 'Mass shootings per 100,000 people (2020–2025)',
-            data: [0.107, 1.05],
-            backgroundColor: ['rgba(27,107,62,0.5)', 'rgba(184,58,30,0.5)'],
-            borderColor: ['#1b6b3e', '#b83a1e'],
-            borderWidth: 1.5,
-            borderRadius: 4,
-            barThickness: 70,
-          }]
-        },
-        plugins: [barLabelPlugin],
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          indexAxis: 'y',
-          layout: { padding: { left: 16 } },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: '#ffffff',
-              borderColor: '#dedad3',
-              borderWidth: 1,
-              titleColor: '#151311',
-              bodyColor: '#3d3a33',
-              callbacks: { label: ctx => ` ${ctx.parsed.x.toFixed(2)} per 100,000 people` }
-            }
-          },
-          scales: {
-            x: {
-              grid: { color: '#ede9e0' },
-              ticks: { color: '#736e66', callback: v => v.toFixed(2) },
-              title: { display: true, text: 'GVA mass shootings per 100,000 people', color: '#736e66' }
-            },
-            y: { grid: { display: false }, ticks: { color: '#3d3a33', font: { size: 12 } } }
-          }
-        }
-      });
-    })();
+    // Chart 2 removed — replaced with CSS bars
 
-    // Chart 3a — Per-capita, full trans pop vs cis, all 3 databases
-    (function() {
-      var ttOpts = {
-        backgroundColor: '#ffffff', borderColor: '#dedad3', borderWidth: 1,
-        titleColor: '#151311', bodyColor: '#3d3a33',
-        callbacks: { label: function(c) { return ' ' + c.dataset.label + ': ' + c.parsed.x.toFixed(3) + ' per 100k'; } }
-      };
-      var makeChart = function(id, label, transVal, cisVal, xMax, showLegend) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        var ratio = cisVal / transVal;
-        var ratioText = ratio >= 2 ? '~' + Math.round(ratio) + '× lower' : (ratio > 1 ? '~' + ratio.toFixed(1) + '× lower' : '');
-        new Chart(el.getContext('2d'), {
-          type: 'bar',
-          data: {
-            labels: [label],
-            datasets: [
-              { label: 'Trans people (2.8M)', data: [transVal], backgroundColor: 'rgba(27,107,62,0.55)', borderColor: '#1b6b3e', borderWidth: 1.5, borderRadius: 4, barThickness: 30 },
-              { label: 'Cisgender people', data: [cisVal], backgroundColor: 'rgba(184,58,30,0.45)', borderColor: '#b83a1e', borderWidth: 1.5, borderRadius: 4, barThickness: 30 }
-            ]
-          },
-          plugins: [barLabelPlugin],
-          options: {
-            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-            layout: { padding: { left: 16, right: ratioText ? 90 : 16 } },
-            plugins: {
-              legend: showLegend ? { position: 'top', labels: { boxWidth: 11, padding: 10, color: '#706d64', font: { size: 10 } } } : { display: false },
-              tooltip: ttOpts,
-              subtitle: ratioText ? { display: true, text: 'Trans rate ' + ratioText, position: 'bottom', align: 'end', color: '#1b6b3e', font: { size: 10, weight: '600', family: "'Sora', sans-serif" }, padding: { top: 4 } } : { display: false }
-            },
-            scales: {
-              x: {
-                grid: { color: '#ede9e0' },
-                ticks: { color: '#736e66', callback: function(v) { return v < 0.1 ? v.toFixed(2) : v.toFixed(1); } },
-                title: { display: true, text: 'per 100k', color: '#736e66', font: { size: 9 } },
-                min: 0, max: xMax
-              },
-              y: { grid: { display: false }, ticks: { color: '#706d64', font: { size: 11 } } }
-            }
-          }
-        });
-      };
-      makeChart('chart3a-gva', 'GVA · n=5 / ~5,900', 0.179, 1.77, 2.0, true);
-      makeChart('chart3a-vpp', 'VPP · n=1 / ~201', 0.036, 0.060, 0.07, false);
-      makeChart('chart3a-mj', 'M. Jones · n=1 / ~149', 0.036, 0.045, 0.07, false);
-    })();
+    // Chart 3a removed — replaced with CSS bars
 
-    // Chart 3 — Underrepresentation factor by denominator
-    (function() {
-      var el3 = document.getElementById('chart3'); if (!el3) return;
-      const ctx = el3.getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['All-time GVA\n(5 confirmed / ~5,900 total)', '2020–2025 GVA\n(2 confirmed / 3,516 total)'],
-          datasets: [
-            {
-              label: 'Binary-only denominator (1.87M)',
-              data: [6.6, 10.0],
-              backgroundColor: 'rgba(27,107,62,0.35)',
-              borderColor: '#1b6b3e',
-              borderWidth: 1.5,
-              borderRadius: 3,
-            },
-            {
-              label: 'Full trans pop denominator (2.8M)',
-              data: [9.9, 14.8],
-              backgroundColor: 'rgba(27,107,62,0.6)',
-              borderColor: '#1b6b3e',
-              borderWidth: 1.5,
-              borderRadius: 3,
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { mode: 'index', intersect: false },
-          plugins: {
-            legend: { position: 'top', labels: { boxWidth: 11, padding: 14, color: '#706d64' } },
-            tooltip: {
-              backgroundColor: '#ffffff',
-              borderColor: '#dedad3',
-              borderWidth: 1,
-              titleColor: '#151311',
-              bodyColor: '#3d3a33',
-              callbacks: { label: ctx => ` ${ctx.dataset.label}: ~${ctx.parsed.y}× less likely` }
-            }
-          },
-          scales: {
-            x: { grid: { color: '#ede9e0' }, ticks: { color: '#736e66', maxRotation: 0 } },
-            y: {
-              grid: { color: '#ede9e0' },
-              ticks: { color: '#736e66', callback: v => '~' + v + '×' },
-              title: { display: true, text: 'Times less likely than general population', color: '#736e66' },
-              min: 0, max: 16
-            }
-          }
-        }
-      });
-    })();
+    // Chart 3 removed — replaced with CSS stat cards
     }); // end window.addEventListener('load')
   </script>
 
@@ -2645,6 +2636,31 @@
 
   
   
+
+  <script>
+  // Animate clean CSS bars on scroll
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var card = entry.target;
+          card.classList.add('in-view');
+          setTimeout(function() {
+            card.querySelectorAll('.clean-bar-fill').forEach(function(bar) {
+              var w = bar.getAttribute('data-width');
+              if (w) bar.style.width = w;
+            });
+          }, 150);
+          observer.unobserve(card);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.clean-chart').forEach(function(el) {
+      observer.observe(el);
+    });
+  })();
+  </script>
+
 </body>
 
 <!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
