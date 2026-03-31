@@ -1227,7 +1227,7 @@
     [data-theme="dark"] .jump-nav-wrap { background-color: rgba(26,25,24,0.97); }
     [data-theme="dark"] .math-box { background: #0f0e0d; }
     [data-theme="dark"] .chart-wrap { background: #2a2826; }
-    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .chart-wrap canvas { filter: none; } /* Dark mode: use proper colors, not filter hack */
     /* ─── Box styles: dark mode text overrides ─── */
     [data-theme="dark"] .box-amber { color: var(--text-body); }
     [data-theme="dark"] .box-amber strong { color: var(--amber); }
@@ -1471,7 +1471,7 @@
       color: var(--text-body); line-height: 1.3;
     }
     .ymal-desc {
-      font-family: var(--font-serif); font-size: 0.74rem; color: var(--text-dim);
+      font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-size: 0.74rem; color: var(--text-dim);
       line-height: 1.45;
     }
 

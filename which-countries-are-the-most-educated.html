@@ -58,7 +58,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text-body); font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.7; }
+    body { background: var(--bg); color: var(--text-body); font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-size: 1.05rem; line-height: 1.7; }
 
     .jump-nav { position: sticky; top: 52px; z-index: 90; background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 48px; display: flex; flex-wrap: wrap; gap: 8px; }
     [data-theme="dark"] .jump-nav { background: #242220; }
@@ -130,7 +130,7 @@
 
     .chart-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin: 16px 0; }
     [data-theme="dark"] .chart-wrap { background: #2a2826; }
-    [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+    [data-theme="dark"] .chart-wrap canvas { filter: none; } /* Dark mode: use proper colors, not filter hack */
     .chart-title { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .06em; }
     .chart-canvas-wrap { position: relative; height: 260px; }
 

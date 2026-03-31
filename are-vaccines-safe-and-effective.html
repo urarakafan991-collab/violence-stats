@@ -123,7 +123,7 @@
   html { scroll-behavior: smooth; }
   body {
    background: var(--bg); color: var(--text-body);
-   font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.7;
+   font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-size: 1.05rem; line-height: 1.7;
   }
 
   /* JUMP NAV */
@@ -235,7 +235,7 @@
    border-radius: 8px; padding: 20px; margin: 24px 0;
   }
   [data-theme="dark"] .chart-wrap { background: #2a2826; }
-  [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+  [data-theme="dark"] .chart-wrap canvas { filter: none; } /* Dark mode: use proper colors, not filter hack */
   .chart-container { position: relative; width: 100%; }
 
   /* TABLE */

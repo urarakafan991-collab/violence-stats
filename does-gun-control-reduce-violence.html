@@ -93,7 +93,7 @@
   body {
    background: var(--bg);
    color: var(--text-body);
-   font-family: var(--font-serif);
+   font-family: var(--font-serif); font-variant-numeric: tabular-nums;
    font-size: 1.05rem;
    line-height: 1.7;
   }
@@ -472,7 +472,7 @@
   [data-theme="dark"] .jump-nav { background: #242220; }
   [data-theme="dark"] .math-box { background: #0f0e0d; }
   [data-theme="dark"] .chart-wrap { background: #2a2826; }
-  [data-theme="dark"] .chart-wrap canvas { filter: brightness(0.9) saturate(1.2); }
+  [data-theme="dark"] .chart-wrap canvas { filter: none; } /* Dark mode: use proper colors, not filter hack */
 
   [data-theme="dark"] .data-table tr:nth-child(even) td { background: #242220; }
 
