@@ -1987,7 +1987,7 @@
 
     <div class="chart-wrap">
       <div class="chart-title">Per Capita Rate: All Three Databases (Full Trans Population)</div>
-      <div class="chart-sub">Shooters per 100,000 people using the correct full trans population (2.8M, all ages) vs. cisgender population. Each database at its own scale.</div>
+      <div class="chart-sub">Shooters per 100,000 people using the correct full trans population (2.8M, all ages) vs. cisgender population. <strong style="color:var(--amber);">&#9888; Each database uses its own scale</strong> &mdash; read the numbers on each bar, not the bar length.</div>
       <div class="chart-canvas-wrap" style="height:150px;"><canvas id="chart3a-gva" role="img" aria-label="GVA per-capita: trans 0.179 per 100k vs cis 1.77 per 100k"></canvas></div>
       <div class="chart-canvas-wrap" style="height:130px;"><canvas id="chart3a-vpp" role="img" aria-label="VPP per-capita: trans 0.036 per 100k vs cis 0.060 per 100k"></canvas></div>
       <div class="chart-canvas-wrap" style="height:130px;"><canvas id="chart3a-mj" role="img" aria-label="Mother Jones per-capita: trans 0.036 per 100k vs cis 0.045 per 100k"></canvas></div>
@@ -2247,6 +2247,42 @@
       Chart.defaults.font.family = "'Courier Prime', monospace";
       Chart.defaults.font.size = 11;
 
+      // Reusable plugin: draw data values directly on bars (horizontal or vertical)
+      var barLabelPlugin = {
+        id: 'barLabels',
+        afterDatasetsDraw: function(chart) {
+          var ctx = chart.ctx;
+          var isHorizontal = chart.options.indexAxis === 'y';
+          chart.data.datasets.forEach(function(dataset, i) {
+            var meta = chart.getDatasetMeta(i);
+            var dsCount = chart.data.datasets.length;
+            meta.data.forEach(function(bar, index) {
+              var val = dataset.data[index];
+              var label = val < 0.1 ? val.toFixed(3) : (val < 10 ? val.toFixed(2) : val.toFixed(1));
+              ctx.save();
+              ctx.font = "bold 11px 'Sora', sans-serif";
+              if (isHorizontal) {
+                var textWidth = ctx.measureText(label).width;
+                if (bar.width > textWidth + 16) {
+                  ctx.fillStyle = dsCount === 1 ? (i === 0 ? '#0d4d2a' : '#7a2210') : (i === 0 ? '#0d4d2a' : '#7a2210');
+                  ctx.textAlign = 'right';
+                  ctx.fillText(label, bar.x - 6, bar.y + 4);
+                } else {
+                  ctx.fillStyle = '#5a544c';
+                  ctx.textAlign = 'left';
+                  ctx.fillText(label, bar.x + 6, bar.y + 4);
+                }
+              } else {
+                ctx.fillStyle = '#5a544c';
+                ctx.textAlign = 'center';
+                ctx.fillText(label, bar.x, bar.y - 6);
+              }
+              ctx.restore();
+            });
+          });
+        }
+      };
+
     // Chart 1 — Trans % of shooters vs % of population across 3 databases
     (function() {
       var el1 = document.getElementById('chart1'); if (!el1) return;
@@ -2319,6 +2355,7 @@
             barThickness: 44
           }]
         },
+        plugins: [barLabelPlugin],
         options: {
           responsive: true,
           maintainAspectRatio: false,
@@ -2366,6 +2403,7 @@
             barThickness: 70,
           }]
         },
+        plugins: [barLabelPlugin],
         options: {
           responsive: true,
           maintainAspectRatio: false,
@@ -2404,6 +2442,8 @@
       var makeChart = function(id, label, transVal, cisVal, xMax, showLegend) {
         var el = document.getElementById(id);
         if (!el) return;
+        var ratio = cisVal / transVal;
+        var ratioText = ratio >= 2 ? '~' + Math.round(ratio) + '× lower' : (ratio > 1 ? '~' + ratio.toFixed(1) + '× lower' : '');
         new Chart(el.getContext('2d'), {
           type: 'bar',
           data: {
@@ -2413,12 +2453,14 @@
               { label: 'Cisgender people', data: [cisVal], backgroundColor: 'rgba(184,58,30,0.45)', borderColor: '#b83a1e', borderWidth: 1.5, borderRadius: 4, barThickness: 30 }
             ]
           },
+          plugins: [barLabelPlugin],
           options: {
             responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-            layout: { padding: { left: 16 } },
+            layout: { padding: { left: 16, right: ratioText ? 90 : 16 } },
             plugins: {
               legend: showLegend ? { position: 'top', labels: { boxWidth: 11, padding: 10, color: '#706d64', font: { size: 10 } } } : { display: false },
-              tooltip: ttOpts
+              tooltip: ttOpts,
+              subtitle: ratioText ? { display: true, text: 'Trans rate ' + ratioText, position: 'bottom', align: 'end', color: '#1b6b3e', font: { size: 10, weight: '600', family: "'Sora', sans-serif" }, padding: { top: 4 } } : { display: false }
             },
             scales: {
               x: {
