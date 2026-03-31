@@ -757,11 +757,36 @@
 
    <p><strong>Why girls may be more affected:</strong> Girls use more image-based, appearance-focused platforms (Instagram, TikTok). Greater exposure to social comparison, body-image pressures, cyberbullying, and relational aggression. Girls are more prone to internalizing disorders. Orben et al. (2022) found developmental &ldquo;windows of sensitivity&rdquo; with small negative effects earlier for girls (ages 11&ndash;13).</p>
 
-   <div class="chart-wrap">
-    <div class="chart-title">Effect Size by Sex: Social Media &amp; Depression (&beta; coefficients)</div>
-    <div class="chart-canvas-wrap">
-     <canvas id="chartSexDiff" role="img" aria-label="Bar chart comparing effect sizes for social media and depression between girls and boys. Girls: -0.17 average, Boys: -0.05 average."></canvas>
+   <div class="chart-wrap" style="position:relative;">
+    <div class="chart-title">How Strongly Social Media Predicts Depression, by Sex</div>
+    <div style="font-size:0.72rem; color:var(--text-quiet); margin-bottom:18px;">Twenge et al. (2022) specification curve analysis. Larger bar = stronger link between social media use and depression. &beta; midpoints shown (range: girls &minus;0.11 to &minus;0.24; boys &minus;0.03 to &minus;0.06).</div>
+
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:5px;">
+        <span style="font-family:var(--font-sans);font-size:0.76rem;font-weight:500;">Girls</span>
+        <span style="font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--brick);">&beta; = &minus;0.17</span>
+      </div>
+      <div style="height:30px;background:var(--bg);border-radius:5px;position:relative;">
+        <div style="position:absolute;top:0;left:0;height:100%;width:68%;border-radius:5px;background:linear-gradient(90deg,rgba(184,58,30,0.25),rgba(184,58,30,0.5));border:1.5px solid var(--brick);"></div>
+      </div>
     </div>
+
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:5px;">
+        <span style="font-family:var(--font-sans);font-size:0.76rem;font-weight:500;">Boys</span>
+        <span style="font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--amber);">&beta; = &minus;0.05</span>
+      </div>
+      <div style="height:30px;background:var(--bg);border-radius:5px;position:relative;">
+        <div style="position:absolute;top:0;left:0;height:100%;width:20%;border-radius:5px;background:linear-gradient(90deg,rgba(122,79,0,0.25),rgba(122,79,0,0.5));border:1.5px solid var(--amber);"></div>
+      </div>
+    </div>
+
+    <div style="font-family:var(--font-sans);font-size:0.74rem;color:var(--text-body);margin-top:16px;padding:12px 16px;background:var(--brick-light);border-left:3px solid var(--brick);border-radius:0 5px 5px 0;">
+      The effect for girls is roughly <strong style="color:var(--brick);">3&times; stronger</strong> than for boys. Both are statistically significant but small in absolute terms &mdash; social media explains a fraction of the variance in depression, not the majority.
+    </div>
+
+    <div style="font-family:var(--font-mono);font-size:0.52rem;color:var(--text-quiet);margin-top:12px;position:relative;padding-right:100px;">Source: Twenge et al. (2022) specification curve analysis. Negative &beta; means more SM use predicts more depression.</div>
+    <span style="position:absolute;bottom:10px;right:14px;font-family:var(--font-sans);font-size:0.48rem;font-weight:600;letter-spacing:0.06em;color:var(--text-quiet);opacity:0.3;">TruthBased.org</span>
    </div>
    <p class="source-note">Source: Twenge et al. (2022) specification curve analysis. &beta; range for girls &minus;0.11 to &minus;0.24; boys &minus;0.03 to &minus;0.06. Midpoints shown.</p>
   </section>
@@ -935,31 +960,7 @@
     }
    });
 
-   // Chart 2: Effect Size Comparison Girls vs Boys
-   new Chart(document.getElementById('chartSexDiff').getContext('2d'), {
-    type: 'bar',
-    data: {
-     labels: ['Girls (midpoint)', 'Boys (midpoint)'],
-     datasets: [{
-      label: 'Average beta (SM use → depression)',
-      data: [-0.17, -0.05],
-      backgroundColor: ['rgba(184,58,30,0.55)', 'rgba(122,79,0,0.45)'],
-      borderColor: ['rgba(184,58,30,0.85)', 'rgba(122,79,0,0.85)'],
-      borderWidth: 1.5, borderRadius: 3
-     }]
-    },
-    options: {
-     responsive: true, maintainAspectRatio: false,
-     plugins: {
-      legend: { display: false },
-      title: { display: true, text: 'Social Media → Depression: Average Effect Size by Sex (Twenge et al. 2022 SCA)', font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c', padding: { bottom: 12 } }
-     },
-     scales: {
-      y: { ticks: { font: { family: "'Courier Prime', monospace", size: 10 }, color: '#8a8278' }, grid: { color: 'rgba(0,0,0,0.06)' } },
-      x: { ticks: { font: { family: "'Sora', sans-serif", size: 10 }, color: '#5a544c' }, grid: { display: false } }
-     }
-    }
-   });
+   // Chart 2 (chartSexDiff) removed — replaced with CSS bars
   });
  </script>
 
