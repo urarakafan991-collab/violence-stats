@@ -913,36 +913,6 @@
     // Charts for College article
     window.addEventListener('load', function() {
       if (typeof Chart === 'undefined') return;
-    // Data label plugin: draws values on horizontal bar charts
-    var _barLabelPlugin = {
-      id: 'barLabels',
-      afterDatasetsDraw: function(chart) {
-        if (chart.options.indexAxis !== 'y') return;
-        var ctx = chart.ctx;
-        chart.data.datasets.forEach(function(dataset, i) {
-          var meta = chart.getDatasetMeta(i);
-          meta.data.forEach(function(bar, index) {
-            var val = dataset.data[index];
-            if (val == null) return;
-            var label = val < 0.1 ? val.toFixed(2) : (val < 10 ? val.toFixed(1) : Math.round(val).toString());
-            ctx.save();
-            ctx.font = "bold 11px 'Sora', sans-serif";
-            var textWidth = ctx.measureText(label).width;
-            if (bar.width > textWidth + 16) {
-              ctx.fillStyle = '#444';
-              ctx.textAlign = 'right';
-              ctx.fillText(label, bar.x - 6, bar.y + 4);
-            } else {
-              ctx.fillStyle = '#5a544c';
-              ctx.textAlign = 'left';
-              ctx.fillText(label, bar.x + 6, bar.y + 4);
-            }
-            ctx.restore();
-          });
-        });
-      }
-    };
-    Chart.register(_barLabelPlugin);
 
 
       // Chart 1: Tuition vs Income Growth
