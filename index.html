@@ -801,6 +801,7 @@
   <div class="search-filters" id="searchFilters">
     <button class="filter-pill active" data-cat="all">All</button>
     <button class="filter-pill" data-cat="Political Fact Check">Political</button>
+    <button class="filter-pill" data-cat="History">History</button>
     <button class="filter-pill" data-cat="Economics">Economics</button>
     <button class="filter-pill" data-cat="Science">Science</button>
     <button class="filter-pill" data-cat="Violence">Violence</button>
@@ -856,9 +857,21 @@
           { url:'/what-does-the-record-show-about-columbus', title:'Columbus \u2014 The Record', desc:'The flat-Earth myth, journal entries, Hispaniola data, Washington Irving.' },
           { url:'/what-do-gender-affirming-care-patients-say', title:'Gender-Affirming Care: Patient Voices', desc:'What recipients and detransitioners report. Published qualitative research.' }
         ];
-        /* Fisher-Yates shuffle */
+        /* Daily-seeded shuffle: same three picks per UTC day for all visitors.
+           UTC day number seeds a mulberry32 PRNG driving Fisher-Yates.
+           Rotates at 00:00 UTC (19:00 Jamaica). */
+        var seed = Math.floor(Date.now() / 86400000);
+        function mulberry32(a){
+          return function(){
+            var t = a += 0x6D2B79F5;
+            t = Math.imul(t ^ t >>> 15, t | 1);
+            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+            return ((t ^ t >>> 16) >>> 0) / 4294967296;
+          };
+        }
+        var rng = mulberry32(seed);
         for (var i = pool.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
+          var j = Math.floor(rng() * (i + 1));
           var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
         }
         var picks = pool.slice(0, 3);
@@ -995,7 +1008,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Border Crossings — What The Charts Actually Show</span>
-                  <span class="row-desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested — and.</span>
+                  <span class="row-desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested.</span>
                   <div class="row-sources">
                     <span class="source-pill">CBP Encounter Data</span>
                     <span class="source-pill">Pew Research</span>
@@ -1058,7 +1071,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Sexual Orientation, Gender Identity &amp; Crime</span>
-                  <span class="row-desc">Per-capita crime data for every group — heterosexual men, heterosexual women, gay men, lesbian women, trans women, trans men. The UK prison infographic debunked. The gay predator myth debunked. LGBTQ+ victimization data..</span>
+                  <span class="row-desc">Per-capita crime data for every group — heterosexual men, heterosexual women, gay men, lesbian women, trans women, trans men. The UK prison infographic debunked. The gay predator myth debunked. LGBTQ+ victimization data.</span>
                   <div class="row-sources">
                     <span class="source-pill">BJS / FBI UCR</span>
                     <span class="source-pill">UK HMPPS</span>
@@ -1075,7 +1088,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">The Death Penalty: Deterrence, Cost &amp; Racial Disparities</span>
-                  <span class="row-desc">Does capital punishment deter murder? Is it cheaper than life imprisonment? Are there racial disparities? NRC, GAO, state audits, BJS, peer-reviewed studies..</span>
+                  <span class="row-desc">Does capital punishment deter murder? Is it cheaper than life imprisonment? Are there racial disparities? NRC, GAO, state audits, BJS, peer-reviewed studies.</span>
                   <div class="row-sources">
                     <span class="source-pill">NRC (2012)</span>
                     <span class="source-pill">U.S. GAO</span>
@@ -1153,7 +1166,7 @@
             <div class="article-list">
 
               <a class="article-row" href="/was-hitler-actually-a-socialist">
-                <span class="row-status live">Live</span>
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Was Hitler Actually a Socialist?</span>
                   <span class="row-desc">The party name, Hitler's own words, privatization data, the Night of the Long Knives, and what happened to actual socialists.</span>
@@ -1161,7 +1174,7 @@
               </a>
 
               <a class="article-row" href="/did-the-us-political-parties-switch">
-                <span class="row-status live">Live</span>
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Did the U.S. Political Parties Switch?</span>
                   <span class="row-desc">Roll-call votes by region, Black voter data, congressional seats 1960-2020, and the Southern Strategy in the architects' own words.</span>
@@ -1169,7 +1182,7 @@
               </a>
 
               <a class="article-row" href="/what-does-the-record-show-about-columbus">
-                <span class="row-status live">Live</span>
+                <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">What Does the Record Show About Columbus?</span>
                   <span class="row-desc">The flat-Earth myth debunked, Columbus's journal entries, Hispaniola data, and how Washington Irving built the myth.</span>
@@ -1193,13 +1206,13 @@
 
     <!-- ── 07 Science & Perception ──────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
-        <span class="acc-num">07</span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-04" id="trigger-04">
+        <span class="acc-num">04</span>
         <span class="acc-label">Science &amp; Perception</span>
         <span class="acc-meta">Viral phenomena explained with primary source neuroscience and physics</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
+      <div class="acc-panel" role="region" id="panel-04" aria-labelledby="trigger-04">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1257,13 +1270,13 @@
 
     <!-- ── 04 Science & Media Accuracy ───────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-04" id="trigger-04">
-        <span class="acc-num">04</span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-05" id="trigger-05">
+        <span class="acc-num">05</span>
         <span class="acc-label">Science &amp; Media Accuracy</span>
         <span class="acc-meta">What studies actually say vs. how they get reported</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region" id="panel-04" aria-labelledby="trigger-04">
+      <div class="acc-panel" role="region" id="panel-05" aria-labelledby="trigger-05">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1309,13 +1322,13 @@
 
     <!-- ── 05 Economics & Policy ─────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-05" id="trigger-05">
-        <span class="acc-num">05</span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-06" id="trigger-06">
+        <span class="acc-num">06</span>
         <span class="acc-label">Economics &amp; Policy</span>
         <span class="acc-meta">Contested economic claims vs. BLS, CBO, and peer-reviewed data</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region" id="panel-05" aria-labelledby="trigger-05">
+      <div class="acc-panel" role="region" id="panel-06" aria-labelledby="trigger-06">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1338,7 +1351,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Inflation (2021–2026): Causes, Drivers, and Context</span>
-                  <span class="row-desc">CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, and energy decomposed. International comparison. Federal Reserve response..</span>
+                  <span class="row-desc">CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, and energy decomposed. International comparison. Federal Reserve response.</span>
                   <div class="row-sources">
                     <span class="source-pill">BLS CPI-U</span>
                     <span class="source-pill">Fed FRED</span>
@@ -1352,7 +1365,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Federal Spending: Where the Money Goes</span>
-                  <span class="row-desc">FY2026 budget breakdown. Social Security, Medicare, defense, and net interest explained. The debt trajectory and what CBO projects..</span>
+                  <span class="row-desc">FY2026 budget breakdown. Social Security, Medicare, defense, and net interest explained. The debt trajectory and what CBO projects.</span>
                   <div class="row-sources">
                     <span class="source-pill">CBO Jan 2026</span>
                     <span class="source-pill">OMB</span>
@@ -1399,7 +1412,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Does Raising the Minimum Wage Kill Jobs?</span>
-                  <span class="row-desc">Employment effects, poverty, prices, small businesses, automation &mdash; the strongest evidence from named studies. Card &amp; Krueger, CBO, Dube, Neumark..</span>
+                  <span class="row-desc">Employment effects, poverty, prices, small businesses, automation &mdash; the strongest evidence from named studies. Card &amp; Krueger, CBO, Dube, Neumark.</span>
                   <div class="row-sources">
                     <span class="source-pill">Card &amp; Krueger</span>
                     <span class="source-pill">CBO (2023)</span>
@@ -1428,13 +1441,13 @@
 
     <!-- ── 06 Health & Medicine ───────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-06" id="trigger-06">
-        <span class="acc-num">06</span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
+        <span class="acc-num">07</span>
         <span class="acc-label">Health &amp; Medicine</span>
         <span class="acc-meta">Medical statistics and health claims vs. peer-reviewed evidence</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region" id="panel-06" aria-labelledby="trigger-06">
+      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1443,7 +1456,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</span>
-                  <span class="row-desc">Puberty blockers, hormones, and surgeries &mdash; every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows..</span>
+                  <span class="row-desc">Puberty blockers, hormones, and surgeries &mdash; every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows.</span>
                   <div class="row-sources">
                     <span class="source-pill">WPATH SOC8</span>
                     <span class="source-pill">Cass Review</span>
@@ -1505,7 +1518,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">Social Media &amp; Youth Mental Health</span>
-                  <span class="row-desc">Is social media destroying a generation? CDC YRBS, NHS Digital, ABCD, meta-analyses, natural experiments. Effect sizes disclosed. Haidt vs. Odgers..</span>
+                  <span class="row-desc">Is social media destroying a generation? CDC YRBS, NHS Digital, ABCD, meta-analyses, natural experiments. Effect sizes disclosed. Haidt vs. Odgers.</span>
                   <div class="row-sources">
                     <span class="source-pill">CDC YRBS</span>
                     <span class="source-pill">ABCD (Nagata 2025)</span>
@@ -1526,13 +1539,13 @@
 
     <!-- ── 07 Religion & Society ─────────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
-        <span class="acc-num">07</span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-08" id="trigger-08">
+        <span class="acc-num">08</span>
         <span class="acc-label">Religion &amp; Society</span>
         <span class="acc-meta">Measurable claims about religiosity and social outcomes</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
+      <div class="acc-panel" role="region" id="panel-08" aria-labelledby="trigger-08">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1575,13 +1588,13 @@
 
     <!-- ── 08 International Comparisons ─────────────────────── -->
     <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-08" id="trigger-08">
-        <span class="acc-num">08</span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-09" id="trigger-09">
+        <span class="acc-num">09</span>
         <span class="acc-label">International Comparisons</span>
         <span class="acc-meta">How U.S. outcomes compare globally</span>
         <span class="acc-icon" aria-hidden="true"></span>
       </button>
-      <div class="acc-panel" role="region" id="panel-08" aria-labelledby="trigger-08">
+      <div class="acc-panel" role="region" id="panel-09" aria-labelledby="trigger-09">
         <div class="acc-panel-inner">
           <div class="acc-content">
             <div class="article-list">
@@ -1590,7 +1603,7 @@
                 <span class="row-status live">&#9679; Live</span>
                 <div class="row-body">
                   <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
-                  <span class="row-desc">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states..</span>
+                  <span class="row-desc">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states.</span>
                   <div class="row-sources">
                     <span class="source-pill">CDC WONDER</span>
                     <span class="source-pill">WHO</span>
@@ -1767,10 +1780,10 @@
     /* ── Site Search (Fuse.js fuzzy) ── */
     (function(){
       var articles = [
-        { url:'/are-vaccines-safe-and-effective', cat:'Science', title:'Are Vaccines Safe and Effective?', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction', snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates..' },
+        { url:'/are-vaccines-safe-and-effective', cat:'Science', title:'Are Vaccines Safe and Effective?', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction', snippet:'23M+ children studied. 138 studies. VAERS explained. Myocarditis rates.' },
         { url:'/is-voter-fraud-a-real-problem', cat:'Political Fact Check', title:'Is Voter Fraud a Real Problem?', keywords:'voter fraud election 2020 ballot heritage database brennan illegal voting prosecution trump biden mail absentee id impersonation dead registration duplicate noncitizen', snippet:'1,620 proven cases against 2.5 billion ballots cast. Heritage Foundation database. Every 2020 lawsuit and its judicial outcome.'},
         { url:'/are-trans-people-more-likely-to-be-mass-shooters', cat:'Political Fact Check', title:'Are Trans People More Likely to Be Mass Shooters?', keywords:'trans transgender mass shooting shooter gun violence gva mother jones violence project heritage claim overrepresented underrepresented nashville colorado springs', snippet:'Three databases. Every definition tested. Nine of ten sensitivity analyses show trans people underrepresented as mass shooters.'},
-        { url:'/is-youth-gender-medicine-safe', cat:'Science', title:'Is Youth Gender Medicine Safe?', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret', snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques..'},
+        { url:'/is-youth-gender-medicine-safe', cat:'Science', title:'Is Youth Gender Medicine Safe?', keywords:'gender affirming care puberty blockers hormones surgery trans youth minor cass review dutch protocol wpath endocrine detransition regret', snippet:'Puberty blockers, hormones, and surgeries. Every major study. The Cass Report and its counter-critiques.'},
         { url:'/is-there-really-a-border-crisis', cat:'Political Fact Check', title:'Is There Really a Border Crisis?', keywords:'border crossing immigration illegal migrant encounter title 42 cbp ice deportation removal asylum refugee got-away biden trump wall', snippet:'25 years of CBP data. Title 42 recidivism explained. Every major claim tested against the evidence.'},
         { url:'/does-gun-control-reduce-violence', cat:'International', title:'Does Gun Control Reduce Violence?', keywords:'gun violence firearm death homicide suicide mass shooting oecd international comparison cdc who rate per capita second amendment', snippet:'OECD firearm death rates. CDC data. RAND policy evidence. How the U.S. compares to peer nations.'},
         { url:'/who-commits-mass-shootings-in-america', cat:'Political Fact Check', title:'Who Commits Mass Shootings in America?', keywords:'mass shooting race demographic white black hispanic asian per capita rate population census poverty socioeconomic', snippet:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals for every group.'},
@@ -1783,24 +1796,24 @@
         { url:'/methodology', cat:'Science', title:'Our Methodology', keywords:'methodology sources primary data fact check process steelman sensitivity analysis confidence interval limitation', snippet:'How TruthBased.org works: primary sources, sensitivity analysis, and transparent limitations.'},
         { url:'/which-countries-are-the-most-educated', cat:'International', title:'Which Countries Are the Most Educated?', keywords:'education educated countries ranking tertiary attainment OECD PISA university college degree international', snippet:'47-country ranking. Access vs. performance paradox. Gender gaps. Spending vs. outcomes. Full methodology.'},
         { url:'/are-religious-countries-better-off', cat:'Science', title:'Are Religious Countries Better Off?', keywords:'religion religiosity crime charity giving wellbeing mental health trust social outcomes church faith secular', snippet:'Crime, charitable giving, wellbeing, social trust, and education across religious and secular populations. Meta-analyses reviewed.'},
-        { url:'/does-religion-cause-violence', cat:'Violence', title:'Does Religion Cause Violence?', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war', snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities..'},
+        { url:'/does-religion-cause-violence', cat:'Violence', title:'Does Religion Cause Violence?', keywords:'religion violence wars terrorism crusades inquisition sectarian conflict peacebuilding religious war', snippet:'Historical wars, post-1975 surge, terrorism lethality, sectarian violence, historical atrocities.'},
         { url:'/which-side-commits-more-political-violence', cat:'Violence', title:'Which Side Commits More Political Violence?', keywords:'domestic terrorism far right far left islamist hate crime anti-semitism anti-black anti-lgbt police violence white nationalist incel misogynist ADL FBI UCR New America CSIS ACLED', snippet:'Far-right, far-left, Islamist, religious, and hate-motivated violence. Every ideology examined. Confidence-rated.'},
         { url:'/do-immigrants-commit-more-crime', cat:'Political Fact Check', title:'Do Immigrants Commit More Crime?', keywords:'immigration crime immigrant incarceration undocumented illegal alien Texas DPS arrest rate Cato ACS census paradox asylum refugee sanctuary Laken Riley ICE deportation', snippet:'Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence.'},
         { url:'/are-lgbtq-people-more-likely-to-face-violence', cat:'Political Fact Check', title:'Are LGBTQ+ People More Likely to Face Violence?', keywords:'LGBTQ crime trans women sexual offense gay predator myth Dhejne UK prison data Canada 94% Jenny pediatrics Paul Cameron APA victimization hate crime groomer gender identity', snippet:'Per-capita crime data for every group. UK prison infographic debunked. Gay predator myth debunked. LGBTQ+ victimization 5x higher.'},
         { url:'/is-college-still-worth-it', cat:'Economics', title:'Is College Still Worth It?', keywords:'college worth it tuition wage premium student debt ROI major underemployment graduation rate for-profit trades apprenticeship selection bias Scorecard FREOPP', snippet:'Wage premiums, debt loads, ROI by major and institution, graduation rates, and the AI disruption question.'},
         { url:'/do-tariffs-bring-back-manufacturing-jobs', cat:'Economics', title:'Do Tariffs Bring Back Manufacturing Jobs?', keywords:'tariffs manufacturing steel aluminum trade deficit Section 232 301 China tariff cost per job downstream retaliation USITC CBO reshoring automation', snippet:'Every major tariff episode measured by jobs saved, jobs lost downstream, cost per job, and consumer impact.'},
-        { url:'/does-the-death-penalty-deter-crime', cat:'Political Fact Check', title:'Does the Death Penalty Deter Crime?', keywords:'death penalty capital punishment deterrence cost racial bias NRC exoneration wrongful conviction Baldus GAO BJS execution LWOP Ehrlich Donohue Wolfers', snippet:'Does the death penalty deter murder? What does it cost? Are there racial disparities? NRC, state audits, GAO, BJS..'},
-        { url:'/does-raising-the-minimum-wage-kill-jobs', cat:'Economics', title:'Does Raising the Minimum Wage Kill Jobs?', keywords:'minimum wage employment Card Krueger Dube Neumark CBO poverty prices small business automation Seattle fast food teens entry level', snippet:'Employment effects, poverty, prices, small businesses, automation. Card & Krueger, CBO, Dube, Neumark..'},
-        { url:'/does-social-media-harm-teenagers-mental-health', cat:'Science & Medicine', title:'Does Social Media Harm Teenagers\' Mental Health?', keywords:'social media teen mental health depression anxiety youth smartphone Haidt Odgers Twenge YRBS CDC screen time girls boys moral panic Surgeon General ABCD', snippet:'Is social media destroying a generation? CDC YRBS, ABCD, meta-analyses, Haidt vs. Odgers. Effect sizes disclosed..'},
-        { url:'/what-do-gender-affirming-care-patients-say', cat:'Science & Medicine', title:'What Do Gender-Affirming Care Patients Say?', keywords:'gender affirming care patient voices detransition regret qualitative trans youth outcomes testosterone blockers surgery satisfaction', snippet:'What recipients and detransitioners actually report. Published qualitative research. Positive and negative experiences. Rates for context.'},
+        { url:'/does-the-death-penalty-deter-crime', cat:'Political Fact Check', title:'Does the Death Penalty Deter Crime?', keywords:'death penalty capital punishment deterrence cost racial bias NRC exoneration wrongful conviction Baldus GAO BJS execution LWOP Ehrlich Donohue Wolfers', snippet:'Does the death penalty deter murder? What does it cost? Are there racial disparities? NRC, state audits, GAO, BJS.'},
+        { url:'/does-raising-the-minimum-wage-kill-jobs', cat:'Economics', title:'Does Raising the Minimum Wage Kill Jobs?', keywords:'minimum wage employment Card Krueger Dube Neumark CBO poverty prices small business automation Seattle fast food teens entry level', snippet:'Employment effects, poverty, prices, small businesses, automation. Card & Krueger, CBO, Dube, Neumark.'},
+        { url:'/does-social-media-harm-teenagers-mental-health', cat:'Science', title:'Does Social Media Harm Teenagers\' Mental Health?', keywords:'social media teen mental health depression anxiety youth smartphone Haidt Odgers Twenge YRBS CDC screen time girls boys moral panic Surgeon General ABCD', snippet:'Is social media destroying a generation? CDC YRBS, ABCD, meta-analyses, Haidt vs. Odgers. Effect sizes disclosed.'},
+        { url:'/what-do-gender-affirming-care-patients-say', cat:'Science', title:'What Do Gender-Affirming Care Patients Say?', keywords:'gender affirming care patient voices detransition regret qualitative trans youth outcomes testosterone blockers surgery satisfaction', snippet:'What recipients and detransitioners actually report. Published qualitative research. Positive and negative experiences. Rates for context.'},
         { url:'/was-the-dress-blue-and-black-or-white-and-gold', cat:'Curiosities', title:'Was the Dress Blue and Black or White and Gold?', keywords:'the dress white gold blue black color perception color constancy Bayesian inference visual perception neuroscience viral 2015', snippet:'The science behind why millions saw different colors. Color constancy, Bayesian inference, and human perception.'},
         { url:'/is-the-mandela-effect-real', cat:'Curiosities', title:'Is the Mandela Effect Real?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus', snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory and social contagion.'},
         { url:'/does-hot-water-freeze-faster-than-cold', cat:'Curiosities', title:'Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba', snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.'},
         { url:'/how-bad-is-the-national-debt', cat:'Economics', title:'How Bad Is the National Debt?', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements', snippet:'CBO and OMB data by administration. Every claim tested against the primary-source record.'},
         { url:'/which-presidents-created-the-most-jobs', cat:'Economics', title:'Which Presidents Created the Most Jobs?', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll', snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags and inherited recessions.'},
-        { url:'/was-hitler-actually-a-socialist', cat:'Historical Fact Check', title:'Was Hitler Actually a Socialist?', keywords:'hitler socialist nazi NSDAP national socialism fascism privatization strasser night long knives marxism kershaw evans', snippet:'The party name, privatization data, and what happened to actual socialists. Primary sources examined.'},
-        { url:'/did-the-us-political-parties-switch', cat:'Historical Fact Check', title:'Did the U.S. Political Parties Switch?', keywords:'party switch southern strategy dixiecrat civil rights act goldwater nixon atwater phillips realignment solid south', snippet:'Roll-call votes by region, Black voter timeline, congressional seats 1960-2020.'},
-        { url:'/what-does-the-record-show-about-columbus', cat:'Historical Fact Check', title:'What Does the Record Show About Columbus?', keywords:'columbus discovery america flat earth myth norse viking taino hispaniola columbian exchange las casas washington irving indigenous', snippet:'Pre-Columbian contact, the flat-Earth fabrication, and what happened on Hispaniola.'},
+        { url:'/was-hitler-actually-a-socialist', cat:'History', title:'Was Hitler Actually a Socialist?', keywords:'hitler socialist nazi NSDAP national socialism fascism privatization strasser night long knives marxism kershaw evans', snippet:'The party name, privatization data, and what happened to actual socialists. Primary sources examined.'},
+        { url:'/did-the-us-political-parties-switch', cat:'History', title:'Did the U.S. Political Parties Switch?', keywords:'party switch southern strategy dixiecrat civil rights act goldwater nixon atwater phillips realignment solid south', snippet:'Roll-call votes by region, Black voter timeline, congressional seats 1960-2020.'},
+        { url:'/what-does-the-record-show-about-columbus', cat:'History', title:'What Does the Record Show About Columbus?', keywords:'columbus discovery america flat earth myth norse viking taino hispaniola columbian exchange las casas washington irving indigenous', snippet:'Pre-Columbian contact, the flat-Earth fabrication, and what happened on Hispaniola.'},
       ];
 
       var catMap = {
