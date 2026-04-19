@@ -817,24 +817,61 @@
 
 
     <section class="featured-cards" style="max-width:940px; margin:0 auto 36px; padding:0 24px;">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
-        <a href="/are-trans-people-more-likely-to-be-mass-shooters" class="feat-card">
-          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
-          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Trans People &amp; Mass Shootings</span>
-          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">Three databases. Every definition. Full sensitivity analysis.</span>
-        </a>
-        <a href="/are-vaccines-safe-and-effective" class="feat-card">
-          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
-          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Vaccine Safety &amp; Efficacy</span>
-          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">23M+ children studied. 138 studies. VAERS explained. Every claim tested.</span>
-        </a>
-        <a href="/is-there-really-a-border-crisis" class="feat-card">
-          <span style="font-family:'Courier Prime',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>
-          <span style="display:block; font-family:'Spectral',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">Border Crossings: The Real Data</span>
-          <span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">25 years of CBP data. Title 42 explained. Every claim tested.</span>
-        </a>
-      </div>
+      <div id="feat-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;"></div>
     </section>
+    <script>
+      (function(){
+        var pool = [
+          { url:'/are-trans-people-more-likely-to-be-mass-shooters', title:'Trans People & Mass Shootings', desc:'Three databases. Every definition. Full sensitivity analysis.' },
+          { url:'/are-vaccines-safe-and-effective', title:'Vaccine Safety & Efficacy', desc:'23M+ children studied. 138 studies. VAERS explained. Every claim tested.' },
+          { url:'/is-there-really-a-border-crisis', title:'Border Crossings: The Real Data', desc:'25 years of CBP data. Title 42 explained. Every claim tested.' },
+          { url:'/is-voter-fraud-a-real-problem', title:'Voter Fraud \u2014 The Documented Record', desc:'1,620 proven cases against 2.5 billion ballots. Every 2020 lawsuit outcome.' },
+          { url:'/do-immigrants-commit-more-crime', title:'Immigration & Crime', desc:'Incarceration rates, Texas arrest data, 150 years of Census records.' },
+          { url:'/is-climate-change-real-and-human-caused', title:'Climate Change: The Data', desc:'IPCC AR6, NASA GISS, NOAA. Denial and alarmism tested against primary science.' },
+          { url:'/is-youth-gender-medicine-safe', title:'Youth Gender Medicine', desc:'Puberty blockers, hormones, surgeries. The Cass Review and counter-critiques.' },
+          { url:'/does-more-policing-reduce-crime', title:'Policing, Race & Crime', desc:'FBI crime data, use-of-force studies, racial disparity in stops and shootings.' },
+          { url:'/which-side-commits-more-political-violence', title:'Political & Hate-Motivated Violence', desc:'Far-right, far-left, Islamist, and hate crimes. Every ideology examined.' },
+          { url:'/are-lgbtq-people-more-likely-to-face-violence', title:'LGBTQ+ People & Violence', desc:'Per-capita crime data for every group. UK prison myth debunked. Victimization data.' },
+          { url:'/does-the-death-penalty-deter-crime', title:'The Death Penalty', desc:'Deterrence, cost, and racial disparities. NRC, GAO, state audits, BJS.' },
+          { url:'/who-commits-mass-shootings-in-america', title:'Mass Shootings by Demographic', desc:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals.' },
+          { url:'/is-the-gender-wage-gap-real', title:'The Gender Wage Gap', desc:'The raw 77-cent figure vs. the adjusted gap. Audit studies on discrimination.' },
+          { url:'/what-actually-causes-inflation', title:'What Causes Inflation?', desc:'CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, energy decomposed.' },
+          { url:'/does-gun-control-reduce-violence', title:'U.S. Gun Violence vs. Peer Nations', desc:'OECD firearm death rates. CDC data. RAND policy evidence.' },
+          { url:'/does-raising-the-minimum-wage-kill-jobs', title:'Minimum Wage & Jobs', desc:'Employment effects, poverty, prices. Card & Krueger, CBO, Dube, Neumark.' },
+          { url:'/is-ultra-processed-food-bad-for-you', title:'Ultra-Processed Food', desc:'The NIH feeding trial. 45 cohort studies. NOVA classification. Mechanisms contested.' },
+          { url:'/does-social-media-harm-teenagers-mental-health', title:'Social Media & Youth Mental Health', desc:'CDC YRBS, ABCD, meta-analyses. Haidt vs. Odgers. Effect sizes disclosed.' },
+          { url:'/was-hitler-actually-a-socialist', title:'Was Hitler a Socialist?', desc:'The party name, privatization data, and what happened to actual socialists.' },
+          { url:'/did-the-us-political-parties-switch', title:'Did the Parties Switch?', desc:'Roll-call votes by region, Black voter timeline, congressional seats 1960\u20132020.' },
+          { url:'/was-the-dress-blue-and-black-or-white-and-gold', title:'The Dress \u2014 Blue or Gold?', desc:'The neuroscience of color constancy, Bayesian inference, and shared reality.' },
+          { url:'/is-the-mandela-effect-real', title:'The Mandela Effect', desc:'Why millions share identical false memories. Neuroscience of reconstructive memory.' },
+          { url:'/does-hot-water-freeze-faster-than-cold', title:'The Mpemba Effect', desc:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.' },
+          { url:'/how-bad-is-the-national-debt', title:'The National Debt', desc:'Deficit spending by administration. CBO and Treasury data. No selective framing.' },
+          { url:'/which-presidents-created-the-most-jobs', title:'Presidential Job Creation', desc:'BLS nonfarm payroll data by administration. Policy lags and inherited recessions.' },
+          { url:'/where-does-us-federal-spending-go', title:'U.S. Federal Spending', desc:'FY2026 budget breakdown. Social Security, Medicare, defense, net interest.' },
+          { url:'/which-countries-are-the-most-educated', title:'Most Educated Countries', desc:'47-country ranking. Access vs. performance paradox. Gender gaps. Full methodology.' },
+          { url:'/are-religious-countries-better-off', title:'Religion & Social Outcomes', desc:'Crime, charity, wellbeing, social trust across religious and secular populations.' },
+          { url:'/does-religion-cause-violence', title:'Religion & Violence', desc:'Historical wars, terrorism lethality, sectarian violence. The actual numbers.' },
+          { url:'/is-college-still-worth-it', title:'Is College Still Worth It?', desc:'Wage premiums, debt loads, ROI by major, graduation rates, and AI disruption.' },
+          { url:'/do-tariffs-bring-back-manufacturing-jobs', title:'Tariffs & Manufacturing', desc:'Every episode measured by jobs saved, jobs lost, cost per job, consumer prices.' },
+          { url:'/what-does-the-record-show-about-columbus', title:'Columbus \u2014 The Record', desc:'The flat-Earth myth, journal entries, Hispaniola data, Washington Irving.' },
+          { url:'/what-do-gender-affirming-care-patients-say', title:'Gender-Affirming Care: Patient Voices', desc:'What recipients and detransitioners report. Published qualitative research.' }
+        ];
+        /* Fisher-Yates shuffle */
+        for (var i = pool.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+        }
+        var picks = pool.slice(0, 3);
+        var grid = document.getElementById('feat-grid');
+        if (!grid) return;
+        grid.innerHTML = picks.map(function(a){
+          return '<a href="' + a.url + '" class="feat-card">' +
+            '<span style="font-family:\'Courier Prime\',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>' +
+            '<span style="display:block; font-family:\'Spectral\',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">' + a.title + '</span>' +
+            '<span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">' + a.desc + '</span></a>';
+        }).join('');
+      })();
+    </script>
 
 
   <div class="section-row" aria-hidden="true">
@@ -1760,7 +1797,7 @@
         { url:'/is-the-mandela-effect-real', cat:'Curiosities', title:'Is the Mandela Effect Real?', keywords:'mandela effect false memory berenstain bears berenstein monopoly man monocle darth vader luke cognitive psychology misinformation DRM loftus', snippet:'Why millions share identical false memories. Neuroscience of reconstructive memory and social contagion.'},
         { url:'/does-hot-water-freeze-faster-than-cold', cat:'Curiosities', title:'Does Hot Water Freeze Faster Than Cold?', keywords:'mpemba effect hot water freeze faster cold water thermodynamics supercooling convection evaporation physics aristotle erasto mpemba', snippet:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.'},
         { url:'/how-bad-is-the-national-debt', cat:'Economics', title:'How Bad Is the National Debt?', keywords:'national debt federal deficit debt to GDP OMB CBO Reagan debt Obama debt Trump debt Biden debt fiscal policy mandatory spending tax cuts entitlements', snippet:'CBO and OMB data by administration. Every claim tested against the primary-source record.'},
-        { url:'/which-presidents-created-the-most-jobs', cat:'Economics', title:'Which Presidents Created the Most Jobs?', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll', snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags and inherited recessions.'}
+        { url:'/which-presidents-created-the-most-jobs', cat:'Economics', title:'Which Presidents Created the Most Jobs?', keywords:'job creation presidential jobs record BLS payrolls unemployment rate Blinder Watson Reagan jobs Obama jobs Trump jobs Biden jobs PAYEMS nonfarm payroll', snippet:'BLS nonfarm payroll data by administration from Reagan to Biden. Policy lags and inherited recessions.'},
         { url:'/was-hitler-actually-a-socialist', cat:'Historical Fact Check', title:'Was Hitler Actually a Socialist?', keywords:'hitler socialist nazi NSDAP national socialism fascism privatization strasser night long knives marxism kershaw evans', snippet:'The party name, privatization data, and what happened to actual socialists. Primary sources examined.'},
         { url:'/did-the-us-political-parties-switch', cat:'Historical Fact Check', title:'Did the U.S. Political Parties Switch?', keywords:'party switch southern strategy dixiecrat civil rights act goldwater nixon atwater phillips realignment solid south', snippet:'Roll-call votes by region, Black voter timeline, congressional seats 1960-2020.'},
         { url:'/what-does-the-record-show-about-columbus', cat:'Historical Fact Check', title:'What Does the Record Show About Columbus?', keywords:'columbus discovery america flat earth myth norse viking taino hispaniola columbian exchange las casas washington irving indigenous', snippet:'Pre-Columbian contact, the flat-Earth fabrication, and what happened on Hispaniola.'},
