@@ -1,0 +1,4 @@
+# Working files — not for public deployment
+*.md
+.editorconfig
+.gitignore
