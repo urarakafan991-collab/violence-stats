@@ -269,10 +269,10 @@ caption { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-d
 .support-note { max-width: 780px; margin: 40px auto 0; padding: 20px 24px 20px; border-top: 1px solid var(--rule); font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-dim); }
 .support-note p { margin: 0; }
 footer, .site-footer, .page-footer { font-family: var(--font-sans); line-height: 1.8; }
-.site-footer { border-top: 1px solid var(--rule); max-width: 780px; margin: 0 auto; padding: 18px 24px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.site-footer { border-top: 1px solid var(--border); max-width: 780px; margin: 0 auto; padding: 18px 24px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
-.footer-note { font-family: var(--font-sans); color: var(--text-dim); }
-.footer-link { font-family: var(--font-sans); color: var(--text-dim); text-decoration: none; }
+.footer-note { font-family: var(--font-sans); color: var(--text-quiet); }
+.footer-link { font-family: var(--font-sans); color: var(--text-quiet); text-decoration: none; }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 640px) {
@@ -365,9 +365,9 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
 
 /* ---------- Former inline styles (moved here from the pages) ---------- */
 .article-body { max-width: 780px; margin: 0 auto; padding: 0 24px 24px; }
-.cell { padding: 8px; border-bottom: 1px solid var(--rule); }
-.cell-head { text-align: left; padding: 8px; border-bottom: 2px solid var(--rule); }
+.cell { padding: 8px; border-bottom: 1px solid var(--border); }
+.cell-head { text-align: left; padding: 8px; border-bottom: 2px solid var(--border); }
 .plain-link { text-decoration: none; }
-.note-small { font-size: 0.75rem; color: var(--text-dim); margin-top: 8px; }
+.note-small { font-size: 0.75rem; color: var(--text-quiet); margin-top: 8px; }
 .fine-print { font-size: 0.58rem; font-weight: 400; }
 .space-top { margin-top: 20px; }
