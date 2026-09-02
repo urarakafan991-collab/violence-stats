@@ -1,0 +1,60 @@
+# TruthBased.org
+
+> Independent fact-checking. Each article takes one contested claim in science, history, politics, economics, health, or religion, tests it against primary sources (government data, peer-reviewed research, court records, official statistics), presents the strongest opposing case, and states what evidence would change the conclusion. All pages are static HTML with the full text on the page; sources are listed at the end of each article.
+
+- [Methodology](https://www.truthbased.org/methodology): source hierarchy, confidence levels, correction policy, contact.
+
+## Political Fact Checks
+
+- [Are Trans People Overrepresented as Mass Shooters?](https://www.truthbased.org/are-trans-people-more-likely-to-be-mass-shooters): Politicians and political organizations have used this claim to justify legislation targeting the trans community. This article tests it against three databases, runs a sensitivity analysis, and checks the strongest opposing analysis against its own data.
+- [Voter Fraud](https://www.truthbased.org/is-voter-fraud-a-real-problem): Measures the 1,620 proven cases in the Heritage Foundation database against 2.5 billion ballots, breaks fraud down by type, reviews the outcome of every 2020 lawsuit and the Fulton County FBI raid, and identifies the one confirmed election law violation by a major political operation in Georgia's 2024 cycle.
+- [Border Crossings](https://www.truthbased.org/is-there-really-a-border-crisis): 25 years of CBP encounter data, with the Title 42 recidivism inflation quantified and the methodology changes that break most year-to-year comparisons explained.
+- [Policing, Race & Crime: What the Data Shows](https://www.truthbased.org/does-more-policing-reduce-crime): FBI crime data, use-of-force studies, and racial disparities in stops and shootings, with the reform and the law-and-order positions both tested against primary evidence.
+- [Political, Ideological & Hate-Motivated Violence in the United States](https://www.truthbased.org/which-side-commits-more-political-violence): Far-right, far-left, Islamist, and religious violence, alongside hate crimes by bias category, with each ideology measured by the same evidentiary standard and each finding given a confidence rating.
+- [Immigration and Crime: What the Data Actually Shows](https://www.truthbased.org/do-immigrants-commit-more-crime): Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence, tested against primary sources.
+- [Sexual Orientation, Gender Identity, and Crime](https://www.truthbased.org/are-lgbtq-people-more-likely-to-face-violence): Per-capita crime data for heterosexual men and women, gay men, lesbian women, trans women, and trans men, plus the UK prison infographic, the gay predator myth, and victimization data.
+- [The Death Penalty: Deterrence, Cost & Racial Disparities](https://www.truthbased.org/does-the-death-penalty-deter-crime): Whether capital punishment deters murder, whether it costs less than life imprisonment, and whether sentencing shows racial disparities, using NRC, GAO, state audits, BJS, and peer-reviewed studies.
+- [Mass Shootings by Demographic](https://www.truthbased.org/who-commits-mass-shootings-in-america): Per-capita mass-shooting rates by race and gender across three databases, with socioeconomic confounders, confidence intervals for each group, and raw counts kept separate from rates.
+- [The National Debt](https://www.truthbased.org/how-bad-is-the-national-debt): Deficit spending by administration, by Congress, and by policy area, from CBO and Treasury data.
+- [Job Creation Claims](https://www.truthbased.org/which-presidents-created-the-most-jobs): Each administration's jobs record against BLS data, with context for policy lags, inherited recessions, and the Blinder-Watson finding on luck.
+
+## History & Myth-Busting
+
+- [Was Hitler Actually a Socialist?](https://www.truthbased.org/was-hitler-actually-a-socialist): The party name, Hitler's own words, privatization data, the Night of the Long Knives, and what happened to actual socialists.
+- [Did the U.S. Political Parties Switch?](https://www.truthbased.org/did-the-us-political-parties-switch): Roll-call votes by region, Black voter data, congressional seats 1960-2020, and the Southern Strategy in the architects' own words.
+- [What Does the Record Actually Show About Columbus?](https://www.truthbased.org/what-does-the-record-show-about-columbus): The flat-Earth myth debunked, Columbus's journal entries, Hispaniola data, and how Washington Irving built the myth.
+
+## Science & Perception
+
+- [The Dress](https://www.truthbased.org/was-the-dress-blue-and-black-or-white-and-gold): The same pixels. Two completely different colors. The neuroscience of color constancy, Bayesian inference, and what it means for shared reality.
+- [The Mandela Effect](https://www.truthbased.org/is-the-mandela-effect-real): Berenstain or Berenstein? Did the Monopoly man have a monocle? Why millions share the same vivid, confident, wrong memories — and what that reveals about the mind.
+- [The Mpemba Effect](https://www.truthbased.org/does-hot-water-freeze-faster-than-cold): Aristotle noticed it in 350 BCE. A Tanzanian student rediscovered it in 1963. Sixty years of modern physics later, the answer is still contested — and more interesting than either side admits.
+
+## Science & Media Accuracy
+
+- [Climate Change: The Science and the Data](https://www.truthbased.org/is-climate-change-real-and-human-caused): What the IPCC projects, the temperature and sea-level records, attribution science, and where both denial and alarmist claims depart from the primary data.
+
+## Economics & Policy
+
+- [The Gender Wage Gap: What the Data Actually Shows](https://www.truthbased.org/is-the-gender-wage-gap-real): The raw 77-cent figure vs. the adjusted gap. What each statistic actually measures, what causes the residual gap, and what neither side in the debate gets right.
+- [U.S. Inflation (2021–2026): Causes, Drivers, and International Context](https://www.truthbased.org/what-actually-causes-inflation): The CPI path from 0.3% to 9.1% and back, decomposed into supply-chain, stimulus, and energy effects, compared internationally, with the Federal Reserve's response.
+- [U.S. Federal Spending: Where the Money Goes](https://www.truthbased.org/where-does-us-federal-spending-go): The FY2026 budget by category, including Social Security, Medicare, defense, and net interest, and the debt trajectory CBO projects.
+- [Is College Still Worth the Cost?](https://www.truthbased.org/is-college-still-worth-it): Wage premiums, tuition, debt loads, graduation rates, return by major and institution, and the AI question, from BLS, Census, and College Scorecard data.
+- [Do Tariffs Help U.S. Manufacturing?](https://www.truthbased.org/do-tariffs-bring-back-manufacturing-jobs): Steel, tires, China, and the 2025 escalation, with each episode measured by jobs saved, jobs lost downstream, cost per job, consumer prices, and the trade deficit.
+- [Does Raising the Minimum Wage Kill Jobs?](https://www.truthbased.org/does-raising-the-minimum-wage-kill-jobs): Employment, poverty, prices, small businesses, and automation, drawing on Card and Krueger, CBO, Dube, and Neumark.
+
+## Health & Medicine
+
+- [Vaccine Safety & Efficacy: What the Data Actually Shows](https://www.truthbased.org/are-vaccines-safe-and-effective): Studies covering more than 23 million children across 138 studies, the autism question, the real but rare adverse events, COVID vaccine trials, myocarditis rates, VAERS and V-safe, and the childhood schedule debate.
+- [Ultra-Processed Food: What the Research Actually Shows](https://www.truthbased.org/is-ultra-processed-food-bad-for-you): The NIH feeding trial, 45 cohort studies, the NOVA classification, and the proposed mechanisms, with the strongest arguments on each side.
+- [Social Media & Youth Mental Health](https://www.truthbased.org/does-social-media-harm-teenagers-mental-health): CDC YRBS, NHS Digital, the ABCD cohort, meta-analyses, and natural experiments on adolescent mental health, with effect sizes stated and the Haidt and Odgers positions compared.
+
+## Religion & Society
+
+- [Does Religiosity Correlate With Better Social Outcomes?](https://www.truthbased.org/are-religious-countries-better-off): Crime rates, social trust, wellbeing, charitable giving, education — what Pew Research, Gallup, Harvard longitudinal cohorts, and dozens of meta-analyses actually find when comparing more and less religious populations. The answer depends on whether you measure individuals or societies.
+- [Religion and Violence](https://www.truthbased.org/does-religion-cause-violence): Claims about religiously motivated conflict measured against terrorism databases, historical records, war encyclopedias, and peer-reviewed conflict research. How researchers define and count religious motivation — and what happens when you control for poverty, state weakness, and political exclusion.
+
+## International Comparisons
+
+- [U.S. Gun Violence vs. Peer Nations](https://www.truthbased.org/does-gun-control-reduce-violence): Per-capita firearm death rates across OECD nations, split into homicide and suicide, with mass-shooting frequency, ownership correlations, and policy evidence from Australia, the UK, and U.S. states.
+- [Most Educated Countries in the World](https://www.truthbased.org/which-countries-are-the-most-educated): 47 countries ranked by tertiary attainment using OECD Education at a Glance 2025. What each top-third nation specifically excels in. The paradox where more years of schooling doesn't mean better outcomes. Gender gaps, spending efficiency, and the bottom third.
