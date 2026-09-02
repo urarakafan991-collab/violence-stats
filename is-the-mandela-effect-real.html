@@ -15,7 +15,7 @@
   <meta name="twitter:description" content="Berenstain or Berenstein? Luke I am your father? The neuroscience behind why millions share the same wrong memories.">
 
   <link rel="canonical" href="https://www.truthbased.org/is-the-mandela-effect-real">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#121212">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
@@ -26,12 +26,27 @@
 
   <script>
     (function(){
-      var html = document.documentElement;
-      try {
-        var stored = localStorage.getItem('tb-theme');
-        if (stored) html.setAttribute('data-theme', stored);
-        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
-      } catch(e) {}
+      var html = document.documentElement, stored = null;
+      try { stored = localStorage.getItem('tb-theme'); } catch(e) {}
+      html.setAttribute('data-theme', stored === 'light' ? 'light' : 'dark');
+      function meta(){ var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', html.getAttribute('data-theme') === 'dark' ? '#121212' : '#ffffff'); }
+      if (window.MutationObserver) new MutationObserver(meta).observe(html, {attributes: true, attributeFilter: ['data-theme']});
+      if (window.Chart) Chart.defaults.color = html.getAttribute('data-theme') === 'dark' ? '#c8c8c8' : '#444444';
+      if (stored) return;
+      document.addEventListener('DOMContentLoaded', function(){
+        var bar = document.createElement('div');
+        bar.className = 'theme-ask'; bar.setAttribute('role', 'region'); bar.setAttribute('aria-label', 'Display mode');
+        bar.innerHTML = '<span>Read this site in dark or light mode?</span> <button type="button" data-t="dark">Dark</button> <button type="button" data-t="light">Light</button> <button type="button" class="theme-ask-close" data-t="dark" aria-label="Keep dark mode and close">&times;</button>';
+        bar.addEventListener('click', function(e){
+          var b = e.target.closest('button'); if (!b) return;
+          var t = b.getAttribute('data-t');
+          html.setAttribute('data-theme', t);
+          try { localStorage.setItem('tb-theme', t); } catch(e) {}
+          var tog = document.querySelector('.theme-toggle'); if (tog) tog.textContent = t === 'dark' ? '\u2600' : '\u263E';
+          bar.parentNode.removeChild(bar);
+        });
+        document.body.appendChild(bar);
+      });
     })();
   </script>
   <script type="application/ld+json">
