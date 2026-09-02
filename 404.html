@@ -19,91 +19,26 @@
     })();
   </script>
 
-  <meta name="theme-color" content="#b83a1e">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/style.css">
   <style>
-    :root {
-      --bg: #f7f5f1; --surface: #f0ede8; --border: #ddd9d0; --rule: #ddd9d0;
-      --text-head: #1a1714; --text-body: #2d2926; --text-dim: #5a544c; --text-quiet: #736e66;
-      --brick: #b83a1e; --font-serif: 'Spectral', Georgia, serif;
-      --font-sans: 'Sora', system-ui, sans-serif; --font-mono: 'Courier Prime', monospace;
-    }
-    [data-theme="dark"] {
-      --bg: #1a1918; --surface: #242220; --border: #3a3632; --rule: #3a3632;
-      --text-head: #e8e5e0; --text-body: #c5c0b8; --text-dim: #8a8478; --text-quiet: #6a6560;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font-serif); font-variant-numeric: tabular-nums; color: var(--text-body); background: var(--bg);
-      display: flex; flex-direction: column; min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--brick); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-    .site-nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px; height: 52px; border-bottom: 1px solid var(--rule);
-      background-color: rgba(247, 245, 241, 0.97);
-    }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
-    .nav-wordmark {
-      font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600;
-      color: var(--text-head); text-decoration: none; letter-spacing: -0.02em;
-    }
-    .nav-wordmark strong { color: var(--brick); }
-    .theme-toggle {
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule); background: transparent;
-      color: var(--text-dim); font-size: 1rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .error-wrap {
-      flex: 1; display: flex; flex-direction: column; align-items: center;
-      justify-content: center; padding: 48px 24px; text-align: center;
-    }
-    .error-code {
-      font-family: var(--font-mono); font-size: 4rem; font-weight: 700;
-      color: var(--brick); line-height: 1; margin-bottom: 12px;
-    }
-    .error-title {
-      font-family: var(--font-sans); font-size: 1.2rem; font-weight: 600;
-      color: var(--text-head); margin-bottom: 16px;
-    }
-    .error-body { color: var(--text-dim); max-width: 420px; margin-bottom: 28px; }
-    .error-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-    .error-links a {
-      font-family: var(--font-sans); font-size: 0.82rem;
-      padding: 8px 18px; border: 1px solid var(--border); border-radius: 4px;
-      text-decoration: none; color: var(--text-dim); transition: all 0.15s;
-    }
-    .error-links a:hover { color: var(--brick); border-color: var(--brick); }
-    .page-footer {
-      border-top: 1px solid var(--rule); padding: 20px 48px;
-      text-align: center;
-    }
-    .footer-note {
-      font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-quiet);
-    }
-    @media (max-width: 600px) {
-      .site-nav { padding: 0 16px; }
-      .error-code { font-size: 3rem; }
-      .page-footer { padding: 16px; }
-    }
-      :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
+  /* Page-specific components, restyled to match /style.css */
+  .error-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 24px; text-align: center; }
+  .error-code { font-family: var(--font-sans); font-size: 4rem; font-weight: 700; color: var(--brick); line-height: 1; margin-bottom: 12px; }
+  .error-title { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 600; color: var(--text-head); margin-bottom: 16px; }
+  .error-body { color: var(--text-dim); max-width: 420px; margin-bottom: 28px; }
+  .error-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .error-links a { font-family: var(--font-sans); font-size: 0.82rem; padding: 8px 18px; border: 1px solid var(--border); text-decoration: none; color: var(--text-dim); }
+  .error-links a:hover { color: var(--brick); border-color: var(--brick); }
+  @media (max-width: 600px) {
+  .error-code { font-size: 3rem; }
+  }
   </style>
   <link rel="canonical" href="https://www.truthbased.org/404">
     <meta property="og:url" content="https://www.truthbased.org/404">

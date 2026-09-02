@@ -20,150 +20,39 @@
     })();
   </script>
 
-  <meta name="theme-color" content="#b83a1e">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/style.css">
   <style>
-    .site-nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px; height: 52px;
-      border-bottom: 1px solid var(--rule);
-      background-color: rgba(247, 245, 241, 0.97);
-      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-      position: sticky; top: 0; z-index: 100;
-    }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
-    .nav-left { display: flex; align-items: center; gap: 16px; }
-    .nav-wordmark {
-      font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 600;
-      color: var(--text-head); text-decoration: none; letter-spacing: -0.02em;
-    }
-    .nav-wordmark strong { color: var(--brick); }
-    .nav-back {
-      font-family: 'Sora', sans-serif; font-size: 0.72rem;
-      color: var(--text-dim); text-decoration: none;
-      border: 1px solid var(--rule); border-radius: 3px;
-      padding: 4px 10px; transition: color 0.15s, border-color 0.15s;
-    }
-    .nav-back:hover { color: var(--brick); border-color: var(--brick); }
-
-    :root {
-      --bg: #f7f5f1; --surface: #f0ede8; --border: #ddd9d0; --rule: #ddd9d0;
-      --text-head: #1a1714; --text-body: #2d2926; --text-dim: #5a544c; --text-quiet: #736e66;
-      --brick: #b83a1e; --brick-light: #f5e8e4;
-      --green: #1b6b3e; --green-light: #e8f5ed;
-      --font-serif: 'Spectral', Georgia, serif;
-      --font-sans: 'Sora', system-ui, sans-serif;
-      --font-mono: 'Courier Prime', monospace;
-    }
-    [data-theme="dark"] {
-      --bg: #1a1918; --surface: #242220; --border: #3a3632; --rule: #3a3632;
-      --text-head: #e8e5e0; --text-body: #c5c0b8; --text-dim: #8a8478; --text-quiet: #6a6560;
-      --brick-light: #3a2520; --green-light: #1a3020;
-    }
-    *, *::before, *::after { transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
-    body { margin: 0; background: var(--bg); color: var(--text-body); font-family: var(--font-serif); font-variant-numeric: tabular-nums; }
-
-    .theme-toggle {
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule); background: transparent;
-      color: var(--text-dim); font-size: 1rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .theme-toggle:hover { border-color: var(--brick); }
-
-    .page-wrap {
-      max-width: 640px; margin: 0 auto; padding: 48px 24px 64px;
-    }
-    .page-title {
-      font-family: var(--font-sans); font-size: 1.6rem; font-weight: 600;
-      color: var(--text-head); margin: 0 0 8px; line-height: 1.3;
-    }
-    .page-subtitle {
-      font-family: var(--font-serif); font-size: 1rem; color: var(--text-dim);
-      margin: 0 0 32px; line-height: 1.6;
-    }
-
-    .support-card {
-      padding: 24px; background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; text-align: center; margin-bottom: 32px;
-    }
-    .support-card-label {
-      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--brick);
-      display: block; margin-bottom: 12px;
-    }
-    .support-buttons {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px;
-    }
-    .support-buttons a {
-      display: inline-block; padding: 10px 22px;
-      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
-      border-radius: 5px; text-decoration: none; transition: opacity 0.15s;
-    }
-    .support-buttons a:hover { opacity: 0.85; }
-    .btn-kofi { background: var(--brick); color: #fff; }
-    .btn-liberapay { background: #f6c915; color: #1a1a1a; }
-    .btn-patreon { background: #222; color: #fff; }
-    [data-theme="dark"] .btn-patreon { background: #444; }
-    .support-note {
-      font-family: var(--font-sans); font-size: 0.64rem; color: var(--text-quiet);
-      margin: 12px 0 0;
-    }
-
-    .crypto-section {
-      margin-top: 8px;
-    }
-    .crypto-heading {
-      font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600;
-      color: var(--text-head); margin: 0 0 6px;
-    }
-    .crypto-intro {
-      font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-dim);
-      margin: 0 0 16px; line-height: 1.5;
-    }
-
-    .qr-overlay {
-      display: none; position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0,0,0,0.8); align-items: center; justify-content: center;
-      flex-direction: column; gap: 12px;
-    }
-    .qr-overlay.is-open { display: flex; }
-    .qr-overlay img {
-      max-width: 80vw; max-height: 70vh; image-rendering: pixelated;
-      border-radius: 8px; background: #fff; padding: 16px;
-    }
-    .qr-overlay-label {
-      font-family: var(--font-sans); font-size: 0.72rem; color: rgba(255,255,255,0.7);
-    }
-    .qr-tap-hint {
-      display: block; font-family: var(--font-sans); font-size: 0.48rem;
-      color: var(--text-quiet); margin-top: 2px; text-align: center;
-    }
-
-    .site-footer {
-      max-width: 640px; margin: 0 auto; padding: 24px;
-      text-align: center; border-top: 1px solid var(--border);
-    }
-    .footer-note {
-      font-family: var(--font-sans); font-size: 0.62rem; color: var(--text-quiet);
-    }
-
-    @media (max-width: 600px) {
-      .site-nav { padding: 0 16px; }
-      .page-wrap { padding: 32px 16px 48px; }
-      .support-buttons { flex-direction: column; align-items: stretch; }
-      .support-buttons a { text-align: center; }
-    }
-    @media print {
-      .site-nav, .theme-toggle { display: none !important; }
-    }
+  /* Page-specific components, restyled to match /style.css */
+  .page-wrap { max-width: 640px; margin: 0 auto; padding: 48px 24px 64px; }
+  .page-title { font-family: var(--font-sans); font-size: 1.6rem; font-weight: 600; color: var(--text-head); margin: 0 0 8px; line-height: 1.3; }
+  .page-subtitle { font-family: var(--font-serif); font-size: 1rem; color: var(--text-dim); margin: 0 0 32px; line-height: 1.6; }
+  .support-card { padding: 24px; background: var(--surface); border: 1px solid var(--border); text-align: center; margin-bottom: 32px; }
+  .support-card-label { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; color: var(--brick); display: block; margin-bottom: 12px; }
+  .support-buttons { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  .support-buttons a { display: inline-block; padding: 10px 22px; font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+  .support-buttons a:hover { opacity: 0.85; }
+  .btn-kofi { background: var(--brick); color: #fff; }
+  .btn-liberapay { background: var(--surface); color: #1a1a1a; }
+  .btn-patreon { background: #222; color: #fff; }
+  [data-theme="dark"] .btn-patreon { background: #444; }
+  .crypto-section { margin-top: 8px; }
+  .crypto-heading { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; color: var(--text-head); margin: 0 0 6px; }
+  .crypto-intro { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-dim); margin: 0 0 16px; line-height: 1.5; }
+  .qr-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
+  .qr-overlay.is-open { display: flex; }
+  .qr-overlay img { max-width: 80vw; max-height: 70vh; image-rendering: pixelated; background: #fff; padding: 16px; }
+  .qr-overlay-label { font-family: var(--font-sans); font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+  @media (max-width: 600px) {
+  .page-wrap { padding: 32px 16px 48px; }
+  .support-buttons { flex-direction: column; align-items: stretch; }
+  .support-buttons a { text-align: center; }
+  }
   </style>
 </head>
 <body>
