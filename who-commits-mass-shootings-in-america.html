@@ -41,21 +41,34 @@
       function meta(){ var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', html.getAttribute('data-theme') === 'dark' ? '#121212' : '#ffffff'); }
       if (window.MutationObserver) new MutationObserver(meta).observe(html, {attributes: true, attributeFilter: ['data-theme']});
       if (window.Chart) {
-        var dark = html.getAttribute('data-theme') === 'dark';
         var sans = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
-        Chart.defaults.color = dark ? '#d6d6d6' : '#333333';
-        Chart.defaults.borderColor = dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.12)';
-        Chart.defaults.font.family = sans; Chart.defaults.font.size = 13;
-        var map = dark ? {'#b83a1e':'#f08a6a','#1b6b3e':'#5ccf7f','#d4703a':'#f3a67e','#e8a76c':'#f6c9a4','#4cbb6a':'#7fe09a','#7a4f00':'#e6b85c','#c8850a':'#eac06b','#e05a3a':'#f08a6a'} : {};
-        function fix(v){ if (typeof v === 'string') return map[v.toLowerCase()] || v; if (Array.isArray(v)) return v.map(fix); return v; }
-        Chart.register({ id: 'tbTheme', beforeInit: function(c){
-          var ds = (c.config.data && c.config.data.datasets) || [];
-          ds.forEach(function(d){ ['backgroundColor','borderColor','pointBackgroundColor','pointBorderColor'].forEach(function(p){ if (d[p]) d[p] = fix(d[p]); }); if (d.borderWidth == null) d.borderWidth = 1; });
-          var opt = c.config.options || {}; var sc = opt.scales || {};
-          Object.keys(sc).forEach(function(k){ var s = sc[k] || {}; s.ticks = s.ticks || {}; s.ticks.font = {family: sans, size: 12}; if (s.title) s.title.font = {family: sans, size: 12}; s.grid = s.grid || {}; if (s.grid.color == null) s.grid.color = Chart.defaults.borderColor; sc[k] = s; });
-          var lg = opt.plugins && opt.plugins.legend; if (lg && lg.labels) lg.labels.font = {family: sans, size: 12};
-          var tt = opt.plugins && opt.plugins.tooltip; if (tt) { tt.bodyFont = {family: sans, size: 12}; tt.titleFont = {family: sans, size: 12}; }
-        }});
+        var isDark = function(){ return html.getAttribute('data-theme') === 'dark'; };
+        var applyDefaults = function(){ var dark = isDark(); Chart.defaults.color = dark ? '#d6d6d6' : '#333333'; Chart.defaults.borderColor = dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.12)'; };
+        applyDefaults(); Chart.defaults.font.family = sans; Chart.defaults.font.size = 13;
+        var map = {'#b83a1e':'#f08a6a','#1b6b3e':'#5ccf7f','#d4703a':'#f3a67e','#e8a76c':'#f6c9a4','#4cbb6a':'#7fe09a','#7a4f00':'#e6b85c','#c8850a':'#eac06b','#e05a3a':'#f08a6a'};
+        function fix(v){ if (typeof v === 'string') return isDark() ? (map[v.toLowerCase()] || v) : v; if (Array.isArray(v)) return v.map(fix); return v; }
+        Chart.register({ id: 'tbTheme',
+          beforeInit: function(c){
+            var opt = c.config.options || {}; var sc = opt.scales || {};
+            Object.keys(sc).forEach(function(k){ var s = sc[k] || {}; s.ticks = s.ticks || {}; s.ticks.font = {family: sans, size: 12}; if (s.title) s.title.font = {family: sans, size: 12}; sc[k] = s; });
+            var lg = opt.plugins && opt.plugins.legend; if (lg && lg.labels) lg.labels.font = {family: sans, size: 12};
+            var tt = opt.plugins && opt.plugins.tooltip; if (tt) { tt.bodyFont = {family: sans, size: 12}; tt.titleFont = {family: sans, size: 12}; }
+          },
+          beforeUpdate: function(c){
+            applyDefaults();
+            var ds = (c.config.data && c.config.data.datasets) || [];
+            ds.forEach(function(d){
+              if (!d._tb) d._tb = { bg: d.backgroundColor, bc: d.borderColor, pbg: d.pointBackgroundColor, pbc: d.pointBorderColor };
+              if (d._tb.bg != null) d.backgroundColor = fix(d._tb.bg); if (d._tb.bc != null) d.borderColor = fix(d._tb.bc);
+              if (d._tb.pbg != null) d.pointBackgroundColor = fix(d._tb.pbg); if (d._tb.pbc != null) d.pointBorderColor = fix(d._tb.pbc);
+              if (d.borderWidth == null) d.borderWidth = 1;
+            });
+            var sc = (c.config.options && c.config.options.scales) || {};
+            Object.keys(sc).forEach(function(k){ var s = sc[k] || {}; s.grid = s.grid || {}; if (s.grid._tbAuto || s.grid.color == null) { s.grid.color = Chart.defaults.borderColor; s.grid._tbAuto = true; } });
+          }
+        });
+        var recolor = function(){ if (!Chart.instances) return; Object.keys(Chart.instances).forEach(function(k){ var c = Chart.instances[k]; try { if (c && c.canvas && c.ctx) c.update('none'); } catch (e) {} }); };
+        if (window.MutationObserver) new MutationObserver(recolor).observe(html, {attributes: true, attributeFilter: ['data-theme']});
       }
       if (stored) return;
       document.addEventListener('DOMContentLoaded', function(){
