@@ -18,6 +18,7 @@
   /* Legacy accent variables. Inline styles in older markup still reference
      these, so they are kept but mapped to neutral values. */
   --brick:        #111111;
+  --warn-text:    #8a2b12;
   --brick-light:  #f5f5f2;
   --green:        #1e1e1e;
   --green-light:  #f5f5f2;
@@ -41,6 +42,7 @@
   --text-quiet:   #8c8c8c;
   --link:         #8ab4f8;
   --brick:        #ebebeb;
+  --warn-text:    #f0a58a;
   --brick-light:  #1c1c1c;
   --green:        #d8d8d8;
   --green-light:  #1c1c1c;
@@ -371,3 +373,9 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
 .note-small { font-size: 0.75rem; color: var(--text-quiet); margin-top: 8px; }
 .fine-print { font-size: 0.58rem; font-weight: 400; }
 .space-top { margin-top: 20px; }
+
+/* ---------- Support page ---------- */
+.qr-button { display: inline-block; padding: 0; border: 1px solid var(--rule); background: none; cursor: pointer; line-height: 0; }
+.qr-button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.critical, .memo-warning { color: var(--warn-text); font-weight: 700; }
+.memo-warning code { font-weight: 700; }
