@@ -300,3 +300,11 @@ footer span, footer a, .footer-note { font-size: 0.78rem !important; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
   a.source-pill[href]::after, a.jump-btn[href]::after { content: none; }
 }
+
+/* ---------- Components used by a few older articles ---------- */
+.article-header { margin-bottom: 28px; }
+.confidence-tag {
+  display: inline-block; font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+  padding: 1px 6px; border: 1px solid var(--rule); color: var(--text-head); background: none; border-radius: 0;
+}
+.conf-high, .conf-medium, .conf-low { background: none; color: var(--text-head); border-color: var(--rule); }
