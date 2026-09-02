@@ -3,729 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>TruthBased.org — Independent Fact-Checking</title>
-  <meta name="description" content="Primary-source fact-checking across science, history, politics, and media. Every claim examined. Every counterargument answered. No agenda.">
-
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://www.truthbased.org/">
-  <meta property="og:title"       content="TruthBased.org — Independent Fact-Checking">
-  <meta property="og:description" content="Primary-source fact-checking. Every counterargument tested. No agenda.">
-  <meta name="twitter:card"       content="summary">
-  <meta name="twitter:title" content="TruthBased.org — Independent Fact-Checking">
-  <meta name="twitter:description" content="Primary sources. Strongest counterarguments tested. No agenda.">
-
-    <link rel="canonical" href="https://www.truthbased.org/">
-
-    <meta name="theme-color" content="#b83a1e">
-
+  <meta content="Primary-source fact-checking across science, history, politics, and media. Every claim examined. Every counterargument answered. No agenda." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.truthbased.org/" property="og:url"/>
+  <meta content="TruthBased.org — Independent Fact-Checking" property="og:title"/>
+  <meta content="Primary-source fact-checking. Every counterargument tested. No agenda." property="og:description"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="TruthBased.org — Independent Fact-Checking" name="twitter:title"/>
+  <meta content="Primary sources. Strongest counterarguments tested. No agenda." name="twitter:description"/>
+  <link rel="canonical" href="https://www.truthbased.org/">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root {
-      --page-ground:  #f7f5f1;
-      --card-face:    #ffffff;
-      --text-primary: #151311;
-      --text-body:    #3d3a33;
-      --text-dim:     #706d64;
-      --text-quiet:   #736e66;
-      --brick:        #b83a1e;
-      --green-live:   #1b6b3e;
-      --green-faint:  #e8f4ed;
-      --rule:         #dedad3;
-      --rule-mid:     #c5c1ba;
-    }
-
-    .site-nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px; height: 52px;
-      border-bottom: 1px solid var(--rule);
-      background-color: rgba(247, 245, 241, 0.96);
-      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-      transition: box-shadow 0.2s ease;
-      position: sticky; top: 0; z-index: 100;
-    }
-    [data-theme="dark"] .site-nav { background-color: rgba(26,25,24,0.97); }
-    .nav-left { display: flex; align-items: center; gap: 16px; }
-    .nav-wordmark {
-      font-family: 'Sora', 'Spectral', sans-serif; font-size: 0.95rem; font-weight: 600;
-      color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em;
-    }
-    .nav-wordmark strong { color: var(--brick); }
-    .nav-tagline {
-      font-family: 'Courier Prime', monospace; font-size: 0.6rem;
-      color: var(--text-quiet); letter-spacing: 0.06em;
-      padding-left: 16px; border-left: 1px solid var(--rule);
-    }
-
-
-    /* =========================================================
-       TruthBased.org — Homepage
-       Clean accordion navigation. No divisive content on index.
-       Warm off-white · Spectral headings · Sora body
-       Single accent: deep brick #b83a1e
-    ========================================================= */
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--page-ground);
-      color: var(--text-body);
-      font-family: 'Sora', sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-
-    /* Nav --------------------------------------------------- */
-
-
-    /* Hero -------------------------------------------------- */
-
-    .page-hero {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 48px 64px;
-      text-align: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-block;
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--brick);
-      margin-bottom: 22px;
-      opacity: 0;
-      animation: entryAnim 0.55s ease forwards 0.1s;
-    }
-
-    .hero-title {
-      font-family: 'Spectral', serif;
-      font-weight: 300;
-      font-size: clamp(2.1rem, 5vw, 3.4rem);
-      line-height: 1.1;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-      margin-bottom: 18px;
-      opacity: 0;
-      animation: entryAnim 0.55s ease forwards 0.2s;
-    }
-
-    .hero-title em { font-style: italic; color: var(--brick); }
-
-    .hero-body {
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: var(--text-dim);
-      max-width: 500px;
-      margin: 0 auto 36px;
-      opacity: 0;
-      animation: entryAnim 0.55s ease forwards 0.3s;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      justify-content: center;
-      opacity: 0;
-      animation: entryAnim 0.55s ease forwards 0.45s;
-    }
-
-    .hero-tag {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.63rem;
-      letter-spacing: 0.04em;
-      color: var(--text-dim);
-      border: 1px solid var(--rule-mid);
-      border-radius: 2px;
-      padding: 4px 12px;
-    }
-
-
-    /* Section label row ------------------------------------ */
-
-    .section-row {
-      max-width: 940px;
-      margin: 0 auto;
-      padding: 0 48px 18px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .section-row-label {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-quiet);
-      white-space: nowrap;
-    }
-
-    .section-row-line {
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
-    }
-
-
-    /* Accordion container ---------------------------------- */
-
-    .accordion-wrap {
-      max-width: 940px;
-      margin: 0 auto 80px;
-      padding: 0 48px;
-    }
-
-    .acc-item {
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .acc-item:first-child {
-      border-top: 1px solid var(--rule);
-    }
-
-
-    /* Trigger button --------------------------------------- */
-
-    .acc-trigger {
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 0;
-      text-align: left;
-      color: var(--text-primary);
-      transition: color 0.15s ease;
-    }
-
-    .acc-trigger:hover { color: var(--brick); background: rgba(184, 58, 30, 0.03); border-radius: 4px; }
-    .acc-trigger:hover .acc-num { color: var(--brick); }
-
-    .acc-num {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--text-quiet);
-      min-width: 22px;
-      transition: color 0.15s ease;
-    }
-
-    .acc-label {
-      font-family: 'Spectral', serif;
-      font-weight: 600;
-      font-size: 1.1rem;
-      letter-spacing: -0.01em;
-      flex: 1;
-    }
-
-    .acc-meta {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      color: var(--text-quiet);
-      margin-right: 6px;
-    }
-
-    /* +/− icon */
-    .acc-icon {
-      width: 18px;
-      height: 18px;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .acc-icon::before,
-    .acc-icon::after {
-      content: '';
-      position: absolute;
-      background: currentColor;
-      border-radius: 1px;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    .acc-icon::before {
-      width: 12px; height: 1.5px;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .acc-icon::after {
-      width: 1.5px; height: 12px;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .acc-item.is-open .acc-icon::after {
-      opacity: 0;
-      transform: translate(-50%, -50%) rotate(90deg);
-    }
-
-
-    /* Collapsible panel ------------------------------------ */
-
-    .acc-panel {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .acc-panel.is-open {
-      grid-template-rows: 1fr;
-    }
-
-    .acc-panel-inner { overflow: hidden; }
-
-    .acc-content { padding-bottom: 24px; }
-
-
-    /* Article list ----------------------------------------- */
-
-    .article-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .article-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 18px 20px;
-      background: var(--card-face);
-      transition: background-color 0.12s ease;
-    }
-
-    a.article-row:hover {
-      background-color: #fefdfb;
-    }
-
-    .article-row.is-pending {
-      opacity: 0.4;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .row-status {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.56rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 2px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .row-status.live {
-      background-color: var(--green-faint);
-      color: var(--green-live);
-      border: 1px solid rgba(27, 107, 62, 0.18);
-    }
-
-    .row-status.pending {
-      background-color: transparent;
-      color: var(--text-quiet);
-      border: 1px solid var(--rule);
-    }
-
-    .row-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .row-title {
-      font-family: 'Spectral', serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-      line-height: 1.35;
-    }
-
-    .row-desc {
-      font-size: 0.76rem;
-      color: var(--text-dim);
-      line-height: 1.65;
-    }
-
-    /* Source footnotes on live articles */
-    .row-sources {
-      margin-top: 9px;
-      padding-top: 9px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .sources-label {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-quiet);
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .sources-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .source-pill {
-      display: inline-block;
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.04em;
-      color: var(--text-dim);
-      background: var(--rule);
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin: 2px 3px 2px 0;
-    }
-
-    .sources-list li {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.62rem;
-      color: var(--text-dim);
-      line-height: 1.55;
-      padding-left: 14px;
-      position: relative;
-    }
-
-    .sources-list li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--text-quiet);
-    }
-
-    .row-arrow {
-      font-size: 0.8rem;
-      color: var(--text-quiet);
-      flex-shrink: 0;
-      margin-top: 2px;
-      transition: color 0.15s ease, transform 0.15s ease;
-    }
-
-    a.article-row:hover .row-arrow {
-      color: var(--brick);
-      transform: translateX(3px);
-    }
-
-
-    /* Methodology strip ------------------------------------ */
-
-    .method-section {
-      background-color: var(--text-primary);
-      color: var(--page-ground);
-      padding: 52px 48px;
-    }
-
-    .method-inner {
-      max-width: 940px;
-      margin: 0 auto;
-    }
-
-    .method-title {
-      font-family: 'Spectral', serif;
-      font-weight: 300;
-      font-size: 1.05rem;
-      margin-bottom: 32px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(247, 245, 241, 0.12);
-    }
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 26px 40px;
-    }
-
-    .method-item-title {
-      font-family: 'Spectral', serif;
-      font-weight: 600;
-      font-size: 0.88rem;
-      margin-bottom: 6px;
-      color: #f7f5f1;
-    }
-
-    .method-item-body {
-      font-size: 0.75rem;
-      line-height: 1.7;
-      color: rgba(247, 245, 241, 0.5);
-    }
-
-
-    /* Footer ----------------------------------------------- */
-
-    .page-footer {
-      border-top: 1px solid var(--rule);
-      padding: 20px 48px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .footer-note {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      color: var(--text-quiet);
-      letter-spacing: 0.04em;
-    }
-
-
-    /* Animation -------------------------------------------- */
-
-    @keyframes entryAnim {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-
-    /* Mobile ----------------------------------------------- */
-
-    @media (max-width: 640px) {
-      .site-nav,
-      .page-hero,
-      .section-row,
-      .accordion-wrap,
-      .method-section,
-      .page-footer {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .page-hero { padding-top: 52px; padding-bottom: 44px; }
-      .nav-tagline { display: none; }
-      .acc-meta { display: none; }
-      .site-nav { padding: 0 16px; height: 46px; }
-      .nav-category { display: none; }
-      .nav-back { font-size: 0.65rem; padding: 3px 8px; }
-      .theme-toggle { width: 30px; height: 30px; font-size: 0.85rem; }
-      .acc-trigger { padding: 14px 16px; gap: 10px; }
-      .acc-num { font-size: 0.58rem; min-width: 22px; }
-      .acc-label { font-size: 0.82rem; }
-      .article-row { padding: 14px 16px; gap: 10px; }
-      .row-title { font-size: 0.86rem; }
-      .row-desc { font-size: 0.72rem; }
-      .page-footer { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
-
-    }
-
-
-
-    @media (max-width: 900px) and (min-width: 641px) {
-      .site-nav, .page-hero, .accordion-wrap, .method-section, .page-footer {
-        padding-left: 32px; padding-right: 32px;
-      }
-      .method-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ─── Dark Mode ─── */
-    [data-theme="dark"] {
-      --page-ground:  #1a1918;
-      --card-face:    #242220;
-      --card-tinted:  #2a2826;
-      --text-primary: #e8e5e0;
-      --text-body:    #c5c0b8;
-      --text-dim:     #8a857d;
-      --text-quiet:   #6a655e;
-      --brick:        #e05a3a;
-      --brick-faint:  #2d1f1a;
-      --green-live:   #4cbb6a;
-      --green-faint:  #1a2d20;
-      --amber:        #d4a030;
-      --amber-faint:  #2d2518;
-      --rule:         #3a3632;
-      --rule-mid:     #4a4640;
-      --shadow-card:  0 1px 4px rgba(0,0,0,0.3);
-      --font-sans:    'Sora', sans-serif;
-      --font-serif:   'Spectral', serif;
-      --font-mono:    'Courier Prime', monospace;
-      --surface:      var(--card-face);
-      --border:       var(--rule);
-      --bg:           var(--page-ground);
-    }
-    [data-theme="dark"] .method-section { background-color: #242220; color: #e8e5e0; }
-    [data-theme="dark"] .method-item-title { color: #e8e5e0; }
-    [data-theme="dark"] .method-item-body { color: rgba(232,229,224,0.5); }
-    [data-theme="dark"] a.article-row:hover { background-color: #2a2826; }
-
-    /* ─── Site-wide: transitions, progress, back-to-top, a11y ─── */
-    html { transition: background-color 0.3s ease, color 0.3s ease; }
-    body { transition: background-color 0.3s ease, color 0.3s ease; }
-
-    .reading-progress {
-      position: fixed; top: 0; left: 0; height: 3px;
-      background: var(--brick); z-index: 9999;
-      width: 0%; transition: width 0.1s linear;
-      pointer-events: none;
-    }
-
-    .back-to-top {
-      position: fixed; bottom: 28px; right: 28px;
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--brick); color: #fff;
-      border: none; cursor: pointer;
-      font-size: 1.1rem; line-height: 1;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transform: translateY(12px);
-      transition: opacity 0.25s, transform 0.25s, background-color 0.3s;
-      z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .back-to-top.visible { opacity: 1; transform: translateY(0); }
-    .back-to-top:hover { filter: brightness(1.15); }
-
-    .theme-toggle {
-      margin-left: auto;
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--rule);
-      background: transparent; cursor: pointer;
-      font-size: 1rem; line-height: 1;
-      display: flex; align-items: center; justify-content: center;
-      transition: border-color 0.15s, background-color 0.3s;
-      color: var(--text-dim, #5a544c);
-    }
-    .theme-toggle:hover { border-color: var(--brick); color: var(--brick); }
-
-    .skip-link {
-      position: absolute; top: -100%; left: 16px;
-      background: var(--brick); color: #fff;
-      padding: 8px 16px; border-radius: 0 0 4px 4px;
-      font-family: 'Courier Prime', monospace; font-size: 0.7rem;
-      z-index: 200; transition: top 0.15s ease;
-      text-decoration: none;
-    }
-    .skip-link:focus { top: 0; }
-    :focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
-
-    @media print {
-      .site-nav, .jump-nav, .jump-nav-wrap, .back-to-top,
-      .reading-progress, .theme-toggle, .site-footer, .page-footer { display: none !important; }
-      body { background: #fff !important; color: #000 !important; }
-    }
-    @media (max-width: 640px) {
-      .back-to-top { bottom: 18px; right: 18px; width: 36px; height: 36px; font-size: 0.95rem; }
-    }
-
-  
-    .feat-card {
-      background: var(--card-face);
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 14px 16px;
-      text-decoration: none;
-      color: inherit;
-      transition: box-shadow 0.15s, border-color 0.15s;
-    }
-    .feat-card:hover { border-color: var(--brick); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .footer-link { transition: color 0.15s; }
-    .footer-link:hover { color: var(--brick) !important; }
-      @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  
-    /* ── Search ── */
-    .search-wrap {
-      max-width: 520px; margin: 0 auto 28px; padding: 0 24px;
-    }
-    .search-box {
-      position: relative; width: 100%;
-    }
-    .search-input {
-      width: 100%; padding: 10px 14px 10px 36px;
-      font-family: var(--font-sans); font-size: 0.82rem; color: var(--text-primary);
-      background: var(--surface); border: 2px solid var(--brick); border-radius: 6px;
-      outline: none; transition: border-color .15s, box-shadow .15s;
-      box-sizing: border-box; box-shadow: 0 0 0 3px rgba(184,58,30,0.1);
-    }
-    .search-input::placeholder { color: var(--text-quiet); }
-    .search-input:focus { border-color: var(--brick); box-shadow: 0 0 0 4px rgba(184,58,30,0.18); }
-    .search-icon {
-      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
-      width: 16px; height: 16px; color: var(--text-quiet); pointer-events: none;
-    }
-    .search-results {
-      position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 200;
-      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1); display: none; overflow: hidden;
-      max-height: 340px; overflow-y: auto;
-    }
-    .search-results.is-visible { display: block; }
-    .sr-item {
-      display: block; padding: 10px 14px; text-decoration: none;
-      border-bottom: 1px solid var(--border); transition: background .1s;
-    }
-    .sr-item:last-child { border-bottom: none; }
-    .sr-item:hover { background: rgba(184,58,30,0.04); }
-    .sr-title { display: block; font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-size: 0.84rem; font-weight: 600; color: var(--text-primary); }
-    .sr-snippet { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-dim); margin-top: 2px; line-height: 1.4; }
-    .sr-snippet mark { background: rgba(184,58,30,0.15); color: inherit; border-radius: 2px; padding: 0 1px; }
-    .sr-empty { padding: 14px; font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-quiet); text-align: center; }
-    [data-theme="dark"] .search-results { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-
-    /* ── Category Filters ── */
-    .search-filters {
-      display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
-      max-width: 520px; margin: 0 auto 14px; padding: 0 24px;
-    }
-    .filter-pill {
-      font-family: var(--font-sans); font-size: 0.62rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 4px 10px; border-radius: 14px; border: 1.5px solid var(--border);
-      background: transparent; color: var(--text-dim); cursor: pointer;
-      transition: all 0.15s;
-    }
-    .filter-pill:hover { border-color: var(--brick); color: var(--brick); }
-    .filter-pill.active { background: var(--brick); border-color: var(--brick); color: #fff; }
-    .sr-cat {
-      display: inline-block; font-family: var(--font-sans); font-size: 0.56rem;
-      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--brick); margin-bottom: 2px;
-    }
-    .sr-score {
-      float: right; font-family: var(--font-mono); font-size: 0.58rem;
-      color: var(--text-quiet); opacity: 0.6;
-    }
-
-    /* QR expand */
-    .qr-thumb:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-
-
-  </style>
-
+  <link rel="stylesheet" href="/style.css">
   <script>
-    /* ── Dark mode ── */
     (function(){
       var html = document.documentElement;
       try {
@@ -735,890 +29,166 @@
       } catch(e) {}
     })();
   </script>
-  <noscript>
-    <style>
-      .acc-panel { grid-template-rows: 1fr !important; }
-      .acc-panel-inner { visibility: visible !important; }
-      @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  
-    </style>
-  </noscript>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://www.truthbased.org/",
-    "name": "TruthBased.org",
-    "description": "Independent fact-checking using primary sources and transparent methodology.",
-    "publisher": {
-      "@type": "Organization",
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.truthbased.org/",
       "name": "TruthBased.org",
-      "url": "https://www.truthbased.org"
+      "description": "Independent fact-checking using primary sources and transparent methodology.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TruthBased.org",
+        "url": "https://www.truthbased.org"
+      }
     }
-  }
   </script>
 </head>
 <body>
-
-  <div class="reading-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#content">Skip to content</a>
-
 
   <nav class="site-nav" aria-label="Site navigation">
     <div class="nav-left">
       <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
-      <span class="nav-tagline">Primary sources &mdash; no advocacy</span>
+      <a href="/methodology" class="nav-back">Methodology</a>
+      <a href="/support" class="nav-back">Support</a>
     </div>
-    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
   </nav>
 
+  <main id="content" class="home-wrap">
+    <header class="home-intro">
+      <h1 class="article-title">Independent fact-checking</h1>
+      <p class="article-deck">Primary-source research across science, history, politics, and media. Every claim backed by data. Every counterargument taken seriously. No agenda &mdash; just the evidence.</p>
+    </header>
 
-  <header class="page-hero">
-    <span class="hero-eyebrow">Independent Fact-Checking</span>
-    <h1 class="hero-title">The facts,<br><em>plainly stated.</em></h1>
-    <p class="hero-body">
-      Primary-source research across science, history, politics, and media.
-      Every claim backed by data. Every counterargument taken seriously.
-      No agenda — just the evidence.
-    </p>
-    <div class="hero-tags">
-      <span class="hero-tag">Primary sources only</span>
-      <span class="hero-tag">Confidence intervals shown</span>
-      <span class="hero-tag">Every counterargument tested</span>
-      <span class="hero-tag">Limitations disclosed</span>
-      <span class="hero-tag">No advertising</span>
-    </div>
-  </header>
-
-  <div class="search-filters" id="searchFilters">
-    <button class="filter-pill active" data-cat="all">All</button>
-    <button class="filter-pill" data-cat="Political Fact Check">Political</button>
-    <button class="filter-pill" data-cat="History">History</button>
-    <button class="filter-pill" data-cat="Economics">Economics</button>
-    <button class="filter-pill" data-cat="Science">Science</button>
-    <button class="filter-pill" data-cat="Violence">Violence</button>
-    <button class="filter-pill" data-cat="International">International</button>
-    <button class="filter-pill" data-cat="Curiosities">Curiosities</button>
-  </div>
-  <div class="search-wrap">
     <div class="search-box">
-      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input type="search" class="search-input" placeholder="Search articles and topics&hellip;" aria-label="Search articles">
+      <label for="site-search" class="sr-only">Search articles</label>
+      <input type="search" id="site-search" class="search-input" placeholder="Search articles and topics&hellip;" aria-label="Search articles" autocomplete="off">
       <div class="search-results" role="listbox"></div>
     </div>
-  </div>
 
-
-    <section class="featured-cards" style="max-width:940px; margin:0 auto 36px; padding:0 24px;">
-      <div id="feat-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;"></div>
+    <section class="home-section">
+      <h2>Political Fact Checks</h2>
+      <p class="home-section-desc">Claims politicians make, measured against the record</p>
+      <ul class="home-list">
+        <li><a href="/are-trans-people-more-likely-to-be-mass-shooters">Are Trans People Overrepresented as Mass Shooters?</a><span class="desc">Politicians and political organizations have used this claim to justify legislation targeting the trans community. Three databases, every definition, full sensitivity analysis — and the strongest opposing arguments tested against their own data.</span></li>
+        <li><a href="/is-voter-fraud-a-real-problem">Voter Fraud — The Documented Record</a><span class="desc">1,620 proven cases against 2.5 billion ballots. Every fraud type measured per capita. Every 2020 lawsuit outcome. The Fulton County FBI raid. And the only confirmed election law violation by a major political operation in Georgia's 2024 cycle — and who committed it.</span></li>
+        <li><a href="/is-there-really-a-border-crisis">Border Crossings — What The Charts Actually Show</a><span class="desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested.</span></li>
+        <li><a href="/does-more-policing-reduce-crime">Policing, Race &amp; Crime: What the Data Shows</a><span class="desc">FBI crime data, use-of-force studies, racial disparity in stops and shootings. The reform and law-and-order positions tested against primary evidence.</span></li>
+        <li><a href="/which-side-commits-more-political-violence">Political, Ideological &amp; Hate-Motivated Violence in the United States</a><span class="desc">A comprehensive analysis of far-right, far-left, Islamist, and religious violence alongside hate crimes by bias category. Every ideology examined using the same evidentiary standard. Confidence-rated throughout.</span></li>
+        <li><a href="/do-immigrants-commit-more-crime">Immigration and Crime: What the Data Actually Shows</a><span class="desc">Incarceration rates, Texas arrest data, 150 years of Census records, the European evidence — every major claim tested against primary sources.</span></li>
+        <li><a href="/are-lgbtq-people-more-likely-to-face-violence">Sexual Orientation, Gender Identity, and Crime</a><span class="desc">Per-capita crime data for every group — heterosexual men, heterosexual women, gay men, lesbian women, trans women, trans men. The UK prison infographic debunked. The gay predator myth debunked. LGBTQ+ victimization data.</span></li>
+        <li><a href="/does-the-death-penalty-deter-crime">The Death Penalty: Deterrence, Cost &amp; Racial Disparities</a><span class="desc">Does capital punishment deter murder? Is it cheaper than life imprisonment? Are there racial disparities? NRC, GAO, state audits, BJS, peer-reviewed studies.</span></li>
+        <li><a href="/who-commits-mass-shootings-in-america">Mass Shootings by Demographic</a><span class="desc">Per-capita rates by race and gender across three major databases. Socioeconomic confounders examined. Confidence intervals calculated for every group. Raw counts vs. rates distinguished throughout.</span></li>
+        <li><a href="/how-bad-is-the-national-debt">The National Debt — What Both Parties Actually Did</a><span class="desc">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses.</span></li>
+        <li><a href="/which-presidents-created-the-most-jobs">Job Creation Claims — Presidents vs. The Data</a><span class="desc">Every administration’s jobs record against BLS data — with context for policy lags, inherited recessions, and the Blinder-Watson “luck” finding.</span></li>
+      </ul>
     </section>
-    <script>
-      (function(){
-        var pool = [
-          { url:'/are-trans-people-more-likely-to-be-mass-shooters', title:'Trans People & Mass Shootings', desc:'Three databases. Every definition. Full sensitivity analysis.' },
-          { url:'/are-vaccines-safe-and-effective', title:'Vaccine Safety & Efficacy', desc:'23M+ children studied. 138 studies. VAERS explained. Every claim tested.' },
-          { url:'/is-there-really-a-border-crisis', title:'Border Crossings: The Real Data', desc:'25 years of CBP data. Title 42 explained. Every claim tested.' },
-          { url:'/is-voter-fraud-a-real-problem', title:'Voter Fraud \u2014 The Documented Record', desc:'1,620 proven cases against 2.5 billion ballots. Every 2020 lawsuit outcome.' },
-          { url:'/do-immigrants-commit-more-crime', title:'Immigration & Crime', desc:'Incarceration rates, Texas arrest data, 150 years of Census records.' },
-          { url:'/is-climate-change-real-and-human-caused', title:'Climate Change: The Data', desc:'IPCC AR6, NASA GISS, NOAA. Denial and alarmism tested against primary science.' },
-          { url:'/is-youth-gender-medicine-safe', title:'Youth Gender Medicine', desc:'Puberty blockers, hormones, surgeries. The Cass Review and counter-critiques.' },
-          { url:'/does-more-policing-reduce-crime', title:'Policing, Race & Crime', desc:'FBI crime data, use-of-force studies, racial disparity in stops and shootings.' },
-          { url:'/which-side-commits-more-political-violence', title:'Political & Hate-Motivated Violence', desc:'Far-right, far-left, Islamist, and hate crimes. Every ideology examined.' },
-          { url:'/are-lgbtq-people-more-likely-to-face-violence', title:'LGBTQ+ People & Violence', desc:'Per-capita crime data for every group. UK prison myth debunked. Victimization data.' },
-          { url:'/does-the-death-penalty-deter-crime', title:'The Death Penalty', desc:'Deterrence, cost, and racial disparities. NRC, GAO, state audits, BJS.' },
-          { url:'/who-commits-mass-shootings-in-america', title:'Mass Shootings by Demographic', desc:'Per-capita rates by race and gender. Socioeconomic confounders. Confidence intervals.' },
-          { url:'/is-the-gender-wage-gap-real', title:'The Gender Wage Gap', desc:'The raw 77-cent figure vs. the adjusted gap. Audit studies on discrimination.' },
-          { url:'/what-actually-causes-inflation', title:'What Causes Inflation?', desc:'CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, energy decomposed.' },
-          { url:'/does-gun-control-reduce-violence', title:'U.S. Gun Violence vs. Peer Nations', desc:'OECD firearm death rates. CDC data. RAND policy evidence.' },
-          { url:'/does-raising-the-minimum-wage-kill-jobs', title:'Minimum Wage & Jobs', desc:'Employment effects, poverty, prices. Card & Krueger, CBO, Dube, Neumark.' },
-          { url:'/is-ultra-processed-food-bad-for-you', title:'Ultra-Processed Food', desc:'The NIH feeding trial. 45 cohort studies. NOVA classification. Mechanisms contested.' },
-          { url:'/does-social-media-harm-teenagers-mental-health', title:'Social Media & Youth Mental Health', desc:'CDC YRBS, ABCD, meta-analyses. Haidt vs. Odgers. Effect sizes disclosed.' },
-          { url:'/was-hitler-actually-a-socialist', title:'Was Hitler a Socialist?', desc:'The party name, privatization data, and what happened to actual socialists.' },
-          { url:'/did-the-us-political-parties-switch', title:'Did the Parties Switch?', desc:'Roll-call votes by region, Black voter timeline, congressional seats 1960\u20132020.' },
-          { url:'/was-the-dress-blue-and-black-or-white-and-gold', title:'The Dress \u2014 Blue or Gold?', desc:'The neuroscience of color constancy, Bayesian inference, and shared reality.' },
-          { url:'/is-the-mandela-effect-real', title:'The Mandela Effect', desc:'Why millions share identical false memories. Neuroscience of reconstructive memory.' },
-          { url:'/does-hot-water-freeze-faster-than-cold', title:'The Mpemba Effect', desc:'Observed since Aristotle. Debated for 60 years. Real but condition-dependent.' },
-          { url:'/how-bad-is-the-national-debt', title:'The National Debt', desc:'Deficit spending by administration. CBO and Treasury data. No selective framing.' },
-          { url:'/which-presidents-created-the-most-jobs', title:'Presidential Job Creation', desc:'BLS nonfarm payroll data by administration. Policy lags and inherited recessions.' },
-          { url:'/where-does-us-federal-spending-go', title:'U.S. Federal Spending', desc:'FY2026 budget breakdown. Social Security, Medicare, defense, net interest.' },
-          { url:'/which-countries-are-the-most-educated', title:'Most Educated Countries', desc:'47-country ranking. Access vs. performance paradox. Gender gaps. Full methodology.' },
-          { url:'/are-religious-countries-better-off', title:'Religion & Social Outcomes', desc:'Crime, charity, wellbeing, social trust across religious and secular populations.' },
-          { url:'/does-religion-cause-violence', title:'Religion & Violence', desc:'Historical wars, terrorism lethality, sectarian violence. The actual numbers.' },
-          { url:'/is-college-still-worth-it', title:'Is College Still Worth It?', desc:'Wage premiums, debt loads, ROI by major, graduation rates, and AI disruption.' },
-          { url:'/do-tariffs-bring-back-manufacturing-jobs', title:'Tariffs & Manufacturing', desc:'Every episode measured by jobs saved, jobs lost, cost per job, consumer prices.' },
-          { url:'/what-does-the-record-show-about-columbus', title:'Columbus \u2014 The Record', desc:'The flat-Earth myth, journal entries, Hispaniola data, Washington Irving.' },
-          { url:'/what-do-gender-affirming-care-patients-say', title:'Gender-Affirming Care: Patient Voices', desc:'What recipients and detransitioners report. Published qualitative research.' }
-        ];
-        /* Daily-seeded shuffle: same three picks per UTC day for all visitors.
-           UTC day number seeds a mulberry32 PRNG driving Fisher-Yates.
-           Rotates at 00:00 UTC (19:00 Jamaica). */
-        var seed = Math.floor(Date.now() / 86400000);
-        function mulberry32(a){
-          return function(){
-            var t = a += 0x6D2B79F5;
-            t = Math.imul(t ^ t >>> 15, t | 1);
-            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
-            return ((t ^ t >>> 16) >>> 0) / 4294967296;
-          };
-        }
-        var rng = mulberry32(seed);
-        for (var i = pool.length - 1; i > 0; i--) {
-          var j = Math.floor(rng() * (i + 1));
-          var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
-        }
-        var picks = pool.slice(0, 3);
-        var grid = document.getElementById('feat-grid');
-        if (!grid) return;
-        grid.innerHTML = picks.map(function(a){
-          return '<a href="' + a.url + '" class="feat-card">' +
-            '<span style="font-family:\'Courier Prime\',monospace; font-size:0.6rem; color:var(--green-live); background:var(--green-faint); padding:2px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.08em;">Live</span>' +
-            '<span style="display:block; font-family:\'Spectral\',serif; font-size:0.95rem; font-weight:600; margin:8px 0 4px; color:var(--text-primary);">' + a.title + '</span>' +
-            '<span style="font-size:0.76rem; color:var(--text-dim); line-height:1.4;">' + a.desc + '</span></a>';
-        }).join('');
-      })();
-    </script>
 
+    <section class="home-section">
+      <h2>History &amp; Myth-Busting</h2>
+      <p class="home-section-desc">Things everyone "knows," tested against primary documents</p>
+      <ul class="home-list">
+        <li><a href="/was-hitler-actually-a-socialist">Was Hitler Actually a Socialist?</a><span class="desc">The party name, Hitler's own words, privatization data, the Night of the Long Knives, and what happened to actual socialists.</span></li>
+        <li><a href="/did-the-us-political-parties-switch">Did the U.S. Political Parties Switch?</a><span class="desc">Roll-call votes by region, Black voter data, congressional seats 1960-2020, and the Southern Strategy in the architects' own words.</span></li>
+        <li><a href="/what-does-the-record-show-about-columbus">What Does the Record Actually Show About Columbus?</a><span class="desc">The flat-Earth myth debunked, Columbus's journal entries, Hispaniola data, and how Washington Irving built the myth.</span></li>
+      </ul>
+    </section>
 
-  <div class="section-row" aria-hidden="true">
-    <span class="section-row-label">Browse by category</span>
-    <div class="section-row-line"></div>
-  </div>
+    <section class="home-section">
+      <h2>Science &amp; Perception</h2>
+      <p class="home-section-desc">Viral phenomena explained with primary source neuroscience and physics</p>
+      <ul class="home-list">
+        <li><a href="/was-the-dress-blue-and-black-or-white-and-gold">The Dress — White &amp; Gold or Blue &amp; Black?</a><span class="desc">The same pixels. Two completely different colors. The neuroscience of color constancy, Bayesian inference, and what it means for shared reality.</span></li>
+        <li><a href="/is-the-mandela-effect-real">The Mandela Effect — Mass False Memory or Something Else?</a><span class="desc">Berenstain or Berenstein? Did the Monopoly man have a monocle? Why millions share the same vivid, confident, wrong memories — and what that reveals about the mind.</span></li>
+        <li><a href="/does-hot-water-freeze-faster-than-cold">The Mpemba Effect — Does Hot Water Freeze Faster Than Cold?</a><span class="desc">Aristotle noticed it in 350 BCE. A Tanzanian student rediscovered it in 1963. Sixty years of modern physics later, the answer is still contested — and more interesting than either side admits.</span></li>
+      </ul>
+    </section>
 
+    <section class="home-section">
+      <h2>Science &amp; Media Accuracy</h2>
+      <p class="home-section-desc">What studies actually say vs. how they get reported</p>
+      <ul class="home-list">
+        <li><a href="/is-climate-change-real-and-human-caused">Climate Change: The Science and the Data</a><span class="desc">What the IPCC actually projects. Temperature records, sea level, attribution science. Climate denial and alarmist overclaiming tested against the primary data.</span></li>
+      </ul>
+    </section>
 
-  <main class="accordion-wrap" id="content">
+    <section class="home-section">
+      <h2>Economics &amp; Policy</h2>
+      <p class="home-section-desc">Contested economic claims vs. BLS, CBO, and peer-reviewed data</p>
+      <ul class="home-list">
+        <li><a href="/is-the-gender-wage-gap-real">The Gender Wage Gap: What the Data Actually Shows</a><span class="desc">The raw 77-cent figure vs. the adjusted gap. What each statistic actually measures, what causes the residual gap, and what neither side in the debate gets right.</span></li>
+        <li><a href="/what-actually-causes-inflation">U.S. Inflation (2021–2026): Causes, Drivers, and International Context</a><span class="desc">CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, and energy decomposed. International comparison. Federal Reserve response.</span></li>
+        <li><a href="/where-does-us-federal-spending-go">U.S. Federal Spending: Where the Money Goes</a><span class="desc">FY2026 budget breakdown. Social Security, Medicare, defense, and net interest explained. The debt trajectory and what CBO projects.</span></li>
+        <li><a href="/is-college-still-worth-it">Is College Still Worth the Cost?</a><span class="desc">Wage premiums, tuition trajectory, debt loads, graduation rates, ROI by major and institution, and the AI disruption question. with BLS, Census, and Scorecard data.</span></li>
+        <li><a href="/do-tariffs-bring-back-manufacturing-jobs">Do Tariffs Help U.S. Manufacturing?</a><span class="desc">Steel, tires, China, and the 2025 escalation — every episode measured by jobs saved, jobs lost downstream, cost per job, consumer prices, and trade deficit impact.</span></li>
+        <li><a href="/does-raising-the-minimum-wage-kill-jobs">Does Raising the Minimum Wage Kill Jobs?</a><span class="desc">Employment effects, poverty, prices, small businesses, automation — the strongest evidence from named studies. Card &amp; Krueger, CBO, Dube, Neumark.</span></li>
+      </ul>
+    </section>
 
+    <section class="home-section">
+      <h2>Health &amp; Medicine</h2>
+      <p class="home-section-desc">Medical statistics and health claims vs. peer-reviewed evidence</p>
+      <ul class="home-list">
+        <li><a href="/is-youth-gender-medicine-safe">Gender-Affirming Care for Minors — What the Evidence Shows</a><span class="desc">Puberty blockers, hormones, and surgeries — every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows.</span></li>
+        <li><a href="/are-vaccines-safe-and-effective">Vaccine Safety &amp; Efficacy: What the Data Actually Shows</a><span class="desc">Over 23 million children studied across 138 studies. No link to autism. Real but rare adverse events. COVID vaccine trials, myocarditis rates, VAERS vs V-safe, childhood schedule debate.</span></li>
+        <li><a href="/is-ultra-processed-food-bad-for-you">Ultra-Processed Food: What the Research Actually Shows</a><span class="desc">The NIH feeding trial. 45 cohort studies. NOVA classification explained. Mechanisms proposed and contested. The strongest arguments on each side tested.</span></li>
+        <li><a href="/does-social-media-harm-teenagers-mental-health">Social Media &amp; Youth Mental Health</a><span class="desc">Is social media destroying a generation? CDC YRBS, NHS Digital, ABCD, meta-analyses, natural experiments. Effect sizes disclosed. Haidt vs. Odgers.</span></li>
+      </ul>
+    </section>
 
+    <section class="home-section">
+      <h2>Religion &amp; Society</h2>
+      <p class="home-section-desc">Measurable claims about religiosity and social outcomes</p>
+      <ul class="home-list">
+        <li><a href="/are-religious-countries-better-off">Does Religiosity Correlate With Better Social Outcomes?</a><span class="desc">Crime rates, social trust, wellbeing, charitable giving, education — what Pew Research, Gallup, Harvard longitudinal cohorts, and dozens of meta-analyses actually find when comparing more and less religious populations. The answer depends on whether you measure individuals or societies.</span></li>
+        <li><a href="/does-religion-cause-violence">Religion and Violence — Parsing the Actual Numbers</a><span class="desc">Claims about religiously motivated conflict measured against terrorism databases, historical records, war encyclopedias, and peer-reviewed conflict research. How researchers define and count religious motivation — and what happens when you control for poverty, state weakness, and political exclusion.</span></li>
+      </ul>
+    </section>
 
-    <!-- ── 01 Political Fact Checks ──────────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-01" id="trigger-01">
-        <span class="acc-num">01</span>
-        <span class="acc-label">Political Fact Checks</span>
-        <span class="acc-meta">Claims politicians make, measured against the record</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-01" aria-labelledby="trigger-01">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
+    <section class="home-section">
+      <h2>International Comparisons</h2>
+      <p class="home-section-desc">How U.S. outcomes compare globally</p>
+      <ul class="home-list">
+        <li><a href="/does-gun-control-reduce-violence">U.S. Gun Violence vs. Peer Nations</a><span class="desc">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states.</span></li>
+        <li><a href="/which-countries-are-the-most-educated">Most Educated Countries in the World — The Full Ranking</a><span class="desc">47 countries ranked by tertiary attainment using OECD Education at a Glance 2025. What each top-third nation specifically excels in. The paradox where more years of schooling doesn't mean better outcomes. Gender gaps, spending efficiency, and the bottom third.</span></li>
+      </ul>
+    </section>
 
-              <a class="article-row" href="/are-trans-people-more-likely-to-be-mass-shooters">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Are Trans People Overrepresented as Mass Shooters?</span>
-                  <span class="row-desc">Politicians and political organizations have used this claim to justify legislation targeting the trans community. Three databases, every definition, full sensitivity analysis — and the strongest opposing arguments tested against their own data.</span>
-                  <div class="row-sources">
-                    <span class="sources-label">Primary sources</span>
-                    <ul class="sources-list">
-                      <li>Gun Violence Archive (GVA) — N=5,900+, 2013–2026</li>
-                      <li>Violence Prevention Project — strict definition, through 2024</li>
-                      <li>Mother Jones mass shootings database — 1982–2025</li>
-                      <li>Williams Institute — Trans population estimates (August 2025)</li>
-                      <li>FBI Active Shooter Incidents Report 2024</li>
-                      <li>CPRC / John Lott — opposing claim, tested and examined</li>
-                      <li>FactCheck.org, PolitiFact, Snopes — independent verification</li>
-                      <li>ADL, GLAAD, Human Rights Campaign</li>
-                    </ul>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a class="article-row" href="/is-voter-fraud-a-real-problem">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Voter Fraud — The Documented Record</span>
-                  <span class="row-desc">1,620 proven cases against 2.5 billion ballots. Every fraud type measured per capita. Every 2020 lawsuit outcome. The Fulton County FBI raid. And the only confirmed election law violation by a major political operation in Georgia's 2024 cycle — and who committed it.</span>
-                  <div class="row-sources">
-                    <span class="sources-label">Primary sources</span>
-                    <ul class="sources-list">
-                      <li>Heritage Foundation Election Fraud Database — 1,620 cases, Dec 2025</li>
-                      <li>Brennan Center for Justice — voter fraud research, 2017–2024</li>
-                      <li>DOJ Public Integrity Section — prosecution data &amp; 2023 report</li>
-                      <li>CISA — "Most secure election in American history" (Nov 12, 2020)</li>
-                      <li>Georgia State Election Board — America PAC reprimand (Feb 18, 2026)</li>
-                      <li>MIT Election Lab, Brookings Institution, Cato Institute, GAO</li>
-                      <li>60+ 2020 election lawsuit court records across 12 states</li>
-                    </ul>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/is-there-really-a-border-crisis" class="article-row" style="text-decoration:none;color:inherit;">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Border Crossings — What The Charts Actually Show</span>
-                  <span class="row-desc">25 years of CBP encounter data. Title 42 recidivism inflation quantified. Methodology changes that break every comparison. Every major political claim tested.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">CBP Encounter Data</span>
-                    <span class="source-pill">Pew Research</span>
-                    <span class="source-pill">CBO 2024</span>
-                    <span class="source-pill">MPI</span>
-                    <span class="source-pill">TRAC Syracuse</span>
-                    <span class="source-pill">Cato Institute</span>
-                  </div>
-                </div>
-              </a>
-
-              <a href="/does-more-policing-reduce-crime" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Policing, Race &amp; Crime: What the Data Shows</span>
-                  <span class="row-desc">FBI crime data, use-of-force studies, racial disparity in stops and shootings. The reform and law-and-order positions tested against primary evidence.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">FBI UCR</span>
-                    <span class="source-pill">BJS</span>
-                    <span class="source-pill">Knox et al.</span>
-                    <span class="source-pill">Fryer 2016</span>
-                    <span class="source-pill">Roland Fryer</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-              <a href="/which-side-commits-more-political-violence" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Political, Ideological &amp; Hate-Motivated Violence in the United States</span>
-                  <span class="row-desc">A comprehensive analysis of far-right, far-left, Islamist, and religious violence alongside hate crimes by bias category. Every ideology examined using the same evidentiary standard. Confidence-rated throughout.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">FBI UCR</span>
-                    <span class="source-pill">New America</span>
-                    <span class="source-pill">CSIS</span>
-                    <span class="source-pill">ADL</span>
-                    <span class="source-pill">ACLED</span>
-                    <span class="source-pill">Kurzman (UNC)</span>
-                  </div>
-                </div>
-              </a>
-
-              <a href="/do-immigrants-commit-more-crime" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Immigration and Crime: What the Data Actually Shows</span>
-                  <span class="row-desc">Incarceration rates, Texas arrest data, 150 years of Census records, the European evidence — every major claim tested against primary sources.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Cato ACS 2023</span>
-                    <span class="source-pill">Light et al. (PNAS)</span>
-                    <span class="source-pill">Abramitzky (NBER)</span>
-                    <span class="source-pill">Texas DPS</span>
-                    <span class="source-pill">Pew / PRRI</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/are-lgbtq-people-more-likely-to-face-violence" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Sexual Orientation, Gender Identity, and Crime</span>
-                  <span class="row-desc">Per-capita crime data for every group — heterosexual men, heterosexual women, gay men, lesbian women, trans women, trans men. The UK prison infographic debunked. The gay predator myth debunked. LGBTQ+ victimization data.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">BJS / FBI UCR</span>
-                    <span class="source-pill">UK HMPPS</span>
-                    <span class="source-pill">Canada CSC R-442</span>
-                    <span class="source-pill">Dhejne (PLoS One)</span>
-                    <span class="source-pill">Jenny (Pediatrics)</span>
-                    <span class="source-pill">Williams Institute</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/does-the-death-penalty-deter-crime" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">The Death Penalty: Deterrence, Cost &amp; Racial Disparities</span>
-                  <span class="row-desc">Does capital punishment deter murder? Is it cheaper than life imprisonment? Are there racial disparities? NRC, GAO, state audits, BJS, peer-reviewed studies.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">NRC (2012)</span>
-                    <span class="source-pill">U.S. GAO</span>
-                    <span class="source-pill">BJS</span>
-                    <span class="source-pill">Donohue &amp; Wolfers</span>
-                    <span class="source-pill">Baldus (McCleskey)</span>
-                    <span class="source-pill">DPIC</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/who-commits-mass-shootings-in-america" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Mass Shootings by Demographic</span>
-                  <span class="row-desc">Per-capita rates by race and gender across three major databases. Socioeconomic confounders examined. Confidence intervals calculated for every group. Raw counts vs. rates distinguished throughout.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Gun Violence Archive</span>
-                    <span class="source-pill">Mother Jones</span>
-                    <span class="source-pill">Violence Project</span>
-                    <span class="source-pill">Census Bureau</span>
-                  </div>
-                </div>
-              </a>
-
-              <a href="/how-bad-is-the-national-debt" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">The National Debt &mdash; What Both Parties Actually Did</span>
-                  <span class="row-desc">Deficit spending by administration, by Congress, and by policy area. CBO and Treasury data without the selective framing either party uses.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">OMB Historical Tables</span>
-                    <span class="source-pill">CBO Outlook 2025</span>
-                    <span class="source-pill">Treasury FiscalData</span>
-                    <span class="source-pill">FRED</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/which-presidents-created-the-most-jobs" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Job Creation Claims &mdash; Presidents vs. The Data</span>
-                  <span class="row-desc">Every administration&rsquo;s jobs record against BLS data &mdash; with context for policy lags, inherited recessions, and the Blinder-Watson &ldquo;luck&rdquo; finding.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">BLS CES (PAYEMS)</span>
-                    <span class="source-pill">NBER</span>
-                    <span class="source-pill">Blinder &amp; Watson 2016</span>
-                    <span class="source-pill">CBO/JCT</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ── 02 History & Myth-Busting ─────────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-02" id="trigger-02">
-        <span class="acc-num">02</span>
-        <span class="acc-label">History &amp; Myth-Busting</span>
-        <span class="acc-meta">Things everyone "knows," tested against primary documents</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-02" aria-labelledby="trigger-02">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a class="article-row" href="/was-hitler-actually-a-socialist">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Was Hitler Actually a Socialist?</span>
-                  <span class="row-desc">The party name, Hitler's own words, privatization data, the Night of the Long Knives, and what happened to actual socialists.</span>
-                </div>
-              </a>
-
-              <a class="article-row" href="/did-the-us-political-parties-switch">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Did the U.S. Political Parties Switch?</span>
-                  <span class="row-desc">Roll-call votes by region, Black voter data, congressional seats 1960-2020, and the Southern Strategy in the architects' own words.</span>
-                </div>
-              </a>
-
-              <a class="article-row" href="/what-does-the-record-show-about-columbus">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">What Does the Record Actually Show About Columbus?</span>
-                  <span class="row-desc">The flat-Earth myth debunked, Columbus's journal entries, Hispaniola data, and how Washington Irving built the myth.</span>
-                </div>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ── 03 Science & Perception ───────────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-03" id="trigger-03">
-        <span class="acc-num">03</span>
-        <span class="acc-label">Science &amp; Perception</span>
-        <span class="acc-meta">Viral phenomena explained with primary source neuroscience and physics</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-03" aria-labelledby="trigger-03">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a href="/was-the-dress-blue-and-black-or-white-and-gold" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">The Dress &mdash; White &amp; Gold or Blue &amp; Black?</span>
-                  <span class="row-desc">The same pixels. Two completely different colors. The neuroscience of color constancy, Bayesian inference, and what it means for shared reality.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Lafer-Sousa et al. 2015</span>
-                    <span class="source-pill">Wallisch 2017</span>
-                    <span class="source-pill">Melgosa et al. 2015</span>
-                    <span class="source-pill">Roman Originals</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/is-the-mandela-effect-real" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">The Mandela Effect &mdash; Mass False Memory or Something Else?</span>
-                  <span class="row-desc">Berenstain or Berenstein? Did the Monopoly man have a monocle? Why millions share the same vivid, confident, wrong memories &mdash; and what that reveals about the mind.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Loftus &amp; Palmer 1974</span>
-                    <span class="source-pill">Roediger &amp; McDermott 1995</span>
-                    <span class="source-pill">YouGov 2022</span>
-                    <span class="source-pill">Valle et al. 2025</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/does-hot-water-freeze-faster-than-cold" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">The Mpemba Effect &mdash; Does Hot Water Freeze Faster Than Cold?</span>
-                  <span class="row-desc">Aristotle noticed it in 350 BCE. A Tanzanian student rediscovered it in 1963. Sixty years of modern physics later, the answer is still contested &mdash; and more interesting than either side admits.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Mpemba &amp; Osborne 1969</span>
-                    <span class="source-pill">Burridge &amp; Linden 2016</span>
-                    <span class="source-pill">RSC Applied Interfaces 2026</span>
-                    <span class="source-pill">Aristotle 350 BCE</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── 04 Science & Media Accuracy ───────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-04" id="trigger-04">
-        <span class="acc-num">04</span>
-        <span class="acc-label">Science &amp; Media Accuracy</span>
-        <span class="acc-meta">What studies actually say vs. how they get reported</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-04" aria-labelledby="trigger-04">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a href="/is-climate-change-real-and-human-caused" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Climate Change: The Science and the Data</span>
-                  <span class="row-desc">What the IPCC actually projects. Temperature records, sea level, attribution science. Climate denial and alarmist overclaiming tested against the primary data.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">IPCC AR6</span>
-                    <span class="source-pill">NASA GISS</span>
-                    <span class="source-pill">NOAA</span>
-                    <span class="source-pill">Berkeley Earth</span>
-                    <span class="source-pill">HadCRUT5</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ── 05 Economics & Policy ─────────────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-05" id="trigger-05">
-        <span class="acc-num">05</span>
-        <span class="acc-label">Economics &amp; Policy</span>
-        <span class="acc-meta">Contested economic claims vs. BLS, CBO, and peer-reviewed data</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-05" aria-labelledby="trigger-05">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a href="/is-the-gender-wage-gap-real" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">The Gender Wage Gap: What the Data Actually Shows</span>
-                  <span class="row-desc">The raw 77-cent figure vs. the adjusted gap. What each statistic actually measures, what causes the residual gap, and what neither side in the debate gets right.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">BLS ATUS</span>
-                    <span class="source-pill">OECD 2023</span>
-                    <span class="source-pill">Goldin 2014</span>
-                    <span class="source-pill">Audit studies</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-              <a href="/what-actually-causes-inflation" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">U.S. Inflation (2021–2026): Causes, Drivers, and International Context</span>
-                  <span class="row-desc">CPI timeline from 0.3% to 9.1% and back. Supply chain, stimulus, and energy decomposed. International comparison. Federal Reserve response.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">BLS CPI-U</span>
-                    <span class="source-pill">Fed FRED</span>
-                    <span class="source-pill">CBO</span>
-                    <span class="source-pill">OECD</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-              <a href="/where-does-us-federal-spending-go" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">U.S. Federal Spending: Where the Money Goes</span>
-                  <span class="row-desc">FY2026 budget breakdown. Social Security, Medicare, defense, and net interest explained. The debt trajectory and what CBO projects.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">CBO Jan 2026</span>
-                    <span class="source-pill">OMB</span>
-                    <span class="source-pill">Treasury</span>
-                    <span class="source-pill">Tax Foundation</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/is-college-still-worth-it" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Is College Still Worth the Cost?</span>
-                  <span class="row-desc">Wage premiums, tuition trajectory, debt loads, graduation rates, ROI by major and institution, and the AI disruption question. with BLS, Census, and Scorecard data.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">BLS 2024</span>
-                    <span class="source-pill">College Board 2025</span>
-                    <span class="source-pill">NY Fed</span>
-                    <span class="source-pill">Georgetown CEW</span>
-                    <span class="source-pill">FREOPP ROI</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/do-tariffs-bring-back-manufacturing-jobs" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Do Tariffs Help U.S. Manufacturing?</span>
-                  <span class="row-desc">Steel, tires, China, and the 2025 escalation &mdash; every episode measured by jobs saved, jobs lost downstream, cost per job, consumer prices, and trade deficit impact.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">USITC</span>
-                    <span class="source-pill">Fed (Flaaen/Pierce)</span>
-                    <span class="source-pill">CBO</span>
-                    <span class="source-pill">PIIE</span>
-                    <span class="source-pill">Yale Budget Lab</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/does-raising-the-minimum-wage-kill-jobs" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Does Raising the Minimum Wage Kill Jobs?</span>
-                  <span class="row-desc">Employment effects, poverty, prices, small businesses, automation &mdash; the strongest evidence from named studies. Card &amp; Krueger, CBO, Dube, Neumark.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Card &amp; Krueger</span>
-                    <span class="source-pill">CBO (2023)</span>
-                    <span class="source-pill">Dube et al.</span>
-                    <span class="source-pill">Neumark &amp; Wascher</span>
-                    <span class="source-pill">Seattle UW</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ── 06 Health & Medicine ──────────────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-06" id="trigger-06">
-        <span class="acc-num">06</span>
-        <span class="acc-label">Health &amp; Medicine</span>
-        <span class="acc-meta">Medical statistics and health claims vs. peer-reviewed evidence</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-06" aria-labelledby="trigger-06">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a href="/is-youth-gender-medicine-safe" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Gender-Affirming Care for Minors &mdash; What the Evidence Shows</span>
-                  <span class="row-desc">Puberty blockers, hormones, and surgeries &mdash; every major study, the Cass Review, counter-critiques, international policy splits, and what the data actually shows.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">WPATH SOC8</span>
-                    <span class="source-pill">Cass Review</span>
-                    <span class="source-pill">AAP</span>
-                    <span class="source-pill">Endocrine Society</span>
-                    <span class="source-pill">Tordoff 2022</span>
-                    <span class="source-pill">Yale Law</span>
-                    <span class="source-pill">Trevor Project</span>
-                  </div>
-                </div>
-              </a>
-
-              
-              <a class="article-row" href="/are-vaccines-safe-and-effective">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Vaccine Safety &amp; Efficacy: What the Data Actually Shows</span>
-                  <span class="row-desc">Over 23 million children studied across 138 studies. No link to autism. Real but rare adverse events. COVID vaccine trials, myocarditis rates, VAERS vs V-safe, childhood schedule debate. </span>
-                  <div class="row-sources">
-                    <span class="sources-label">Primary sources</span>
-                    <ul class="sources-list">
-                      <li>Cochrane Systematic Review (2021) &mdash; 138 studies, 23M+ children</li>
-                      <li>Hviid et al. (2019, Ann Intern Med) &mdash; 657,461 Danish children</li>
-                      <li>Jain et al. (2015, JAMA) &mdash; 95,727 U.S. children</li>
-                      <li>CDC VSD, VAERS, V-safe surveillance systems</li>
-                      <li>Pfizer &amp; Moderna Phase 3 trials (73,968 participants)</li>
-                      <li>Brighton Collaboration standardized case definitions</li>
-                      <li>IOM/National Academies 2013 Schedule Review</li>
-                      <li>WHO GACVS vaccine safety assessments</li>
-                    </ul>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-              <a href="/is-ultra-processed-food-bad-for-you" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Ultra-Processed Food: What the Research Actually Shows</span>
-                  <span class="row-desc">The NIH feeding trial. 45 cohort studies. NOVA classification explained. Mechanisms proposed and contested. The strongest arguments on each side tested.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Hall et al. 2019</span>
-                    <span class="source-pill">NOVA</span>
-                    <span class="source-pill">NutriNet</span>
-                    <span class="source-pill">BMJ meta-analyses</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-              <a href="/does-social-media-harm-teenagers-mental-health" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Social Media &amp; Youth Mental Health</span>
-                  <span class="row-desc">Is social media destroying a generation? CDC YRBS, NHS Digital, ABCD, meta-analyses, natural experiments. Effect sizes disclosed. Haidt vs. Odgers.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">CDC YRBS</span>
-                    <span class="source-pill">ABCD (Nagata 2025)</span>
-                    <span class="source-pill">Braghieri (AER 2022)</span>
-                    <span class="source-pill">Orben &amp; Przybylski</span>
-                    <span class="source-pill">Surgeon General</span>
-                  </div>
-                </div>
-                <span class="row-arrow">&#8594;</span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ── 07 Religion & Society ─────────────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-07" id="trigger-07">
-        <span class="acc-num">07</span>
-        <span class="acc-label">Religion &amp; Society</span>
-        <span class="acc-meta">Measurable claims about religiosity and social outcomes</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-07" aria-labelledby="trigger-07">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a href="/are-religious-countries-better-off" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Does Religiosity Correlate With Better Social Outcomes?</span>
-                  <span class="row-desc">Crime rates, social trust, wellbeing, charitable giving, education — what Pew Research, Gallup, Harvard longitudinal cohorts, and dozens of meta-analyses actually find when comparing more and less religious populations. The answer depends on whether you measure individuals or societies.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">Pew Research</span>
-                    <span class="source-pill">Gallup</span>
-                    <span class="source-pill">Harvard T.H. Chan</span>
-                    <span class="source-pill">Meta-analyses</span>
-                  </div>
-                </div>
-              </a>
-
-              <a href="/does-religion-cause-violence" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Religion and Violence — Parsing the Actual Numbers</span>
-                  <span class="row-desc">Claims about religiously motivated conflict measured against terrorism databases, historical records, war encyclopedias, and peer-reviewed conflict research. How researchers define and count religious motivation — and what happens when you control for poverty, state weakness, and political exclusion.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">START GTD</span>
-                    <span class="source-pill">Correlates of War</span>
-                    <span class="source-pill">PRIO</span>
-                    <span class="source-pill">FBI UCR</span>
-                  </div>
-                </div>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- ── 08 International Comparisons ──────────────────────────── -->
-    <div class="acc-item" data-acc>
-      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-08" id="trigger-08">
-        <span class="acc-num">08</span>
-        <span class="acc-label">International Comparisons</span>
-        <span class="acc-meta">How U.S. outcomes compare globally</span>
-        <span class="acc-icon" aria-hidden="true"></span>
-      </button>
-      <div class="acc-panel" role="region" id="panel-08" aria-labelledby="trigger-08">
-        <div class="acc-panel-inner">
-          <div class="acc-content">
-            <div class="article-list">
-
-              <a href="/does-gun-control-reduce-violence" class="article-row" style="text-decoration:none;color:inherit;">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">U.S. Gun Violence vs. Peer Nations</span>
-                  <span class="row-desc">Per-capita firearm death rates across OECD nations. Homicide and suicide decomposed. Mass shooting frequency. Ownership correlations. Policy evidence from Australia, the UK, and U.S. states.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">CDC WONDER</span>
-                    <span class="source-pill">WHO</span>
-                    <span class="source-pill">UNODC</span>
-                    <span class="source-pill">Small Arms Survey</span>
-                    <span class="source-pill">RAND 2023</span>
-                    <span class="source-pill">FBI UCR</span>
-                  </div>
-                </div>
-              </a>
-
-              <a href="/which-countries-are-the-most-educated" class="article-row">
-                <span class="row-status live">&#9679; Live</span>
-                <div class="row-body">
-                  <span class="row-title">Most Educated Countries in the World — The Full Ranking</span>
-                  <span class="row-desc">47 countries ranked by tertiary attainment using OECD Education at a Glance 2025. What each top-third nation specifically excels in. The paradox where more years of schooling doesn't mean better outcomes. Gender gaps, spending efficiency, and the bottom third.</span>
-                  <div class="row-sources">
-                    <span class="source-pill">OECD EaG 2025</span>
-                    <span class="source-pill">UNESCO</span>
-                    <span class="source-pill">World Bank</span>
-                  </div>
-                </div>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <p class="home-method">How this site works: primary sources only, every counterargument tested, sensitivity analysis on every assumption, limitations disclosed. <a href="/methodology">Read the methodology.</a></p>
   </main>
 
-
-  <!-- Methodology -->
-  <section class="method-section" aria-label="Our methodology">
-    <div class="method-inner">
-      <h2 class="method-title"><a href="/methodology" style="color:inherit;text-decoration:none;">How this site works <span style="font-size:0.7em;color:var(--brick);">&rarr;</span></a></h2>
-      <div class="method-grid">
-        <div>
-          <p class="method-item-title">Primary sources only</p>
-          <p class="method-item-body">FBI, CDC, Census Bureau, peer-reviewed journals. No aggregators, no op-eds — only the underlying data, cited directly on every page.</p>
-        </div>
-        <div>
-          <p class="method-item-title">Testing every counterargument</p>
-          <p class="method-item-body">Every opposing argument is presented with its strongest supporting evidence before being addressed. No strawmanning, no selective quotation.</p>
-        </div>
-        <div>
-          <p class="method-item-title">Sensitivity analysis</p>
-          <p class="method-item-body">Every assumption is tested. Results shown under multiple definitions, time windows, and denominators — so you can see how robust each conclusion actually is.</p>
-        </div>
-        <div>
-          <p class="method-item-title">Honest about limits</p>
-          <p class="method-item-body">Wide confidence intervals are shown, not hidden. Data gaps are named. What the evidence can't establish matters as much as what it can.</p>
-        </div>
-      </div>
+  <div class="support-note">
+      <p>If you value data-driven fact-checking, consider supporting TruthBased.org via <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer">Ko-fi</a>, <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer">Liberapay</a>, or <a href="https://patreon.com/TruthBased" target="_blank" rel="noopener noreferrer">Patreon</a>. Cryptocurrency wallet addresses are on the <a href="/support">support page</a>.</p>
     </div>
-  </section>
-
-
-
-  <section style="max-width:620px; margin:0 auto 0; padding:28px 24px; text-align:center;">
-    <div data-nosnippet style="padding:22px 24px; background:var(--surface); border:1px solid var(--border); border-radius:6px;">
-      <span style="font-family:var(--font-sans); font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:10px;">Support Our Work</span>
-      <p style="font-family:var(--font-serif); font-size:0.88rem; color:var(--text-body); margin:0 0 14px; line-height:1.6;">If you value data-driven fact-checking, consider supporting TruthBased.org. Every contribution helps us research and publish more articles.</p>
-      <a href="https://ko-fi.com/truthbased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:var(--brick); color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s;">&#9749; Support on Ko-fi</a>
-      <a href="https://en.liberapay.com/truthbased/" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#f6c915; color:#1a1a1a; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9829; Liberapay (via PayPal)</a>
-      <a href="https://patreon.com/TruthBased" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 22px; background:#222; color:#fff; font-family:var(--font-sans); font-size:0.82rem; font-weight:600; border-radius:5px; text-decoration:none; transition:opacity 0.15s; margin-left:8px;">&#9733; Patreon</a>
-      <p style="font-family:var(--font-sans); font-size:0.64rem; color:var(--text-quiet); margin:10px 0 0;">Accepts Google&nbsp;Pay, Apple&nbsp;Pay, PayPal, and credit/debit cards</p>
-      <p style="font-family:var(--font-sans); font-size:0.68rem; color:var(--text-dim); margin:14px 0 0;">Prefer crypto? <a href="/support" style="color:var(--brick); text-decoration:none; font-weight:600;">See wallet addresses &rarr;</a></p>
-    </div>
-  </section>
-
 
   <footer class="page-footer">
-    <span class="footer-note">TruthBased.org &mdash; Independent reference, updated February 2026</span>
-    <a href="/who-commits-mass-shootings-in-america" class="footer-note footer-link" style="text-decoration:none;transition:color 0.15s;">Supplementary Data &rarr;</a>
-    <a href="/methodology" class="footer-note" style="text-decoration:none;transition:color 0.15s;">Our Methodology &rarr;</a>
-    <span class="footer-note">No ads &bull; No funding &bull; No agenda</span>
+    <span class="footer-note">TruthBased.org &mdash; Independent reference, updated September 2026</span>
+    <span class="footer-note">No ads &middot; No funding &middot; No agenda</span>
   </footer>
 
-
   <script>
-    document.querySelectorAll('[data-acc]').forEach(function(item) {
-      var trigger = item.querySelector('.acc-trigger');
-      var panel   = item.querySelector('.acc-panel');
-
-      trigger.addEventListener('click', function() {
-        var isOpen = item.classList.contains('is-open');
-
-        // Close all open panels first
-        document.querySelectorAll('[data-acc].is-open').forEach(function(open) {
-          open.classList.remove('is-open');
-          open.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
-          open.querySelector('.acc-panel').classList.remove('is-open');
-        });
-
-        // Open the clicked one if it was closed
-        if (!isOpen) {
-          item.classList.add('is-open');
-          trigger.setAttribute('aria-expanded', 'true');
-          panel.classList.add('is-open');
-        }
+    /* Theme toggle */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
       });
-    });
+    })();
   </script>
-
-  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
-
   <script>
     /* ── Theme toggle ── */
     (function(){
@@ -1830,9 +400,6 @@
 
   </script>
 
-
-  
-  
 </body>
 
 <!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
