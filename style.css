@@ -1,5 +1,4 @@
-/* TruthBased.org — shared stylesheet
-   Plain reference-site look: white page, one serif for prose, one system
+one serif for prose, one system
    sans for tables and labels, blue links, no cards, no badges, no animation.
    Every article links this file instead of carrying its own inline CSS. */
 
@@ -159,11 +158,8 @@ a.source-pill { color: var(--link); }
 
 /* ---------- Part headers ---------- */
 .part-header { margin: 44px 0 16px; padding-top: 20px; border-top: 1px solid var(--rule); }
-.part-label { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-dim); display: block; margin-bottom: 4px; }
 .part-title { font-size: 1.45rem; font-weight: 700; }
 .section-label { font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; color: var(--text-head); display: block; margin: 24px 0 8px; }
-.part-takeaway { background: none; border-left: 2px solid var(--rule); padding: 8px 16px; margin: 24px 0 8px; font-size: 0.95rem; line-height: 1.55; }
-.part-takeaway strong { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-head); display: block; margin-bottom: 4px; }
 
 /* ---------- Stat blocks ---------- */
 .stat-block { background: none; border: 1px solid var(--rule); margin: 16px 0; font-family: var(--font-sans); }
@@ -182,8 +178,7 @@ a.source-pill { color: var(--link); }
 .stat-row:last-child { border-bottom: 0; }
 .stat-key { color: var(--text-body); font-size: 0.88rem; flex: 1 1 auto; min-width: 0; }
 .stat-val { font-weight: 700; font-size: 0.88rem; color: var(--text-head); text-align: right; font-variant-numeric: tabular-nums; flex: 0 1 auto; max-width: 60%; }
-.stat-val.positive, .stat-val.negative, .stat-val.neutral, .stat-val.warn,
-.stat-val.brick, .stat-val.green, .brick, .green { color: var(--text-head); }
+.stat-val.positive, .stat-val.negative, .stat-val.neutral, .stat-val.warn, .stat-val.brick, .stat-val.green, .brick, .green { color: var(--text-head); }
 .stat-val::before { content: none !important; }
 .stat-row:has(.stat-val.positive), .stat-row:has(.stat-val.negative), .stat-row:has(.stat-val.warn) { background: none; }
 
@@ -207,7 +202,7 @@ a.source-pill { color: var(--link); }
   color: var(--text-head); font-weight: 700;
 }
 .td-note { color: var(--text-dim); font-size: 0.8rem; font-weight: 400; }
-caption, .sr-only-caption { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-dim); text-align: left; caption-side: top; padding: 0 0 6px; }
+caption { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-dim); text-align: left; caption-side: top; padding: 0 0 6px; }
 
 /* ---------- Charts ---------- */
 .chart-wrap, .chart-container {
@@ -308,7 +303,7 @@ footer span, footer a, .footer-note { font-size: 0.78rem !important; }
   display: inline-block; font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
   padding: 1px 6px; border: 1px solid var(--rule); color: var(--text-head); background: none; border-radius: 0;
 }
-.conf-high, .conf-medium, .conf-low { background: none; color: var(--text-head); border-color: var(--rule); }
+.conf-high, .conf-low { background: none; color: var(--text-head); border-color: var(--rule); }
 
 /* ---------- Homepage ---------- */
 .home-wrap { max-width: 780px; margin: 0 auto; padding: 28px 24px 48px; }
