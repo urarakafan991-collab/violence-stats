@@ -205,7 +205,7 @@ These are the 8 homepage sections and what belongs in each. Pick one per article
 | 03 | Science & Perception | Viral phenomena explained with primary source neuroscience and physics | The dress, Mandela effect, Mpemba effect |
 | 04 | Science & Media Accuracy | What studies actually say vs. how they get reported | Social media + teen mental health, ultra-processed food |
 | 05 | Economics & Policy | Contested economic claims vs. BLS, CBO, peer-reviewed data | Wage gap, inflation, federal spending, college ROI, tariffs, minimum wage |
-| 06 | Health & Medicine | Medical statistics and health claims vs. peer-reviewed evidence | Vaccines, gender medicine, gender-affirming care patient outcomes, death penalty deterrence |
+| 06 | Health & Medicine | Medical statistics and health claims vs. peer-reviewed evidence | Vaccines, ultra-processed food, social media and mental health |
 | 07 | Religion & Society | Measurable claims about religiosity and social outcomes | Does religion cause violence, are religious countries better off |
 | 08 | International Comparisons | How U.S. outcomes compare globally | Gun violence vs peer nations, education ranking |
 

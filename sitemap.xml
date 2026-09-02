@@ -17,12 +17,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.truthbased.org/is-youth-gender-medicine-safe</loc>
-    <lastmod>2026-03-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.truthbased.org/are-vaccines-safe-and-effective</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -193,12 +187,6 @@
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.truthbased.org/what-do-gender-affirming-care-patients-say</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Support/info pages -->

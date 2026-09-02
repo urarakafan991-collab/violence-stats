@@ -128,16 +128,6 @@
       "permanent": true
     },
     {
-      "source": "/gender-medicine",
-      "destination": "/is-youth-gender-medicine-safe",
-      "permanent": true
-    },
-    {
-      "source": "/trans-healthcare",
-      "destination": "/is-youth-gender-medicine-safe",
-      "permanent": true
-    },
-    {
       "source": "/about",
       "destination": "/methodology",
       "permanent": true
@@ -255,16 +245,6 @@
     {
       "source": "/death-penalty.html",
       "destination": "/does-the-death-penalty-deter-crime",
-      "permanent": true
-    },
-    {
-      "source": "/gac-patient-voices",
-      "destination": "/what-do-gender-affirming-care-patients-say",
-      "permanent": true
-    },
-    {
-      "source": "/gac-patient-voices.html",
-      "destination": "/what-do-gender-affirming-care-patients-say",
       "permanent": true
     },
     {
@@ -505,16 +485,6 @@
     {
       "source": "/voter-fraud.html",
       "destination": "/is-voter-fraud-a-real-problem",
-      "permanent": true
-    },
-    {
-      "source": "/youth-gender-medicine",
-      "destination": "/is-youth-gender-medicine-safe",
-      "permanent": true
-    },
-    {
-      "source": "/youth-gender-medicine.html",
-      "destination": "/is-youth-gender-medicine-safe",
       "permanent": true
     },
     {
