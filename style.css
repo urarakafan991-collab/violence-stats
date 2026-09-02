@@ -121,7 +121,7 @@ img, canvas { max-width: 100%; }
 .article-deck { font-size: 1.1rem; font-style: normal; color: var(--text-dim); line-height: 1.5; margin-bottom: 10px; }
 .article-meta { display: block; font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-dim); }
 .meta-pill { display: inline; background: none; border: 0; padding: 0; color: var(--text-dim); font: inherit; }
-.meta-pill + .meta-pill::before { content: " \00b7 "; }
+.meta-pill + .meta-pill::before { content: "\00b7"; margin: 0 0.5em; }
 .meta-pill.live { display: none; }
 .meta-pill.live + .meta-pill::before { content: ""; }
 a.meta-pill { color: var(--link); }
@@ -270,9 +270,9 @@ caption, .sr-only-caption { font-family: var(--font-sans); font-size: 0.78rem; c
 .ymal-desc { font-size: 0.9rem; color: var(--text-dim); line-height: 1.45; display: block; }
 
 /* ---------- Support note and footer ---------- */
-.support-note { max-width: 780px; margin: 24px auto 0; padding: 12px 24px 0; font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-dim); }
+.support-note { max-width: 780px; margin: 40px auto 0; padding: 20px 24px 20px; border-top: 1px solid var(--rule); font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-dim); }
 .support-note p { margin: 0; }
-footer, .site-footer, .page-footer { font-family: var(--font-sans); }
+footer, .site-footer, .page-footer { font-family: var(--font-sans); padding-top: 18px !important; padding-bottom: 40px !important; line-height: 1.8; }
 footer span, footer a, .footer-note { font-size: 0.78rem !important; }
 
 /* ---------- Small screens ---------- */

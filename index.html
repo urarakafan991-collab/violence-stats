@@ -26,7 +26,23 @@
       html.setAttribute('data-theme', stored === 'light' ? 'light' : 'dark');
       function meta(){ var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', html.getAttribute('data-theme') === 'dark' ? '#121212' : '#ffffff'); }
       if (window.MutationObserver) new MutationObserver(meta).observe(html, {attributes: true, attributeFilter: ['data-theme']});
-      if (window.Chart) Chart.defaults.color = html.getAttribute('data-theme') === 'dark' ? '#c8c8c8' : '#444444';
+      if (window.Chart) {
+        var dark = html.getAttribute('data-theme') === 'dark';
+        var sans = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
+        Chart.defaults.color = dark ? '#d6d6d6' : '#333333';
+        Chart.defaults.borderColor = dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.12)';
+        Chart.defaults.font.family = sans; Chart.defaults.font.size = 13;
+        var map = dark ? {'#b83a1e':'#f08a6a','#1b6b3e':'#5ccf7f','#d4703a':'#f3a67e','#e8a76c':'#f6c9a4','#4cbb6a':'#7fe09a','#7a4f00':'#e6b85c','#c8850a':'#eac06b','#e05a3a':'#f08a6a'} : {};
+        function fix(v){ if (typeof v === 'string') return map[v.toLowerCase()] || v; if (Array.isArray(v)) return v.map(fix); return v; }
+        Chart.register({ id: 'tbTheme', beforeInit: function(c){
+          var ds = (c.config.data && c.config.data.datasets) || [];
+          ds.forEach(function(d){ ['backgroundColor','borderColor','pointBackgroundColor','pointBorderColor'].forEach(function(p){ if (d[p]) d[p] = fix(d[p]); }); if (d.borderWidth == null) d.borderWidth = 1; });
+          var opt = c.config.options || {}; var sc = opt.scales || {};
+          Object.keys(sc).forEach(function(k){ var s = sc[k] || {}; s.ticks = s.ticks || {}; s.ticks.font = {family: sans, size: 12}; if (s.title) s.title.font = {family: sans, size: 12}; s.grid = s.grid || {}; if (s.grid.color == null) s.grid.color = Chart.defaults.borderColor; sc[k] = s; });
+          var lg = opt.plugins && opt.plugins.legend; if (lg && lg.labels) lg.labels.font = {family: sans, size: 12};
+          var tt = opt.plugins && opt.plugins.tooltip; if (tt) { tt.bodyFont = {family: sans, size: 12}; tt.titleFont = {family: sans, size: 12}; }
+        }});
+      }
       if (stored) return;
       document.addEventListener('DOMContentLoaded', function(){
         var bar = document.createElement('div');
@@ -87,10 +103,10 @@
       <h2>Political Fact Checks</h2>
       <p class="home-section-desc">Claims politicians make, measured against the record</p>
       <ul class="home-list">
-        <li><a href="/are-trans-people-more-likely-to-be-mass-shooters">Are Trans People Overrepresented as Mass Shooters?</a><span class="desc">Politicians and political organizations have used this claim to justify legislation targeting the trans community. This article tests it against three databases, runs a sensitivity analysis, and checks the strongest opposing analysis against its own data.</span></li>
         <li><a href="/is-voter-fraud-a-real-problem">Voter Fraud</a><span class="desc">Measures the 1,620 proven cases in the Heritage Foundation database against 2.5 billion ballots, breaks fraud down by type, reviews the outcome of every 2020 lawsuit and the Fulton County FBI raid, and identifies the one confirmed election law violation by a major political operation in Georgia's 2024 cycle.</span></li>
         <li><a href="/is-there-really-a-border-crisis">Border Crossings</a><span class="desc">25 years of CBP encounter data, with the Title 42 recidivism inflation quantified and the methodology changes that break most year-to-year comparisons explained.</span></li>
         <li><a href="/does-more-policing-reduce-crime">Policing, Race &amp; Crime: What the Data Shows</a><span class="desc">FBI crime data, use-of-force studies, and racial disparities in stops and shootings, with the reform and the law-and-order positions both tested against primary evidence.</span></li>
+        <li><a href="/are-trans-people-more-likely-to-be-mass-shooters">Are Trans People Overrepresented as Mass Shooters?</a><span class="desc">Politicians and political organizations have used this claim to justify legislation targeting the trans community. This article tests it against three databases, runs a sensitivity analysis, and checks the strongest opposing analysis against its own data.</span></li>
         <li><a href="/which-side-commits-more-political-violence">Political, Ideological &amp; Hate-Motivated Violence in the United States</a><span class="desc">Far-right, far-left, Islamist, and religious violence, alongside hate crimes by bias category, with each ideology measured by the same evidentiary standard and each finding given a confidence rating.</span></li>
         <li><a href="/do-immigrants-commit-more-crime">Immigration and Crime: What the Data Actually Shows</a><span class="desc">Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence, tested against primary sources.</span></li>
         <li><a href="/are-lgbtq-people-more-likely-to-face-violence">Sexual Orientation, Gender Identity, and Crime</a><span class="desc">Per-capita crime data for heterosexual men and women, gay men, lesbian women, trans women, and trans men, plus the UK prison infographic, the gay predator myth, and victimization data.</span></li>
@@ -204,54 +220,6 @@
     })();
   </script>
   <script>
-    /* ── Theme toggle ── */
-    (function(){
-      var html = document.documentElement;
-      var btn = document.querySelector('.theme-toggle');
-      function icon(){
-        if(!btn) return;
-        var isDark = html.getAttribute('data-theme')==='dark';
-        btn.textContent = isDark ? '\u2600' : '\u263E';
-        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-      }
-      icon();
-      if(btn) btn.addEventListener('click', function(){
-        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        try { localStorage.setItem('tb-theme', next); } catch(e) {}
-        icon();
-      });
-    })();
-
-    /* ── Reading progress bar ── */
-    (function(){
-      var bar = document.querySelector('.reading-progress');
-      if(!bar) return;
-      window.addEventListener('scroll', function(){
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
-      }, {passive:true});
-    })();
-
-    /* ── Back to top ── */
-    (function(){
-      var btn = document.querySelector('.back-to-top');
-      if(!btn) return;
-      window.addEventListener('scroll', function(){
-        btn.classList.toggle('visible', window.scrollY > 400);
-      }, {passive:true});
-      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-    })();
-  
-    /* Nav shadow on scroll */
-    (function(){
-      var nav = document.querySelector('.site-nav');
-      if(!nav) return;
-      window.addEventListener('scroll', function(){
-        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
-      }, {passive:true});
-    })();
-  
     /* ── Site Search (Fuse.js fuzzy) ── */
     (function(){
       var articles = [

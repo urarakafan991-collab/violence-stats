@@ -6,10 +6,10 @@
 
 ## Political Fact Checks
 
-- [Are Trans People Overrepresented as Mass Shooters?](https://www.truthbased.org/are-trans-people-more-likely-to-be-mass-shooters): Politicians and political organizations have used this claim to justify legislation targeting the trans community. This article tests it against three databases, runs a sensitivity analysis, and checks the strongest opposing analysis against its own data.
 - [Voter Fraud](https://www.truthbased.org/is-voter-fraud-a-real-problem): Measures the 1,620 proven cases in the Heritage Foundation database against 2.5 billion ballots, breaks fraud down by type, reviews the outcome of every 2020 lawsuit and the Fulton County FBI raid, and identifies the one confirmed election law violation by a major political operation in Georgia's 2024 cycle.
 - [Border Crossings](https://www.truthbased.org/is-there-really-a-border-crisis): 25 years of CBP encounter data, with the Title 42 recidivism inflation quantified and the methodology changes that break most year-to-year comparisons explained.
 - [Policing, Race & Crime: What the Data Shows](https://www.truthbased.org/does-more-policing-reduce-crime): FBI crime data, use-of-force studies, and racial disparities in stops and shootings, with the reform and the law-and-order positions both tested against primary evidence.
+- [Are Trans People Overrepresented as Mass Shooters?](https://www.truthbased.org/are-trans-people-more-likely-to-be-mass-shooters): Politicians and political organizations have used this claim to justify legislation targeting the trans community. This article tests it against three databases, runs a sensitivity analysis, and checks the strongest opposing analysis against its own data.
 - [Political, Ideological & Hate-Motivated Violence in the United States](https://www.truthbased.org/which-side-commits-more-political-violence): Far-right, far-left, Islamist, and religious violence, alongside hate crimes by bias category, with each ideology measured by the same evidentiary standard and each finding given a confidence rating.
 - [Immigration and Crime: What the Data Actually Shows](https://www.truthbased.org/do-immigrants-commit-more-crime): Incarceration rates, Texas arrest data, 150 years of Census records, and the European evidence, tested against primary sources.
 - [Sexual Orientation, Gender Identity, and Crime](https://www.truthbased.org/are-lgbtq-people-more-likely-to-face-violence): Per-capita crime data for heterosexual men and women, gay men, lesbian women, trans women, and trans men, plus the UK prison infographic, the gay predator myth, and victimization data.
@@ -27,8 +27,8 @@
 ## Science & Perception
 
 - [The Dress](https://www.truthbased.org/was-the-dress-blue-and-black-or-white-and-gold): The same pixels. Two completely different colors. The neuroscience of color constancy, Bayesian inference, and what it means for shared reality.
-- [The Mandela Effect](https://www.truthbased.org/is-the-mandela-effect-real): Berenstain or Berenstein? Did the Monopoly man have a monocle? Why millions share the same vivid, confident, wrong memories — and what that reveals about the mind.
-- [The Mpemba Effect](https://www.truthbased.org/does-hot-water-freeze-faster-than-cold): Aristotle noticed it in 350 BCE. A Tanzanian student rediscovered it in 1963. Sixty years of modern physics later, the answer is still contested — and more interesting than either side admits.
+- [The Mandela Effect](https://www.truthbased.org/is-the-mandela-effect-real): Berenstain or Berenstein? Did the Monopoly man have a monocle? Why millions share the same vivid, confident, wrong memories, and what that reveals about the mind.
+- [The Mpemba Effect](https://www.truthbased.org/does-hot-water-freeze-faster-than-cold): Aristotle noticed it in 350 BCE. A Tanzanian student rediscovered it in 1963. Sixty years of modern physics later, the answer is still contested, and more interesting than either side admits.
 
 ## Science & Media Accuracy
 
@@ -51,8 +51,8 @@
 
 ## Religion & Society
 
-- [Does Religiosity Correlate With Better Social Outcomes?](https://www.truthbased.org/are-religious-countries-better-off): Crime rates, social trust, wellbeing, charitable giving, education — what Pew Research, Gallup, Harvard longitudinal cohorts, and dozens of meta-analyses actually find when comparing more and less religious populations. The answer depends on whether you measure individuals or societies.
-- [Religion and Violence](https://www.truthbased.org/does-religion-cause-violence): Claims about religiously motivated conflict measured against terrorism databases, historical records, war encyclopedias, and peer-reviewed conflict research. How researchers define and count religious motivation — and what happens when you control for poverty, state weakness, and political exclusion.
+- [Does Religiosity Correlate With Better Social Outcomes?](https://www.truthbased.org/are-religious-countries-better-off): Crime rates, social trust, wellbeing, charitable giving, education, what Pew Research, Gallup, Harvard longitudinal cohorts, and dozens of meta-analyses actually find when comparing more and less religious populations. The answer depends on whether you measure individuals or societies.
+- [Religion and Violence](https://www.truthbased.org/does-religion-cause-violence): Claims about religiously motivated conflict measured against terrorism databases, historical records, war encyclopedias, and peer-reviewed conflict research. How researchers define and count religious motivation, and what happens when you control for poverty, state weakness, and political exclusion.
 
 ## International Comparisons
 
