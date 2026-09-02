@@ -813,11 +813,11 @@
 
     <div class="chart-wrap">
       <div class="chart-title">Per Capita Rate: All Three Databases (Full Trans Population)</div>
-      <div class="chart-sub">For each database, the cisgender rate divided by the trans rate, using the full trans population (2.8M, all ages). A value of 1 would mean equal rates. Per 100,000 people: GVA 0.179 (trans) vs. 1.77 (cisgender); Violence Prevention Project 0.036 vs. 0.060; Mother Jones 0.036 vs. 0.045.</div>
+      <div class="chart-sub">Two bars per database on one scale: the cisgender rate is set to 100, and the trans rate is drawn as a percentage of it. Per 100,000 people the actual rates are GVA 0.179 (trans) vs. 1.77 (cisgender); Violence Prevention Project 0.036 vs. 0.060; Mother Jones 0.036 vs. 0.045.</div>
       <p style="font-size:0.78rem; line-height:1.55; color:var(--text-body); margin:14px 0 18px; padding:0 2px;">Three databases exist because there is no single agreed definition of &ldquo;mass shooting.&rdquo; We show all three for completeness. However, <strong>only GVA (n=5 trans shooters) has enough data for a per-capita comparison that means anything statistically.</strong> VPP and Mother Jones each contain exactly one confirmed trans shooter (Audrey Hale), a rate built on a single data point has no statistical power and is shown for transparency only.</p>
-      <div class="chart-canvas-wrap" style="height:230px;"><canvas id="chart3a" role="img" aria-label="Bar chart of the cisgender-to-trans rate ratio by database: Gun Violence Archive about 9.9 times, Violence Prevention Project about 1.7 times, Mother Jones about 1.3 times. The last two rest on a single case each."></canvas></div>
+      <div class="chart-canvas-wrap" style="height:250px;"><canvas id="chart3a" role="img" aria-label="Grouped bar chart comparing trans and cisgender per-capita mass-shooting rates in each database, with the cisgender rate set to 100. Gun Violence Archive: trans rate about 10 percent of the cisgender rate. Violence Prevention Project: about 60 percent. Mother Jones: about 80 percent. The last two rest on a single case each."></canvas></div>
       <div style="margin-top:10px; padding:10px 14px; background:var(--amber-faint); border-left:3px solid var(--amber); border-radius:0 4px 4px 0; font-size:0.72rem; line-height:1.5; color:var(--text-quiet); font-style:italic;">
-        Adding or removing one case from VPP or Mother Jones swings the trans rate from 0.036 to 0.000, the 95% confidence interval spans from zero to multiples of the cis rate. The two gray bars rest on one case each; treat them as illustrations of the data that exists, not as meaningful rate comparisons.
+        Adding or removing one case from VPP or Mother Jones swings the trans rate from 0.036 to 0.000, the 95% confidence interval spans from zero to multiples of the cis rate. The two paler trans bars rest on one case each; treat them as illustrations of the data that exists, not as meaningful rate comparisons.
       </div>
     </div>
 
@@ -1211,7 +1211,7 @@
       });
     })();
 
-    // Chart 3a — Ratio of cisgender to trans per-capita rate, all 3 databases (one panel, one scale)
+    // Chart 3a — Trans vs cisgender per-capita rate in each database, cisgender rate set to 100 (one scale for all three)
     (function() {
       var el = document.getElementById('chart3a'); if (!el) return;
       var rows = [
@@ -1219,39 +1219,32 @@
         { label: 'Violence Prevention Project (n=1 of ~201)', trans: 0.036, cis: 0.060, solid: false },
         { label: 'Mother Jones (n=1 of ~149)', trans: 0.036, cis: 0.045, solid: false }
       ];
-      var ratios = rows.map(function(r) { return +(r.cis / r.trans).toFixed(2); });
       var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      var equalLine = { id: 'equalLine', afterDraw: function(c) {
-        var x = c.scales.x.getPixelForValue(1), ctx = c.ctx, area = c.chartArea;
-        ctx.save(); ctx.strokeStyle = dark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.45)'; ctx.setLineDash([4, 4]); ctx.lineWidth = 1;
-        ctx.beginPath(); ctx.moveTo(x, area.top); ctx.lineTo(x, area.bottom); ctx.stroke();
-        ctx.setLineDash([]); ctx.fillStyle = ctx.strokeStyle; ctx.font = '11px sans-serif'; ctx.textAlign = 'left'; ctx.fillText('equal rates', x + 4, area.top + 12); ctx.restore();
-      } };
+      var pct = rows.map(function(r) { return +(100 * r.trans / r.cis).toFixed(1); });
+      var green = dark ? '#5ccf7f' : '#1b6b3e', paleGreen = dark ? '#3f8f5a' : '#8cc7a3', grey = dark ? '#8a8a8a' : '#b0b0b0';
       new Chart(el.getContext('2d'), {
         type: 'bar',
         data: {
           labels: rows.map(function(r) { return r.label; }),
-          datasets: [{
-            label: 'Cisgender rate divided by trans rate',
-            data: ratios,
-            backgroundColor: rows.map(function(r) { return r.solid ? (dark ? 'rgba(92,207,127,0.75)' : 'rgba(27,107,62,0.65)') : (dark ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.18)'); }),
-            borderColor: rows.map(function(r) { return r.solid ? (dark ? '#5ccf7f' : '#1b6b3e') : (dark ? '#8a8a8a' : '#6b6b6b'); }),
-            borderWidth: 1, barThickness: 28
-          }]
+          datasets: [
+            { label: 'Cisgender people (set to 100)', data: [100, 100, 100], backgroundColor: grey, borderColor: grey, borderWidth: 1, barThickness: 18 },
+            { label: 'Trans people, as % of the cisgender rate', data: pct,
+              backgroundColor: rows.map(function(r) { return r.solid ? green : paleGreen; }), borderColor: rows.map(function(r) { return r.solid ? green : paleGreen; }), borderWidth: 1, barThickness: 18 }
+          ]
         },
-        plugins: [equalLine],
         options: {
           responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-          layout: { padding: { right: 24 } },
+          layout: { padding: { right: 16 } },
           plugins: {
-            legend: { display: false },
+            legend: { position: 'top', labels: { boxWidth: 12, padding: 12 } },
             tooltip: { callbacks: { label: function(c) {
               var r = rows[c.dataIndex];
-              return [' Trans: ' + r.trans.toFixed(3) + ' per 100k', ' Cisgender: ' + r.cis.toFixed(3) + ' per 100k', ' Ratio: ' + c.parsed.x.toFixed(1) + '\u00d7 lower for trans people'];
+              if (c.datasetIndex === 0) return ' Cisgender: ' + r.cis.toFixed(3) + ' per 100k';
+              return [' Trans: ' + r.trans.toFixed(3) + ' per 100k', ' ' + c.parsed.x.toFixed(0) + '% of the cisgender rate (' + (r.cis / r.trans).toFixed(1) + '\u00d7 lower)'];
             } } }
           },
           scales: {
-            x: { min: 0, max: 11, title: { display: true, text: 'How many times lower the trans rate is (1 = equal)' }, ticks: { stepSize: 1 } },
+            x: { min: 0, max: 100, title: { display: true, text: 'Rate as a percentage of the cisgender rate in the same database' }, ticks: { stepSize: 10, callback: function(v) { return v + '%'; } } },
             y: { grid: { display: false } }
           }
         }
