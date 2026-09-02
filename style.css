@@ -348,3 +348,18 @@ footer span, footer a, .footer-note { font-size: 0.78rem !important; }
 }
 .page-footer .footer-note { font-size: 0.78rem !important; color: var(--text-dim); }
 @media (max-width: 640px) { .home-wrap { padding: 20px 16px 40px; } .page-footer { padding: 14px 16px 28px; } }
+
+/* ---------- First-visit display-mode prompt ---------- */
+.theme-ask {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 300;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
+  padding: 10px 16px; background: var(--surface); border-top: 1px solid var(--rule);
+  font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-body);
+}
+.theme-ask button {
+  font: inherit; padding: 4px 14px; cursor: pointer;
+  background: var(--bg); color: var(--text-head); border: 1px solid var(--text-dim); border-radius: 0;
+}
+.theme-ask button:hover { border-color: var(--text-head); }
+.theme-ask .theme-ask-close { border: 0; background: none; color: var(--text-dim); padding: 4px 8px; font-size: 1.1rem; }
+@media print { .theme-ask { display: none !important; } }
