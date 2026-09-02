@@ -4,8 +4,7 @@ Reference for what every new article needs. Two files are touched: a new
 `<slug>.html` at repo root, and a new row added to the right section in
 `index.html`.
 
-For early-access publishing, see `EARLY_ACCESS_CHECKLIST.md` — that's the
-*workflow*. This file is the *structure*.
+Publishing is one step: add the file, add the homepage row, add the sitemap entry, push.
 
 ---
 
@@ -13,7 +12,7 @@ For early-access publishing, see `EARLY_ACCESS_CHECKLIST.md` — that's the
 
 1. **`<slug>.html`** at the repo root — the article itself. Kebab-case slug matching the existing pattern (e.g. `does-x-cause-y.html`).
 2. **One new `<a class="article-row">` block in `index.html`**, inside the correct section's `<div class="article-list">`.
-3. **One new `<url>` entry in `sitemap.xml`** *(only on public promotion — not during early-access window).*
+3. **One new `<url>` entry in `sitemap.xml`** and a line in `llms.txt`.
 
 ---
 
@@ -182,7 +181,7 @@ One Part is still a variant of **"The strongest case for [the opposing view]"**.
 
 ## 6. Homepage row — adding to `index.html`
 
-When the article goes public (Phase 2 of `EARLY_ACCESS_CHECKLIST.md`), add one list item inside the correct section's `<ul class="home-list">`:
+Add one list item inside the correct section's `<ul class="home-list">`:
 
 ```html
 <li><a href="/<slug>">Display title</a><span class="desc">One or two full sentences saying what the article measures and with which sources. No fragment stacks.</span></li>
@@ -216,14 +215,13 @@ If a topic doesn't fit one of these, the section list itself may need to change
 
 ## 8. Pre-publish gut-check
 
-Before pushing a new article to main (even for early access), verify:
+Before pushing a new article to main, verify:
 
 - [ ] All 11 anatomical elements present (header, sources bar, TL;DR, prelim claims, parts × N, summary, falsifiability, sources, cite-this — plus the political-context box if political)
 - [ ] Falsifiability conditions are concrete and testable (not "if new evidence appears")
 - [ ] At least one Part steelmanns the opposing view explicitly
 - [ ] Every quantitative claim has an inline source
 - [ ] Hedge ladder is honest — overclaiming is a brand violation
-- [ ] Homepage row added (for Phase 2 only; *not* during early access)
+- [ ] Homepage row added
 - [ ] If row title and h1 diverge — both are individually accurate
-- [ ] `sitemap.xml` updated (Phase 2 only)
-- [ ] If early access: `<meta name="robots" content="noindex,nofollow">` present
+- [ ] `sitemap.xml` and `llms.txt` updated
