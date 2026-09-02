@@ -37,3 +37,5 @@ These rules exist because specific bugs happened. Follow them.
 - Chart.js is loaded inline per page; load order matters.
 - Theme toggles via `data-theme` attribute on `<html>`.
 - Auto-push every commit unless told otherwise.
+- Shared stylesheet: `/style.css`. Articles carry no inline CSS except a small page-specific block on a few custom pages (trans shooters, voter fraud, mass shootings by demographic, methodology, support, 404).
+- Prose rules are in `ARTICLE_TEMPLATE.md` §4 (de-AI pass, September 2026). New text must follow them.

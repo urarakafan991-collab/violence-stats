@@ -26,12 +26,12 @@ In this order, every article should have:
 | 1 | `<header class="article-header">` with category eyebrow, h1 title, italic deck, meta-pills row | Identification + at-a-glance metadata |
 | 2 | **(political only)** Amber `box-amber` titled "Why this is filed under Political Fact Checks" | States the political stakes / who's using the claim |
 | 3 | `<div class="sources-bar">` with linked `source-pill`s | Shows the receipts up front |
-| 4 | `<div class="tldr-box">` | One dense paragraph with the headline numbers, bolded |
+| 4 | `<div class="tldr-box">` labeled **Summary** | One paragraph in full sentences with the headline numbers. Not "TL;DR", not fragments. |
 | 5 | **(optional)** `<div class="scope-box">` italic ethics/scope note | Caveats about what's included/excluded |
 | 6 | 2–3 preliminary `<div class="claim-row">` blocks | Misconception / Claim vs Evidence sample pairs |
 | 7 | **5–7 numbered `<section>` Parts** | The actual analysis |
 | 8 | Final `<div id="summary" class="claims-box">` with 3–6 `claim-row`s | Summary table at the bottom |
-| 9 | **`<div class="falsify-box">`** — "What would change this conclusion?" with 2–4 numbered empirical conditions | Popperian close. Most distinctive element on the site. |
+| 9 | **`<div class="falsify-box">`** labeled "What would change this conclusion" with 2–4 numbered empirical conditions | Keep the content; keep the label plain. |
 | 10 | `<div class="sources-section">` listing every source with author, year, journal/outlet, link | Full bibliography |
 | 11 | `<div class="cite-this">` with italic suggested citation | User-selectable citation block |
 
@@ -40,11 +40,9 @@ Outside the `<article>`: the standard `ymal-section` (3 related-article cards), 
 ### Hero meta-pills, standard set
 
 ```html
-<span class="meta-pill live">● Live</span>
+<span class="meta-pill live">● Live</span>   <!-- kept in markup, hidden by the stylesheet -->
 <span class="meta-pill">Last reviewed: <Mon Year></span>
 <span class="meta-pill">Data through <Mon Year></span>   <!-- if numeric-heavy -->
-<span class="meta-pill">~N primary sources</span>
-<span class="meta-pill">~N min read</span>
 <a href="/methodology" class="meta-pill">Methodology →</a>
 ```
 
@@ -53,8 +51,7 @@ Outside the `<article>`: the standard `ymal-section` (3 related-article cards), 
 ```html
 <section id="partN">
   <div class="part-header">
-    <span class="part-label">Part N of M</span>
-    <h2 class="part-title">Descriptive heading — usually with em-dash subtitle</h2>
+    <h2 class="part-title">Plain descriptive heading. No "Topic — Subtitle" or "Topic: Subtitle" form.</h2>
   </div>
   <span class="section-label">Optional subheading</span>
   <p>…</p>
@@ -149,15 +146,23 @@ Conditions must be *concrete and empirically testable*. Don't write "if new evid
 
 ## 4. Voice conventions
 
-- **Em-dash heavy.** "The data shows X — but the methodology has caveats."
-- **Hedge ladder**, from strongest to weakest: *settled / well-supported / suggestive but not settled / contested / not supported.*
-- **Recurring phrases**:
-  - "Every counterargument tested"
-  - "Under any consistent methodology"
-  - "The claim does not survive contact with the data"
-  - "Three databases, every definition" *(for data-driven pieces)*
-- Numbers use **tabular-nums**. Primary sources cited inline with author + year.
-- Late-article Part titled some variant of **"What the science actually settles — and what it doesn't."**
+The site was rewritten in September 2026 to remove machine-prose habits. New articles follow the same rules.
+
+- **Plain sentences.** State the finding. Do not announce it, frame it, or land it.
+- **Dashes:** at most one em dash per 500 words, and only where nothing else is clearer. Never spaced en dashes as em dashes. Use commas, periods, parentheses, or a colon.
+- **No negative parallelism:** no "not X, but Y", "it's not about X, it's about Y", "not just X — Y". Say the positive claim.
+- **No aphoristic closers.** End sections on the last fact, not a line meant to be quoted.
+- **No data-as-agent metaphors:** nothing "survives contact with the data", "tells a story", "paints a picture", or "frames" anything. Write "the data show", "the estimate is", "the record contradicts".
+- **No taglines** anywhere: no "Every counterargument tested. No agenda.", no "Every X. Every Y." stacks, no "every angle".
+- **No intensifier adverbs:** dramatically, genuinely, remarkably, strikingly, starkly, fundamentally, crucially, notably, importantly, critically, explicitly. Replace with the number that justified them, or delete.
+- **No signposts:** it's worth noting, in other words, put simply, to be clear, that said, the bottom line, at its core.
+- **No colon reveals** ("The result: underrepresentation."). Write the sentence.
+- **Headings** are plain noun phrases. No numbered "Part N of M" labels.
+- **Rule of three:** only when the content has three items. Vary sentence length; merge fragments that add no information.
+- **Keep:** the hedge ladder (settled / well-supported / suggestive but not settled / contested / not supported), inline author-plus-year citations, technical terms, the top summary, the steelman section, and the falsifiability conditions. Those carry information; the habits above only decorate it.
+- **Site-specific tics to avoid:** "confirmed/unconfirmed" as a verbal reflex, "explicitly", "approximately" (use "about"), "methodologically", and "consistent" as praise.
+
+One Part is still a variant of **"The strongest case for [the opposing view]"**. That is a content convention, not a phrase to repeat.
 
 ---
 
@@ -169,7 +174,7 @@ Conditions must be *concrete and empirically testable*. Don't write "if new evid
 | Primary sources | 15–25 |
 | Parts | 5–7 |
 | Falsifiability conditions | 2–4 |
-| `meta-pill live` | always present once article is public |
+| `meta-pill live` | in markup, hidden by the stylesheet |
 | `Last reviewed` | current month/year on publish |
 | Methodology link | always in the meta row |
 
@@ -177,32 +182,15 @@ Conditions must be *concrete and empirically testable*. Don't write "if new evid
 
 ## 6. Homepage row — adding to `index.html`
 
-When the article goes public (Phase 2 of `EARLY_ACCESS_CHECKLIST.md`), add this
-block inside the correct section's `<div class="article-list">`:
+When the article goes public (Phase 2 of `EARLY_ACCESS_CHECKLIST.md`), add one list item inside the correct section's `<ul class="home-list">`:
 
 ```html
-<a href="/<slug>" class="article-row">
-  <span class="row-status live">● Live</span>
-  <div class="row-body">
-    <span class="row-title">Display title — can be different from article h1</span>
-    <span class="row-desc">~30–50 word teaser. Lead with the strongest specific finding or the most provocative reframe of the claim.</span>
-    <div class="row-sources">
-      <span class="source-pill">Source 1</span>
-      <span class="source-pill">Source 2</span>
-      <span class="source-pill">Source 3</span>
-      <!-- 3–5 source pills typical -->
-    </div>
-  </div>
-  <span class="row-arrow">→</span>
-</a>
+<li><a href="/<slug>">Display title</a><span class="desc">One or two full sentences saying what the article measures and with which sources. No fragment stacks.</span></li>
 ```
 
-**Note**: the homepage `row-title` does not have to match the article's `<h1>`.
-Example: row title "Policing, Race & Crime: What the Data Shows" → article h1
-"Did Police Funding Cuts Cause the 2020 Crime Surge?" The row title can be the
-*evergreen topic frame*; the article h1 can be the *specific question version*.
-(Note: title/h1 mismatches like these need explicit alignment — flag to Maya
-before publishing if they diverge.)
+Also add the article to the `articles` array in the search script at the bottom of `index.html` (url, cat, title, keywords, snippet). The `cat` value must be one of the search filter categories used in that array.
+
+**Note**: the homepage title does not have to match the article's `<h1>`, but both must be individually accurate; flag divergences before publishing.
 
 ---
 
