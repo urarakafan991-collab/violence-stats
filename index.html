@@ -20,6 +20,7 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/style.css">
+  <script src="/search-index.js" defer></script>
   <script>
     (function(){
       var html = document.documentElement, stored = null;
@@ -121,8 +122,8 @@
 
     <div class="search-box">
       <label for="site-search" class="sr-only">Search articles</label>
-      <input type="search" id="site-search" class="search-input" placeholder="Search articles and topics&hellip;" aria-label="Search articles" autocomplete="off">
-      <div class="search-results" role="listbox"></div>
+      <input type="search" id="site-search" class="search-input" role="combobox" aria-autocomplete="list" aria-controls="search-results" aria-expanded="false" placeholder="Search articles and topics&hellip;" aria-label="Search articles" autocomplete="off">
+      <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
     </div>
 
     <section class="home-section">
@@ -284,7 +285,10 @@
       ];
 
       /* Prepare the index once: lowercase text plus a word list for prefix and typo matching. */
+      var extra = window.TB_SEARCH_TERMS || {};
       articles.forEach(function(a){
+        var fromPage = extra[a.url];
+        if (fromPage && fromPage.length) a.keywords = a.keywords + ' ' + fromPage.join(' ');
         a._title = a.title.toLowerCase();
         a._cat = a.cat.toLowerCase();
         a._kw = a.keywords.toLowerCase();
@@ -354,9 +358,10 @@
       }
 
       function scoreArticle(a, terms) {
-        var total = 0, matched = 0;
+        var total = 0, matched = 0, floor = window.__tbFloor || {};
         for (var i = 0; i < terms.length; i++) {
           var s = termScore(a, terms[i]);
+          if (s && s < (floor[terms[i]] || 0)) s = 0;
           if (s) { matched++; total += s; }
         }
         if (matched > 1 && a._hay.indexOf(terms.join(' ')) !== -1) total += 25;
@@ -366,6 +371,21 @@
       var input = document.querySelector('.search-input');
       var results = document.querySelector('.search-results');
       if (!input || !results) return;
+      function reindex(){
+        var t = window.TB_SEARCH_TERMS; if (!t) return;
+        articles.forEach(function(a){
+          var fromPage = t[a.url];
+          if (!fromPage || !fromPage.length || a._indexed) return;
+          a._indexed = true;
+          a._kw = (a._kw + ' ' + fromPage.join(' ')).toLowerCase();
+          a._hay = a._title + ' ' + a._cat + ' ' + a._kw + ' ' + a._sn;
+          var seen = {}, words = [];
+          a._hay.split(/[^a-z0-9+]+/).forEach(function(w){ if (w.length > 2 && !seen[w]) { seen[w] = 1; words.push(w); } });
+          a._words = words;
+        });
+      }
+      if (document.readyState === 'loading') window.addEventListener('DOMContentLoaded', reindex); else reindex();
+      window.addEventListener('load', reindex);
       var active = -1, items = [];
 
       function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -395,11 +415,23 @@
         var terms = raw.filter(function(t){ return !STOP[t]; });
         if (!terms.length) { close(); return; }
         /* Ignore words that appear in no article at all, so a plain-English question still works. */
-        var useful = terms.filter(function(t){
-          for (var i = 0; i < articles.length; i++) { if (termScore(articles[i], t)) return true; }
-          return false;
+        var best = {}, hits = {};
+        terms.forEach(function(t){
+          best[t] = 0; hits[t] = 0;
+          articles.forEach(function(a){ var s = termScore(a, t); if (s) { hits[t]++; if (s > best[t]) best[t] = s; } });
         });
-        if (useful.length) terms = useful;
+        /* a word found in most of the site (say "police" on a crime site) tells us nothing */
+        var useful = terms.filter(function(t){ return hits[t] > 0 && hits[t] <= Math.ceil(articles.length * 0.34); });
+        if (!useful.length) useful = terms.filter(function(t){ return hits[t] > 0; });
+        if (!useful.length) {
+          results.innerHTML = '<div class="sr-empty">Nothing matches &ldquo;' + esc(query) + '&rdquo;. Try a single word, such as vaccines, tariffs or Columbus.</div>';
+          results.classList.add('is-visible'); input.setAttribute('aria-expanded','true'); active = -1; items = [];
+          return;
+        }
+        terms = useful;
+        /* when a word is found exactly somewhere, ignore the articles that only nearly match it */
+        window.__tbFloor = {};
+        terms.forEach(function(t){ window.__tbFloor[t] = best[t] > 6 ? 8 : 0; });
 
         /* Keep the articles that cover the most of what was typed, then rank those by strength of match. */
         var all = articles.map(function(a){ var r = scoreArticle(a, terms); return { a: a, score: r.score, matched: r.matched }; })
@@ -411,7 +443,18 @@
                         .slice(0, 8);
 
         if (!scored.length) {
-          results.innerHTML = '<div class="sr-empty">Nothing matches &ldquo;' + esc(query) + '&rdquo;. Try a single word, such as vaccines, tariffs or Columbus.</div>';
+          var near = null, bestGap = 99;
+          articles.forEach(function(a){
+            terms.forEach(function(term){
+              a._words.forEach(function(w){
+                if (Math.abs(w.length - term.length) > 2 || w.length < 4) return;
+                for (var d = 1; d <= 2; d++) { if (withinEdits(w, term) && d < bestGap) { bestGap = d; near = a; return; } }
+              });
+            });
+          });
+          var hint = near ? ' Did you mean <a href="' + near.url + '">' + esc(near.title) + '</a>?'
+                          : ' Try a single word, such as vaccines, tariffs or Columbus.';
+          results.innerHTML = '<div class="sr-empty">Nothing matches &ldquo;' + esc(query) + '&rdquo;.' + hint + '</div>';
           results.classList.add('is-visible'); input.setAttribute('aria-expanded','true'); active = -1; items = [];
           return;
         }
@@ -442,8 +485,8 @@
         if (e.key === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
         else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
         else if (e.key === 'Enter') {
-          if (active > -1) { e.preventDefault(); window.location.href = items[active].getAttribute('href'); }
-          else if (items.length === 1) { e.preventDefault(); window.location.href = items[0].getAttribute('href'); }
+          e.preventDefault();
+          window.location.href = items[active > -1 ? active : 0].getAttribute('href');
         }
       });
 

@@ -13,6 +13,7 @@ Publishing is one step: add the file, add the homepage row, add the sitemap entr
 1. **`<slug>.html`** at the repo root — the article itself. Kebab-case slug matching the existing pattern (e.g. `does-x-cause-y.html`).
 2. **One new `<a class="article-row">` block in `index.html`**, inside the correct section's `<div class="article-list">`.
 3. **One new `<url>` entry in `sitemap.xml`** and a line in `llms.txt`.
+4. **Rebuild the search index**: `python3 build_search_index.py`, which regenerates `search-index.js` so the new article is searchable by its own headings and terms.
 
 ---
 
