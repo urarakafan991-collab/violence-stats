@@ -233,7 +233,7 @@
     })();
   </script>
   <script>
-    /* ── Site Search (Fuse.js fuzzy) ── */
+    /* ── Site search ── */
     (function(){
       var articles = [
         { url:'/are-vaccines-safe-and-effective', cat:'Science', title:'Are Vaccines Safe and Effective?', keywords:'vaccine safety efficacy autism mmr wakefield vaers v-safe myocarditis covid pfizer moderna thimerosal mercury schedule antigen childhood immunization cochrane danish study trial side effects adverse reaction', snippet:'Studies covering more than 23 million children across 138 studies, VAERS explained, and myocarditis rates.' },
@@ -269,125 +269,178 @@
         { url:'/what-does-the-record-show-about-columbus', cat:'History', title:'What Does the Record Actually Show About Columbus?', keywords:'columbus discovery america flat earth myth norse viking taino hispaniola columbian exchange las casas washington irving indigenous', snippet:'Pre-Columbian contact, the flat-Earth fabrication, and what happened on Hispaniola.'},
       ];
 
-      var catMap = {
-        'Political Fact Check': 'Political Fact Check',
-        'Economics': 'Economics',
-        'Science': 'Science',
-        'Violence': 'Violence',
-        'International': 'International',
-        'Curiosities': 'Curiosities'
+      /* Prepare the index once: lowercase text plus a word list for prefix and typo matching. */
+      articles.forEach(function(a){
+        a._title = a.title.toLowerCase();
+        a._cat = a.cat.toLowerCase();
+        a._kw = a.keywords.toLowerCase();
+        a._sn = a.snippet.toLowerCase();
+        a._hay = a._title + ' ' + a._cat + ' ' + a._kw + ' ' + a._sn;
+        var seen = {}, words = [];
+        a._hay.split(/[^a-z0-9+]+/).forEach(function(w){ if (w.length > 2 && !seen[w]) { seen[w] = 1; words.push(w); } });
+        a._words = words;
+      });
+
+      /* A few words readers use that the articles themselves do not. */
+      var SYNONYMS = {
+        cops: 'police', cop: 'police', policing: 'police', defunding: 'defund',
+        jab: 'vaccine', jabs: 'vaccine', antivax: 'vaccine', 'anti-vax': 'vaccine',
+        warming: 'climate', migrants: 'immigrant', migrant: 'immigrant', aliens: 'immigrant',
+        uni: 'college', university: 'college', tuition: 'college',
+        guns: 'gun', firearms: 'gun', shootings: 'shooting',
+        lgbt: 'lgbtq', queer: 'lgbtq', homosexual: 'gay',
+        nazis: 'nazi', ussr: 'socialist', communism: 'socialist',
+        upf: 'processed', obesity: 'processed', diet: 'food',
+        teens: 'teenagers', teen: 'teenagers', kids: 'children',
+        wages: 'wage', salary: 'wage', pay: 'wage',
+        deficit: 'debt', inflationary: 'inflation', prices: 'inflation',
+        election: 'voter', elections: 'voter', ballots: 'ballot'
       };
 
-      /* Lightweight fuzzy search — no external dependency */
-      function fuzzyMatch(text, term) {
-        text = text.toLowerCase();
-        term = term.toLowerCase();
-        if (text.indexOf(term) !== -1) return 100;
-        /* Check if all chars of term appear in order (fuzzy) */
-        var ti = 0, consecutive = 0, maxConsec = 0, matched = 0;
-        for (var i = 0; i < text.length && ti < term.length; i++) {
-          if (text[i] === term[ti]) {
-            ti++; matched++; consecutive++;
-            if (consecutive > maxConsec) maxConsec = consecutive;
-          } else { consecutive = 0; }
+      /* Edit distance, giving up once it passes the allowance: one edit for short words, two for long ones. */
+      function withinEdits(a, b) {
+        var la = a.length, lb = b.length;
+        var max = Math.min(la, lb) >= 6 ? 2 : 1;
+        if (Math.min(la, lb) < 4 || Math.abs(la - lb) > max) return false;
+        var prev2 = [], prev = [], cur = [], i, j;
+        for (j = 0; j <= lb; j++) prev[j] = j;
+        for (i = 1; i <= la; i++) {
+          cur[0] = i; var best = cur[0];
+          for (j = 1; j <= lb; j++) {
+            cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+            /* swapped neighbouring letters ("fradu" for "fraud") count as one mistake */
+            if (i > 1 && j > 1 && a[i-1] === b[j-2] && a[i-2] === b[j-1]) cur[j] = Math.min(cur[j], prev2[j-2] + 1);
+            if (cur[j] < best) best = cur[j];
+          }
+          if (best > max) return false;
+          for (j = 0; j <= lb; j++) { prev2[j] = prev[j]; prev[j] = cur[j]; }
         }
-        if (ti < term.length) return 0; /* not all chars matched */
-        /* Score: higher for more consecutive matches */
-        return Math.round((matched / text.length) * 30 + (maxConsec / term.length) * 70);
+        return prev[lb] <= max;
+      }
+
+      /* Score one search term against one article. Zero means the term does not appear at all. */
+      function termScore(a, t) {
+        var score = 0;
+        if (a._title.indexOf(t) !== -1) score = 40;
+        else if (a._cat.indexOf(t) !== -1) score = 22;
+        else if (a._kw.indexOf(t) !== -1) score = 20;
+        else if (a._sn.indexOf(t) !== -1) score = 10;
+        if (!score) {
+          for (var i = 0; i < a._words.length; i++) {
+            var w = a._words[i];
+            if (w.indexOf(t) === 0 || (t.length > 3 && t.indexOf(w) === 0)) { score = 8; break; }
+          }
+        }
+        if (!score && t.length >= 4) {
+          for (var k = 0; k < a._words.length; k++) {
+            if (withinEdits(a._words[k], t)) { score = 6; break; }
+          }
+        }
+        return score;
       }
 
       function scoreArticle(a, terms) {
-        var haystack = (a.title + ' ' + a.keywords + ' ' + a.snippet).toLowerCase();
-        var score = 0;
-        terms.forEach(function(t) {
-          /* Exact substring match — highest score */
-          if (a.title.toLowerCase().indexOf(t) !== -1) score += 30;
-          else if (fuzzyMatch(a.title, t) > 50) score += 15;
-
-          if (a.keywords.indexOf(t) !== -1) score += 15;
-          else if (fuzzyMatch(a.keywords, t) > 40) score += 7;
-
-          if (a.snippet.toLowerCase().indexOf(t) !== -1) score += 8;
-          else if (fuzzyMatch(a.snippet, t) > 40) score += 3;
-
-          /* Bonus for multi-word phrase match */
-          if (t.length > 4 && haystack.indexOf(t) !== -1) score += 5;
-        });
-        /* Bonus: full query as phrase */
-        var fullQuery = terms.join(' ');
-        if (haystack.indexOf(fullQuery) !== -1) score += 20;
-        return score;
+        var total = 0, matched = 0;
+        for (var i = 0; i < terms.length; i++) {
+          var s = termScore(a, terms[i]);
+          if (s) { matched++; total += s; }
+        }
+        if (matched > 1 && a._hay.indexOf(terms.join(' ')) !== -1) total += 25;
+        return { score: total, matched: matched };
       }
 
       var input = document.querySelector('.search-input');
       var results = document.querySelector('.search-results');
-      var filterBtns = document.querySelectorAll('.filter-pill');
-      var activeCat = 'all';
+      if (!input || !results) return;
+      var active = -1, items = [];
 
-      if(!input || !results) return;
+      function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-      /* Category filter logic */
-      filterBtns.forEach(function(btn){
-        btn.addEventListener('click', function(){
-          filterBtns.forEach(function(b){ b.classList.remove('active'); });
-          btn.classList.add('active');
-          activeCat = btn.getAttribute('data-cat');
-          search(input.value.trim());
-        });
-      });
-
-      function highlight(text, terms){
-        var safe = terms.map(function(t){ return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); });
-        var re = new RegExp('(' + safe.join('|') + ')','gi');
-        return text.replace(re, '<mark>$1</mark>');
+      function highlight(text, terms) {
+        var safe = terms.map(function(x){ return x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); })
+                        .sort(function(x,y){ return y.length - x.length; });
+        return esc(text).replace(new RegExp('(' + safe.join('|') + ')', 'gi'), '<mark>$1</mark>');
       }
 
-      function search(query){
-        if(!query || query.length < 2){ results.classList.remove('is-visible'); return; }
-        var terms = query.toLowerCase().split(/\s+/).filter(function(t){ return t.length >= 2; });
-        if(!terms.length){ results.classList.remove('is-visible'); return; }
+      function close() { results.classList.remove('is-visible'); results.innerHTML = ''; active = -1; items = []; input.setAttribute('aria-expanded','false'); input.removeAttribute('aria-activedescendant'); }
 
-        /* Filter by category first */
-        var pool = articles;
-        if (activeCat !== 'all') {
-          pool = articles.filter(function(a){ return a.cat === activeCat; });
-        }
+      function setActive(i) {
+        if (!items.length) return;
+        if (active > -1) items[active].classList.remove('is-active');
+        active = (i + items.length) % items.length;
+        items[active].classList.add('is-active');
+        input.setAttribute('aria-activedescendant', items[active].id);
+        if (items[active].scrollIntoView) items[active].scrollIntoView({block:'nearest'});
+      }
 
-        var scored = pool.map(function(a){
-          return { article: a, score: scoreArticle(a, terms) };
-        }).filter(function(s){ return s.score > 0; })
-          .sort(function(a,b){ return b.score - a.score; })
-          .slice(0, 10);
+      function search(query) {
+        if (!query || query.length < 2) { close(); return; }
+        var raw = query.toLowerCase().split(/\s+/).filter(function(t){ return t.length >= 2; })
+                       .map(function(t){ return SYNONYMS[t] || t; });
+        var STOP = {the:1, and:1, for:1, are:1, was:1, is:1, of:1, in:1, on:1, to:1, do:1, does:1, did:1, what:1, why:1, how:1, it:1, that:1, with:1, more:1};
+        var terms = raw.filter(function(t){ return !STOP[t]; });
+        if (!terms.length) { close(); return; }
+        /* Ignore words that appear in no article at all, so a plain-English question still works. */
+        var useful = terms.filter(function(t){
+          for (var i = 0; i < articles.length; i++) { if (termScore(articles[i], t)) return true; }
+          return false;
+        });
+        if (useful.length) terms = useful;
 
-        if(!scored.length){
-          results.innerHTML = '<div class="sr-empty">No matching articles found' +
-            (activeCat !== 'all' ? ' in ' + activeCat : '') + '</div>';
-          results.classList.add('is-visible');
+        /* Keep the articles that cover the most of what was typed, then rank those by strength of match. */
+        var all = articles.map(function(a){ var r = scoreArticle(a, terms); return { a: a, score: r.score, matched: r.matched }; })
+                          .filter(function(s){ return s.matched > 0; });
+        var best = 0;
+        all.forEach(function(s){ if (s.matched > best) best = s.matched; });
+        var scored = all.filter(function(s){ return s.matched === best; })
+                        .sort(function(x, y){ return y.score - x.score || x.a.title.localeCompare(y.a.title); })
+                        .slice(0, 8);
+
+        if (!scored.length) {
+          results.innerHTML = '<div class="sr-empty">Nothing matches &ldquo;' + esc(query) + '&rdquo;. Try a single word, such as vaccines, tariffs or Columbus.</div>';
+          results.classList.add('is-visible'); input.setAttribute('aria-expanded','true'); active = -1; items = [];
           return;
         }
 
-        results.innerHTML = scored.map(function(s){
-          return '<a href="' + s.article.url + '" class="sr-item" role="option">' +
-            '<span class="sr-cat">' + s.article.cat + '</span>' +
-            '<span class="sr-title">' + highlight(s.article.title, terms) + '</span>' +
-            '<span class="sr-snippet">' + highlight(s.article.snippet, terms) + '</span></a>';
-        }).join('');
+        results.innerHTML = '<p class="sr-count">' + scored.length + (scored.length === 1 ? ' article' : ' articles') + '</p>' +
+          scored.map(function(s, i){
+            return '<a href="' + s.a.url + '" class="sr-item" role="option" id="sr-' + i + '" aria-selected="false">' +
+              '<span class="sr-cat">' + esc(s.a.cat) + '</span>' +
+              '<span class="sr-title">' + highlight(s.a.title, terms) + '</span>' +
+              '<span class="sr-snippet">' + highlight(s.a.snippet, terms) + '</span></a>';
+          }).join('');
         results.classList.add('is-visible');
+        input.setAttribute('aria-expanded','true');
+        items = [].slice.call(results.querySelectorAll('.sr-item'));
+        active = -1;
       }
 
-      var debounceTimer;
+      var timer;
       input.addEventListener('input', function(){
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(function(){ search(input.value.trim()); }, 150);
+        clearTimeout(timer);
+        timer = setTimeout(function(){ search(input.value.trim()); }, 120);
+      });
+      input.addEventListener('focus', function(){ if (input.value.trim().length > 1 && !results.classList.contains('is-visible')) search(input.value.trim()); });
+
+      input.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') { close(); input.blur(); return; }
+        if (!items.length) return;
+        if (e.key === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
+        else if (e.key === 'Enter') {
+          if (active > -1) { e.preventDefault(); window.location.href = items[active].getAttribute('href'); }
+          else if (items.length === 1) { e.preventDefault(); window.location.href = items[0].getAttribute('href'); }
+        }
+      });
+
+      results.addEventListener('mousemove', function(e){
+        var it = e.target.closest ? e.target.closest('.sr-item') : null;
+        if (it) setActive(items.indexOf(it));
       });
 
       document.addEventListener('click', function(e){
-        if(!e.target.closest('.search-box') && !e.target.closest('.search-filters'))
-          results.classList.remove('is-visible');
-      });
-
-      input.addEventListener('keydown', function(e){
-        if(e.key === 'Escape'){ results.classList.remove('is-visible'); input.blur(); }
+        var el = e.target;
+        if (!el || !el.closest || !el.closest('.search-box')) close();
       });
     })();
 
