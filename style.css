@@ -344,15 +344,19 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
 .sr-empty { padding: 12px; font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-dim); }
 
 .home-section:first-of-type { margin-top: 44px; }
-.home-section { margin-top: 52px; padding-top: 26px; border-top: 1px solid var(--rule); }
+.home-section { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--rule); }
 .home-section h2 { font-size: 1.28rem; line-height: 1.25; margin: 0 0 5px; padding: 0; border: 0; }
-.home-section-desc { font-family: var(--font-sans); font-size: 0.84rem; color: var(--text-quiet); margin: 0 0 24px; }
+.home-section-desc { font-family: var(--font-sans); font-size: 0.84rem; color: var(--text-quiet); margin: 0 0 16px; }
 .home-list { list-style: none; margin: 0; padding: 0; }
-.home-list li { padding: 0 0 24px; border: 0; }
+.home-list li { padding: 0 0 13px; border: 0; }
 .home-list li:last-child { padding-bottom: 0; }
-.home-list a { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; line-height: 1.35; color: var(--link); text-decoration: none; }
+.home-list a { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 700; line-height: 1.3; color: var(--link); text-decoration: none; }
 .home-list a:hover, .home-list a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-.home-list .desc { display: block; margin-top: 6px; max-width: 62ch; font-family: var(--font-sans); font-size: 0.88rem; line-height: 1.6; color: var(--text-dim); }
+.home-list .desc {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; line-clamp: 1;
+  overflow: hidden; margin-top: 2px; max-width: 68ch;
+  font-family: var(--font-sans); font-size: 0.85rem; line-height: 1.5; color: var(--text-dim);
+}
 .home-method { font-family: var(--font-sans); font-size: 0.85rem; line-height: 1.6; color: var(--text-dim); margin: 52px 0 0; padding-top: 26px; border-top: 1px solid var(--rule); }
 .page-footer {
   max-width: 700px; margin: 0 auto; padding: 22px 24px 40px; border-top: 1px solid var(--rule);
@@ -363,7 +367,8 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
 @media (max-width: 640px) {
   .home-wrap { padding: 32px 18px 52px; }
   .home-intro h1 { font-size: 1.68rem; }
-  .home-section { margin-top: 40px; padding-top: 22px; }
+  .home-section { margin-top: 34px; padding-top: 20px; }
+  .home-list .desc { -webkit-line-clamp: 2; line-clamp: 2; }
   .page-footer { padding: 18px 18px 32px; }
 }
 
