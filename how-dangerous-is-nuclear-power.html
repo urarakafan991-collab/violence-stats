@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Dangerous Is Nuclear Power? | TruthBased.org</title>
+  <meta name="description" content="Deaths per terawatt-hour for every major energy source, what Chernobyl and Fukushima actually killed, where the waste goes, and why the strongest case against nuclear power is about cost rather than safety.">
+
+  <meta property="og:type"    content="article">
+  <meta property="og:url"     content="https://www.truthbased.org/how-dangerous-is-nuclear-power">
+  <meta property="og:title"   content="How Dangerous Is Nuclear Power? | TruthBased.org">
+  <meta property="og:description" content="Deaths per terawatt-hour for every major energy source, what Chernobyl and Fukushima actually killed, where the waste goes, and why the strongest case against nuclear power is about cost rather than safety.">
+  <meta name="twitter:card"   content="summary">
+  <meta name="twitter:title"  content="How Dangerous Is Nuclear Power? | TruthBased.org">
+  <meta name="twitter:description" content="Deaths per terawatt-hour for every major energy source, what Chernobyl and Fukushima actually killed, where the waste goes, and why the strongest case against nuclear power is about cost rather than safety.">
+
+  <link rel="canonical" href="https://www.truthbased.org/how-dangerous-is-nuclear-power">
+  <meta name="theme-color" content="#121212">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <script>
+    (function(){
+      var html = document.documentElement, stored = null;
+      try { stored = localStorage.getItem('tb-theme'); } catch(e) {}
+      html.setAttribute('data-theme', stored === 'light' ? 'light' : 'dark');
+      function meta(){ var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', html.getAttribute('data-theme') === 'dark' ? '#121212' : '#ffffff'); }
+      if (window.MutationObserver) new MutationObserver(meta).observe(html, {attributes: true, attributeFilter: ['data-theme']});
+      if (window.Chart) {
+        var sans = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
+        var isDark = function(){ return html.getAttribute('data-theme') === 'dark'; };
+        var applyDefaults = function(){ var dark = isDark(); Chart.defaults.color = dark ? '#d6d6d6' : '#333333'; Chart.defaults.borderColor = dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.12)'; };
+        applyDefaults(); Chart.defaults.font.family = sans; Chart.defaults.font.size = 13;
+        var map = {'#b83a1e':'#f08a6a','#1b6b3e':'#5ccf7f','#d4703a':'#f3a67e','#e8a76c':'#f6c9a4','#4cbb6a':'#7fe09a','#7a4f00':'#e6b85c','#c8850a':'#eac06b','#e05a3a':'#f08a6a'};
+        function fix(v){ if (typeof v === 'string') return isDark() ? (map[v.toLowerCase()] || v) : v; if (Array.isArray(v)) return v.map(fix); return v; }
+        Chart.register({ id: 'tbTheme',
+          beforeInit: function(c){
+            var opt = c.config.options || {}; var sc = opt.scales || {};
+            Object.keys(sc).forEach(function(k){ var s = sc[k] || {}; s.ticks = s.ticks || {}; s.ticks.font = {family: sans, size: 12}; if (s.title) s.title.font = {family: sans, size: 12}; sc[k] = s; });
+            var lg = opt.plugins && opt.plugins.legend; if (lg && lg.labels) lg.labels.font = {family: sans, size: 12};
+            var tt = opt.plugins && opt.plugins.tooltip; if (tt) { tt.bodyFont = {family: sans, size: 12}; tt.titleFont = {family: sans, size: 12}; }
+          },
+          beforeUpdate: function(c){
+            applyDefaults();
+            var ds = (c.config.data && c.config.data.datasets) || [];
+            ds.forEach(function(d){
+              if (!d._tb) d._tb = { bg: d.backgroundColor, bc: d.borderColor, pbg: d.pointBackgroundColor, pbc: d.pointBorderColor };
+              if (d._tb.bg != null) d.backgroundColor = fix(d._tb.bg); if (d._tb.bc != null) d.borderColor = fix(d._tb.bc);
+              if (d._tb.pbg != null) d.pointBackgroundColor = fix(d._tb.pbg); if (d._tb.pbc != null) d.pointBorderColor = fix(d._tb.pbc);
+              if (d.borderWidth == null) d.borderWidth = 1;
+            });
+            var sc = (c.config.options && c.config.options.scales) || {};
+            Object.keys(sc).forEach(function(k){ var s = sc[k] || {}; s.grid = s.grid || {}; if (s.grid._tbAuto || s.grid.color == null) { s.grid.color = Chart.defaults.borderColor; s.grid._tbAuto = true; } });
+          }
+        });
+        var recolor = function(){ if (!Chart.instances) return; Object.keys(Chart.instances).forEach(function(k){ var c = Chart.instances[k]; try { if (c && c.canvas && c.ctx) c.update('none'); } catch (e) {} }); };
+        if (window.MutationObserver) new MutationObserver(recolor).observe(html, {attributes: true, attributeFilter: ['data-theme']});
+      }
+      if (stored) return;
+      document.addEventListener('DOMContentLoaded', function(){
+        var bar = document.createElement('div');
+        bar.className = 'theme-ask'; bar.setAttribute('role', 'region'); bar.setAttribute('aria-label', 'Display mode');
+        bar.innerHTML = '<span>Read this site in dark or light mode?</span> <button type="button" data-t="dark">Dark</button> <button type="button" data-t="light">Light</button> <button type="button" class="theme-ask-close" data-t="dark" aria-label="Keep dark mode and close">&times;</button>';
+        bar.addEventListener('click', function(e){
+          var b = e.target.closest('button'); if (!b) return;
+          var t = b.getAttribute('data-t');
+          html.setAttribute('data-theme', t);
+          try { localStorage.setItem('tb-theme', t); } catch(e) {}
+          var tog = document.querySelector('.theme-toggle'); if (tog) tog.textContent = t === 'dark' ? '\u2600' : '\u263E';
+          bar.parentNode.removeChild(bar);
+        });
+        document.body.appendChild(bar);
+      });
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Dangerous Is Nuclear Power?",
+    "description": "Deaths per terawatt-hour across energy sources, the confirmed and projected tolls of Chernobyl and Fukushima, the waste record, and the cost case against nuclear power.",
+    "author": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "publisher": {"@type": "Organization", "name": "TruthBased.org", "url": "https://www.truthbased.org"},
+    "datePublished": "2026-09-03",
+    "dateModified": "2026-09-03",
+    "mainEntityOfPage": "https://www.truthbased.org/how-dangerous-is-nuclear-power",
+    "keywords": ["nuclear power", "nuclear safety", "Chernobyl", "Fukushima", "deaths per terawatt-hour", "radioactive waste", "linear no-threshold", "energy policy"]
+  }
+  </script>
+</head>
+
+<body>
+  <div data-nosnippet class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#part1">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-left">
+      <a href="/" class="nav-wordmark">Truth<strong>Based</strong>.org</a>
+      <a href="/" class="nav-back">&#8592; Home</a>
+      <span class="nav-category">Science &amp; Media Accuracy</span>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+  </nav>
+
+  <nav class="jump-nav" aria-label="Jump to section">
+    <div class="jump-links" id="jump-links">
+    <a href="#part1" class="jump-btn">The Comparison</a>
+    <a href="#part2" class="jump-btn">Chernobyl</a>
+    <a href="#part3" class="jump-btn">Fukushima</a>
+    <a href="#part4" class="jump-btn">Other Accidents</a>
+    <a href="#part5" class="jump-btn">The Waste</a>
+    <a href="#part6" class="jump-btn">The Case Against</a>
+    <a href="#part7" class="jump-btn">Perception</a>
+    <a href="#summary" class="jump-btn">Summary</a>
+    </div>
+  </nav>
+
+  <main id="content">
+  <article class="article-wrap">
+    <header class="hero">
+      <span class="article-category">Science &amp; Media Accuracy</span>
+      <h1>How Dangerous Is Nuclear Power?</h1>
+      <p class="article-deck">Measured as deaths per unit of electricity, nuclear power sits alongside wind and solar and far below every fossil fuel. That comparison depends on how the tolls of Chernobyl and Fukushima are counted, and the counting is genuinely disputed. This article separates what is confirmed from what is modelled, and sets out the strongest case against nuclear power, which turns out to be about money rather than safety.</p>
+
+      <div class="chart-wrap"><div class="chart-container" style="height:300px;"><canvas id="chart1" role="img" aria-label="Bar chart of deaths per terawatt-hour by energy source on a logarithmic scale: brown coal 32.72, coal 24.62, oil 18.43, biomass 4.63, gas 2.82, hydropower 1.30, wind 0.04, nuclear 0.03, solar 0.02."></canvas></div><p class="note-small">Deaths per terawatt-hour, including accidents and air pollution across the supply chain. Note the logarithmic scale: each gridline is ten times the one before it. Sources: Markandya and Wilkinson (2007, The Lancet) and Sovacool et al. (2016, Journal of Cleaner Production), as compiled by Our World in Data.</p></div>
+      <div class="article-meta">
+        <span class="meta-pill live" title="This article is actively maintained and updated as new data becomes available">&#10003; Live</span>
+        <span class="meta-pill">Last reviewed: Sep 2026</span>
+        <span class="meta-pill">Data through Sep 2026</span>
+        <a href="/methodology" class="meta-pill plain-link">Methodology &#8594;</a>
+      </div>
+    </header>
+
+    <div class="sources-bar">
+      <span class="sources-bar-label">Primary Sources</span>
+      <div class="source-pills">
+        <a href="https://ourworldindata.org/safest-sources-of-energy" class="source-pill" target="_blank" rel="noopener noreferrer">Our World in Data</a>
+        <a href="https://www.unscear.org/" class="source-pill" target="_blank" rel="noopener noreferrer">UNSCEAR</a>
+        <a href="https://www.iaea.org/" class="source-pill" target="_blank" rel="noopener noreferrer">IAEA</a>
+        <a href="https://www.who.int/" class="source-pill" target="_blank" rel="noopener noreferrer">WHO</a>
+        <a href="https://www.nrc.gov/" class="source-pill" target="_blank" rel="noopener noreferrer">US NRC</a>
+        <a href="https://www.oecd-nea.org/" class="source-pill" target="_blank" rel="noopener noreferrer">OECD-NEA</a>
+        <a href="https://www.lazard.com/" class="source-pill" target="_blank" rel="noopener noreferrer">Lazard LCOE+</a>
+        <a href="https://www.reconstruction.go.jp/english/" class="source-pill" target="_blank" rel="noopener noreferrer">Japan Reconstruction Agency</a>
+        <a href="https://www.posiva.fi/en" class="source-pill" target="_blank" rel="noopener noreferrer">Posiva (Onkalo)</a>
+        <a href="https://news.gallup.com/" class="source-pill" target="_blank" rel="noopener noreferrer">Gallup</a>
+      </div>
+    </div>
+
+    <div class="tldr-box">
+      <span class="box-label">Summary</span>
+      <p>Per unit of electricity generated, nuclear power causes roughly 0.03 deaths per terawatt-hour, against 2.82 for natural gas and 24.62 for coal. Those fossil figures are dominated by routine air pollution rather than accidents. The confirmed radiation death toll from civilian nuclear power in its whole history is small: fewer than 50 deaths directly attributed to radiation at Chernobyl, plus 15 recorded thyroid cancer deaths, and one officially recognised worker death at Fukushima. Statistical projections of Chernobyl&rsquo;s eventual cancer toll range from about 4,000 to about 93,000, and that entire spread comes from one methodological dispute about applying the linear no-threshold model to very low doses. At Fukushima the evacuation killed far more people than the radiation did: 2,313 disaster-related deaths, about nine in ten of them over 66. The strongest case against nuclear power is economic. Recent Western projects ran two to six times over budget and seven to thirteen years late, and new nuclear costs several times more per megawatt-hour than wind or solar.</p>
+    </div>
+
+    <div class="scope-box">
+      <p>This article is about civilian nuclear power. Accidents at military plutonium plants and research reactors are frequently folded into nuclear power&rsquo;s record; Part 4 separates them out. Weapons, weapons testing and uranium mining outside the power supply chain are not covered here.</p>
+    </div>
+
+    <div class="claim-row">
+      <div class="claim-cell"><span class="claim-cell-label claim-said">Misconception</span>&ldquo;Nuclear is one of the most dangerous ways to make electricity.&rdquo;</div>
+      <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. Under every published accounting that applies one method across sources, nuclear ranks with wind and solar as one of the safest, and roughly 800 times safer than coal per unit of energy.</div>
+    </div>
+
+    <div class="claim-row">
+      <div class="claim-cell"><span class="claim-cell-label claim-said">Misconception</span>&ldquo;Nobody died at Fukushima.&rdquo;</div>
+      <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Misleading in both directions. No member of the public died of radiation, and one worker&rsquo;s cancer death was officially recognised as radiation-related in 2018. But 2,313 people died in the evacuation, which the accident caused.</div>
+    </div>
+
+    <section id="part1">
+      <div class="part-header">
+        <h2 class="part-title">How the comparison is made</h2>
+      </div>
+
+      <span class="section-label">The unit</span>
+
+      <p>Comparing energy sources by counting accidents is misleading, because a source that produces very little electricity can look safe simply by being small. The standard fix is to divide deaths by energy produced, giving deaths per terawatt-hour. A terawatt-hour is roughly the annual electricity use of about 150,000 European households, so these are deaths per large block of generation rather than per plant.</p>
+
+      <p>The figures in the chart above combine two studies. Markandya and Wilkinson (2007, <em>The Lancet</em>) produced the fossil fuel and biomass numbers, and Sovacool et al. (2016, <em>Journal of Cleaner Production</em>) compiled an accident database covering renewables and nuclear. Our World in Data maintains the combined table that most public comparisons are built from.</p>
+
+      <span class="section-label">What is being counted</span>
+
+      <p>The single most important thing about these numbers is that the fossil fuel figures are mostly not accidents. They are dominated by air pollution: particulates, sulphur dioxide and nitrogen oxides from combustion, causing respiratory and cardiovascular deaths spread thinly across large populations. Coal&rsquo;s accident-only rate is a small fraction of its total. Nuclear&rsquo;s figure is the opposite, made up almost entirely of accidents plus occupational exposure, because routine radiation releases from operating plants are negligible.</p>
+
+      <p>The published figures are also conservative in a specific direction. Markandya and Wilkinson measured European power stations with modern pollution controls. Coal burned without those controls, which describes much of the world&rsquo;s coal fleet, kills at a considerably higher rate, so the gap between coal and nuclear in the chart is if anything understated.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">A note on methodology</span>
+        <p>Different methods give nuclear different numbers. Markandya and Wilkinson put it at 0.074 deaths per terawatt-hour by including occupational and mining exposure. Sovacool et al. put it near 0.01 by counting recorded accident fatalities only. The commonly cited 0.03 sits between them. All three are orders of magnitude below gas at 2.82, so the choice of method changes the exact figure without changing the ranking.</p>
+      </div>
+
+      <span class="section-label">The mirror-image problem: hydropower</span>
+
+      <p>Hydropower is listed at 1.30 deaths per terawatt-hour, which is far above nuclear. Almost all of that comes from one event: the failure of the Banqiao dam in China in 1975, with an estimated toll usually given as about 171,000 and ranging across sources from 26,000 to 240,000. Exclude Banqiao and hydropower drops to roughly 0.04, indistinguishable from nuclear and wind.</p>
+
+      <p>This is worth stating plainly because it is the same argument, run in reverse, that appears in nuclear debates. Whether a single catastrophic event belongs in a long-run average is a real methodological question, and the answer should not depend on which technology the answer favours.</p>
+
+      <p>One further honesty point. The Our World in Data figure for nuclear includes both Chernobyl and Fukushima, and the Fukushima component counts the 2,313 evacuation deaths rather than radiation deaths. Nuclear&rsquo;s headline rate therefore already includes the indirect harm its critics emphasise most.</p>
+    </section>
+
+    <section id="part2">
+      <div class="part-header">
+        <h2 class="part-title">Chernobyl: what is confirmed and what is projected</h2>
+      </div>
+
+      <span class="section-label">What happened</span>
+
+      <p>The RBMK-1000 reactor at Chernobyl had two design features no Western commercial reactor had. It had a positive void coefficient, meaning that when its cooling water boiled the nuclear reaction sped up rather than slowing down. And its control rods were tipped with graphite, so that inserting them to shut the reactor down briefly increased reactivity before reducing it. There was also no Western-style containment building. During a badly executed turbine test at low power on 26 April 1986, with most control rods withdrawn, those features combined into a runaway power surge and a steam explosion that blew the reactor open.</p>
+
+      <span class="section-label">The confirmed deaths</span>
+
+      <p>Two workers were killed on the night of the accident. Of 134 emergency workers and staff diagnosed with acute radiation syndrome, 28 died within the following weeks and months. Nineteen more acute radiation syndrome survivors died between 1987 and 2004, mostly of causes not necessarily attributable to radiation. The Chernobyl Forum, the joint IAEA, WHO and UNDP review published in 2005, summarised this as fewer than 50 deaths directly attributed to radiation, almost all of them among highly exposed rescue workers.</p>
+
+      <p>The other confirmed toll is thyroid cancer in people who were children or adolescents in 1986 and drank milk contaminated with radioactive iodine. About 20,000 thyroid cancers were registered in this group between 1991 and 2015. UNSCEAR attributes roughly one in four of them, about 5,000 cases, to the accident; the rest reflect other causes and much more intensive screening. Fifteen deaths from thyroid cancer have been recorded. Survival among treated cases exceeds 99 per cent, which is why a large number of cases produces a small number of deaths.</p>
+
+      <div class="chart-wrap"><div class="chart-container" style="height:300px;"><canvas id="chart2" role="img" aria-label="Bar chart of Chernobyl death estimates on a logarithmic scale: confirmed to date about 65, Chernobyl Forum 2005 projection 4,000, WHO 2006 including lower-dose populations 9,000, Cardis et al. 2006 across Europe 16,000, TORCH 2006 up to 60,000, Greenpeace 2006 about 93,000."></canvas></div><p class="note-small">The first bar is a count of recorded deaths. Every other bar is a model output, not a body count, and the differences between them come almost entirely from one methodological choice explained below.</p></div>
+
+      <span class="section-label">The projections, and why they disagree by a factor of twenty</span>
+
+      <p>The Chernobyl Forum projected that up to 4,000 people could eventually die of radiation-induced cancer among the roughly 600,000 most exposed: emergency workers, evacuees and residents of the most contaminated areas. A WHO report the following year added about 5,000 more among larger, lower-dose populations in Belarus, Russia and Ukraine, giving a figure of around 9,000. Cardis et al. (2006, <em>International Journal of Cancer</em>) projected about 16,000 deaths across Europe by 2065. The TORCH report, written by Ian Fairlie and David Sumner in 2006, gave 30,000 to 60,000. Greenpeace, the same year, gave about 93,000.</p>
+
+      <p>These are not competing measurements. They are the same arithmetic applied to different populations. The method multiplies a collective dose, measured in person-sieverts, by a risk factor of roughly 0.10 fatal cancers per sievert, drawn from studies of atomic bomb survivors who received much higher doses. Fairlie has set the calculation out explicitly: a total collective dose of 600,000 person-sieverts multiplied by 0.10 gives 60,000 deaths. Whether you get 4,000 or 93,000 depends on how many millions of very lightly exposed people you include in the collective dose.</p>
+
+      <div class="box box-green">
+        <span class="box-label">The central dispute</span>
+        <p>The linear no-threshold model assumes that cancer risk falls in a straight line with dose and never reaches a level too small to matter, so that a tiny dose spread across millions of people still produces real deaths. UNSCEAR accepts the model as a basis for radiation protection but declines to use it to compute death totals, on the grounds that individual risks at these doses cannot be distinguished from zero and summing them across a population produces a number that cannot be tested. Critics answer that this is the only method available and that refusing to use it hides deaths that occur. There is no experiment that settles this, because the predicted excess is far smaller than the normal variation in cancer rates.</p>
+      </div>
+
+      <span class="section-label">What was looked for and not found</span>
+
+      <p>UNSCEAR and WHO have repeatedly examined the exposed populations for effects beyond thyroid cancer. In the general population they have found no detectable increase in leukaemia, no detectable increase in solid cancers, and no detectable increase in hereditary effects or birth defects. Cataracts and some leukaemia have been found among the most heavily exposed workers. The honest statement of this finding is that no effect has been statistically detected, which is not the same as proving that none exists; the linear no-threshold model would predict an excess too small to see.</p>
+
+      <p>Around eight RBMK reactors remain in operation, all in Russia, all modified after 1986 to reduce the void coefficient and redesign the control rods. None was ever built outside the former Soviet Union.</p>
+    </section>
+
+    <section id="part3">
+      <div class="part-header">
+        <h2 class="part-title">Fukushima: the radiation and the evacuation</h2>
+      </div>
+
+      <p>On 11 March 2011 a magnitude 9.0 earthquake and the tsunami that followed killed about 19,500 people in north-east Japan. The same tsunami flooded the Fukushima Daiichi plant, knocked out its backup power, and caused three reactor cores to melt.</p>
+
+      <div class="chart-wrap"><div class="chart-container" style="height:250px;"><canvas id="chart3" role="img" aria-label="Bar chart on a logarithmic scale of deaths associated with the March 2011 disaster: 1 officially recognised radiation death, 2,313 evacuation-related deaths, and about 19,500 earthquake and tsunami deaths."></canvas></div><p class="note-small">Logarithmic scale. The radiation figure is the single worker death recognised by Japan&rsquo;s health ministry in 2018; no member of the public has died of radiation from the accident.</p></div>
+
+      <span class="section-label">Radiation</span>
+
+      <p>No member of the public has died of radiation from Fukushima, and no case of acute radiation sickness occurred. One death has been officially recognised: in September 2018 Japan&rsquo;s Ministry of Health, Labour and Welfare granted workers&rsquo; compensation for a man in his fifties who had worked at the plant and died of lung cancer, with a recorded total exposure of about 195 millisieverts. Causation for a single cancer is a probabilistic judgement rather than a diagnosis, which is why this case is a compensation decision rather than a clinical finding.</p>
+
+      <p>UNSCEAR&rsquo;s 2020 report, published in 2021, concluded that no adverse health effects among Fukushima residents have been documented that could be directly attributed to radiation exposure, and that future radiation-related effects are unlikely to be discernible. Public doses were low: of about 1,700 residents whose exposure was assessed, two-thirds were under 1 millisievert per year and 98 per cent under 5, against a global average natural background of roughly 2.4 millisieverts per year.</p>
+
+      <span class="section-label">The evacuation</span>
+
+      <p>The evacuation is where the deaths are. Japanese authorities have certified 2,313 disaster-related deaths among evacuees from Fukushima prefecture, distinct from deaths caused directly by the earthquake, the tsunami or radiation. About nine in ten were people over 66. The causes were the ones that kill frail elderly people who are moved suddenly: interrupted medical care, transfer trauma, cold, stress and suicide. Roughly a third of the deaths occurred in the first three months.</p>
+
+      <p>This has become an argument used in both directions, and the honest position is that it is unresolved. Critics of the evacuation point out that it killed thousands while the radiation it avoided killed nobody. UNSCEAR credits the evacuation with substantially reducing exposure, and the doses people would have received had they stayed are themselves modelled rather than measured. What can be said without dispute is that emergency response, not radiation, caused the deaths.</p>
+
+      <span class="section-label">Thyroid screening</span>
+
+      <p>Japan screened roughly 380,000 children by ultrasound and found more than 200 thyroid cancers, far more than expected. UNSCEAR and most specialists attribute this to the screening itself. Sensitive ultrasound detects small thyroid cancers that would never have caused symptoms, a well-documented effect known as overdiagnosis, and the pattern of cases does not track estimated radiation dose. A minority position exists in the peer-reviewed literature: Tsuda et al. (2016, <em>Epidemiology</em>) argued the increase was real and large. The mainstream reading is overdiagnosis.</p>
+
+      <span class="section-label">The zones today</span>
+
+      <p>The area under evacuation orders has fallen from about 12 per cent of Fukushima prefecture in 2011 to about 2.2 per cent, with roughly 300 square kilometres still closed to habitation. Around 23,700 people remained displaced as of late 2025, down from a peak of about 470,000. Return has been slow: a peer-reviewed study published in <em>SOIL</em> in 2023 found that only about 30 per cent of the pre-accident population of the twelve evacuated municipalities had returned by 2020, with much lower rates in the worst-hit towns. Whatever the radiological findings, the social disruption was severe and is not over.</p>
+    </section>
+
+    <section id="part4">
+      <div class="part-header">
+        <h2 class="part-title">Three Mile Island, and the accidents that were not civilian power</h2>
+      </div>
+
+      <span class="section-label">Three Mile Island, 1979</span>
+
+      <p>Half the core of Unit 2 melted, and the containment held. The US Nuclear Regulatory Commission estimated an average dose of about 0.01 millisieverts to the roughly two million people in the surrounding area, with a maximum of about 1 millisievert at the site boundary, against an American natural background of about 3 millisieverts a year. A twenty-year follow-up of the exposed population led by Talbott and colleagues at the University of Pittsburgh found no consistent evidence that the release affected cancer mortality, with a relative risk near 1.00 for all malignancies and no dose-response trend. A dissenting analysis by Wing and colleagues in 1997 argued otherwise. There are no confirmed radiation deaths from the accident.</p>
+
+      <span class="section-label">Three accidents that are routinely miscounted</span>
+
+      <p>Kyshtym, Windscale and SL-1 appear in many lists of nuclear power accidents. None of them was a civilian power plant.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Frequently miscounted nuclear accidents</caption>
+          <thead><tr><th>Event</th><th>What it actually was</th><th>Deaths</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Kyshtym, USSR, 1957</strong></td><td>Explosion of a military high-level waste tank at the Mayak plutonium production and reprocessing complex</td><td>At least 200 attributed to radiation, disputed under Soviet secrecy</td></tr>
+            <tr><td><strong>Windscale, UK, 1957</strong></td><td>Fire in a military plutonium production pile, not a power reactor</td><td>No acute deaths; a 1988 UK government estimate projected about 100 eventual deaths</td></tr>
+            <tr><td><strong>SL-1, USA, 1961</strong></td><td>US Army experimental reactor</td><td>3 operators killed by a steam explosion</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The 1999 criticality accident at Tokaimura in Japan, which killed two workers, is also often listed as a power accident. It happened at a fuel processing facility, not a reactor or a storage site.</p>
+
+      <p>Counting these against nuclear power inflates its record. The correct statement is that in the history of civilian nuclear electricity, Chernobyl is the only accident with a substantial confirmed radiation death toll, and Fukushima has one officially recognised death.</p>
+    </section>
+
+    <section id="part5">
+      <div class="part-header">
+        <h2 class="part-title">The waste</h2>
+      </div>
+
+      <span class="section-label">How much there is</span>
+
+      <p>Global spent fuel from civilian power comes to roughly 400,000 tonnes, with the United States holding about 90,000 tonnes across some 79 sites in more than 30 states and adding roughly 2,000 tonnes a year. Spent fuel is extremely dense, so those tonnages occupy a small volume: the US Department of Energy&rsquo;s standard illustration is that all American commercial spent fuel stacked together would cover a single football field to a depth of about ten yards. This is a real contrast with fossil generation, which disperses its waste into the atmosphere, but a small volume of intensely radioactive material is a different management problem from a large volume of a mild one, not automatically an easier one.</p>
+
+      <span class="section-label">The storage record</span>
+
+      <p>Spent fuel is held first in cooling pools and then in dry casks: sealed steel cylinders inside concrete overpacks, passively cooled. The NRC states that since the first American dry cask was loaded in 1986, dry storage has released no radiation that affected the public or contaminated the environment. There are no confirmed deaths from commercial spent fuel storage anywhere. That record is genuine, and it is also short relative to the timescales involved; the NRC is actively studying canister ageing, including stress-corrosion cracking, and an absence of releases affecting the public is not a claim of zero degradation.</p>
+
+      <span class="section-label">Permanent disposal</span>
+
+      <p>Finland is closest. The Onkalo repository at Olkiluoto, operated by Posiva, places spent fuel in copper and cast-iron canisters packed in bentonite clay about 430 metres down in bedrock roughly 1.9 billion years old, with capacity for about 6,500 tonnes. Trial emplacement with test canisters was completed in 2025 and operations are expected in 2026 or 2027. It will be the first deep geological repository for commercial spent fuel anywhere.</p>
+
+      <p>The United States has nothing. Yucca Mountain was designated by Congress in 1987 and capped at 70,000 tonnes. The Department of Energy moved to withdraw the licence application in 2010 and the project was defunded, after sustained opposition from Nevada and the Western Shoshone. The NRC completed its own safety evaluation in 2014 and 2015 and concluded the design would meet the standards for a million years, but no waste was ever emplaced, and the current administration has restated its opposition. Roughly 10 billion dollars was spent on the site.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">The strongest case that disposal is not solved</span>
+        <p>Serious critics, not only campaigners, make four points. Civilian nuclear power is about seventy years old and no repository for commercial spent fuel is yet operating. Canister corrosion over long periods is contested, including a documented scientific dispute in Sweden over copper corrosion in oxygen-free water. Demonstrating safety over 100,000 years, including the problem of warning future societies away from the site, is not a normal engineering test. And the American case shows that political consent can override technical adequacy, which means a technically solved problem can remain practically unsolved indefinitely.</p>
+      </div>
+
+      <span class="section-label">How long it stays dangerous</span>
+
+      <p>Radioactivity falls steeply at first and then slowly. Short-lived fission products, principally caesium-137 and strontium-90, dominate the hazard for the first few hundred years, after which long-lived actinides such as plutonium and americium control a long tail. Directly disposed spent fuel returns to roughly the radiotoxicity of the natural uranium ore it came from after something between 100,000 and 300,000 years. The 10,000-year figure often quoted is a regulatory assessment horizon, not the point at which the material becomes harmless.</p>
+    </section>
+
+    <section id="part6">
+      <div class="part-header">
+        <h2 class="part-title">The strongest case against nuclear power</h2>
+      </div>
+
+      <p>If nuclear power is as safe as the mortality data suggest, the interesting question is why it is not being built. The answer is cost and time, and the evidence here runs strongly against new nuclear in Western markets.</p>
+
+      <div class="chart-wrap"><div class="chart-container" style="height:300px;"><canvas id="chart4" role="img" aria-label="Grouped bar chart of original versus final cost for four recent Western nuclear projects: Vogtle 14 to 35 billion dollars, Hinkley Point C 18 to 35 billion pounds, Flamanville 3 3.3 to 13.2 billion euros, Olkiluoto 3 3.2 to 11 billion euros."></canvas></div><p class="note-small">Each project is shown in its own currency, so compare the pair, not the projects with each other. Hinkley Point C is in 2015 prices and is not yet complete; its figure is the latest estimate.</p></div>
+
+      <span class="section-label">Four projects</span>
+
+      <p>Vogtle units 3 and 4 in Georgia were projected at about 14 billion dollars for completion around 2017. The final cost was about 35 billion, with the units coming online in 2023 and 2024, roughly seven years late, and the contractor Westinghouse going bankrupt along the way. Hinkley Point C in Britain was approved in 2016 at 18 billion pounds for first power in 2025; the latest estimate is 31 to 35 billion pounds in 2015 prices, with first power now expected around 2029 to 2031. Flamanville 3 in France began at 3.3 billion euros and a five-year build; it cost about 13.2 billion to construct, closer to 19 to 24 billion including financing, and took seventeen years from first concrete to start-up. Olkiluoto 3 in Finland started at 3.2 billion euros and finished at about 11 billion, thirteen years late.</p>
+
+      <span class="section-label">The cost of electricity</span>
+
+      <p>Lazard&rsquo;s levelised cost analysis published in June 2025 puts unsubsidised new nuclear at 175 to 255 dollars per megawatt-hour, against roughly 38 to 78 for utility-scale solar, 37 to 99 for onshore wind and 48 to 107 for combined-cycle gas. An existing, fully depreciated American nuclear plant runs at about 32 dollars per megawatt-hour, which is why keeping old reactors open is a very different economic proposition from building new ones.</p>
+
+      <p>Two caveats cut in opposite directions. Nuclear&rsquo;s cost is unusually sensitive to the discount rate, because almost all of it is upfront: the OECD-NEA and IEA joint costing exercise put French nuclear at 45 dollars per megawatt-hour at a 3 per cent discount rate, 71 at 7 per cent and 97 at 10 per cent. And the renewable figures are unfirmed, meaning they exclude the cost of covering periods when the wind is not blowing and the sun is not shining. Four-hour battery storage, the configuration usually costed, does not address multi-day or seasonal shortfalls. Adding firming and grid costs narrows the gap without closing it.</p>
+
+      <span class="section-label">The counter-example</span>
+
+      <p>Nuclear construction is not inherently slow or expensive. South Korea has built at overnight costs around 2,200 dollars per kilowatt and China around 2,500, against more than 6,000 in the United States and an effective first-of-a-kind figure near 15,000 at Vogtle. The OECD-NEA and IEA survey found a range from about 2,157 dollars per kilowatt in South Korea to 6,920 in Slovakia. France built most of its fleet quickly and cheaply in the 1970s and 1980s.</p>
+
+      <p>The drivers of that gap are reasonably well identified: a single standardised design built repeatedly, several units on one site, an intact domestic supply chain, state financing, and continuity of programme. Lovering, Yip and Nordhaus (2016, <em>Energy Policy</em>) documented the cost histories across countries. Grubler (2010, <em>Energy Policy</em>) documented the uncomfortable other half of the story: France&rsquo;s own costs rose over time as it scaled up and changed designs, which he called negative learning by doing. Whether the West could recover the Korean pattern is a live question, not a settled one.</p>
+
+      <span class="section-label">The opportunity-cost argument</span>
+
+      <p>The most substantial argument against nuclear power for climate purposes is not that it is dangerous but that it is slow. Amory Lovins argues that because nuclear is several times more expensive and much slower to deploy per unit of carbon avoided, spending on it displaces cheaper and faster options and therefore results in more emissions than the same money spent elsewhere. Mark Jacobson at Stanford makes a related case for a wholly wind, water and solar system. The IEA and OECD-NEA argue the reverse, that removing nuclear from the mix makes decarbonisation more expensive and less reliable. The disagreement rests on assumptions about firming, storage, transmission and land, and it is not resolved.</p>
+
+      <span class="section-label">Proliferation</span>
+
+      <p>Civilian nuclear programmes have contributed to weapons programmes. India&rsquo;s 1974 test used plutonium from the CIRUS research reactor, supplied by Canada with American heavy water for peaceful use. North Korea developed weapons from its Yongbyon complex and left the Non-Proliferation Treaty. Pakistan&rsquo;s A.Q. Khan network exported enrichment technology to Iran, Libya and North Korea. Iraq and Libya both pursued weapons under civilian cover.</p>
+
+      <p>Safeguards exist and have been strengthened, notably by the 1997 Additional Protocol adopted after Iraq&rsquo;s programme was discovered. The IAEA verifies declared material and can detect diversion. What safeguards cannot do is physically prevent a determined state from breaking out; they provide warning rather than prevention. This is a real cost of the technology and it is not measured in deaths per terawatt-hour.</p>
+    </section>
+
+    <section id="part7">
+      <div class="part-header">
+        <h2 class="part-title">Perception, policy, and what the German phase-out cost</h2>
+      </div>
+
+      <span class="section-label">What the public thinks</span>
+
+      <p>American support for nuclear power peaked at 62 per cent in 2010, held around 57 per cent immediately after Fukushima, fell to a record low of 44 per cent in 2016, and recovered to 55 per cent by 2023, according to Gallup. In 2019, for the first time, a plurality of Americans described nuclear plants as unsafe. Support splits sharply by party. In Britain, favourable opinion fell from 40 per cent to 28 per cent in the months after Fukushima and had returned to 40 per cent by the end of that year. In Japan, support fell from 62 per cent before the accident to 39 per cent by April 2011.</p>
+
+      <div class="box box-amber">
+        <span class="box-label">A gap in the evidence</span>
+        <p>The claim that the public dramatically overestimates nuclear death tolls is widely repeated, including by people who agree with this article&rsquo;s conclusions. We could not find a rigorous published study that measures people&rsquo;s numerical estimates of the Chernobyl or Fukushima tolls against the recorded figures. The broader finding that nuclear is perceived as more dangerous than its mortality record implies is well supported; the specific numerical claim is not, and we are not making it.</p>
+      </div>
+
+      <span class="section-label">Germany</span>
+
+      <p>Germany accelerated its nuclear exit after Fukushima, closing eight reactors immediately in 2011 and the last three on 15 April 2023. Coal&rsquo;s share of German generation rose from 24.2 per cent in 2020 to 33.3 per cent in 2022, though the war in Ukraine and gas prices also drove that.</p>
+
+      <p>The most cited estimate of the cost comes from Jarvis, Deschenes and Jha. Their 2019 working paper put the social cost at about 12 billion dollars a year, more than 70 per cent of it from additional air pollution deaths, implying roughly 1,100 extra deaths annually. The peer-reviewed version, published in the <em>Journal of the European Economic Association</em> in 2022, revised the figure down to 3 to 8 billion euros a year. A separate synthetic-control study published in 2025 estimated roughly 170 additional respiratory deaths a year. Later analysis notes that renewable growth progressively offset the coal effect over the following decade.</p>
+
+      <p>The direction is agreed and the magnitude is not. Replacing nuclear generation with coal raised emissions and air pollution deaths in the short run, by somewhere between about 170 and about 1,100 deaths a year depending on method. Anyone citing the higher figure should know it comes from a working paper the authors themselves later revised downward.</p>
+    </section>
+
+    <div id="summary" class="claims-box">
+      <span class="claims-box-label">Claims and evidence</span>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Nuclear power is among the most dangerous energy sources&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported. At roughly 0.03 deaths per terawatt-hour it ranks with wind and solar, and about 800 times below coal. The ranking holds across every published method; only the exact figure moves.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Chernobyl killed tens or hundreds of thousands&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not a confirmed count. Fewer than 50 deaths were directly attributed to radiation, plus 15 thyroid cancer deaths. Projections run from 4,000 to about 93,000, and the whole spread comes from how far the linear no-threshold model is applied to very low doses. UNSCEAR declines to produce a total.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Fukushima proves nuclear is unsafe&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported as stated. No member of the public died of radiation and one worker death is officially recognised. The accident did kill: 2,313 people died in the evacuation, about nine in ten of them over 66. The failure was in emergency response, not in radiation exposure.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;Nuclear waste has never harmed anyone&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Supported so far, with a caveat. No confirmed deaths or public releases from commercial spent fuel storage, per the NRC. But the record is about 40 years old against a hazard measured in millennia, and no repository for commercial spent fuel is yet operating.</div>
+      </div>
+      <div class="claim-row">
+        <div class="claim-cell"><span class="claim-cell-label claim-said">Claim</span>&ldquo;New nuclear is the cheapest way to decarbonise&rdquo;</div>
+        <div class="claim-cell"><span class="claim-cell-label claim-data">Evidence</span>Not supported in Western markets. New nuclear runs at 175 to 255 dollars per megawatt-hour against 37 to 99 for onshore wind, and recent Western projects ran two to six times over budget. South Korea and China build far more cheaply, which shows the cost is not inherent to the technology.</div>
+      </div>
+    </div>
+
+    <div class="falsify-box">
+      <span class="falsify-label">What would change this conclusion</span>
+      <p><strong>This article concludes that:</strong> (1) nuclear power causes far fewer deaths per unit of electricity than fossil fuels and is comparable to wind and solar; (2) the confirmed radiation toll of civilian nuclear power is small and the large figures in circulation are model outputs, not counts; (3) the strongest case against nuclear power is cost and construction time, not safety.</p>
+      <p><strong>These conclusions would be falsified by:</strong></p>
+      <p>&bull; A peer-reviewed full-lifecycle mortality figure for nuclear, produced under the same accounting used for other sources, exceeding natural gas at 2.82 deaths per terawatt-hour. For scale, applying even the highest credible Chernobyl projection of about 93,000 raises nuclear only to roughly 0.3 to 0.9, so this would require a change of a different order.</p>
+      <p>&bull; Epidemiological detection, rather than projection, of tens of thousands of excess deaths in the Chernobyl or Fukushima cohorts, which would settle the linear no-threshold dispute against the position taken here.</p>
+      <p>&bull; A confirmed death or a public release from commercial spent fuel storage, which would retire the claim that the waste has harmed no one.</p>
+      <p>&bull; A repository containment failure on an observable timescale, or a technical consensus that isolation over the required period cannot be demonstrated.</p>
+      <p>&bull; Severe accidents at modern reactors occurring at a rate closer to once every few years than once in decades, which would raise the empirical accident rate enough to change the ranking.</p>
+      <p>&bull; Western new-build costs and schedules converging on the South Korean pattern without the first-of-a-kind premium, which would remove the economic case against nuclear as stated here.</p>
+      <p>If any of these occur, this article will be updated.</p>
+    </div>
+
+    <div class="sources-section">
+      <span class="sources-section-label">Full Sources &amp; References</span>
+      <div class="source-item"><strong>Markandya, A. &amp; Wilkinson, P. (2007)</strong> &mdash; &ldquo;Electricity generation and health&rdquo;, <em>The Lancet</em>. Source of the fossil fuel and biomass mortality rates, including air pollution. <a href="https://www.thelancet.com/" target="_blank" rel="noopener noreferrer">thelancet.com</a></div>
+      <div class="source-item"><strong>Sovacool, B. et al. (2016)</strong> &mdash; Global energy accident database, <em>Journal of Cleaner Production</em>. Source of the renewable and nuclear accident rates. <a href="https://www.sciencedirect.com/journal/journal-of-cleaner-production" target="_blank" rel="noopener noreferrer">sciencedirect.com</a></div>
+      <div class="source-item"><strong>Our World in Data</strong> &mdash; &ldquo;What are the safest and cleanest sources of energy?&rdquo;, the compiled deaths-per-terawatt-hour table used in the first chart. <a href="https://ourworldindata.org/safest-sources-of-energy" target="_blank" rel="noopener noreferrer">ourworldindata.org</a></div>
+      <div class="source-item"><strong>UNSCEAR</strong> &mdash; 2008 report on Chernobyl, 2013 and 2020 reports on Fukushima, and the 2018 white paper on thyroid cancer. Source of the confirmed tolls, the attributable fraction and the position on low-dose extrapolation. <a href="https://www.unscear.org/" target="_blank" rel="noopener noreferrer">unscear.org</a></div>
+      <div class="source-item"><strong>Chernobyl Forum (IAEA, WHO, UNDP, 2005)</strong> &mdash; The &ldquo;up to 4,000&rdquo; projection and the count of fewer than 50 directly attributed deaths. <a href="https://www.iaea.org/" target="_blank" rel="noopener noreferrer">iaea.org</a></div>
+      <div class="source-item"><strong>Cardis, E. et al. (2006)</strong> &mdash; Projection of about 16,000 deaths across Europe by 2065, <em>International Journal of Cancer</em>. <a href="https://onlinelibrary.wiley.com/journal/10970215" target="_blank" rel="noopener noreferrer">onlinelibrary.wiley.com</a></div>
+      <div class="source-item"><strong>Fairlie, I. &amp; Sumner, D. (2006)</strong> &mdash; The TORCH report, 30,000 to 60,000 projected deaths, and Fairlie&rsquo;s published explanation of the collective-dose arithmetic. Advocacy-aligned; included because the method is stated explicitly. <a href="https://www.ianfairlie.org/" target="_blank" rel="noopener noreferrer">ianfairlie.org</a></div>
+      <div class="source-item"><strong>Japan Reconstruction Agency and Fukushima Prefecture</strong> &mdash; Certified disaster-related deaths among evacuees, evacuation zone status and displacement figures. <a href="https://www.reconstruction.go.jp/english/" target="_blank" rel="noopener noreferrer">reconstruction.go.jp</a></div>
+      <div class="source-item"><strong>Tsuda, T. et al. (2016)</strong> &mdash; <em>Epidemiology</em>. The peer-reviewed dissent arguing the Fukushima thyroid increase is real rather than a screening effect. <a href="https://journals.lww.com/epidem/" target="_blank" rel="noopener noreferrer">journals.lww.com</a></div>
+      <div class="source-item"><strong>US Nuclear Regulatory Commission</strong> &mdash; Three Mile Island dose estimates, dry cask storage record since 1986, and the Yucca Mountain safety evaluation. <a href="https://www.nrc.gov/" target="_blank" rel="noopener noreferrer">nrc.gov</a></div>
+      <div class="source-item"><strong>US Department of Energy</strong> &mdash; American spent fuel inventory and the Yucca Mountain programme history. <a href="https://www.energy.gov/" target="_blank" rel="noopener noreferrer">energy.gov</a></div>
+      <div class="source-item"><strong>Posiva</strong> &mdash; Onkalo repository design, depth, capacity and schedule. <a href="https://www.posiva.fi/en" target="_blank" rel="noopener noreferrer">posiva.fi</a></div>
+      <div class="source-item"><strong>OECD-NEA and IEA</strong> &mdash; <em>Projected Costs of Generating Electricity</em>, overnight cost ranges by country and the discount-rate sensitivity, plus the system-cost framing for variable renewables. <a href="https://www.oecd-nea.org/" target="_blank" rel="noopener noreferrer">oecd-nea.org</a></div>
+      <div class="source-item"><strong>Lazard</strong> &mdash; <em>Levelized Cost of Energy+</em>, June 2025, unsubsidised cost ranges by technology. <a href="https://www.lazard.com/" target="_blank" rel="noopener noreferrer">lazard.com</a></div>
+      <div class="source-item"><strong>Lovering, J., Yip, A. &amp; Nordhaus, T. (2016)</strong> &mdash; Historical construction costs of nuclear reactors across seven countries, <em>Energy Policy</em>. <a href="https://www.sciencedirect.com/journal/energy-policy" target="_blank" rel="noopener noreferrer">sciencedirect.com</a></div>
+      <div class="source-item"><strong>Grubler, A. (2010)</strong> &mdash; The French programme&rsquo;s rising costs, described as negative learning by doing, <em>Energy Policy</em>. <a href="https://www.sciencedirect.com/journal/energy-policy" target="_blank" rel="noopener noreferrer">sciencedirect.com</a></div>
+      <div class="source-item"><strong>Jarvis, S., Deschenes, O. &amp; Jha, A. (2019, 2022)</strong> &mdash; The cost of Germany&rsquo;s nuclear phase-out. NBER working paper and the revised peer-reviewed version in the <em>Journal of the European Economic Association</em>. <a href="https://www.nber.org/" target="_blank" rel="noopener noreferrer">nber.org</a></div>
+      <div class="source-item"><strong>Gallup</strong> &mdash; Long-run American polling on nuclear power support and perceived safety. <a href="https://news.gallup.com/" target="_blank" rel="noopener noreferrer">news.gallup.com</a></div>
+    </div>
+
+        <div class="ymal-section article-body">
+      <span class="ymal-heading">You May Also Like</span>
+      <div class="ymal-grid">
+        <a href="/is-climate-change-real-and-human-caused" class="ymal-card">
+          <span class="ymal-cat">Science &amp; Media Accuracy</span>
+          <span class="ymal-title">Climate Change Data</span>
+          <span class="ymal-desc">Seven independent datasets versus the claims from all sides.</span>
+        </a>
+        <a href="/is-ultra-processed-food-bad-for-you" class="ymal-card">
+          <span class="ymal-cat">Health &amp; Medicine</span>
+          <span class="ymal-title">Ultra-Processed Food</span>
+          <span class="ymal-desc">The NIH feeding trial, 45 cohort studies, and the NOVA classification.</span>
+        </a>
+        <a href="/is-the-mandela-effect-real" class="ymal-card">
+          <span class="ymal-cat">Science &amp; Perception</span>
+          <span class="ymal-title">The Mandela Effect</span>
+          <span class="ymal-desc">Why millions share the same vivid, confident, wrong memories.</span>
+        </a>
+      </div>
+    </div>
+  <div class="support-note">
+      <p>TruthBased.org is reader-supported and accepts cryptocurrency. Wallet addresses are on the <a href="/support">support page</a>.</p>
+    </div>
+  <div class="cite-this">
+   <span class="cite-this-label">Cite this article</span>
+   <span class="cite-this-text">TruthBased.org. &ldquo;How Dangerous Is Nuclear Power?&rdquo; Updated September 2026. https://www.truthbased.org/how-dangerous-is-nuclear-power</span>
+  </div>
+
+  </article>
+  </main>
+
+  <!-- Chart initialization -->
+  <script>
+    window.addEventListener('load', function() {
+      if (typeof Chart === 'undefined') return;
+
+    // Chart 1 — Deaths per terawatt-hour by source
+    (function() {
+      var el = document.getElementById('chart1');
+      if (!el) return;
+      var rows = [
+        { label: 'Brown coal', value: 32.72, group: 'fossil' },
+        { label: 'Coal', value: 24.62, group: 'fossil' },
+        { label: 'Oil', value: 18.43, group: 'fossil' },
+        { label: 'Biomass', value: 4.63, group: 'other' },
+        { label: 'Gas', value: 2.82, group: 'fossil' },
+        { label: 'Hydropower', value: 1.30, group: 'other' },
+        { label: 'Wind', value: 0.04, group: 'low' },
+        { label: 'Nuclear', value: 0.03, group: 'low' },
+        { label: 'Solar', value: 0.02, group: 'low' }
+      ];
+      var colour = { fossil: '#b83a1e', other: '#e8a76c', low: '#1b6b3e' };
+      new Chart(el.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: rows.map(function(r) { return r.label; }),
+          datasets: [{
+            label: 'Deaths per terawatt-hour',
+            data: rows.map(function(r) { return r.value; }),
+            backgroundColor: rows.map(function(r) { return colour[r.group]; }),
+            borderColor: rows.map(function(r) { return colour[r.group]; }),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c) { return c.parsed.x + ' deaths per TWh'; } } }
+          },
+          scales: {
+            x: { type: 'logarithmic', min: 0.01, max: 100, title: { display: true, text: 'Deaths per terawatt-hour (logarithmic scale)' } },
+            y: { grid: { display: false } }
+          }
+        }
+      });
+    })();
+
+    // Chart 2 — Chernobyl: confirmed deaths against projections
+    (function() {
+      var el = document.getElementById('chart2');
+      if (!el) return;
+      var rows = [
+        { label: 'Recorded deaths to date', value: 65, kind: 'count' },
+        { label: 'Chernobyl Forum 2005 (most exposed)', value: 4000, kind: 'model' },
+        { label: 'WHO 2006 (adds lower-dose groups)', value: 9000, kind: 'model' },
+        { label: 'Cardis et al. 2006 (Europe to 2065)', value: 16000, kind: 'model' },
+        { label: 'TORCH 2006 (upper end)', value: 60000, kind: 'model' },
+        { label: 'Greenpeace 2006', value: 93000, kind: 'model' }
+      ];
+      new Chart(el.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: rows.map(function(r) { return r.label; }),
+          datasets: [{
+            label: 'Deaths',
+            data: rows.map(function(r) { return r.value; }),
+            backgroundColor: rows.map(function(r) { return r.kind === 'count' ? '#1b6b3e' : '#b83a1e'; }),
+            borderColor: rows.map(function(r) { return r.kind === 'count' ? '#1b6b3e' : '#b83a1e'; }),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c) {
+              return c.parsed.x.toLocaleString() + (rows[c.dataIndex].kind === 'count' ? ' recorded deaths' : ' projected deaths (model output)');
+            } } }
+          },
+          scales: {
+            x: { type: 'logarithmic', min: 10, max: 200000, title: { display: true, text: 'Deaths, logarithmic scale. Green is a count; red bars are projections' } },
+            y: { grid: { display: false } }
+          }
+        }
+      });
+    })();
+
+    // Chart 3 — Fukushima and the wider disaster
+    (function() {
+      var el = document.getElementById('chart3');
+      if (!el) return;
+      new Chart(el.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Radiation (officially recognised)', 'Evacuation-related', 'Earthquake and tsunami'],
+          datasets: [{
+            label: 'Deaths',
+            data: [1, 2313, 19500],
+            backgroundColor: ['#1b6b3e', '#e8a76c', '#b83a1e'],
+            borderColor: ['#1b6b3e', '#e8a76c', '#b83a1e'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(c) { return c.parsed.x.toLocaleString() + ' deaths'; } } }
+          },
+          scales: {
+            x: { type: 'logarithmic', min: 1, max: 100000, title: { display: true, text: 'Deaths (logarithmic scale)' } },
+            y: { grid: { display: false } }
+          }
+        }
+      });
+    })();
+
+    // Chart 4 — Original against final cost, four Western projects
+    (function() {
+      var el = document.getElementById('chart4');
+      if (!el) return;
+      new Chart(el.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Vogtle 3 and 4 (bn USD)', 'Hinkley Point C (bn GBP)', 'Flamanville 3 (bn EUR)', 'Olkiluoto 3 (bn EUR)'],
+          datasets: [
+            { label: 'Original budget', data: [14, 18, 3.3, 3.2], backgroundColor: '#1b6b3e', borderColor: '#1b6b3e', borderWidth: 1 },
+            { label: 'Final or latest estimate', data: [35, 35, 13.2, 11], backgroundColor: '#b83a1e', borderColor: '#b83a1e', borderWidth: 1 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { boxWidth: 12, padding: 12 } },
+            tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': ' + c.parsed.y + ' billion'; } } }
+          },
+          scales: {
+            y: { beginAtZero: true, title: { display: true, text: 'Billions, each in its own currency' } },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    })();
+
+    });
+  </script>
+
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script>
+    /* ── Theme toggle ── */
+    (function(){
+      var html = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function icon(){
+        if(!btn) return;
+        var isDark = html.getAttribute('data-theme')==='dark';
+        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      icon();
+      if(btn) btn.addEventListener('click', function(){
+        var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        icon();
+      });
+    })();
+
+    /* ── Reading progress bar ── */
+    (function(){
+      var bar = document.querySelector('.reading-progress');
+      if(!bar) return;
+      window.addEventListener('scroll', function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+      }, {passive:true});
+    })();
+
+    /* ── Back to top ── */
+    (function(){
+      var btn = document.querySelector('.back-to-top');
+      if(!btn) return;
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, {passive:true});
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    })();
+
+    /* ── Scroll spy ── */
+    (function(){
+      var btns = document.querySelectorAll('.jump-btn');
+      var ids = Array.from(btns).map(function(b){ return b.getAttribute('href').replace('#',''); });
+      function update(){
+        var current = '';
+        for(var i=ids.length-1; i>=0; i--){
+          var el = document.getElementById(ids[i]);
+          if(el && el.getBoundingClientRect().top <= 130){ current = ids[i]; break; }
+        }
+        btns.forEach(function(b){ b.classList.toggle('is-active', b.getAttribute('href') === '#'+current); });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    /* ── Table overflow detection ── */
+    (function(){
+      document.querySelectorAll('.table-scroll').forEach(function(el){
+        if(el.scrollWidth > el.clientWidth) el.classList.add('has-overflow');
+      });
+      window.addEventListener('resize', function(){
+        document.querySelectorAll('.table-scroll').forEach(function(el){
+          el.classList.toggle('has-overflow', el.scrollWidth > el.clientWidth);
+        });
+      });
+    })();
+
+    /* ── Nav shadow on scroll ── */
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.06)' : 'none';
+      }, {passive:true});
+    })();
+
+  </script>
+
+  <footer class="site-footer">
+    <span class="footer-note">TruthBased.org &mdash; Last updated September 2026 &middot; Data through September 2026</span>
+    <span class="footer-note">Sources: UNSCEAR, IAEA/WHO Chernobyl Forum, Japan Reconstruction Agency, US NRC, OECD-NEA, Lazard, Our World in Data</span>
+    <a class="footer-link" href="/methodology">Methodology</a>
+  </footer>
+
+</body>
+
+<!-- Did I mess anything up? No. Am I sure I did not mess anything up? Yes or no? Or I don't know? -->
+</html>
