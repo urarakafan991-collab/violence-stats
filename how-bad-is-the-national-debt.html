@@ -27,7 +27,17 @@
   <script>
     (function(){
       var html = document.documentElement, stored = null;
-      try { stored = localStorage.getItem('tb-theme'); } catch(e) {}
+      function readStore(){
+        try { var v = localStorage.getItem('tb-theme'); if (v) return v; } catch(e) {}
+        var m = document.cookie.match(/(?:^|; )tb-theme=(dark|light)/);
+        return m ? m[1] : null;
+      }
+      function writeStore(v){
+        try { localStorage.setItem('tb-theme', v); } catch(e) {}
+        try { document.cookie = 'tb-theme=' + v + '; path=/; max-age=31536000; SameSite=Lax'; } catch(e) {}
+      }
+      window.tbTheme = { read: readStore, write: writeStore };
+      stored = readStore();
       html.setAttribute('data-theme', stored === 'light' ? 'light' : 'dark');
       function meta(){ var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', html.getAttribute('data-theme') === 'dark' ? '#121212' : '#ffffff'); }
       if (window.MutationObserver) new MutationObserver(meta).observe(html, {attributes: true, attributeFilter: ['data-theme']});
@@ -62,20 +72,22 @@
         if (window.MutationObserver) new MutationObserver(recolor).observe(html, {attributes: true, attributeFilter: ['data-theme']});
       }
       if (stored) return;
-      document.addEventListener('DOMContentLoaded', function(){
+      function ask(){
+        if (document.querySelector('.theme-ask')) return;
         var bar = document.createElement('div');
         bar.className = 'theme-ask'; bar.setAttribute('role', 'region'); bar.setAttribute('aria-label', 'Display mode');
         bar.innerHTML = '<span>Read this site in dark or light mode?</span> <button type="button" data-t="dark">Dark</button> <button type="button" data-t="light">Light</button> <button type="button" class="theme-ask-close" data-t="dark" aria-label="Keep dark mode and close">&times;</button>';
         bar.addEventListener('click', function(e){
-          var b = e.target.closest('button'); if (!b) return;
+          var b = e.target.closest ? e.target.closest('button') : null; if (!b) return;
           var t = b.getAttribute('data-t');
           html.setAttribute('data-theme', t);
-          try { localStorage.setItem('tb-theme', t); } catch(e) {}
-          var tog = document.querySelector('.theme-toggle'); if (tog) tog.textContent = t === 'dark' ? '\u2600' : '\u263E';
-          bar.parentNode.removeChild(bar);
+          writeStore(t);
+          var tog = document.querySelector('.theme-toggle'); if (tog) tog.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          if (bar.parentNode) bar.parentNode.removeChild(bar);
         });
-        document.body.appendChild(bar);
-      });
+        document.body.insertBefore(bar, document.body.firstChild);
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ask); else ask();
     })();
   </script>
   <script type="application/ld+json">
@@ -103,7 +115,7 @@
       <a href="/" class="nav-back">&#8592; Home</a>
       <span class="nav-category">Economics</span>
     </div>
-    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">&#9790;</button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">Light mode</button>
   </nav>
 
   <nav class="jump-nav" aria-label="Jump to section">
@@ -427,7 +439,7 @@
       function icon(){
         if(!btn) return;
         var isDark = html.getAttribute('data-theme')==='dark';
-        btn.textContent = isDark ? '\u2600' : '\u263E';
+        btn.textContent = isDark ? 'Light mode' : 'Dark mode';
         btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
         btn.setAttribute('aria-pressed', String(isDark));
       }
@@ -435,7 +447,8 @@
       if(btn) btn.addEventListener('click', function(){
         var next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
-        try { localStorage.setItem('tb-theme', next); } catch(e) {}
+        if (window.tbTheme) window.tbTheme.write(next);
+        var _ask = document.querySelector('.theme-ask'); if (_ask && _ask.parentNode) _ask.parentNode.removeChild(_ask);
         icon();
       });
     })();

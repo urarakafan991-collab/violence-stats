@@ -89,11 +89,11 @@ img, canvas { max-width: 100%; }
 .nav-back:hover { text-decoration: underline; }
 .nav-category { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-dim); padding-left: 16px; border-left: 1px solid var(--rule); }
 .theme-toggle {
-  margin-left: auto;
-  border: 1px solid var(--rule); background: transparent; color: var(--text-dim);
-  font: inherit; font-size: 0.9rem; line-height: 1; padding: 4px 8px; cursor: pointer;
+  margin-left: auto; white-space: nowrap;
+  border: 0; background: none; color: var(--link);
+  font-family: var(--font-sans); font-size: 0.82rem; line-height: 1; padding: 4px 2px; cursor: pointer;
 }
-.theme-toggle:hover { border-color: var(--text-dim); }
+.theme-toggle:hover, .theme-toggle:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 .skip-link {
   position: absolute; top: -100%; left: 16px;
   background: var(--text-head); color: var(--bg);
@@ -373,13 +373,12 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
 
 /* ---------- First-visit display-mode prompt ---------- */
 .theme-ask {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 300;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
-  padding: 10px 16px; background: var(--surface); border-top: 1px solid var(--rule);
-  font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-body);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px;
+  padding: 10px 16px; background: var(--surface); border-bottom: 1px solid var(--rule);
+  font-family: var(--font-sans); font-size: 0.88rem; color: var(--text-body);
 }
 .theme-ask button {
-  font: inherit; padding: 4px 14px; cursor: pointer;
+  font: inherit; padding: 5px 14px; cursor: pointer;
   background: var(--bg); color: var(--text-head); border: 1px solid var(--text-dim); border-radius: 0;
 }
 .theme-ask button:hover { border-color: var(--text-head); }
