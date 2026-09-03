@@ -118,6 +118,7 @@ img, canvas { max-width: 100%; }
 
 /* ---------- Article header ---------- */
 .article-wrap { max-width: 780px; margin: 0 auto; padding: 28px 24px 56px; }
+.hero { max-width: 780px; margin: 0 auto; padding: 0 0 8px; }
 .article-category { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-dim); display: block; margin-bottom: 8px; }
 .article-title { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
 .article-deck { font-size: 1.1rem; font-style: normal; color: var(--text-dim); line-height: 1.5; margin-bottom: 10px; }
@@ -299,6 +300,7 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
   .site-nav, .jump-nav, .jump-nav-wrap, .theme-toggle, .support-note, .ymal-section, footer { display: none !important; }
   body { background: #fff !important; color: #000 !important; font-size: 11pt; }
   .article-wrap { max-width: 100%; padding: 0; }
+  .hero { padding-left: 0; padding-right: 0; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
   a.source-pill[href]::after, a.jump-btn[href]::after { content: none; }
 }
