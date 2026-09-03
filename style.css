@@ -134,8 +134,6 @@ a.meta-pill { color: var(--link); }
 .sources-bar-label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-dim); margin-bottom: 9px; }
 .source-pills { display: block; line-height: 1.95; }
 .source-pill { display: inline; background: none; border: 0; padding: 0; font: inherit; color: var(--text-dim); }
-a.source-pill { color: var(--link); text-decoration: none; }
-a.source-pill:hover, a.source-pill:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 .source-pill::after { content: "\00b7"; margin: 0 9px; color: var(--text-quiet); }
 .source-pill:last-child::after { content: ""; margin: 0; }
 
@@ -303,7 +301,7 @@ footer span, footer a, .footer-note, .footer-link { font-size: 0.78rem; }
   .article-wrap { max-width: 100%; padding: 0; }
   .hero { padding-left: 0; padding-right: 0; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
-  a.source-pill[href]::after, a.jump-btn[href]::after { content: none; }
+  a.jump-btn[href]::after { content: none; }
 }
 
 /* ---------- Components used by a few older articles ---------- */
