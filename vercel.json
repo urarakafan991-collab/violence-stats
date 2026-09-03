@@ -398,16 +398,6 @@
       "permanent": true
     },
     {
-      "source": "/shootings-by-demographic",
-      "destination": "/who-commits-mass-shootings-in-america",
-      "permanent": true
-    },
-    {
-      "source": "/shootings-by-demographic.html",
-      "destination": "/who-commits-mass-shootings-in-america",
-      "permanent": true
-    },
-    {
       "source": "/social-media-mental-health",
       "destination": "/does-social-media-harm-teenagers-mental-health",
       "permanent": true
