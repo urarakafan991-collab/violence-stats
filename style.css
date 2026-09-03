@@ -130,13 +130,14 @@ img, canvas { max-width: 100%; }
 a.meta-pill { color: var(--link); }
 
 /* ---------- Sources bar ---------- */
-.sources-bar { margin: 20px 0; font-family: var(--font-sans); font-size: 0.85rem; }
-.sources-bar-label { display: block; font-weight: 700; color: var(--text-head); margin-bottom: 4px; }
-.source-pills { display: block; line-height: 1.6; }
+.sources-bar { margin: 26px 0 30px; padding: 14px 0 15px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-family: var(--font-sans); font-size: 0.85rem; }
+.sources-bar-label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-dim); margin-bottom: 9px; }
+.source-pills { display: block; line-height: 1.95; }
 .source-pill { display: inline; background: none; border: 0; padding: 0; font: inherit; color: var(--text-dim); }
-a.source-pill { color: var(--link); }
-.source-pill::after { content: ", "; }
-.source-pill:last-child::after { content: ""; }
+a.source-pill { color: var(--link); text-decoration: none; }
+a.source-pill:hover, a.source-pill:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.source-pill::after { content: "\00b7"; margin: 0 9px; color: var(--text-quiet); }
+.source-pill:last-child::after { content: ""; margin: 0; }
 
 /* ---------- Summary / callout boxes ---------- */
 .tldr-box { background: none; border: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 0; margin: 24px 0; }
