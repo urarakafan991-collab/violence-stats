@@ -5,10 +5,6 @@
     {
       "source": "/:slug.md",
       "destination": "/404.html"
-    },
-    {
-      "source": "/who-commits-mass-shootings-in-america/:slug",
-      "destination": "/who-commits-mass-shootings-in-america.html"
     }
   ],
   "redirects": [
