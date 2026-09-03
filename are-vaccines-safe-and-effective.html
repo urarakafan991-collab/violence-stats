@@ -16,6 +16,7 @@
 
  <link rel="canonical" href="https://www.truthbased.org/are-vaccines-safe-and-effective">
  <meta name="theme-color" content="#121212">
+  <meta name="color-scheme" content="dark light">
  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
@@ -102,16 +103,6 @@
   "mainEntityOfPage": "https://www.truthbased.org/are-vaccines-safe-and-effective",
   "keywords": ["vaccine safety", "vaccine efficacy", "autism", "MMR", "VAERS", "myocarditis", "COVID vaccine", "fact-check"]
  }
- </script>
- <script>
-  (function(){
-   var html = document.documentElement;
-   try {
-    var stored = localStorage.getItem('tb-theme');
-    if (stored) html.setAttribute('data-theme', stored);
-    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
-   } catch(e) {}
-  })();
  </script>
 </head>
 <body>
@@ -636,9 +627,6 @@
   /* ── Theme toggle ── */
   (function(){
    var html = document.documentElement;
-   var saved; try { saved = localStorage.getItem('tb-theme'); } catch(e) {}
-   if(saved) html.setAttribute('data-theme', saved);
-   else if(window.matchMedia('(prefers-color-scheme:dark)').matches) html.setAttribute('data-theme','dark');
    var btn = document.querySelector('.theme-toggle');
    function icon(){
     if(!btn) return;
